@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480">
+  <defs>
+    <linearGradient id="hdr61" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a365d"/>
+      <stop offset="100%" style="stop-color:#2c5282"/>
+    </linearGradient>
+    <linearGradient id="stg61" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3182ce"/>
+      <stop offset="100%" style="stop-color:#2b6cb0"/>
+    </linearGradient>
+    <linearGradient id="gov61" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#38a169"/>
+      <stop offset="100%" style="stop-color:#2f855a"/>
+    </linearGradient>
+    <linearGradient id="per61" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#805ad5"/>
+      <stop offset="100%" style="stop-color:#6b46c1"/>
+    </linearGradient>
+    <filter id="sh61" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="1000" height="480" fill="#f7fafc"/>
+  <rect x="0" y="0" width="1000" height="42" fill="url(#hdr61)"/>
+  <text x="500" y="28" font-family="Arial" font-size="17" font-weight="bold" fill="white" text-anchor="middle">Figure 6.1: AI Governance by Design Lifecycle Model</text>
+  
+  <!-- Stages -->
+  <text x="500" y="62" font-family="Arial" font-size="11" font-weight="bold" fill="#1a365d" text-anchor="middle">Lifecycle Stages</text>
+  
+  <rect x="10" y="72" width="100" height="38" rx="4" fill="url(#stg61)" filter="url(#sh61)"/>
+  <text x="60" y="95" font-family="Arial" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Conception</text>
+  
+  <rect x="120" y="72" width="100" height="38" rx="4" fill="url(#stg61)" filter="url(#sh61)"/>
+  <text x="170" y="95" font-family="Arial" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Requirements</text>
+  
+  <rect x="230" y="72" width="100" height="38" rx="4" fill="url(#stg61)" filter="url(#sh61)"/>
+  <text x="280" y="95" font-family="Arial" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Design</text>
+  
+  <rect x="340" y="72" width="100" height="38" rx="4" fill="url(#stg61)" filter="url(#sh61)"/>
+  <text x="390" y="95" font-family="Arial" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Build</text>
+  
+  <rect x="450" y="72" width="100" height="38" rx="4" fill="url(#stg61)" filter="url(#sh61)"/>
+  <text x="500" y="95" font-family="Arial" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Validate</text>
+  
+  <rect x="560" y="72" width="100" height="38" rx="4" fill="url(#stg61)" filter="url(#sh61)"/>
+  <text x="610" y="95" font-family="Arial" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Deploy</text>
+  
+  <rect x="670" y="72" width="100" height="38" rx="4" fill="url(#stg61)" filter="url(#sh61)"/>
+  <text x="720" y="95" font-family="Arial" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Operate</text>
+  
+  <rect x="780" y="72" width="100" height="38" rx="4" fill="url(#stg61)" filter="url(#sh61)"/>
+  <text x="830" y="95" font-family="Arial" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Monitor</text>
+  
+  <rect x="890" y="72" width="100" height="38" rx="4" fill="url(#stg61)" filter="url(#sh61)"/>
+  <text x="940" y="95" font-family="Arial" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Retire</text>
+  
+  <!-- Arrows -->
+  <path d="M110 91 L118 91" stroke="#718096" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <path d="M220 91 L228 91" stroke="#718096" stroke-width="2" fill="none"/>
+  <path d="M330 91 L338 91" stroke="#718096" stroke-width="2" fill="none"/>
+  <path d="M440 91 L448 91" stroke="#718096" stroke-width="2" fill="none"/>
+  <path d="M550 91 L558 91" stroke="#718096" stroke-width="2" fill="none"/>
+  <path d="M660 91 L668 91" stroke="#718096" stroke-width="2" fill="none"/>
+  <path d="M770 91 L778 91" stroke="#718096" stroke-width="2" fill="none"/>
+  <path d="M880 91 L888 91" stroke="#718096" stroke-width="2" fill="none"/>
+  
+  <!-- Governance Activities -->
+  <text x="500" y="135" font-family="Arial" font-size="11" font-weight="bold" fill="#1a365d" text-anchor="middle">Key Governance Activities</text>
+  
+  <rect x="10" y="145" width="100" height="70" rx="4" fill="url(#gov61)" filter="url(#sh61)"/>
+  <rect x="15" y="153" width="90" height="57" rx="2" fill="white" fill-opacity="0.95"/>
+  <text x="60" y="166" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Use case screening</text>
+  <text x="60" y="178" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Risk classification</text>
+  <text x="60" y="190" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Strategic alignment</text>
+  <text x="60" y="202" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Stakeholder ID</text>
+  
+  <rect x="120" y="145" width="100" height="70" rx="4" fill="url(#gov61)" filter="url(#sh61)"/>
+  <rect x="125" y="153" width="90" height="57" rx="2" fill="white" fill-opacity="0.95"/>
+  <text x="170" y="166" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Impact assessment</text>
+  <text x="170" y="178" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Legal requirements</text>
+  <text x="170" y="190" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Fairness criteria</text>
+  <text x="170" y="202" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Success criteria</text>
+  
+  <rect x="230" y="145" width="100" height="70" rx="4" fill="url(#gov61)" filter="url(#sh61)"/>
+  <rect x="235" y="153" width="90" height="57" rx="2" fill="white" fill-opacity="0.95"/>
+  <text x="280" y="166" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Architecture review</text>
+  <text x="280" y="178" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Privacy by design</text>
+  <text x="280" y="190" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Oversight design</text>
+  <text x="280" y="202" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Bias mitigation</text>
+  
+  <rect x="340" y="145" width="100" height="70" rx="4" fill="url(#gov61)" filter="url(#sh61)"/>
+  <rect x="345" y="153" width="90" height="57" rx="2" fill="white" fill-opacity="0.95"/>
+  <text x="390" y="166" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Data lineage</text>
+  <text x="390" y="178" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Training docs</text>
+  <text x="390" y="190" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Change mgmt</text>
+  <text x="390" y="202" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Issue escalation</text>
+  
+  <rect x="450" y="145" width="100" height="70" rx="4" fill="url(#gov61)" filter="url(#sh61)"/>
+  <rect x="455" y="153" width="90" height="57" rx="2" fill="white" fill-opacity="0.95"/>
+  <text x="500" y="166" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Performance test</text>
+  <text x="500" y="178" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Fairness test</text>
+  <text x="500" y="190" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Compliance verify</text>
+  <text x="500" y="202" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Release gate</text>
+  
+  <rect x="560" y="145" width="100" height="70" rx="4" fill="url(#gov61)" filter="url(#sh61)"/>
+  <rect x="565" y="153" width="90" height="57" rx="2" fill="white" fill-opacity="0.95"/>
+  <text x="610" y="166" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Deploy checklist</text>
+  <text x="610" y="178" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Communication</text>
+  <text x="610" y="190" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Monitor activate</text>
+  <text x="610" y="202" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Rollback ready</text>
+  
+  <rect x="670" y="145" width="100" height="70" rx="4" fill="url(#gov61)" filter="url(#sh61)"/>
+  <rect x="675" y="153" width="90" height="57" rx="2" fill="white" fill-opacity="0.95"/>
+  <text x="720" y="166" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Compliance mon.</text>
+  <text x="720" y="178" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Oversight effect.</text>
+  <text x="720" y="190" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Issue mgmt</text>
+  <text x="720" y="202" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Periodic review</text>
+  
+  <rect x="780" y="145" width="100" height="70" rx="4" fill="url(#gov61)" filter="url(#sh61)"/>
+  <rect x="785" y="153" width="90" height="57" rx="2" fill="white" fill-opacity="0.95"/>
+  <text x="830" y="166" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Performance trend</text>
+  <text x="830" y="178" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Fairness trend</text>
+  <text x="830" y="190" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Drift detection</text>
+  <text x="830" y="202" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Incident invest.</text>
+  
+  <rect x="890" y="145" width="100" height="70" rx="4" fill="url(#gov61)" filter="url(#sh61)"/>
+  <rect x="895" y="153" width="90" height="57" rx="2" fill="white" fill-opacity="0.95"/>
+  <text x="940" y="166" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Retire assessment</text>
+  <text x="940" y="178" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Data disposition</text>
+  <text x="940" y="190" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Doc preservation</text>
+  <text x="940" y="202" font-family="Arial" font-size="7" fill="#2f855a" text-anchor="middle">• Lessons learned</text>
+  
+  <!-- Primary Perspectives -->
+  <text x="500" y="240" font-family="Arial" font-size="11" font-weight="bold" fill="#1a365d" text-anchor="middle">Primary Perspectives by Stage</text>
+  
+  <rect x="10" y="250" width="100" height="40" rx="4" fill="url(#per61)" filter="url(#sh61)"/>
+  <text x="60" y="268" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Product</text>
+  <text x="60" y="280" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Executive</text>
+  
+  <rect x="120" y="250" width="100" height="40" rx="4" fill="url(#per61)" filter="url(#sh61)"/>
+  <text x="170" y="268" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Legal, Risk</text>
+  <text x="170" y="280" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Business Analyst</text>
+  
+  <rect x="230" y="250" width="100" height="40" rx="4" fill="url(#per61)" filter="url(#sh61)"/>
+  <text x="280" y="268" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Technical</text>
+  <text x="280" y="280" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Legal, Privacy</text>
+  
+  <rect x="340" y="250" width="100" height="40" rx="4" fill="url(#per61)" filter="url(#sh61)"/>
+  <text x="390" y="268" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Technical</text>
+  <text x="390" y="280" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Data</text>
+  
+  <rect x="450" y="250" width="100" height="40" rx="4" fill="url(#per61)" filter="url(#sh61)"/>
+  <text x="500" y="268" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Technical</text>
+  <text x="500" y="280" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Risk, Legal</text>
+  
+  <rect x="560" y="250" width="100" height="40" rx="4" fill="url(#per61)" filter="url(#sh61)"/>
+  <text x="610" y="268" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Technical</text>
+  <text x="610" y="280" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Product, Comms</text>
+  
+  <rect x="670" y="250" width="100" height="40" rx="4" fill="url(#per61)" filter="url(#sh61)"/>
+  <text x="720" y="268" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Operations</text>
+  <text x="720" y="280" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Compliance</text>
+  
+  <rect x="780" y="250" width="100" height="40" rx="4" fill="url(#per61)" filter="url(#sh61)"/>
+  <text x="830" y="268" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Technical</text>
+  <text x="830" y="280" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Risk</text>
+  
+  <rect x="890" y="250" width="100" height="40" rx="4" fill="url(#per61)" filter="url(#sh61)"/>
+  <text x="940" y="268" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Technical</text>
+  <text x="940" y="280" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Legal, Executive</text>
+  
+  <!-- Key Principles -->
+  <rect x="30" y="310" width="940" height="155" rx="6" fill="#edf2f7" stroke="#a0aec0" stroke-width="1"/>
+  <text x="500" y="332" font-family="Arial" font-size="12" font-weight="bold" fill="#1a365d" text-anchor="middle">Governance by Design Principles</text>
+  
+  <rect x="50" y="345" width="280" height="105" rx="4" fill="white"/>
+  <text x="190" y="365" font-family="Arial" font-size="10" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Early Integration</text>
+  <text x="60" y="385" font-family="Arial" font-size="9" fill="#4a5568">Governance begins at conception, not</text>
+  <text x="60" y="400" font-family="Arial" font-size="9" fill="#4a5568">deployment. Early decisions have lasting</text>
+  <text x="60" y="415" font-family="Arial" font-size="9" fill="#4a5568">implications for explainability, testability,</text>
+  <text x="60" y="430" font-family="Arial" font-size="9" fill="#4a5568">and controllability.</text>
+  
+  <rect x="360" y="345" width="280" height="105" rx="4" fill="white"/>
+  <text x="500" y="365" font-family="Arial" font-size="10" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Continuous, Not Episodic</text>
+  <text x="370" y="385" font-family="Arial" font-size="9" fill="#4a5568">Governance activities occur at every stage,</text>
+  <text x="370" y="400" font-family="Arial" font-size="9" fill="#4a5568">not just at checkpoints. Each phase builds</text>
+  <text x="370" y="415" font-family="Arial" font-size="9" fill="#4a5568">on previous governance work and prepares</text>
+  <text x="370" y="430" font-family="Arial" font-size="9" fill="#4a5568">for subsequent stages.</text>
+  
+  <rect x="670" y="345" width="280" height="105" rx="4" fill="white"/>
+  <text x="810" y="365" font-family="Arial" font-size="10" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Cross-Functional</text>
+  <text x="680" y="385" font-family="Arial" font-size="9" fill="#4a5568">Different perspectives lead at different</text>
+  <text x="680" y="400" font-family="Arial" font-size="9" fill="#4a5568">stages, but all contribute throughout.</text>
+  <text x="680" y="415" font-family="Arial" font-size="9" fill="#4a5568">Integration requires shared vocabulary</text>
+  <text x="680" y="430" font-family="Arial" font-size="9" fill="#4a5568">and collaborative processes.</text>
+</svg>

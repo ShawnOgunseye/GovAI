@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Governance by Design Across the Lifecycle</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/06-execution.html" rel="next">
+<link href="../chapters/04-deployment.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f8bb638c26fb726dc4c2c6db7be98b4e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/05-lifecycle.html">Perspectives and Integration</a></li><li class="breadcrumb-item"><a href="../chapters/05-lifecycle.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Governance by Design Across the Lifecycle</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../cover.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../cover.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding the Foundations of AI Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-legal-frameworks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Understanding How Laws, Standards, and Frameworks Apply to AI</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Governing the AI Lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-deployment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Perspectives and Integration</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-lifecycle.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Governance by Design Across the Lifecycle</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Topics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-execution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Governance in Motion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-future.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ongoing Issues and Future Directions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Frameworks and Templates</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Quick Reference Tables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practice Scenarios</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Glossary and Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../99-backmatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the Author</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
+  <li><a href="#the-perspectives-that-shape-governance" id="toc-the-perspectives-that-shape-governance" class="nav-link" data-scroll-target="#the-perspectives-that-shape-governance"><span class="header-section-number">5.2</span> The Perspectives That Shape Governance</a>
+  <ul class="collapse">
+  <li><a href="#builders-the-technical-foundation" id="toc-builders-the-technical-foundation" class="nav-link" data-scroll-target="#builders-the-technical-foundation">Builders: The Technical Foundation</a></li>
+  <li><a href="#strategists-the-long-view" id="toc-strategists-the-long-view" class="nav-link" data-scroll-target="#strategists-the-long-view">Strategists: The Long View</a></li>
+  <li><a href="#translators-the-bridge-builders" id="toc-translators-the-bridge-builders" class="nav-link" data-scroll-target="#translators-the-bridge-builders">Translators: The Bridge Builders</a></li>
+  <li><a href="#evangelists-the-mobilizers" id="toc-evangelists-the-mobilizers" class="nav-link" data-scroll-target="#evangelists-the-mobilizers">Evangelists: The Mobilizers</a></li>
+  <li><a href="#custodians-the-guardians-of-trust" id="toc-custodians-the-guardians-of-trust" class="nav-link" data-scroll-target="#custodians-the-guardians-of-trust">Custodians: The Guardians of Trust</a></li>
+  <li><a href="#the-myth-of-the-balanced-leader" id="toc-the-myth-of-the-balanced-leader" class="nav-link" data-scroll-target="#the-myth-of-the-balanced-leader">The Myth of the Balanced Leader</a></li>
+  </ul></li>
+  <li><a href="#when-balance-is-missing" id="toc-when-balance-is-missing" class="nav-link" data-scroll-target="#when-balance-is-missing"><span class="header-section-number">5.3</span> When Balance Is Missing</a></li>
+  <li><a href="#the-lifecycle-model" id="toc-the-lifecycle-model" class="nav-link" data-scroll-target="#the-lifecycle-model"><span class="header-section-number">5.4</span> The Lifecycle Model</a>
+  <ul class="collapse">
+  <li><a href="#conception" id="toc-conception" class="nav-link" data-scroll-target="#conception">Conception</a></li>
+  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements</a></li>
+  <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design">Design</a></li>
+  <li><a href="#build" id="toc-build" class="nav-link" data-scroll-target="#build">Build</a></li>
+  <li><a href="#validate" id="toc-validate" class="nav-link" data-scroll-target="#validate">Validate</a></li>
+  <li><a href="#deploy" id="toc-deploy" class="nav-link" data-scroll-target="#deploy">Deploy</a></li>
+  <li><a href="#operate" id="toc-operate" class="nav-link" data-scroll-target="#operate">Operate</a></li>
+  <li><a href="#monitor" id="toc-monitor" class="nav-link" data-scroll-target="#monitor">Monitor</a></li>
+  <li><a href="#retire" id="toc-retire" class="nav-link" data-scroll-target="#retire">Retire</a></li>
+  </ul></li>
+  <li><a href="#governance-activities-by-stage" id="toc-governance-activities-by-stage" class="nav-link" data-scroll-target="#governance-activities-by-stage"><span class="header-section-number">5.5</span> Governance Activities by Stage</a>
+  <ul class="collapse">
+  <li><a href="#conception-stage-governance" id="toc-conception-stage-governance" class="nav-link" data-scroll-target="#conception-stage-governance">Conception Stage Governance</a></li>
+  <li><a href="#requirements-stage-governance" id="toc-requirements-stage-governance" class="nav-link" data-scroll-target="#requirements-stage-governance">Requirements Stage Governance</a></li>
+  <li><a href="#design-stage-governance" id="toc-design-stage-governance" class="nav-link" data-scroll-target="#design-stage-governance">Design Stage Governance</a></li>
+  <li><a href="#build-stage-governance" id="toc-build-stage-governance" class="nav-link" data-scroll-target="#build-stage-governance">Build Stage Governance</a></li>
+  <li><a href="#validate-stage-governance" id="toc-validate-stage-governance" class="nav-link" data-scroll-target="#validate-stage-governance">Validate Stage Governance</a></li>
+  <li><a href="#deploy-stage-governance" id="toc-deploy-stage-governance" class="nav-link" data-scroll-target="#deploy-stage-governance">Deploy Stage Governance</a></li>
+  <li><a href="#operate-stage-governance" id="toc-operate-stage-governance" class="nav-link" data-scroll-target="#operate-stage-governance">Operate Stage Governance</a></li>
+  <li><a href="#monitor-stage-governance" id="toc-monitor-stage-governance" class="nav-link" data-scroll-target="#monitor-stage-governance">Monitor Stage Governance</a></li>
+  <li><a href="#retire-stage-governance" id="toc-retire-stage-governance" class="nav-link" data-scroll-target="#retire-stage-governance">Retire Stage Governance</a></li>
+  </ul></li>
+  <li><a href="#perspective-contributions-across-the-lifecycle" id="toc-perspective-contributions-across-the-lifecycle" class="nav-link" data-scroll-target="#perspective-contributions-across-the-lifecycle"><span class="header-section-number">5.6</span> Perspective Contributions Across the Lifecycle</a>
+  <ul class="collapse">
+  <li><a href="#how-builders-contribute" id="toc-how-builders-contribute" class="nav-link" data-scroll-target="#how-builders-contribute">How Builders Contribute</a></li>
+  <li><a href="#how-strategists-contribute" id="toc-how-strategists-contribute" class="nav-link" data-scroll-target="#how-strategists-contribute">How Strategists Contribute</a></li>
+  <li><a href="#how-translators-contribute" id="toc-how-translators-contribute" class="nav-link" data-scroll-target="#how-translators-contribute">How Translators Contribute</a></li>
+  <li><a href="#how-evangelists-contribute" id="toc-how-evangelists-contribute" class="nav-link" data-scroll-target="#how-evangelists-contribute">How Evangelists Contribute</a></li>
+  <li><a href="#how-custodians-contribute" id="toc-how-custodians-contribute" class="nav-link" data-scroll-target="#how-custodians-contribute">How Custodians Contribute</a></li>
+  </ul></li>
+  <li><a href="#implementing-governance-by-design" id="toc-implementing-governance-by-design" class="nav-link" data-scroll-target="#implementing-governance-by-design"><span class="header-section-number">5.7</span> Implementing Governance by Design</a>
+  <ul class="collapse">
+  <li><a href="#for-organizations-starting-ai-governance" id="toc-for-organizations-starting-ai-governance" class="nav-link" data-scroll-target="#for-organizations-starting-ai-governance">For Organizations Starting AI Governance</a></li>
+  <li><a href="#for-organizations-with-basic-ai-governance" id="toc-for-organizations-with-basic-ai-governance" class="nav-link" data-scroll-target="#for-organizations-with-basic-ai-governance">For Organizations with Basic AI Governance</a></li>
+  <li><a href="#for-organizations-with-mature-ai-governance" id="toc-for-organizations-with-mature-ai-governance" class="nav-link" data-scroll-target="#for-organizations-with-mature-ai-governance">For Organizations with Mature AI Governance</a></li>
+  <li><a href="#common-challenges" id="toc-common-challenges" class="nav-link" data-scroll-target="#common-challenges">Common Challenges</a></li>
+  </ul></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">5.8</span> Chapter Summary</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">5.9</span> Review Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5.10</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/05-lifecycle.html">Perspectives and Integration</a></li><li class="breadcrumb-item"><a href="../chapters/05-lifecycle.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Governance by Design Across the Lifecycle</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Governance by Design Across the Lifecycle</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
+<p>The previous chapters examined AI governance through knowledge domains: foundations, legal frameworks, development practices, and deployment considerations. That structure works for learning, but governance in practice emerges from people in different roles working together. A lawyer sees different things than an engineer. A product manager thinks about users differently than a compliance officer thinks about regulators. Effective governance integrates these perspectives throughout the AI lifecycle rather than treating governance as a checkpoint at the end.</p>
+<p>This chapter presents governance by design—an approach that embeds governance throughout development and deployment. It begins by examining the different perspectives that must collaborate for governance to succeed, then maps governance activities to lifecycle stages, showing what each perspective contributes at each stage. The chapter concludes with practical guidance for implementation.</p>
+<p>Governance by design parallels concepts familiar from privacy and security: privacy by design builds privacy considerations into systems from the start rather than attempting to add them afterward; security by design builds security into architecture rather than bolting it on. Similarly, governance by design builds governance considerations into AI development from conception through retirement.</p>
+<div id="fig-governance-lifecycle" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-governance-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_6_1_governance_by_design.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-governance-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: AI Governance by Design Lifecycle Model
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 5.1: AI Governance by Design Lifecycle Model — Comprehensive lifecycle with stages, key activities, and primary perspectives.</em></p>
+</section>
+<section id="the-perspectives-that-shape-governance" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="the-perspectives-that-shape-governance"><span class="header-section-number">5.2</span> The Perspectives That Shape Governance</h2>
+<p>AI governance is inherently cross-functional. No single role possesses all the knowledge required to govern AI responsibly. The failures of AI initiatives often trace not to technology but to leadership imbalance—the widespread myth that one person or one function can be strategist, technologist, communicator, and guardian all at once.</p>
+<p>Consider the pattern across high-profile AI failures. IBM’s Watson Health consumed more than five billion dollars before being sold at a fraction of that cost. Zillow lost half a billion in a single quarter before shutting its algorithmic home-buying business. In each case, the promise of a narrow leadership profile left critical gaps. AI initiatives are too complex for single-perspective governance. Just as no hospital would ask one person to be surgeon, administrator, ethicist, and fundraiser, no organization should expect a single function to carry every governance role.</p>
+<p>Across both successes and failures, five types of contributions appear repeatedly. Understanding these archetypes helps organizations ensure balanced governance.</p>
+<section id="builders-the-technical-foundation" class="level3">
+<h3 class="anchored" data-anchor-id="builders-the-technical-foundation">Builders: The Technical Foundation</h3>
+<p>Builders are the engineers and data scientists who create and maintain AI systems. They understand what the technology can actually do, where it breaks, and what it would take to fix it. Without builders, governance discussions remain abstract—disconnected from the concrete realities of data pipelines, model architectures, and system constraints.</p>
+<p>Builders contribute accuracy about technical capabilities. When others promise what AI cannot deliver, builders provide the reality check. When governance requirements seem impractical, builders often find creative technical solutions. Their risk is tunnel vision—optimizing for technical metrics while missing broader implications that fall outside their domain of expertise.</p>
+</section>
+<section id="strategists-the-long-view" class="level3">
+<h3 class="anchored" data-anchor-id="strategists-the-long-view">Strategists: The Long View</h3>
+<p>Strategists are executives and senior leaders who connect today’s choices to tomorrow’s advantage. They see how AI investments fit organizational strategy, how competitive dynamics are shifting, and where the industry is heading. Without strategists, governance becomes reactive—responding to problems rather than positioning for opportunities.</p>
+<p>Strategists contribute direction and resources. They decide which AI initiatives receive investment and how governance programs are staffed. Their risk is impatience—pushing for deployment before systems are ready because competitive pressure makes delay feel costly. They may also underestimate technical complexity, treating AI as just another technology project.</p>
+</section>
+<section id="translators-the-bridge-builders" class="level3">
+<h3 class="anchored" data-anchor-id="translators-the-bridge-builders">Translators: The Bridge Builders</h3>
+<p>Translators are product managers, compliance leads, and domain experts who help technical and business sides understand one another. They convert legal requirements into engineering specifications. They explain technical limitations in terms business leaders can act on. They ensure that what gets built actually serves the users who will rely on it.</p>
+<p>Translators contribute coherence. Without them, legal teams impose requirements that engineers cannot implement, engineers build systems that do not fit clinical workflows, and business teams make promises that technology cannot keep. Their risk is becoming bottlenecks—so essential to communication that everything slows down waiting for translation.</p>
+</section>
+<section id="evangelists-the-mobilizers" class="level3">
+<h3 class="anchored" data-anchor-id="evangelists-the-mobilizers">Evangelists: The Mobilizers</h3>
+<p>Evangelists are the charismatic champions who raise resources, rally support, and maintain momentum when enthusiasm flags. They secure budget approvals, recruit talent, and keep stakeholders engaged through the long middle stretches of AI development when visible progress slows.</p>
+<p>Evangelists contribute energy and resources. AI initiatives that lack champions often wither from neglect—not rejected, just slowly starved of attention and funding. Their risk is over-promising—generating expectations that technology cannot meet, creating pressure to deploy prematurely, or dismissing concerns as obstacles to progress rather than signals requiring attention.</p>
+</section>
+<section id="custodians-the-guardians-of-trust" class="level3">
+<h3 class="anchored" data-anchor-id="custodians-the-guardians-of-trust">Custodians: The Guardians of Trust</h3>
+<p>Custodians are risk officers, ethicists, auditors, and compliance professionals who protect trust and slow things down when everyone else wants to race ahead. They ask uncomfortable questions about what could go wrong, who might be harmed, and whether the organization is really ready.</p>
+<p>Custodians contribute protection. They catch problems before they become crises. They ensure the organization can defend its choices to regulators, courts, and the public. Their risk is excessive caution—imposing so many requirements that AI initiatives cannot proceed, or failing to distinguish between risks that matter and risks that can be managed.</p>
+</section>
+<section id="the-myth-of-the-balanced-leader" class="level3">
+<h3 class="anchored" data-anchor-id="the-myth-of-the-balanced-leader">The Myth of the Balanced Leader</h3>
+<p>Most individuals blend two or three of these orientations, but under pressure they revert to their dominant one. The technically brilliant leader may discount user concerns. The strategically minded executive may override compliance objections. The cautious custodian may block initiatives that should proceed with appropriate safeguards.</p>
+<p>The lesson is not to avoid naming AI leadership. The lesson is to stop looking for unicorns who embody every strength. Effective AI governance requires orchestration—ensuring that builders, strategists, translators, evangelists, and custodians all contribute, and that none drowns out the others. This orchestration is the work of governance structures and processes, not individual heroics.</p>
+</section>
+</section>
+<section id="when-balance-is-missing" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="when-balance-is-missing"><span class="header-section-number">5.3</span> When Balance Is Missing</h2>
+<p>The cost of imbalanced governance extends far beyond the organizations where it originates. When firms get AI governance wrong, the consequences ripple through sectors and society.</p>
+<p>In healthcare, evangelists have promised diagnostic breakthroughs that capture executive imagination and investor dollars. But without translators ensuring systems fit clinical workflows and custodians insisting on validation before deployment, tools fail to integrate with how medicine actually works. Patients receive confident diagnoses from systems that have not been adequately tested on populations like them. Clinicians lose trust in AI assistance and revert to ignoring algorithmic recommendations entirely—even when those recommendations would help.</p>
+<p>In finance, builders and strategists have driven automated trading at machine speed, capturing profits from reaction times no human could match. But without custodians to insist on circuit breakers and systemic risk assessment, volatility spills beyond trading floors into retirement accounts and community wealth. The flash crash of 2010 erased nearly a trillion dollars in market value in minutes. Algorithmic trading did not cause the underlying instability, but it amplified consequences at speeds that outpaced human intervention.</p>
+<p>In education, evangelists have promised personalized learning that meets each student where they are. But without translators connecting technology to pedagogy and builders ensuring systems actually work at scale, implementations have often widened the gaps they promised to close. Students in well-resourced districts receive AI-enhanced instruction while students elsewhere receive AI babysitting—software that generates busywork without genuine adaptation.</p>
+<p>In government, strategists and performers have sold predictive systems—for policing, for benefits eligibility, for child welfare—without custodians to insist on oversight and affected community input. The result has often been systematic discrimination laundered through algorithmic objectivity, eroding confidence in institutions that citizens need to trust.</p>
+<p>The imbalance inside firms does not stay inside. It leaks into every sector of society.</p>
+</section>
+<section id="the-lifecycle-model" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="the-lifecycle-model"><span class="header-section-number">5.4</span> The Lifecycle Model</h2>
+<p>The AI lifecycle can be modeled in various ways depending on organizational methodology. This chapter uses an eight-stage model detailed enough to map governance activities meaningfully while remaining general enough to apply across different organizational approaches.</p>
+<section id="conception" class="level3">
+<h3 class="anchored" data-anchor-id="conception">Conception</h3>
+<p>The conception stage is where AI opportunities are identified, initial ideas are formed, and decisions are made about whether to pursue development. This stage precedes formal project initiation.</p>
+<p>Key activities include opportunity identification, initial feasibility assessment, alignment check with organizational strategy and values, and decision whether to proceed to formal requirements.</p>
+<p>Governance focus at this stage is on ensuring that proposed AI uses are appropriate and aligned with organizational values before resources are committed. This is the first and most important filter. The question is not just “can we build this?” but “should we build this?”—a question that requires input from custodians and translators, not just builders and strategists.</p>
+</section>
+<section id="requirements" class="level3">
+<h3 class="anchored" data-anchor-id="requirements">Requirements</h3>
+<p>The requirements stage defines what the AI system should do, who will use it, who will be affected, what constraints apply, and how success will be measured.</p>
+<p>Key activities include detailed use case definition, stakeholder identification, requirements elicitation and documentation, success criteria definition, and initial legal and risk analysis.</p>
+<p>Governance focus at this stage is on ensuring requirements are complete and governance-relevant requirements are included. If fairness requirements, transparency requirements, and human oversight requirements are not in the requirements document, they are unlikely to be implemented. This stage requires heavy translator involvement to convert legal and ethical considerations into specifications that builders can implement.</p>
+</section>
+<section id="design" class="level3">
+<h3 class="anchored" data-anchor-id="design">Design</h3>
+<p>The design stage determines how the AI system will be built to meet requirements. This includes data strategy, model architecture, integration approach, and human oversight mechanisms.</p>
+<p>Key activities include data source identification and assessment, model architecture selection, system architecture design, interface design, and design review.</p>
+<p>Governance focus at this stage is on ensuring design choices support governance objectives. Choices made during design have lasting implications for explainability, testability, controllability, and compliance. A deep learning architecture may achieve higher accuracy but sacrifice interpretability. A federated approach may preserve privacy but complicate validation. These tradeoffs require dialogue between builders who understand technical implications and custodians who understand governance requirements.</p>
+</section>
+<section id="build" class="level3">
+<h3 class="anchored" data-anchor-id="build">Build</h3>
+<p>The build stage implements the design, including data preparation, model training, system development, and integration.</p>
+<p>Key activities include data collection and preparation, model training, software development, integration with other systems, and iterative refinement.</p>
+<p>Governance focus at this stage is on ensuring build activities follow governance requirements, documentation is maintained, and governance-relevant issues identified during build are escalated appropriately. Builders dominate this stage, but custodians should have visibility into progress and problems.</p>
+</section>
+<section id="validate" class="level3">
+<h3 class="anchored" data-anchor-id="validate">Validate</h3>
+<p>The validate stage tests whether the built system meets requirements, including functional requirements, performance requirements, fairness requirements, and compliance requirements.</p>
+<p>Key activities include functional testing, performance testing, fairness testing, security testing, compliance verification, and documentation completion.</p>
+<p>Governance focus at this stage is on ensuring validation is thorough enough to provide confidence that governance requirements have been met. Validation is where governance commitments are verified. This stage requires collaboration between builders who conduct testing, custodians who define what “good enough” means, and translators who connect technical metrics to real-world implications.</p>
+</section>
+<section id="deploy" class="level3">
+<h3 class="anchored" data-anchor-id="deploy">Deploy</h3>
+<p>The deploy stage transitions the validated system into production use, including technical deployment, user training, and communication to affected parties.</p>
+<p>Key activities include deployment planning, technical deployment, user training, stakeholder communication, monitoring activation, and initial operation.</p>
+<p>Governance focus at this stage is on ensuring deployment follows established procedures, required communications occur, and monitoring is operational before the system serves real users. Evangelists may push for faster deployment; custodians must ensure readiness is genuine, not performed.</p>
+</section>
+<section id="operate" class="level3">
+<h3 class="anchored" data-anchor-id="operate">Operate</h3>
+<p>The operate stage is the ongoing period when the AI system is in production use, serving users and affecting individuals.</p>
+<p>Key activities include operational management, user support, human oversight as designed, issue response, and change management.</p>
+<p>Governance focus at this stage is on ensuring the system operates as intended, human oversight is effective, and issues are identified and addressed promptly. This stage often reveals problems that testing missed—edge cases that appear only at scale, user behaviors that differ from assumptions, drift that develops over time.</p>
+</section>
+<section id="monitor" class="level3">
+<h3 class="anchored" data-anchor-id="monitor">Monitor</h3>
+<p>The monitor stage encompasses ongoing surveillance of system performance, fairness, drift, and incidents. While monitoring is continuous during operation, it is conceptually distinct as an activity.</p>
+<p>Key activities include performance monitoring, fairness monitoring, drift detection, incident detection, and reporting.</p>
+<p>Governance focus at this stage is on ensuring monitoring is comprehensive enough to detect governance-relevant issues and that monitoring findings trigger appropriate responses. Custodians must ensure that monitoring is not merely measurement but actionable intelligence.</p>
+</section>
+<section id="retire" class="level3">
+<h3 class="anchored" data-anchor-id="retire">Retire</h3>
+<p>The retire stage addresses end of life for AI systems, including deactivation, data disposition, and learning capture.</p>
+<p>Key activities include retirement planning, deactivation, data retention or deletion, documentation archiving, and lessons learned capture.</p>
+<p>Governance focus at this stage is on ensuring retirement occurs safely, data is handled appropriately, and organizational learning is preserved. Systems that made consequential decisions may need documentation preserved for litigation or regulatory review long after the system itself is deactivated.</p>
+</section>
+</section>
+<section id="governance-activities-by-stage" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="governance-activities-by-stage"><span class="header-section-number">5.5</span> Governance Activities by Stage</h2>
+<p>This section details specific governance activities at each lifecycle stage.</p>
+<section id="conception-stage-governance" class="level3">
+<h3 class="anchored" data-anchor-id="conception-stage-governance">Conception Stage Governance</h3>
+<p>Use case screening evaluates whether the proposed AI use is consistent with organizational values, policies, and risk appetite. Some uses should be rejected at this early stage before resources are invested.</p>
+<p>Preliminary risk classification assigns an initial risk tier that determines what governance processes will apply. Higher-risk applications receive more intensive governance.</p>
+<p>Strategic alignment check verifies that the proposed AI use supports organizational strategy and is appropriately prioritized against other opportunities.</p>
+<p>Stakeholder identification begins identifying who will use the system, who will be affected, and whose input should inform development.</p>
+</section>
+<section id="requirements-stage-governance" class="level3">
+<h3 class="anchored" data-anchor-id="requirements-stage-governance">Requirements Stage Governance</h3>
+<p>Impact assessment initiation begins formal assessment of potential impacts. For higher-risk applications, this may be a full impact assessment process; for lower-risk applications, a streamlined assessment.</p>
+<p>Legal requirements identification analyzes applicable laws and regulations and translates them into requirements that development must satisfy.</p>
+<p>Fairness criteria definition establishes how fairness will be measured and what fairness standards the system must meet.</p>
+<p>Transparency and explainability requirements determine what information must be provided to users and affected individuals and how.</p>
+<p>Human oversight requirements specify what human oversight the system requires and how it will be implemented.</p>
+</section>
+<section id="design-stage-governance" class="level3">
+<h3 class="anchored" data-anchor-id="design-stage-governance">Design Stage Governance</h3>
+<p>Architecture review evaluates whether the proposed architecture supports governance requirements including explainability, testability, and controllability.</p>
+<p>Data governance integration ensures that data sourcing, preparation, and use comply with data governance policies and legal requirements.</p>
+<p>Privacy by design review evaluates privacy implications of design choices and ensures privacy requirements are addressed in architecture.</p>
+<p>Human oversight design specifies how human oversight mechanisms will work, including what information humans will receive, what decisions they can make, and how they can intervene.</p>
+</section>
+<section id="build-stage-governance" class="level3">
+<h3 class="anchored" data-anchor-id="build-stage-governance">Build Stage Governance</h3>
+<p>Data lineage documentation maintains records of data sources, transformations, and quality measures.</p>
+<p>Training process documentation records how models are trained, including data used, parameters selected, and decisions made.</p>
+<p>Change management tracks modifications to requirements, design, or implementation, ensuring changes receive appropriate review.</p>
+<p>Issue escalation ensures that governance-relevant issues identified during build reach appropriate decision-makers.</p>
+</section>
+<section id="validate-stage-governance" class="level3">
+<h3 class="anchored" data-anchor-id="validate-stage-governance">Validate Stage Governance</h3>
+<p>Performance validation verifies that the system meets performance requirements on appropriate test data.</p>
+<p>Fairness validation verifies that the system meets fairness requirements, with testing disaggregated across relevant demographic groups.</p>
+<p>Compliance validation verifies that legal and regulatory requirements have been satisfied.</p>
+<p>Release readiness assessment provides a structured evaluation of whether the system is ready for deployment.</p>
+<p>Approval gate requires appropriate sign-off before proceeding to deployment.</p>
+</section>
+<section id="deploy-stage-governance" class="level3">
+<h3 class="anchored" data-anchor-id="deploy-stage-governance">Deploy Stage Governance</h3>
+<p>Deployment checklist verification confirms that all pre-deployment requirements have been satisfied.</p>
+<p>Communication execution delivers required notifications to users, affected individuals, and regulators.</p>
+<p>Monitoring activation confirms that monitoring systems are operational and configured correctly.</p>
+<p>Rollback readiness confirms that the organization can roll back deployment if serious issues emerge.</p>
+</section>
+<section id="operate-stage-governance" class="level3">
+<h3 class="anchored" data-anchor-id="operate-stage-governance">Operate Stage Governance</h3>
+<p>Operational compliance monitoring ensures ongoing compliance with applicable requirements.</p>
+<p>Human oversight effectiveness monitoring evaluates whether human oversight is functioning as designed.</p>
+<p>Issue management addresses problems that arise during operation through established procedures.</p>
+<p>Periodic review provides scheduled evaluation of whether the system continues to meet requirements.</p>
+</section>
+<section id="monitor-stage-governance" class="level3">
+<h3 class="anchored" data-anchor-id="monitor-stage-governance">Monitor Stage Governance</h3>
+<p>Performance trend analysis identifies changes in system performance over time.</p>
+<p>Fairness trend analysis identifies changes in fairness metrics that might indicate emerging disparities.</p>
+<p>Drift detection identifies changes in data distributions or relationships that might affect model validity.</p>
+<p>Incident investigation examines adverse events to determine causes and appropriate responses.</p>
+</section>
+<section id="retire-stage-governance" class="level3">
+<h3 class="anchored" data-anchor-id="retire-stage-governance">Retire Stage Governance</h3>
+<p>Retirement impact assessment evaluates implications of retiring the system.</p>
+<p>Data disposition ensures that data is retained or deleted appropriately based on legal requirements and organizational policy.</p>
+<p>Documentation preservation archives relevant documentation for future reference, compliance demonstration, or litigation support.</p>
+<p>Lessons learned capture identifies insights that should inform future AI governance.</p>
+<div id="fig-governance-matrix" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-governance-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_6_2_governance_matrix.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-governance-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: Governance Activities Matrix
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 5.2: Governance Activities Matrix — Activity categories mapped to lifecycle stages showing intensity at each intersection.</em></p>
+</section>
+</section>
+<section id="perspective-contributions-across-the-lifecycle" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="perspective-contributions-across-the-lifecycle"><span class="header-section-number">5.6</span> Perspective Contributions Across the Lifecycle</h2>
+<p>Different perspectives contribute most significantly at different stages. Understanding these patterns helps organizations ensure appropriate involvement throughout development.</p>
+<section id="how-builders-contribute" class="level3">
+<h3 class="anchored" data-anchor-id="how-builders-contribute">How Builders Contribute</h3>
+<p>Builders provide feasibility assessment at conception, answering whether the proposed system is technically achievable. At requirements, they advise on what is technically possible and help define technical requirements. They lead architecture design, execute development, conduct testing, and operate production systems. Their deepest involvement is during build and validate stages, but they contribute throughout.</p>
+<p>Without builder input, governance requirements may be technically impractical. With only builder input, governance may focus on what is easy to measure rather than what matters.</p>
+</section>
+<section id="how-strategists-contribute" class="level3">
+<h3 class="anchored" data-anchor-id="how-strategists-contribute">How Strategists Contribute</h3>
+<p>Strategists provide direction at conception, deciding whether opportunities align with organizational strategy. They approve resource commitment at requirements, approve significant design decisions, and provide release approval at validation. During operation, they receive reports and make decisions on significant issues.</p>
+<p>Without strategist involvement, governance lacks authority and resources. With only strategist involvement, governance may be overridden by competitive pressure.</p>
+</section>
+<section id="how-translators-contribute" class="level3">
+<h3 class="anchored" data-anchor-id="how-translators-contribute">How Translators Contribute</h3>
+<p>Translators facilitate throughout the lifecycle, but contribute most heavily at requirements and deployment. At requirements, they convert legal and ethical considerations into specifications builders can implement. At deployment, they ensure training materials and communications make sense to users. They maintain documentation and coordinate across functions throughout.</p>
+<p>Without translators, legal teams and engineering teams talk past each other. With only translators, decisions may be delayed waiting for interpretation.</p>
+</section>
+<section id="how-evangelists-contribute" class="level3">
+<h3 class="anchored" data-anchor-id="how-evangelists-contribute">How Evangelists Contribute</h3>
+<p>Evangelists secure resources and maintain momentum, contributing most at conception and deployment. At conception, they champion promising opportunities. At deployment, they communicate the system’s value and build user adoption. During long development phases, they maintain stakeholder engagement.</p>
+<p>Without evangelists, promising initiatives wither from inattention. With only evangelists, systems deploy before they are ready.</p>
+</section>
+<section id="how-custodians-contribute" class="level3">
+<h3 class="anchored" data-anchor-id="how-custodians-contribute">How Custodians Contribute</h3>
+<p>Custodians contribute at every stage but are most critical at requirements, validation, and monitoring. At requirements, they ensure governance requirements are specified. At validation, they define what “good enough” means and participate in release decisions. At monitoring, they interpret findings and trigger responses.</p>
+<p>Without custodians, problems go unnoticed until they become crises. With only custodians, nothing deploys because nothing is ever safe enough.</p>
+</section>
+</section>
+<section id="implementing-governance-by-design" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="implementing-governance-by-design"><span class="header-section-number">5.7</span> Implementing Governance by Design</h2>
+<p>Moving from governance as a checkpoint to governance by design requires organizational change.</p>
+<section id="for-organizations-starting-ai-governance" class="level3">
+<h3 class="anchored" data-anchor-id="for-organizations-starting-ai-governance">For Organizations Starting AI Governance</h3>
+<p>Begin with use case screening at the conception stage. Even simple screening that asks “Is this AI use consistent with our values?” and “What could go wrong?” prevents obviously problematic applications from proceeding.</p>
+<p>Add impact assessment at the requirements stage. A basic impact assessment template that captures intended use, potential risks, and planned mitigations provides a foundation.</p>
+<p>Ensure validation includes fairness testing. Even basic disaggregated performance analysis can identify significant disparities before deployment.</p>
+<p>Establish monitoring for deployed systems. At minimum, track whether systems are performing as expected.</p>
+<p>Document what you do. Even informal documentation builds organizational memory.</p>
+</section>
+<section id="for-organizations-with-basic-ai-governance" class="level3">
+<h3 class="anchored" data-anchor-id="for-organizations-with-basic-ai-governance">For Organizations with Basic AI Governance</h3>
+<p>Extend governance earlier into the lifecycle. If governance currently focuses on validation and deployment, add activities at design and build stages.</p>
+<p>Formalize impact assessment processes. Move from ad hoc assessments to structured processes with consistent templates.</p>
+<p>Strengthen monitoring capabilities. Move beyond basic health monitoring to include fairness metrics and drift detection.</p>
+<p>Build cross-functional integration. Create mechanisms for input from all perspectives at appropriate stages.</p>
+</section>
+<section id="for-organizations-with-mature-ai-governance" class="level3">
+<h3 class="anchored" data-anchor-id="for-organizations-with-mature-ai-governance">For Organizations with Mature AI Governance</h3>
+<p>Automate where appropriate. Routine governance activities can often be automated, freeing human attention for judgment-intensive activities.</p>
+<p>Integrate governance tooling. Connect governance activities across the lifecycle through platforms that maintain traceability.</p>
+<p>Benchmark and improve. Compare governance practices against external standards and peer organizations.</p>
+<p>Share learning. Capture insights from governance activities and spread effective practices.</p>
+</section>
+<section id="common-challenges" class="level3">
+<h3 class="anchored" data-anchor-id="common-challenges">Common Challenges</h3>
+<p>Several challenges commonly arise in implementing governance by design.</p>
+<p>Resistance from development teams who perceive governance as slowing development. Address this by making governance efficient, demonstrating value, and involving development in governance design.</p>
+<p>Governance becoming bureaucratic checkbox exercise. Address this by focusing on outcomes rather than process compliance.</p>
+<p>Inconsistent implementation across different AI initiatives. Address this through standardized processes and templates while allowing appropriate flexibility.</p>
+<p>Difficulty maintaining governance over time as organizational attention shifts. Address this through embedded governance roles, automated monitoring, and regular reviews.</p>
+</section>
+</section>
+<section id="chapter-summary" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">5.8</span> Chapter Summary</h2>
+<p>This chapter presented governance by design as an approach that embeds governance throughout the AI lifecycle rather than treating it as a checkpoint at the end.</p>
+<p>Effective AI governance requires multiple perspectives: builders who understand technical realities, strategists who provide direction and resources, translators who bridge domains, evangelists who maintain momentum, and custodians who protect trust. When these perspectives are imbalanced—when one dominates or another is absent—the consequences extend beyond organizations into sectors and society.</p>
+<p>The lifecycle model includes eight stages from conception through retirement. Each stage has distinct governance activities and draws on different perspectives. Conception stage governance screens use cases before resources are committed. Requirements stage governance ensures governance requirements are specified. Design stage governance ensures architecture supports governance objectives. Build stage governance maintains documentation and escalates issues. Validation stage governance verifies requirements are met. Deployment stage governance ensures safe transition to production. Operation stage governance ensures ongoing compliance. Monitor stage governance detects issues requiring response. Retirement stage governance ensures safe deactivation and learning capture.</p>
+<p>Implementing governance by design requires organizational change appropriate to current maturity. Organizations starting AI governance should focus on essential elements. Organizations with basic governance should extend coverage and build cross-functional integration. Organizations with mature governance should automate, integrate, and continuously improve.</p>
+</section>
+<section id="review-questions" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">5.9</span> Review Questions</h2>
+<ol type="1">
+<li><p>An organization currently has AI governance focused on a review meeting before deployment. Development teams frequently express frustration that governance raises issues late in development that require significant rework. What governance by design principle does this situation illustrate, and how should the organization respond?</p></li>
+<li><p>A startup has a brilliant technical founder who built an impressive AI system largely alone. The company is now scaling and needs governance. What risks does single-perspective leadership create, and what perspectives should the company ensure are represented?</p></li>
+<li><p>During the design stage of an AI project, the technical team proposes a deep neural network architecture that achieves the highest accuracy on benchmark tests. However, governance review raises concerns about explainability requirements. What perspectives are in tension, and how might the tension be resolved?</p></li>
+<li><p>An organization has implemented governance activities at all lifecycle stages but finds that different AI projects follow different approaches. What implementation challenge does this represent, and how might it be addressed?</p></li>
+<li><p>A deployed AI system has been operating for 18 months without issues. The monitoring team proposes reducing monitoring frequency to save costs. What governance considerations should inform this decision?</p></li>
+</ol>
+</section>
+<section id="references" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="references"><span class="header-section-number">5.10</span> References</h2>
+<p>Cavoukian, Ann. “Privacy by Design: The 7 Foundational Principles.” Information and Privacy Commissioner of Ontario, 2009.</p>
+<p>IAPP. AIGP Body of Knowledge, Version 2.0.1. International Association of Privacy Professionals, 2025.</p>
+<p>National Institute of Standards and Technology. AI Risk Management Framework 1.0. NIST AI 100-1, 2023.</p>
+<p>Microsoft. Responsible AI Standard, v2. Microsoft Corporation, 2022.</p>
+<p>Ogunseye, S. “Letter to the Head of AI.” AI &amp; Society (2025). https://doi.org/10.1007/s00146-025-02669-0</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/04-deployment.html" class="pagination-link" aria-label="Understanding How to Govern AI Deployment and Use">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/06-execution.html" class="pagination-link" aria-label="Governance in Motion">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Governance in Motion</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

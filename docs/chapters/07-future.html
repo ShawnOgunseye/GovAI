@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Ongoing Issues and Future Directions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/08-appendix-a.html" rel="next">
+<link href="../chapters/06-execution.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f8bb638c26fb726dc4c2c6db7be98b4e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06-execution.html">Advanced Topics</a></li><li class="breadcrumb-item"><a href="../chapters/07-future.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ongoing Issues and Future Directions</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../cover.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../cover.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding the Foundations of AI Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-legal-frameworks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Understanding How Laws, Standards, and Frameworks Apply to AI</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Governing the AI Lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-deployment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Perspectives and Integration</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-lifecycle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Governance by Design Across the Lifecycle</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Topics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-execution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Governance in Motion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-future.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ongoing Issues and Future Directions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Frameworks and Templates</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Quick Reference Tables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practice Scenarios</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Glossary and Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../99-backmatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the Author</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">7.1</span> Introduction</a></li>
+  <li><a href="#liability-frameworks-for-ai-harms" id="toc-liability-frameworks-for-ai-harms" class="nav-link" data-scroll-target="#liability-frameworks-for-ai-harms"><span class="header-section-number">7.2</span> Liability Frameworks for AI Harms</a>
+  <ul class="collapse">
+  <li><a href="#challenges-in-ai-liability" id="toc-challenges-in-ai-liability" class="nav-link" data-scroll-target="#challenges-in-ai-liability">Challenges in AI Liability</a></li>
+  <li><a href="#emerging-approaches" id="toc-emerging-approaches" class="nav-link" data-scroll-target="#emerging-approaches">Emerging Approaches</a></li>
+  <li><a href="#implications-for-governance" id="toc-implications-for-governance" class="nav-link" data-scroll-target="#implications-for-governance">Implications for Governance</a></li>
+  </ul></li>
+  <li><a href="#intellectual-property-and-ai" id="toc-intellectual-property-and-ai" class="nav-link" data-scroll-target="#intellectual-property-and-ai"><span class="header-section-number">7.3</span> Intellectual Property and AI</a>
+  <ul class="collapse">
+  <li><a href="#training-data-and-copyright" id="toc-training-data-and-copyright" class="nav-link" data-scroll-target="#training-data-and-copyright">Training Data and Copyright</a></li>
+  <li><a href="#ai-generated-outputs-and-copyright" id="toc-ai-generated-outputs-and-copyright" class="nav-link" data-scroll-target="#ai-generated-outputs-and-copyright">AI-Generated Outputs and Copyright</a></li>
+  <li><a href="#patents-and-ai" id="toc-patents-and-ai" class="nav-link" data-scroll-target="#patents-and-ai">Patents and AI</a></li>
+  <li><a href="#trade-secrets-and-ai" id="toc-trade-secrets-and-ai" class="nav-link" data-scroll-target="#trade-secrets-and-ai">Trade Secrets and AI</a></li>
+  </ul></li>
+  <li><a href="#the-emerging-ai-auditing-profession" id="toc-the-emerging-ai-auditing-profession" class="nav-link" data-scroll-target="#the-emerging-ai-auditing-profession"><span class="header-section-number">7.4</span> The Emerging AI Auditing Profession</a>
+  <ul class="collapse">
+  <li><a href="#current-state" id="toc-current-state" class="nav-link" data-scroll-target="#current-state">Current State</a></li>
+  <li><a href="#challenges-in-ai-auditing" id="toc-challenges-in-ai-auditing" class="nav-link" data-scroll-target="#challenges-in-ai-auditing">Challenges in AI Auditing</a></li>
+  <li><a href="#emerging-frameworks" id="toc-emerging-frameworks" class="nav-link" data-scroll-target="#emerging-frameworks">Emerging Frameworks</a></li>
+  <li><a href="#implications-for-governance-1" id="toc-implications-for-governance-1" class="nav-link" data-scroll-target="#implications-for-governance-1">Implications for Governance</a></li>
+  </ul></li>
+  <li><a href="#workforce-transformation" id="toc-workforce-transformation" class="nav-link" data-scroll-target="#workforce-transformation"><span class="header-section-number">7.5</span> Workforce Transformation</a>
+  <ul class="collapse">
+  <li><a href="#ai-augmentation" id="toc-ai-augmentation" class="nav-link" data-scroll-target="#ai-augmentation">AI Augmentation</a></li>
+  <li><a href="#workforce-displacement" id="toc-workforce-displacement" class="nav-link" data-scroll-target="#workforce-displacement">Workforce Displacement</a></li>
+  <li><a href="#worker-well-being" id="toc-worker-well-being" class="nav-link" data-scroll-target="#worker-well-being">Worker Well-being</a></li>
+  <li><a href="#implications-for-governance-2" id="toc-implications-for-governance-2" class="nav-link" data-scroll-target="#implications-for-governance-2">Implications for Governance</a></li>
+  </ul></li>
+  <li><a href="#opt-out-rights-and-alternatives" id="toc-opt-out-rights-and-alternatives" class="nav-link" data-scroll-target="#opt-out-rights-and-alternatives"><span class="header-section-number">7.6</span> Opt-Out Rights and Alternatives</a>
+  <ul class="collapse">
+  <li><a href="#the-opt-out-challenge" id="toc-the-opt-out-challenge" class="nav-link" data-scroll-target="#the-opt-out-challenge">The Opt-Out Challenge</a></li>
+  <li><a href="#legal-requirements" id="toc-legal-requirements" class="nav-link" data-scroll-target="#legal-requirements">Legal Requirements</a></li>
+  <li><a href="#implications-for-governance-3" id="toc-implications-for-governance-3" class="nav-link" data-scroll-target="#implications-for-governance-3">Implications for Governance</a></li>
+  </ul></li>
+  <li><a href="#preventive-governance-and-the-limits-of-point-in-time-consent" id="toc-preventive-governance-and-the-limits-of-point-in-time-consent" class="nav-link" data-scroll-target="#preventive-governance-and-the-limits-of-point-in-time-consent"><span class="header-section-number">7.7</span> Preventive Governance and the Limits of Point-in-Time Consent</a>
+  <ul class="collapse">
+  <li><a href="#the-reactive-governance-problem" id="toc-the-reactive-governance-problem" class="nav-link" data-scroll-target="#the-reactive-governance-problem">The Reactive Governance Problem</a></li>
+  <li><a href="#three-conditions-that-undermine-point-in-time-consent" id="toc-three-conditions-that-undermine-point-in-time-consent" class="nav-link" data-scroll-target="#three-conditions-that-undermine-point-in-time-consent">Three Conditions That Undermine Point-in-Time Consent</a></li>
+  <li><a href="#from-reactive-to-preventive-governance" id="toc-from-reactive-to-preventive-governance" class="nav-link" data-scroll-target="#from-reactive-to-preventive-governance">From Reactive to Preventive Governance</a></li>
+  <li><a href="#mechanisms-for-preventive-governance" id="toc-mechanisms-for-preventive-governance" class="nav-link" data-scroll-target="#mechanisms-for-preventive-governance">Mechanisms for Preventive Governance</a></li>
+  <li><a href="#implementing-preventive-governance" id="toc-implementing-preventive-governance" class="nav-link" data-scroll-target="#implementing-preventive-governance">Implementing Preventive Governance</a></li>
+  <li><a href="#tensions-and-tradeoffs" id="toc-tensions-and-tradeoffs" class="nav-link" data-scroll-target="#tensions-and-tradeoffs">Tensions and Tradeoffs</a></li>
+  <li><a href="#implications-for-ai-governance-professionals" id="toc-implications-for-ai-governance-professionals" class="nav-link" data-scroll-target="#implications-for-ai-governance-professionals">Implications for AI Governance Professionals</a></li>
+  </ul></li>
+  <li><a href="#looking-forward" id="toc-looking-forward" class="nav-link" data-scroll-target="#looking-forward"><span class="header-section-number">7.8</span> Looking Forward</a>
+  <ul class="collapse">
+  <li><a href="#regulatory-convergence-and-divergence" id="toc-regulatory-convergence-and-divergence" class="nav-link" data-scroll-target="#regulatory-convergence-and-divergence">Regulatory Convergence and Divergence</a></li>
+  <li><a href="#maturing-standards-and-assurance" id="toc-maturing-standards-and-assurance" class="nav-link" data-scroll-target="#maturing-standards-and-assurance">Maturing Standards and Assurance</a></li>
+  <li><a href="#technical-advances-in-governance" id="toc-technical-advances-in-governance" class="nav-link" data-scroll-target="#technical-advances-in-governance">Technical Advances in Governance</a></li>
+  <li><a href="#organizational-evolution" id="toc-organizational-evolution" class="nav-link" data-scroll-target="#organizational-evolution">Organizational Evolution</a></li>
+  </ul></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">7.9</span> Chapter Summary</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">7.10</span> Review Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7.11</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06-execution.html">Advanced Topics</a></li><li class="breadcrumb-item"><a href="../chapters/07-future.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ongoing Issues and Future Directions</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ongoing Issues and Future Directions</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">7.1</span> Introduction</h2>
+<p>AI governance is a young field addressing a rapidly evolving technology within shifting legal and social landscapes. Many fundamental questions remain unsettled: how liability for AI harms should be allocated, how intellectual property law should adapt to AI, what the AI auditing profession should look like, how workforces will transform as AI capabilities expand, and how individuals who prefer not to interact with AI can be accommodated.</p>
+<p>This chapter examines ongoing issues that AI governance professionals should monitor and prepare for, even where clear answers have not yet emerged. It also looks toward future directions, considering how the field may develop as AI capabilities advance, regulatory frameworks mature, and organizational practices evolve. The goal is not to predict the future but to prepare readers to engage with emerging challenges as they arise.</p>
+<p>The issues discussed here appear in the AIGP Body of Knowledge as topics requiring awareness without necessarily having settled best practices. AI governance professionals should understand these issues, track developments, and help their organizations navigate uncertainty as clarity emerges.</p>
+</section>
+<section id="liability-frameworks-for-ai-harms" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="liability-frameworks-for-ai-harms"><span class="header-section-number">7.2</span> Liability Frameworks for AI Harms</h2>
+<p>When AI systems cause harm, questions arise about who bears legal responsibility. Traditional liability frameworks were not designed for AI’s distinctive characteristics, and how those frameworks will adapt remains unsettled.</p>
+<section id="challenges-in-ai-liability" class="level3">
+<h3 class="anchored" data-anchor-id="challenges-in-ai-liability">Challenges in AI Liability</h3>
+<p>AI complicates traditional liability analysis in several ways.</p>
+<p>Causation is difficult to establish. When a deep learning model contributes to a harmful outcome, tracing causation through millions of parameters and learned patterns may be practically impossible. Traditional liability often requires showing how the defendant’s conduct caused the plaintiff’s harm; AI opacity can make this showing difficult.</p>
+<p>Multiple parties contribute. An AI system might involve a model developed by one company, trained on data from multiple sources, deployed by another company, operating on infrastructure from a cloud provider. When harm occurs, identifying which party’s contribution was legally significant may be contentious.</p>
+<p>Foreseeability is uncertain. Liability often depends on whether harm was foreseeable. AI systems can behave in unexpected ways, and developers may genuinely not have anticipated harmful behaviors that emerged from learning processes they did not fully control.</p>
+<p>Existing categories may not fit. Product liability traditionally distinguishes manufacturing defects (individual units deviate from design) from design defects (the design itself is dangerous). AI “defects” may not fit these categories neatly.</p>
+</section>
+<section id="emerging-approaches" class="level3">
+<h3 class="anchored" data-anchor-id="emerging-approaches">Emerging Approaches</h3>
+<p>Jurisdictions are developing approaches to AI liability, though consensus has not emerged.</p>
+<p>The EU is most advanced with its proposed AI Liability Directive, which would establish rebuttable presumptions that make it easier for claimants to establish AI-related causation. If a defendant failed to comply with certain duties of care, and harm occurred that the compliance failure made more likely, the defendant would be presumed to have caused the harm unless they could prove otherwise. The directive would also require defendants to disclose evidence relevant to AI systems.</p>
+<p>The United States has no comprehensive AI liability framework, leaving courts to apply existing doctrines with uncertain results. Product liability, negligence, and other traditional theories apply, but how they apply to AI is being worked out case by case.</p>
+<p>Some propose strict liability for certain AI uses, holding deployers liable for harms without requiring proof of fault. This approach would simplify liability determination and create strong incentives for care, but critics argue it could chill beneficial AI innovation.</p>
+</section>
+<section id="implications-for-governance" class="level3">
+<h3 class="anchored" data-anchor-id="implications-for-governance">Implications for Governance</h3>
+<p>Even without settled liability rules, governance professionals can take steps to manage liability exposure.</p>
+<p>Documentation of diligence provides evidence that the organization acted reasonably, which matters under most liability standards. Impact assessments, testing records, monitoring data, and incident response documentation all support defense against liability claims.</p>
+<p>Insurance can transfer some financial risk, though AI-specific coverage is still developing. Organizations should evaluate their insurance coverage for AI-related claims and consider whether specialized coverage is warranted.</p>
+<p>Contractual allocation addresses liability as between contracting parties, even if it does not affect third-party claims. Vendor contracts, deployment agreements, and terms of service should address AI-related liability allocation.</p>
+<p>Risk-proportionate use means avoiding high-risk AI applications where the organization is not prepared to accept potential liability. If liability exposure for an AI application is unacceptable, the application should not proceed.</p>
+</section>
+</section>
+<section id="intellectual-property-and-ai" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="intellectual-property-and-ai"><span class="header-section-number">7.3</span> Intellectual Property and AI</h2>
+<p>AI intersects with intellectual property law in novel ways that existing frameworks do not cleanly address.</p>
+<section id="training-data-and-copyright" class="level3">
+<h3 class="anchored" data-anchor-id="training-data-and-copyright">Training Data and Copyright</h3>
+<p>Training AI models on copyrighted works raises unresolved questions. Model training involves making copies of training data, which implicates reproduction rights. The trained model arguably derives from those works, which implicates derivative work rights.</p>
+<p>Whether training on copyrighted works constitutes fair use (in the United States) or falls under other exceptions (in other jurisdictions) is unsettled. Major lawsuits are pending, and outcomes will significantly shape the legal landscape for AI training.</p>
+<p>Organizations training AI models should understand their training data sources and the intellectual property implications. Using data without clear rights creates legal risk that may materialize as case law develops.</p>
+</section>
+<section id="ai-generated-outputs-and-copyright" class="level3">
+<h3 class="anchored" data-anchor-id="ai-generated-outputs-and-copyright">AI-Generated Outputs and Copyright</h3>
+<p>Whether AI-generated outputs are copyrightable is contested. The U.S. Copyright Office has stated that copyright requires human authorship, and works created autonomously by AI without creative human involvement are not copyrightable. This leaves AI-generated content in a precarious position where it may lack copyright protection.</p>
+<p>The human authorship requirement does not mean AI-assisted works are never copyrightable. Works where humans provide creative input and use AI as a tool may qualify for copyright based on the human contribution. The boundary between AI-as-tool and AI-as-creator is not clearly defined.</p>
+<p>Organizations should understand the copyright status of AI-generated content they create or rely upon. Content that is not copyrightable cannot be protected from copying by others.</p>
+</section>
+<section id="patents-and-ai" class="level3">
+<h3 class="anchored" data-anchor-id="patents-and-ai">Patents and AI</h3>
+<p>Patent systems globally have determined that AI cannot be listed as an inventor; only humans can be inventors for patent purposes. This does not prevent patenting inventions developed with AI assistance, provided a human qualifies as inventor.</p>
+<p>AI may increasingly contribute to patentable inventions, raising questions about inventorship that current frameworks do not fully address. If AI contributes the inventive step while humans merely implement or select from AI-generated options, does human inventorship still apply?</p>
+</section>
+<section id="trade-secrets-and-ai" class="level3">
+<h3 class="anchored" data-anchor-id="trade-secrets-and-ai">Trade Secrets and AI</h3>
+<p>Trade secret law may protect AI-related assets including trained models, training data, and development techniques, provided they meet trade secret requirements: they derive economic value from secrecy and are subject to reasonable secrecy measures.</p>
+<p>Maintaining trade secret protection requires ongoing diligence. Organizations must implement and maintain secrecy measures appropriate to the asset’s value and the threats it faces.</p>
+</section>
+</section>
+<section id="the-emerging-ai-auditing-profession" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="the-emerging-ai-auditing-profession"><span class="header-section-number">7.4</span> The Emerging AI Auditing Profession</h2>
+<p>As AI regulation expands and organizational commitment to responsible AI grows, demand increases for independent verification of AI systems and practices. An AI auditing profession is emerging to meet this demand, though it remains in early stages.</p>
+<section id="current-state" class="level3">
+<h3 class="anchored" data-anchor-id="current-state">Current State</h3>
+<p>AI auditing is currently fragmented. Some traditional audit firms are building AI audit capabilities. Specialized AI audit firms are emerging. Academic researchers conduct AI audits as research projects. Regulatory bodies conduct examinations of AI in regulated industries. Civil society organizations conduct accountability investigations.</p>
+<p>No single professional framework governs AI auditing comparable to financial auditing frameworks. Standards for what AI audits should examine, what methodologies are appropriate, and what assurance audits can provide are still developing.</p>
+</section>
+<section id="challenges-in-ai-auditing" class="level3">
+<h3 class="anchored" data-anchor-id="challenges-in-ai-auditing">Challenges in AI Auditing</h3>
+<p>Several challenges complicate AI audit practice.</p>
+<p>Technical complexity requires auditors to understand AI systems deeply enough to evaluate them meaningfully. This requires technical expertise that traditional auditors may lack.</p>
+<p>Access limitations constrain what auditors can examine. Organizations may not provide full access to training data, model parameters, or system operations. Black-box testing may be all that is possible.</p>
+<p>Dynamic systems change over time. An audit conducted at one point may not reflect system behavior after subsequent updates or learning.</p>
+<p>Standard setting is incomplete. Without agreed standards for what constitutes adequate AI, auditors must make judgment calls that may be contested.</p>
+<p>Assurance limitations mean auditors cannot guarantee AI system behavior. Audit findings reflect what was observed during the audit period using available methods; they cannot promise future performance.</p>
+</section>
+<section id="emerging-frameworks" class="level3">
+<h3 class="anchored" data-anchor-id="emerging-frameworks">Emerging Frameworks</h3>
+<p>Several efforts aim to develop AI auditing frameworks.</p>
+<p>The NIST AI Risk Management Framework provides a structure for AI risk management that auditors can use as a reference, though it is not specifically an audit standard.</p>
+<p>ISO/IEC 42001 provides requirements for AI management systems that can be audited for conformance.</p>
+<p>Regulatory requirements like the EU AI Act create audit-relevant obligations that auditors can verify.</p>
+<p>Industry initiatives are developing sector-specific audit frameworks, such as frameworks for AI in financial services or healthcare.</p>
+</section>
+<section id="implications-for-governance-1" class="level3">
+<h3 class="anchored" data-anchor-id="implications-for-governance-1">Implications for Governance</h3>
+<p>Governance professionals should prepare for increased audit scrutiny of AI systems.</p>
+<p>Documentation practices should produce audit-ready records. If auditors will want to see evidence of testing, monitoring, incident response, and governance processes, that evidence should exist and be accessible.</p>
+<p>Internal audit should build AI audit capabilities or ensure access to external expertise. As AI governance matures, internal audit attention to AI will increase.</p>
+<p>External audit relationships should address AI. Whether through existing audit relationships or specialized AI auditors, organizations should have access to independent AI assurance.</p>
+<p>Audit readiness should be part of AI governance maturity. Organizations should periodically assess whether their AI systems and practices could withstand audit scrutiny.</p>
+</section>
+</section>
+<section id="workforce-transformation" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="workforce-transformation"><span class="header-section-number">7.5</span> Workforce Transformation</h2>
+<p>AI is transforming how work gets done, affecting both how workers use AI and which work AI might displace. These workforce implications are significant ongoing issues for organizations and society.</p>
+<section id="ai-augmentation" class="level3">
+<h3 class="anchored" data-anchor-id="ai-augmentation">AI Augmentation</h3>
+<p>AI increasingly augments worker capabilities rather than replacing workers entirely. Knowledge workers use AI assistants for research, writing, and analysis. Customer service workers use AI to handle routine inquiries while focusing on complex issues. Creative workers use AI for ideation and production assistance.</p>
+<p>Effective AI augmentation requires attention to how AI and humans work together. Poor integration can frustrate workers, reduce quality, or create new risks. Effective integration amplifies human capabilities while maintaining appropriate human judgment.</p>
+<p>Training workers to use AI effectively becomes an organizational priority. Workers need to understand what AI can and cannot do, how to evaluate AI outputs critically, when to rely on AI and when to exercise independent judgment, and how to identify when AI is making errors.</p>
+</section>
+<section id="workforce-displacement" class="level3">
+<h3 class="anchored" data-anchor-id="workforce-displacement">Workforce Displacement</h3>
+<p>AI may reduce demand for certain types of work, potentially displacing workers. While economists debate long-term employment effects, transition disruptions are real.</p>
+<p>Some tasks are more susceptible to AI displacement: routine cognitive work, pattern matching, data processing, and content generation among them. Work requiring physical presence, complex interpersonal interaction, novel problem-solving, and creative judgment may be more resistant.</p>
+<p>Organizations face choices about how to manage AI’s workforce impacts. Some approaches prioritize automation efficiency; others prioritize worker retention and transition. Organizational values, stakeholder expectations, and strategic considerations all inform these choices.</p>
+</section>
+<section id="worker-well-being" class="level3">
+<h3 class="anchored" data-anchor-id="worker-well-being">Worker Well-being</h3>
+<p>AI in the workplace affects worker well-being in ways governance should consider.</p>
+<p>Surveillance concerns arise when AI monitors worker performance, communications, or behavior. Intensive monitoring can feel dehumanizing and may affect mental health and job satisfaction.</p>
+<p>Autonomy concerns arise when AI directs work rather than supporting it. Workers who feel controlled by algorithms may experience reduced job satisfaction and engagement.</p>
+<p>Skill concerns arise when AI handles tasks that previously developed worker capabilities. Workers may lose skills they do not practice, potentially reducing their value and adaptability.</p>
+<p>Job quality concerns arise when AI changes the nature of work. Work that was varied may become routine; work that was meaningful may become mechanical.</p>
+<p>Governance should consider these impacts alongside efficiency gains. Sustainable AI adoption requires attention to the humans who work alongside AI.</p>
+</section>
+<section id="implications-for-governance-2" class="level3">
+<h3 class="anchored" data-anchor-id="implications-for-governance-2">Implications for Governance</h3>
+<p>Workforce considerations should be part of AI governance.</p>
+<p>Workforce impact assessment should be part of evaluating proposed AI applications. How will this AI affect workers? What training or support do they need? What displacement might occur?</p>
+<p>Worker voice should inform AI decisions. Workers who will use or be affected by AI systems have perspectives that governance should consider.</p>
+<p>Transition support should be part of AI deployment planning. When AI will displace work, plans should address affected workers.</p>
+<p>Well-being monitoring should track AI’s effects on workers. If AI is harming well-being, adjustments may be needed.</p>
+</section>
+</section>
+<section id="opt-out-rights-and-alternatives" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="opt-out-rights-and-alternatives"><span class="header-section-number">7.6</span> Opt-Out Rights and Alternatives</h2>
+<p>As AI becomes ubiquitous, questions arise about whether and how individuals can avoid AI interactions. Some people prefer not to interact with AI for various reasons: distrust of technology, desire for human connection, concerns about privacy, or simply personal preference.</p>
+<section id="the-opt-out-challenge" class="level3">
+<h3 class="anchored" data-anchor-id="the-opt-out-challenge">The Opt-Out Challenge</h3>
+<p>Providing meaningful opt-out is challenging when AI is deeply integrated into products and services.</p>
+<p>Practical challenges arise when AI is embedded in systems rather than offered as a separate option. If a company uses AI for customer service, offering a non-AI alternative may require maintaining parallel systems.</p>
+<p>Quality differences may exist between AI and non-AI alternatives. If the AI option is faster, more accurate, or otherwise better, the non-AI alternative may be inferior in ways that disadvantage those who opt out.</p>
+<p>Discrimination concerns arise if opt-out is harder for some populations. If opting out requires technical sophistication, digital access, or awareness that AI is involved, some people may be unable to exercise opt-out even if they would prefer to.</p>
+<p>Business model challenges arise when AI is essential to the service. If AI enables pricing, availability, or features that make the service viable, requiring non-AI alternatives may not be economically feasible.</p>
+</section>
+<section id="legal-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="legal-requirements">Legal Requirements</h3>
+<p>Some legal frameworks require alternatives to AI processing.</p>
+<p>GDPR Article 22 provides the right not to be subject to decisions based solely on automated processing with legal or significant effects. This right includes the ability to obtain human intervention. However, significant exceptions apply, and what constitutes meaningful human intervention is not fully defined.</p>
+<p>Emerging laws in some jurisdictions require human alternatives in specific contexts. For example, some laws require human review options for AI in employment decisions.</p>
+<p>Consumer protection principles may require that essential services not be conditioned entirely on AI interaction, though this principle is not universally established.</p>
+</section>
+<section id="implications-for-governance-3" class="level3">
+<h3 class="anchored" data-anchor-id="implications-for-governance-3">Implications for Governance</h3>
+<p>Governance should address opt-out and alternatives where appropriate.</p>
+<p>Assessment should identify where individuals might reasonably want to avoid AI interaction. Consequential decisions, sensitive contexts, and situations where human connection matters may warrant alternatives.</p>
+<p>Design should enable alternatives where they are appropriate. Building in human pathways from the start is easier than retrofitting them later.</p>
+<p>Communication should inform individuals about AI involvement so they can make informed choices. Transparency enables autonomy even if full opt-out is not feasible.</p>
+<p>Equity should ensure that alternatives do not disadvantage those who use them. If opting out of AI means worse service, the alternative is not meaningful.</p>
+</section>
+</section>
+<section id="preventive-governance-and-the-limits-of-point-in-time-consent" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="preventive-governance-and-the-limits-of-point-in-time-consent"><span class="header-section-number">7.7</span> Preventive Governance and the Limits of Point-in-Time Consent</h2>
+<p>Much of contemporary AI governance operates reactively. Organizations deploy systems, regulators respond with rules, auditors examine compliance after the fact, and enforcement arrives when harms have already occurred. This pattern—build first, govern later—has deep roots in technology regulation. But AI systems present characteristics that make reactive governance structurally inadequate.</p>
+<section id="the-reactive-governance-problem" class="level3">
+<h3 class="anchored" data-anchor-id="the-reactive-governance-problem">The Reactive Governance Problem</h3>
+<p>Consider the typical consent interaction: a user clicks “I agree” to terms permitting data use for “service improvement and AI training.” At that moment, neither party can fully specify what this means. The organization doesn’t know what models it will build in three years, what capabilities those models will have, or how the data might combine with other sources. The user certainly doesn’t know. The consent is real, but what exactly has been consented to?</p>
+<p>This is not a disclosure problem that better privacy policies can solve. It is a temporal problem: the meaning of the agreement is constituted by future events that haven’t happened yet.</p>
+</section>
+<section id="three-conditions-that-undermine-point-in-time-consent" class="level3">
+<h3 class="anchored" data-anchor-id="three-conditions-that-undermine-point-in-time-consent">Three Conditions That Undermine Point-in-Time Consent</h3>
+<p>Traditional consent works reasonably well when you know what you’re agreeing to, when you can change your mind later, and when the consequences are bounded. AI and data systems often fail all three conditions.</p>
+<p><strong>Practical irreversibility.</strong> Once data enters training pipelines, the effects propagate in ways that are difficult or impossible to undo. A model trained on your data doesn’t have a “delete this person’s contribution” button. Derived inferences, downstream models, and knowledge representations persist even after source data deletion. The GDPR’s right to erasure runs into technical limits when erasure cannot meaningfully reach the artifacts that matter.</p>
+<p><strong>Compounding downstream value.</strong> Data and model capabilities compound over time. Your browsing history from 2019 might be marginally useful alone, but combined with millions of other users’ data, processed through increasingly sophisticated models, and integrated into systems you’ve never heard of, it becomes part of something far more valuable—and potentially more consequential—than anything you could have anticipated. The value extracted grows geometrically while any compensation or control you retained remains fixed at the moment of agreement.</p>
+<p><strong>Temporally unknowable consequences.</strong> Future uses depend on technologies that don’t exist yet, business models not yet invented, and regulatory environments not yet established. When you agreed to let a photo app use your images in 2018, you weren’t agreeing to facial recognition training—that use emerged from later capabilities and decisions. The downstream meaning of consent is constructed by subsequent events, not merely revealed.</p>
+<p>When all three conditions hold, consent becomes a weak legitimating mechanism. It finalizes authority before anyone can know what that authority will mean.</p>
+</section>
+<section id="from-reactive-to-preventive-governance" class="level3">
+<h3 class="anchored" data-anchor-id="from-reactive-to-preventive-governance">From Reactive to Preventive Governance</h3>
+<p>Preventive governance doesn’t abandon consent—it restructures how and when authority settles. Instead of treating agreement as a single legitimating event, preventive governance distributes authorization across time, binding it to actual uses rather than hypothetical possibilities.</p>
+<p>The core insight is that if the problem is temporal, the solution must be temporal. Governance must shape the conditions under which authority becomes final, not merely respond after finalization has occurred.</p>
+<p>This is not paternalism. The mechanisms don’t override user choices or prohibit transactions. They create structured opportunities for reconsideration as circumstances change, ensuring that authority settles only when its meaning can be meaningfully understood.</p>
+</section>
+<section id="mechanisms-for-preventive-governance" class="level3">
+<h3 class="anchored" data-anchor-id="mechanisms-for-preventive-governance">Mechanisms for Preventive Governance</h3>
+<p>Several design patterns can implement preventive governance in practice.</p>
+<p><strong>Phased and staged permissions.</strong> Rather than requesting all possible permissions at onboarding, systems can stage authorization to match actual use categories. A minimal tier covers what’s strictly necessary for service delivery. Additional tiers—for personalization, for model training, for external sharing—activate only when those uses actually arise, with specific disclosure tied to concrete purposes rather than speculative future possibilities. This approach aligns authority settlement with actual use. Users aren’t asked to authorize model training until the organization actually wants to use their data for training, at which point both parties have clearer understanding of what’s involved.</p>
+<p><strong>Time-bounded authority with renewal.</strong> Permissions, especially for high-uncertainty uses, can expire unless renewed. Rolling renewal cycles—annually for training rights, more frequently for sharing permissions—prevent “perpetual consent” and force periodic re-legitimation as contexts evolve. This doesn’t mean bombarding users with renewal requests. Low-risk operational permissions remain stable. The renewal requirement applies to high-risk, high-uncertainty authorizations where the gap between consent time and consequence time is largest.</p>
+<p><strong>Usage-contingent escalation.</strong> Systems can detect when usage patterns change materially and require re-authorization at the moment of change. Triggers might include: data entering training pipelines for the first time, new inference categories being created (especially sensitive attributes), sharing with new recipient classes, or use in high-stakes decision support. This couples consent to concrete use rather than hypothetical possibility. The user who agreed to personalization isn’t automatically enrolled in model training—that transition requires a new authorization tied to the specific new use.</p>
+<p><strong>Renegotiation windows.</strong> When downstream uses change materially, users can be offered renegotiation rather than binary accept/exit choices. Options might include accepting revised terms, accepting with constraints, accepting with compensation alternatives, or declining expanded uses while retaining core service access. This makes authority settlement conditional rather than absolute. Material changes reopen the legitimacy question rather than hiding behind original consent.</p>
+<p><strong>Quarantine and cooling-off periods.</strong> For high-irreversibility transfers, a deliberate delay before authority becomes final creates space for reflection. Data might enter a quarantine buffer before inclusion in training corpora. Higher permission tiers might activate only after a waiting period following initial grant. This adds temporal structure without prohibiting the transaction. It acknowledges that the moment of agreement is often not the best moment for final settlement.</p>
+</section>
+<section id="implementing-preventive-governance" class="level3">
+<h3 class="anchored" data-anchor-id="implementing-preventive-governance">Implementing Preventive Governance</h3>
+<p>These mechanisms require both technical and organizational implementation.</p>
+<p><strong>Technical requirements</strong> include: consent state machines that track authorization across tiers and time, logging that links downstream uses to consent state at time of use, trigger detection for usage-contingent escalation, renewal scheduling and notification systems, and quarantine buffers for high-risk processing.</p>
+<p><strong>Organizational requirements</strong> include: governance roles with authority over tier definitions and trigger criteria, processes for reviewing material changes and renegotiation terms, integration with model lifecycle governance so that training gates connect to consent states, and audit capabilities that can verify consent-to-use linkage.</p>
+<p>The RACI matrix for preventive governance typically involves:</p>
+<ul>
+<li><strong>Product teams</strong> defining staged permissions and user flows</li>
+<li><strong>Privacy functions</strong> defining risk tiers and decay schedules</li>
+<li><strong>Legal</strong> ensuring contract terms accommodate staged authority</li>
+<li><strong>AI governance or model risk</strong> connecting model lifecycle gates to consent triggers</li>
+<li><strong>Data engineering</strong> building separate processing paths and traceability infrastructure</li>
+</ul>
+</section>
+<section id="tensions-and-tradeoffs" class="level3">
+<h3 class="anchored" data-anchor-id="tensions-and-tradeoffs">Tensions and Tradeoffs</h3>
+<p>Preventive governance is not without costs or tensions.</p>
+<p><strong>Friction concerns.</strong> Critics argue that staged permissions and renewal requirements add friction that impedes adoption and innovation. The response is proportionality: low-risk permissions remain low-friction, while high-risk authorizations bear appropriately higher process costs. The alternative—bundling all permissions into a single low-friction click—merely shifts costs onto users who bear consequences they couldn’t anticipate.</p>
+<p><strong>Technical complexity.</strong> Implementing consent state machines, trigger detection, and use-to-consent traceability requires engineering investment. But this infrastructure increasingly aligns with regulatory expectations. The EU AI Act’s logging and documentation requirements, deployer transparency obligations, and incident reporting duties all assume traceability that preventive governance also requires.</p>
+<p><strong>Competitive dynamics.</strong> Organizations that implement preventive governance may face competitive disadvantage against those that extract maximum permissions through simpler flows. This is a collective action problem that regulation can address—but organizations with strong governance postures may also benefit from trust premiums and reduced compliance risk.</p>
+<p><strong>Imperfect reversibility.</strong> Even with quarantine buffers and staged rollout, some irreversibility remains. Models can’t always be untrained. Preventive governance reduces harm from premature settlement but doesn’t guarantee full reversibility. Honesty about these limits is part of the transparency that preventive governance demands.</p>
+</section>
+<section id="implications-for-ai-governance-professionals" class="level3">
+<h3 class="anchored" data-anchor-id="implications-for-ai-governance-professionals">Implications for AI Governance Professionals</h3>
+<p>For practitioners, preventive governance suggests several action areas.</p>
+<p><strong>Assess current consent architecture.</strong> Where does your organization rely on point-in-time consent for uses whose meaning will emerge later? What permissions bundle together uses with very different risk profiles?</p>
+<p><strong>Identify high-risk authorization gaps.</strong> Which data uses involve irreversibility, compounding value, and unknowable downstream consequences? These are candidates for staged permissions, time bounds, or escalation triggers.</p>
+<p><strong>Connect consent to model lifecycle.</strong> Does your model governance process know what consent state applies to training data? Can you verify that models in production were trained under appropriate authorization?</p>
+<p><strong>Design for renegotiation.</strong> When your organization’s capabilities or uses change materially, do affected individuals have meaningful options beyond accept-all or exit-entirely?</p>
+<p><strong>Build traceability.</strong> Can you demonstrate, for any given downstream use, what consent state authorized it and when? This capability increasingly matters for regulatory compliance and will matter more.</p>
+<p>Preventive governance represents a maturation of the consent paradigm—not its abandonment. It acknowledges that legitimacy requires more than a moment of agreement when consequences unfold over time. For AI governance professionals, this framing offers both a diagnostic lens for current gaps and a design orientation for more durable governance architectures.</p>
+</section>
+</section>
+<section id="looking-forward" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="looking-forward"><span class="header-section-number">7.8</span> Looking Forward</h2>
+<p>AI governance will continue to evolve as technology advances, regulation matures, and organizational practices develop. Several directions seem likely.</p>
+<section id="regulatory-convergence-and-divergence" class="level3">
+<h3 class="anchored" data-anchor-id="regulatory-convergence-and-divergence">Regulatory Convergence and Divergence</h3>
+<p>Some regulatory convergence is likely as jurisdictions learn from each other and international coordination efforts continue. Core concepts like risk-based regulation, transparency requirements, and human oversight are appearing across jurisdictions.</p>
+<p>Divergence will also persist as different jurisdictions prioritize different values and approaches. The EU’s comprehensive regulatory approach, China’s sector-specific regulations, and the United States’ fragmented approach reflect different governance philosophies that may not converge.</p>
+<p>Organizations operating globally will need governance approaches that can accommodate multiple regulatory frameworks while maintaining coherent practices.</p>
+</section>
+<section id="maturing-standards-and-assurance" class="level3">
+<h3 class="anchored" data-anchor-id="maturing-standards-and-assurance">Maturing Standards and Assurance</h3>
+<p>AI governance standards will continue to develop and mature. ISO standards, industry frameworks, and regulatory requirements will provide increasingly detailed guidance on what good AI governance looks like.</p>
+<p>AI assurance and auditing will professionalize. Standards for AI audits will develop, professional credentials will emerge, and independent assurance will become more common and more meaningful.</p>
+<p>Maturity models will help organizations assess their AI governance capabilities and identify improvement priorities.</p>
+</section>
+<section id="technical-advances-in-governance" class="level3">
+<h3 class="anchored" data-anchor-id="technical-advances-in-governance">Technical Advances in Governance</h3>
+<p>Technical approaches to governance will advance. Explainability techniques will improve, making AI decisions more interpretable. Fairness tools will become more sophisticated and widely deployed. Privacy-enhancing technologies will enable AI on sensitive data with stronger protections.</p>
+<p>AI will be used to govern AI. Automated compliance checking, continuous testing, and monitoring systems will use AI to provide governance at the speed and scale that AI systems require.</p>
+<p>However, technical solutions will not eliminate the need for human judgment on governance questions. Technical tools can support governance; they cannot replace the human deliberation that governance ultimately requires.</p>
+</section>
+<section id="organizational-evolution" class="level3">
+<h3 class="anchored" data-anchor-id="organizational-evolution">Organizational Evolution</h3>
+<p>AI governance will become more embedded in organizational operations. Separate AI governance functions may merge into enterprise risk management, privacy, or compliance functions as AI governance becomes normalized.</p>
+<p>AI literacy will become a basic organizational competency. As AI becomes ubiquitous, everyone will need some understanding of AI capabilities, limitations, and appropriate use.</p>
+<p>Governance by design will become standard practice. Building governance into AI development from the start, rather than adding it afterward, will become the expected approach.</p>
+</section>
+</section>
+<section id="chapter-summary" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">7.9</span> Chapter Summary</h2>
+<p>This chapter examined ongoing issues where AI governance questions remain unsettled and future directions where the field may evolve.</p>
+<p>Liability frameworks for AI harms remain unclear as traditional doctrines adapt to AI’s distinctive characteristics. Causation, multi-party contribution, foreseeability, and categorical fit all present challenges. The EU is developing AI-specific liability rules; other jurisdictions are working within existing frameworks. Governance should emphasize documentation, insurance, contractual allocation, and risk-proportionate use.</p>
+<p>Intellectual property and AI raises questions about training data copyright, AI-generated output copyrightability, patent inventorship, and trade secret protection. Organizations should understand the intellectual property implications of their AI activities and prepare for evolving legal treatment.</p>
+<p>The AI auditing profession is emerging but immature. Technical complexity, access limitations, dynamic systems, incomplete standards, and assurance limitations all challenge audit practice. Governance should prepare for increased audit scrutiny through documentation, internal audit capability, external audit relationships, and audit readiness.</p>
+<p>Workforce transformation includes AI augmentation of workers, potential displacement, and effects on worker well-being. Governance should assess workforce impacts, incorporate worker voice, plan transition support, and monitor well-being.</p>
+<p>Opt-out rights and alternatives present challenges when AI is deeply integrated. Legal requirements in some contexts mandate human alternatives. Governance should assess where alternatives are appropriate, design to enable them, communicate about AI involvement, and ensure equity.</p>
+<p>Preventive governance addresses the structural limitations of point-in-time consent for AI systems characterized by irreversibility, compounding value, and unknowable downstream consequences. Mechanisms including phased permissions, time-bounded authority, usage-contingent escalation, renegotiation windows, and quarantine periods can distribute authorization across time rather than finalizing it prematurely. This represents an emerging area where governance professionals can lead organizational practice.</p>
+<p>Looking forward, regulatory convergence and divergence will both continue, standards and assurance will mature, technical governance capabilities will advance, and AI governance will become more embedded in organizational operations.</p>
+</section>
+<section id="review-questions" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">7.10</span> Review Questions</h2>
+<ol type="1">
+<li><p>An organization is evaluating an AI application that could cause significant harm to individuals if it malfunctions. The legal team notes that liability rules for AI harms are unsettled. How should this uncertainty affect the governance decision?</p></li>
+<li><p>A company is using a generative AI system to produce marketing content. The company wants to claim copyright in this content to prevent competitors from copying it. What intellectual property considerations should inform this strategy?</p></li>
+<li><p>An external auditor is conducting an AI audit of a company’s customer service chatbot. The company refuses to provide access to the chatbot’s training data, citing competitive sensitivity. How might the auditor respond to this access limitation?</p></li>
+<li><p>An organization is deploying an AI system that will automate work currently performed by customer service representatives. Some workers will be retrained for other roles; others may be laid off. What workforce governance considerations apply?</p></li>
+<li><p>A healthcare organization uses AI to analyze patient symptoms and recommend treatment plans. Some patients express preference for human-only care without AI involvement. How should the organization address this preference?</p></li>
+<li><p>A social media company’s terms of service include broad consent for data use in AI training, obtained when users sign up. Three years later, the company develops new AI capabilities that can infer sensitive attributes from user content—capabilities that didn’t exist when consent was obtained. What preventive governance mechanisms might have addressed this situation, and what should the company do now?</p></li>
+</ol>
+</section>
+<section id="references" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="references"><span class="header-section-number">7.11</span> References</h2>
+<p>European Commission. Proposal for a Directive on adapting non-contractual civil liability rules to artificial intelligence (AI Liability Directive). COM(2022) 496, 2022.</p>
+<p>U.S. Copyright Office. Copyright Registration Guidance: Works Containing Material Generated by Artificial Intelligence. Federal Register Vol. 88, No.&nbsp;51, 2023.</p>
+<p>Raji, Inioluwa Deborah, et al.&nbsp;“Closing the AI Accountability Gap: Defining an End-to-End Framework for Internal Algorithmic Auditing.” FAT* ’20: Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency, 2020.</p>
+<p>Mökander, Jakob, et al.&nbsp;“Auditing large language models: a three-layered approach.” AI and Ethics (2023).</p>
+<p>Acemoglu, Daron, and Pascual Restrepo. “Tasks, Automation, and the Rise in US Wage Inequality.” Econometrica 90, no. 5 (2022).</p>
+<p>International Organization for Standardization. ISO/IEC 42001:2023 Information technology — Artificial intelligence — Management system, 2023.</p>
+<p>IAPP. AIGP Body of Knowledge, Version 2.0.1. International Association of Privacy Professionals, 2025.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/06-execution.html" class="pagination-link" aria-label="Governance in Motion">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Governance in Motion</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/08-appendix-a.html" class="pagination-link" aria-label="Frameworks and Templates">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Frameworks and Templates</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <defs>
+    <linearGradient id="headerGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a365d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c5282;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="indivGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e53e3e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c53030;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="groupGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#dd6b20;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c05621;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="orgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d69e2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b7791f;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="socGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3182ce;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2b6cb0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="envGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#38a169;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2f855a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#718096"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="550" fill="#f7fafc"/>
+  
+  <!-- Title -->
+  <rect x="0" y="0" width="900" height="50" fill="url(#headerGrad2)"/>
+  <text x="450" y="33" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">Figure 1.2: AI Harms Taxonomy</text>
+  
+  <!-- Individual Harms -->
+  <rect x="30" y="70" width="195" height="200" rx="8" fill="url(#indivGrad)" filter="url(#shadow2)"/>
+  <text x="127" y="95" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">INDIVIDUAL</text>
+  <text x="127" y="112" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">HARMS</text>
+  
+  <rect x="40" y="125" width="175" height="135" rx="4" fill="white" fill-opacity="0.95"/>
+  <text x="50" y="145" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#c53030">Examples:</text>
+  <text x="50" y="160" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Wrongful denial of credit</text>
+  <text x="50" y="173" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Missed job opportunities</text>
+  <text x="50" y="186" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Incorrect medical diagnosis</text>
+  <text x="50" y="199" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• False arrest from facial rec.</text>
+  <text x="50" y="212" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Privacy violations</text>
+  <text x="50" y="230" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#c53030">Impact:</text>
+  <text x="50" y="245" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">Direct, concrete harm to</text>
+  <text x="50" y="256" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">specific identifiable persons</text>
+  
+  <!-- Group Harms -->
+  <rect x="245" y="70" width="195" height="200" rx="8" fill="url(#groupGrad)" filter="url(#shadow2)"/>
+  <text x="342" y="95" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">GROUP</text>
+  <text x="342" y="112" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">HARMS</text>
+  
+  <rect x="255" y="125" width="175" height="135" rx="4" fill="white" fill-opacity="0.95"/>
+  <text x="265" y="145" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#c05621">Examples:</text>
+  <text x="265" y="160" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• COMPAS recidivism bias</text>
+  <text x="265" y="173" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Amazon hiring tool gender bias</text>
+  <text x="265" y="186" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Healthcare algorithm racial bias</text>
+  <text x="265" y="199" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Predictive policing cycles</text>
+  <text x="265" y="212" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Facial recognition disparities</text>
+  <text x="265" y="230" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#c05621">Impact:</text>
+  <text x="265" y="245" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">Systematic disadvantage to</text>
+  <text x="265" y="256" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">protected or vulnerable groups</text>
+  
+  <!-- Organizational Harms -->
+  <rect x="460" y="70" width="195" height="200" rx="8" fill="url(#orgGrad)" filter="url(#shadow2)"/>
+  <text x="557" y="95" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">ORGANIZATIONAL</text>
+  <text x="557" y="112" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">HARMS</text>
+  
+  <rect x="470" y="125" width="175" height="135" rx="4" fill="white" fill-opacity="0.95"/>
+  <text x="480" y="145" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#b7791f">Examples:</text>
+  <text x="480" y="160" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Reputational damage</text>
+  <text x="480" y="173" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Regulatory penalties (up to 7%)</text>
+  <text x="480" y="186" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Litigation and liability</text>
+  <text x="480" y="199" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Failed AI project costs</text>
+  <text x="480" y="212" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Cultural/morale impacts</text>
+  <text x="480" y="230" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#b7791f">Impact:</text>
+  <text x="480" y="245" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">Financial, legal, and strategic</text>
+  <text x="480" y="256" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">harm to deploying organizations</text>
+  
+  <!-- Societal Harms -->
+  <rect x="675" y="70" width="195" height="200" rx="8" fill="url(#socGrad)" filter="url(#shadow2)"/>
+  <text x="772" y="95" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">SOCIETAL</text>
+  <text x="772" y="112" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">HARMS</text>
+  
+  <rect x="685" y="125" width="175" height="135" rx="4" fill="white" fill-opacity="0.95"/>
+  <text x="695" y="145" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#2b6cb0">Examples:</text>
+  <text x="695" y="160" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• AI-generated misinformation</text>
+  <text x="695" y="173" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Mass surveillance capabilities</text>
+  <text x="695" y="186" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Labor market disruption</text>
+  <text x="695" y="199" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Power concentration</text>
+  <text x="695" y="212" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Democratic erosion</text>
+  <text x="695" y="230" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#2b6cb0">Impact:</text>
+  <text x="695" y="245" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">Broad, diffuse effects on</text>
+  <text x="695" y="256" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">social institutions and norms</text>
+  
+  <!-- Cascade Arrows -->
+  <line x1="225" y1="170" x2="243" y2="170" stroke="#718096" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="440" y1="170" x2="458" y2="170" stroke="#718096" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="655" y1="170" x2="673" y2="170" stroke="#718096" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Cascade Label -->
+  <text x="450" y="295" font-family="Arial, sans-serif" font-size="11" fill="#718096" text-anchor="middle" font-style="italic">Harms can cascade: individual harms aggregate to group harms, which affect organizations and ultimately society</text>
+  
+  <!-- Environmental Harms - Cross-cutting -->
+  <rect x="150" y="320" width="600" height="110" rx="8" fill="url(#envGrad)" filter="url(#shadow2)"/>
+  <text x="450" y="350" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">ENVIRONMENTAL HARMS (Cross-Cutting)</text>
+  
+  <rect x="165" y="365" width="270" height="55" rx="4" fill="white" fill-opacity="0.95"/>
+  <text x="175" y="385" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#2f855a">Direct Impacts:</text>
+  <text x="175" y="400" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Energy consumption of training/inference</text>
+  <text x="175" y="413" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Water usage for data center cooling</text>
+  
+  <rect x="465" y="365" width="270" height="55" rx="4" fill="white" fill-opacity="0.95"/>
+  <text x="475" y="385" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#2f855a">Indirect Impacts:</text>
+  <text x="475" y="400" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• Hardware manufacturing emissions</text>
+  <text x="475" y="413" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">• E-waste from rapid hardware turnover</text>
+  
+  <!-- Key Insight Box -->
+  <rect x="150" y="450" width="600" height="80" rx="8" fill="#edf2f7" stroke="#a0aec0" stroke-width="1"/>
+  <text x="450" y="475" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1a365d" text-anchor="middle">Key Governance Insight</text>
+  <text x="450" y="495" font-family="Arial, sans-serif" font-size="10" fill="#4a5568" text-anchor="middle">AI governance must address harms at all levels. Individual fairness testing catches personal harms;</text>
+  <text x="450" y="510" font-family="Arial, sans-serif" font-size="10" fill="#4a5568" text-anchor="middle">disaggregated analysis reveals group harms; risk management protects organizations;</text>
+  <text x="450" y="525" font-family="Arial, sans-serif" font-size="10" fill="#4a5568" text-anchor="middle">and responsible AI principles address broader societal and environmental impacts.</text>
+</svg>

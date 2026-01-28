@@ -1,0 +1,42 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Preface",
+    "section": "",
+    "text": "Preface\nThis book provides a comprehensive guide to AI governance for practitioners building and managing governance programs in organizations. It covers foundational concepts, legal and regulatory frameworks, governance across the AI lifecycle, multiple organizational perspectives, and emerging topics where the field continues to evolve.\nThe book takes a “governance first” approach, recognizing that governance foundations should precede large-scale AI adoption. It builds understanding systematically from foundational concepts through practical implementation, with worked examples, professional figures, and practical templates.\nTo open doors for all redeemed winners",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Preface",
+    "section": "License",
+    "text": "License\n\n\n\nCC BY-NC-ND 4.0\n\n\nThis work is licensed under a Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International License.\nYou are free to:\n\nShare — copy and redistribute the material in any medium or format\n\nUnder the following terms:\n\nAttribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.\nNonCommercial — You may not use the material for commercial purposes.\nNoDerivatives — If you remix, transform, or build upon the material, you may not distribute the modified material.\n\n© 2026 Shawn Ogunseye. All rights reserved under the terms of the CC BY-NC-ND 4.0 license.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#about-this-book",
+    "href": "index.html#about-this-book",
+    "title": "Preface",
+    "section": "About This Book",
+    "text": "About This Book\nEach chapter follows a consistent structure: an opening that situates the material, substantive prose explaining core concepts and their relationships, worked examples that demonstrate application, and end-of-chapter review questions that reinforce learning. Templates and detailed checklists appear in the appendices.\nA note on legal and regulatory content: AI governance operates within a rapidly evolving regulatory landscape. This book describes requirements and frameworks as they exist at the time of writing, but readers should verify current requirements in their jurisdictions.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use-this-book",
+    "href": "index.html#how-to-use-this-book",
+    "title": "Preface",
+    "section": "How to Use This Book",
+    "text": "How to Use This Book\nIf you have limited time, focus on Chapters 1 and 2 to understand foundational concepts and the regulatory landscape, then proceed to Chapter 5 on perspectives.\nFor comprehensive learning, read all chapters in sequence and work through the practice scenarios in Appendix C.\nFor practitioners, the appendix templates and worked examples provide starting points for organizational adaptation.",
+    "crumbs": [
+      "Preface"
+    ]
+  }
+]

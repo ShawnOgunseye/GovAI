@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Understanding How to Govern AI Development</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/04-deployment.html" rel="next">
+<link href="../chapters/02-legal-frameworks.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f8bb638c26fb726dc4c2c6db7be98b4e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-development.html">Governing the AI Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/03-development.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Development</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../cover.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../cover.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding the Foundations of AI Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-legal-frameworks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Understanding How Laws, Standards, and Frameworks Apply to AI</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Governing the AI Lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-development.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-deployment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Perspectives and Integration</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-lifecycle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Governance by Design Across the Lifecycle</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Topics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-execution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Governance in Motion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-future.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ongoing Issues and Future Directions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Frameworks and Templates</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Quick Reference Tables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practice Scenarios</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Glossary and Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../99-backmatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the Author</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">3.1</span> Introduction</a></li>
+  <li><a href="#defining-the-business-context-and-use-case" id="toc-defining-the-business-context-and-use-case" class="nav-link" data-scroll-target="#defining-the-business-context-and-use-case"><span class="header-section-number">3.2</span> Defining the Business Context and Use Case</a>
+  <ul class="collapse">
+  <li><a href="#use-case-intake-and-initial-assessment" id="toc-use-case-intake-and-initial-assessment" class="nav-link" data-scroll-target="#use-case-intake-and-initial-assessment">Use Case Intake and Initial Assessment</a></li>
+  <li><a href="#evaluating-appropriateness" id="toc-evaluating-appropriateness" class="nav-link" data-scroll-target="#evaluating-appropriateness">Evaluating Appropriateness</a></li>
+  <li><a href="#defining-success-criteria" id="toc-defining-success-criteria" class="nav-link" data-scroll-target="#defining-success-criteria">Defining Success Criteria</a></li>
+  </ul></li>
+  <li><a href="#conducting-impact-assessments" id="toc-conducting-impact-assessments" class="nav-link" data-scroll-target="#conducting-impact-assessments"><span class="header-section-number">3.3</span> Conducting Impact Assessments</a>
+  <ul class="collapse">
+  <li><a href="#types-of-impact-assessments" id="toc-types-of-impact-assessments" class="nav-link" data-scroll-target="#types-of-impact-assessments">Types of Impact Assessments</a></li>
+  <li><a href="#conducting-an-effective-assessment" id="toc-conducting-an-effective-assessment" class="nav-link" data-scroll-target="#conducting-an-effective-assessment">Conducting an Effective Assessment</a></li>
+  <li><a href="#when-to-conduct-assessments" id="toc-when-to-conduct-assessments" class="nav-link" data-scroll-target="#when-to-conduct-assessments">When to Conduct Assessments</a></li>
+  </ul></li>
+  <li><a href="#identifying-applicable-legal-requirements" id="toc-identifying-applicable-legal-requirements" class="nav-link" data-scroll-target="#identifying-applicable-legal-requirements"><span class="header-section-number">3.4</span> Identifying Applicable Legal Requirements</a>
+  <ul class="collapse">
+  <li><a href="#mapping-legal-obligations" id="toc-mapping-legal-obligations" class="nav-link" data-scroll-target="#mapping-legal-obligations">Mapping Legal Obligations</a></li>
+  <li><a href="#documenting-legal-requirements" id="toc-documenting-legal-requirements" class="nav-link" data-scroll-target="#documenting-legal-requirements">Documenting Legal Requirements</a></li>
+  </ul></li>
+  <li><a href="#designing-and-building-the-ai-model" id="toc-designing-and-building-the-ai-model" class="nav-link" data-scroll-target="#designing-and-building-the-ai-model"><span class="header-section-number">3.5</span> Designing and Building the AI Model</a>
+  <ul class="collapse">
+  <li><a href="#design-considerations-for-governance" id="toc-design-considerations-for-governance" class="nav-link" data-scroll-target="#design-considerations-for-governance">Design Considerations for Governance</a></li>
+  <li><a href="#model-selection-and-development" id="toc-model-selection-and-development" class="nav-link" data-scroll-target="#model-selection-and-development">Model Selection and Development</a></li>
+  <li><a href="#addressing-common-failure-modes" id="toc-addressing-common-failure-modes" class="nav-link" data-scroll-target="#addressing-common-failure-modes">Addressing Common Failure Modes</a></li>
+  </ul></li>
+  <li><a href="#governing-data-for-ai" id="toc-governing-data-for-ai" class="nav-link" data-scroll-target="#governing-data-for-ai"><span class="header-section-number">3.6</span> Governing Data for AI</a>
+  <ul class="collapse">
+  <li><a href="#data-quality" id="toc-data-quality" class="nav-link" data-scroll-target="#data-quality">Data Quality</a></li>
+  <li><a href="#data-provenance-and-lineage" id="toc-data-provenance-and-lineage" class="nav-link" data-scroll-target="#data-provenance-and-lineage">Data Provenance and Lineage</a></li>
+  <li><a href="#bias-in-training-data" id="toc-bias-in-training-data" class="nav-link" data-scroll-target="#bias-in-training-data">Bias in Training Data</a></li>
+  <li><a href="#data-documentation" id="toc-data-documentation" class="nav-link" data-scroll-target="#data-documentation">Data Documentation</a></li>
+  </ul></li>
+  <li><a href="#training-and-testing-ai-models" id="toc-training-and-testing-ai-models" class="nav-link" data-scroll-target="#training-and-testing-ai-models"><span class="header-section-number">3.7</span> Training and Testing AI Models</a>
+  <ul class="collapse">
+  <li><a href="#training-practices" id="toc-training-practices" class="nav-link" data-scroll-target="#training-practices">Training Practices</a></li>
+  <li><a href="#testing-and-validation" id="toc-testing-and-validation" class="nav-link" data-scroll-target="#testing-and-validation">Testing and Validation</a></li>
+  <li><a href="#documentation-of-testing" id="toc-documentation-of-testing" class="nav-link" data-scroll-target="#documentation-of-testing">Documentation of Testing</a></li>
+  </ul></li>
+  <li><a href="#documentation-throughout-development" id="toc-documentation-throughout-development" class="nav-link" data-scroll-target="#documentation-throughout-development"><span class="header-section-number">3.8</span> Documentation Throughout Development</a>
+  <ul class="collapse">
+  <li><a href="#model-cards" id="toc-model-cards" class="nav-link" data-scroll-target="#model-cards">Model Cards</a></li>
+  <li><a href="#technical-documentation-for-compliance" id="toc-technical-documentation-for-compliance" class="nav-link" data-scroll-target="#technical-documentation-for-compliance">Technical Documentation for Compliance</a></li>
+  <li><a href="#maintaining-documentation" id="toc-maintaining-documentation" class="nav-link" data-scroll-target="#maintaining-documentation">Maintaining Documentation</a></li>
+  </ul></li>
+  <li><a href="#release-monitoring-and-maintenance" id="toc-release-monitoring-and-maintenance" class="nav-link" data-scroll-target="#release-monitoring-and-maintenance"><span class="header-section-number">3.9</span> Release, Monitoring, and Maintenance</a>
+  <ul class="collapse">
+  <li><a href="#release-readiness-assessment" id="toc-release-readiness-assessment" class="nav-link" data-scroll-target="#release-readiness-assessment">Release Readiness Assessment</a></li>
+  <li><a href="#deployment-monitoring" id="toc-deployment-monitoring" class="nav-link" data-scroll-target="#deployment-monitoring">Deployment Monitoring</a></li>
+  <li><a href="#model-maintenance-and-retraining" id="toc-model-maintenance-and-retraining" class="nav-link" data-scroll-target="#model-maintenance-and-retraining">Model Maintenance and Retraining</a></li>
+  <li><a href="#incident-management" id="toc-incident-management" class="nav-link" data-scroll-target="#incident-management">Incident Management</a></li>
+  </ul></li>
+  <li><a href="#privacy-enhancing-technologies" id="toc-privacy-enhancing-technologies" class="nav-link" data-scroll-target="#privacy-enhancing-technologies"><span class="header-section-number">3.10</span> Privacy-Enhancing Technologies</a>
+  <ul class="collapse">
+  <li><a href="#anonymization-and-pseudonymization" id="toc-anonymization-and-pseudonymization" class="nav-link" data-scroll-target="#anonymization-and-pseudonymization">Anonymization and Pseudonymization</a></li>
+  <li><a href="#differential-privacy" id="toc-differential-privacy" class="nav-link" data-scroll-target="#differential-privacy">Differential Privacy</a></li>
+  <li><a href="#federated-learning" id="toc-federated-learning" class="nav-link" data-scroll-target="#federated-learning">Federated Learning</a></li>
+  <li><a href="#synthetic-data" id="toc-synthetic-data" class="nav-link" data-scroll-target="#synthetic-data">Synthetic Data</a></li>
+  </ul></li>
+  <li><a href="#chapter-3-summary" id="toc-chapter-3-summary" class="nav-link" data-scroll-target="#chapter-3-summary"><span class="header-section-number">3.11</span> Chapter 3 Summary</a></li>
+  <li><a href="#chapter-3-review-questions" id="toc-chapter-3-review-questions" class="nav-link" data-scroll-target="#chapter-3-review-questions"><span class="header-section-number">3.12</span> Chapter 3 Review Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3.13</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-development.html">Governing the AI Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/03-development.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Development</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Development</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">3.1</span> Introduction</h2>
+<p>The development of AI systems presents governance challenges that differ fundamentally from traditional software development. Where conventional software follows predetermined logic that developers explicitly specify, AI systems learn patterns from data in ways that may be difficult to predict or explain. Where traditional software testing can verify correct behavior against defined specifications, AI testing must grapple with probabilistic outputs, edge cases that cannot be fully enumerated, and performance that may vary across different populations. Where conventional software documentation describes what the code does, AI documentation must also address what the training data contains, what the model learned, and how performance was validated.</p>
+<p>This chapter examines governance throughout the AI development lifecycle, from initial conception of a use case through design, data preparation, model training, testing, documentation, and release. Each stage presents distinct governance considerations and requires specific controls. The chapter emphasizes that governance is not a gate at the end of development but a continuous practice woven throughout the process. Effective governance enables development by providing clarity about requirements and expectations, not merely constraining it through review and approval.</p>
+<p>The material in this chapter maps primarily to Domain III of the AIGP Body of Knowledge, which addresses the knowledge and skills required to govern the design, development, and validation of AI systems. Organizations may be developers creating AI systems for their own use, developers creating AI systems for others to deploy, or both. The governance practices described here apply regardless of whether the ultimate deployer is internal or external, though the specific documentation and communication requirements may differ.</p>
+<div id="fig-dev-lifecycle" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dev-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_3_1_dev_lifecycle.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dev-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: AI Development Lifecycle with Governance Touchpoints
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 3.1: AI Development Lifecycle with Governance Touchpoints — Governance activities mapped to each development phase with feedback loops.</em></p>
+</section>
+<section id="defining-the-business-context-and-use-case" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="defining-the-business-context-and-use-case"><span class="header-section-number">3.2</span> Defining the Business Context and Use Case</h2>
+<p>Every AI system begins with a purpose: a problem to solve, a decision to support, or a capability to provide. Governance starts here, before any data is collected or model is trained, by ensuring the proposed use case is appropriate, well-defined, and aligned with organizational values and risk tolerance.</p>
+<section id="use-case-intake-and-initial-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="use-case-intake-and-initial-assessment">Use Case Intake and Initial Assessment</h3>
+<p>Organizations should establish a formal process for proposing and evaluating potential AI use cases. This intake process serves multiple purposes: it creates visibility into AI activities across the organization, it ensures proposed uses receive appropriate scrutiny before resources are committed, and it builds an inventory of AI systems that supports ongoing governance and regulatory compliance.</p>
+<p>An effective intake process captures essential information about the proposed use case. What problem is the AI system intended to solve? What decisions will it make or support? Who will use the system and who will be affected by its outputs? What data will be required? What is the expected benefit, and how will success be measured? What are the potential risks if the system performs poorly or is misused?</p>
+<p>This information enables initial risk classification. Not every AI system requires the same level of governance intensity. A system that recommends internal meeting times based on calendar availability presents different risks than a system that influences hiring decisions or medical diagnoses. Organizations should establish risk tiers with corresponding governance requirements, directing intensive oversight toward high-risk applications while allowing lower-risk applications to proceed with lighter-touch governance.</p>
+<p>The EU AI Act’s risk classification provides one model for this tiering, distinguishing prohibited uses, high-risk uses requiring extensive compliance, limited-risk uses requiring transparency, and minimal-risk uses with no specific requirements. Organizations can adapt this framework to their context, potentially adding categories or adjusting criteria based on their specific risk landscape and values.</p>
+</section>
+<section id="evaluating-appropriateness" class="level3">
+<h3 class="anchored" data-anchor-id="evaluating-appropriateness">Evaluating Appropriateness</h3>
+<p>Beyond risk classification, organizations should evaluate whether AI is appropriate for the proposed use case at all. AI is not the right solution for every problem, and governance should help organizations avoid pursuing AI applications that are unlikely to succeed or that present risks disproportionate to their benefits. The question is not merely “can we include AI?” but “should we include AI?”—a distinction that separates sensible solutions from AI hype.</p>
+<p>Several questions help evaluate appropriateness. Is there sufficient quality data available to train an effective model? AI systems learn from data, and if relevant data does not exist, is not accessible, or is not representative of the population the system will serve, the AI project may be doomed from the start. Can the problem be adequately specified in terms an AI system can optimize? Some problems involve nuanced judgment that resists reduction to measurable objectives. Is the expected benefit proportionate to the risks and costs? Some AI applications provide marginal improvements over simpler alternatives while introducing significant new risks.</p>
+<p>Organizations should also consider whether the use case aligns with organizational values and public commitments. A company that has publicly committed to certain principles around AI use should evaluate proposed applications against those commitments. An organization operating in a sensitive domain should consider how stakeholders would perceive the proposed AI use if it became public.</p>
+</section>
+<section id="defining-success-criteria" class="level3">
+<h3 class="anchored" data-anchor-id="defining-success-criteria">Defining Success Criteria</h3>
+<p>Before development begins, organizations should define how success will be measured. What accuracy is required? What fairness criteria must be satisfied? What latency or throughput is needed for operational viability? What explainability is required for the intended users and affected individuals?</p>
+<p>These success criteria become requirements that guide development and testing. Without clear criteria defined upfront, development teams may optimize for metrics that do not reflect actual organizational needs, and governance reviews may lack clear standards against which to evaluate systems.</p>
+<p>Success criteria should address both technical performance and broader considerations. Technical criteria might include accuracy metrics, false positive and false negative rates, performance across different subgroups, response time, and scalability. Broader criteria might include user acceptance, integration with existing workflows, compliance with applicable regulations, and alignment with organizational values.</p>
+</section>
+</section>
+<section id="conducting-impact-assessments" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="conducting-impact-assessments"><span class="header-section-number">3.3</span> Conducting Impact Assessments</h2>
+<p>Impact assessments provide a structured process for identifying, analyzing, and planning to mitigate the risks an AI system may present. Various regulatory frameworks require impact assessments, and even where not legally mandated, they represent governance best practice for consequential AI systems.</p>
+<section id="types-of-impact-assessments" class="level3">
+<h3 class="anchored" data-anchor-id="types-of-impact-assessments">Types of Impact Assessments</h3>
+<p>Different types of impact assessments address different risk categories, and a given AI system may require multiple assessments.</p>
+<p>Data Protection Impact Assessments, required under the GDPR when processing is likely to result in high risk to individuals’ rights and freedoms, focus on privacy and data protection risks. They examine the lawfulness of processing, data minimization, data subject rights, and security measures. AI systems that process personal data for profiling, automated decision-making, or systematic monitoring typically trigger DPIA requirements.</p>
+<p>Algorithmic Impact Assessments focus specifically on risks arising from algorithmic decision-making, including discrimination, inaccuracy, lack of transparency, and inappropriate automation of human judgment. Various frameworks and emerging regulations specify algorithmic impact assessment requirements. Canada’s Algorithmic Impact Assessment Tool, while designed for government use, provides a model that private organizations can adapt.</p>
+<p>Fundamental Rights Impact Assessments, required under the EU AI Act for certain deployers of high-risk AI systems, examine impacts on fundamental rights including dignity, freedoms, equality, solidarity, citizens’ rights, and justice. These assessments consider how the AI system might affect the rights of individuals and groups.</p>
+<p>Human Rights Impact Assessments take a broader view, examining potential impacts on the full range of internationally recognized human rights. The UN Guiding Principles on Business and Human Rights provide a framework for human rights due diligence that organizations can apply to AI systems.</p>
+<p>Organizations may consolidate these assessments into a unified AI impact assessment process that addresses privacy, algorithmic, fundamental rights, and human rights considerations together, or they may maintain separate processes depending on organizational structure and regulatory requirements.</p>
+</section>
+<section id="conducting-an-effective-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="conducting-an-effective-assessment">Conducting an Effective Assessment</h3>
+<p>Effective impact assessments require input from diverse perspectives. Technical teams understand what the system does and how it works. Legal and compliance teams understand regulatory requirements and potential liabilities. Business teams understand the operational context and intended use. User experience researchers understand how people will interact with the system. Subject matter experts understand the domain in which the system operates. And affected communities can provide perspective on potential impacts that internal stakeholders might miss.</p>
+<p>The assessment should describe the AI system thoroughly: its purpose, how it works, what data it uses, what outputs it produces, and how those outputs will be used in decision-making. It should identify potential risks across categories including accuracy, fairness, transparency, privacy, security, and misuse. For each identified risk, it should assess likelihood and severity, considering both individual and aggregate impacts.</p>
+<p>The assessment should then identify measures to mitigate identified risks. These might include technical measures like bias testing and monitoring, process measures like human review requirements, or policy measures like use restrictions. For each mitigation measure, the assessment should evaluate expected effectiveness and any residual risk that remains after mitigation.</p>
+<p>Finally, the assessment should document the conclusion: whether to proceed with the AI system, proceed with modifications, or not proceed. This conclusion should be justified based on the analysis, and the decision-maker should be identified and accountable.</p>
+</section>
+<section id="when-to-conduct-assessments" class="level3">
+<h3 class="anchored" data-anchor-id="when-to-conduct-assessments">When to Conduct Assessments</h3>
+<p>Impact assessments should occur early in the development process, when findings can still influence design decisions, and should be updated as the system evolves. An assessment conducted only at the end of development, when significant resources have already been invested, creates pressure to approve systems regardless of identified risks.</p>
+<p>Organizations should also reassess when circumstances change materially. If the AI system is modified significantly, if it is deployed in new contexts, or if monitoring reveals unexpected impacts, the original assessment may no longer be valid. Governance processes should trigger reassessment when appropriate conditions are met.</p>
+<div id="fig-impact-assessment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-impact-assessment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_3_2_impact_assessment.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-impact-assessment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: Impact Assessment Process Flow
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 3.2: Impact Assessment Process Flow — From intake through risk classification, assessment, mitigation planning, and decision.</em></p>
+</section>
+</section>
+<section id="identifying-applicable-legal-requirements" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="identifying-applicable-legal-requirements"><span class="header-section-number">3.4</span> Identifying Applicable Legal Requirements</h2>
+<p>Before development proceeds, organizations must identify the legal requirements that apply to the proposed AI system. This analysis depends on the system’s purpose, the data it uses, the decisions it influences, the jurisdictions where it operates, and the roles the organization plays in the AI value chain.</p>
+<section id="mapping-legal-obligations" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-legal-obligations">Mapping Legal Obligations</h3>
+<p>The legal analysis should systematically consider applicable frameworks. Privacy laws apply when the system processes personal data. The GDPR applies if data subjects are in the EU; CCPA/CPRA applies if data subjects are California residents; other privacy laws apply based on their respective scope. Requirements may include lawful processing bases, data subject rights, data protection impact assessments, and cross-border transfer restrictions.</p>
+<p>Anti-discrimination laws apply when the system influences decisions in covered contexts. Employment decisions trigger Title VII and similar laws; credit decisions trigger ECOA and fair lending requirements; housing decisions trigger Fair Housing Act requirements. Compliance requires avoiding both intentional discrimination and facially neutral practices with unjustified disparate impact.</p>
+<p>Sector-specific regulations apply based on the domain. Healthcare AI may require FDA approval and HIPAA compliance. Financial services AI may require compliance with model risk management guidance. AI in education, transportation, telecommunications, or other regulated sectors must comply with applicable sectoral requirements.</p>
+<p>AI-specific regulations apply based on risk classification and jurisdictional reach. The EU AI Act applies to AI systems placed on the EU market or whose outputs are used in the EU. State laws like the Colorado AI Act apply to systems used in those jurisdictions. Requirements depend on whether the system is high-risk, general purpose, or another category.</p>
+</section>
+<section id="documenting-legal-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="documenting-legal-requirements">Documenting Legal Requirements</h3>
+<p>The legal analysis should produce clear documentation of applicable requirements that can guide development. This documentation should specify what laws apply, what obligations they impose, and how those obligations translate to concrete requirements for the AI system.</p>
+<p>For example, if GDPR Article 22 applies, requirements might include: provide meaningful information about the logic involved; implement safeguards including right to human intervention; conduct DPIA. If the EU AI Act high-risk requirements apply, requirements might include: implement risk management system; ensure data governance for training data; prepare technical documentation per Annex IV; implement logging capabilities; design for human oversight; achieve appropriate accuracy and robustness.</p>
+<p>This documentation becomes a checklist against which the developed system can be evaluated and provides evidence of compliance efforts if questions arise later.</p>
+</section>
+</section>
+<section id="designing-and-building-the-ai-model" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="designing-and-building-the-ai-model"><span class="header-section-number">3.5</span> Designing and Building the AI Model</h2>
+<p>With use case approved, impact assessment completed, and legal requirements identified, development proceeds to system design and model building. Governance during this phase ensures that design choices reflect governance requirements and that the model is built in ways that support transparency, testing, and ongoing oversight.</p>
+<section id="design-considerations-for-governance" class="level3">
+<h3 class="anchored" data-anchor-id="design-considerations-for-governance">Design Considerations for Governance</h3>
+<p>Design decisions made early in development have lasting governance implications. Certain design choices make systems easier to govern; others make governance more difficult.</p>
+<p>Explainability is significantly influenced by model architecture. Simpler models like linear regression or decision trees produce outputs that can be traced to specific input features, enabling meaningful explanations of individual decisions. Complex models like deep neural networks can achieve higher accuracy on some tasks but produce outputs that are difficult to explain. The appropriate tradeoff depends on the use case: a content recommendation system may tolerate opacity that would be unacceptable in a credit decisioning system.</p>
+<p>Modularity affects the ability to test, monitor, and update systems. A modular design that separates data preprocessing, model inference, and output processing allows each component to be tested and updated independently. A monolithic design that combines these functions makes targeted testing and improvement more difficult.</p>
+<p>Logging and auditability must be designed into systems from the start. What events should be logged? What information should be captured about each prediction or decision? How long should logs be retained? These questions are easier to answer and implement during initial design than to retrofit later.</p>
+<p>Human oversight mechanisms must be designed to support the required level of human involvement. If human review is required for certain decisions, the system should surface relevant information to support that review and provide mechanisms for humans to override or adjust system outputs.</p>
+</section>
+<section id="model-selection-and-development" class="level3">
+<h3 class="anchored" data-anchor-id="model-selection-and-development">Model Selection and Development</h3>
+<p>The choice of modeling approach should reflect both technical requirements and governance considerations. More complex models may achieve higher accuracy but at the cost of explainability and potentially increased risk of unexpected behavior. Simpler models may be easier to understand and govern but may not achieve required performance levels.</p>
+<p>Development practices should support governance objectives. Version control for code, data, and model artifacts enables traceability and rollback. Documentation during development, not just at the end, captures design decisions and their rationales. Code review and pair programming can catch issues early. Separation of training and validation data prevents overfitting and supports honest performance evaluation.</p>
+<p>Organizations developing multiple AI systems benefit from standardized development practices, shared infrastructure, and reusable components. These not only improve efficiency but also support governance by creating consistency that enables meaningful oversight and comparison across systems.</p>
+</section>
+<section id="addressing-common-failure-modes" class="level3">
+<h3 class="anchored" data-anchor-id="addressing-common-failure-modes">Addressing Common Failure Modes</h3>
+<p>AI governance professionals should understand common failure modes so they can ensure development processes address them.</p>
+<p>Brittleness refers to AI systems that perform well on training data but fail on inputs that differ even slightly from training distribution. Brittle systems may produce confident but incorrect outputs when deployed in real-world conditions that differ from training conditions. Addressing brittleness requires diverse training data, robust testing including adversarial examples, and monitoring for distribution shift after deployment.</p>
+<p>Hallucination, particularly relevant for generative AI, refers to systems producing confident but false outputs. A language model may generate plausible-sounding but fabricated facts, citations, or claims. Addressing hallucination requires techniques like retrieval augmentation, output verification, and user education about system limitations.</p>
+<p>Concept drift occurs when the relationships the model learned from historical data no longer hold because the world has changed. A fraud detection model trained on past fraud patterns may miss new fraud tactics. A demand forecasting model trained before a market disruption may produce inaccurate forecasts after. Addressing drift requires monitoring for performance degradation and processes for model retraining when necessary.</p>
+<p>Feedback loops occur when model outputs influence future training data in ways that amplify biases or errors. A predictive policing model that directs officers to certain neighborhoods generates more arrests in those neighborhoods, which then reinforces the model’s predictions. Addressing feedback loops requires understanding how model outputs affect the data-generating process and implementing safeguards against self-reinforcing patterns.</p>
+</section>
+</section>
+<section id="governing-data-for-ai" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="governing-data-for-ai"><span class="header-section-number">3.6</span> Governing Data for AI</h2>
+<p>Data is foundational to AI systems, and data governance for AI extends traditional data governance with AI-specific considerations. The data used to train AI systems shapes what those systems learn and how they perform. Garbage in, garbage out applies with particular force to machine learning.</p>
+<section id="data-quality" class="level3">
+<h3 class="anchored" data-anchor-id="data-quality">Data Quality</h3>
+<p>Training data must be fit for purpose. This means more than simply being accurate; it means being relevant, representative, complete, and timely for the specific AI application.</p>
+<p>Relevance requires that training data actually contain the patterns the model needs to learn. If the goal is to predict customer churn, training data must include features that genuinely relate to churn behavior, not just data that happens to be available.</p>
+<p>Representativeness requires that training data reflect the population on which the model will be deployed. A medical imaging model trained only on images from one demographic group may perform poorly on other groups. A language model trained only on formal written text may struggle with casual speech or regional dialects.</p>
+<p>Completeness requires sufficient examples across the range of situations the model will encounter. A classification model needs adequate examples of each class. A regression model needs examples spanning the range of target values. Rare but important cases need sufficient representation for the model to learn them.</p>
+<p>Timeliness requires that training data reflect current conditions. Patterns in data from five years ago may not hold today. Using stale data may produce models optimized for historical conditions that no longer exist.</p>
+</section>
+<section id="data-provenance-and-lineage" class="level3">
+<h3 class="anchored" data-anchor-id="data-provenance-and-lineage">Data Provenance and Lineage</h3>
+<p>Organizations must track where data comes from and how it has been processed. Data provenance documents the origins of data: who collected it, when, how, and for what purpose. Data lineage documents the transformations data undergoes: what processing, filtering, aggregation, or derivation has been applied.</p>
+<p>This documentation serves multiple purposes. It enables assessment of data quality and fitness for purpose. It supports compliance with legal requirements about data sourcing and use. It facilitates debugging when model issues arise. It enables reproduction of results for validation or audit.</p>
+<p>For training data specifically, provenance documentation should address: the original sources of the data, any licenses or restrictions on its use, whether personal data is included and if so the legal basis for its use in AI training, what preprocessing or cleaning has been applied, and any known issues or limitations.</p>
+</section>
+<section id="bias-in-training-data" class="level3">
+<h3 class="anchored" data-anchor-id="bias-in-training-data">Bias in Training Data</h3>
+<p>Training data can contain biases that models learn and perpetuate. These biases may arise from multiple sources.</p>
+<p>Historical bias exists when data reflects past decisions or conditions that were themselves biased. Hiring data from a company with historically discriminatory practices encodes that discrimination. Loan performance data from a system that denied loans to creditworthy applicants from certain groups reflects those denials, not the true creditworthiness of those groups.</p>
+<p>Representation bias exists when certain groups are underrepresented in training data. If training data contains fewer examples from certain populations, models may learn those populations less well and perform worse for them.</p>
+<p>Measurement bias exists when the features or labels in training data are measured or recorded differently for different groups. If one group is more heavily monitored than another, that group will have more recorded incidents regardless of actual behavior.</p>
+<p>Aggregation bias exists when data that should be disaggregated is combined, obscuring important differences between subgroups.</p>
+<p>Addressing data bias requires first understanding what biases may be present, then deciding how to respond. Options include collecting additional data to improve representation, applying techniques to rebalance or adjust data, using algorithmic approaches to mitigate bias during training, or accepting certain data and addressing bias through post-processing or process controls.</p>
+</section>
+<section id="data-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="data-documentation">Data Documentation</h3>
+<p>The Datasheets for Datasets framework, developed by researchers at Google and other institutions, provides a structured approach to documenting datasets used for AI. A datasheet documents:</p>
+<p>Motivation: why the dataset was created, who created it, and who funded it.</p>
+<p>Composition: what instances the dataset contains, how many, and what data is associated with each instance; whether there is a label or target; whether the dataset contains sensitive information.</p>
+<p>Collection process: how data was acquired, who collected it, what mechanisms were used, whether informed consent was obtained.</p>
+<p>Preprocessing: what preprocessing, cleaning, or labeling was done; whether raw data is available.</p>
+<p>Uses: what tasks the dataset has been used for, what uses are recommended, and what uses should be avoided.</p>
+<p>Distribution: how the dataset is distributed and under what license.</p>
+<p>Maintenance: who maintains the dataset and how updates are communicated.</p>
+<p>Organizations should adopt standardized dataset documentation practices, adapting frameworks like Datasheets to their needs. This documentation supports governance review, enables appropriate reuse, and provides evidence of diligence.</p>
+<div id="fig-data-governance" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-governance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_3_3_data_governance.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-governance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.3: Data Governance for AI
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 3.3: Data Governance for AI — The data pipeline with governance checkpoints from collection through training use.</em></p>
+</section>
+</section>
+<section id="training-and-testing-ai-models" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="training-and-testing-ai-models"><span class="header-section-number">3.7</span> Training and Testing AI Models</h2>
+<p>Once data is prepared, model training proceeds, followed by testing to validate that the trained model meets requirements. Governance during this phase ensures that training is conducted appropriately and that testing is rigorous enough to provide confidence in model performance.</p>
+<section id="training-practices" class="level3">
+<h3 class="anchored" data-anchor-id="training-practices">Training Practices</h3>
+<p>Model training should follow established practices that support reproducibility, traceability, and quality.</p>
+<p>Environment management ensures that training occurs in controlled, documented environments. What hardware is used? What software versions? What random seeds? Documenting these details enables reproduction of results and investigation of issues.</p>
+<p>Experiment tracking captures the parameters and results of training runs. What hyperparameters were used? What was the training loss trajectory? What validation performance was achieved? This tracking enables comparison of approaches and provides evidence of the development process.</p>
+<p>Separation of training, validation, and test data ensures honest performance evaluation. If the same data is used for training and evaluation, performance metrics will be inflated and will not reflect true generalization ability. Standard practice is to split data into training data used to fit model parameters, validation data used to tune hyperparameters and make development decisions, and test data used only for final evaluation.</p>
+<p>Regularization and other techniques to prevent overfitting help ensure models generalize to new data rather than merely memorizing training examples. Overfitting produces models that perform well on training data but poorly on new data.</p>
+</section>
+<section id="testing-and-validation" class="level3">
+<h3 class="anchored" data-anchor-id="testing-and-validation">Testing and Validation</h3>
+<p>Testing AI systems differs from testing traditional software. Traditional software testing verifies that code behaves correctly according to specifications. AI testing must assess probabilistic performance on data the system has not seen before, a fundamentally different challenge.</p>
+<p>Functional testing verifies that the system produces outputs in the expected format and responds appropriately to various inputs including edge cases. This is similar to traditional software testing and should cover the range of inputs the system may receive.</p>
+<p>Performance testing evaluates model accuracy and related metrics on held-out test data. Metrics should align with the success criteria defined during use case specification. Common metrics include accuracy, precision, recall, F1 score, AUC-ROC for classification; mean squared error, mean absolute error, R-squared for regression; and task-specific metrics for other applications.</p>
+<p>Fairness testing evaluates whether performance is equitable across demographic groups and whether the system produces discriminatory outcomes. This requires defining appropriate fairness metrics for the application context, identifying relevant demographic groups, and computing metrics disaggregated by group. Common fairness metrics include demographic parity, equalized odds, and calibration across groups. Because different fairness metrics can be mathematically incompatible, organizations must make deliberate choices about which criteria to prioritize.</p>
+<p>Robustness testing evaluates model behavior under challenging conditions including adversarial inputs, distribution shift, and edge cases. Adversarial testing deliberately crafts inputs designed to cause model errors. Stress testing evaluates behavior under heavy load or resource constraints. Boundary testing evaluates behavior at the edges of input ranges.</p>
+<p>Explainability testing evaluates whether model decisions can be explained adequately for the intended context. Can the system provide meaningful explanations of individual predictions? Are those explanations accurate and useful? Do they meet regulatory requirements for explanation?</p>
+<p>Security testing evaluates vulnerability to attacks including data poisoning, model extraction, and adversarial examples. AI systems face unique security threats that traditional security testing may not address.</p>
+</section>
+<section id="documentation-of-testing" class="level3">
+<h3 class="anchored" data-anchor-id="documentation-of-testing">Documentation of Testing</h3>
+<p>Testing should produce documentation that enables review and provides evidence of diligence. This documentation should include:</p>
+<p>Test plan describing what testing was performed, what data was used, what metrics were evaluated, and what pass/fail criteria were applied.</p>
+<p>Test results reporting actual performance on each metric, disaggregated as appropriate.</p>
+<p>Analysis of results explaining what the results mean, whether they meet requirements, and what limitations or concerns remain.</p>
+<p>Sign-off from appropriate reviewers indicating that testing was adequate and results are acceptable.</p>
+</section>
+</section>
+<section id="documentation-throughout-development" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="documentation-throughout-development"><span class="header-section-number">3.8</span> Documentation Throughout Development</h2>
+<p>Documentation is not a final step before release but a continuous activity throughout development. Good documentation supports governance review, enables ongoing oversight, facilitates incident investigation, and demonstrates compliance.</p>
+<section id="model-cards" class="level3">
+<h3 class="anchored" data-anchor-id="model-cards">Model Cards</h3>
+<p>The Model Cards framework, developed by researchers at Google, provides a structured approach to documenting trained models. A model card documents:</p>
+<p>Model details: developer, version, type, training procedures, parameters, license.</p>
+<p>Intended use: primary intended uses, primary intended users, out-of-scope uses that should be avoided.</p>
+<p>Factors: groups, instrumentation, and environments for which model behavior may differ.</p>
+<p>Metrics: performance metrics used, why they were chosen, and any known limitations of those metrics.</p>
+<p>Evaluation data: description of evaluation datasets, preprocessing applied, and how data was obtained.</p>
+<p>Training data: description of training datasets, though this may be less detailed than evaluation data for proprietary reasons.</p>
+<p>Quantitative analyses: disaggregated performance metrics across relevant factors.</p>
+<p>Ethical considerations: known limitations, potential risks, and appropriate use guidance.</p>
+<p>Caveats and recommendations: guidance for users about appropriate and inappropriate applications.</p>
+<p>Organizations should adapt the Model Card framework to their needs, potentially adding sections required by regulations or internal policies. Model cards should be living documents updated as models are modified or as new information emerges about performance or limitations.</p>
+</section>
+<section id="technical-documentation-for-compliance" class="level3">
+<h3 class="anchored" data-anchor-id="technical-documentation-for-compliance">Technical Documentation for Compliance</h3>
+<p>Various regulations impose specific documentation requirements. The EU AI Act requires technical documentation for high-risk AI systems covering:</p>
+<p>General description of the AI system, its intended purpose, and how it interacts with hardware and software.</p>
+<p>Detailed description of system elements including algorithms, data, and training processes.</p>
+<p>Information about data used for training, validation, and testing, including data governance measures and examination of biases.</p>
+<p>Metrics used to measure accuracy, robustness, and compliance with requirements, along with potentially discriminatory impacts.</p>
+<p>Description of human oversight measures.</p>
+<p>Description of the risk management system and risk assessments performed.</p>
+<p>Description of changes made during system lifecycle.</p>
+<p>Organizations should design their documentation practices to satisfy applicable regulatory requirements, generating required documentation as part of the development process rather than attempting to reconstruct it retroactively.</p>
+</section>
+<section id="maintaining-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="maintaining-documentation">Maintaining Documentation</h3>
+<p>Documentation must be maintained as systems evolve. Version control should track changes to documentation alongside changes to code and models. Review processes should ensure documentation remains accurate and complete. Retention policies should ensure documentation is available for the required period, which for regulatory compliance may extend years after system deployment.</p>
+</section>
+</section>
+<section id="release-monitoring-and-maintenance" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="release-monitoring-and-maintenance"><span class="header-section-number">3.9</span> Release, Monitoring, and Maintenance</h2>
+<p>The completion of development does not end governance responsibility. Release decisions, deployment monitoring, and ongoing maintenance all require governance attention.</p>
+<section id="release-readiness-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="release-readiness-assessment">Release Readiness Assessment</h3>
+<p>Before an AI system is released for deployment, a structured assessment should verify that all governance requirements have been satisfied. This assessment might address:</p>
+<p>Have all required impact assessments been completed and approved?</p>
+<p>Have all identified legal requirements been addressed?</p>
+<p>Does testing demonstrate that the system meets performance and fairness requirements?</p>
+<p>Is documentation complete and accurate?</p>
+<p>Are monitoring capabilities in place to detect issues after deployment?</p>
+<p>Have operational procedures been established for incident response?</p>
+<p>Have affected stakeholders been appropriately notified?</p>
+<p>This assessment should involve reviewers beyond the development team, providing independent verification that requirements have been met. The result should be a documented release decision with clear accountability.</p>
+</section>
+<section id="deployment-monitoring" class="level3">
+<h3 class="anchored" data-anchor-id="deployment-monitoring">Deployment Monitoring</h3>
+<p>Once deployed, AI systems require ongoing monitoring to detect issues that may not have appeared during testing. Monitoring should address:</p>
+<p>Technical performance: Is the system functioning correctly? Are there errors, outages, or performance degradation?</p>
+<p>Model performance: Is the model achieving expected accuracy? Are there signs of performance degradation over time?</p>
+<p>Fairness: Are outcomes equitable across demographic groups? Are patterns emerging that suggest bias?</p>
+<p>Drift: Is the distribution of inputs changing in ways that might affect model validity? Are the relationships the model learned still accurate?</p>
+<p>User feedback: Are users raising concerns about system behavior? Are affected individuals reporting problems?</p>
+<p>Monitoring should be automated where possible, with alerts when metrics exceed thresholds. But automated monitoring should be complemented by periodic human review that can identify issues automated systems might miss.</p>
+</section>
+<section id="model-maintenance-and-retraining" class="level3">
+<h3 class="anchored" data-anchor-id="model-maintenance-and-retraining">Model Maintenance and Retraining</h3>
+<p>AI models may need to be updated over time as data distributions change, as performance degrades, as new requirements emerge, or as better approaches become available. Governance should address when and how retraining occurs.</p>
+<p>Organizations should define criteria that trigger model updates: performance degradation beyond a threshold, detection of significant drift, regulatory changes requiring updates, or scheduled periodic reviews.</p>
+<p>Updates should go through appropriate governance review. A minor adjustment may require less scrutiny than the initial release, but significant changes should be evaluated for their potential impacts, and documentation should be updated accordingly.</p>
+<p>The process of updating models while they are deployed in production raises additional considerations. How is the transition managed? How is consistency maintained if some users receive outputs from the old model while others receive outputs from the new model? How is the update rolled back if problems are detected?</p>
+</section>
+<section id="incident-management" class="level3">
+<h3 class="anchored" data-anchor-id="incident-management">Incident Management</h3>
+<p>Despite best efforts, AI systems sometimes cause harm or malfunction. Incident management processes should enable rapid detection, response, and learning.</p>
+<p>Detection requires monitoring systems and reporting channels that surface issues quickly. Users, affected individuals, and internal stakeholders should have clear paths to report concerns.</p>
+<p>Response should follow established procedures that address immediate harms, investigate root causes, and implement fixes. For serious incidents, this may require suspending or withdrawing the AI system until issues are resolved. Response plans should be developed before incidents occur, not improvised during crises.</p>
+<p>The EU AI Act requires providers of high-risk AI systems to report serious incidents to relevant authorities within defined timeframes. Organizations must have processes to identify incidents meeting reporting thresholds and to make required notifications.</p>
+<p>Learning from incidents improves future systems. Root cause analysis should identify not just immediate causes but systemic factors that allowed the incident to occur. Findings should inform updates to governance processes, development practices, and training materials.</p>
+<div id="fig-release-monitoring" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-release-monitoring-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_3_4_release_monitoring.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-release-monitoring-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.4: Release and Monitoring Process
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 3.4: Release and Monitoring Process — Release decisions, continuous monitoring, and incident response pathways.</em></p>
+</section>
+</section>
+<section id="privacy-enhancing-technologies" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="privacy-enhancing-technologies"><span class="header-section-number">3.10</span> Privacy-Enhancing Technologies</h2>
+<p>Privacy-enhancing technologies offer technical approaches to enable AI development and deployment while reducing privacy risks. AI governance professionals should understand these technologies and when they may be appropriate.</p>
+<section id="anonymization-and-pseudonymization" class="level3">
+<h3 class="anchored" data-anchor-id="anonymization-and-pseudonymization">Anonymization and Pseudonymization</h3>
+<p>Anonymization transforms data so that individuals cannot be identified, even by combining the data with other information. If data is truly anonymized, it falls outside the scope of data protection laws like the GDPR, which apply only to personal data.</p>
+<p>Achieving true anonymization is difficult, particularly for rich datasets. Research has demonstrated that individuals can often be re-identified from supposedly anonymized data by combining with other sources. Traditional techniques like removing direct identifiers may not be sufficient. More sophisticated approaches like k-anonymity, l-diversity, and t-closeness provide stronger guarantees but may reduce data utility.</p>
+<p>Pseudonymization replaces direct identifiers with pseudonyms, allowing data to be linked to individuals if the pseudonymization key is available but not otherwise. Pseudonymized data remains personal data under the GDPR, but pseudonymization is recognized as a security measure that may support certain processing activities.</p>
+<p>For AI training data, organizations should carefully evaluate anonymization claims and consider whether data can truly be said to be anonymized given the risk of re-identification.</p>
+</section>
+<section id="differential-privacy" class="level3">
+<h3 class="anchored" data-anchor-id="differential-privacy">Differential Privacy</h3>
+<p>Differential privacy is a mathematical framework for quantifying and limiting the privacy loss from statistical queries or model training. A differentially private analysis provides guarantees that the output would be essentially the same whether any individual’s data was included or not, limiting what can be learned about any individual from the results.</p>
+<p>Differential privacy can be applied to AI training, producing models with formal guarantees about privacy loss. The tradeoff is between privacy (measured by the privacy budget or epsilon parameter) and utility (model accuracy). Stronger privacy guarantees typically require accepting some reduction in accuracy.</p>
+<p>Major technology companies have deployed differentially private AI training for certain applications, and the technique is an active area of research. Governance programs should consider differential privacy for applications involving sensitive data, though the technical complexity may require specialized expertise.</p>
+</section>
+<section id="federated-learning" class="level3">
+<h3 class="anchored" data-anchor-id="federated-learning">Federated Learning</h3>
+<p>Federated learning is an approach to training AI models on decentralized data without centralizing that data. Instead of collecting data into a central repository for training, federated learning trains models locally on data where it resides, sharing only model updates rather than raw data.</p>
+<p>This approach can reduce privacy risks by keeping sensitive data local. For example, a hospital collaboration could train a medical AI model without any hospital sharing patient data with others; each hospital trains on its local data and shares only learned model parameters.</p>
+<p>Federated learning has limitations. It requires appropriate infrastructure and coordination among participants. It may be vulnerable to certain attacks that infer information about training data from model updates. It does not eliminate privacy concerns but rather changes their character.</p>
+</section>
+<section id="synthetic-data" class="level3">
+<h3 class="anchored" data-anchor-id="synthetic-data">Synthetic Data</h3>
+<p>Synthetic data is artificially generated data that mimics the statistical properties of real data without containing actual individual records. Training AI models on synthetic data rather than real data can reduce privacy risks if the synthetic data generation process provides adequate privacy protections.</p>
+<p>The challenge is generating synthetic data that captures enough of the real data’s structure to train effective models while not capturing so much that it enables individual identification. Sophisticated approaches use generative models to produce synthetic data, potentially combining with differential privacy to provide formal guarantees.</p>
+<p>Synthetic data is an active area of development with growing commercial offerings. Governance programs should evaluate synthetic data approaches for applications where privacy constraints limit use of real data.</p>
+</section>
+</section>
+<section id="chapter-3-summary" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="chapter-3-summary"><span class="header-section-number">3.11</span> Chapter 3 Summary</h2>
+<p>This chapter examined governance throughout AI development from initial use case definition through release and ongoing maintenance.</p>
+<p>Governance begins before development with use case intake and assessment that evaluates appropriateness, classifies risk, and defines success criteria. Impact assessments provide structured processes for identifying and planning to mitigate risks across categories including privacy, algorithmic fairness, and fundamental rights. Legal analysis identifies applicable requirements that become design constraints.</p>
+<p>Design decisions have lasting governance implications, affecting explainability, testability, and auditability. Understanding common failure modes including brittleness, hallucination, concept drift, and feedback loops enables governance processes that address them.</p>
+<p>Data governance for AI addresses quality including relevance, representativeness, completeness, and timeliness; provenance and lineage documentation; bias identification and mitigation; and standardized dataset documentation. Training practices should support reproducibility and honest evaluation. Testing must address performance, fairness, robustness, explainability, and security using metrics aligned with defined success criteria.</p>
+<p>Documentation including model cards and regulatory technical documentation should be produced continuously throughout development rather than retrospectively. Release readiness assessment verifies that governance requirements have been satisfied before deployment. Ongoing monitoring detects issues that testing did not reveal. Maintenance processes address model updates and retraining. Incident management enables rapid response when problems occur.</p>
+<p>Privacy-enhancing technologies including anonymization, differential privacy, federated learning, and synthetic data offer approaches to enable AI while managing privacy risks.</p>
+</section>
+<section id="chapter-3-review-questions" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="chapter-3-review-questions"><span class="header-section-number">3.12</span> Chapter 3 Review Questions</h2>
+<ol type="1">
+<li><p>An organization is evaluating a proposed AI system that would analyze employee communications to identify workers at risk of leaving the company. The system would process email content, chat messages, and calendar data. During use case assessment, which consideration should receive the highest priority?</p></li>
+<li><p>An AI development team has completed model training and achieved accuracy metrics that exceed the targets defined during use case specification. However, when accuracy is disaggregated by demographic group, the team discovers significant disparities, with accuracy for one protected group substantially lower than for others. How should governance processes address this situation?</p></li>
+<li><p>A healthcare AI system trained to identify skin cancer from images performs well in clinical testing at the hospital where it was developed. After deployment to other hospitals, performance drops significantly, with increased false negative rates. Which common AI failure mode does this most likely represent?</p></li>
+<li><p>An organization is using data originally collected for customer service quality monitoring to train an AI model that will predict which customers are likely to cancel their subscriptions. Under the GDPR, how should the organization analyze the use of this data?</p></li>
+<li><p>A financial services company is preparing to release an AI credit scoring model. The release readiness assessment reveals that while required documentation is complete and testing shows adequate performance, the monitoring infrastructure is not yet operational. What should the governance process recommend?</p></li>
+</ol>
+</section>
+<section id="references" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="references"><span class="header-section-number">3.13</span> References</h2>
+<p>IAPP. AIGP Body of Knowledge, Version 2.0.1. International Association of Privacy Professionals, 2025.</p>
+<p>Mitchell, Margaret, et al.&nbsp;“Model Cards for Model Reporting.” Proceedings of the Conference on Fairness, Accountability, and Transparency, 2019.</p>
+<p>Gebru, Timnit, et al.&nbsp;“Datasheets for Datasets.” Communications of the ACM 64, no. 12 (2021).</p>
+<p>National Institute of Standards and Technology. AI Risk Management Framework 1.0. NIST AI 100-1, 2023.</p>
+<p>Government of Canada. Algorithmic Impact Assessment Tool. Treasury Board of Canada Secretariat, 2019.</p>
+<p>European Parliament and Council. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). Official Journal of the European Union, 2024.</p>
+<p>Dwork, Cynthia, and Aaron Roth. “The Algorithmic Foundations of Differential Privacy.” Foundations and Trends in Theoretical Computer Science 9, no. 3-4 (2014).</p>
+<p>McMahan, Brendan, et al.&nbsp;“Communication-Efficient Learning of Deep Networks from Decentralized Data.” Proceedings of AISTATS, 2017.</p>
+<p>Chouldechova, Alexandra. “Fair Prediction with Disparate Impact: A Study of Bias in Recidivism Prediction Instruments.” Big Data 5, no. 2 (2017).</p>
+<p>Ogunseye, S. “They Can Include AI, But Should They? Teaching students about sensible solutions in the age of AI hype.” Communications of the ACM Blog, 2025. https://cacm.acm.org/blogcacm/they-can-include-ai-but-should-they/</p>
+<hr>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/02-legal-frameworks.html" class="pagination-link" aria-label="Understanding How Laws, Standards, and Frameworks Apply to AI">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Understanding How Laws, Standards, and Frameworks Apply to AI</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/04-deployment.html" class="pagination-link" aria-label="Understanding How to Govern AI Deployment and Use">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

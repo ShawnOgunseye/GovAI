@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Understanding How Laws, Standards, and Frameworks Apply to AI</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/03-development.html" rel="next">
+<link href="../chapters/01-foundations.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f8bb638c26fb726dc4c2c6db7be98b4e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-foundations.html">Foundations</a></li><li class="breadcrumb-item"><a href="../chapters/02-legal-frameworks.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Understanding How Laws, Standards, and Frameworks Apply to AI</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../cover.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../cover.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding the Foundations of AI Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-legal-frameworks.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Understanding How Laws, Standards, and Frameworks Apply to AI</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Governing the AI Lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-deployment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Perspectives and Integration</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-lifecycle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Governance by Design Across the Lifecycle</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Topics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-execution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Governance in Motion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-future.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ongoing Issues and Future Directions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Frameworks and Templates</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Quick Reference Tables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practice Scenarios</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Glossary and Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../99-backmatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the Author</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a></li>
+  <li><a href="#how-privacy-laws-apply-to-ai" id="toc-how-privacy-laws-apply-to-ai" class="nav-link" data-scroll-target="#how-privacy-laws-apply-to-ai"><span class="header-section-number">2.2</span> How Privacy Laws Apply to AI</a>
+  <ul class="collapse">
+  <li><a href="#the-gdpr-framework" id="toc-the-gdpr-framework" class="nav-link" data-scroll-target="#the-gdpr-framework">The GDPR Framework</a></li>
+  <li><a href="#privacy-laws-in-the-united-states" id="toc-privacy-laws-in-the-united-states" class="nav-link" data-scroll-target="#privacy-laws-in-the-united-states">Privacy Laws in the United States</a></li>
+  <li><a href="#data-protection-impact-assessments-and-ai-conformity-assessments" id="toc-data-protection-impact-assessments-and-ai-conformity-assessments" class="nav-link" data-scroll-target="#data-protection-impact-assessments-and-ai-conformity-assessments">Data Protection Impact Assessments and AI Conformity Assessments</a></li>
+  </ul></li>
+  <li><a href="#how-other-existing-laws-apply-to-ai" id="toc-how-other-existing-laws-apply-to-ai" class="nav-link" data-scroll-target="#how-other-existing-laws-apply-to-ai"><span class="header-section-number">2.3</span> How Other Existing Laws Apply to AI</a>
+  <ul class="collapse">
+  <li><a href="#anti-discrimination-laws" id="toc-anti-discrimination-laws" class="nav-link" data-scroll-target="#anti-discrimination-laws">Anti-Discrimination Laws</a></li>
+  <li><a href="#consumer-protection-laws" id="toc-consumer-protection-laws" class="nav-link" data-scroll-target="#consumer-protection-laws">Consumer Protection Laws</a></li>
+  <li><a href="#product-liability-laws" id="toc-product-liability-laws" class="nav-link" data-scroll-target="#product-liability-laws">Product Liability Laws</a></li>
+  <li><a href="#intellectual-property-laws" id="toc-intellectual-property-laws" class="nav-link" data-scroll-target="#intellectual-property-laws">Intellectual Property Laws</a></li>
+  </ul></li>
+  <li><a href="#the-eu-ai-act" id="toc-the-eu-ai-act" class="nav-link" data-scroll-target="#the-eu-ai-act"><span class="header-section-number">2.4</span> The EU AI Act</a>
+  <ul class="collapse">
+  <li><a href="#risk-classification-framework" id="toc-risk-classification-framework" class="nav-link" data-scroll-target="#risk-classification-framework">Risk Classification Framework</a></li>
+  <li><a href="#requirements-for-high-risk-ai-systems" id="toc-requirements-for-high-risk-ai-systems" class="nav-link" data-scroll-target="#requirements-for-high-risk-ai-systems">Requirements for High-Risk AI Systems</a></li>
+  <li><a href="#allocation-of-obligations" id="toc-allocation-of-obligations" class="nav-link" data-scroll-target="#allocation-of-obligations">Allocation of Obligations</a></li>
+  <li><a href="#general-purpose-ai-models" id="toc-general-purpose-ai-models" class="nav-link" data-scroll-target="#general-purpose-ai-models">General Purpose AI Models</a></li>
+  <li><a href="#enforcement-and-penalties" id="toc-enforcement-and-penalties" class="nav-link" data-scroll-target="#enforcement-and-penalties">Enforcement and Penalties</a></li>
+  <li><a href="#implementation-timeline" id="toc-implementation-timeline" class="nav-link" data-scroll-target="#implementation-timeline">Implementation Timeline</a></li>
+  </ul></li>
+  <li><a href="#other-ai-specific-regulatory-developments" id="toc-other-ai-specific-regulatory-developments" class="nav-link" data-scroll-target="#other-ai-specific-regulatory-developments"><span class="header-section-number">2.5</span> Other AI-Specific Regulatory Developments</a>
+  <ul class="collapse">
+  <li><a href="#united-states-federal-developments" id="toc-united-states-federal-developments" class="nav-link" data-scroll-target="#united-states-federal-developments">United States Federal Developments</a></li>
+  <li><a href="#united-states-state-laws" id="toc-united-states-state-laws" class="nav-link" data-scroll-target="#united-states-state-laws">United States State Laws</a></li>
+  <li><a href="#international-developments" id="toc-international-developments" class="nav-link" data-scroll-target="#international-developments">International Developments</a></li>
+  </ul></li>
+  <li><a href="#industry-standards-and-frameworks" id="toc-industry-standards-and-frameworks" class="nav-link" data-scroll-target="#industry-standards-and-frameworks"><span class="header-section-number">2.6</span> Industry Standards and Frameworks</a>
+  <ul class="collapse">
+  <li><a href="#oecd-ai-principles" id="toc-oecd-ai-principles" class="nav-link" data-scroll-target="#oecd-ai-principles">OECD AI Principles</a></li>
+  <li><a href="#nist-ai-risk-management-framework" id="toc-nist-ai-risk-management-framework" class="nav-link" data-scroll-target="#nist-ai-risk-management-framework">NIST AI Risk Management Framework</a></li>
+  <li><a href="#iso-ai-standards" id="toc-iso-ai-standards" class="nav-link" data-scroll-target="#iso-ai-standards">ISO AI Standards</a></li>
+  </ul></li>
+  <li><a href="#connecting-legal-requirements-to-governance-practice" id="toc-connecting-legal-requirements-to-governance-practice" class="nav-link" data-scroll-target="#connecting-legal-requirements-to-governance-practice"><span class="header-section-number">2.7</span> Connecting Legal Requirements to Governance Practice</a>
+  <ul class="collapse">
+  <li><a href="#impact-assessments" id="toc-impact-assessments" class="nav-link" data-scroll-target="#impact-assessments">Impact Assessments</a></li>
+  <li><a href="#documentation-and-record-keeping" id="toc-documentation-and-record-keeping" class="nav-link" data-scroll-target="#documentation-and-record-keeping">Documentation and Record-Keeping</a></li>
+  <li><a href="#transparency-and-notice" id="toc-transparency-and-notice" class="nav-link" data-scroll-target="#transparency-and-notice">Transparency and Notice</a></li>
+  <li><a href="#human-oversight" id="toc-human-oversight" class="nav-link" data-scroll-target="#human-oversight">Human Oversight</a></li>
+  </ul></li>
+  <li><a href="#chapter-2-summary" id="toc-chapter-2-summary" class="nav-link" data-scroll-target="#chapter-2-summary"><span class="header-section-number">2.8</span> Chapter 2 Summary</a></li>
+  <li><a href="#chapter-2-review-questions" id="toc-chapter-2-review-questions" class="nav-link" data-scroll-target="#chapter-2-review-questions"><span class="header-section-number">2.9</span> Chapter 2 Review Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">2.10</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-foundations.html">Foundations</a></li><li class="breadcrumb-item"><a href="../chapters/02-legal-frameworks.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Understanding How Laws, Standards, and Frameworks Apply to AI</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Understanding How Laws, Standards, and Frameworks Apply to AI</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
+<p>AI systems do not operate in a legal vacuum. They interact with existing laws never designed with AI in mind, face new AI-specific regulations emerging worldwide, and are shaped by voluntary frameworks and standards that establish expectations for responsible practice. AI governance professionals must understand this complex landscape to help their organizations deploy AI lawfully and responsibly.</p>
+<p>This chapter surveys the legal and regulatory frameworks that apply to AI. It begins with existing laws that predate AI but apply to it, including privacy laws, anti-discrimination laws, consumer protection laws, and product liability laws. It then examines AI-specific regulations, with particular attention to the EU AI Act as the most comprehensive AI law to date. It surveys emerging AI regulations in other jurisdictions. Finally, it examines voluntary standards and frameworks that, while not legally binding, shape expectations and may become legally relevant as courts and regulators reference them.</p>
+<p>A word of caution: this chapter describes the legal landscape as it exists at the time of writing, but that landscape is evolving rapidly. New regulations are being enacted, existing regulations are being implemented and interpreted, and enforcement priorities are being established. AI governance professionals should monitor developments in jurisdictions relevant to their organizations and seek qualified legal counsel for specific situations. The goal here is to build understanding of the legal framework, not to provide legal advice.</p>
+</section>
+<section id="how-privacy-laws-apply-to-ai" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="how-privacy-laws-apply-to-ai"><span class="header-section-number">2.2</span> How Privacy Laws Apply to AI</h2>
+<p>Privacy laws were enacted before the current AI era, but they apply powerfully to AI systems that process personal data. Understanding this intersection is essential because AI systems frequently rely on personal data for training, operation, and outputs.</p>
+<section id="the-gdpr-framework" class="level3">
+<h3 class="anchored" data-anchor-id="the-gdpr-framework">The GDPR Framework</h3>
+<p>The European Union’s General Data Protection Regulation provides a comprehensive framework for data protection that applies when AI systems process personal data of individuals in the EU. Several GDPR provisions have particular relevance to AI.</p>
+<p>The lawfulness requirements of Article 6 require a legal basis for processing personal data. For AI systems, this means organizations must identify a valid basis for collecting data used to train models, for processing data during model operation, and for any personal data in model outputs. Consent, contractual necessity, legal obligation, vital interests, public task, and legitimate interests each have specific conditions that may or may not fit AI use cases. The legitimate interests basis, commonly relied upon for AI, requires balancing organizational interests against the rights and interests of data subjects.</p>
+<p>The data minimization principle requires that personal data be adequate, relevant, and limited to what is necessary for the processing purposes. This principle creates tension with AI systems that often perform better with more data. Organizations must be able to justify the data they collect and use, demonstrating that it is genuinely necessary for the AI application’s purposes.</p>
+<p>Purpose limitation requires that personal data be collected for specified, explicit, and legitimate purposes and not further processed in a manner incompatible with those purposes. When organizations use data originally collected for one purpose to train AI models for different purposes, they must analyze whether this constitutes compatible further processing or requires a new legal basis.</p>
+<p>Data subject rights under the GDPR have specific implications for AI. The right to access allows individuals to obtain information about processing of their data, including in AI systems. The right to rectification allows correction of inaccurate data, which may require model retraining if the data was used for training. The right to erasure raises complex questions about whether and how personal data can be removed from trained models. The right not to be subject to solely automated decision-making with legal or similarly significant effects, found in Article 22, directly addresses AI-driven decisions.</p>
+<p>Article 22 deserves particular attention. It establishes that data subjects have the right not to be subject to decisions based solely on automated processing, including profiling, that produce legal effects or similarly significantly affect them. Exceptions exist for contractual necessity, explicit consent, or legal authorization, but even when these exceptions apply, organizations must implement suitable safeguards including the right to obtain human intervention, express views, and contest the decision.</p>
+<p>Courts and regulators have not fully resolved what constitutes solely automated decision-making versus human-AI collaboration, what effects are similarly significant to legal effects, or what constitutes meaningful human intervention. Organizations should take a conservative approach, providing human review of consequential AI-driven decisions affecting individuals and ensuring that human review is genuinely meaningful rather than perfunctory.</p>
+<p>Data Protection Impact Assessments are required under Article 35 when processing is likely to result in high risk to individuals’ rights and freedoms. AI systems that make automated decisions about individuals or that systematically evaluate personal aspects typically trigger this requirement. DPIAs require systematic description of processing operations, assessment of necessity and proportionality, assessment of risks, and measures to address risks.</p>
+</section>
+<section id="privacy-laws-in-the-united-states" class="level3">
+<h3 class="anchored" data-anchor-id="privacy-laws-in-the-united-states">Privacy Laws in the United States</h3>
+<p>The United States lacks a comprehensive federal privacy law comparable to the GDPR, but a patchwork of federal and state laws applies to AI systems.</p>
+<p>The California Consumer Privacy Act, as amended by the California Privacy Rights Act, provides California residents with rights regarding their personal information including the right to know what information is collected, the right to delete personal information, the right to opt out of sale or sharing of personal information, and the right to limit use of sensitive personal information. CPRA added provisions specifically addressing automated decision-making, requiring businesses to provide information about the logic involved in automated decision-making and meaningful information about the consequences of such decisions. California regulations implementing these provisions are still developing.</p>
+<p>Other state comprehensive privacy laws including those in Virginia, Colorado, Connecticut, Utah, and additional states enact similar rights with variations in scope and requirements. Several include provisions addressing automated decision-making, profiling, or requiring opt-out mechanisms. Organizations operating across multiple states face a complex compliance landscape.</p>
+<p>Federal sector-specific laws apply to AI in their respective domains. The Health Insurance Portability and Accountability Act governs protected health information, which is frequently used in healthcare AI. The Gramm-Leach-Bliley Act governs financial data. The Children’s Online Privacy Protection Act governs data about children under 13. The Fair Credit Reporting Act governs consumer reports and the information used to create them, with significant implications for AI used in credit, employment, and insurance decisions.</p>
+<p>The Federal Trade Commission Act’s prohibition on unfair and deceptive practices has been applied to AI-related conduct. The FTC has issued guidance on AI and has brought enforcement actions against companies whose AI practices it deemed unfair or deceptive. The agency has indicated it will scrutinize AI systems for accuracy, bias, and transparency and will use its enforcement authority against problematic AI practices.</p>
+</section>
+<section id="data-protection-impact-assessments-and-ai-conformity-assessments" class="level3">
+<h3 class="anchored" data-anchor-id="data-protection-impact-assessments-and-ai-conformity-assessments">Data Protection Impact Assessments and AI Conformity Assessments</h3>
+<p>AI governance professionals should understand the relationship between privacy-focused Data Protection Impact Assessments and AI-focused conformity assessments increasingly required by AI regulations.</p>
+<p>A DPIA under the GDPR focuses on data protection risks, assessing processing operations from the perspective of privacy and data subject rights. It examines legal bases, data minimization, purpose limitation, data subject rights, security measures, and data transfers.</p>
+<p>An AI conformity assessment under the EU AI Act focuses on AI-specific requirements, examining whether a high-risk AI system meets requirements for risk management, data governance, transparency, human oversight, accuracy, robustness, and cybersecurity.</p>
+<p>When a high-risk AI system processes personal data, organizations will likely need to conduct both assessments. These assessments overlap significantly: both examine data, both assess risks, both consider safeguards. The DPIA can form a foundation for the conformity assessment, and organizations should coordinate these processes to avoid duplicative effort and ensure consistent conclusions.</p>
+</section>
+</section>
+<section id="how-other-existing-laws-apply-to-ai" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="how-other-existing-laws-apply-to-ai"><span class="header-section-number">2.3</span> How Other Existing Laws Apply to AI</h2>
+<p>Beyond privacy laws, numerous existing legal frameworks apply to AI systems. These laws were not designed with AI in mind but reach AI applications within their scope.</p>
+<section id="anti-discrimination-laws" class="level3">
+<h3 class="anchored" data-anchor-id="anti-discrimination-laws">Anti-Discrimination Laws</h3>
+<p>Laws prohibiting discrimination based on protected characteristics apply when AI systems make or influence decisions in covered contexts. In the United States, Title VII of the Civil Rights Act prohibits employment discrimination on the basis of race, color, religion, sex, or national origin. The Americans with Disabilities Act prohibits discrimination against qualified individuals with disabilities. The Age Discrimination in Employment Act prohibits discrimination against individuals 40 and older. The Fair Housing Act prohibits discrimination in housing. The Equal Credit Opportunity Act prohibits discrimination in credit decisions.</p>
+<p>These laws apply regardless of whether discrimination is intentional or results from facially neutral practices with discriminatory effects. An AI hiring tool that has a disparate impact on protected groups may violate Title VII even if it was not designed to discriminate. An AI credit model that disadvantages protected groups may violate the Equal Credit Opportunity Act even if the variables it uses are not explicitly related to protected characteristics.</p>
+<p>Regulatory agencies have issued guidance on applying these laws to AI. The Equal Employment Opportunity Commission has issued guidance on the use of AI and automated systems in employment decisions, emphasizing that employers remain responsible for discriminatory outcomes even when they rely on AI tools developed by vendors. The Consumer Financial Protection Bureau has addressed AI in the context of fair lending requirements.</p>
+<p>Beyond the United States, discrimination laws in other jurisdictions similarly apply to AI systems. The EU’s Charter of Fundamental Rights prohibits discrimination, and national laws throughout Europe implement anti-discrimination requirements that reach AI applications.</p>
+</section>
+<section id="consumer-protection-laws" class="level3">
+<h3 class="anchored" data-anchor-id="consumer-protection-laws">Consumer Protection Laws</h3>
+<p>Consumer protection laws prohibit unfair and deceptive practices, and these prohibitions apply to AI-powered products and services.</p>
+<p>The FTC Act prohibits unfair and deceptive acts or practices in or affecting commerce. The FTC has applied this authority to AI contexts, taking action against companies for deceptive claims about AI capabilities, for unfair use of AI to harm consumers, and for failing to adequately protect AI systems and the data they use. The agency has signaled that it considers AI bias and discrimination to be potential unfairness violations.</p>
+<p>State consumer protection laws similarly prohibit unfair and deceptive practices. State attorneys general have used these authorities in AI contexts and can be expected to continue doing so.</p>
+<p>The EU’s Unfair Commercial Practices Directive prohibits unfair business-to-consumer commercial practices, including misleading actions, misleading omissions, and aggressive practices. This directive applies to AI-powered interactions with consumers.</p>
+<p>The EU’s Digital Services Act imposes transparency requirements on online platforms, including requirements to disclose when content is AI-generated and to explain how recommendation systems work. These requirements reflect growing regulatory attention to the role of AI in shaping online content and behavior.</p>
+</section>
+<section id="product-liability-laws" class="level3">
+<h3 class="anchored" data-anchor-id="product-liability-laws">Product Liability Laws</h3>
+<p>Product liability laws impose responsibility for defective products that cause harm. The application of these laws to AI is evolving and raises novel questions.</p>
+<p>Traditional product liability distinguishes between manufacturing defects, design defects, and failure to warn. Applying these categories to AI is not straightforward: AI defects may emerge from training data, learned parameters, or deployment context rather than fitting neatly into traditional categories.</p>
+<p>The EU is updating its product liability framework to address AI. The revised Product Liability Directive explicitly includes software within the definition of products and addresses AI-specific issues. The proposed AI Liability Directive would ease the burden of proof for claimants harmed by AI systems by establishing rebuttable presumptions linking fault to damage and by providing disclosure mechanisms allowing claimants to access relevant evidence.</p>
+<p>In the United States, product liability law varies by state, and courts are beginning to address AI-specific issues without comprehensive legislative guidance.</p>
+</section>
+<section id="intellectual-property-laws" class="level3">
+<h3 class="anchored" data-anchor-id="intellectual-property-laws">Intellectual Property Laws</h3>
+<p>Intellectual property laws intersect with AI in multiple ways relevant to governance.</p>
+<p>Copyright law addresses both the use of copyrighted material to train AI systems and the copyright status of AI-generated outputs. Training AI systems on copyrighted works raises questions about fair use in the United States or equivalent exceptions in other jurisdictions. Multiple lawsuits challenging AI training on copyrighted material are pending. The copyright status of AI-generated outputs remains uncertain; the US Copyright Office has indicated that copyright requires human authorship, limiting protection for AI-generated content.</p>
+<p>Patent law faces similar questions about AI inventorship. Patent offices in most jurisdictions have determined that AI systems cannot be listed as inventors on patent applications, requiring human inventorship. This does not prevent patenting inventions developed with AI assistance if a human qualifies as inventor.</p>
+<p>Trade secret law may protect trained AI models, training data, and other AI-related assets if they derive economic value from being secret and are subject to reasonable secrecy measures.</p>
+</section>
+</section>
+<section id="the-eu-ai-act" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="the-eu-ai-act"><span class="header-section-number">2.4</span> The EU AI Act</h2>
+<p>The European Union’s Artificial Intelligence Act, adopted in 2024 with phased implementation through 2027, is the world’s most comprehensive AI-specific regulation. Understanding the AI Act is essential for organizations that operate in or serve the EU market and provides insight into regulatory approaches other jurisdictions may follow.</p>
+<section id="risk-classification-framework" class="level3">
+<h3 class="anchored" data-anchor-id="risk-classification-framework">Risk Classification Framework</h3>
+<p>The AI Act takes a risk-based approach, classifying AI systems into categories with different regulatory requirements based on their potential for harm.</p>
+<p>Prohibited AI practices are banned entirely. These include AI systems that deploy subliminal, manipulative, or deceptive techniques to distort behavior in ways causing significant harm; systems that exploit vulnerabilities related to age, disability, or social or economic situation; social scoring systems by public authorities; systems that infer emotions in workplace and educational settings except for medical or safety reasons; certain forms of real-time remote biometric identification in public spaces for law enforcement; systems creating or expanding facial recognition databases through untargeted scraping; and AI systems that create risk assessments predicting criminal behavior based solely on profiling or personality traits.</p>
+<p>High-risk AI systems are permitted but subject to extensive requirements. The AI Act identifies high-risk systems in two ways. First, certain AI systems intended as safety components of products already subject to EU harmonization legislation are high-risk. Second, the Act lists specific use cases that qualify as high-risk, including biometric identification and categorization; management and operation of critical infrastructure; education and vocational training; employment, worker management, and access to self-employment; access to and enjoyment of essential private and public services including credit, insurance, and emergency services; law enforcement; migration, asylum, and border control; and administration of justice and democratic processes.</p>
+<p>High-risk AI systems must comply with requirements spanning risk management, data governance, technical documentation, record-keeping, transparency and provision of information to users, human oversight, accuracy, robustness, and cybersecurity.</p>
+<p>Limited risk AI systems face transparency obligations but not the full high-risk requirements. These include AI systems that interact with natural persons, emotion recognition systems, and AI systems generating synthetic content.</p>
+<p>Minimal risk AI systems face no specific requirements under the Act beyond general requirements and encouragement to adopt voluntary codes of conduct.</p>
+<div id="fig-eu-pyramid" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eu-pyramid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_2_1_eu_ai_act_pyramid.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eu-pyramid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: EU AI Act Risk Classification Pyramid
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 2.1: EU AI Act Risk Classification Pyramid — The four-tier risk system from prohibited practices at the apex to minimal-risk systems at the base.</em></p>
+</section>
+<section id="requirements-for-high-risk-ai-systems" class="level3">
+<h3 class="anchored" data-anchor-id="requirements-for-high-risk-ai-systems">Requirements for High-Risk AI Systems</h3>
+<p>Organizations developing or deploying high-risk AI systems must understand the detailed requirements the AI Act imposes.</p>
+<p>Risk management must be established as a continuous iterative process throughout the system lifecycle. This includes identifying and analyzing known and foreseeable risks, estimating and evaluating risks that may emerge when the system is used as intended and under reasonably foreseeable misuse, adopting appropriate risk management measures, and ensuring that residual risks are acceptable.</p>
+<p>Data governance requirements address the quality of training, validation, and testing data. Data must be relevant, representative, accurate, and complete. Appropriate data governance and management practices must be implemented addressing data collection, data preparation, data labeling, and gap analysis.</p>
+<p>Technical documentation must be prepared before the system is placed on the market or put into service and must be kept up to date. Documentation must demonstrate compliance with requirements and provide authorities with necessary information for assessment.</p>
+<p>Record-keeping requirements mandate that high-risk AI systems include logging capabilities enabling automatic recording of events relevant to identifying risks, facilitating post-market monitoring, and enabling investigation of incidents.</p>
+<p>Transparency and information provision require that systems be designed to enable users to interpret outputs and use the system appropriately. Instructions must accompany systems including information about provider identity, system characteristics and capabilities, intended purpose, accuracy and robustness metrics, known circumstances of foreseeable misuse, human oversight measures, and expected lifetime.</p>
+<p>Human oversight measures must be designed into systems to enable human oversight during use. Depending on circumstances, this may include ability to fully understand system capabilities, remain aware of automation bias, correctly interpret outputs, decide not to use outputs, intervene on operation, or stop the system.</p>
+<p>Accuracy, robustness, and cybersecurity requirements ensure systems achieve appropriate levels of accuracy for their intended purpose, are resilient to errors or inconsistencies, and resist unauthorized attempts to alter their use or performance.</p>
+</section>
+<section id="allocation-of-obligations" class="level3">
+<h3 class="anchored" data-anchor-id="allocation-of-obligations">Allocation of Obligations</h3>
+<p>The AI Act allocates obligations among different actors in the AI value chain.</p>
+<p>Providers, essentially developers who place systems on the market or put them into service under their own name, bear the primary compliance burden. They must ensure systems meet requirements, conduct conformity assessments, prepare documentation, implement quality management systems, and carry out post-market monitoring.</p>
+<p>Deployers, organizations using AI systems under their authority, must use systems according to instructions, ensure human oversight, monitor operation for risks, inform providers of incidents, keep logs, inform affected individuals that they are subject to high-risk AI, and conduct fundamental rights impact assessments for certain uses.</p>
+<p>Importers must verify provider compliance before placing systems on the EU market. Distributors must verify systems bear required markings and documentation. Product manufacturers integrating high-risk AI into their products bear provider obligations.</p>
+</section>
+<section id="general-purpose-ai-models" class="level3">
+<h3 class="anchored" data-anchor-id="general-purpose-ai-models">General Purpose AI Models</h3>
+<p>The AI Act includes provisions addressing general purpose AI models, sometimes called foundation models, that can be used for many different applications rather than a single specific purpose.</p>
+<p>All providers of general purpose AI models must prepare and maintain technical documentation, provide information and documentation to downstream providers, establish policies to comply with copyright law, and publish a summary of training content.</p>
+<p>Providers of general purpose AI models with systemic risk face additional obligations. A model has systemic risk if it has high impact capabilities indicated by computation used for training above a threshold, or by Commission decision based on criteria including number of users, degree of autonomy, and access to data. Providers of such models must conduct model evaluations including adversarial testing, assess and mitigate systemic risks, track and report serious incidents, and ensure adequate cybersecurity.</p>
+</section>
+<section id="enforcement-and-penalties" class="level3">
+<h3 class="anchored" data-anchor-id="enforcement-and-penalties">Enforcement and Penalties</h3>
+<p>The AI Act establishes an enforcement framework with significant penalties for non-compliance.</p>
+<p>The AI Office within the European Commission coordinates enforcement across member states and has direct enforcement power for general purpose AI model provisions. National competent authorities designated by member states enforce provisions applicable to organizations in their jurisdictions.</p>
+<p>Penalties follow a tiered structure. Violations involving prohibited AI practices can result in fines up to 35 million euros or 7% of worldwide annual turnover, whichever is higher. Violations of requirements for high-risk systems can result in fines up to 15 million euros or 3% of worldwide turnover. Supply of incorrect information to authorities can result in fines up to 7.5 million euros or 1% of worldwide turnover.</p>
+</section>
+<section id="implementation-timeline" class="level3">
+<h3 class="anchored" data-anchor-id="implementation-timeline">Implementation Timeline</h3>
+<p>The AI Act has a phased implementation timeline. Prohibitions on banned AI practices apply from February 2025. Provisions on general purpose AI models and establishment of governance structures apply from August 2025. Most provisions including requirements for high-risk systems apply from August 2026. Requirements for high-risk AI systems that are safety components of products subject to other EU harmonization legislation apply from August 2027.</p>
+</section>
+</section>
+<section id="other-ai-specific-regulatory-developments" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="other-ai-specific-regulatory-developments"><span class="header-section-number">2.5</span> Other AI-Specific Regulatory Developments</h2>
+<p>While the EU AI Act is the most comprehensive AI law to date, other jurisdictions are developing their own approaches to AI regulation.</p>
+<section id="united-states-federal-developments" class="level3">
+<h3 class="anchored" data-anchor-id="united-states-federal-developments">United States Federal Developments</h3>
+<p>The United States has not enacted comprehensive federal AI legislation as of early 2025, but significant federal activity shapes AI governance.</p>
+<p>Executive Order 14110 on Safe, Secure, and Trustworthy Artificial Intelligence, issued in October 2023, directed federal agencies to take numerous actions addressing AI safety and security, privacy, civil rights, consumer protection, workforce impacts, innovation, and international leadership. The order requires safety testing for powerful AI models, addresses AI in critical infrastructure, directs agencies to address AI-related discrimination, and establishes governance structures within the federal government.</p>
+<p>Federal agencies are using existing authorities to address AI. The FTC has issued guidance and brought enforcement actions addressing AI under its unfair and deceptive practices authority. The EEOC has issued guidance on AI in employment decisions. Banking regulators have issued model risk management guidance applicable to AI systems used by financial institutions. The FDA regulates AI medical devices.</p>
+<p>The NIST AI Risk Management Framework, while voluntary, represents authoritative federal guidance on AI risk management. The White House Blueprint for an AI Bill of Rights articulates principles including safety, protection from algorithmic discrimination, data privacy, notice and explanation, and human alternatives.</p>
+</section>
+<section id="united-states-state-laws" class="level3">
+<h3 class="anchored" data-anchor-id="united-states-state-laws">United States State Laws</h3>
+<p>In the absence of comprehensive federal AI legislation, states have enacted AI-specific laws creating a complex compliance landscape.</p>
+<p>Colorado enacted the Colorado AI Act in 2024, becoming the first state to enact comprehensive AI legislation addressing high-risk AI systems. The law requires deployers of high-risk AI systems to use reasonable care to protect consumers from algorithmic discrimination. Deployers must conduct impact assessments, provide public statements describing AI systems, and notify consumers when AI makes or substantially influences consequential decisions about them. Developers must provide deployers with documentation necessary to conduct impact assessments and evaluate AI systems. The law takes effect in 2026.</p>
+<p>New York City Local Law 144 requires employers and employment agencies using automated employment decision tools to conduct annual independent bias audits, publish audit results, and provide candidates notice of AI use.</p>
+<p>The Illinois Artificial Intelligence Video Interview Act requires employers using AI to analyze video interviews to notify applicants that AI will be used, explain how the AI works, and obtain consent. Maryland prohibits using facial recognition in hiring without applicant consent.</p>
+<p>Additional states have enacted or are considering AI-specific legislation addressing employment, insurance, housing, healthcare, and other domains.</p>
+</section>
+<section id="international-developments" class="level3">
+<h3 class="anchored" data-anchor-id="international-developments">International Developments</h3>
+<p>AI regulation is a global phenomenon with significant developments across jurisdictions.</p>
+<p>Canada’s Artificial Intelligence and Data Act, proposed as part of broader digital legislation, would establish requirements for organizations responsible for high-impact AI systems. Requirements would include conducting impact assessments, establishing risk mitigation measures, maintaining records, and publishing plain-language descriptions of high-impact AI systems.</p>
+<p>China has enacted multiple AI-related regulations. The Provisions on the Management of Algorithmic Recommendations requires providers of algorithmic recommendation services to ensure transparency, protect user choice, and avoid harmful discrimination. The Provisions on the Management of Deep Synthesis regulates deepfakes and synthetic content. The Interim Measures for the Management of Generative Artificial Intelligence Services addresses generative AI services offered to the public, requiring that such services not generate illegal content, obtain proper consent for personal data, ensure training data quality, and cooperate with authorities.</p>
+<p>Singapore has developed governance frameworks emphasizing practical guidance and voluntary adoption. The Model AI Governance Framework provides guidance on responsible AI development and deployment. AI Verify provides a testing framework and toolkit for organizations to demonstrate responsible AI practices. The Veritas framework addresses AI in financial services specifically. Singapore’s approach emphasizes enabling innovation while encouraging responsible practices.</p>
+<p>Japan has pursued a pro-innovation approach emphasizing guidance rather than hard regulation, though specific rules apply in certain sectors. The Social Principles of Human-Centric AI and accompanying governance guidelines establish principles for trustworthy AI.</p>
+<p>The United Kingdom initially signaled a light-touch regulatory approach relying on sector regulators to address AI within their existing mandates. However, policy continues to develop.</p>
+<p>Brazil, India, South Korea, and numerous other jurisdictions are developing AI policies and regulations, creating an evolving global landscape.</p>
+</section>
+</section>
+<section id="industry-standards-and-frameworks" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="industry-standards-and-frameworks"><span class="header-section-number">2.6</span> Industry Standards and Frameworks</h2>
+<p>Beyond legal requirements, industry standards and voluntary frameworks shape AI governance expectations. While not legally binding in themselves, these standards influence what is considered reasonable practice, may be referenced in regulations or contracts, and provide practical guidance for implementation.</p>
+<section id="oecd-ai-principles" class="level3">
+<h3 class="anchored" data-anchor-id="oecd-ai-principles">OECD AI Principles</h3>
+<p>The OECD AI Principles, adopted in 2019 and updated subsequently, articulate values for trustworthy AI that have been adopted by over forty countries and have influenced legal frameworks including the EU AI Act.</p>
+<p>The principles articulate five complementary values. First, AI should contribute to inclusive growth, sustainable development, and well-being, augmenting human capabilities, advancing inclusion, reducing inequalities, and protecting the environment. Second, AI actors should respect human-centered values and fairness including human rights, democratic values, diversity, fairness, and social justice. Third, there should be transparency and explainability so stakeholders understand AI systems and can challenge decisions affecting them. Fourth, AI systems should be robust, secure, and safe throughout their lifecycle with appropriate risk management. Fifth, organizations and individuals developing or operating AI should be accountable for proper functioning of AI systems.</p>
+<p>The OECD has also developed the Framework for the Classification of AI Systems, which provides structured dimensions for analyzing AI systems. The OECD maintains the AI Policy Observatory tracking AI policy developments globally and providing comparative analysis.</p>
+</section>
+<section id="nist-ai-risk-management-framework" class="level3">
+<h3 class="anchored" data-anchor-id="nist-ai-risk-management-framework">NIST AI Risk Management Framework</h3>
+<p>The National Institute of Standards and Technology AI Risk Management Framework, published in 2023, provides voluntary guidance for managing AI risks. While developed in the United States, it has influenced approaches internationally.</p>
+<p>The framework organizes AI risk management around four core functions. The Govern function addresses the organizational culture, structures, policies, and accountability for AI risk management. The Map function addresses understanding context and identifying risks. The Measure function addresses assessing and analyzing identified risks through testing, metrics, and ongoing evaluation. The Manage function addresses prioritizing and responding to risks through controls, treatment options, monitoring, and communication.</p>
+<div id="fig-nist-rmf" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nist-rmf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_2_2_nist_ai_rmf.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nist-rmf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: NIST AI Risk Management Framework
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 2.2: NIST AI Risk Management Framework — The four core functions: Govern (central), Map, Measure, and Manage.</em></p>
+<p>The accompanying NIST AI RMF Playbook provides detailed guidance for implementing each function, including suggested actions, transparency and documentation practices, and references to standards and frameworks.</p>
+</section>
+<section id="iso-ai-standards" class="level3">
+<h3 class="anchored" data-anchor-id="iso-ai-standards">ISO AI Standards</h3>
+<p>The International Organization for Standardization has developed AI-specific standards that provide frameworks for AI governance.</p>
+<p>ISO/IEC 42001:2023 specifies requirements for an AI management system. It provides a framework for organizational governance of AI, addressing leadership commitment, planning, support, operation, performance evaluation, and improvement. Organizations can certify their AI management systems against this standard, demonstrating commitment to systematic AI governance.</p>
+<p>ISO/IEC 22989:2022 establishes AI concepts and terminology, providing common vocabulary for discussing AI systems consistently.</p>
+<p>Additional ISO standards address bias in AI systems, robustness of neural networks, transparency, explainability, and other AI governance topics.</p>
+</section>
+</section>
+<section id="connecting-legal-requirements-to-governance-practice" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="connecting-legal-requirements-to-governance-practice"><span class="header-section-number">2.7</span> Connecting Legal Requirements to Governance Practice</h2>
+<p>AI governance professionals must translate legal requirements into practical organizational processes.</p>
+<section id="impact-assessments" class="level3">
+<h3 class="anchored" data-anchor-id="impact-assessments">Impact Assessments</h3>
+<p>Impact assessments are a common mechanism across multiple legal frameworks for identifying and addressing AI risks before deployment.</p>
+<p>Data Protection Impact Assessments under the GDPR focus on privacy and data protection risks. AI impact assessments, required under laws like the Colorado AI Act and emerging in other jurisdictions, focus on AI-specific risks including algorithmic discrimination, accuracy, transparency, and fairness. Fundamental rights impact assessments are required under the EU AI Act for certain deployers of high-risk AI systems.</p>
+<p>These various assessment requirements overlap and can often be coordinated. Organizations should develop impact assessment processes that address all applicable requirements efficiently while ensuring each specific legal requirement is satisfied.</p>
+</section>
+<section id="documentation-and-record-keeping" class="level3">
+<h3 class="anchored" data-anchor-id="documentation-and-record-keeping">Documentation and Record-Keeping</h3>
+<p>Multiple legal frameworks impose documentation requirements that governance programs must address.</p>
+<p>The EU AI Act requires technical documentation for high-risk systems addressing system design, capabilities, testing, and risk management. The GDPR requires documentation of processing activities and of DPIAs. Various sector-specific laws impose additional documentation requirements.</p>
+<p>Model cards, datasheets for datasets, and similar documentation frameworks provide structured approaches to AI documentation that can help satisfy multiple legal requirements.</p>
+</section>
+<section id="transparency-and-notice" class="level3">
+<h3 class="anchored" data-anchor-id="transparency-and-notice">Transparency and Notice</h3>
+<p>Many legal frameworks require disclosure to individuals about AI use.</p>
+<p>The EU AI Act requires disclosure when individuals interact with certain AI systems and when AI generates synthetic content. The GDPR requires information about automated decision-making. Consumer protection laws may require disclosure of AI involvement in products or services. Employment laws in various jurisdictions require disclosure of AI use in hiring.</p>
+<p>Organizations should identify all applicable disclosure requirements and implement processes ensuring required disclosures are made appropriately.</p>
+</section>
+<section id="human-oversight" class="level3">
+<h3 class="anchored" data-anchor-id="human-oversight">Human Oversight</h3>
+<p>Legal frameworks increasingly require human oversight of AI systems, but the specific requirements vary.</p>
+<p>The GDPR’s Article 22 requires the right to obtain human intervention in automated decisions with significant effects. The EU AI Act requires human oversight measures in high-risk AI systems. Various sector-specific requirements mandate human review in particular contexts.</p>
+<p>Organizations must design AI systems and processes to enable the required human oversight while maintaining operational efficiency.</p>
+</section>
+</section>
+<section id="chapter-2-summary" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="chapter-2-summary"><span class="header-section-number">2.8</span> Chapter 2 Summary</h2>
+<p>This chapter surveyed the legal and regulatory frameworks that apply to AI systems. These frameworks include existing laws not designed with AI in mind that nonetheless apply to it, new AI-specific regulations, and voluntary standards and frameworks that shape expectations for responsible practice.</p>
+<p>Privacy laws including the GDPR and various US laws apply when AI systems process personal data, imposing requirements for lawful processing bases, data minimization, purpose limitation, and data subject rights. The GDPR’s Article 22 specifically addresses automated decision-making, providing rights related to decisions based solely on automated processing with significant effects.</p>
+<p>Anti-discrimination laws prohibit discrimination based on protected characteristics regardless of whether discrimination results from AI or human decision-making. Consumer protection laws prohibit unfair and deceptive practices including in AI-powered products and services. Product liability laws are evolving to address AI defects and harms. Intellectual property laws address both the use of copyrighted material for AI training and the status of AI-generated outputs.</p>
+<p>The EU AI Act provides the most comprehensive AI-specific regulation to date, classifying AI systems by risk level and imposing extensive requirements on high-risk systems. Prohibited AI practices are banned. High-risk AI systems must comply with requirements for risk management, data governance, documentation, transparency, human oversight, accuracy, and robustness. General purpose AI models face separate requirements. The Act allocates obligations among providers, deployers, and other actors and establishes significant penalties for non-compliance.</p>
+<p>Other jurisdictions are developing AI regulations including US states like Colorado with comprehensive AI acts and cities like New York with targeted requirements. Canada, China, Singapore, Japan, and other countries are developing their own approaches ranging from comprehensive legislation to sectoral regulation to voluntary frameworks.</p>
+<p>Industry standards and frameworks including the OECD AI Principles, NIST AI Risk Management Framework, and ISO standards provide guidance for responsible AI that, while voluntary, shapes expectations and may become legally relevant.</p>
+<p>Translating legal requirements into practice requires impact assessments addressing multiple frameworks’ requirements, documentation meeting various legal standards, transparency and notice satisfying disclosure obligations, human oversight as legally required, and compliance programs addressing multiple jurisdictions.</p>
+</section>
+<section id="chapter-2-review-questions" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="chapter-2-review-questions"><span class="header-section-number">2.9</span> Chapter 2 Review Questions</h2>
+<ol type="1">
+<li><p>An organization is deploying an AI system that will analyze job applicants’ resumes and video interviews to recommend candidates for human review. The system will be used in the European Union. Which of the following assessment requirements will most likely apply to this deployment?</p></li>
+<li><p>A US-based company is developing a large language model that will be offered commercially to customers worldwide, including in the European Union. Under the EU AI Act, which category of requirements is most likely to apply to this company’s activities?</p></li>
+<li><p>An AI system makes recommendations about loan applications that are then reviewed by human loan officers who make final decisions. In approximately 95% of cases, the human loan officers follow the AI’s recommendation. Under the GDPR’s Article 22, how should the organization analyze this arrangement?</p></li>
+<li><p>An organization is preparing for compliance with multiple AI-related regulations including the EU AI Act, the Colorado AI Act, and GDPR requirements. The organization is considering how to conduct impact assessments efficiently. Which approach best addresses this situation?</p></li>
+<li><p>A company operating in the United States uses an AI hiring tool purchased from a vendor. The tool has been shown in testing to have disparate impact on protected groups. Who bears legal responsibility for this disparate impact under US anti-discrimination law?</p></li>
+</ol>
+</section>
+<section id="references" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="references"><span class="header-section-number">2.10</span> References</h2>
+<p>European Parliament and Council. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). Official Journal of the European Union, 2024.</p>
+<p>European Parliament and Council. Regulation (EU) 2016/679 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data (General Data Protection Regulation). Official Journal of the European Union, 2016.</p>
+<p>National Institute of Standards and Technology. AI Risk Management Framework 1.0. NIST AI 100-1, 2023.</p>
+<p>Organisation for Economic Co-operation and Development. Recommendation of the Council on Artificial Intelligence. OECD/LEGAL/0449, 2019.</p>
+<p>IAPP. Global AI Governance Law and Policy Series. International Association of Privacy Professionals, 2025.</p>
+<p>Equal Employment Opportunity Commission. The Americans with Disabilities Act and the Use of Software, Algorithms, and Artificial Intelligence to Assess Job Applicants and Employees. Technical Assistance Document, 2022.</p>
+<p>Federal Trade Commission. Aiming for truth, fairness, and equity in your company’s use of AI. FTC Business Blog, 2021.</p>
+<p>International Organization for Standardization. ISO/IEC 42001:2023 Information technology - Artificial intelligence - Management system, 2023.</p>
+<p>State of Colorado. Senate Bill 24-205, Concerning Consumer Protections in Interactions with Artificial Intelligence Systems, 2024.</p>
+<p>Executive Order 14110, Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence. Federal Register, 2023.</p>
+<hr>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/01-foundations.html" class="pagination-link" aria-label="Understanding the Foundations of AI Governance">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding the Foundations of AI Governance</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/03-development.html" class="pagination-link" aria-label="Understanding How to Govern AI Development">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Development</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

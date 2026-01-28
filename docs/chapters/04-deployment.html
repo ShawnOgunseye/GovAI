@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4&nbsp; Understanding How to Govern AI Deployment and Use</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/05-lifecycle.html" rel="next">
+<link href="../chapters/03-development.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f8bb638c26fb726dc4c2c6db7be98b4e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-development.html">Governing the AI Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/04-deployment.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../cover.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../cover.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding the Foundations of AI Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-legal-frameworks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Understanding How Laws, Standards, and Frameworks Apply to AI</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Governing the AI Lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-deployment.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Perspectives and Integration</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-lifecycle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Governance by Design Across the Lifecycle</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Topics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-execution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Governance in Motion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-future.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ongoing Issues and Future Directions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Frameworks and Templates</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Quick Reference Tables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practice Scenarios</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Glossary and Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../99-backmatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the Author</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">4.1</span> Introduction</a></li>
+  <li><a href="#evaluating-ai-deployment-decisions" id="toc-evaluating-ai-deployment-decisions" class="nav-link" data-scroll-target="#evaluating-ai-deployment-decisions"><span class="header-section-number">4.2</span> Evaluating AI Deployment Decisions</a>
+  <ul class="collapse">
+  <li><a href="#system-readiness" id="toc-system-readiness" class="nav-link" data-scroll-target="#system-readiness">System Readiness</a></li>
+  <li><a href="#organizational-readiness" id="toc-organizational-readiness" class="nav-link" data-scroll-target="#organizational-readiness">Organizational Readiness</a></li>
+  <li><a href="#deployment-context-assessment" id="toc-deployment-context-assessment" class="nav-link" data-scroll-target="#deployment-context-assessment">Deployment Context Assessment</a></li>
+  <li><a href="#deployment-decision" id="toc-deployment-decision" class="nav-link" data-scroll-target="#deployment-decision">Deployment Decision</a></li>
+  </ul></li>
+  <li><a href="#assessing-third-party-ai-systems" id="toc-assessing-third-party-ai-systems" class="nav-link" data-scroll-target="#assessing-third-party-ai-systems"><span class="header-section-number">4.3</span> Assessing Third-Party AI Systems</a>
+  <ul class="collapse">
+  <li><a href="#due-diligence" id="toc-due-diligence" class="nav-link" data-scroll-target="#due-diligence">Due Diligence</a></li>
+  <li><a href="#contractual-provisions" id="toc-contractual-provisions" class="nav-link" data-scroll-target="#contractual-provisions">Contractual Provisions</a></li>
+  <li><a href="#ongoing-vendor-management" id="toc-ongoing-vendor-management" class="nav-link" data-scroll-target="#ongoing-vendor-management">Ongoing Vendor Management</a></li>
+  </ul></li>
+  <li><a href="#deployment-options-and-their-governance-implications" id="toc-deployment-options-and-their-governance-implications" class="nav-link" data-scroll-target="#deployment-options-and-their-governance-implications"><span class="header-section-number">4.4</span> Deployment Options and Their Governance Implications</a>
+  <ul class="collapse">
+  <li><a href="#cloud-deployment" id="toc-cloud-deployment" class="nav-link" data-scroll-target="#cloud-deployment">Cloud Deployment</a></li>
+  <li><a href="#on-premise-deployment" id="toc-on-premise-deployment" class="nav-link" data-scroll-target="#on-premise-deployment">On-Premise Deployment</a></li>
+  <li><a href="#edge-deployment" id="toc-edge-deployment" class="nav-link" data-scroll-target="#edge-deployment">Edge Deployment</a></li>
+  <li><a href="#hybrid-deployment" id="toc-hybrid-deployment" class="nav-link" data-scroll-target="#hybrid-deployment">Hybrid Deployment</a></li>
+  </ul></li>
+  <li><a href="#governing-ai-during-operation" id="toc-governing-ai-during-operation" class="nav-link" data-scroll-target="#governing-ai-during-operation"><span class="header-section-number">4.5</span> Governing AI During Operation</a>
+  <ul class="collapse">
+  <li><a href="#operational-monitoring" id="toc-operational-monitoring" class="nav-link" data-scroll-target="#operational-monitoring">Operational Monitoring</a></li>
+  <li><a href="#human-oversight-in-operation" id="toc-human-oversight-in-operation" class="nav-link" data-scroll-target="#human-oversight-in-operation">Human Oversight in Operation</a></li>
+  <li><a href="#documentation-during-operation" id="toc-documentation-during-operation" class="nav-link" data-scroll-target="#documentation-during-operation">Documentation During Operation</a></li>
+  <li><a href="#change-management" id="toc-change-management" class="nav-link" data-scroll-target="#change-management">Change Management</a></li>
+  </ul></li>
+  <li><a href="#managing-downstream-risks" id="toc-managing-downstream-risks" class="nav-link" data-scroll-target="#managing-downstream-risks"><span class="header-section-number">4.6</span> Managing Downstream Risks</a>
+  <ul class="collapse">
+  <li><a href="#identifying-affected-parties" id="toc-identifying-affected-parties" class="nav-link" data-scroll-target="#identifying-affected-parties">Identifying Affected Parties</a></li>
+  <li><a href="#risk-communication" id="toc-risk-communication" class="nav-link" data-scroll-target="#risk-communication">Risk Communication</a></li>
+  <li><a href="#misuse-prevention" id="toc-misuse-prevention" class="nav-link" data-scroll-target="#misuse-prevention">Misuse Prevention</a></li>
+  </ul></li>
+  <li><a href="#external-communication" id="toc-external-communication" class="nav-link" data-scroll-target="#external-communication"><span class="header-section-number">4.7</span> External Communication</a>
+  <ul class="collapse">
+  <li><a href="#regulatory-communication" id="toc-regulatory-communication" class="nav-link" data-scroll-target="#regulatory-communication">Regulatory Communication</a></li>
+  <li><a href="#individual-communication" id="toc-individual-communication" class="nav-link" data-scroll-target="#individual-communication">Individual Communication</a></li>
+  <li><a href="#public-communication" id="toc-public-communication" class="nav-link" data-scroll-target="#public-communication">Public Communication</a></li>
+  </ul></li>
+  <li><a href="#deactivation-capabilities" id="toc-deactivation-capabilities" class="nav-link" data-scroll-target="#deactivation-capabilities"><span class="header-section-number">4.8</span> Deactivation Capabilities</a>
+  <ul class="collapse">
+  <li><a href="#technical-deactivation" id="toc-technical-deactivation" class="nav-link" data-scroll-target="#technical-deactivation">Technical Deactivation</a></li>
+  <li><a href="#organizational-authority" id="toc-organizational-authority" class="nav-link" data-scroll-target="#organizational-authority">Organizational Authority</a></li>
+  <li><a href="#documentation-and-testing" id="toc-documentation-and-testing" class="nav-link" data-scroll-target="#documentation-and-testing">Documentation and Testing</a></li>
+  </ul></li>
+  <li><a href="#protecting-user-rights" id="toc-protecting-user-rights" class="nav-link" data-scroll-target="#protecting-user-rights"><span class="header-section-number">4.9</span> Protecting User Rights</a>
+  <ul class="collapse">
+  <li><a href="#opt-out-and-consent" id="toc-opt-out-and-consent" class="nav-link" data-scroll-target="#opt-out-and-consent">Opt-Out and Consent</a></li>
+  <li><a href="#explanation-and-transparency" id="toc-explanation-and-transparency" class="nav-link" data-scroll-target="#explanation-and-transparency">Explanation and Transparency</a></li>
+  <li><a href="#contestation-and-recourse" id="toc-contestation-and-recourse" class="nav-link" data-scroll-target="#contestation-and-recourse">Contestation and Recourse</a></li>
+  <li><a href="#rights-implementation" id="toc-rights-implementation" class="nav-link" data-scroll-target="#rights-implementation">Rights Implementation</a></li>
+  </ul></li>
+  <li><a href="#workforce-considerations" id="toc-workforce-considerations" class="nav-link" data-scroll-target="#workforce-considerations"><span class="header-section-number">4.10</span> Workforce Considerations</a>
+  <ul class="collapse">
+  <li><a href="#ai-augmentation-of-work" id="toc-ai-augmentation-of-work" class="nav-link" data-scroll-target="#ai-augmentation-of-work">AI Augmentation of Work</a></li>
+  <li><a href="#workforce-displacement" id="toc-workforce-displacement" class="nav-link" data-scroll-target="#workforce-displacement">Workforce Displacement</a></li>
+  <li><a href="#ai-in-employment-decisions" id="toc-ai-in-employment-decisions" class="nav-link" data-scroll-target="#ai-in-employment-decisions">AI in Employment Decisions</a></li>
+  </ul></li>
+  <li><a href="#integrating-ai-governance-with-enterprise-risk-management" id="toc-integrating-ai-governance-with-enterprise-risk-management" class="nav-link" data-scroll-target="#integrating-ai-governance-with-enterprise-risk-management"><span class="header-section-number">4.11</span> Integrating AI Governance with Enterprise Risk Management</a>
+  <ul class="collapse">
+  <li><a href="#ai-risk-categories" id="toc-ai-risk-categories" class="nav-link" data-scroll-target="#ai-risk-categories">AI Risk Categories</a></li>
+  <li><a href="#integration-approaches" id="toc-integration-approaches" class="nav-link" data-scroll-target="#integration-approaches">Integration Approaches</a></li>
+  <li><a href="#three-lines-model" id="toc-three-lines-model" class="nav-link" data-scroll-target="#three-lines-model">Three Lines Model</a></li>
+  </ul></li>
+  <li><a href="#chapter-4-summary" id="toc-chapter-4-summary" class="nav-link" data-scroll-target="#chapter-4-summary"><span class="header-section-number">4.12</span> Chapter 4 Summary</a></li>
+  <li><a href="#chapter-4-review-questions" id="toc-chapter-4-review-questions" class="nav-link" data-scroll-target="#chapter-4-review-questions"><span class="header-section-number">4.13</span> Chapter 4 Review Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4.14</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-development.html">Governing the AI Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/04-deployment.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">4.1</span> Introduction</h2>
+<p>The deployment of an AI system marks a transition from controlled development to real-world operation, where the system interacts with actual users, affects actual individuals, and operates in conditions that may differ from those anticipated during development. This transition introduces new governance challenges. The risks that were theoretical during development become actual. The edge cases that were difficult to test may now be encountered. The individuals affected by AI decisions now have a stake in how the system operates.</p>
+<p>This chapter examines governance during AI deployment and operation, addressing how organizations evaluate AI systems before deployment, manage ongoing operations, handle third-party AI relationships, protect user rights, address workforce implications, and integrate AI governance with enterprise risk management. The material maps primarily to Domain IV of the AIGP Body of Knowledge, which addresses the knowledge and skills required to govern the deployment and use of AI systems.</p>
+<p>Organizations may be deployers using AI systems developed by others, deployers using AI systems they developed themselves, or both. The governance practices described here apply regardless of where the AI system originated, though the available information and control mechanisms differ when systems come from external providers versus internal development teams.</p>
+<div id="fig-deployment-framework" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-deployment-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_4_1_deployment_framework.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-deployment-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: AI Deployment Governance Framework
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 4.1: AI Deployment Governance Framework — Five-phase deployment lifecycle with activities and stakeholder responsibilities.</em></p>
+</section>
+<section id="evaluating-ai-deployment-decisions" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="evaluating-ai-deployment-decisions"><span class="header-section-number">4.2</span> Evaluating AI Deployment Decisions</h2>
+<p>Before deploying an AI system, organizations must evaluate whether deployment is appropriate. This evaluation considers whether the system is ready, whether the organization is ready, and whether the deployment context is appropriate.</p>
+<section id="system-readiness" class="level3">
+<h3 class="anchored" data-anchor-id="system-readiness">System Readiness</h3>
+<p>System readiness assessment verifies that the AI system meets requirements and is fit for deployment. For internally developed systems, this assessment builds on development testing. For externally sourced systems, this assessment may require independent evaluation.</p>
+<p>Technical readiness requires that the system functions correctly, achieves required performance levels, and integrates appropriately with organizational infrastructure. Does the system produce outputs in the expected format? Does it meet latency and throughput requirements? Does it handle errors gracefully? Does it integrate with authentication, logging, and monitoring systems?</p>
+<p>Performance readiness requires that the system achieves required accuracy, fairness, and robustness. Performance should be validated on data representative of actual deployment conditions, not just development test data. If the deployment context differs significantly from development conditions, additional testing may be needed.</p>
+<p>Compliance readiness requires that legal and regulatory requirements have been addressed. Has required documentation been prepared? Are required disclosures ready to be made? Are human oversight mechanisms in place? Have required impact assessments been completed?</p>
+</section>
+<section id="organizational-readiness" class="level3">
+<h3 class="anchored" data-anchor-id="organizational-readiness">Organizational Readiness</h3>
+<p>Deploying an AI system requires organizational capabilities beyond the system itself. Organizational readiness assessment verifies these capabilities are in place.</p>
+<p>Operational readiness requires that the organization can operate the AI system effectively. Are staff trained to use the system appropriately? Are procedures documented? Is support available when users encounter issues?</p>
+<p>Oversight readiness requires that the organization can provide required human oversight. If human review is required for certain decisions, are reviewers identified, trained, and available? Do they have access to the information needed for meaningful review?</p>
+<p>Monitoring readiness requires that the organization can monitor the deployed system. Are monitoring systems in place? Are metrics defined? Are alert thresholds set? Is someone responsible for reviewing monitoring outputs?</p>
+<p>Incident readiness requires that the organization can respond when problems occur. Are incident response procedures established? Are roles and responsibilities clear? Are escalation paths defined? Are regulatory notification requirements understood?</p>
+</section>
+<section id="deployment-context-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="deployment-context-assessment">Deployment Context Assessment</h3>
+<p>The same AI system may be appropriate for deployment in some contexts but not others. Deployment context assessment evaluates whether the specific deployment scenario is appropriate.</p>
+<p>Use case alignment verifies that the deployment use case matches the system’s intended purpose and validated capabilities. An AI system validated for one application may not be appropriate for different applications, even if they seem similar. A credit risk model developed for consumer lending may not be appropriate for small business lending without additional validation.</p>
+<p>Population alignment verifies that the deployment population matches the population on which the system was developed and tested. If the system will serve a different demographic, geographic, or other population than it was developed for, performance may differ.</p>
+<p>Environmental alignment verifies that deployment conditions match development assumptions. If the system depends on particular data inputs, infrastructure, or integration points, those dependencies must be satisfied in the deployment environment.</p>
+<p>Risk proportionality verifies that the deployment context does not present risks disproportionate to the validated capabilities. A system with modest accuracy might be appropriate for low-stakes applications but inappropriate for consequential decisions.</p>
+</section>
+<section id="deployment-decision" class="level3">
+<h3 class="anchored" data-anchor-id="deployment-decision">Deployment Decision</h3>
+<p>The deployment decision integrates system readiness, organizational readiness, and deployment context assessment into a determination of whether to proceed. This decision should be documented, with clear accountability for the decision-maker.</p>
+<p>The decision may be to proceed with deployment as planned, proceed with modifications or conditions, delay deployment until readiness gaps are addressed, or not proceed because the deployment is inappropriate.</p>
+<p>Conditions might include limiting initial deployment scope, implementing additional oversight measures, requiring enhanced monitoring, or setting triggers for deployment review. These conditions should be documented and tracked to ensure they are actually implemented.</p>
+</section>
+</section>
+<section id="assessing-third-party-ai-systems" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="assessing-third-party-ai-systems"><span class="header-section-number">4.3</span> Assessing Third-Party AI Systems</h2>
+<p>Many organizations deploy AI systems obtained from external providers rather than developing systems internally. Third-party AI introduces governance challenges because the organization has less visibility into system development and less control over system characteristics.</p>
+<section id="due-diligence" class="level3">
+<h3 class="anchored" data-anchor-id="due-diligence">Due Diligence</h3>
+<p>Before acquiring a third-party AI system, organizations should conduct due diligence to evaluate the system and the provider.</p>
+<p>Provider assessment evaluates the provider’s capabilities, practices, and track record. Does the provider have appropriate expertise? What governance practices does the provider follow? Has the provider had incidents with other AI systems? What is the provider’s financial stability and likely continuity?</p>
+<p>System assessment evaluates the AI system itself. What is the system designed to do? How was it developed? What data was used for training? What testing was performed? What are the known limitations? This assessment may be constrained by limited access to system details; providers may restrict information for competitive or security reasons.</p>
+<p>Documentation assessment evaluates whether the provider supplies documentation sufficient to support the organization’s governance needs. Is there adequate description of system capabilities and limitations? Are performance metrics provided? Is the information sufficient for required impact assessments?</p>
+<p>Compliance assessment evaluates whether the provider has addressed applicable regulatory requirements. For systems subject to the EU AI Act, has the provider completed conformity assessment? Does the provider supply required documentation? Will the provider support the organization’s compliance obligations?</p>
+</section>
+<section id="contractual-provisions" class="level3">
+<h3 class="anchored" data-anchor-id="contractual-provisions">Contractual Provisions</h3>
+<p>Contracts with AI providers should address governance needs that cannot be fully satisfied through pre-acquisition due diligence.</p>
+<p>Information rights should ensure the organization receives information needed for ongoing governance. This might include performance metrics, information about system updates, notification of incidents or identified issues, and documentation needed for regulatory compliance.</p>
+<p>Audit rights should enable the organization to verify provider claims and assess ongoing compliance. This might include rights to audit provider practices, review testing results, or conduct independent testing of the system.</p>
+<p>Update provisions should address how system updates are handled. Will updates be automatic or subject to organization approval? Will the organization be notified in advance? What testing will the organization be able to conduct before updates take effect?</p>
+<p>Incident provisions should address how incidents are handled. What notification will the provider give? What cooperation will the provider provide for incident investigation? What remediation will the provider undertake?</p>
+<p>Liability provisions should appropriately allocate responsibility for AI-related harms. Who bears liability if the system causes harm to third parties? What indemnification does the provider offer? How are regulatory penalties allocated?</p>
+<p>Termination provisions should address what happens if the relationship ends. Will the organization retain access to trained models? Will data be returned or deleted? What transition support will the provider offer?</p>
+</section>
+<section id="ongoing-vendor-management" class="level3">
+<h3 class="anchored" data-anchor-id="ongoing-vendor-management">Ongoing Vendor Management</h3>
+<p>Third-party AI relationships require ongoing management beyond initial due diligence and contracting.</p>
+<p>Performance monitoring tracks whether the system continues to meet requirements. If performance degrades or unexpected issues arise, the organization should investigate and work with the provider to address problems.</p>
+<p>Compliance monitoring tracks whether the provider continues to meet contractual and regulatory obligations. Regular review should verify that required documentation is current, required notifications are being made, and representations remain accurate.</p>
+<p>Relationship management maintains communication with the provider about system issues, upcoming changes, and evolving requirements. Organizations should ensure they have appropriate contacts and escalation paths at the provider.</p>
+<p>Risk assessment should be updated periodically and when circumstances change. A provider that was appropriate when selected may become inappropriate if their practices change, their financial condition weakens, or organizational requirements evolve.</p>
+<div id="fig-third-party" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-third-party-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_4_2_third_party_lifecycle.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-third-party-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: Third-Party AI Governance Lifecycle
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 4.2: Third-Party AI Governance Lifecycle — Cyclical governance from due diligence through monitoring and renewal or exit.</em></p>
+</section>
+</section>
+<section id="deployment-options-and-their-governance-implications" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="deployment-options-and-their-governance-implications"><span class="header-section-number">4.4</span> Deployment Options and Their Governance Implications</h2>
+<p>AI systems can be deployed through various technical architectures, each with different governance implications. Organizations should understand these options and their tradeoffs.</p>
+<section id="cloud-deployment" class="level3">
+<h3 class="anchored" data-anchor-id="cloud-deployment">Cloud Deployment</h3>
+<p>Cloud deployment runs AI systems on infrastructure operated by cloud service providers. The organization accesses AI capabilities through APIs or managed services without operating the underlying infrastructure.</p>
+<p>Cloud deployment offers advantages including reduced infrastructure burden, scalability, and access to advanced capabilities the organization might not be able to develop independently. Many AI services are available only or primarily through cloud deployment.</p>
+<p>Cloud deployment introduces governance considerations. Data sent to cloud services leaves organizational control; privacy and security depend on provider practices and contractual protections. The organization may have limited visibility into how systems operate. Latency and availability depend on network connectivity and provider uptime. Regulatory requirements may restrict use of cloud services for certain data or applications.</p>
+<p>A less obvious but increasingly important consideration is the competitive intelligence embedded in organizational data. When employees use cloud AI services for their work—analyzing documents, writing code, refining strategies—their interactions may train or improve the provider’s models. The organizational knowledge encoded in these interactions can become part of a platform that serves competitors. When AI becomes part of the team rather than a private assistant, it becomes a platform for organizational intelligence that may not remain organizational. Governance should address what data and interactions flow to external AI services and whether competitive sensitivity warrants constraints.</p>
+</section>
+<section id="on-premise-deployment" class="level3">
+<h3 class="anchored" data-anchor-id="on-premise-deployment">On-Premise Deployment</h3>
+<p>On-premise deployment runs AI systems on infrastructure the organization owns and operates. The organization maintains control over the computing environment and data.</p>
+<p>On-premise deployment offers advantages for sensitive applications. Data remains within organizational boundaries. The organization has full control over the computing environment. Operation does not depend on external connectivity or provider availability.</p>
+<p>On-premise deployment requires organizational capabilities to operate and maintain AI infrastructure. This includes appropriate hardware, software expertise, and ongoing maintenance. On-premise deployment may limit access to capabilities available only through cloud services.</p>
+</section>
+<section id="edge-deployment" class="level3">
+<h3 class="anchored" data-anchor-id="edge-deployment">Edge Deployment</h3>
+<p>Edge deployment runs AI systems on devices at the edge of networks, close to data sources or end users. This might include AI on mobile devices, IoT devices, industrial equipment, or local computing appliances.</p>
+<p>Edge deployment offers advantages for applications requiring low latency, offline operation, or local data processing. AI on a mobile device can operate without network connectivity. AI on manufacturing equipment can respond faster than a round-trip to a cloud server would allow.</p>
+<p>Edge deployment introduces governance considerations. Models deployed to edge devices may be harder to update and monitor. Security of edge devices may be challenging. Distributed deployment may complicate version management and consistency.</p>
+</section>
+<section id="hybrid-deployment" class="level3">
+<h3 class="anchored" data-anchor-id="hybrid-deployment">Hybrid Deployment</h3>
+<p>Many organizations use hybrid approaches combining cloud, on-premise, and edge deployment for different systems or different aspects of the same system. For example, model training might occur in the cloud while inference runs on-premise, or a mobile app might use on-device AI for routine processing while calling cloud services for complex requests.</p>
+<p>Hybrid deployment requires governance approaches that address each deployment context and the interactions between them. Data flows between environments must be understood and protected. Consistency must be maintained when the same model runs in different environments.</p>
+</section>
+</section>
+<section id="governing-ai-during-operation" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="governing-ai-during-operation"><span class="header-section-number">4.5</span> Governing AI During Operation</h2>
+<p>Once deployed, AI systems require ongoing governance throughout their operational life. This governance ensures systems continue to perform appropriately, risks are managed, and issues are identified and addressed.</p>
+<section id="operational-monitoring" class="level3">
+<h3 class="anchored" data-anchor-id="operational-monitoring">Operational Monitoring</h3>
+<p>Continuous monitoring provides visibility into AI system operation and enables early detection of issues.</p>
+<p>Technical monitoring tracks system health including availability, latency, throughput, and errors. Standard application monitoring practices apply, supplemented by AI-specific considerations.</p>
+<p>Performance monitoring tracks model accuracy and related metrics over time. This requires defining appropriate metrics, collecting the data needed to compute them, and establishing processes to review results. For supervised learning systems, this typically requires obtaining ground truth labels for a sample of predictions, which may be available immediately, delayed, or require active collection.</p>
+<p>Fairness monitoring tracks whether outcomes remain equitable across demographic groups. Disparities that were not present or were acceptable at deployment may emerge or worsen over time.</p>
+<p>Drift monitoring detects changes in input data distributions or in the relationship between inputs and appropriate outputs. Data drift occurs when the characteristics of incoming data change from the training distribution. Concept drift occurs when the underlying relationships the model learned change. Both can cause performance degradation.</p>
+<p>Usage monitoring tracks how the system is being used, which can identify misuse, unexpected use patterns, or opportunities for improvement.</p>
+</section>
+<section id="human-oversight-in-operation" class="level3">
+<h3 class="anchored" data-anchor-id="human-oversight-in-operation">Human Oversight in Operation</h3>
+<p>Human oversight requirements established during design must be implemented during operation. The nature and intensity of oversight depends on the application context and regulatory requirements.</p>
+<p>For some applications, human oversight means humans review AI recommendations before taking action. The human reviewer should have appropriate expertise, access to relevant information, and genuine authority to override AI recommendations. Organizations should guard against automation bias, where humans routinely accept AI outputs without meaningful review.</p>
+<p>For other applications, human oversight means humans monitor aggregate AI behavior without reviewing individual decisions. This might involve periodic review of performance metrics, audits of decision samples, or investigation of anomalies or complaints.</p>
+<p>For applications requiring human intervention capabilities, humans must be able to understand system operation, intervene when necessary, and stop the system if required. These capabilities must be tested and maintained.</p>
+</section>
+<section id="documentation-during-operation" class="level3">
+<h3 class="anchored" data-anchor-id="documentation-during-operation">Documentation During Operation</h3>
+<p>Operational documentation captures information needed for ongoing governance, incident investigation, and compliance demonstration.</p>
+<p>Logging should capture appropriate information about AI system inputs, outputs, and operation. What constitutes appropriate logging depends on the application; logs should be sufficient to investigate issues and demonstrate compliance without unnecessarily retaining sensitive information.</p>
+<p>Audit trails should enable reconstruction of decisions for investigation or challenge. When an individual questions an AI decision affecting them, the organization should be able to retrieve relevant information and explain what happened.</p>
+<p>Performance records should document ongoing performance metrics, enabling trend analysis and compliance demonstration.</p>
+<p>Incident records should document any incidents, investigations, and responses, supporting organizational learning and demonstrating diligent incident management.</p>
+</section>
+<section id="change-management" class="level3">
+<h3 class="anchored" data-anchor-id="change-management">Change Management</h3>
+<p>AI systems change over time through updates, retraining, configuration changes, and environmental changes. Change management ensures changes are controlled and do not introduce unintended consequences.</p>
+<p>Update assessment should evaluate proposed changes before implementation. What is the purpose of the change? What are the expected effects? What testing has been performed? What risks might the change introduce?</p>
+<p>Approval processes should ensure appropriate review of changes. Minor changes might be approved by operational staff; significant changes might require governance review. The level of review should be proportionate to the potential impact.</p>
+<p>Rollback capabilities should enable reverting to previous versions if changes cause problems. This requires maintaining previous versions and having procedures to restore them.</p>
+<p>Documentation should capture what changes were made, when, why, and by whom. This supports troubleshooting and provides an audit trail.</p>
+</section>
+</section>
+<section id="managing-downstream-risks" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="managing-downstream-risks"><span class="header-section-number">4.6</span> Managing Downstream Risks</h2>
+<p>AI systems can affect parties beyond the immediate users, and deployers must consider and manage these downstream risks.</p>
+<section id="identifying-affected-parties" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-affected-parties">Identifying Affected Parties</h3>
+<p>AI systems affect multiple categories of stakeholders whose interests governance should consider.</p>
+<p>Users are individuals who interact directly with the AI system. They may be employees using AI tools in their work, customers using AI-powered products or services, or others who engage with the system.</p>
+<p>Subjects are individuals about whom the AI system makes decisions or predictions, who may or may not be the same as users. A hiring AI affects job applicants who may never directly interact with the system. A credit AI affects loan applicants whose information the system processes.</p>
+<p>Third parties are individuals or entities affected by AI system outputs or by actions taken based on those outputs. If an AI system recommends a price increase that affects customers, those customers are affected parties even if the AI’s role is invisible to them.</p>
+<p>Society broadly may be affected by aggregate impacts of AI deployment, including effects on labor markets, information environments, or social dynamics.</p>
+</section>
+<section id="risk-communication" class="level3">
+<h3 class="anchored" data-anchor-id="risk-communication">Risk Communication</h3>
+<p>Organizations should communicate appropriately about AI risks to affected parties.</p>
+<p>Users should understand what the AI system does, how to use it appropriately, and what limitations to be aware of. Documentation, training, and interface design should support appropriate use.</p>
+<p>Subjects should be informed about AI involvement in decisions affecting them, as required by law and as appropriate for building trust. The EU AI Act and various national laws require disclosure of AI use in specified contexts.</p>
+<p>Downstream deployers, when an organization provides AI systems for others to deploy, should receive information needed to deploy responsibly. This includes accurate descriptions of capabilities and limitations, documentation supporting impact assessments, and guidance on appropriate use.</p>
+</section>
+<section id="misuse-prevention" class="level3">
+<h3 class="anchored" data-anchor-id="misuse-prevention">Misuse Prevention</h3>
+<p>Organizations should take reasonable steps to prevent misuse of AI systems they deploy or provide.</p>
+<p>Use restrictions should prohibit inappropriate applications. Terms of service, acceptable use policies, and technical controls can restrict use to appropriate contexts.</p>
+<p>Access controls should limit who can use the system to authorized parties with legitimate needs.</p>
+<p>Monitoring should detect potential misuse patterns that warrant investigation.</p>
+<p>Response procedures should address identified misuse through warnings, access revocation, or other appropriate measures.</p>
+</section>
+</section>
+<section id="external-communication" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="external-communication"><span class="header-section-number">4.7</span> External Communication</h2>
+<p>Organizations must communicate externally about their AI systems to various audiences including regulators, affected individuals, and the public.</p>
+<section id="regulatory-communication" class="level3">
+<h3 class="anchored" data-anchor-id="regulatory-communication">Regulatory Communication</h3>
+<p>Regulatory communication requirements vary by jurisdiction and system type.</p>
+<p>The EU AI Act requires providers of high-risk AI systems to register in an EU database before placing systems on the market. Deployers of high-risk AI systems must also register certain uses. Serious incidents must be reported to authorities.</p>
+<p>Sector-specific regulations may impose additional reporting requirements. Financial institutions may need to report to banking regulators about AI use in covered activities. Healthcare AI may require regulatory filings.</p>
+<p>Organizations should identify applicable reporting requirements and establish processes to meet them.</p>
+</section>
+<section id="individual-communication" class="level3">
+<h3 class="anchored" data-anchor-id="individual-communication">Individual Communication</h3>
+<p>Communication to individuals affected by AI systems serves both compliance and trust-building purposes.</p>
+<p>Disclosure requirements may mandate informing individuals about AI involvement in decisions. GDPR Article 22 requires information about automated decision-making. The EU AI Act requires disclosure when individuals interact with certain AI systems. Various national laws require AI disclosure in specific contexts.</p>
+<p>Explanation requirements may mandate explaining AI decisions to affected individuals. When AI contributes to a decision that affects someone, they may have the right to understand the factors involved and how they might achieve a different outcome.</p>
+<p>Recourse mechanisms should provide paths for individuals to question, contest, or seek review of AI decisions affecting them. This might include human review processes, complaint mechanisms, or formal appeal rights.</p>
+</section>
+<section id="public-communication" class="level3">
+<h3 class="anchored" data-anchor-id="public-communication">Public Communication</h3>
+<p>Many organizations make public statements about their AI use through AI principles, transparency reports, or other communications.</p>
+<p>Public commitments create expectations that organizations should be prepared to meet. Stating a commitment to fairness or transparency creates accountability for actually achieving those goals.</p>
+<p>Transparency reporting provides information about AI systems, their performance, and their impacts. Some organizations voluntarily publish detailed information about their AI systems; others may be required to do so by regulations or contractual obligations.</p>
+<p>Crisis communication may be necessary if AI systems cause publicized harms. Organizations should be prepared to communicate about incidents, taking accountability while protecting legal interests.</p>
+</section>
+</section>
+<section id="deactivation-capabilities" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="deactivation-capabilities"><span class="header-section-number">4.8</span> Deactivation Capabilities</h2>
+<p>Organizations must maintain the ability to deactivate AI systems when necessary. This capability supports incident response, provides a safeguard against runaway systems, and satisfies regulatory requirements.</p>
+<section id="technical-deactivation" class="level3">
+<h3 class="anchored" data-anchor-id="technical-deactivation">Technical Deactivation</h3>
+<p>Technical mechanisms should enable stopping AI systems quickly when needed.</p>
+<p>Kill switches provide immediate shutdown capability. For critical systems, this might be a physical or software control that immediately halts operation.</p>
+<p>Graceful shutdown procedures enable stopping systems in an orderly way that preserves data integrity and enables investigation.</p>
+<p>Rollback capabilities enable reverting to previous versions or configurations if problems arise with updates.</p>
+<p>Fallback modes enable continuing operations without AI, either by reverting to manual processes or by using simpler backup systems.</p>
+</section>
+<section id="organizational-authority" class="level3">
+<h3 class="anchored" data-anchor-id="organizational-authority">Organizational Authority</h3>
+<p>Clear authority for deactivation decisions ensures that necessary shutdowns can happen quickly.</p>
+<p>Who has authority to order a shutdown? This should include operational personnel who can respond to immediate technical issues, governance personnel who can respond to compliance concerns, and executive leadership who can respond to strategic or reputational concerns.</p>
+<p>What triggers a mandatory shutdown? Some conditions should require shutdown regardless of other considerations, such as serious safety incidents, regulatory orders, or evidence of severe discrimination.</p>
+<p>What processes apply after shutdown? Investigation, remediation, and restart authorization processes should be established in advance.</p>
+</section>
+<section id="documentation-and-testing" class="level3">
+<h3 class="anchored" data-anchor-id="documentation-and-testing">Documentation and Testing</h3>
+<p>Deactivation capabilities should be documented and tested.</p>
+<p>Documentation should describe shutdown procedures, authority, and decision criteria so that personnel can act quickly when needed.</p>
+<p>Testing should verify that shutdown mechanisms work as intended. Organizations should periodically test their ability to deactivate AI systems, just as they test disaster recovery for other systems.</p>
+<p>Incident exercises should include scenarios requiring AI deactivation, ensuring that personnel are prepared to execute shutdown procedures under pressure.</p>
+</section>
+</section>
+<section id="protecting-user-rights" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="protecting-user-rights"><span class="header-section-number">4.9</span> Protecting User Rights</h2>
+<p>Individuals affected by AI systems have various rights that organizations must respect. Some rights are established by law; others reflect ethical commitments or best practices.</p>
+<section id="opt-out-and-consent" class="level3">
+<h3 class="anchored" data-anchor-id="opt-out-and-consent">Opt-Out and Consent</h3>
+<p>Some laws provide rights to opt out of AI processing or require consent for certain AI uses.</p>
+<p>GDPR Article 22 provides the right not to be subject to decisions based solely on automated processing with significant effects, subject to exceptions. Where exceptions apply, suitable safeguards must be implemented.</p>
+<p>Various consumer protection laws provide opt-out rights for certain AI uses. California’s CPRA provides rights related to automated decision-making.</p>
+<p>Sector-specific requirements may impose consent or opt-out requirements for AI in particular contexts.</p>
+<p>Organizations should identify applicable requirements and implement mechanisms to honor them. This may require offering alternatives to AI-based processing for individuals who opt out.</p>
+</section>
+<section id="explanation-and-transparency" class="level3">
+<h3 class="anchored" data-anchor-id="explanation-and-transparency">Explanation and Transparency</h3>
+<p>Rights to explanation require organizations to provide meaningful information about AI decisions.</p>
+<p>What was decided? The individual should understand the outcome of AI processing affecting them.</p>
+<p>What factors were considered? The individual should understand what information influenced the decision.</p>
+<p>Why was this outcome reached? The individual should understand, at least at a general level, why the AI reached this conclusion rather than another.</p>
+<p>What can the individual do? The individual should understand options for contesting the decision or achieving a different outcome.</p>
+<p>Explanations should be meaningful to the individuals receiving them, not technical descriptions comprehensible only to AI specialists. Plain language explanations, even if they sacrifice some precision, may be more valuable than technically accurate but incomprehensible descriptions.</p>
+</section>
+<section id="contestation-and-recourse" class="level3">
+<h3 class="anchored" data-anchor-id="contestation-and-recourse">Contestation and Recourse</h3>
+<p>Rights to contest AI decisions require mechanisms for individuals to challenge outcomes.</p>
+<p>Human review enables individuals to have AI decisions reviewed by a human who can consider factors the AI may have missed and exercise judgment the AI cannot replicate.</p>
+<p>Appeal processes enable individuals to escalate concerns through defined channels with increasing levels of review.</p>
+<p>Correction mechanisms enable individuals to provide information that was missing or incorrect and have decisions reconsidered in light of complete or corrected information.</p>
+<p>Remediation provides appropriate relief when AI decisions are found to be wrong, including reversing decisions, providing compensation, or taking other corrective action.</p>
+</section>
+<section id="rights-implementation" class="level3">
+<h3 class="anchored" data-anchor-id="rights-implementation">Rights Implementation</h3>
+<p>Implementing user rights requires organizational processes, not just policies.</p>
+<p>Awareness ensures that staff understand rights requirements and their role in honoring them.</p>
+<p>Intake mechanisms provide clear channels for individuals to exercise their rights.</p>
+<p>Response processes ensure that rights requests are handled consistently, completely, and within required timeframes.</p>
+<p>Documentation captures how rights were exercised and honored, supporting compliance demonstration.</p>
+<div id="fig-user-rights" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-user-rights-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_4_3_user_rights.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-user-rights-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.3: User Rights in AI Systems
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 4.3: User Rights in AI Systems — Rights request lifecycle and implementation requirements for opt-out, explanation, and contestation.</em></p>
+</section>
+</section>
+<section id="workforce-considerations" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="workforce-considerations"><span class="header-section-number">4.10</span> Workforce Considerations</h2>
+<p>AI deployment affects workforces, and governance should address these impacts. This includes impacts on workers who use AI systems, workers whose jobs are affected by AI automation, and workers who are subjects of AI decision-making.</p>
+<section id="ai-augmentation-of-work" class="level3">
+<h3 class="anchored" data-anchor-id="ai-augmentation-of-work">AI Augmentation of Work</h3>
+<p>Many AI deployments augment worker capabilities rather than replacing workers entirely. Governance should address how these AI-augmented work arrangements operate.</p>
+<p>Training should prepare workers to use AI tools effectively and appropriately. Workers should understand what AI systems can and cannot do, how to interpret AI outputs, when to rely on AI and when to exercise independent judgment, and how to identify potential AI errors.</p>
+<p>Workflow design should integrate AI appropriately into work processes. AI should support workers rather than creating burdens. Human oversight should be meaningful rather than perfunctory.</p>
+<p>Performance management should account for AI assistance. Expectations should reflect AI’s contributions, and workers should not be penalized for exercising appropriate judgment to override AI recommendations.</p>
+<p>Well-being considerations should address potential negative effects of AI-augmented work, including deskilling, reduced autonomy, or surveillance effects.</p>
+</section>
+<section id="workforce-displacement" class="level3">
+<h3 class="anchored" data-anchor-id="workforce-displacement">Workforce Displacement</h3>
+<p>AI may reduce demand for certain types of work, potentially displacing workers. Organizations should consider these impacts and respond appropriately.</p>
+<p>Impact assessment should analyze potential workforce effects of AI deployment. Which roles might be affected? How many workers? Over what timeframe?</p>
+<p>Transition support might include retraining, reassignment to other roles, severance packages, or outplacement assistance.</p>
+<p>Stakeholder communication should inform workers and their representatives about AI plans and their potential impacts.</p>
+<p>Responsible automation practices might include gradual implementation, worker input into automation decisions, or commitments to redeploy rather than lay off affected workers.</p>
+</section>
+<section id="ai-in-employment-decisions" class="level3">
+<h3 class="anchored" data-anchor-id="ai-in-employment-decisions">AI in Employment Decisions</h3>
+<p>AI systems that make or influence decisions about workers raise particular governance concerns.</p>
+<p>Hiring AI affects applicants who may have no relationship with the organization beyond their application. Discrimination in hiring AI can exclude qualified individuals from opportunities.</p>
+<p>Performance management AI affects existing workers’ evaluations, compensation, and advancement. Errors or bias can harm careers.</p>
+<p>Surveillance AI monitors worker behavior, raising privacy concerns and potentially affecting workplace culture and worker well-being.</p>
+<p>Workforce AI should receive heightened governance attention given the power dynamics involved and the potential for significant individual impacts.</p>
+</section>
+</section>
+<section id="integrating-ai-governance-with-enterprise-risk-management" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="integrating-ai-governance-with-enterprise-risk-management"><span class="header-section-number">4.11</span> Integrating AI Governance with Enterprise Risk Management</h2>
+<p>AI governance does not exist in isolation but operates within organizations’ broader risk management frameworks. Effective AI governance integrates with enterprise risk management rather than creating parallel structures.</p>
+<section id="ai-risk-categories" class="level3">
+<h3 class="anchored" data-anchor-id="ai-risk-categories">AI Risk Categories</h3>
+<p>AI risks relate to traditional enterprise risk categories while also presenting novel characteristics.</p>
+<p>Operational risk includes risks of AI system failures, errors, or performance degradation that disrupt operations.</p>
+<p>Compliance risk includes risks of violating laws, regulations, or contractual obligations related to AI.</p>
+<p>Reputational risk includes risks of public criticism, loss of trust, or brand damage from AI incidents or practices.</p>
+<p>Strategic risk includes risks that AI investments fail to achieve expected benefits or that competitors gain advantage through superior AI capabilities.</p>
+<p>Financial risk includes potential costs from AI incidents, including regulatory penalties, litigation, remediation, and lost business.</p>
+</section>
+<section id="integration-approaches" class="level3">
+<h3 class="anchored" data-anchor-id="integration-approaches">Integration Approaches</h3>
+<p>Organizations can integrate AI governance with enterprise risk management in various ways.</p>
+<p>Risk taxonomy integration incorporates AI risks into existing risk taxonomies, ensuring AI risks are identified and assessed through established processes.</p>
+<p>Control framework integration maps AI governance controls to existing control frameworks, enabling consistent assessment and reporting.</p>
+<p>Reporting integration incorporates AI risk information into enterprise risk reporting, ensuring appropriate visibility to risk committees and leadership.</p>
+<p>Assurance integration includes AI governance in internal audit scope, providing independent verification of governance effectiveness.</p>
+</section>
+<section id="three-lines-model" class="level3">
+<h3 class="anchored" data-anchor-id="three-lines-model">Three Lines Model</h3>
+<p>The three lines model common in enterprise risk management can be applied to AI governance.</p>
+<p>First line functions own and manage AI risks as part of their operational responsibilities. Development teams, business units deploying AI, and operational staff managing AI systems are first line.</p>
+<p>Second line functions provide oversight, frameworks, and expertise. AI governance teams, privacy offices, compliance functions, and risk management functions are second line.</p>
+<p>Third line functions provide independent assurance. Internal audit and external auditors are third line.</p>
+<p>Clear delineation of responsibilities across lines helps ensure comprehensive coverage without gaps or redundant effort.</p>
+<div id="fig-erm-integration" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-erm-integration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_4_4_erm_integration.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-erm-integration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.4: AI Governance in Enterprise Risk Management
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 4.4: AI Governance in Enterprise Risk Management — Integration with three lines model and enterprise risk categories.</em></p>
+</section>
+</section>
+<section id="chapter-4-summary" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="chapter-4-summary"><span class="header-section-number">4.12</span> Chapter 4 Summary</h2>
+<p>This chapter examined governance during AI deployment and operation, addressing the transition from controlled development to real-world use and the ongoing governance required throughout an AI system’s operational life.</p>
+<p>Deployment decisions require evaluating system readiness, organizational readiness, and deployment context. System readiness encompasses technical, performance, and compliance dimensions. Organizational readiness requires operational, oversight, monitoring, and incident response capabilities. Deployment context assessment verifies alignment between the specific deployment scenario and validated system capabilities.</p>
+<p>Third-party AI requires due diligence assessing providers and systems, contractual provisions protecting organizational interests and governance needs, and ongoing vendor management maintaining appropriate oversight.</p>
+<p>Deployment options including cloud, on-premise, edge, and hybrid architectures have different governance implications regarding control, visibility, latency, and regulatory considerations.</p>
+<p>Operational governance requires continuous monitoring of technical health, model performance, fairness, and drift. Human oversight must be implemented as designed, with attention to automation bias. Documentation including logs, audit trails, and performance records supports governance and compliance. Change management controls modifications to deployed systems.</p>
+<p>Downstream risk management considers affected parties beyond immediate users, communicates appropriately about risks, and implements measures to prevent misuse.</p>
+<p>External communication addresses regulatory reporting requirements, individual disclosure and explanation obligations, and public communication about AI practices.</p>
+<p>Deactivation capabilities provide technical mechanisms and organizational authority to stop AI systems when necessary, with documented procedures and periodic testing.</p>
+<p>User rights including opt-out, explanation, and contestation require organizational processes to implement effectively, not just policies acknowledging rights exist.</p>
+<p>Workforce considerations address AI augmentation of work, potential workforce displacement, and the particular sensitivities of AI in employment decisions.</p>
+<p>Integration with enterprise risk management situates AI governance within broader organizational structures, mapping AI risks to risk categories and AI governance to control frameworks, reporting, and assurance functions.</p>
+</section>
+<section id="chapter-4-review-questions" class="level2" data-number="4.13">
+<h2 data-number="4.13" class="anchored" data-anchor-id="chapter-4-review-questions"><span class="header-section-number">4.13</span> Chapter 4 Review Questions</h2>
+<ol type="1">
+<li><p>An organization is preparing to deploy an AI customer service chatbot. System testing has been completed with positive results, but the organization has not yet trained customer service staff on when and how to escalate from the chatbot to human agents. How should the deployment decision address this situation?</p></li>
+<li><p>An organization is evaluating an AI vendor’s system for use in screening job applicants. The vendor provides accuracy metrics but declines to share detailed information about training data, citing competitive concerns. How should the organization’s governance process address this limitation?</p></li>
+<li><p>An AI credit decisioning system has been deployed for six months. Monitoring shows that overall accuracy remains within acceptable bounds, but accuracy for applicants over age 60 has declined significantly compared to initial deployment. What governance response is most appropriate?</p></li>
+<li><p>A retail company uses an AI system to personalize product recommendations. A customer requests an explanation of why they were recommended a particular product. What information should the company provide to satisfy explanation requirements?</p></li>
+<li><p>An organization is planning to deploy an AI system that will automate significant portions of work currently performed by 200 employees. What workforce-related governance considerations should inform the deployment decision?</p></li>
+</ol>
+</section>
+<section id="references" class="level2" data-number="4.14">
+<h2 data-number="4.14" class="anchored" data-anchor-id="references"><span class="header-section-number">4.14</span> References</h2>
+<p>IAPP. AIGP Body of Knowledge, Version 2.0.1. International Association of Privacy Professionals, 2025.</p>
+<p>European Parliament and Council. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). Official Journal of the European Union, 2024.</p>
+<p>European Parliament and Council. Regulation (EU) 2016/679 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data (General Data Protection Regulation). Official Journal of the European Union, 2016.</p>
+<p>Institute of Internal Auditors. The IIA’s Three Lines Model. IIA Position Paper, 2020.</p>
+<p>National Institute of Standards and Technology. AI Risk Management Framework 1.0. NIST AI 100-1, 2023.</p>
+<p>Federal Reserve Board, Office of the Comptroller of the Currency. Supervisory Guidance on Model Risk Management. SR 11-7, 2011.</p>
+<p>IAPP. AI Governance in Practice Report 2025. International Association of Privacy Professionals, 2025.</p>
+<p>Ogunseye, S. “Stop Training Your Competitor’s AI.” Communications of the ACM Blog, 2025. https://cacm.acm.org/blogcacm/stop-training-your-competitors-ai/</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/03-development.html" class="pagination-link" aria-label="Understanding How to Govern AI Development">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Development</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/05-lifecycle.html" class="pagination-link" aria-label="Governance by Design Across the Lifecycle">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Governance by Design Across the Lifecycle</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

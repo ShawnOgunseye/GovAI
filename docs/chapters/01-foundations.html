@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1&nbsp; Understanding the Foundations of AI Governance</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/02-legal-frameworks.html" rel="next">
+<link href="../index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f8bb638c26fb726dc4c2c6db7be98b4e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-foundations.html">Foundations</a></li><li class="breadcrumb-item"><a href="../chapters/01-foundations.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding the Foundations of AI Governance</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../cover.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../cover.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-foundations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding the Foundations of AI Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-legal-frameworks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Understanding How Laws, Standards, and Frameworks Apply to AI</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Governing the AI Lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-deployment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Perspectives and Integration</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-lifecycle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Governance by Design Across the Lifecycle</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Topics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-execution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Governance in Motion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-future.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ongoing Issues and Future Directions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Frameworks and Templates</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Quick Reference Tables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practice Scenarios</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Glossary and Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../99-backmatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the Author</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
+  <li><a href="#what-is-artificial-intelligence" id="toc-what-is-artificial-intelligence" class="nav-link" data-scroll-target="#what-is-artificial-intelligence"><span class="header-section-number">1.2</span> What Is Artificial Intelligence?</a>
+  <ul class="collapse">
+  <li><a href="#machine-learning-and-its-relationship-to-ai" id="toc-machine-learning-and-its-relationship-to-ai" class="nav-link" data-scroll-target="#machine-learning-and-its-relationship-to-ai">Machine Learning and Its Relationship to AI</a></li>
+  <li><a href="#generative-ai-and-predictive-ai" id="toc-generative-ai-and-predictive-ai" class="nav-link" data-scroll-target="#generative-ai-and-predictive-ai">Generative AI and Predictive AI</a></li>
+  <li><a href="#narrow-ai-and-general-ai" id="toc-narrow-ai-and-general-ai" class="nav-link" data-scroll-target="#narrow-ai-and-general-ai">Narrow AI and General AI</a></li>
+  <li><a href="#ai-as-a-socio-technical-system" id="toc-ai-as-a-socio-technical-system" class="nav-link" data-scroll-target="#ai-as-a-socio-technical-system">AI as a Socio-Technical System</a></li>
+  </ul></li>
+  <li><a href="#why-ai-requires-specialized-governance" id="toc-why-ai-requires-specialized-governance" class="nav-link" data-scroll-target="#why-ai-requires-specialized-governance"><span class="header-section-number">1.3</span> Why AI Requires Specialized Governance</a>
+  <ul class="collapse">
+  <li><a href="#complexity-and-opacity" id="toc-complexity-and-opacity" class="nav-link" data-scroll-target="#complexity-and-opacity">Complexity and Opacity</a></li>
+  <li><a href="#autonomy-and-speed" id="toc-autonomy-and-speed" class="nav-link" data-scroll-target="#autonomy-and-speed">Autonomy and Speed</a></li>
+  <li><a href="#data-dependency" id="toc-data-dependency" class="nav-link" data-scroll-target="#data-dependency">Data Dependency</a></li>
+  <li><a href="#probabilistic-outputs" id="toc-probabilistic-outputs" class="nav-link" data-scroll-target="#probabilistic-outputs">Probabilistic Outputs</a></li>
+  <li><a href="#emergent-behavior" id="toc-emergent-behavior" class="nav-link" data-scroll-target="#emergent-behavior">Emergent Behavior</a></li>
+  </ul></li>
+  <li><a href="#the-risks-and-harms-ai-can-cause" id="toc-the-risks-and-harms-ai-can-cause" class="nav-link" data-scroll-target="#the-risks-and-harms-ai-can-cause"><span class="header-section-number">1.4</span> The Risks and Harms AI Can Cause</a>
+  <ul class="collapse">
+  <li><a href="#harms-to-individuals" id="toc-harms-to-individuals" class="nav-link" data-scroll-target="#harms-to-individuals">Harms to Individuals</a></li>
+  <li><a href="#harms-to-groups" id="toc-harms-to-groups" class="nav-link" data-scroll-target="#harms-to-groups">Harms to Groups</a></li>
+  <li><a href="#harms-to-organizations" id="toc-harms-to-organizations" class="nav-link" data-scroll-target="#harms-to-organizations">Harms to Organizations</a></li>
+  <li><a href="#harms-to-society" id="toc-harms-to-society" class="nav-link" data-scroll-target="#harms-to-society">Harms to Society</a></li>
+  <li><a href="#environmental-harms" id="toc-environmental-harms" class="nav-link" data-scroll-target="#environmental-harms">Environmental Harms</a></li>
+  </ul></li>
+  <li><a href="#principles-of-responsible-ai" id="toc-principles-of-responsible-ai" class="nav-link" data-scroll-target="#principles-of-responsible-ai"><span class="header-section-number">1.5</span> Principles of Responsible AI</a>
+  <ul class="collapse">
+  <li><a href="#fairness" id="toc-fairness" class="nav-link" data-scroll-target="#fairness">Fairness</a></li>
+  <li><a href="#safety-and-reliability" id="toc-safety-and-reliability" class="nav-link" data-scroll-target="#safety-and-reliability">Safety and Reliability</a></li>
+  <li><a href="#privacy-and-security" id="toc-privacy-and-security" class="nav-link" data-scroll-target="#privacy-and-security">Privacy and Security</a></li>
+  <li><a href="#transparency-and-explainability" id="toc-transparency-and-explainability" class="nav-link" data-scroll-target="#transparency-and-explainability">Transparency and Explainability</a></li>
+  <li><a href="#accountability" id="toc-accountability" class="nav-link" data-scroll-target="#accountability">Accountability</a></li>
+  <li><a href="#human-oversight" id="toc-human-oversight" class="nav-link" data-scroll-target="#human-oversight">Human Oversight</a></li>
+  </ul></li>
+  <li><a href="#establishing-ai-governance-in-organizations" id="toc-establishing-ai-governance-in-organizations" class="nav-link" data-scroll-target="#establishing-ai-governance-in-organizations"><span class="header-section-number">1.6</span> Establishing AI Governance in Organizations</a>
+  <ul class="collapse">
+  <li><a href="#governance-structures-and-roles" id="toc-governance-structures-and-roles" class="nav-link" data-scroll-target="#governance-structures-and-roles">Governance Structures and Roles</a></li>
+  <li><a href="#the-importance-of-cross-functional-collaboration" id="toc-the-importance-of-cross-functional-collaboration" class="nav-link" data-scroll-target="#the-importance-of-cross-functional-collaboration">The Importance of Cross-Functional Collaboration</a></li>
+  <li><a href="#training-and-awareness" id="toc-training-and-awareness" class="nav-link" data-scroll-target="#training-and-awareness">Training and Awareness</a></li>
+  <li><a href="#tailoring-governance-to-context" id="toc-tailoring-governance-to-context" class="nav-link" data-scroll-target="#tailoring-governance-to-context">Tailoring Governance to Context</a></li>
+  <li><a href="#developer-deployer-and-user-distinctions" id="toc-developer-deployer-and-user-distinctions" class="nav-link" data-scroll-target="#developer-deployer-and-user-distinctions">Developer, Deployer, and User Distinctions</a></li>
+  </ul></li>
+  <li><a href="#policies-across-the-ai-lifecycle" id="toc-policies-across-the-ai-lifecycle" class="nav-link" data-scroll-target="#policies-across-the-ai-lifecycle"><span class="header-section-number">1.7</span> Policies Across the AI Lifecycle</a>
+  <ul class="collapse">
+  <li><a href="#use-case-assessment-and-approval" id="toc-use-case-assessment-and-approval" class="nav-link" data-scroll-target="#use-case-assessment-and-approval">Use Case Assessment and Approval</a></li>
+  <li><a href="#risk-management" id="toc-risk-management" class="nav-link" data-scroll-target="#risk-management">Risk Management</a></li>
+  <li><a href="#data-governance" id="toc-data-governance" class="nav-link" data-scroll-target="#data-governance">Data Governance</a></li>
+  <li><a href="#documentation-and-record-keeping" id="toc-documentation-and-record-keeping" class="nav-link" data-scroll-target="#documentation-and-record-keeping">Documentation and Record-Keeping</a></li>
+  <li><a href="#third-party-management" id="toc-third-party-management" class="nav-link" data-scroll-target="#third-party-management">Third-Party Management</a></li>
+  <li><a href="#incident-management" id="toc-incident-management" class="nav-link" data-scroll-target="#incident-management">Incident Management</a></li>
+  </ul></li>
+  <li><a href="#the-oecd-framework-for-ai-classification" id="toc-the-oecd-framework-for-ai-classification" class="nav-link" data-scroll-target="#the-oecd-framework-for-ai-classification"><span class="header-section-number">1.8</span> The OECD Framework for AI Classification</a></li>
+  <li><a href="#chapter-1-summary" id="toc-chapter-1-summary" class="nav-link" data-scroll-target="#chapter-1-summary"><span class="header-section-number">1.9</span> Chapter 1 Summary</a></li>
+  <li><a href="#chapter-1-review-questions" id="toc-chapter-1-review-questions" class="nav-link" data-scroll-target="#chapter-1-review-questions"><span class="header-section-number">1.10</span> Chapter 1 Review Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">1.11</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-foundations.html">Foundations</a></li><li class="breadcrumb-item"><a href="../chapters/01-foundations.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding the Foundations of AI Governance</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding the Foundations of AI Governance</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
+<p>Artificial intelligence has moved from research laboratories into the daily operations of businesses, governments, and consumer products. This rapid adoption brings substantial benefits: organizations can analyze data at scales impossible for humans, automate routine decisions, personalize services, and discover patterns that would otherwise remain hidden. These capabilities create real competitive advantages and genuine improvements in efficiency, accuracy, and service quality.</p>
+<p>But AI adoption also introduces significant risks that traditional governance frameworks were not designed to address. AI systems can discriminate against protected groups without any human intending that outcome. They can make consequential errors at speeds that preclude human review. They can invade privacy through surveillance capabilities that were previously impractical. They can generate convincing misinformation at scale. And when things go wrong, the complexity and opacity of AI systems can make it difficult to understand what happened or hold anyone accountable.</p>
+<p>AI governance exists to help organizations capture the benefits of AI while managing these risks responsibly. It provides the structures, processes, and policies that enable organizations to develop and deploy AI in ways that are effective, ethical, and compliant with legal requirements. Done well, AI governance does not slow innovation but enables it by providing the certainty organizations need to invest confidently in AI capabilities.</p>
+<p>This chapter establishes the foundational knowledge that AI governance professionals need. It begins by examining what AI actually is, because effective governance requires understanding what you are governing. It then explores the characteristics that make AI governance distinct from governing other technologies. The chapter proceeds to catalog the risks and harms AI can cause, because governance priorities should reflect actual risks. It examines the principles that guide responsible AI development and deployment. And it concludes by addressing how organizations establish governance structures, define roles, and create policies to manage AI effectively.</p>
+</section>
+<section id="what-is-artificial-intelligence" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="what-is-artificial-intelligence"><span class="header-section-number">1.2</span> What Is Artificial Intelligence?</h2>
+<p>Defining artificial intelligence precisely has proven surprisingly difficult. The term encompasses a wide range of technologies with different capabilities, mechanisms, and implications. For governance purposes, however, certain definitions have achieved broad acceptance and provide useful starting points.</p>
+<p>The National Institute of Standards and Technology defines AI as “an engineered or machine-based system that can, for a given set of objectives, generate outputs such as predictions, recommendations, or decisions influencing real or virtual environments.” NIST emphasizes that AI systems “are designed to operate with varying levels of autonomy,” meaning they can function with different degrees of human involvement. This definition appears in the NIST AI Risk Management Framework and has influenced regulatory approaches in the United States.</p>
+<p>The EU AI Act takes a similar approach, defining AI systems as “machine-based system[s] that [are] designed to operate with varying levels of autonomy and that may exhibit adaptiveness after deployment, and that, for explicit or implicit objectives, infers, from the input it receives, how to generate outputs such as predictions, content, recommendations, or decisions that can influence physical or virtual environments.”</p>
+<p>The Organisation for Economic Co-operation and Development, whose AI Principles have been adopted by over forty countries and have shaped regulatory frameworks globally, defines an AI system as “a machine-based system that, for explicit or implicit objectives, infers, from the input it receives, how to generate outputs such as predictions, content, recommendations, or decisions that can influence physical or virtual environments.”</p>
+<p>These definitions share common elements that matter for governance. First, AI involves engineered or machine-based systems, distinguishing it from human intelligence or natural processes. Second, AI systems generate outputs including predictions, recommendations, content, or decisions. Third, those outputs influence real or virtual environments, meaning AI has effects in the world. Fourth, AI systems operate with varying levels of autonomy, meaning they can function with different degrees of human oversight. Fifth, AI systems infer how to generate outputs from input, rather than simply following explicit programmed rules for every situation.</p>
+<p>Understanding these definitional elements helps governance professionals identify what systems fall within AI governance scope. A traditional rule-based system that follows explicit programmed logic may not qualify as AI under these definitions. A system that learns patterns from data and applies them to generate predictions almost certainly does. The boundaries can be fuzzy, and organizations should establish clear criteria for what falls within their AI governance programs.</p>
+<section id="machine-learning-and-its-relationship-to-ai" class="level3">
+<h3 class="anchored" data-anchor-id="machine-learning-and-its-relationship-to-ai">Machine Learning and Its Relationship to AI</h3>
+<p>Machine learning is the dominant approach to building AI systems today. Rather than programming explicit rules for every situation, machine learning uses data and algorithms to enable systems to learn patterns and improve their performance over time. A machine learning system learns from examples rather than following predetermined instructions for every case.</p>
+<p>This learning-based approach is both powerful and problematic for governance. It is powerful because machine learning systems can discover patterns humans might miss and handle complexity that would be impossible to program explicitly. A fraud detection system can learn subtle indicators of fraudulent transactions from millions of historical examples. A medical imaging system can learn to identify tumors from thousands of labeled scans. These capabilities create real value.</p>
+<p>The same learning-based approach creates governance challenges. The patterns a machine learning system learns may reflect biases present in training data. If a hiring algorithm learns from historical hiring decisions made in a discriminatory context, it may learn to perpetuate that discrimination. The reasoning behind machine learning decisions may be opaque; a deep learning model with millions of parameters does not provide a simple explanation for why it classified an input in a particular way. And the system’s behavior may change as it encounters new data, potentially drifting from its original performance characteristics.</p>
+<p>Supervised learning, the most common machine learning approach, trains models on labeled examples. A spam detection system trains on emails labeled as spam or not spam. A credit risk model trains on historical loans labeled as defaulted or repaid. The system learns to predict labels for new, unlabeled examples. Governance concerns include ensuring training labels are accurate and unbiased, ensuring training data is representative of the population the system will serve, and monitoring for performance degradation as data distributions change over time.</p>
+<p>Unsupervised learning trains models on unlabeled data to discover structure or patterns. Clustering algorithms group similar items together. Dimensionality reduction techniques identify important features. These systems raise governance questions about whether the discovered patterns are meaningful and whether the system’s operation remains appropriate as data evolves.</p>
+<p>Reinforcement learning trains models through interaction with an environment, receiving rewards or penalties for different actions. Game-playing AI and robotic control systems often use reinforcement learning. Governance concerns include ensuring reward functions align with intended objectives and preventing systems from learning to achieve rewards through unintended means.</p>
+<p>Knowledge-based systems represent an older approach to AI that captures human expertise in explicit rules and decision trees. Expert systems encode the knowledge of specialists in a particular domain. These systems are generally more transparent and predictable than machine learning systems, but they cannot learn from experience or handle situations their designers did not anticipate. Some organizations continue to use knowledge-based systems for applications where transparency and predictability are paramount.</p>
+</section>
+<section id="generative-ai-and-predictive-ai" class="level3">
+<h3 class="anchored" data-anchor-id="generative-ai-and-predictive-ai">Generative AI and Predictive AI</h3>
+<p>A crucial distinction for governance professionals is between generative and predictive AI. These categories have different capabilities, different use cases, and different risk profiles that require different governance approaches.</p>
+<p>Predictive AI analyzes existing data to forecast outcomes, classify information, or identify patterns. A credit scoring model predicts the probability that a loan applicant will default. A medical imaging system classifies whether a scan shows signs of disease. A recommendation system predicts which products a customer is likely to purchase. These systems answer questions like “what will happen?” or “what category does this belong to?” or “what should we recommend?”</p>
+<p>The risks of predictive AI center on accuracy, fairness, and transparency. An inaccurate prediction can lead to wrong decisions with real consequences for individuals. A biased prediction can systematically disadvantage protected groups. An opaque prediction can leave affected individuals unable to understand or contest decisions that affect them. Governance approaches for predictive AI focus on validating accuracy, testing for bias across demographic groups, and ensuring appropriate transparency and explainability.</p>
+<p>Generative AI creates new content that did not exist before. Large language models generate text. Image generation systems create pictures from text descriptions. Music composition systems generate audio. Video generation systems produce moving images. These systems do not just analyze existing information; they produce novel outputs that resemble their training data.</p>
+<p>Generative AI introduces additional risk categories beyond those of predictive AI. Hallucination occurs when generative systems produce confident but false information, presenting fabricated facts, fake citations, or incorrect claims as if they were accurate. Intellectual property concerns arise when generative systems produce outputs that substantially replicate copyrighted training material or when questions arise about who owns the rights to generated content. Misinformation becomes possible at unprecedented scale when systems can generate persuasive false content cheaply and quickly. Fraud and manipulation become easier when systems can generate convincing fake communications or impersonate real people.</p>
+<p>The rapid proliferation of generative AI since 2022 has challenged existing governance frameworks and prompted new regulatory attention. Organizations deploying generative AI need governance approaches that address both the shared risks with predictive AI and the novel risks specific to content generation.</p>
+</section>
+<section id="narrow-ai-and-general-ai" class="level3">
+<h3 class="anchored" data-anchor-id="narrow-ai-and-general-ai">Narrow AI and General AI</h3>
+<p>Current AI systems are narrow or weak AI, meaning they excel at specific tasks but cannot generalize to new domains. A chess-playing AI cannot diagnose diseases. A language model trained on text cannot process images unless specifically designed to do so. A medical imaging classifier cannot suddenly analyze financial statements. Each narrow AI system operates within the boundaries of its training and design.</p>
+<p>This narrow capability has important implications for governance. Narrow AI systems have specific, bounded capabilities that can be tested, validated, and monitored. Their performance can be measured on relevant benchmarks. Their failure modes can be identified and mitigated. They are tools that humans can understand and control, even if their internal mechanisms are complex.</p>
+<p>Artificial general intelligence refers to hypothetical systems with human-like ability to learn any intellectual task. AGI does not currently exist and may never exist. It features prominently in discussions about long-term AI risks and has attracted significant attention from researchers concerned about existential risk. However, for practical governance purposes, AGI remains speculative.</p>
+<p>AI governance professionals should focus on the AI systems that organizations actually deploy today, which are narrow AI systems with specific capabilities and limitations. The governance frameworks in this book address real, deployed narrow AI rather than hypothetical future systems. This is not to dismiss concerns about more capable future AI, but to ground governance in practical reality.</p>
+</section>
+<section id="ai-as-a-socio-technical-system" class="level3">
+<h3 class="anchored" data-anchor-id="ai-as-a-socio-technical-system">AI as a Socio-Technical System</h3>
+<p>Perhaps the most important concept for governance professionals is that AI systems are not purely technical artifacts. They are socio-technical systems where technical components interact with social contexts, human behaviors, and institutional structures. Understanding this interaction is essential for effective governance.</p>
+<p>An AI hiring tool does not operate in isolation. It operates within recruiting processes designed by humans, organizational cultures that shape how the tool is used, legal requirements that constrain permissible decisions, and societal expectations about fairness in employment. The technical characteristics of the AI model matter, but so do the processes surrounding it, the humans who use it, the institutions that deploy it, and the individuals affected by it.</p>
+<p>This socio-technical nature means that technical excellence alone does not ensure responsible AI. A technically sound model can cause harm if deployed in inappropriate contexts, used in unintended ways, or embedded in flawed processes. Conversely, governance mechanisms can sometimes compensate for technical limitations through appropriate human oversight or process controls.</p>
+<p>Effective AI governance therefore requires more than technical expertise. It requires understanding the social contexts where AI operates, the people who will use and be affected by AI systems, and the institutional structures that shape how AI is developed and deployed. This is why AI governance programs benefit from cross-disciplinary collaboration involving not just engineers and data scientists but also ethicists, social scientists, legal experts, user experience researchers, and representatives of affected communities.</p>
+<div id="fig-system-types" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-system-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_1_1_ai_system_types.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-system-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: AI System Types and Characteristics
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 1.1: AI System Types and Characteristics — A visual taxonomy showing the relationships between AI categories including machine learning approaches, generative vs.&nbsp;predictive AI, and governance implications for each type.</em></p>
+</section>
+</section>
+<section id="why-ai-requires-specialized-governance" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="why-ai-requires-specialized-governance"><span class="header-section-number">1.3</span> Why AI Requires Specialized Governance</h2>
+<p>AI systems possess characteristics that distinguish them from traditional software and require specialized governance approaches. Understanding these characteristics helps governance professionals design appropriate controls and communicate effectively with technical teams and organizational leadership about why AI governance matters.</p>
+<section id="complexity-and-opacity" class="level3">
+<h3 class="anchored" data-anchor-id="complexity-and-opacity">Complexity and Opacity</h3>
+<p>Modern AI systems, particularly deep learning models, can have millions or billions of parameters that interact in ways that are difficult to understand. A traditional software program follows explicit logic that developers can trace and explain. If a conventional program denies a loan application, a developer can examine the code and identify exactly which conditions triggered the denial.</p>
+<p>Deep neural networks work differently. They learn internal representations that encode patterns in training data, but these representations do not correspond to human-interpretable concepts in any straightforward way. When a deep learning model denies a loan application, there is no simple code path to examine. The decision emerged from the interaction of millions of learned parameters in ways that even the system’s creators may not fully comprehend.</p>
+<p>This opacity creates real governance challenges. Regulations increasingly require organizations to provide meaningful explanations of automated decisions affecting individuals. The EU General Data Protection Regulation requires data controllers to provide “meaningful information about the logic involved” in automated decision-making. The EU AI Act requires that high-risk AI systems be designed to allow human oversight including understanding of system outputs. United States laws prohibiting discrimination require organizations to explain their decision-making processes.</p>
+<p>Meeting these requirements with opaque AI systems is genuinely difficult. Research in explainable AI has produced techniques for generating explanations of model behavior, such as identifying which input features most influenced a particular prediction. But these explanations are approximations that may not fully capture the model’s actual reasoning. Organizations must navigate the tension between the performance benefits of complex models and the governance requirements for transparency and explainability.</p>
+</section>
+<section id="autonomy-and-speed" class="level3">
+<h3 class="anchored" data-anchor-id="autonomy-and-speed">Autonomy and Speed</h3>
+<p>AI systems can make decisions and take actions without human intervention, often at speeds that preclude human review of individual decisions. A content moderation system may review millions of posts daily. A fraud detection system may evaluate thousands of transactions per second. A recommendation algorithm may personalize experiences for millions of users simultaneously.</p>
+<p>This autonomy and speed mean that errors or biases can affect many people before anyone notices a problem. If a content moderation system has a systematic blind spot, millions of problematic posts may slip through before the issue is identified. If a fraud detection system has a biased decision boundary, thousands of legitimate transactions may be wrongly blocked before the pattern becomes apparent.</p>
+<p>Governance approaches must account for this scale. Monitoring systems must be capable of detecting issues across large numbers of automated decisions, using statistical methods rather than individual review. Organizations must establish clear criteria for when human oversight is required and ensure that humans can meaningfully exercise that oversight. They must have mechanisms to pause or roll back AI systems quickly when problems are identified.</p>
+<p>The challenge is designing oversight that preserves AI’s efficiency benefits while ensuring accountability. Requiring human review of every AI decision would negate the reasons for using AI in the first place. But removing humans entirely from consequential decisions raises serious concerns about accountability and control. Finding the right balance requires careful analysis of the specific use case, the potential consequences of errors, and the feasibility of different oversight approaches.</p>
+</section>
+<section id="data-dependency" class="level3">
+<h3 class="anchored" data-anchor-id="data-dependency">Data Dependency</h3>
+<p>AI systems learn from data, and the quality and characteristics of that data fundamentally shape system behavior. This data dependency distinguishes AI from traditional software where behavior is determined by explicit code.</p>
+<p>Training data that underrepresents certain groups can produce systems that perform poorly for those groups. If a facial recognition system trains primarily on images of light-skinned faces, it may have higher error rates for darker-skinned faces. If a speech recognition system trains primarily on standard American English, it may struggle with other accents and dialects. These performance disparities can translate into discriminatory impacts when systems are deployed.</p>
+<p>Historical data reflecting past discrimination can produce systems that perpetuate that discrimination. If a hiring algorithm trains on historical hiring decisions, and those decisions reflected discriminatory preferences, the algorithm may learn to replicate those preferences. The system encodes historical patterns without distinguishing between legitimate predictive relationships and discriminatory biases.</p>
+<p>Data that becomes outdated can cause model performance to degrade over time. If a fraud detection model trains on patterns of fraud from several years ago, and fraud tactics have evolved, the model may miss new fraud patterns while continuing to flag behaviors that are no longer associated with fraud. This phenomenon, called data drift or concept drift, requires ongoing monitoring and model maintenance.</p>
+<p>Governance must extend beyond the AI model itself to encompass the entire data pipeline. Where does training data come from? What biases might it contain? How representative is it of the population the system will serve? Are there legal constraints on using the data for AI training? How will the organization detect and respond when data distributions change? These questions require governance attention throughout the AI lifecycle.</p>
+</section>
+<section id="probabilistic-outputs" class="level3">
+<h3 class="anchored" data-anchor-id="probabilistic-outputs">Probabilistic Outputs</h3>
+<p>Traditional software produces deterministic outputs: given the same inputs, it produces the same outputs every time. AI systems often produce probabilistic results with inherent uncertainty. A classification model might indicate 73% confidence that an image shows a cat. A language model might generate different text each time it responds to the same prompt. A risk prediction might output a probability distribution rather than a single answer.</p>
+<p>This probabilistic nature requires governance approaches that account for uncertainty. What confidence threshold is required before acting on a prediction? A medical diagnosis system that is 60% confident of a disease might warrant further testing, while one that is 99% confident might justify immediate treatment. These thresholds have real consequences and should not be set arbitrarily.</p>
+<p>How should systems communicate uncertainty to users? Research shows that people often misunderstand probabilistic information, treating high-confidence predictions as certainties or ignoring uncertainty entirely. User interface design and training can help, but perfect communication of uncertainty may not be achievable.</p>
+<p>How should organizations handle the inevitable cases where probabilistic systems make errors? Even an AI system with 99% accuracy will make errors on 1% of cases. At scale, that 1% can affect many people. Organizations need processes for identifying errors, providing recourse to affected individuals, and learning from mistakes to improve system performance.</p>
+</section>
+<section id="emergent-behavior" class="level3">
+<h3 class="anchored" data-anchor-id="emergent-behavior">Emergent Behavior</h3>
+<p>Complex AI systems can exhibit emergent behavior that was not explicitly programmed and may not have been anticipated by developers. Large language models, for example, have demonstrated capabilities that emerged from scale rather than being specifically designed, including the ability to perform arithmetic, translate between languages not heavily represented in training data, and solve certain reasoning problems.</p>
+<p>Emergent behavior creates governance challenges because it means AI systems may have capabilities beyond what testing revealed. A system tested for one purpose may turn out to be capable of other purposes, some of which may be problematic. A system that behaved safely in testing may behave differently when deployed at scale or when users interact with it in unanticipated ways.</p>
+<p>This unpredictability argues for ongoing monitoring even after deployment, conservative deployment practices that limit initial exposure, and mechanisms to detect and respond to unexpected behavior. It also suggests humility about our ability to fully anticipate AI system behavior through pre-deployment testing alone.</p>
+</section>
+</section>
+<section id="the-risks-and-harms-ai-can-cause" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="the-risks-and-harms-ai-can-cause"><span class="header-section-number">1.4</span> The Risks and Harms AI Can Cause</h2>
+<p>AI governance exists because AI systems can cause real harm. Understanding the types of harm AI can cause helps governance professionals identify risks, design appropriate controls, prioritize governance efforts, and communicate the importance of governance to organizational leadership.</p>
+<section id="harms-to-individuals" class="level3">
+<h3 class="anchored" data-anchor-id="harms-to-individuals">Harms to Individuals</h3>
+<p>AI systems increasingly make or influence decisions that significantly affect individual lives. Hiring algorithms determine who gets job interviews. Credit models decide who receives loans and at what interest rates. Healthcare AI influences diagnosis and treatment recommendations. Criminal justice algorithms affect bail decisions, sentencing recommendations, and parole outcomes. Content recommendation systems shape what information people see and consequently what they believe about the world.</p>
+<p>When these systems err or discriminate, individuals suffer concrete harms. Someone may be wrongly denied employment, credit, housing, or benefits. Someone may receive inappropriate medical treatment. Someone may face unjustified criminal justice consequences. These are not abstract concerns but documented harms affecting real people.</p>
+<p>Consider facial recognition technology as an example. Peer-reviewed research has consistently demonstrated that facial recognition systems have higher error rates for women and for people with darker skin. The National Institute of Standards and Technology’s Face Recognition Vendor Test has confirmed these disparities across commercial systems. When law enforcement uses these systems, individuals may be wrongly identified as suspects. Multiple documented cases exist of individuals being arrested based on faulty facial recognition matches.</p>
+<p>Beyond accuracy issues, facial recognition enables surveillance capabilities that can chill civil liberties. People may avoid protests, political activities, or religious gatherings knowing they could be identified. The accumulation of biometric data creates security risks; unlike a password, you cannot change your face if the data is compromised.</p>
+<p>Privacy harms from AI extend beyond facial recognition. AI systems can infer sensitive information from seemingly innocuous data. Research has shown that AI can predict sexual orientation from facial images, political orientation from social media activity, and health conditions from consumer purchasing patterns. These inference capabilities raise profound questions about informational privacy in an age of ubiquitous data collection.</p>
+</section>
+<section id="harms-to-groups" class="level3">
+<h3 class="anchored" data-anchor-id="harms-to-groups">Harms to Groups</h3>
+<p>AI systems can systematically disadvantage particular groups, even when they appear neutral on their face. Machine learning systems learn patterns from historical data, and that historical data often reflects past discrimination. A hiring algorithm trained on past hiring decisions may learn to prefer candidates who resemble previously successful employees, perpetuating historical exclusion of women or minorities. A predictive policing system trained on arrest records may direct police to communities that have historically been over-policed, creating a self-reinforcing cycle.</p>
+<p>These group harms are particularly insidious because they can occur without any discriminatory intent and may be invisible without careful analysis. An organization may deploy an AI system believing it to be fair, only to discover later through statistical analysis that it systematically disadvantages protected groups. The discrimination is built into the learned patterns rather than being explicitly programmed, making it harder to detect and attribute.</p>
+<p>Research has documented algorithmic discrimination across domains. ProPublica’s investigation of the COMPAS recidivism prediction system found that Black defendants were more likely to be incorrectly flagged as high risk than white defendants, while white defendants were more likely to be incorrectly flagged as low risk than Black defendants. Studies of AI hiring tools have found disparate impacts based on gender and race. Research on healthcare algorithms has found that systems trained to predict healthcare costs disadvantaged Black patients because historical spending patterns reflected unequal access to care rather than equal health needs.</p>
+<p>Governance programs must proactively test for these disparate impacts rather than assuming neutrality. Testing should examine performance across demographic groups, using appropriate fairness metrics for the application context. Organizations should also consider intersectional impacts, recognizing that harms may be greatest for individuals who belong to multiple disadvantaged groups.</p>
+</section>
+<section id="harms-to-organizations" class="level3">
+<h3 class="anchored" data-anchor-id="harms-to-organizations">Harms to Organizations</h3>
+<p>AI failures can significantly harm the organizations that deploy them. Reputational damage from AI discrimination or errors can affect brand value and customer trust for years. When Amazon’s experimental hiring algorithm was revealed to disadvantage women, the company abandoned the tool and faced lasting reputational consequences. When Microsoft’s Tay chatbot was manipulated into generating offensive content within hours of launch, it became a cautionary tale cited for years afterward.</p>
+<p>Regulatory penalties for AI violations are substantial and growing. The EU AI Act imposes fines of up to 35 million euros or 7% of global annual turnover for the most serious violations. Civil rights enforcement agencies in the United States have brought actions against companies whose AI systems discriminated. Class action lawsuits challenging algorithmic discrimination present significant liability exposure.</p>
+<p>Failed AI projects waste resources. Research suggests that a significant percentage of AI projects fail to deliver expected value. Poor governance can contribute to these failures by allowing inappropriate use cases to proceed, failing to ensure adequate data quality, or deploying systems without proper validation. These failures consume budgets, distract from more promising opportunities, and can create organizational skepticism about AI that impedes future beneficial adoption.</p>
+<p>AI can also cause cultural harm within organizations. When AI makes consequential decisions without clear accountability, employees may feel disempowered. When AI systems embody values inconsistent with organizational culture, they can erode trust and morale. When organizations rush to deploy AI without appropriate governance, they may create technical debt and institutional patterns that prove difficult to reverse.</p>
+</section>
+<section id="harms-to-society" class="level3">
+<h3 class="anchored" data-anchor-id="harms-to-society">Harms to Society</h3>
+<p>At the broadest level, AI can harm society itself. These societal harms are more diffuse than individual harms but potentially more consequential.</p>
+<p>AI-generated misinformation can undermine shared understanding of facts and erode trust in institutions. Generative AI makes it increasingly easy to create convincing fake text, images, audio, and video. When people cannot reliably distinguish authentic content from fabrication, the epistemic foundations of democracy are threatened.</p>
+<p>AI-enabled surveillance can threaten privacy and civil liberties at scale. Systems that track individuals across public spaces, analyze their communications, and predict their behavior create capabilities that authoritarian regimes have exploited and that raise concerns even in democratic societies.</p>
+<p>AI automation can disrupt labor markets faster than workers and institutions can adapt. While economists debate the long-term employment effects of AI, the transition period clearly creates hardship for workers whose skills become less valuable. The benefits of AI-driven productivity gains may accrue primarily to capital owners while the costs fall on displaced workers, exacerbating inequality.</p>
+<p>AI systems can concentrate power in the hands of those who control the technology. The resources required to develop frontier AI systems mean that only a small number of organizations can do so, creating the potential for monopolistic or oligopolistic control over critical infrastructure.</p>
+<div id="fig-harms-taxonomy" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-harms-taxonomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_1_2_ai_harms_taxonomy.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-harms-taxonomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: AI Harms Taxonomy
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 1.2: AI Harms Taxonomy — The four levels of AI harms (Individual, Group, Organizational, Societal) with examples and cascade effects.</em></p>
+</section>
+<section id="environmental-harms" class="level3">
+<h3 class="anchored" data-anchor-id="environmental-harms">Environmental Harms</h3>
+<p>Training large AI models requires substantial computing resources that consume significant energy. Estimates suggest that training a single large language model can produce carbon emissions equivalent to hundreds of transatlantic flights. The hardware required for AI has its own environmental footprint from manufacturing through disposal, including the mining of rare earth elements, water consumption for chip fabrication, and electronic waste at end of life. As AI adoption grows, these environmental impacts grow as well.</p>
+<p>Organizations increasingly face pressure to account for the environmental impacts of their AI use. Environmental, social, and governance reporting requirements may encompass AI’s carbon footprint. Stakeholders may question whether the benefits of particular AI applications justify their environmental costs. Governance programs should include consideration of computational efficiency, hardware lifecycle impacts, and the proportionality of AI use to its benefits.</p>
+</section>
+</section>
+<section id="principles-of-responsible-ai" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="principles-of-responsible-ai"><span class="header-section-number">1.5</span> Principles of Responsible AI</h2>
+<p>In response to AI risks, numerous organizations have developed principles for responsible AI development and deployment. These include governmental bodies like the OECD and the European Commission’s High-Level Expert Group on AI, standards organizations like IEEE, professional associations like the IAPP, and individual companies publishing their own AI principles. While specific formulations vary, common themes emerge across these frameworks.</p>
+<section id="fairness" class="level3">
+<h3 class="anchored" data-anchor-id="fairness">Fairness</h3>
+<p>AI systems should treat people fairly and should not discriminate based on protected characteristics like race, gender, age, disability, religion, or national origin. This principle appears straightforward but proves complex in practice.</p>
+<p>Fairness can be defined in multiple ways that sometimes conflict mathematically. Demographic parity requires that outcomes be distributed proportionally across groups. Equalized odds requires that error rates be equal across groups. Individual fairness requires that similar individuals receive similar treatment. Researchers have proven that some of these definitions cannot be satisfied simultaneously except in trivial cases.</p>
+<p>Consider a hiring algorithm as an example. Demographic parity would require that the proportion of candidates recommended for interviews be equal across demographic groups. But if qualified candidates are not equally distributed across groups because of historical inequities in education or opportunity, demographic parity might require recommending less qualified candidates from some groups over more qualified candidates from others. Alternatively, an algorithm optimized purely for predicting job performance might have disparate impacts that perpetuate historical exclusion.</p>
+<p>Organizations must make deliberate choices about which conception of fairness to prioritize for each application, recognizing that different stakeholders may prefer different definitions and that no choice is neutral. These choices should be documented, justified, and subject to appropriate review.</p>
+<p>Achieving fairness requires proactive effort because machine learning systems learn from data, and if that data reflects historical unfairness, the system will tend to perpetuate it. Governance programs must include processes for defining appropriate fairness criteria, testing systems against those criteria, identifying disparities, and addressing them through technical means, process controls, or decisions not to deploy systems that cannot be made sufficiently fair.</p>
+</section>
+<section id="safety-and-reliability" class="level3">
+<h3 class="anchored" data-anchor-id="safety-and-reliability">Safety and Reliability</h3>
+<p>AI systems should function appropriately under expected conditions and should not cause unintended harm. They should perform reliably within their designed parameters and fail gracefully when encountering unexpected conditions. They should be robust against adversarial attacks designed to manipulate their behavior.</p>
+<p>Safety becomes particularly critical for AI systems that interact with the physical world. Autonomous vehicles must not endanger passengers, pedestrians, or other drivers. Medical devices must not harm patients. Industrial robots must not injure workers. But safety concerns extend to purely digital AI as well. A content recommendation system that promotes self-harm content to vulnerable users can contribute to real-world harm. A financial trading algorithm that malfunctions can cause market disruption.</p>
+<p>Safety requires anticipating potential failure modes and designing systems to minimize harm when failures occur. It requires rigorous testing before deployment, including adversarial testing that actively tries to break systems or cause them to behave inappropriately. It requires monitoring deployed systems to detect problems and having mechanisms to respond quickly when issues arise, including the ability to pause or roll back systems.</p>
+<p>The EU AI Act specifically addresses safety, prohibiting AI systems that pose unacceptable safety risks and imposing extensive requirements on high-risk AI systems in critical infrastructure, essential services, and other safety-relevant domains.</p>
+</section>
+<section id="privacy-and-security" class="level3">
+<h3 class="anchored" data-anchor-id="privacy-and-security">Privacy and Security</h3>
+<p>AI systems often require large amounts of data, and that data frequently includes personal information. The privacy principle requires that AI systems protect personal information, collect only what is necessary, use data only for appropriate purposes, and respect individuals’ rights over their information.</p>
+<p>Privacy requirements for AI include ensuring lawful basis for data collection and use, providing appropriate notice to individuals about AI processing, implementing data minimization principles, honoring data subject rights including access, correction, and deletion, and protecting data through appropriate security measures. These requirements flow from general data protection laws like the GDPR and CCPA but take on specific implications in AI contexts.</p>
+<p>AI introduces novel privacy challenges beyond traditional data protection. AI systems can infer sensitive information from non-sensitive data, can enable surveillance at scales previously impractical, and can make predictions about individuals that those individuals might not want made. Privacy governance for AI must address these novel challenges.</p>
+<p>Security complements privacy by protecting against unauthorized access, data breaches, and adversarial attacks. AI systems face unique security threats including data poisoning attacks that manipulate training data to introduce biases or backdoors, adversarial examples crafted to fool trained models into making errors, and model extraction attacks that steal valuable trained models. AI security governance must address these AI-specific threats alongside traditional cybersecurity concerns.</p>
+</section>
+<section id="transparency-and-explainability" class="level3">
+<h3 class="anchored" data-anchor-id="transparency-and-explainability">Transparency and Explainability</h3>
+<p>The transparency principle requires openness about AI use. People should know when they are interacting with AI systems and when AI influences decisions that affect them. Organizations should be clear about what AI systems do, what data they use, and how they reach conclusions.</p>
+<p>Transparency requirements are increasingly codified in law. The EU AI Act requires that users be informed when they are interacting with AI systems in certain contexts. The GDPR requires that individuals be informed about automated decision-making and its significance. Various US laws require disclosure of AI use in specific contexts like hiring.</p>
+<p>Explainability goes further, requiring that AI decisions can be understood and explained in terms meaningful to affected individuals. When AI makes a consequential decision, affected individuals should be able to understand the factors that influenced that decision and what they might do to achieve a different outcome.</p>
+<p>The transparency and explainability principles are in tension with the complexity of modern AI systems. Deep learning models may be highly accurate but difficult to explain. Governance programs must navigate this tension, potentially accepting some reduction in performance for greater transparency, developing techniques to generate post-hoc explanations of complex model decisions, or limiting use of opaque models in contexts where explainability is essential.</p>
+</section>
+<section id="accountability" class="level3">
+<h3 class="anchored" data-anchor-id="accountability">Accountability</h3>
+<p>When AI systems cause harm, someone must be responsible. The accountability principle requires clear allocation of responsibility for AI systems and their outcomes. It requires mechanisms for identifying and addressing problems. It requires consequences for failures and incentives for responsible behavior.</p>
+<p>Accountability becomes complex when AI systems involve multiple parties. An organization may deploy an AI system developed by a vendor, trained on data from multiple sources, operating on cloud infrastructure from a third party, with components licensed from various providers. When something goes wrong, who bears responsibility? Regulatory frameworks increasingly allocate specific responsibilities to different actors in the AI value chain, distinguishing between developers, deployers, importers, and distributors.</p>
+<p>Organizations must establish clear internal accountability as well. Who is responsible for ensuring an AI system is properly tested before deployment? Who is responsible for monitoring deployed systems? Who has authority to pause or withdraw a system that is causing harm? Who is accountable for the overall AI governance program? These questions should have clear answers, and those answers should be documented and communicated.</p>
+</section>
+<section id="human-oversight" class="level3">
+<h3 class="anchored" data-anchor-id="human-oversight">Human Oversight</h3>
+<p>AI should serve human needs and remain under meaningful human control. This principle, sometimes called human-in-the-loop or human-centricity, requires that humans can understand, monitor, and when appropriate override AI systems. It rejects the notion that AI should operate autonomously beyond human comprehension or control.</p>
+<p>Human oversight does not mean humans must review every AI decision. That would negate the efficiency benefits of AI. Rather, it means that appropriate human oversight exists for the type of system and decision involved. The appropriate level depends on the consequences of errors, the reversibility of decisions, and the feasibility of human review.</p>
+<p>A spam filter may operate without human review of individual decisions because the consequences of errors are relatively minor and easily corrected. A system that contributes to criminal sentencing recommendations requires meaningful human involvement because the consequences are severe and liberty is at stake. A medical diagnostic system might require physician review because medical judgment cannot be delegated entirely to machines.</p>
+<p>The EU AI Act codifies human oversight requirements for high-risk AI systems, requiring that such systems be designed to allow effective oversight by natural persons during the period of use.</p>
+</section>
+</section>
+<section id="establishing-ai-governance-in-organizations" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="establishing-ai-governance-in-organizations"><span class="header-section-number">1.6</span> Establishing AI Governance in Organizations</h2>
+<p>Principles provide direction, but organizations need practical structures to implement AI governance. Survey data from the IAPP AI Governance in Practice Report 2025 confirms that organizations are actively building these structures: 77% of surveyed organizations reported currently working on AI governance, with the rate rising to approximately 90% among organizations already using AI for process automation, automated decision-making, or data analysis.</p>
+<section id="governance-structures-and-roles" class="level3">
+<h3 class="anchored" data-anchor-id="governance-structures-and-roles">Governance Structures and Roles</h3>
+<p>Effective AI governance requires clear assignment of responsibilities across the organization. Research consistently shows that responsibility distributed across multiple teams correlates with positive governance outcomes, though the specific structures vary based on organizational size, industry, and AI maturity.</p>
+<p>Executive leadership sets the tone for AI governance by establishing risk tolerance, allocating resources, and holding the organization accountable for responsible AI. Without executive support, governance programs lack the authority and resources to be effective. The IAPP survey found that lack of board support was reported as a challenge by only 10% of respondents, suggesting that organizational leadership generally recognizes the importance of AI governance even if other challenges remain.</p>
+<p>Many organizations locate primary AI governance responsibility within an existing function. Survey data shows that approximately 50% of AI governance professionals are assigned to ethics, compliance, privacy, or legal teams. The Mastercard case study from the IAPP report illustrates how AI governance can emerge from the intersection of privacy and data strategy functions, building on existing expertise and processes. IBM built its AI governance program out of the Chief Privacy Office, eventually renaming it the Office of Privacy and Responsible Technology to reflect expanded responsibilities.</p>
+<p>Some organizations create dedicated AI governance roles or teams. Titles like Head of Responsible AI, AI Governance Director, or Chief AI Ethics Officer are becoming more common, particularly at larger organizations. These dedicated roles can provide focused attention but must still collaborate with other functions to be effective.</p>
+<p>Cross-functional governance committees bring together stakeholders from different parts of the organization. Survey data found that 39% of organizations have an AI governance committee, with significantly higher rates among organizations using AI extensively. These committees might include representatives from legal, compliance, privacy, security, data science, engineering, business units, risk management, and human resources. They provide diverse perspectives and help ensure governance addresses the full range of AI risks and applications.</p>
+<p>At the working level, AI project teams bear responsibility for implementing governance requirements in their specific projects. This includes documenting AI systems, conducting required assessments, testing for bias and accuracy, and monitoring deployed systems. Governance programs must make clear what is expected of project teams and provide them with tools and guidance to meet those expectations.</p>
+</section>
+<section id="the-importance-of-cross-functional-collaboration" class="level3">
+<h3 class="anchored" data-anchor-id="the-importance-of-cross-functional-collaboration">The Importance of Cross-Functional Collaboration</h3>
+<p>AI governance cannot succeed as a siloed function. Survey data confirms this: organizations with larger AI governance teams are significantly more likely to involve multiple functions in governance activities. AI risks span technical, legal, ethical, and social domains that no single discipline fully understands.</p>
+<p>Technical teams understand how AI systems work, what they can and cannot do, and how to test and monitor them. They may not fully appreciate legal requirements, ethical considerations, or how systems affect real people in social contexts. Legal and compliance teams understand regulatory requirements but may not understand technical capabilities and limitations. Business teams understand operational needs and customer impacts but may not appreciate technical or regulatory constraints. Risk management teams understand frameworks for identifying and mitigating risks but may not understand AI-specific risks.</p>
+<p>The TELUS case study illustrates mature cross-functional collaboration through several mechanisms. Data stewards are in-business data leaders throughout the organization who receive specialized training to act as data and AI champions within their teams. A “Purple Team” combining blue team (defense) and red team (adversarial testing) approaches allows any employee to participate in testing AI systems before release. A Responsible AI Squad brings together AI engineers, policy professionals, and risk professionals for regular collaboration on responsible AI issues.</p>
+<p>Building effective collaboration requires organizational effort. It requires establishing forums where cross-functional discussion occurs regularly, not just during crises. It requires creating shared vocabulary so different disciplines can communicate effectively about AI risks and governance. It requires building relationships and trust across organizational boundaries. And it requires leadership that values diverse perspectives rather than treating governance as an obstacle to overcome.</p>
+<div id="fig-org-structure" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-org-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure_1_3_governance_org_structure.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-org-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.3: AI Governance Organizational Structure
+</figcaption>
+</figure>
+</div>
+<p><em>Figure 1.3: AI Governance Organizational Structure — Typical governance roles and reporting relationships from executive leadership through working teams.</em></p>
+</section>
+<section id="training-and-awareness" class="level3">
+<h3 class="anchored" data-anchor-id="training-and-awareness">Training and Awareness</h3>
+<p>AI governance depends on people throughout the organization understanding their responsibilities and having the skills to fulfill them. Survey data identified shortage of qualified AI professionals (31%) and lack of understanding of AI and underlying technologies (49%) as significant challenges organizations face in delivering AI governance.</p>
+<p>All employees benefit from basic AI literacy that helps them understand what AI is, how it affects their work, and their role in responsible AI use. This general awareness helps create a culture where people raise concerns, ask questions, and support governance efforts. The TELUS case study emphasizes company-wide data and AI literacy programming available to all team members regardless of their roles.</p>
+<p>Those who develop or deploy AI systems need more detailed training on governance policies and procedures. They need to understand what assessments are required, what documentation they must create, what testing they must perform, and how to escalate concerns. This training should be practical, explaining not just what is required but how to accomplish it.</p>
+<p>Executives and board members need training appropriate to their oversight role. They need to understand AI risks and governance approaches well enough to ask good questions, evaluate reports, and make informed decisions about risk tolerance and resource allocation. The survey found that lack of board-level understanding was reported as a challenge by many respondents, suggesting room for improvement in executive AI education.</p>
+<p>Professional certification provides a way to validate AI governance competence. The IAPP’s AIGP certification, which this book supports, demonstrates knowledge of AI governance principles and practices. Several case study organizations mentioned that the AIGP certification “stands out when recruiting new staff” regardless of the candidate’s background.</p>
+</section>
+<section id="tailoring-governance-to-context" class="level3">
+<h3 class="anchored" data-anchor-id="tailoring-governance-to-context">Tailoring Governance to Context</h3>
+<p>AI governance is not one-size-fits-all. The appropriate governance approach depends on organizational characteristics including size, industry, AI maturity, and risk tolerance.</p>
+<p>A large financial services company faces different AI governance challenges than a small technology startup. The financial services company operates in a heavily regulated industry with established compliance functions and may be deploying AI in high-stakes contexts like lending decisions. It likely has resources for dedicated governance staff, formal processes, and specialized tools. The startup may move faster, have less regulatory burden for the moment, and deploy AI in initially lower-risk contexts. It may lack resources for extensive governance infrastructure but can build governance into its culture from the beginning.</p>
+<p>Survey data confirms these patterns: larger organizations by revenue and employee count are more likely to have mature AI governance programs, AI governance committees, larger budgets, and higher confidence in their ability to comply with regulations like the EU AI Act. Organizations with annual revenue below $100 million were significantly underrepresented among those actively working on AI governance, while larger organizations were overrepresented.</p>
+<p>Governance should evolve as an organization’s AI maturity grows. An organization new to AI may start with basic policies, lightweight review processes, and a single person with part-time governance responsibility. As AI use expands and matures, governance becomes more sophisticated with detailed procedures, specialized tools, dedicated resources, and formal committee structures. The case studies illustrate this evolution: several organizations described building out more professionalized AI governance programs after using AI at smaller scales.</p>
+<p>Risk tolerance also varies across organizations and use cases. Some organizations accept more risk in exchange for innovation speed. Others prioritize caution even at the cost of slower adoption. Within organizations, different use cases warrant different levels of governance intensity based on potential impacts. A low-risk internal productivity tool might receive lighter governance than a customer-facing system making consequential decisions.</p>
+</section>
+<section id="developer-deployer-and-user-distinctions" class="level3">
+<h3 class="anchored" data-anchor-id="developer-deployer-and-user-distinctions">Developer, Deployer, and User Distinctions</h3>
+<p>AI governance professionals must understand the different roles organizations play in the AI ecosystem because responsibilities differ based on role.</p>
+<p>AI developers create AI systems, training models and building the technology that others will use. A company that trains its own machine learning models is a developer. A company that builds AI products or platforms for others to use is a developer. Developers bear primary responsibility for the technical characteristics of AI systems including their accuracy, fairness, security, and reliability. Regulatory frameworks increasingly impose specific obligations on developers, including documentation requirements, technical requirements, testing obligations, and transparency duties.</p>
+<p>AI deployers take AI systems created by developers and make them available for use in specific contexts. A company that purchases an AI hiring tool from a vendor and uses it in their recruiting process is a deployer. A company that integrates a third-party language model into their customer service application is a deployer. Deployers bear responsibility for using AI systems appropriately in their specific context. Even if a developer created a well-designed system, a deployer can misuse it or deploy it in inappropriate contexts. The EU AI Act allocates specific obligations to deployers of high-risk AI systems including conducting impact assessments, ensuring human oversight, and informing affected individuals.</p>
+<p>AI users are the people who interact with deployed AI systems in the course of their work or daily life. Employees using an AI tool in their work are users. Consumers interacting with AI-powered products are users. Users generally bear less governance responsibility but should understand AI capabilities and limitations and should be able to report concerns.</p>
+<p>Many organizations play multiple roles simultaneously or sequentially. A company might develop some AI systems internally while deploying AI systems purchased from vendors. A company might be a deployer for its internal use of AI while being a developer of AI products it sells to customers. Governance programs must address responsibilities in all roles the organization plays and must manage relationships with external parties playing other roles in the AI value chain.</p>
+</section>
+</section>
+<section id="policies-across-the-ai-lifecycle" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="policies-across-the-ai-lifecycle"><span class="header-section-number">1.7</span> Policies Across the AI Lifecycle</h2>
+<p>AI governance requires policies that address the entire AI lifecycle from initial conception through retirement. These policies create the framework within which AI development and deployment occurs.</p>
+<section id="use-case-assessment-and-approval" class="level3">
+<h3 class="anchored" data-anchor-id="use-case-assessment-and-approval">Use Case Assessment and Approval</h3>
+<p>Before developing or deploying an AI system, organizations should assess whether the proposed use case is appropriate. This assessment considers whether AI is necessary and suitable for the intended purpose, what risks the use case presents, whether those risks can be adequately managed, and whether the use case aligns with organizational values and strategy.</p>
+<p>Use case assessment policies should establish criteria for evaluating proposed AI applications and specify approval processes. High-risk uses involving consequential decisions, vulnerable populations, sensitive contexts, or novel capabilities warrant more scrutiny than lower-risk applications. Policies should specify who has authority to approve different categories of use cases, what documentation is required for approval, and what ongoing oversight approved uses require.</p>
+<p>Some organizations establish explicit lists of prohibited use cases that will not be approved regardless of circumstances, as well as presumptively approved low-risk uses that can proceed with minimal review. The Boston Consulting Group case study describes a screening process that identifies potentially high-risk use cases for review by a senior-level Responsible AI Council, while lower-risk cases proceed through streamlined processes.</p>
+</section>
+<section id="risk-management" class="level3">
+<h3 class="anchored" data-anchor-id="risk-management">Risk Management</h3>
+<p>AI risk management policies establish how the organization identifies, assesses, and mitigates AI risks. This includes processes for risk assessment during development and deployment, criteria for categorizing risk levels, requirements for risk mitigation measures, procedures for ongoing risk monitoring, and escalation paths for identified risks.</p>
+<p>Effective AI risk management integrates with existing enterprise risk management frameworks rather than operating in isolation. AI risks relate to security risk, privacy risk, operational risk, compliance risk, and reputational risk. Organizations should leverage existing risk management capabilities and expertise while adding AI-specific considerations.</p>
+<p>The NIST AI Risk Management Framework provides a widely referenced structure for AI risk management, organized around four core functions: Govern (establish accountability and culture), Map (understand context and identify risks), Measure (assess and analyze risks), and Manage (prioritize and address risks). Organizations can use this framework as a starting point while tailoring it to their specific circumstances.</p>
+</section>
+<section id="data-governance" class="level3">
+<h3 class="anchored" data-anchor-id="data-governance">Data Governance</h3>
+<p>AI systems depend on data, and data governance policies establish requirements for data used in AI. This includes requirements for data quality ensuring training data is accurate, complete, and fit for purpose. It includes requirements for data sourcing ensuring the organization has appropriate legal rights to use data for AI purposes. It includes requirements for data privacy ensuring personal information is protected appropriately. It includes requirements for data documentation establishing lineage and provenance.</p>
+<p>Data governance for AI extends existing data governance programs but adds AI-specific considerations. Data that is adequate for business analytics may be inadequate for training AI models that make consequential individual decisions. Data biases that might be acceptable in aggregate statistics become problematic when they affect individual outcomes. Organizations should evaluate existing data policies and extend them as needed for AI contexts.</p>
+</section>
+<section id="documentation-and-record-keeping" class="level3">
+<h3 class="anchored" data-anchor-id="documentation-and-record-keeping">Documentation and Record-Keeping</h3>
+<p>Documentation policies establish what information must be recorded about AI systems and how that information must be maintained. Good documentation supports accountability, enables oversight, facilitates troubleshooting, and demonstrates compliance.</p>
+<p>Documentation requirements typically include system purpose and intended use, training data characteristics and sources, model architecture and key parameters, testing results and performance metrics, known limitations and risks, deployment procedures, and operational monitoring approaches. The level of detail should be appropriate to the risk level and complexity of the system.</p>
+<p>Model cards and datasheets have emerged as standard formats for AI documentation. A model card documents a trained model’s purpose, performance characteristics, limitations, and ethical considerations. A datasheet documents a dataset’s composition, collection process, intended uses, and potential biases. Organizations should consider adopting these formats while adapting them to their specific needs.</p>
+</section>
+<section id="third-party-management" class="level3">
+<h3 class="anchored" data-anchor-id="third-party-management">Third-Party Management</h3>
+<p>Many organizations use AI systems developed by external parties rather than building everything internally. Third-party management policies establish how the organization evaluates, selects, contracts with, and monitors AI vendors and partners.</p>
+<p>These policies should address due diligence requirements for evaluating potential AI vendors, contractual provisions that allocate responsibilities and ensure access to necessary information, ongoing monitoring requirements for third-party AI systems, and incident response procedures when third-party systems cause problems.</p>
+<p>The increasing use of cloud-based AI services and pre-trained models from external providers makes third-party management increasingly important. Organizations must manage risks that originate outside their boundaries while maintaining accountability for AI systems they deploy regardless of where those systems were developed.</p>
+</section>
+<section id="incident-management" class="level3">
+<h3 class="anchored" data-anchor-id="incident-management">Incident Management</h3>
+<p>Despite best efforts, AI systems sometimes cause harm or malfunction. Incident management policies establish how the organization detects, responds to, and learns from AI incidents.</p>
+<p>These policies should define what constitutes an AI incident, establish processes for reporting and escalating incidents, specify response procedures including the ability to pause or withdraw problematic systems, require root cause analysis and documentation, and establish processes for communicating with affected parties and regulators as appropriate.</p>
+<p>The EU AI Act requires providers of high-risk AI systems to report serious incidents to relevant authorities. Organizations subject to this requirement must have processes to detect incidents, assess their severity, and make required reports within specified timeframes.</p>
+</section>
+</section>
+<section id="the-oecd-framework-for-ai-classification" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="the-oecd-framework-for-ai-classification"><span class="header-section-number">1.8</span> The OECD Framework for AI Classification</h2>
+<p>Beyond definitions and principles, governance professionals benefit from frameworks that help classify and analyze AI systems. The OECD Framework for the Classification of AI Systems provides a comprehensive approach adopted by many countries and organizations.</p>
+<p>The framework classifies AI systems along five dimensions, each with multiple characteristics that help characterize specific systems and their governance implications.</p>
+<p>The first dimension addresses People and Planet, considering the potential of AI systems to affect human rights, well-being, society, and the environment. This dimension examines who uses the system, who is affected by it, whether use is optional or compelled, and what types of impacts the system may have on individuals, groups, and the environment.</p>
+<p>The second dimension addresses Economic Context, describing the sectoral and business environment in which an AI system operates. This includes the industry sector, business function, critical or non-critical nature of the application, scale of deployment, and the organization’s experience with the technology.</p>
+<p>The third dimension addresses Data and Input, characterizing the data and information that feeds into the AI system. This includes data provenance and quality, collection methods, data structure and format, whether data includes personal information, and how data changes over time.</p>
+<p>The fourth dimension addresses the AI Model itself, examining how the system processes inputs to generate outputs. This includes the type of machine learning or other AI approach, how the model was trained, what objectives it optimizes, and how performance is measured.</p>
+<p>The fifth dimension addresses Task and Output, characterizing what the system does and produces. This includes the types of tasks performed, the nature of outputs, the level of autonomy in decision-making, and how outputs influence subsequent actions.</p>
+<p>Using this framework helps governance professionals systematically analyze AI systems, compare systems across dimensions, identify governance-relevant characteristics, and communicate about AI systems in consistent terms. The framework does not prescribe specific governance requirements but provides a structured approach to understanding what is being governed.</p>
+</section>
+<section id="chapter-1-summary" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="chapter-1-summary"><span class="header-section-number">1.9</span> Chapter 1 Summary</h2>
+<p>This chapter established the foundational knowledge that AI governance professionals need. AI governance exists because artificial intelligence has moved from research laboratories into daily organizational operations, bringing both substantial benefits and significant risks that require specialized management.</p>
+<p>AI encompasses engineered systems that generate outputs like predictions, recommendations, content, or decisions based on learned patterns rather than explicit programming alone. Machine learning, the dominant approach to building AI systems today, enables powerful capabilities but also creates governance challenges related to opacity, data dependency, and unpredictable emergent behavior. The distinction between generative and predictive AI matters for governance because these categories have different risk profiles requiring different approaches.</p>
+<p>AI requires specialized governance because of characteristics that distinguish it from traditional software: complexity and opacity that challenge transparency requirements, autonomy and speed that require new approaches to oversight, data dependency that extends governance concerns to data pipelines, probabilistic outputs that require managing uncertainty, and emergent behavior that challenges pre-deployment testing. Understanding AI as a socio-technical system recognizes that technical components interact with social contexts, human behaviors, and institutional structures in ways that purely technical governance cannot address.</p>
+<p>AI can cause harms to individuals through inaccurate or discriminatory decisions in consequential contexts, to groups through systematic patterns that perpetuate historical disadvantage, to organizations through reputational damage and regulatory penalties and cultural erosion, to society through misinformation and surveillance and power concentration, and to the environment through energy consumption and hardware lifecycle impacts.</p>
+<p>Responsible AI principles provide direction for governance programs: fairness requires proactive attention to equitable treatment, safety and reliability require anticipating and preventing harms, privacy and security require protecting information and systems, transparency and explainability require openness about AI use and decisions, accountability requires clear assignment of responsibility, and human oversight requires meaningful human control over AI systems.</p>
+<p>Organizations establish AI governance through structures including executive sponsorship, designated governance functions, cross-functional committees, and project-level responsibilities. Success requires cross-functional collaboration because AI risks span technical, legal, ethical, and social domains. Training and awareness programs build the organizational capability to implement governance effectively. Governance approaches should be tailored to organizational context including size, industry, maturity, and risk tolerance. Understanding distinctions between developers, deployers, and users helps allocate responsibilities appropriately.</p>
+<p>Policies across the AI lifecycle address use case assessment, risk management, data governance, documentation, third-party management, and incident response. The OECD Framework for AI Classification provides a structured approach to analyzing AI systems across dimensions of people and planet, economic context, data and input, AI model characteristics, and task and output.</p>
+</section>
+<section id="chapter-1-review-questions" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="chapter-1-review-questions"><span class="header-section-number">1.10</span> Chapter 1 Review Questions</h2>
+<ol type="1">
+<li><p>A large healthcare organization is evaluating a deep learning system that analyzes medical images to assist radiologists in detecting tumors. The system achieves higher accuracy than human radiologists on benchmark tests but the organization cannot explain in simple terms why the system flags particular images. Which characteristic of AI systems creates the most significant governance challenge in this situation?</p></li>
+<li><p>An AI hiring tool trained on a company’s historical hiring decisions shows strong predictive accuracy for job performance. However, analysis reveals that the tool recommends male candidates at significantly higher rates than female candidates with similar qualifications. This pattern reflects the company’s historical hiring practices in a male-dominated industry. Which category of AI harm does this situation primarily illustrate?</p></li>
+<li><p>A financial services company is implementing an AI governance program. The Chief Privacy Officer has been assigned responsibility for AI governance, but she finds that she cannot effectively govern AI systems without regular input from the data science team, legal counsel, business unit leaders, and the security function. This situation illustrates which fundamental principle of AI governance program design?</p></li>
+<li><p>A content moderation AI system reviews millions of social media posts daily, removing those that violate platform policies. The system occasionally removes legitimate content (false positives) and occasionally fails to remove violating content (false negatives). Which characteristic of AI systems makes it impractical to have humans review every decision the system makes?</p></li>
+<li><p>A retail company uses an AI recommendation system that personalizes product suggestions based on customer browsing and purchase history. The company is preparing for compliance with the EU AI Act. Based on the risk classification framework, how would this system most likely be classified?</p></li>
+</ol>
+</section>
+<section id="references" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="references"><span class="header-section-number">1.11</span> References</h2>
+<p>IAPP. AI Governance in Practice Report 2025. International Association of Privacy Professionals, 2025.</p>
+<p>IAPP. AIGP Body of Knowledge, Version 2.0.1. International Association of Privacy Professionals, 2025.</p>
+<p>National Institute of Standards and Technology. AI Risk Management Framework 1.0. NIST AI 100-1, 2023.</p>
+<p>Organisation for Economic Co-operation and Development. OECD Framework for the Classification of AI Systems. OECD Digital Economy Papers No.&nbsp;323, 2022.</p>
+<p>Organisation for Economic Co-operation and Development. Recommendation of the Council on Artificial Intelligence. OECD/LEGAL/0449, 2019.</p>
+<p>European Parliament and Council. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). Official Journal of the European Union, 2024.</p>
+<p>Mitchell, Margaret, et al.&nbsp;“Model Cards for Model Reporting.” Proceedings of the Conference on Fairness, Accountability, and Transparency, 2019.</p>
+<p>Gebru, Timnit, et al.&nbsp;“Datasheets for Datasets.” Communications of the ACM 64, no. 12 (2021).</p>
+<p>Buolamwini, Joy and Timnit Gebru. “Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification.” Proceedings of Machine Learning Research 81 (2018).</p>
+<hr>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/02-legal-frameworks.html" class="pagination-link" aria-label="Understanding How Laws, Standards, and Frameworks Apply to AI">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Understanding How Laws, Standards, and Frameworks Apply to AI</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
