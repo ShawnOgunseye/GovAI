@@ -1,0 +1,337 @@
+# Understanding How Laws, Standards, and Frameworks Apply to AI
+
+## Introduction
+
+AI systems do not operate in a legal vacuum. They interact with existing laws never designed with AI in mind, face new AI-specific regulations emerging worldwide, and are shaped by voluntary frameworks and standards that establish expectations for responsible practice. AI governance professionals must understand this complex landscape to help their organizations deploy AI lawfully and responsibly.
+
+This chapter surveys the legal and regulatory frameworks that apply to AI. It begins with existing laws that predate AI but apply to it, including privacy laws, anti-discrimination laws, consumer protection laws, and product liability laws. It then examines AI-specific regulations, with particular attention to the EU AI Act as the most comprehensive AI law to date. It surveys emerging AI regulations in other jurisdictions. Finally, it examines voluntary standards and frameworks that, while not legally binding, shape expectations and may become legally relevant as courts and regulators reference them.
+
+A word of caution: this chapter describes the legal landscape as it exists at the time of writing, but that landscape is evolving rapidly. New regulations are being enacted, existing regulations are being implemented and interpreted, and enforcement priorities are being established. AI governance professionals should monitor developments in jurisdictions relevant to their organizations and seek qualified legal counsel for specific situations. The goal here is to build understanding of the legal framework, not to provide legal advice.
+
+## How Privacy Laws Apply to AI
+
+Privacy laws were enacted before the current AI era, but they apply powerfully to AI systems that process personal data. Understanding this intersection is essential because AI systems frequently rely on personal data for training, operation, and outputs.
+
+### The GDPR Framework
+
+The European Union's General Data Protection Regulation provides a comprehensive framework for data protection that applies when AI systems process personal data of individuals in the EU. Several GDPR provisions have particular relevance to AI.
+
+The lawfulness requirements of Article 6 require a legal basis for processing personal data. For AI systems, this means organizations must identify a valid basis for collecting data used to train models, for processing data during model operation, and for any personal data in model outputs. Consent, contractual necessity, legal obligation, vital interests, public task, and legitimate interests each have specific conditions that may or may not fit AI use cases. The legitimate interests basis, commonly relied upon for AI, requires balancing organizational interests against the rights and interests of data subjects.
+
+The data minimization principle requires that personal data be adequate, relevant, and limited to what is necessary for the processing purposes. This principle creates tension with AI systems that often perform better with more data. Organizations must be able to justify the data they collect and use, demonstrating that it is genuinely necessary for the AI application's purposes.
+
+Purpose limitation requires that personal data be collected for specified, explicit, and legitimate purposes and not further processed in a manner incompatible with those purposes. When organizations use data originally collected for one purpose to train AI models for different purposes, they must analyze whether this constitutes compatible further processing or requires a new legal basis.
+
+Data subject rights under the GDPR have specific implications for AI. The right to access allows individuals to obtain information about processing of their data, including in AI systems. The right to rectification allows correction of inaccurate data, which may require model retraining if the data was used for training. The right to erasure raises complex questions about whether and how personal data can be removed from trained models. The right not to be subject to solely automated decision-making with legal or similarly significant effects, found in Article 22, directly addresses AI-driven decisions.
+
+Article 22 deserves particular attention. It establishes that data subjects have the right not to be subject to decisions based solely on automated processing, including profiling, that produce legal effects or similarly significantly affect them. Exceptions exist for contractual necessity, explicit consent, or legal authorization, but even when these exceptions apply, organizations must implement suitable safeguards including the right to obtain human intervention, express views, and contest the decision.
+
+Courts and regulators have not fully resolved what constitutes solely automated decision-making versus human-AI collaboration, what effects are similarly significant to legal effects, or what constitutes meaningful human intervention. Organizations should take a conservative approach, providing human review of consequential AI-driven decisions affecting individuals and ensuring that human review is genuinely meaningful rather than perfunctory.
+
+Data Protection Impact Assessments are required under Article 35 when processing is likely to result in high risk to individuals' rights and freedoms. AI systems that make automated decisions about individuals or that systematically evaluate personal aspects typically trigger this requirement. DPIAs require systematic description of processing operations, assessment of necessity and proportionality, assessment of risks, and measures to address risks.
+
+### Privacy Laws in the United States
+
+The United States lacks a comprehensive federal privacy law comparable to the GDPR, but a patchwork of federal and state laws applies to AI systems.
+
+The California Consumer Privacy Act, as amended by the California Privacy Rights Act, provides California residents with rights regarding their personal information including the right to know what information is collected, the right to delete personal information, the right to opt out of sale or sharing of personal information, and the right to limit use of sensitive personal information. CPRA added provisions specifically addressing automated decision-making, requiring businesses to provide information about the logic involved in automated decision-making and meaningful information about the consequences of such decisions. California regulations implementing these provisions are still developing.
+
+Other state comprehensive privacy laws including those in Virginia, Colorado, Connecticut, Utah, and additional states enact similar rights with variations in scope and requirements. Several include provisions addressing automated decision-making, profiling, or requiring opt-out mechanisms. Organizations operating across multiple states face a complex compliance landscape.
+
+Federal sector-specific laws apply to AI in their respective domains. The Health Insurance Portability and Accountability Act governs protected health information, which is frequently used in healthcare AI. The Gramm-Leach-Bliley Act governs financial data. The Children's Online Privacy Protection Act governs data about children under 13. The Fair Credit Reporting Act governs consumer reports and the information used to create them, with significant implications for AI used in credit, employment, and insurance decisions.
+
+The Federal Trade Commission Act's prohibition on unfair and deceptive practices has been applied to AI-related conduct. The FTC has issued guidance on AI and has brought enforcement actions against companies whose AI practices it deemed unfair or deceptive. The agency has indicated it will scrutinize AI systems for accuracy, bias, and transparency and will use its enforcement authority against problematic AI practices.
+
+### Data Protection Impact Assessments and AI Conformity Assessments
+
+AI governance professionals should understand the relationship between privacy-focused Data Protection Impact Assessments and AI-focused conformity assessments increasingly required by AI regulations.
+
+A DPIA under the GDPR focuses on data protection risks, assessing processing operations from the perspective of privacy and data subject rights. It examines legal bases, data minimization, purpose limitation, data subject rights, security measures, and data transfers.
+
+An AI conformity assessment under the EU AI Act focuses on AI-specific requirements, examining whether a high-risk AI system meets requirements for risk management, data governance, transparency, human oversight, accuracy, robustness, and cybersecurity.
+
+When a high-risk AI system processes personal data, organizations will likely need to conduct both assessments. These assessments overlap significantly: both examine data, both assess risks, both consider safeguards. The DPIA can form a foundation for the conformity assessment, and organizations should coordinate these processes to avoid duplicative effort and ensure consistent conclusions.
+
+## How Other Existing Laws Apply to AI
+
+Beyond privacy laws, numerous existing legal frameworks apply to AI systems. These laws were not designed with AI in mind but reach AI applications within their scope.
+
+### Anti-Discrimination Laws
+
+Laws prohibiting discrimination based on protected characteristics apply when AI systems make or influence decisions in covered contexts. In the United States, Title VII of the Civil Rights Act prohibits employment discrimination on the basis of race, color, religion, sex, or national origin. The Americans with Disabilities Act prohibits discrimination against qualified individuals with disabilities. The Age Discrimination in Employment Act prohibits discrimination against individuals 40 and older. The Fair Housing Act prohibits discrimination in housing. The Equal Credit Opportunity Act prohibits discrimination in credit decisions.
+
+These laws apply regardless of whether discrimination is intentional or results from facially neutral practices with discriminatory effects. An AI hiring tool that has a disparate impact on protected groups may violate Title VII even if it was not designed to discriminate. An AI credit model that disadvantages protected groups may violate the Equal Credit Opportunity Act even if the variables it uses are not explicitly related to protected characteristics.
+
+Regulatory agencies have issued guidance on applying these laws to AI. The Equal Employment Opportunity Commission has issued guidance on the use of AI and automated systems in employment decisions, emphasizing that employers remain responsible for discriminatory outcomes even when they rely on AI tools developed by vendors. The Consumer Financial Protection Bureau has addressed AI in the context of fair lending requirements.
+
+Beyond the United States, discrimination laws in other jurisdictions similarly apply to AI systems. The EU's Charter of Fundamental Rights prohibits discrimination, and national laws throughout Europe implement anti-discrimination requirements that reach AI applications.
+
+### Consumer Protection Laws
+
+Consumer protection laws prohibit unfair and deceptive practices, and these prohibitions apply to AI-powered products and services.
+
+The FTC Act prohibits unfair and deceptive acts or practices in or affecting commerce. The FTC has applied this authority to AI contexts, taking action against companies for deceptive claims about AI capabilities, for unfair use of AI to harm consumers, and for failing to adequately protect AI systems and the data they use. The agency has signaled that it considers AI bias and discrimination to be potential unfairness violations.
+
+State consumer protection laws similarly prohibit unfair and deceptive practices. State attorneys general have used these authorities in AI contexts and can be expected to continue doing so.
+
+The EU's Unfair Commercial Practices Directive prohibits unfair business-to-consumer commercial practices, including misleading actions, misleading omissions, and aggressive practices. This directive applies to AI-powered interactions with consumers.
+
+The EU's Digital Services Act imposes transparency requirements on online platforms, including requirements to disclose when content is AI-generated and to explain how recommendation systems work. These requirements reflect growing regulatory attention to the role of AI in shaping online content and behavior.
+
+### Product Liability Laws
+
+Product liability laws impose responsibility for defective products that cause harm. The application of these laws to AI is evolving and raises novel questions.
+
+Traditional product liability distinguishes between manufacturing defects, design defects, and failure to warn. Applying these categories to AI is not straightforward: AI defects may emerge from training data, learned parameters, or deployment context rather than fitting neatly into traditional categories.
+
+The EU is updating its product liability framework to address AI. The revised Product Liability Directive explicitly includes software within the definition of products and addresses AI-specific issues. The proposed AI Liability Directive would ease the burden of proof for claimants harmed by AI systems by establishing rebuttable presumptions linking fault to damage and by providing disclosure mechanisms allowing claimants to access relevant evidence.
+
+In the United States, product liability law varies by state, and courts are beginning to address AI-specific issues without comprehensive legislative guidance.
+
+### Intellectual Property Laws
+
+Intellectual property laws intersect with AI in multiple ways relevant to governance.
+
+Copyright law addresses both the use of copyrighted material to train AI systems and the copyright status of AI-generated outputs. Training AI systems on copyrighted works raises questions about fair use in the United States or equivalent exceptions in other jurisdictions. Multiple lawsuits challenging AI training on copyrighted material are pending. The copyright status of AI-generated outputs remains uncertain; the US Copyright Office has indicated that copyright requires human authorship, limiting protection for AI-generated content.
+
+Patent law faces similar questions about AI inventorship. Patent offices in most jurisdictions have determined that AI systems cannot be listed as inventors on patent applications, requiring human inventorship. This does not prevent patenting inventions developed with AI assistance if a human qualifies as inventor.
+
+Trade secret law may protect trained AI models, training data, and other AI-related assets if they derive economic value from being secret and are subject to reasonable secrecy measures.
+
+## The EU AI Act
+
+The European Union's Artificial Intelligence Act, adopted in 2024 with phased implementation through 2027, is the world's most comprehensive AI-specific regulation. Understanding the AI Act is essential for organizations that operate in or serve the EU market and provides insight into regulatory approaches other jurisdictions may follow.
+
+### Risk Classification Framework
+
+The AI Act takes a risk-based approach, classifying AI systems into categories with different regulatory requirements based on their potential for harm.
+
+Prohibited AI practices are banned entirely. These include AI systems that deploy subliminal, manipulative, or deceptive techniques to distort behavior in ways causing significant harm; systems that exploit vulnerabilities related to age, disability, or social or economic situation; social scoring systems by public authorities; systems that infer emotions in workplace and educational settings except for medical or safety reasons; certain forms of real-time remote biometric identification in public spaces for law enforcement; systems creating or expanding facial recognition databases through untargeted scraping; and AI systems that create risk assessments predicting criminal behavior based solely on profiling or personality traits.
+
+High-risk AI systems are permitted but subject to extensive requirements. The AI Act identifies high-risk systems in two ways. First, certain AI systems intended as safety components of products already subject to EU harmonization legislation are high-risk. Second, the Act lists specific use cases that qualify as high-risk, including biometric identification and categorization; management and operation of critical infrastructure; education and vocational training; employment, worker management, and access to self-employment; access to and enjoyment of essential private and public services including credit, insurance, and emergency services; law enforcement; migration, asylum, and border control; and administration of justice and democratic processes.
+
+High-risk AI systems must comply with requirements spanning risk management, data governance, technical documentation, record-keeping, transparency and provision of information to users, human oversight, accuracy, robustness, and cybersecurity.
+
+Limited risk AI systems face transparency obligations but not the full high-risk requirements. These include AI systems that interact with natural persons, emotion recognition systems, and AI systems generating synthetic content.
+
+Minimal risk AI systems face no specific requirements under the Act beyond general requirements and encouragement to adopt voluntary codes of conduct.
+
+![EU AI Act Risk Classification Pyramid](../figures/figure_2_1_eu_ai_act_pyramid.svg){#fig-eu-pyramid}
+
+*Figure 2.1: EU AI Act Risk Classification Pyramid — The four-tier risk system from prohibited practices at the apex to minimal-risk systems at the base.*
+
+### Requirements for High-Risk AI Systems
+
+Organizations developing or deploying high-risk AI systems must understand the detailed requirements the AI Act imposes.
+
+Risk management must be established as a continuous iterative process throughout the system lifecycle. This includes identifying and analyzing known and foreseeable risks, estimating and evaluating risks that may emerge when the system is used as intended and under reasonably foreseeable misuse, adopting appropriate risk management measures, and ensuring that residual risks are acceptable.
+
+Data governance requirements address the quality of training, validation, and testing data. Data must be relevant, representative, accurate, and complete. Appropriate data governance and management practices must be implemented addressing data collection, data preparation, data labeling, and gap analysis.
+
+Technical documentation must be prepared before the system is placed on the market or put into service and must be kept up to date. Documentation must demonstrate compliance with requirements and provide authorities with necessary information for assessment.
+
+Record-keeping requirements mandate that high-risk AI systems include logging capabilities enabling automatic recording of events relevant to identifying risks, facilitating post-market monitoring, and enabling investigation of incidents.
+
+Transparency and information provision require that systems be designed to enable users to interpret outputs and use the system appropriately. Instructions must accompany systems including information about provider identity, system characteristics and capabilities, intended purpose, accuracy and robustness metrics, known circumstances of foreseeable misuse, human oversight measures, and expected lifetime.
+
+Human oversight measures must be designed into systems to enable human oversight during use. Depending on circumstances, this may include ability to fully understand system capabilities, remain aware of automation bias, correctly interpret outputs, decide not to use outputs, intervene on operation, or stop the system.
+
+Accuracy, robustness, and cybersecurity requirements ensure systems achieve appropriate levels of accuracy for their intended purpose, are resilient to errors or inconsistencies, and resist unauthorized attempts to alter their use or performance.
+
+### Allocation of Obligations
+
+The AI Act allocates obligations among different actors in the AI value chain.
+
+Providers, essentially developers who place systems on the market or put them into service under their own name, bear the primary compliance burden. They must ensure systems meet requirements, conduct conformity assessments, prepare documentation, implement quality management systems, and carry out post-market monitoring.
+
+Deployers, organizations using AI systems under their authority, must use systems according to instructions, ensure human oversight, monitor operation for risks, inform providers of incidents, keep logs, inform affected individuals that they are subject to high-risk AI, and conduct fundamental rights impact assessments for certain uses.
+
+Importers must verify provider compliance before placing systems on the EU market. Distributors must verify systems bear required markings and documentation. Product manufacturers integrating high-risk AI into their products bear provider obligations.
+
+### General Purpose AI Models
+
+The AI Act includes provisions addressing general purpose AI models, sometimes called foundation models, that can be used for many different applications rather than a single specific purpose.
+
+All providers of general purpose AI models must prepare and maintain technical documentation, provide information and documentation to downstream providers, establish policies to comply with copyright law, and publish a summary of training content.
+
+Providers of general purpose AI models with systemic risk face additional obligations. A model has systemic risk if it has high impact capabilities indicated by computation used for training above a threshold, or by Commission decision based on criteria including number of users, degree of autonomy, and access to data. Providers of such models must conduct model evaluations including adversarial testing, assess and mitigate systemic risks, track and report serious incidents, and ensure adequate cybersecurity.
+
+### Enforcement and Penalties
+
+The AI Act establishes an enforcement framework with significant penalties for non-compliance.
+
+The AI Office within the European Commission coordinates enforcement across member states and has direct enforcement power for general purpose AI model provisions. National competent authorities designated by member states enforce provisions applicable to organizations in their jurisdictions.
+
+Penalties follow a tiered structure. Violations involving prohibited AI practices can result in fines up to 35 million euros or 7% of worldwide annual turnover, whichever is higher. Violations of requirements for high-risk systems can result in fines up to 15 million euros or 3% of worldwide turnover. Supply of incorrect information to authorities can result in fines up to 7.5 million euros or 1% of worldwide turnover.
+
+### Implementation Timeline
+
+The AI Act has a phased implementation timeline. Prohibitions on banned AI practices apply from February 2025. Provisions on general purpose AI models and establishment of governance structures apply from August 2025. Most provisions including requirements for high-risk systems apply from August 2026. Requirements for high-risk AI systems that are safety components of products subject to other EU harmonization legislation apply from August 2027.
+
+## Other AI-Specific Regulatory Developments
+
+While the EU AI Act is the most comprehensive AI law to date, other jurisdictions are developing their own approaches to AI regulation.
+
+### United States Federal Developments
+
+The United States has not enacted comprehensive federal AI legislation as of early 2025, but significant federal activity shapes AI governance.
+
+Executive Order 14110 on Safe, Secure, and Trustworthy Artificial Intelligence, issued in October 2023, directed federal agencies to take numerous actions addressing AI safety and security, privacy, civil rights, consumer protection, workforce impacts, innovation, and international leadership. The order requires safety testing for powerful AI models, addresses AI in critical infrastructure, directs agencies to address AI-related discrimination, and establishes governance structures within the federal government.
+
+Federal agencies are using existing authorities to address AI. The FTC has issued guidance and brought enforcement actions addressing AI under its unfair and deceptive practices authority. The EEOC has issued guidance on AI in employment decisions. Banking regulators have issued model risk management guidance applicable to AI systems used by financial institutions. The FDA regulates AI medical devices.
+
+The NIST AI Risk Management Framework, while voluntary, represents authoritative federal guidance on AI risk management. The White House Blueprint for an AI Bill of Rights articulates principles including safety, protection from algorithmic discrimination, data privacy, notice and explanation, and human alternatives.
+
+### United States State Laws
+
+In the absence of comprehensive federal AI legislation, states have enacted AI-specific laws creating a complex compliance landscape.
+
+Colorado enacted the Colorado AI Act in 2024, becoming the first state to enact comprehensive AI legislation addressing high-risk AI systems. The law requires deployers of high-risk AI systems to use reasonable care to protect consumers from algorithmic discrimination. Deployers must conduct impact assessments, provide public statements describing AI systems, and notify consumers when AI makes or substantially influences consequential decisions about them. Developers must provide deployers with documentation necessary to conduct impact assessments and evaluate AI systems. The law takes effect in 2026.
+
+New York City Local Law 144 requires employers and employment agencies using automated employment decision tools to conduct annual independent bias audits, publish audit results, and provide candidates notice of AI use.
+
+The Illinois Artificial Intelligence Video Interview Act requires employers using AI to analyze video interviews to notify applicants that AI will be used, explain how the AI works, and obtain consent. Maryland prohibits using facial recognition in hiring without applicant consent.
+
+Additional states have enacted or are considering AI-specific legislation addressing employment, insurance, housing, healthcare, and other domains.
+
+### International Developments
+
+AI regulation is a global phenomenon with significant developments across jurisdictions.
+
+Canada's Artificial Intelligence and Data Act, proposed as part of broader digital legislation, would establish requirements for organizations responsible for high-impact AI systems. Requirements would include conducting impact assessments, establishing risk mitigation measures, maintaining records, and publishing plain-language descriptions of high-impact AI systems.
+
+China has enacted multiple AI-related regulations. The Provisions on the Management of Algorithmic Recommendations requires providers of algorithmic recommendation services to ensure transparency, protect user choice, and avoid harmful discrimination. The Provisions on the Management of Deep Synthesis regulates deepfakes and synthetic content. The Interim Measures for the Management of Generative Artificial Intelligence Services addresses generative AI services offered to the public, requiring that such services not generate illegal content, obtain proper consent for personal data, ensure training data quality, and cooperate with authorities.
+
+Singapore has developed governance frameworks emphasizing practical guidance and voluntary adoption. The Model AI Governance Framework provides guidance on responsible AI development and deployment. AI Verify provides a testing framework and toolkit for organizations to demonstrate responsible AI practices. The Veritas framework addresses AI in financial services specifically. Singapore's approach emphasizes enabling innovation while encouraging responsible practices.
+
+Japan has pursued a pro-innovation approach emphasizing guidance rather than hard regulation, though specific rules apply in certain sectors. The Social Principles of Human-Centric AI and accompanying governance guidelines establish principles for trustworthy AI.
+
+The United Kingdom initially signaled a light-touch regulatory approach relying on sector regulators to address AI within their existing mandates. However, policy continues to develop.
+
+Brazil, India, South Korea, and numerous other jurisdictions are developing AI policies and regulations, creating an evolving global landscape.
+
+## Industry Standards and Frameworks
+
+Beyond legal requirements, industry standards and voluntary frameworks shape AI governance expectations. While not legally binding in themselves, these standards influence what is considered reasonable practice, may be referenced in regulations or contracts, and provide practical guidance for implementation.
+
+### OECD AI Principles
+
+The OECD AI Principles, adopted in 2019 and updated subsequently, articulate values for trustworthy AI that have been adopted by over forty countries and have influenced legal frameworks including the EU AI Act.
+
+The principles articulate five complementary values. First, AI should contribute to inclusive growth, sustainable development, and well-being, augmenting human capabilities, advancing inclusion, reducing inequalities, and protecting the environment. Second, AI actors should respect human-centered values and fairness including human rights, democratic values, diversity, fairness, and social justice. Third, there should be transparency and explainability so stakeholders understand AI systems and can challenge decisions affecting them. Fourth, AI systems should be robust, secure, and safe throughout their lifecycle with appropriate risk management. Fifth, organizations and individuals developing or operating AI should be accountable for proper functioning of AI systems.
+
+The OECD has also developed the Framework for the Classification of AI Systems, which provides structured dimensions for analyzing AI systems. The OECD maintains the AI Policy Observatory tracking AI policy developments globally and providing comparative analysis.
+
+### NIST AI Risk Management Framework
+
+The National Institute of Standards and Technology AI Risk Management Framework, published in 2023, provides voluntary guidance for managing AI risks. While developed in the United States, it has influenced approaches internationally.
+
+The framework organizes AI risk management around four core functions. The Govern function addresses the organizational culture, structures, policies, and accountability for AI risk management. The Map function addresses understanding context and identifying risks. The Measure function addresses assessing and analyzing identified risks through testing, metrics, and ongoing evaluation. The Manage function addresses prioritizing and responding to risks through controls, treatment options, monitoring, and communication.
+
+![NIST AI Risk Management Framework](../figures/figure_2_2_nist_ai_rmf.svg){#fig-nist-rmf}
+
+*Figure 2.2: NIST AI Risk Management Framework — The four core functions: Govern (central), Map, Measure, and Manage.*
+
+The accompanying NIST AI RMF Playbook provides detailed guidance for implementing each function, including suggested actions, transparency and documentation practices, and references to standards and frameworks.
+
+NIST has also established the Assessing Risks and Impacts of AI (ARIA) program, which develops methodologies, tools, metrics, and measurements for evaluating AI safety and trustworthiness. ARIA provides practical resources for organizations seeking to operationalize the AI RMF, including testing approaches for evaluating AI system performance, fairness, and robustness. The program bridges the gap between high-level risk management principles and concrete assessment practices.
+
+### ISO AI Standards
+
+The International Organization for Standardization has developed AI-specific standards that provide frameworks for AI governance.
+
+ISO/IEC 42001:2023 specifies requirements for an AI management system. It provides a framework for organizational governance of AI, addressing leadership commitment, planning, support, operation, performance evaluation, and improvement. Organizations can certify their AI management systems against this standard, demonstrating commitment to systematic AI governance.
+
+ISO/IEC 22989:2022 establishes AI concepts and terminology, providing common vocabulary for discussing AI systems consistently.
+
+Additional ISO standards address bias in AI systems, robustness of neural networks, transparency, explainability, and other AI governance topics.
+
+## Connecting Legal Requirements to Governance Practice
+
+AI governance professionals must translate legal requirements into practical organizational processes.
+
+### Impact Assessments
+
+Impact assessments are a common mechanism across multiple legal frameworks for identifying and addressing AI risks before deployment.
+
+Data Protection Impact Assessments under the GDPR focus on privacy and data protection risks. AI impact assessments, required under laws like the Colorado AI Act and emerging in other jurisdictions, focus on AI-specific risks including algorithmic discrimination, accuracy, transparency, and fairness. Fundamental rights impact assessments are required under the EU AI Act for certain deployers of high-risk AI systems.
+
+These various assessment requirements overlap and can often be coordinated. Organizations should develop impact assessment processes that address all applicable requirements efficiently while ensuring each specific legal requirement is satisfied.
+
+### Documentation and Record-Keeping
+
+Multiple legal frameworks impose documentation requirements that governance programs must address.
+
+The EU AI Act requires technical documentation for high-risk systems addressing system design, capabilities, testing, and risk management. The GDPR requires documentation of processing activities and of DPIAs. Various sector-specific laws impose additional documentation requirements.
+
+Model cards, datasheets for datasets, and similar documentation frameworks provide structured approaches to AI documentation that can help satisfy multiple legal requirements.
+
+### Transparency and Notice
+
+Many legal frameworks require disclosure to individuals about AI use.
+
+The EU AI Act requires disclosure when individuals interact with certain AI systems and when AI generates synthetic content. The GDPR requires information about automated decision-making. Consumer protection laws may require disclosure of AI involvement in products or services. Employment laws in various jurisdictions require disclosure of AI use in hiring.
+
+Organizations should identify all applicable disclosure requirements and implement processes ensuring required disclosures are made appropriately.
+
+### Human Oversight
+
+Legal frameworks increasingly require human oversight of AI systems, but the specific requirements vary.
+
+The GDPR's Article 22 requires the right to obtain human intervention in automated decisions with significant effects. The EU AI Act requires human oversight measures in high-risk AI systems. Various sector-specific requirements mandate human review in particular contexts.
+
+Organizations must design AI systems and processes to enable the required human oversight while maintaining operational efficiency.
+
+## Chapter 2 Summary
+
+This chapter surveyed the legal and regulatory frameworks that apply to AI systems. These frameworks include existing laws not designed with AI in mind that nonetheless apply to it, new AI-specific regulations, and voluntary standards and frameworks that shape expectations for responsible practice.
+
+Privacy laws including the GDPR and various US laws apply when AI systems process personal data, imposing requirements for lawful processing bases, data minimization, purpose limitation, and data subject rights. The GDPR's Article 22 specifically addresses automated decision-making, providing rights related to decisions based solely on automated processing with significant effects.
+
+Anti-discrimination laws prohibit discrimination based on protected characteristics regardless of whether discrimination results from AI or human decision-making. Consumer protection laws prohibit unfair and deceptive practices including in AI-powered products and services. Product liability laws are evolving to address AI defects and harms. Intellectual property laws address both the use of copyrighted material for AI training and the status of AI-generated outputs.
+
+The EU AI Act provides the most comprehensive AI-specific regulation to date, classifying AI systems by risk level and imposing extensive requirements on high-risk systems. Prohibited AI practices are banned. High-risk AI systems must comply with requirements for risk management, data governance, documentation, transparency, human oversight, accuracy, and robustness. General purpose AI models face separate requirements. The Act allocates obligations among providers, deployers, and other actors and establishes significant penalties for non-compliance.
+
+Other jurisdictions are developing AI regulations including US states like Colorado with comprehensive AI acts and cities like New York with targeted requirements. Canada, China, Singapore, Japan, and other countries are developing their own approaches ranging from comprehensive legislation to sectoral regulation to voluntary frameworks.
+
+Industry standards and frameworks including the OECD AI Principles, NIST AI Risk Management Framework, and ISO standards provide guidance for responsible AI that, while voluntary, shapes expectations and may become legally relevant.
+
+Translating legal requirements into practice requires impact assessments addressing multiple frameworks' requirements, documentation meeting various legal standards, transparency and notice satisfying disclosure obligations, human oversight as legally required, and compliance programs addressing multiple jurisdictions.
+
+## Chapter 2 Review Questions
+
+1. An organization is deploying an AI system that will analyze job applicants' resumes and video interviews to recommend candidates for human review. The system will be used in the European Union. Which of the following assessment requirements will most likely apply to this deployment?
+
+2. A US-based company is developing a large language model that will be offered commercially to customers worldwide, including in the European Union. Under the EU AI Act, which category of requirements is most likely to apply to this company's activities?
+
+3. An AI system makes recommendations about loan applications that are then reviewed by human loan officers who make final decisions. In approximately 95% of cases, the human loan officers follow the AI's recommendation. Under the GDPR's Article 22, how should the organization analyze this arrangement?
+
+4. An organization is preparing for compliance with multiple AI-related regulations including the EU AI Act, the Colorado AI Act, and GDPR requirements. The organization is considering how to conduct impact assessments efficiently. Which approach best addresses this situation?
+
+5. A company operating in the United States uses an AI hiring tool purchased from a vendor. The tool has been shown in testing to have disparate impact on protected groups. Who bears legal responsibility for this disparate impact under US anti-discrimination law?
+
+## References
+
+European Parliament and Council. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). Official Journal of the European Union, 2024.
+
+European Parliament and Council. Regulation (EU) 2016/679 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data (General Data Protection Regulation). Official Journal of the European Union, 2016.
+
+National Institute of Standards and Technology. AI Risk Management Framework 1.0. NIST AI 100-1, 2023.
+
+Organisation for Economic Co-operation and Development. Recommendation of the Council on Artificial Intelligence. OECD/LEGAL/0449, 2019.
+
+IAPP. Global AI Governance Law and Policy Series. International Association of Privacy Professionals, 2025.
+
+Equal Employment Opportunity Commission. The Americans with Disabilities Act and the Use of Software, Algorithms, and Artificial Intelligence to Assess Job Applicants and Employees. Technical Assistance Document, 2022.
+
+Federal Trade Commission. Aiming for truth, fairness, and equity in your company's use of AI. FTC Business Blog, 2021.
+
+International Organization for Standardization. ISO/IEC 42001:2023 Information technology - Artificial intelligence - Management system, 2023.
+
+State of Colorado. Senate Bill 24-205, Concerning Consumer Protections in Interactions with Artificial Intelligence Systems, 2024.
+
+Executive Order 14110, Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence. Federal Register, 2023.
+
+---
+
+

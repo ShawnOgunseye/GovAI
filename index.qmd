@@ -1,0 +1,74 @@
+---
+pagetitle: "Governing AI: Leading Responsible Innovation"
+---
+
+::: {.content-visible when-format="html"}
+![](cover.png){fig-align="center" width="100%"}
+:::
+
+# Preface {.unnumbered}
+
+::: {.callout-note}
+## Living Document
+This is a **living book** that will be regularly updated as AI governance practices, regulations, and standards evolve. Follow the author or check back for new editions and updates. Current version: **1.0** (January 2026).
+:::
+
+::: {.callout-warning}
+## Disclaimer & Errata
+This book is provided for educational and informational purposes only. While every effort has been made to ensure accuracy, **errors, omissions, and outdated information may exist**. AI governance is a rapidly evolving field—laws change, frameworks are updated, and best practices develop continuously.
+
+**This book:**
+
+- Is not legal advice. Consult qualified legal counsel for specific situations.
+- May contain errors despite careful review. The author welcomes corrections.
+- Reflects the state of knowledge at the time of writing and may not capture recent developments.
+- Should be supplemented with current primary sources for any compliance or implementation decisions.
+
+**Found an error?** Please report it at [GitHub Issues](https://github.com/shawnogunseye/GovAI/issues) or contact the author directly at shawn[at]ogunseye[.]com. Corrections will be incorporated in future updates.
+
+**Connect with the author:** [LinkedIn](https://www.linkedin.com/in/shawnogunseye) | [Web](https://ogunseye.com)
+:::
+
+This book provides a comprehensive guide to AI governance for practitioners building and managing governance programs in organizations. It covers foundational concepts, legal and regulatory frameworks, governance across the AI lifecycle, multiple organizational perspectives, and emerging topics where the field continues to evolve.
+
+The book takes a "governance first" approach, recognizing that governance foundations should precede large-scale AI adoption. It builds understanding systematically from foundational concepts through practical implementation, with worked examples, professional figures, and practical templates.
+
+---
+
+*To Dolapo, Tara and Tessa*
+
+---
+
+## License {.unnumbered}
+
+![CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png)
+
+This work is licensed under a [Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+**You are free to:**
+
+- **Share** — copy and redistribute the material in any medium or format
+
+**Under the following terms:**
+
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+- **NonCommercial** — You may not use the material for commercial purposes.
+- **NoDerivatives** — If you remix, transform, or build upon the material, you may not distribute the modified material.
+
+© 2026 Shawn Ogunseye. All rights reserved under the terms of the CC BY-NC-ND 4.0 license.
+
+---
+
+## About This Book {.unnumbered}
+
+Each chapter follows a consistent structure: an opening that situates the material, substantive prose explaining core concepts and their relationships, worked examples that demonstrate application, and end-of-chapter review questions that reinforce learning. Templates and detailed checklists appear in the appendices.
+
+**A note on legal and regulatory content:** AI governance operates within a rapidly evolving regulatory landscape. This book describes requirements and frameworks as they exist at the time of writing, but readers should verify current requirements in their jurisdictions.
+
+## How to Use This Book {.unnumbered}
+
+**If you have limited time**, focus on Chapters 1 and 2 to understand foundational concepts and the regulatory landscape, then proceed to Chapter 5 on governance by design.
+
+**For comprehensive learning**, read all chapters in sequence and work through the practice scenarios in Appendix C.
+
+**For practitioners**, the appendix templates and worked examples provide starting points for organizational adaptation.

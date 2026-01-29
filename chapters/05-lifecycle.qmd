@@ -1,0 +1,365 @@
+# Governance by Design Across the Lifecycle
+
+## Introduction
+
+The previous chapters examined AI governance through knowledge domains: foundations, legal frameworks, development practices, and deployment considerations. That structure works for learning, but governance in practice emerges from people in different roles working together. A lawyer sees different things than an engineer. A product manager thinks about users differently than a compliance officer thinks about regulators. Effective governance integrates these perspectives throughout the AI lifecycle rather than treating governance as a checkpoint at the end.
+
+This chapter presents governance by design—an approach that embeds governance throughout development and deployment. It begins by examining the different perspectives that must collaborate for governance to succeed, then maps governance activities to lifecycle stages, showing what each perspective contributes at each stage. The chapter concludes with practical guidance for implementation.
+
+Governance by design parallels concepts familiar from privacy and security: privacy by design builds privacy considerations into systems from the start rather than attempting to add them afterward; security by design builds security into architecture rather than bolting it on. Similarly, governance by design builds governance considerations into AI development from conception through retirement.
+
+![AI Governance by Design Lifecycle Model](../figures/figure_6_1_governance_by_design.svg){#fig-governance-lifecycle}
+
+*Figure 5.1: AI Governance by Design Lifecycle Model — Comprehensive lifecycle with stages, key activities, and primary perspectives.*
+
+## The Perspectives That Shape Governance
+
+AI governance is inherently cross-functional. No single role possesses all the knowledge required to govern AI responsibly. The failures of AI initiatives often trace not to technology but to leadership imbalance—the widespread myth that one person or one function can be strategist, technologist, communicator, and guardian all at once.
+
+Consider the pattern across high-profile AI failures. IBM's Watson Health consumed more than five billion dollars before being sold at a fraction of that cost. Zillow lost half a billion in a single quarter before shutting its algorithmic home-buying business. In each case, the promise of a narrow leadership profile left critical gaps. AI initiatives are too complex for single-perspective governance. Just as no hospital would ask one person to be surgeon, administrator, ethicist, and fundraiser, no organization should expect a single function to carry every governance role.
+
+Across both successes and failures, five types of contributions appear repeatedly. Understanding these archetypes helps organizations ensure balanced governance.
+
+### Builders: The Technical Foundation
+
+Builders are the engineers and data scientists who create and maintain AI systems. They understand what the technology can actually do, where it breaks, and what it would take to fix it. Without builders, governance discussions remain abstract—disconnected from the concrete realities of data pipelines, model architectures, and system constraints.
+
+Builders contribute accuracy about technical capabilities. When others promise what AI cannot deliver, builders provide the reality check. When governance requirements seem impractical, builders often find creative technical solutions. Their risk is tunnel vision—optimizing for technical metrics while missing broader implications that fall outside their domain of expertise.
+
+### Strategists: The Long View
+
+Strategists are executives and senior leaders who connect today's choices to tomorrow's advantage. They see how AI investments fit organizational strategy, how competitive dynamics are shifting, and where the industry is heading. Without strategists, governance becomes reactive—responding to problems rather than positioning for opportunities.
+
+Strategists contribute direction and resources. They decide which AI initiatives receive investment and how governance programs are staffed. Their risk is impatience—pushing for deployment before systems are ready because competitive pressure makes delay feel costly. They may also underestimate technical complexity, treating AI as just another technology project.
+
+### Translators: The Bridge Builders
+
+Translators are product managers, compliance leads, and domain experts who help technical and business sides understand one another. They convert legal requirements into engineering specifications. They explain technical limitations in terms business leaders can act on. They ensure that what gets built actually serves the users who will rely on it.
+
+Translators contribute coherence. Without them, legal teams impose requirements that engineers cannot implement, engineers build systems that do not fit clinical workflows, and business teams make promises that technology cannot keep. Their risk is becoming bottlenecks—so essential to communication that everything slows down waiting for translation.
+
+### Evangelists: The Mobilizers
+
+Evangelists are the charismatic champions who raise resources, rally support, and maintain momentum when enthusiasm flags. They secure budget approvals, recruit talent, and keep stakeholders engaged through the long middle stretches of AI development when visible progress slows.
+
+Evangelists contribute energy and resources. AI initiatives that lack champions often wither from neglect—not rejected, just slowly starved of attention and funding. Their risk is over-promising—generating expectations that technology cannot meet, creating pressure to deploy prematurely, or dismissing concerns as obstacles to progress rather than signals requiring attention.
+
+### Custodians: The Guardians of Trust
+
+Custodians are risk officers, ethicists, auditors, and compliance professionals who protect trust and slow things down when everyone else wants to race ahead. They ask uncomfortable questions about what could go wrong, who might be harmed, and whether the organization is really ready.
+
+Custodians contribute protection. They catch problems before they become crises. They ensure the organization can defend its choices to regulators, courts, and the public. Their risk is excessive caution—imposing so many requirements that AI initiatives cannot proceed, or failing to distinguish between risks that matter and risks that can be managed.
+
+### The Myth of the Balanced Leader
+
+Most individuals blend two or three of these orientations, but under pressure they revert to their dominant one. The technically brilliant leader may discount user concerns. The strategically minded executive may override compliance objections. The cautious custodian may block initiatives that should proceed with appropriate safeguards.
+
+The lesson is not to avoid naming AI leadership. The lesson is to stop looking for unicorns who embody every strength. Effective AI governance requires orchestration—ensuring that builders, strategists, translators, evangelists, and custodians all contribute, and that none drowns out the others. This orchestration is the work of governance structures and processes, not individual heroics.
+
+## When Balance Is Missing
+
+The cost of imbalanced governance extends far beyond the organizations where it originates. When firms get AI governance wrong, the consequences ripple through sectors and society.
+
+In healthcare, evangelists have promised diagnostic breakthroughs that capture executive imagination and investor dollars. But without translators ensuring systems fit clinical workflows and custodians insisting on validation before deployment, tools fail to integrate with how medicine actually works. Patients receive confident diagnoses from systems that have not been adequately tested on populations like them. Clinicians lose trust in AI assistance and revert to ignoring algorithmic recommendations entirely—even when those recommendations would help.
+
+In finance, builders and strategists have driven automated trading at machine speed, capturing profits from reaction times no human could match. But without custodians to insist on circuit breakers and systemic risk assessment, volatility spills beyond trading floors into retirement accounts and community wealth. The flash crash of 2010 erased nearly a trillion dollars in market value in minutes. Algorithmic trading did not cause the underlying instability, but it amplified consequences at speeds that outpaced human intervention.
+
+In education, evangelists have promised personalized learning that meets each student where they are. But without translators connecting technology to pedagogy and builders ensuring systems actually work at scale, implementations have often widened the gaps they promised to close. Students in well-resourced districts receive AI-enhanced instruction while students elsewhere receive AI babysitting—software that generates busywork without genuine adaptation.
+
+In government, strategists and performers have sold predictive systems—for policing, for benefits eligibility, for child welfare—without custodians to insist on oversight and affected community input. The result has often been systematic discrimination laundered through algorithmic objectivity, eroding confidence in institutions that citizens need to trust.
+
+The imbalance inside firms does not stay inside. It leaks into every sector of society.
+
+## The Lifecycle Model
+
+The AI lifecycle can be modeled in various ways depending on organizational methodology. This chapter uses an eight-stage model detailed enough to map governance activities meaningfully while remaining general enough to apply across different organizational approaches.
+
+### Conception
+
+The conception stage is where AI opportunities are identified, initial ideas are formed, and decisions are made about whether to pursue development. This stage precedes formal project initiation.
+
+Key activities include opportunity identification, initial feasibility assessment, alignment check with organizational strategy and values, and decision whether to proceed to formal requirements.
+
+Governance focus at this stage is on ensuring that proposed AI uses are appropriate and aligned with organizational values before resources are committed. This is the first and most important filter. The question is not just "can we build this?" but "should we build this?"—a question that requires input from custodians and translators, not just builders and strategists.
+
+### Requirements
+
+The requirements stage defines what the AI system should do, who will use it, who will be affected, what constraints apply, and how success will be measured.
+
+Key activities include detailed use case definition, stakeholder identification, requirements elicitation and documentation, success criteria definition, and initial legal and risk analysis.
+
+Governance focus at this stage is on ensuring requirements are complete and governance-relevant requirements are included. If fairness requirements, transparency requirements, and human oversight requirements are not in the requirements document, they are unlikely to be implemented. This stage requires heavy translator involvement to convert legal and ethical considerations into specifications that builders can implement.
+
+### Design
+
+The design stage determines how the AI system will be built to meet requirements. This includes data strategy, model architecture, integration approach, and human oversight mechanisms.
+
+Key activities include data source identification and assessment, model architecture selection, system architecture design, interface design, and design review.
+
+Governance focus at this stage is on ensuring design choices support governance objectives. Choices made during design have lasting implications for explainability, testability, controllability, and compliance. A deep learning architecture may achieve higher accuracy but sacrifice interpretability. A federated approach may preserve privacy but complicate validation. These tradeoffs require dialogue between builders who understand technical implications and custodians who understand governance requirements.
+
+### Build
+
+The build stage implements the design, including data preparation, model training, system development, and integration.
+
+Key activities include data collection and preparation, model training, software development, integration with other systems, and iterative refinement.
+
+Governance focus at this stage is on ensuring build activities follow governance requirements, documentation is maintained, and governance-relevant issues identified during build are escalated appropriately. Builders dominate this stage, but custodians should have visibility into progress and problems.
+
+### Validate
+
+The validate stage tests whether the built system meets requirements, including functional requirements, performance requirements, fairness requirements, and compliance requirements.
+
+Key activities include functional testing, performance testing, fairness testing, security testing, compliance verification, and documentation completion.
+
+Governance focus at this stage is on ensuring validation is thorough enough to provide confidence that governance requirements have been met. Validation is where governance commitments are verified. This stage requires collaboration between builders who conduct testing, custodians who define what "good enough" means, and translators who connect technical metrics to real-world implications.
+
+### Deploy
+
+The deploy stage transitions the validated system into production use, including technical deployment, user training, and communication to affected parties.
+
+Key activities include deployment planning, technical deployment, user training, stakeholder communication, monitoring activation, and initial operation.
+
+Governance focus at this stage is on ensuring deployment follows established procedures, required communications occur, and monitoring is operational before the system serves real users. Evangelists may push for faster deployment; custodians must ensure readiness is genuine, not performed.
+
+### Operate
+
+The operate stage is the ongoing period when the AI system is in production use, serving users and affecting individuals.
+
+Key activities include operational management, user support, human oversight as designed, issue response, and change management.
+
+Governance focus at this stage is on ensuring the system operates as intended, human oversight is effective, and issues are identified and addressed promptly. This stage often reveals problems that testing missed—edge cases that appear only at scale, user behaviors that differ from assumptions, drift that develops over time.
+
+### Monitor
+
+The monitor stage encompasses ongoing surveillance of system performance, fairness, drift, and incidents. While monitoring is continuous during operation, it is conceptually distinct as an activity.
+
+Key activities include performance monitoring, fairness monitoring, drift detection, incident detection, and reporting.
+
+Governance focus at this stage is on ensuring monitoring is comprehensive enough to detect governance-relevant issues and that monitoring findings trigger appropriate responses. Custodians must ensure that monitoring is not merely measurement but actionable intelligence.
+
+### Retire
+
+The retire stage addresses end of life for AI systems, including deactivation, data disposition, and learning capture.
+
+Key activities include retirement planning, deactivation, data retention or deletion, documentation archiving, and lessons learned capture.
+
+Governance focus at this stage is on ensuring retirement occurs safely, data is handled appropriately, and organizational learning is preserved. Systems that made consequential decisions may need documentation preserved for litigation or regulatory review long after the system itself is deactivated.
+
+## Governance Activities by Stage
+
+This section details specific governance activities at each lifecycle stage.
+
+### Conception Stage Governance
+
+Use case screening evaluates whether the proposed AI use is consistent with organizational values, policies, and risk appetite. Some uses should be rejected at this early stage before resources are invested.
+
+Preliminary risk classification assigns an initial risk tier that determines what governance processes will apply. Higher-risk applications receive more intensive governance.
+
+Strategic alignment check verifies that the proposed AI use supports organizational strategy and is appropriately prioritized against other opportunities.
+
+Stakeholder identification begins identifying who will use the system, who will be affected, and whose input should inform development.
+
+### Requirements Stage Governance
+
+Impact assessment initiation begins formal assessment of potential impacts. For higher-risk applications, this may be a full impact assessment process; for lower-risk applications, a streamlined assessment.
+
+Legal requirements identification analyzes applicable laws and regulations and translates them into requirements that development must satisfy.
+
+Fairness criteria definition establishes how fairness will be measured and what fairness standards the system must meet.
+
+Transparency and explainability requirements determine what information must be provided to users and affected individuals and how.
+
+Human oversight requirements specify what human oversight the system requires and how it will be implemented.
+
+### Design Stage Governance
+
+Architecture review evaluates whether the proposed architecture supports governance requirements including explainability, testability, and controllability.
+
+Data governance integration ensures that data sourcing, preparation, and use comply with data governance policies and legal requirements.
+
+Privacy by design review evaluates privacy implications of design choices and ensures privacy requirements are addressed in architecture.
+
+Human oversight design specifies how human oversight mechanisms will work, including what information humans will receive, what decisions they can make, and how they can intervene.
+
+### Build Stage Governance
+
+Data lineage documentation maintains records of data sources, transformations, and quality measures.
+
+Training process documentation records how models are trained, including data used, parameters selected, and decisions made.
+
+Change management tracks modifications to requirements, design, or implementation, ensuring changes receive appropriate review.
+
+Issue escalation ensures that governance-relevant issues identified during build reach appropriate decision-makers.
+
+### Validate Stage Governance
+
+Performance validation verifies that the system meets performance requirements on appropriate test data.
+
+Fairness validation verifies that the system meets fairness requirements, with testing disaggregated across relevant demographic groups.
+
+Compliance validation verifies that legal and regulatory requirements have been satisfied.
+
+Release readiness assessment provides a structured evaluation of whether the system is ready for deployment.
+
+Approval gate requires appropriate sign-off before proceeding to deployment.
+
+### Deploy Stage Governance
+
+Deployment checklist verification confirms that all pre-deployment requirements have been satisfied.
+
+Communication execution delivers required notifications to users, affected individuals, and regulators.
+
+Monitoring activation confirms that monitoring systems are operational and configured correctly.
+
+Rollback readiness confirms that the organization can roll back deployment if serious issues emerge.
+
+### Operate Stage Governance
+
+Operational compliance monitoring ensures ongoing compliance with applicable requirements.
+
+Human oversight effectiveness monitoring evaluates whether human oversight is functioning as designed.
+
+Issue management addresses problems that arise during operation through established procedures.
+
+Periodic review provides scheduled evaluation of whether the system continues to meet requirements.
+
+### Monitor Stage Governance
+
+Performance trend analysis identifies changes in system performance over time.
+
+Fairness trend analysis identifies changes in fairness metrics that might indicate emerging disparities.
+
+Drift detection identifies changes in data distributions or relationships that might affect model validity.
+
+Incident investigation examines adverse events to determine causes and appropriate responses.
+
+### Retire Stage Governance
+
+Retirement impact assessment evaluates implications of retiring the system.
+
+Data disposition ensures that data is retained or deleted appropriately based on legal requirements and organizational policy.
+
+Documentation preservation archives relevant documentation for future reference, compliance demonstration, or litigation support.
+
+Lessons learned capture identifies insights that should inform future AI governance.
+
+![Governance Activities Matrix](../figures/figure_6_2_governance_matrix.svg){#fig-governance-matrix}
+
+*Figure 5.2: Governance Activities Matrix — Activity categories mapped to lifecycle stages showing intensity at each intersection.*
+
+## Perspective Contributions Across the Lifecycle
+
+Different perspectives contribute most significantly at different stages. Understanding these patterns helps organizations ensure appropriate involvement throughout development.
+
+### How Builders Contribute
+
+Builders provide feasibility assessment at conception, answering whether the proposed system is technically achievable. At requirements, they advise on what is technically possible and help define technical requirements. They lead architecture design, execute development, conduct testing, and operate production systems. Their deepest involvement is during build and validate stages, but they contribute throughout.
+
+Without builder input, governance requirements may be technically impractical. With only builder input, governance may focus on what is easy to measure rather than what matters.
+
+### How Strategists Contribute
+
+Strategists provide direction at conception, deciding whether opportunities align with organizational strategy. They approve resource commitment at requirements, approve significant design decisions, and provide release approval at validation. During operation, they receive reports and make decisions on significant issues.
+
+Without strategist involvement, governance lacks authority and resources. With only strategist involvement, governance may be overridden by competitive pressure.
+
+### How Translators Contribute
+
+Translators facilitate throughout the lifecycle, but contribute most heavily at requirements and deployment. At requirements, they convert legal and ethical considerations into specifications builders can implement. At deployment, they ensure training materials and communications make sense to users. They maintain documentation and coordinate across functions throughout.
+
+Without translators, legal teams and engineering teams talk past each other. With only translators, decisions may be delayed waiting for interpretation.
+
+### How Evangelists Contribute
+
+Evangelists secure resources and maintain momentum, contributing most at conception and deployment. At conception, they champion promising opportunities. At deployment, they communicate the system's value and build user adoption. During long development phases, they maintain stakeholder engagement.
+
+Without evangelists, promising initiatives wither from inattention. With only evangelists, systems deploy before they are ready.
+
+### How Custodians Contribute
+
+Custodians contribute at every stage but are most critical at requirements, validation, and monitoring. At requirements, they ensure governance requirements are specified. At validation, they define what "good enough" means and participate in release decisions. At monitoring, they interpret findings and trigger responses.
+
+Without custodians, problems go unnoticed until they become crises. With only custodians, nothing deploys because nothing is ever safe enough.
+
+## Implementing Governance by Design
+
+Moving from governance as a checkpoint to governance by design requires organizational change.
+
+### For Organizations Starting AI Governance
+
+Begin with use case screening at the conception stage. Even simple screening that asks "Is this AI use consistent with our values?" and "What could go wrong?" prevents obviously problematic applications from proceeding.
+
+Add impact assessment at the requirements stage. A basic impact assessment template that captures intended use, potential risks, and planned mitigations provides a foundation.
+
+Ensure validation includes fairness testing. Even basic disaggregated performance analysis can identify significant disparities before deployment.
+
+Establish monitoring for deployed systems. At minimum, track whether systems are performing as expected.
+
+Document what you do. Even informal documentation builds organizational memory.
+
+### For Organizations with Basic AI Governance
+
+Extend governance earlier into the lifecycle. If governance currently focuses on validation and deployment, add activities at design and build stages.
+
+Formalize impact assessment processes. Move from ad hoc assessments to structured processes with consistent templates.
+
+Strengthen monitoring capabilities. Move beyond basic health monitoring to include fairness metrics and drift detection.
+
+Build cross-functional integration. Create mechanisms for input from all perspectives at appropriate stages.
+
+### For Organizations with Mature AI Governance
+
+Automate where appropriate. Routine governance activities can often be automated, freeing human attention for judgment-intensive activities.
+
+Integrate governance tooling. Connect governance activities across the lifecycle through platforms that maintain traceability.
+
+Benchmark and improve. Compare governance practices against external standards and peer organizations.
+
+Share learning. Capture insights from governance activities and spread effective practices.
+
+### Common Challenges
+
+Several challenges commonly arise in implementing governance by design.
+
+Resistance from development teams who perceive governance as slowing development. Address this by making governance efficient, demonstrating value, and involving development in governance design.
+
+Governance becoming bureaucratic checkbox exercise. Address this by focusing on outcomes rather than process compliance.
+
+Inconsistent implementation across different AI initiatives. Address this through standardized processes and templates while allowing appropriate flexibility.
+
+Difficulty maintaining governance over time as organizational attention shifts. Address this through embedded governance roles, automated monitoring, and regular reviews.
+
+## Chapter Summary
+
+This chapter presented governance by design as an approach that embeds governance throughout the AI lifecycle rather than treating it as a checkpoint at the end.
+
+Effective AI governance requires multiple perspectives: builders who understand technical realities, strategists who provide direction and resources, translators who bridge domains, evangelists who maintain momentum, and custodians who protect trust. When these perspectives are imbalanced—when one dominates or another is absent—the consequences extend beyond organizations into sectors and society.
+
+The lifecycle model includes eight stages from conception through retirement. Each stage has distinct governance activities and draws on different perspectives. Conception stage governance screens use cases before resources are committed. Requirements stage governance ensures governance requirements are specified. Design stage governance ensures architecture supports governance objectives. Build stage governance maintains documentation and escalates issues. Validation stage governance verifies requirements are met. Deployment stage governance ensures safe transition to production. Operation stage governance ensures ongoing compliance. Monitor stage governance detects issues requiring response. Retirement stage governance ensures safe deactivation and learning capture.
+
+Implementing governance by design requires organizational change appropriate to current maturity. Organizations starting AI governance should focus on essential elements. Organizations with basic governance should extend coverage and build cross-functional integration. Organizations with mature governance should automate, integrate, and continuously improve.
+
+## Review Questions
+
+1. An organization currently has AI governance focused on a review meeting before deployment. Development teams frequently express frustration that governance raises issues late in development that require significant rework. What governance by design principle does this situation illustrate, and how should the organization respond?
+
+2. A startup has a brilliant technical founder who built an impressive AI system largely alone. The company is now scaling and needs governance. What risks does single-perspective leadership create, and what perspectives should the company ensure are represented?
+
+3. During the design stage of an AI project, the technical team proposes a deep neural network architecture that achieves the highest accuracy on benchmark tests. However, governance review raises concerns about explainability requirements. What perspectives are in tension, and how might the tension be resolved?
+
+4. An organization has implemented governance activities at all lifecycle stages but finds that different AI projects follow different approaches. What implementation challenge does this represent, and how might it be addressed?
+
+5. A deployed AI system has been operating for 18 months without issues. The monitoring team proposes reducing monitoring frequency to save costs. What governance considerations should inform this decision?
+
+## References
+
+Cavoukian, Ann. "Privacy by Design: The 7 Foundational Principles." Information and Privacy Commissioner of Ontario, 2009.
+
+IAPP. AIGP Body of Knowledge, Version 2.0.1. International Association of Privacy Professionals, 2025.
+
+National Institute of Standards and Technology. AI Risk Management Framework 1.0. NIST AI 100-1, 2023.
+
+Microsoft. Responsible AI Standard, v2. Microsoft Corporation, 2022.
+
+Ogunseye, S. "Letter to the Head of AI." AI & Society (2025). https://doi.org/10.1007/s00146-025-02669-0

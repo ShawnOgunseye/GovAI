@@ -1,0 +1,443 @@
+# Understanding the Foundations of AI Governance
+
+## Introduction
+
+Artificial intelligence has moved from research laboratories into the daily operations of businesses, governments, and consumer products. This rapid adoption brings substantial benefits: organizations can analyze data at scales impossible for humans, automate routine decisions, personalize services, and discover patterns that would otherwise remain hidden. These capabilities create real competitive advantages and genuine improvements in efficiency, accuracy, and service quality.
+
+But AI adoption also introduces significant risks that traditional governance frameworks were not designed to address. AI systems can discriminate against protected groups without any human intending that outcome. They can make consequential errors at speeds that preclude human review. They can invade privacy through surveillance capabilities that were previously impractical. They can generate convincing misinformation at scale. And when things go wrong, the complexity and opacity of AI systems can make it difficult to understand what happened or hold anyone accountable.
+
+AI governance exists to help organizations capture the benefits of AI while managing these risks responsibly. It provides the structures, processes, and policies that enable organizations to develop and deploy AI in ways that are effective, ethical, and compliant with legal requirements. Done well, AI governance does not slow innovation but enables it by providing the certainty organizations need to invest confidently in AI capabilities.
+
+This chapter establishes the foundational knowledge that AI governance professionals need. It begins by examining what AI actually is, because effective governance requires understanding what you are governing. It then explores the characteristics that make AI governance distinct from governing other technologies. The chapter proceeds to catalog the risks and harms AI can cause, because governance priorities should reflect actual risks. It examines the principles that guide responsible AI development and deployment. And it concludes by addressing how organizations establish governance structures, define roles, and create policies to manage AI effectively.
+
+## What Is Artificial Intelligence?
+
+Defining artificial intelligence precisely has proven surprisingly difficult. The term encompasses a wide range of technologies with different capabilities, mechanisms, and implications. For governance purposes, however, certain definitions have achieved broad acceptance and provide useful starting points.
+
+The National Institute of Standards and Technology defines AI as "an engineered or machine-based system that can, for a given set of objectives, generate outputs such as predictions, recommendations, or decisions influencing real or virtual environments." NIST emphasizes that AI systems "are designed to operate with varying levels of autonomy," meaning they can function with different degrees of human involvement. This definition appears in the NIST AI Risk Management Framework and has influenced regulatory approaches in the United States.
+
+The EU AI Act takes a similar approach, defining AI systems as "machine-based system[s] that [are] designed to operate with varying levels of autonomy and that may exhibit adaptiveness after deployment, and that, for explicit or implicit objectives, infers, from the input it receives, how to generate outputs such as predictions, content, recommendations, or decisions that can influence physical or virtual environments."
+
+The Organisation for Economic Co-operation and Development, whose AI Principles have been adopted by over forty countries and have shaped regulatory frameworks globally, defines an AI system as "a machine-based system that, for explicit or implicit objectives, infers, from the input it receives, how to generate outputs such as predictions, content, recommendations, or decisions that can influence physical or virtual environments."
+
+These definitions share common elements that matter for governance. First, AI involves engineered or machine-based systems, distinguishing it from human intelligence or natural processes. Second, AI systems generate outputs including predictions, recommendations, content, or decisions. Third, those outputs influence real or virtual environments, meaning AI has effects in the world. Fourth, AI systems operate with varying levels of autonomy, meaning they can function with different degrees of human oversight. Fifth, AI systems infer how to generate outputs from input, rather than simply following explicit programmed rules for every situation.
+
+Understanding these definitional elements helps governance professionals identify what systems fall within AI governance scope. A traditional rule-based system that follows explicit programmed logic may not qualify as AI under these definitions. A system that learns patterns from data and applies them to generate predictions almost certainly does. The boundaries can be fuzzy, and organizations should establish clear criteria for what falls within their AI governance programs.
+
+### Machine Learning and Its Relationship to AI
+
+Machine learning is the dominant approach to building AI systems today. Rather than programming explicit rules for every situation, machine learning uses data and algorithms to enable systems to learn patterns and improve their performance over time. A machine learning system learns from examples rather than following predetermined instructions for every case.
+
+This learning-based approach is both powerful and problematic for governance. It is powerful because machine learning systems can discover patterns humans might miss and handle complexity that would be impossible to program explicitly. A fraud detection system can learn subtle indicators of fraudulent transactions from millions of historical examples. A medical imaging system can learn to identify tumors from thousands of labeled scans. These capabilities create real value.
+
+The same learning-based approach creates governance challenges. The patterns a machine learning system learns may reflect biases present in training data. If a hiring algorithm learns from historical hiring decisions made in a discriminatory context, it may learn to perpetuate that discrimination. The reasoning behind machine learning decisions may be opaque; a deep learning model with millions of parameters does not provide a simple explanation for why it classified an input in a particular way. And the system's behavior may change as it encounters new data, potentially drifting from its original performance characteristics.
+
+Supervised learning, the most common machine learning approach, trains models on labeled examples. A spam detection system trains on emails labeled as spam or not spam. A credit risk model trains on historical loans labeled as defaulted or repaid. The system learns to predict labels for new, unlabeled examples. Governance concerns include ensuring training labels are accurate and unbiased, ensuring training data is representative of the population the system will serve, and monitoring for performance degradation as data distributions change over time.
+
+Unsupervised learning trains models on unlabeled data to discover structure or patterns. Clustering algorithms group similar items together. Dimensionality reduction techniques identify important features. These systems raise governance questions about whether the discovered patterns are meaningful and whether the system's operation remains appropriate as data evolves.
+
+Reinforcement learning trains models through interaction with an environment, receiving rewards or penalties for different actions. Game-playing AI and robotic control systems often use reinforcement learning. Governance concerns include ensuring reward functions align with intended objectives and preventing systems from learning to achieve rewards through unintended means.
+
+Knowledge-based systems represent an older approach to AI that captures human expertise in explicit rules and decision trees. Expert systems encode the knowledge of specialists in a particular domain. These systems are generally more transparent and predictable than machine learning systems, but they cannot learn from experience or handle situations their designers did not anticipate. Some organizations continue to use knowledge-based systems for applications where transparency and predictability are paramount.
+
+### Generative AI and Predictive AI
+
+A crucial distinction for governance professionals is between generative and predictive AI. These categories have different capabilities, different use cases, and different risk profiles that require different governance approaches.
+
+Predictive AI analyzes existing data to forecast outcomes, classify information, or identify patterns. A credit scoring model predicts the probability that a loan applicant will default. A medical imaging system classifies whether a scan shows signs of disease. A recommendation system predicts which products a customer is likely to purchase. These systems answer questions like "what will happen?" or "what category does this belong to?" or "what should we recommend?"
+
+The risks of predictive AI center on accuracy, fairness, and transparency. An inaccurate prediction can lead to wrong decisions with real consequences for individuals. A biased prediction can systematically disadvantage protected groups. An opaque prediction can leave affected individuals unable to understand or contest decisions that affect them. Governance approaches for predictive AI focus on validating accuracy, testing for bias across demographic groups, and ensuring appropriate transparency and explainability.
+
+Generative AI creates new content that did not exist before. Large language models generate text. Image generation systems create pictures from text descriptions. Music composition systems generate audio. Video generation systems produce moving images. These systems do not just analyze existing information; they produce novel outputs that resemble their training data.
+
+Generative AI introduces additional risk categories beyond those of predictive AI. Hallucination occurs when generative systems produce confident but false information, presenting fabricated facts, fake citations, or incorrect claims as if they were accurate. Intellectual property concerns arise when generative systems produce outputs that substantially replicate copyrighted training material or when questions arise about who owns the rights to generated content. Misinformation becomes possible at unprecedented scale when systems can generate persuasive false content cheaply and quickly. Fraud and manipulation become easier when systems can generate convincing fake communications or impersonate real people.
+
+The rapid proliferation of generative AI since 2022 has challenged existing governance frameworks and prompted new regulatory attention. Organizations deploying generative AI need governance approaches that address both the shared risks with predictive AI and the novel risks specific to content generation.
+
+### Narrow AI and General AI
+
+Current AI systems are narrow or weak AI, meaning they excel at specific tasks but cannot generalize to new domains. A chess-playing AI cannot diagnose diseases. A language model trained on text cannot process images unless specifically designed to do so. A medical imaging classifier cannot suddenly analyze financial statements. Each narrow AI system operates within the boundaries of its training and design.
+
+This narrow capability has important implications for governance. Narrow AI systems have specific, bounded capabilities that can be tested, validated, and monitored. Their performance can be measured on relevant benchmarks. Their failure modes can be identified and mitigated. They are tools that humans can understand and control, even if their internal mechanisms are complex.
+
+Artificial general intelligence refers to hypothetical systems with human-like ability to learn any intellectual task. AGI does not currently exist and may never exist. It features prominently in discussions about long-term AI risks and has attracted significant attention from researchers concerned about existential risk. However, for practical governance purposes, AGI remains speculative.
+
+AI governance professionals should focus on the AI systems that organizations actually deploy today, which are narrow AI systems with specific capabilities and limitations. The governance frameworks in this book address real, deployed narrow AI rather than hypothetical future systems. This is not to dismiss concerns about more capable future AI, but to ground governance in practical reality.
+
+### AI as a Socio-Technical System
+
+Perhaps the most important concept for governance professionals is that AI systems are not purely technical artifacts. They are socio-technical systems where technical components interact with social contexts, human behaviors, and institutional structures. Understanding this interaction is essential for effective governance.
+
+An AI hiring tool does not operate in isolation. It operates within recruiting processes designed by humans, organizational cultures that shape how the tool is used, legal requirements that constrain permissible decisions, and societal expectations about fairness in employment. The technical characteristics of the AI model matter, but so do the processes surrounding it, the humans who use it, the institutions that deploy it, and the individuals affected by it.
+
+This socio-technical nature means that technical excellence alone does not ensure responsible AI. A technically sound model can cause harm if deployed in inappropriate contexts, used in unintended ways, or embedded in flawed processes. Conversely, governance mechanisms can sometimes compensate for technical limitations through appropriate human oversight or process controls.
+
+Effective AI governance therefore requires more than technical expertise. It requires understanding the social contexts where AI operates, the people who will use and be affected by AI systems, and the institutional structures that shape how AI is developed and deployed. This is why AI governance programs benefit from cross-disciplinary collaboration involving not just engineers and data scientists but also ethicists, social scientists, legal experts, user experience researchers, and representatives of affected communities.
+
+![AI System Types and Characteristics](../figures/figure_1_1_ai_system_types.svg){#fig-system-types}
+
+*Figure 1.1: AI System Types and Characteristics — A visual taxonomy showing the relationships between AI categories including machine learning approaches, generative vs. predictive AI, and governance implications for each type.*
+
+## Why AI Requires Specialized Governance
+
+AI systems possess characteristics that distinguish them from traditional software and require specialized governance approaches. Understanding these characteristics helps governance professionals design appropriate controls and communicate effectively with technical teams and organizational leadership about why AI governance matters.
+
+### Complexity and Opacity
+
+Modern AI systems, particularly deep learning models, can have millions or billions of parameters that interact in ways that are difficult to understand. A traditional software program follows explicit logic that developers can trace and explain. If a conventional program denies a loan application, a developer can examine the code and identify exactly which conditions triggered the denial.
+
+Deep neural networks work differently. They learn internal representations that encode patterns in training data, but these representations do not correspond to human-interpretable concepts in any straightforward way. When a deep learning model denies a loan application, there is no simple code path to examine. The decision emerged from the interaction of millions of learned parameters in ways that even the system's creators may not fully comprehend.
+
+This opacity creates real governance challenges. Regulations increasingly require organizations to provide meaningful explanations of automated decisions affecting individuals. The EU General Data Protection Regulation requires data controllers to provide "meaningful information about the logic involved" in automated decision-making. The EU AI Act requires that high-risk AI systems be designed to allow human oversight including understanding of system outputs. United States laws prohibiting discrimination require organizations to explain their decision-making processes.
+
+Meeting these requirements with opaque AI systems is genuinely difficult. Research in explainable AI has produced techniques for generating explanations of model behavior, such as identifying which input features most influenced a particular prediction. But these explanations are approximations that may not fully capture the model's actual reasoning. Organizations must navigate the tension between the performance benefits of complex models and the governance requirements for transparency and explainability.
+
+### Autonomy and Speed
+
+AI systems can make decisions and take actions without human intervention, often at speeds that preclude human review of individual decisions. A content moderation system may review millions of posts daily. A fraud detection system may evaluate thousands of transactions per second. A recommendation algorithm may personalize experiences for millions of users simultaneously.
+
+This autonomy and speed mean that errors or biases can affect many people before anyone notices a problem. If a content moderation system has a systematic blind spot, millions of problematic posts may slip through before the issue is identified. If a fraud detection system has a biased decision boundary, thousands of legitimate transactions may be wrongly blocked before the pattern becomes apparent.
+
+Governance approaches must account for this scale. Monitoring systems must be capable of detecting issues across large numbers of automated decisions, using statistical methods rather than individual review. Organizations must establish clear criteria for when human oversight is required and ensure that humans can meaningfully exercise that oversight. They must have mechanisms to pause or roll back AI systems quickly when problems are identified.
+
+The challenge is designing oversight that preserves AI's efficiency benefits while ensuring accountability. Requiring human review of every AI decision would negate the reasons for using AI in the first place. But removing humans entirely from consequential decisions raises serious concerns about accountability and control. Finding the right balance requires careful analysis of the specific use case, the potential consequences of errors, and the feasibility of different oversight approaches.
+
+### Data Dependency
+
+AI systems learn from data, and the quality and characteristics of that data fundamentally shape system behavior. This data dependency distinguishes AI from traditional software where behavior is determined by explicit code.
+
+Training data that underrepresents certain groups can produce systems that perform poorly for those groups. If a facial recognition system trains primarily on images of light-skinned faces, it may have higher error rates for darker-skinned faces. If a speech recognition system trains primarily on standard American English, it may struggle with other accents and dialects. These performance disparities can translate into discriminatory impacts when systems are deployed.
+
+Historical data reflecting past discrimination can produce systems that perpetuate that discrimination. If a hiring algorithm trains on historical hiring decisions, and those decisions reflected discriminatory preferences, the algorithm may learn to replicate those preferences. The system encodes historical patterns without distinguishing between legitimate predictive relationships and discriminatory biases.
+
+Data that becomes outdated can cause model performance to degrade over time. If a fraud detection model trains on patterns of fraud from several years ago, and fraud tactics have evolved, the model may miss new fraud patterns while continuing to flag behaviors that are no longer associated with fraud. This phenomenon, called data drift or concept drift, requires ongoing monitoring and model maintenance.
+
+Governance must extend beyond the AI model itself to encompass the entire data pipeline. Where does training data come from? What biases might it contain? How representative is it of the population the system will serve? Are there legal constraints on using the data for AI training? How will the organization detect and respond when data distributions change? These questions require governance attention throughout the AI lifecycle.
+
+### Probabilistic Outputs
+
+Traditional software produces deterministic outputs: given the same inputs, it produces the same outputs every time. AI systems often produce probabilistic results with inherent uncertainty. A classification model might indicate 73% confidence that an image shows a cat. A language model might generate different text each time it responds to the same prompt. A risk prediction might output a probability distribution rather than a single answer.
+
+This probabilistic nature requires governance approaches that account for uncertainty. What confidence threshold is required before acting on a prediction? A medical diagnosis system that is 60% confident of a disease might warrant further testing, while one that is 99% confident might justify immediate treatment. These thresholds have real consequences and should not be set arbitrarily.
+
+How should systems communicate uncertainty to users? Research shows that people often misunderstand probabilistic information, treating high-confidence predictions as certainties or ignoring uncertainty entirely. User interface design and training can help, but perfect communication of uncertainty may not be achievable.
+
+How should organizations handle the inevitable cases where probabilistic systems make errors? Even an AI system with 99% accuracy will make errors on 1% of cases. At scale, that 1% can affect many people. Organizations need processes for identifying errors, providing recourse to affected individuals, and learning from mistakes to improve system performance.
+
+### Emergent Behavior
+
+Complex AI systems can exhibit emergent behavior that was not explicitly programmed and may not have been anticipated by developers. Large language models, for example, have demonstrated capabilities that emerged from scale rather than being specifically designed, including the ability to perform arithmetic, translate between languages not heavily represented in training data, and solve certain reasoning problems.
+
+Emergent behavior creates governance challenges because it means AI systems may have capabilities beyond what testing revealed. A system tested for one purpose may turn out to be capable of other purposes, some of which may be problematic. A system that behaved safely in testing may behave differently when deployed at scale or when users interact with it in unanticipated ways.
+
+This unpredictability argues for ongoing monitoring even after deployment, conservative deployment practices that limit initial exposure, and mechanisms to detect and respond to unexpected behavior. It also suggests humility about our ability to fully anticipate AI system behavior through pre-deployment testing alone.
+
+## The Risks and Harms AI Can Cause
+
+AI governance exists because AI systems can cause real harm. Understanding the types of harm AI can cause helps governance professionals identify risks, design appropriate controls, prioritize governance efforts, and communicate the importance of governance to organizational leadership.
+
+### Harms to Individuals
+
+AI systems increasingly make or influence decisions that significantly affect individual lives. Hiring algorithms determine who gets job interviews. Credit models decide who receives loans and at what interest rates. Healthcare AI influences diagnosis and treatment recommendations. Criminal justice algorithms affect bail decisions, sentencing recommendations, and parole outcomes. Content recommendation systems shape what information people see and consequently what they believe about the world.
+
+When these systems err or discriminate, individuals suffer concrete harms. Someone may be wrongly denied employment, credit, housing, or benefits. Someone may receive inappropriate medical treatment. Someone may face unjustified criminal justice consequences. These are not abstract concerns but documented harms affecting real people.
+
+Consider facial recognition technology as an example. Peer-reviewed research has consistently demonstrated that facial recognition systems have higher error rates for women and for people with darker skin. The National Institute of Standards and Technology's Face Recognition Vendor Test has confirmed these disparities across commercial systems. When law enforcement uses these systems, individuals may be wrongly identified as suspects. Multiple documented cases exist of individuals being arrested based on faulty facial recognition matches.
+
+Beyond accuracy issues, facial recognition enables surveillance capabilities that can chill civil liberties. People may avoid protests, political activities, or religious gatherings knowing they could be identified. The accumulation of biometric data creates security risks; unlike a password, you cannot change your face if the data is compromised.
+
+Privacy harms from AI extend beyond facial recognition. AI systems can infer sensitive information from seemingly innocuous data. Research has shown that AI can predict sexual orientation from facial images, political orientation from social media activity, and health conditions from consumer purchasing patterns. These inference capabilities raise profound questions about informational privacy in an age of ubiquitous data collection.
+
+### Harms to Groups
+
+AI systems can systematically disadvantage particular groups, even when they appear neutral on their face. Machine learning systems learn patterns from historical data, and that historical data often reflects past discrimination. A hiring algorithm trained on past hiring decisions may learn to prefer candidates who resemble previously successful employees, perpetuating historical exclusion of women or minorities. A predictive policing system trained on arrest records may direct police to communities that have historically been over-policed, creating a self-reinforcing cycle.
+
+These group harms are particularly insidious because they can occur without any discriminatory intent and may be invisible without careful analysis. An organization may deploy an AI system believing it to be fair, only to discover later through statistical analysis that it systematically disadvantages protected groups. The discrimination is built into the learned patterns rather than being explicitly programmed, making it harder to detect and attribute.
+
+Research has documented algorithmic discrimination across domains. ProPublica's investigation of the COMPAS recidivism prediction system found that Black defendants were more likely to be incorrectly flagged as high risk than white defendants, while white defendants were more likely to be incorrectly flagged as low risk than Black defendants. Studies of AI hiring tools have found disparate impacts based on gender and race. Research on healthcare algorithms has found that systems trained to predict healthcare costs disadvantaged Black patients because historical spending patterns reflected unequal access to care rather than equal health needs.
+
+Governance programs must proactively test for these disparate impacts rather than assuming neutrality. Testing should examine performance across demographic groups, using appropriate fairness metrics for the application context. Organizations should also consider intersectional impacts, recognizing that harms may be greatest for individuals who belong to multiple disadvantaged groups.
+
+### Harms to Organizations
+
+AI failures can significantly harm the organizations that deploy them. Reputational damage from AI discrimination or errors can affect brand value and customer trust for years. When Amazon's experimental hiring algorithm was revealed to disadvantage women, the company abandoned the tool and faced lasting reputational consequences. When Microsoft's Tay chatbot was manipulated into generating offensive content within hours of launch, it became a cautionary tale cited for years afterward.
+
+Regulatory penalties for AI violations are substantial and growing. The EU AI Act imposes fines of up to 35 million euros or 7% of global annual turnover for the most serious violations. Civil rights enforcement agencies in the United States have brought actions against companies whose AI systems discriminated. Class action lawsuits challenging algorithmic discrimination present significant liability exposure.
+
+Failed AI projects waste resources. Research suggests that a significant percentage of AI projects fail to deliver expected value. Poor governance can contribute to these failures by allowing inappropriate use cases to proceed, failing to ensure adequate data quality, or deploying systems without proper validation. These failures consume budgets, distract from more promising opportunities, and can create organizational skepticism about AI that impedes future beneficial adoption.
+
+AI can also cause cultural harm within organizations. When AI makes consequential decisions without clear accountability, employees may feel disempowered. When AI systems embody values inconsistent with organizational culture, they can erode trust and morale. When organizations rush to deploy AI without appropriate governance, they may create technical debt and institutional patterns that prove difficult to reverse.
+
+### Harms to Society
+
+At the broadest level, AI can harm society itself. These societal harms are more diffuse than individual harms but potentially more consequential.
+
+AI-generated misinformation can undermine shared understanding of facts and erode trust in institutions. Generative AI makes it increasingly easy to create convincing fake text, images, audio, and video. When people cannot reliably distinguish authentic content from fabrication, the epistemic foundations of democracy are threatened.
+
+AI-enabled surveillance can threaten privacy and civil liberties at scale. Systems that track individuals across public spaces, analyze their communications, and predict their behavior create capabilities that authoritarian regimes have exploited and that raise concerns even in democratic societies.
+
+AI automation can disrupt labor markets faster than workers and institutions can adapt. While economists debate the long-term employment effects of AI, the transition period clearly creates hardship for workers whose skills become less valuable. The benefits of AI-driven productivity gains may accrue primarily to capital owners while the costs fall on displaced workers, exacerbating inequality.
+
+AI systems can concentrate power in the hands of those who control the technology. The resources required to develop frontier AI systems mean that only a small number of organizations can do so, creating the potential for monopolistic or oligopolistic control over critical infrastructure.
+
+![AI Harms Taxonomy](../figures/figure_1_2_ai_harms_taxonomy.svg){#fig-harms-taxonomy}
+
+*Figure 1.2: AI Harms Taxonomy — The four levels of AI harms (Individual, Group, Organizational, Societal) with examples and cascade effects.*
+
+### Environmental Harms
+
+Training large AI models requires substantial computing resources that consume significant energy. Estimates suggest that training a single large language model can produce carbon emissions equivalent to hundreds of transatlantic flights. The hardware required for AI has its own environmental footprint from manufacturing through disposal, including the mining of rare earth elements, water consumption for chip fabrication, and electronic waste at end of life. As AI adoption grows, these environmental impacts grow as well.
+
+Organizations increasingly face pressure to account for the environmental impacts of their AI use. Environmental, social, and governance reporting requirements may encompass AI's carbon footprint. Stakeholders may question whether the benefits of particular AI applications justify their environmental costs. Governance programs should include consideration of computational efficiency, hardware lifecycle impacts, and the proportionality of AI use to its benefits.
+
+## Principles of Responsible AI
+
+In response to AI risks, numerous organizations have developed principles for responsible AI development and deployment. These include governmental bodies like the OECD and the European Commission's High-Level Expert Group on AI, standards organizations like IEEE, professional associations like the IAPP, and individual companies publishing their own AI principles. While specific formulations vary, common themes emerge across these frameworks.
+
+### Fairness
+
+AI systems should treat people fairly and should not discriminate based on protected characteristics like race, gender, age, disability, religion, or national origin. This principle appears straightforward but proves complex in practice.
+
+Fairness can be defined in multiple ways that sometimes conflict mathematically. Demographic parity requires that outcomes be distributed proportionally across groups. Equalized odds requires that error rates be equal across groups. Individual fairness requires that similar individuals receive similar treatment. Researchers have proven that some of these definitions cannot be satisfied simultaneously except in trivial cases.
+
+Consider a hiring algorithm as an example. Demographic parity would require that the proportion of candidates recommended for interviews be equal across demographic groups. But if qualified candidates are not equally distributed across groups because of historical inequities in education or opportunity, demographic parity might require recommending less qualified candidates from some groups over more qualified candidates from others. Alternatively, an algorithm optimized purely for predicting job performance might have disparate impacts that perpetuate historical exclusion.
+
+Organizations must make deliberate choices about which conception of fairness to prioritize for each application, recognizing that different stakeholders may prefer different definitions and that no choice is neutral. These choices should be documented, justified, and subject to appropriate review.
+
+Achieving fairness requires proactive effort because machine learning systems learn from data, and if that data reflects historical unfairness, the system will tend to perpetuate it. Governance programs must include processes for defining appropriate fairness criteria, testing systems against those criteria, identifying disparities, and addressing them through technical means, process controls, or decisions not to deploy systems that cannot be made sufficiently fair.
+
+### Safety and Reliability
+
+AI systems should function appropriately under expected conditions and should not cause unintended harm. They should perform reliably within their designed parameters and fail gracefully when encountering unexpected conditions. They should be robust against adversarial attacks designed to manipulate their behavior.
+
+Safety becomes particularly critical for AI systems that interact with the physical world. Autonomous vehicles must not endanger passengers, pedestrians, or other drivers. Medical devices must not harm patients. Industrial robots must not injure workers. But safety concerns extend to purely digital AI as well. A content recommendation system that promotes self-harm content to vulnerable users can contribute to real-world harm. A financial trading algorithm that malfunctions can cause market disruption.
+
+Safety requires anticipating potential failure modes and designing systems to minimize harm when failures occur. It requires rigorous testing before deployment, including adversarial testing that actively tries to break systems or cause them to behave inappropriately. It requires monitoring deployed systems to detect problems and having mechanisms to respond quickly when issues arise, including the ability to pause or roll back systems.
+
+The EU AI Act specifically addresses safety, prohibiting AI systems that pose unacceptable safety risks and imposing extensive requirements on high-risk AI systems in critical infrastructure, essential services, and other safety-relevant domains.
+
+### Privacy and Security
+
+AI systems often require large amounts of data, and that data frequently includes personal information. The privacy principle requires that AI systems protect personal information, collect only what is necessary, use data only for appropriate purposes, and respect individuals' rights over their information.
+
+Privacy requirements for AI include ensuring lawful basis for data collection and use, providing appropriate notice to individuals about AI processing, implementing data minimization principles, honoring data subject rights including access, correction, and deletion, and protecting data through appropriate security measures. These requirements flow from general data protection laws like the GDPR and CCPA but take on specific implications in AI contexts.
+
+AI introduces novel privacy challenges beyond traditional data protection. AI systems can infer sensitive information from non-sensitive data, can enable surveillance at scales previously impractical, and can make predictions about individuals that those individuals might not want made. Privacy governance for AI must address these novel challenges.
+
+Security complements privacy by protecting against unauthorized access, data breaches, and adversarial attacks. AI systems face unique security threats including data poisoning attacks that manipulate training data to introduce biases or backdoors, adversarial examples crafted to fool trained models into making errors, and model extraction attacks that steal valuable trained models. AI security governance must address these AI-specific threats alongside traditional cybersecurity concerns.
+
+### Transparency and Explainability
+
+The transparency principle requires openness about AI use. People should know when they are interacting with AI systems and when AI influences decisions that affect them. Organizations should be clear about what AI systems do, what data they use, and how they reach conclusions.
+
+Transparency requirements are increasingly codified in law. The EU AI Act requires that users be informed when they are interacting with AI systems in certain contexts. The GDPR requires that individuals be informed about automated decision-making and its significance. Various US laws require disclosure of AI use in specific contexts like hiring.
+
+Explainability goes further, requiring that AI decisions can be understood and explained in terms meaningful to affected individuals. When AI makes a consequential decision, affected individuals should be able to understand the factors that influenced that decision and what they might do to achieve a different outcome.
+
+The transparency and explainability principles are in tension with the complexity of modern AI systems. Deep learning models may be highly accurate but difficult to explain. Governance programs must navigate this tension, potentially accepting some reduction in performance for greater transparency, developing techniques to generate post-hoc explanations of complex model decisions, or limiting use of opaque models in contexts where explainability is essential.
+
+### Accountability
+
+When AI systems cause harm, someone must be responsible. The accountability principle requires clear allocation of responsibility for AI systems and their outcomes. It requires mechanisms for identifying and addressing problems. It requires consequences for failures and incentives for responsible behavior.
+
+Accountability becomes complex when AI systems involve multiple parties. An organization may deploy an AI system developed by a vendor, trained on data from multiple sources, operating on cloud infrastructure from a third party, with components licensed from various providers. When something goes wrong, who bears responsibility? Regulatory frameworks increasingly allocate specific responsibilities to different actors in the AI value chain, distinguishing between developers, deployers, importers, and distributors.
+
+Organizations must establish clear internal accountability as well. Who is responsible for ensuring an AI system is properly tested before deployment? Who is responsible for monitoring deployed systems? Who has authority to pause or withdraw a system that is causing harm? Who is accountable for the overall AI governance program? These questions should have clear answers, and those answers should be documented and communicated.
+
+### Human Oversight
+
+AI should serve human needs and remain under meaningful human control. This principle, sometimes called human-in-the-loop or human-centricity, requires that humans can understand, monitor, and when appropriate override AI systems. It rejects the notion that AI should operate autonomously beyond human comprehension or control.
+
+Human oversight does not mean humans must review every AI decision. That would negate the efficiency benefits of AI. Rather, it means that appropriate human oversight exists for the type of system and decision involved. The appropriate level depends on the consequences of errors, the reversibility of decisions, and the feasibility of human review.
+
+A spam filter may operate without human review of individual decisions because the consequences of errors are relatively minor and easily corrected. A system that contributes to criminal sentencing recommendations requires meaningful human involvement because the consequences are severe and liberty is at stake. A medical diagnostic system might require physician review because medical judgment cannot be delegated entirely to machines.
+
+The EU AI Act codifies human oversight requirements for high-risk AI systems, requiring that such systems be designed to allow effective oversight by natural persons during the period of use.
+
+## Establishing AI Governance in Organizations
+
+Principles provide direction, but organizations need practical structures to implement AI governance. Survey data from the IAPP AI Governance in Practice Report 2025 confirms that organizations are actively building these structures: 77% of surveyed organizations reported currently working on AI governance, with the rate rising to approximately 90% among organizations already using AI for process automation, automated decision-making, or data analysis.
+
+### Governance Structures and Roles
+
+Effective AI governance requires clear assignment of responsibilities across the organization. Research consistently shows that responsibility distributed across multiple teams correlates with positive governance outcomes, though the specific structures vary based on organizational size, industry, and AI maturity.
+
+Executive leadership sets the tone for AI governance by establishing risk tolerance, allocating resources, and holding the organization accountable for responsible AI. Without executive support, governance programs lack the authority and resources to be effective. The IAPP survey found that lack of board support was reported as a challenge by only 10% of respondents, suggesting that organizational leadership generally recognizes the importance of AI governance even if other challenges remain.
+
+Many organizations locate primary AI governance responsibility within an existing function. Survey data shows that approximately 50% of AI governance professionals are assigned to ethics, compliance, privacy, or legal teams. The Mastercard case study from the IAPP report illustrates how AI governance can emerge from the intersection of privacy and data strategy functions, building on existing expertise and processes. IBM built its AI governance program out of the Chief Privacy Office, eventually renaming it the Office of Privacy and Responsible Technology to reflect expanded responsibilities.
+
+Some organizations create dedicated AI governance roles or teams. Titles like Head of Responsible AI, AI Governance Director, or Chief AI Ethics Officer are becoming more common, particularly at larger organizations. These dedicated roles can provide focused attention but must still collaborate with other functions to be effective.
+
+Cross-functional governance committees bring together stakeholders from different parts of the organization. Survey data found that 39% of organizations have an AI governance committee, with significantly higher rates among organizations using AI extensively. These committees might include representatives from legal, compliance, privacy, security, data science, engineering, business units, risk management, and human resources. They provide diverse perspectives and help ensure governance addresses the full range of AI risks and applications.
+
+At the working level, AI project teams bear responsibility for implementing governance requirements in their specific projects. This includes documenting AI systems, conducting required assessments, testing for bias and accuracy, and monitoring deployed systems. Governance programs must make clear what is expected of project teams and provide them with tools and guidance to meet those expectations.
+
+### The Importance of Cross-Functional Collaboration
+
+AI governance cannot succeed as a siloed function. Survey data confirms this: organizations with larger AI governance teams are significantly more likely to involve multiple functions in governance activities. AI risks span technical, legal, ethical, and social domains that no single discipline fully understands.
+
+Technical teams understand how AI systems work, what they can and cannot do, and how to test and monitor them. They may not fully appreciate legal requirements, ethical considerations, or how systems affect real people in social contexts. Legal and compliance teams understand regulatory requirements but may not understand technical capabilities and limitations. Business teams understand operational needs and customer impacts but may not appreciate technical or regulatory constraints. Risk management teams understand frameworks for identifying and mitigating risks but may not understand AI-specific risks.
+
+The TELUS case study illustrates mature cross-functional collaboration through several mechanisms. Data stewards are in-business data leaders throughout the organization who receive specialized training to act as data and AI champions within their teams. A "Purple Team" combining blue team (defense) and red team (adversarial testing) approaches allows any employee to participate in testing AI systems before release. A Responsible AI Squad brings together AI engineers, policy professionals, and risk professionals for regular collaboration on responsible AI issues.
+
+Building effective collaboration requires organizational effort. It requires establishing forums where cross-functional discussion occurs regularly, not just during crises. It requires creating shared vocabulary so different disciplines can communicate effectively about AI risks and governance. It requires building relationships and trust across organizational boundaries. And it requires leadership that values diverse perspectives rather than treating governance as an obstacle to overcome.
+
+![AI Governance Organizational Structure](../figures/figure_1_3_governance_org_structure.svg){#fig-org-structure}
+
+*Figure 1.3: AI Governance Organizational Structure — Typical governance roles and reporting relationships from executive leadership through working teams.*
+
+### Training and Awareness
+
+AI governance depends on people throughout the organization understanding their responsibilities and having the skills to fulfill them. Survey data identified shortage of qualified AI professionals (31%) and lack of understanding of AI and underlying technologies (49%) as significant challenges organizations face in delivering AI governance.
+
+All employees benefit from basic AI literacy that helps them understand what AI is, how it affects their work, and their role in responsible AI use. This general awareness helps create a culture where people raise concerns, ask questions, and support governance efforts. The TELUS case study emphasizes company-wide data and AI literacy programming available to all team members regardless of their roles.
+
+Those who develop or deploy AI systems need more detailed training on governance policies and procedures. They need to understand what assessments are required, what documentation they must create, what testing they must perform, and how to escalate concerns. This training should be practical, explaining not just what is required but how to accomplish it.
+
+Executives and board members need training appropriate to their oversight role. They need to understand AI risks and governance approaches well enough to ask good questions, evaluate reports, and make informed decisions about risk tolerance and resource allocation. The survey found that lack of board-level understanding was reported as a challenge by many respondents, suggesting room for improvement in executive AI education.
+
+Professional certification provides a way to validate AI governance competence. The IAPP's AIGP certification, which this book supports, demonstrates knowledge of AI governance principles and practices. Several case study organizations mentioned that the AIGP certification "stands out when recruiting new staff" regardless of the candidate's background.
+
+### Tailoring Governance to Context
+
+AI governance is not one-size-fits-all. The appropriate governance approach depends on organizational characteristics including size, industry, AI maturity, and risk tolerance.
+
+A large financial services company faces different AI governance challenges than a small technology startup. The financial services company operates in a heavily regulated industry with established compliance functions and may be deploying AI in high-stakes contexts like lending decisions. It likely has resources for dedicated governance staff, formal processes, and specialized tools. The startup may move faster, have less regulatory burden for the moment, and deploy AI in initially lower-risk contexts. It may lack resources for extensive governance infrastructure but can build governance into its culture from the beginning.
+
+Survey data confirms these patterns: larger organizations by revenue and employee count are more likely to have mature AI governance programs, AI governance committees, larger budgets, and higher confidence in their ability to comply with regulations like the EU AI Act. Organizations with annual revenue below $100 million were significantly underrepresented among those actively working on AI governance, while larger organizations were overrepresented.
+
+Governance should evolve as an organization's AI maturity grows. An organization new to AI may start with basic policies, lightweight review processes, and a single person with part-time governance responsibility. As AI use expands and matures, governance becomes more sophisticated with detailed procedures, specialized tools, dedicated resources, and formal committee structures. The case studies illustrate this evolution: several organizations described building out more professionalized AI governance programs after using AI at smaller scales.
+
+Risk tolerance also varies across organizations and use cases. Some organizations accept more risk in exchange for innovation speed. Others prioritize caution even at the cost of slower adoption. Within organizations, different use cases warrant different levels of governance intensity based on potential impacts. A low-risk internal productivity tool might receive lighter governance than a customer-facing system making consequential decisions.
+
+### Developer, Deployer, and User Distinctions
+
+AI governance professionals must understand the different roles organizations play in the AI ecosystem because responsibilities differ based on role.
+
+AI developers create AI systems, training models and building the technology that others will use. A company that trains its own machine learning models is a developer. A company that builds AI products or platforms for others to use is a developer. Developers bear primary responsibility for the technical characteristics of AI systems including their accuracy, fairness, security, and reliability. Regulatory frameworks increasingly impose specific obligations on developers, including documentation requirements, technical requirements, testing obligations, and transparency duties.
+
+AI deployers take AI systems created by developers and make them available for use in specific contexts. A company that purchases an AI hiring tool from a vendor and uses it in their recruiting process is a deployer. A company that integrates a third-party language model into their customer service application is a deployer. Deployers bear responsibility for using AI systems appropriately in their specific context. Even if a developer created a well-designed system, a deployer can misuse it or deploy it in inappropriate contexts. The EU AI Act allocates specific obligations to deployers of high-risk AI systems including conducting impact assessments, ensuring human oversight, and informing affected individuals.
+
+AI users are the people who interact with deployed AI systems in the course of their work or daily life. Employees using an AI tool in their work are users. Consumers interacting with AI-powered products are users. Users generally bear less governance responsibility but should understand AI capabilities and limitations and should be able to report concerns.
+
+Many organizations play multiple roles simultaneously or sequentially. A company might develop some AI systems internally while deploying AI systems purchased from vendors. A company might be a deployer for its internal use of AI while being a developer of AI products it sells to customers. Governance programs must address responsibilities in all roles the organization plays and must manage relationships with external parties playing other roles in the AI value chain.
+
+## Policies Across the AI Lifecycle
+
+AI governance requires policies that address the entire AI lifecycle from initial conception through retirement. These policies create the framework within which AI development and deployment occurs.
+
+### Use Case Assessment and Approval
+
+Before developing or deploying an AI system, organizations should assess whether the proposed use case is appropriate. This assessment considers whether AI is necessary and suitable for the intended purpose, what risks the use case presents, whether those risks can be adequately managed, and whether the use case aligns with organizational values and strategy.
+
+Use case assessment policies should establish criteria for evaluating proposed AI applications and specify approval processes. High-risk uses involving consequential decisions, vulnerable populations, sensitive contexts, or novel capabilities warrant more scrutiny than lower-risk applications. Policies should specify who has authority to approve different categories of use cases, what documentation is required for approval, and what ongoing oversight approved uses require.
+
+Some organizations establish explicit lists of prohibited use cases that will not be approved regardless of circumstances, as well as presumptively approved low-risk uses that can proceed with minimal review. The Boston Consulting Group case study describes a screening process that identifies potentially high-risk use cases for review by a senior-level Responsible AI Council, while lower-risk cases proceed through streamlined processes.
+
+### Risk Management
+
+AI risk management policies establish how the organization identifies, assesses, and mitigates AI risks. This includes processes for risk assessment during development and deployment, criteria for categorizing risk levels, requirements for risk mitigation measures, procedures for ongoing risk monitoring, and escalation paths for identified risks.
+
+Effective AI risk management integrates with existing enterprise risk management frameworks rather than operating in isolation. AI risks relate to security risk, privacy risk, operational risk, compliance risk, and reputational risk. Organizations should leverage existing risk management capabilities and expertise while adding AI-specific considerations.
+
+The NIST AI Risk Management Framework provides a widely referenced structure for AI risk management, organized around four core functions: Govern (establish accountability and culture), Map (understand context and identify risks), Measure (assess and analyze risks), and Manage (prioritize and address risks). Organizations can use this framework as a starting point while tailoring it to their specific circumstances.
+
+### Data Governance
+
+AI systems depend on data, and data governance policies establish requirements for data used in AI. This includes requirements for data quality ensuring training data is accurate, complete, and fit for purpose. It includes requirements for data sourcing ensuring the organization has appropriate legal rights to use data for AI purposes. It includes requirements for data privacy ensuring personal information is protected appropriately. It includes requirements for data documentation establishing lineage and provenance.
+
+Data governance for AI extends existing data governance programs but adds AI-specific considerations. Data that is adequate for business analytics may be inadequate for training AI models that make consequential individual decisions. Data biases that might be acceptable in aggregate statistics become problematic when they affect individual outcomes. Organizations should evaluate existing data policies and extend them as needed for AI contexts.
+
+### Documentation and Record-Keeping
+
+Documentation policies establish what information must be recorded about AI systems and how that information must be maintained. Good documentation supports accountability, enables oversight, facilitates troubleshooting, and demonstrates compliance.
+
+Documentation requirements typically include system purpose and intended use, training data characteristics and sources, model architecture and key parameters, testing results and performance metrics, known limitations and risks, deployment procedures, and operational monitoring approaches. The level of detail should be appropriate to the risk level and complexity of the system.
+
+Model cards and datasheets have emerged as standard formats for AI documentation. A model card documents a trained model's purpose, performance characteristics, limitations, and ethical considerations. A datasheet documents a dataset's composition, collection process, intended uses, and potential biases. Organizations should consider adopting these formats while adapting them to their specific needs.
+
+### Third-Party Management
+
+Many organizations use AI systems developed by external parties rather than building everything internally. Third-party management policies establish how the organization evaluates, selects, contracts with, and monitors AI vendors and partners.
+
+These policies should address due diligence requirements for evaluating potential AI vendors, contractual provisions that allocate responsibilities and ensure access to necessary information, ongoing monitoring requirements for third-party AI systems, and incident response procedures when third-party systems cause problems.
+
+The increasing use of cloud-based AI services and pre-trained models from external providers makes third-party management increasingly important. Organizations must manage risks that originate outside their boundaries while maintaining accountability for AI systems they deploy regardless of where those systems were developed.
+
+### Incident Management
+
+Despite best efforts, AI systems sometimes cause harm or malfunction. Incident management policies establish how the organization detects, responds to, and learns from AI incidents.
+
+These policies should define what constitutes an AI incident, establish processes for reporting and escalating incidents, specify response procedures including the ability to pause or withdraw problematic systems, require root cause analysis and documentation, and establish processes for communicating with affected parties and regulators as appropriate.
+
+The EU AI Act requires providers of high-risk AI systems to report serious incidents to relevant authorities. Organizations subject to this requirement must have processes to detect incidents, assess their severity, and make required reports within specified timeframes.
+
+## The OECD Framework for AI Classification
+
+Beyond definitions and principles, governance professionals benefit from frameworks that help classify and analyze AI systems. The OECD Framework for the Classification of AI Systems provides a comprehensive approach adopted by many countries and organizations.
+
+The framework classifies AI systems along five dimensions, each with multiple characteristics that help characterize specific systems and their governance implications.
+
+The first dimension addresses People and Planet, considering the potential of AI systems to affect human rights, well-being, society, and the environment. This dimension examines who uses the system, who is affected by it, whether use is optional or compelled, and what types of impacts the system may have on individuals, groups, and the environment.
+
+The second dimension addresses Economic Context, describing the sectoral and business environment in which an AI system operates. This includes the industry sector, business function, critical or non-critical nature of the application, scale of deployment, and the organization's experience with the technology.
+
+The third dimension addresses Data and Input, characterizing the data and information that feeds into the AI system. This includes data provenance and quality, collection methods, data structure and format, whether data includes personal information, and how data changes over time.
+
+The fourth dimension addresses the AI Model itself, examining how the system processes inputs to generate outputs. This includes the type of machine learning or other AI approach, how the model was trained, what objectives it optimizes, and how performance is measured.
+
+The fifth dimension addresses Task and Output, characterizing what the system does and produces. This includes the types of tasks performed, the nature of outputs, the level of autonomy in decision-making, and how outputs influence subsequent actions.
+
+Using this framework helps governance professionals systematically analyze AI systems, compare systems across dimensions, identify governance-relevant characteristics, and communicate about AI systems in consistent terms. The framework does not prescribe specific governance requirements but provides a structured approach to understanding what is being governed.
+
+## Chapter 1 Summary
+
+This chapter established the foundational knowledge that AI governance professionals need. AI governance exists because artificial intelligence has moved from research laboratories into daily organizational operations, bringing both substantial benefits and significant risks that require specialized management.
+
+AI encompasses engineered systems that generate outputs like predictions, recommendations, content, or decisions based on learned patterns rather than explicit programming alone. Machine learning, the dominant approach to building AI systems today, enables powerful capabilities but also creates governance challenges related to opacity, data dependency, and unpredictable emergent behavior. The distinction between generative and predictive AI matters for governance because these categories have different risk profiles requiring different approaches.
+
+AI requires specialized governance because of characteristics that distinguish it from traditional software: complexity and opacity that challenge transparency requirements, autonomy and speed that require new approaches to oversight, data dependency that extends governance concerns to data pipelines, probabilistic outputs that require managing uncertainty, and emergent behavior that challenges pre-deployment testing. Understanding AI as a socio-technical system recognizes that technical components interact with social contexts, human behaviors, and institutional structures in ways that purely technical governance cannot address.
+
+AI can cause harms to individuals through inaccurate or discriminatory decisions in consequential contexts, to groups through systematic patterns that perpetuate historical disadvantage, to organizations through reputational damage and regulatory penalties and cultural erosion, to society through misinformation and surveillance and power concentration, and to the environment through energy consumption and hardware lifecycle impacts.
+
+Responsible AI principles provide direction for governance programs: fairness requires proactive attention to equitable treatment, safety and reliability require anticipating and preventing harms, privacy and security require protecting information and systems, transparency and explainability require openness about AI use and decisions, accountability requires clear assignment of responsibility, and human oversight requires meaningful human control over AI systems.
+
+Organizations establish AI governance through structures including executive sponsorship, designated governance functions, cross-functional committees, and project-level responsibilities. Success requires cross-functional collaboration because AI risks span technical, legal, ethical, and social domains. Training and awareness programs build the organizational capability to implement governance effectively. Governance approaches should be tailored to organizational context including size, industry, maturity, and risk tolerance. Understanding distinctions between developers, deployers, and users helps allocate responsibilities appropriately.
+
+Policies across the AI lifecycle address use case assessment, risk management, data governance, documentation, third-party management, and incident response. The OECD Framework for AI Classification provides a structured approach to analyzing AI systems across dimensions of people and planet, economic context, data and input, AI model characteristics, and task and output.
+
+## Chapter 1 Review Questions
+
+1. A large healthcare organization is evaluating a deep learning system that analyzes medical images to assist radiologists in detecting tumors. The system achieves higher accuracy than human radiologists on benchmark tests but the organization cannot explain in simple terms why the system flags particular images. Which characteristic of AI systems creates the most significant governance challenge in this situation?
+
+2. An AI hiring tool trained on a company's historical hiring decisions shows strong predictive accuracy for job performance. However, analysis reveals that the tool recommends male candidates at significantly higher rates than female candidates with similar qualifications. This pattern reflects the company's historical hiring practices in a male-dominated industry. Which category of AI harm does this situation primarily illustrate?
+
+3. A financial services company is implementing an AI governance program. The Chief Privacy Officer has been assigned responsibility for AI governance, but she finds that she cannot effectively govern AI systems without regular input from the data science team, legal counsel, business unit leaders, and the security function. This situation illustrates which fundamental principle of AI governance program design?
+
+4. A content moderation AI system reviews millions of social media posts daily, removing those that violate platform policies. The system occasionally removes legitimate content (false positives) and occasionally fails to remove violating content (false negatives). Which characteristic of AI systems makes it impractical to have humans review every decision the system makes?
+
+5. A retail company uses an AI recommendation system that personalizes product suggestions based on customer browsing and purchase history. The company is preparing for compliance with the EU AI Act. Based on the risk classification framework, how would this system most likely be classified?
+
+## References
+
+IAPP. AI Governance in Practice Report 2025. International Association of Privacy Professionals, 2025.
+
+IAPP. AIGP Body of Knowledge, Version 2.0.1. International Association of Privacy Professionals, 2025.
+
+National Institute of Standards and Technology. AI Risk Management Framework 1.0. NIST AI 100-1, 2023.
+
+Organisation for Economic Co-operation and Development. OECD Framework for the Classification of AI Systems. OECD Digital Economy Papers No. 323, 2022.
+
+Organisation for Economic Co-operation and Development. Recommendation of the Council on Artificial Intelligence. OECD/LEGAL/0449, 2019.
+
+European Parliament and Council. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). Official Journal of the European Union, 2024.
+
+Mitchell, Margaret, et al. "Model Cards for Model Reporting." Proceedings of the Conference on Fairness, Accountability, and Transparency, 2019.
+
+Gebru, Timnit, et al. "Datasheets for Datasets." Communications of the ACM 64, no. 12 (2021).
+
+Buolamwini, Joy and Timnit Gebru. "Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification." Proceedings of Machine Learning Research 81 (2018).
+
+---
+
+

@@ -1,0 +1,453 @@
+# Governing AI Development
+
+## Introduction
+
+The development of AI systems presents governance challenges that differ fundamentally from traditional software development. Where conventional software follows predetermined logic that developers explicitly specify, AI systems learn patterns from data in ways that may be difficult to predict or explain. Where traditional software testing can verify correct behavior against defined specifications, AI testing must grapple with probabilistic outputs, edge cases that cannot be fully enumerated, and performance that may vary across different populations. Where conventional software documentation describes what the code does, AI documentation must also address what the training data contains, what the model learned, and how performance was validated.
+
+This chapter examines governance throughout the AI development lifecycle, from initial conception of a use case through design, data preparation, model training, testing, documentation, and release. Each stage presents distinct governance considerations and requires specific controls. The chapter emphasizes that governance is not a gate at the end of development but a continuous practice woven throughout the process. Effective governance enables development by providing clarity about requirements and expectations, not merely constraining it through review and approval.
+
+The material in this chapter maps primarily to Domain III of the AIGP Body of Knowledge, which addresses the knowledge and skills required to govern the design, development, and validation of AI systems. Organizations may be developers creating AI systems for their own use, developers creating AI systems for others to deploy, or both. The governance practices described here apply regardless of whether the ultimate deployer is internal or external, though the specific documentation and communication requirements may differ.
+
+![AI Development Lifecycle with Governance Touchpoints](../figures/figure_3_1_dev_lifecycle.svg){#fig-dev-lifecycle}
+
+*Figure 3.1: AI Development Lifecycle with Governance Touchpoints — Governance activities mapped to each development phase with feedback loops.*
+
+## Defining the Business Context and Use Case
+
+Every AI system begins with a purpose: a problem to solve, a decision to support, or a capability to provide. Governance starts here, before any data is collected or model is trained, by ensuring the proposed use case is appropriate, well-defined, and aligned with organizational values and risk tolerance.
+
+### Use Case Intake and Initial Assessment
+
+Organizations should establish a formal process for proposing and evaluating potential AI use cases. This intake process serves multiple purposes: it creates visibility into AI activities across the organization, it ensures proposed uses receive appropriate scrutiny before resources are committed, and it builds an inventory of AI systems that supports ongoing governance and regulatory compliance.
+
+An effective intake process captures essential information about the proposed use case. What problem is the AI system intended to solve? What decisions will it make or support? Who will use the system and who will be affected by its outputs? What data will be required? What is the expected benefit, and how will success be measured? What are the potential risks if the system performs poorly or is misused?
+
+This information enables initial risk classification. Not every AI system requires the same level of governance intensity. A system that recommends internal meeting times based on calendar availability presents different risks than a system that influences hiring decisions or medical diagnoses. Organizations should establish risk tiers with corresponding governance requirements, directing intensive oversight toward high-risk applications while allowing lower-risk applications to proceed with lighter-touch governance.
+
+The EU AI Act's risk classification provides one model for this tiering, distinguishing prohibited uses, high-risk uses requiring extensive compliance, limited-risk uses requiring transparency, and minimal-risk uses with no specific requirements. Organizations can adapt this framework to their context, potentially adding categories or adjusting criteria based on their specific risk landscape and values.
+
+### Evaluating Appropriateness
+
+Beyond risk classification, organizations should evaluate whether AI is appropriate for the proposed use case at all. AI is not the right solution for every problem, and governance should help organizations avoid pursuing AI applications that are unlikely to succeed or that present risks disproportionate to their benefits. The question is not merely "can we include AI?" but "should we include AI?"—a distinction that separates sensible solutions from AI hype.
+
+Several questions help evaluate appropriateness. Is there sufficient quality data available to train an effective model? AI systems learn from data, and if relevant data does not exist, is not accessible, or is not representative of the population the system will serve, the AI project may be doomed from the start. Can the problem be adequately specified in terms an AI system can optimize? Some problems involve nuanced judgment that resists reduction to measurable objectives. Is the expected benefit proportionate to the risks and costs? Some AI applications provide marginal improvements over simpler alternatives while introducing significant new risks.
+
+Organizations should also consider whether the use case aligns with organizational values and public commitments. A company that has publicly committed to certain principles around AI use should evaluate proposed applications against those commitments. An organization operating in a sensitive domain should consider how stakeholders would perceive the proposed AI use if it became public.
+
+### Defining Success Criteria
+
+Before development begins, organizations should define how success will be measured. What accuracy is required? What fairness criteria must be satisfied? What latency or throughput is needed for operational viability? What explainability is required for the intended users and affected individuals?
+
+These success criteria become requirements that guide development and testing. Without clear criteria defined upfront, development teams may optimize for metrics that do not reflect actual organizational needs, and governance reviews may lack clear standards against which to evaluate systems.
+
+Success criteria should address both technical performance and broader considerations. Technical criteria might include accuracy metrics, false positive and false negative rates, performance across different subgroups, response time, and scalability. Broader criteria might include user acceptance, integration with existing workflows, compliance with applicable regulations, and alignment with organizational values.
+
+## Conducting Impact Assessments
+
+Impact assessments provide a structured process for identifying, analyzing, and planning to mitigate the risks an AI system may present. Various regulatory frameworks require impact assessments, and even where not legally mandated, they represent governance best practice for consequential AI systems.
+
+### Types of Impact Assessments
+
+Different types of impact assessments address different risk categories, and a given AI system may require multiple assessments.
+
+Data Protection Impact Assessments, required under the GDPR when processing is likely to result in high risk to individuals' rights and freedoms, focus on privacy and data protection risks. They examine the lawfulness of processing, data minimization, data subject rights, and security measures. AI systems that process personal data for profiling, automated decision-making, or systematic monitoring typically trigger DPIA requirements.
+
+Algorithmic Impact Assessments focus specifically on risks arising from algorithmic decision-making, including discrimination, inaccuracy, lack of transparency, and inappropriate automation of human judgment. Various frameworks and emerging regulations specify algorithmic impact assessment requirements. Canada's Algorithmic Impact Assessment Tool, while designed for government use, provides a model that private organizations can adapt.
+
+Fundamental Rights Impact Assessments, required under the EU AI Act for certain deployers of high-risk AI systems, examine impacts on fundamental rights including dignity, freedoms, equality, solidarity, citizens' rights, and justice. These assessments consider how the AI system might affect the rights of individuals and groups.
+
+Human Rights Impact Assessments take a broader view, examining potential impacts on the full range of internationally recognized human rights. The UN Guiding Principles on Business and Human Rights provide a framework for human rights due diligence that organizations can apply to AI systems.
+
+Organizations may consolidate these assessments into a unified AI impact assessment process that addresses privacy, algorithmic, fundamental rights, and human rights considerations together, or they may maintain separate processes depending on organizational structure and regulatory requirements.
+
+### Conducting an Effective Assessment
+
+Effective impact assessments require input from diverse perspectives. Technical teams understand what the system does and how it works. Legal and compliance teams understand regulatory requirements and potential liabilities. Business teams understand the operational context and intended use. User experience researchers understand how people will interact with the system. Subject matter experts understand the domain in which the system operates. And affected communities can provide perspective on potential impacts that internal stakeholders might miss.
+
+The assessment should describe the AI system thoroughly: its purpose, how it works, what data it uses, what outputs it produces, and how those outputs will be used in decision-making. It should identify potential risks across categories including accuracy, fairness, transparency, privacy, security, and misuse. For each identified risk, it should assess likelihood and severity, considering both individual and aggregate impacts.
+
+The assessment should then identify measures to mitigate identified risks. These might include technical measures like bias testing and monitoring, process measures like human review requirements, or policy measures like use restrictions. For each mitigation measure, the assessment should evaluate expected effectiveness and any residual risk that remains after mitigation.
+
+Finally, the assessment should document the conclusion: whether to proceed with the AI system, proceed with modifications, or not proceed. This conclusion should be justified based on the analysis, and the decision-maker should be identified and accountable.
+
+### When to Conduct Assessments
+
+Impact assessments should occur early in the development process, when findings can still influence design decisions, and should be updated as the system evolves. An assessment conducted only at the end of development, when significant resources have already been invested, creates pressure to approve systems regardless of identified risks.
+
+Organizations should also reassess when circumstances change materially. If the AI system is modified significantly, if it is deployed in new contexts, or if monitoring reveals unexpected impacts, the original assessment may no longer be valid. Governance processes should trigger reassessment when appropriate conditions are met.
+
+![Impact Assessment Process Flow](../figures/figure_3_2_impact_assessment.svg){#fig-impact-assessment}
+
+*Figure 3.2: Impact Assessment Process Flow — From intake through risk classification, assessment, mitigation planning, and decision.*
+
+## Identifying Applicable Legal Requirements
+
+Before development proceeds, organizations must identify the legal requirements that apply to the proposed AI system. This analysis depends on the system's purpose, the data it uses, the decisions it influences, the jurisdictions where it operates, and the roles the organization plays in the AI value chain.
+
+### Mapping Legal Obligations
+
+The legal analysis should systematically consider applicable frameworks. Privacy laws apply when the system processes personal data. The GDPR applies if data subjects are in the EU; CCPA/CPRA applies if data subjects are California residents; other privacy laws apply based on their respective scope. Requirements may include lawful processing bases, data subject rights, data protection impact assessments, and cross-border transfer restrictions.
+
+Anti-discrimination laws apply when the system influences decisions in covered contexts. Employment decisions trigger Title VII and similar laws; credit decisions trigger ECOA and fair lending requirements; housing decisions trigger Fair Housing Act requirements. Compliance requires avoiding both intentional discrimination and facially neutral practices with unjustified disparate impact.
+
+Sector-specific regulations apply based on the domain. Healthcare AI may require FDA approval and HIPAA compliance. Financial services AI may require compliance with model risk management guidance. AI in education, transportation, telecommunications, or other regulated sectors must comply with applicable sectoral requirements.
+
+AI-specific regulations apply based on risk classification and jurisdictional reach. The EU AI Act applies to AI systems placed on the EU market or whose outputs are used in the EU. State laws like the Colorado AI Act apply to systems used in those jurisdictions. Requirements depend on whether the system is high-risk, general purpose, or another category.
+
+### Documenting Legal Requirements
+
+The legal analysis should produce clear documentation of applicable requirements that can guide development. This documentation should specify what laws apply, what obligations they impose, and how those obligations translate to concrete requirements for the AI system.
+
+For example, if GDPR Article 22 applies, requirements might include: provide meaningful information about the logic involved; implement safeguards including right to human intervention; conduct DPIA. If the EU AI Act high-risk requirements apply, requirements might include: implement risk management system; ensure data governance for training data; prepare technical documentation per Annex IV; implement logging capabilities; design for human oversight; achieve appropriate accuracy and robustness.
+
+This documentation becomes a checklist against which the developed system can be evaluated and provides evidence of compliance efforts if questions arise later.
+
+## Designing and Building the AI Model
+
+With use case approved, impact assessment completed, and legal requirements identified, development proceeds to system design and model building. Governance during this phase ensures that design choices reflect governance requirements and that the model is built in ways that support transparency, testing, and ongoing oversight.
+
+### Design Considerations for Governance
+
+Design decisions made early in development have lasting governance implications. Certain design choices make systems easier to govern; others make governance more difficult.
+
+Explainability is significantly influenced by model architecture. Simpler models like linear regression or decision trees produce outputs that can be traced to specific input features, enabling meaningful explanations of individual decisions. Complex models like deep neural networks can achieve higher accuracy on some tasks but produce outputs that are difficult to explain. The appropriate tradeoff depends on the use case: a content recommendation system may tolerate opacity that would be unacceptable in a credit decisioning system.
+
+Modularity affects the ability to test, monitor, and update systems. A modular design that separates data preprocessing, model inference, and output processing allows each component to be tested and updated independently. A monolithic design that combines these functions makes targeted testing and improvement more difficult.
+
+Logging and auditability must be designed into systems from the start. What events should be logged? What information should be captured about each prediction or decision? How long should logs be retained? These questions are easier to answer and implement during initial design than to retrofit later.
+
+Human oversight mechanisms must be designed to support the required level of human involvement. If human review is required for certain decisions, the system should surface relevant information to support that review and provide mechanisms for humans to override or adjust system outputs.
+
+### Model Selection and Development
+
+The choice of modeling approach should reflect both technical requirements and governance considerations. More complex models may achieve higher accuracy but at the cost of explainability and potentially increased risk of unexpected behavior. Simpler models may be easier to understand and govern but may not achieve required performance levels.
+
+Development practices should support governance objectives. Version control for code, data, and model artifacts enables traceability and rollback. Documentation during development, not just at the end, captures design decisions and their rationales. Code review and pair programming can catch issues early. Separation of training and validation data prevents overfitting and supports honest performance evaluation.
+
+Organizations developing multiple AI systems benefit from standardized development practices, shared infrastructure, and reusable components. These not only improve efficiency but also support governance by creating consistency that enables meaningful oversight and comparison across systems.
+
+### Addressing Common Failure Modes
+
+AI governance professionals should understand common failure modes so they can ensure development processes address them.
+
+Brittleness refers to AI systems that perform well on training data but fail on inputs that differ even slightly from training distribution. Brittle systems may produce confident but incorrect outputs when deployed in real-world conditions that differ from training conditions. Addressing brittleness requires diverse training data, robust testing including adversarial examples, and monitoring for distribution shift after deployment.
+
+Hallucination, particularly relevant for generative AI, refers to systems producing confident but false outputs. A language model may generate plausible-sounding but fabricated facts, citations, or claims. Addressing hallucination requires techniques like retrieval augmentation, output verification, and user education about system limitations.
+
+Concept drift occurs when the relationships the model learned from historical data no longer hold because the world has changed. A fraud detection model trained on past fraud patterns may miss new fraud tactics. A demand forecasting model trained before a market disruption may produce inaccurate forecasts after. Addressing drift requires monitoring for performance degradation and processes for model retraining when necessary.
+
+Feedback loops occur when model outputs influence future training data in ways that amplify biases or errors. A predictive policing model that directs officers to certain neighborhoods generates more arrests in those neighborhoods, which then reinforces the model's predictions. Addressing feedback loops requires understanding how model outputs affect the data-generating process and implementing safeguards against self-reinforcing patterns.
+
+## Governing Data for AI
+
+Data is foundational to AI systems, and data governance for AI extends traditional data governance with AI-specific considerations. The data used to train AI systems shapes what those systems learn and how they perform. Garbage in, garbage out applies with particular force to machine learning.
+
+### Data Quality
+
+Training data must be fit for purpose. This means more than simply being accurate; it means being relevant, representative, complete, and timely for the specific AI application.
+
+Relevance requires that training data actually contain the patterns the model needs to learn. If the goal is to predict customer churn, training data must include features that genuinely relate to churn behavior, not just data that happens to be available.
+
+Representativeness requires that training data reflect the population on which the model will be deployed. A medical imaging model trained only on images from one demographic group may perform poorly on other groups. A language model trained only on formal written text may struggle with casual speech or regional dialects.
+
+Completeness requires sufficient examples across the range of situations the model will encounter. A classification model needs adequate examples of each class. A regression model needs examples spanning the range of target values. Rare but important cases need sufficient representation for the model to learn them.
+
+Timeliness requires that training data reflect current conditions. Patterns in data from five years ago may not hold today. Using stale data may produce models optimized for historical conditions that no longer exist.
+
+### Data Provenance and Lineage
+
+Organizations must track where data comes from and how it has been processed. Data provenance documents the origins of data: who collected it, when, how, and for what purpose. Data lineage documents the transformations data undergoes: what processing, filtering, aggregation, or derivation has been applied.
+
+This documentation serves multiple purposes. It enables assessment of data quality and fitness for purpose. It supports compliance with legal requirements about data sourcing and use. It facilitates debugging when model issues arise. It enables reproduction of results for validation or audit.
+
+For training data specifically, provenance documentation should address: the original sources of the data, any licenses or restrictions on its use, whether personal data is included and if so the legal basis for its use in AI training, what preprocessing or cleaning has been applied, and any known issues or limitations.
+
+### Bias in Training Data
+
+Training data can contain biases that models learn and perpetuate. These biases may arise from multiple sources.
+
+Historical bias exists when data reflects past decisions or conditions that were themselves biased. Hiring data from a company with historically discriminatory practices encodes that discrimination. Loan performance data from a system that denied loans to creditworthy applicants from certain groups reflects those denials, not the true creditworthiness of those groups.
+
+Representation bias exists when certain groups are underrepresented in training data. If training data contains fewer examples from certain populations, models may learn those populations less well and perform worse for them.
+
+Measurement bias exists when the features or labels in training data are measured or recorded differently for different groups. If one group is more heavily monitored than another, that group will have more recorded incidents regardless of actual behavior.
+
+Aggregation bias exists when data that should be disaggregated is combined, obscuring important differences between subgroups.
+
+Addressing data bias requires first understanding what biases may be present, then deciding how to respond. Options include collecting additional data to improve representation, applying techniques to rebalance or adjust data, using algorithmic approaches to mitigate bias during training, or accepting certain data and addressing bias through post-processing or process controls.
+
+### Data Documentation
+
+The Datasheets for Datasets framework, developed by researchers at Google and other institutions, provides a structured approach to documenting datasets used for AI. A datasheet documents:
+
+Motivation: why the dataset was created, who created it, and who funded it.
+
+Composition: what instances the dataset contains, how many, and what data is associated with each instance; whether there is a label or target; whether the dataset contains sensitive information.
+
+Collection process: how data was acquired, who collected it, what mechanisms were used, whether informed consent was obtained.
+
+Preprocessing: what preprocessing, cleaning, or labeling was done; whether raw data is available.
+
+Uses: what tasks the dataset has been used for, what uses are recommended, and what uses should be avoided.
+
+Distribution: how the dataset is distributed and under what license.
+
+Maintenance: who maintains the dataset and how updates are communicated.
+
+Organizations should adopt standardized dataset documentation practices, adapting frameworks like Datasheets to their needs. This documentation supports governance review, enables appropriate reuse, and provides evidence of diligence.
+
+![Data Governance for AI](../figures/figure_3_3_data_governance.svg){#fig-data-governance}
+
+*Figure 3.3: Data Governance for AI — The data pipeline with governance checkpoints from collection through training use.*
+
+## Training and Testing AI Models
+
+Once data is prepared, model training proceeds, followed by testing to validate that the trained model meets requirements. Governance during this phase ensures that training is conducted appropriately and that testing is rigorous enough to provide confidence in model performance.
+
+### Training Practices
+
+Model training should follow established practices that support reproducibility, traceability, and quality.
+
+Environment management ensures that training occurs in controlled, documented environments. What hardware is used? What software versions? What random seeds? Documenting these details enables reproduction of results and investigation of issues.
+
+Experiment tracking captures the parameters and results of training runs. What hyperparameters were used? What was the training loss trajectory? What validation performance was achieved? This tracking enables comparison of approaches and provides evidence of the development process.
+
+Separation of training, validation, and test data ensures honest performance evaluation. If the same data is used for training and evaluation, performance metrics will be inflated and will not reflect true generalization ability. Standard practice is to split data into training data used to fit model parameters, validation data used to tune hyperparameters and make development decisions, and test data used only for final evaluation.
+
+Regularization and other techniques to prevent overfitting help ensure models generalize to new data rather than merely memorizing training examples. Overfitting produces models that perform well on training data but poorly on new data.
+
+### Testing and Validation
+
+Testing AI systems differs from testing traditional software. Traditional software testing verifies that code behaves correctly according to specifications. AI testing must assess probabilistic performance on data the system has not seen before, a fundamentally different challenge.
+
+Functional testing verifies that the system produces outputs in the expected format and responds appropriately to various inputs including edge cases. This is similar to traditional software testing and should cover the range of inputs the system may receive.
+
+Performance testing evaluates model accuracy and related metrics on held-out test data. Metrics should align with the success criteria defined during use case specification. Common metrics include accuracy, precision, recall, F1 score, AUC-ROC for classification; mean squared error, mean absolute error, R-squared for regression; and task-specific metrics for other applications.
+
+Fairness testing evaluates whether performance is equitable across demographic groups and whether the system produces discriminatory outcomes. This requires defining appropriate fairness metrics for the application context, identifying relevant demographic groups, and computing metrics disaggregated by group. Common fairness metrics include demographic parity, equalized odds, and calibration across groups. Because different fairness metrics can be mathematically incompatible, organizations must make deliberate choices about which criteria to prioritize.
+
+Robustness testing evaluates model behavior under challenging conditions including adversarial inputs, distribution shift, and edge cases. Adversarial testing deliberately crafts inputs designed to cause model errors. Stress testing evaluates behavior under heavy load or resource constraints. Boundary testing evaluates behavior at the edges of input ranges.
+
+Explainability testing evaluates whether model decisions can be explained adequately for the intended context. Can the system provide meaningful explanations of individual predictions? Are those explanations accurate and useful? Do they meet regulatory requirements for explanation?
+
+Security testing evaluates vulnerability to attacks including data poisoning, model extraction, and adversarial examples. AI systems face unique security threats that traditional security testing may not address.
+
+### Documentation of Testing
+
+Testing should produce documentation that enables review and provides evidence of diligence. This documentation should include:
+
+Test plan describing what testing was performed, what data was used, what metrics were evaluated, and what pass/fail criteria were applied.
+
+Test results reporting actual performance on each metric, disaggregated as appropriate.
+
+Analysis of results explaining what the results mean, whether they meet requirements, and what limitations or concerns remain.
+
+Sign-off from appropriate reviewers indicating that testing was adequate and results are acceptable.
+
+## Documentation Throughout Development
+
+Documentation is not a final step before release but a continuous activity throughout development. Good documentation supports governance review, enables ongoing oversight, facilitates incident investigation, and demonstrates compliance.
+
+### Model Cards
+
+The Model Cards framework, developed by researchers at Google, provides a structured approach to documenting trained models. A model card documents:
+
+Model details: developer, version, type, training procedures, parameters, license.
+
+Intended use: primary intended uses, primary intended users, out-of-scope uses that should be avoided.
+
+Factors: groups, instrumentation, and environments for which model behavior may differ.
+
+Metrics: performance metrics used, why they were chosen, and any known limitations of those metrics.
+
+Evaluation data: description of evaluation datasets, preprocessing applied, and how data was obtained.
+
+Training data: description of training datasets, though this may be less detailed than evaluation data for proprietary reasons.
+
+Quantitative analyses: disaggregated performance metrics across relevant factors.
+
+Ethical considerations: known limitations, potential risks, and appropriate use guidance.
+
+Caveats and recommendations: guidance for users about appropriate and inappropriate applications.
+
+Organizations should adapt the Model Card framework to their needs, potentially adding sections required by regulations or internal policies. Model cards should be living documents updated as models are modified or as new information emerges about performance or limitations.
+
+### Technical Documentation for Compliance
+
+Various regulations impose specific documentation requirements. The EU AI Act requires technical documentation for high-risk AI systems covering:
+
+General description of the AI system, its intended purpose, and how it interacts with hardware and software.
+
+Detailed description of system elements including algorithms, data, and training processes.
+
+Information about data used for training, validation, and testing, including data governance measures and examination of biases.
+
+Metrics used to measure accuracy, robustness, and compliance with requirements, along with potentially discriminatory impacts.
+
+Description of human oversight measures.
+
+Description of the risk management system and risk assessments performed.
+
+Description of changes made during system lifecycle.
+
+Organizations should design their documentation practices to satisfy applicable regulatory requirements, generating required documentation as part of the development process rather than attempting to reconstruct it retroactively.
+
+### Maintaining Documentation
+
+Documentation must be maintained as systems evolve. Version control should track changes to documentation alongside changes to code and models. Review processes should ensure documentation remains accurate and complete. Retention policies should ensure documentation is available for the required period, which for regulatory compliance may extend years after system deployment.
+
+## Release, Monitoring, and Maintenance
+
+The completion of development does not end governance responsibility. Release decisions, deployment monitoring, and ongoing maintenance all require governance attention.
+
+### Release Readiness Assessment
+
+Before an AI system is released for deployment, a structured assessment should verify that all governance requirements have been satisfied. This assessment might address:
+
+Have all required impact assessments been completed and approved?
+
+Have all identified legal requirements been addressed?
+
+Does testing demonstrate that the system meets performance and fairness requirements?
+
+Is documentation complete and accurate?
+
+Are monitoring capabilities in place to detect issues after deployment?
+
+Have operational procedures been established for incident response?
+
+Have affected stakeholders been appropriately notified?
+
+This assessment should involve reviewers beyond the development team, providing independent verification that requirements have been met. The result should be a documented release decision with clear accountability.
+
+### Deployment Monitoring
+
+Once deployed, AI systems require ongoing monitoring to detect issues that may not have appeared during testing. Monitoring should address:
+
+Technical performance: Is the system functioning correctly? Are there errors, outages, or performance degradation?
+
+Model performance: Is the model achieving expected accuracy? Are there signs of performance degradation over time?
+
+Fairness: Are outcomes equitable across demographic groups? Are patterns emerging that suggest bias?
+
+Drift: Is the distribution of inputs changing in ways that might affect model validity? Are the relationships the model learned still accurate?
+
+User feedback: Are users raising concerns about system behavior? Are affected individuals reporting problems?
+
+Monitoring should be automated where possible, with alerts when metrics exceed thresholds. But automated monitoring should be complemented by periodic human review that can identify issues automated systems might miss.
+
+### Model Maintenance and Retraining
+
+AI models may need to be updated over time as data distributions change, as performance degrades, as new requirements emerge, or as better approaches become available. Governance should address when and how retraining occurs.
+
+Organizations should define criteria that trigger model updates: performance degradation beyond a threshold, detection of significant drift, regulatory changes requiring updates, or scheduled periodic reviews.
+
+Updates should go through appropriate governance review. A minor adjustment may require less scrutiny than the initial release, but significant changes should be evaluated for their potential impacts, and documentation should be updated accordingly.
+
+The process of updating models while they are deployed in production raises additional considerations. How is the transition managed? How is consistency maintained if some users receive outputs from the old model while others receive outputs from the new model? How is the update rolled back if problems are detected?
+
+### Incident Management
+
+Despite best efforts, AI systems sometimes cause harm or malfunction. Incident management processes should enable rapid detection, response, and learning.
+
+Detection requires monitoring systems and reporting channels that surface issues quickly. Users, affected individuals, and internal stakeholders should have clear paths to report concerns.
+
+Response should follow established procedures that address immediate harms, investigate root causes, and implement fixes. For serious incidents, this may require suspending or withdrawing the AI system until issues are resolved. Response plans should be developed before incidents occur, not improvised during crises.
+
+The EU AI Act requires providers of high-risk AI systems to report serious incidents to relevant authorities within defined timeframes. Organizations must have processes to identify incidents meeting reporting thresholds and to make required notifications.
+
+Learning from incidents improves future systems. Root cause analysis should identify not just immediate causes but systemic factors that allowed the incident to occur. Findings should inform updates to governance processes, development practices, and training materials.
+
+![Release and Monitoring Process](../figures/figure_3_4_release_monitoring.svg){#fig-release-monitoring}
+
+*Figure 3.4: Release and Monitoring Process — Release decisions, continuous monitoring, and incident response pathways.*
+
+## Privacy-Enhancing Technologies
+
+Privacy-enhancing technologies offer technical approaches to enable AI development and deployment while reducing privacy risks. AI governance professionals should understand these technologies and when they may be appropriate.
+
+### Anonymization and Pseudonymization
+
+Anonymization transforms data so that individuals cannot be identified, even by combining the data with other information. If data is truly anonymized, it falls outside the scope of data protection laws like the GDPR, which apply only to personal data.
+
+Achieving true anonymization is difficult, particularly for rich datasets. Research has demonstrated that individuals can often be re-identified from supposedly anonymized data by combining with other sources. Traditional techniques like removing direct identifiers may not be sufficient. More sophisticated approaches like k-anonymity, l-diversity, and t-closeness provide stronger guarantees but may reduce data utility.
+
+Pseudonymization replaces direct identifiers with pseudonyms, allowing data to be linked to individuals if the pseudonymization key is available but not otherwise. Pseudonymized data remains personal data under the GDPR, but pseudonymization is recognized as a security measure that may support certain processing activities.
+
+For AI training data, organizations should carefully evaluate anonymization claims and consider whether data can truly be said to be anonymized given the risk of re-identification.
+
+### Differential Privacy
+
+Differential privacy is a mathematical framework for quantifying and limiting the privacy loss from statistical queries or model training. A differentially private analysis provides guarantees that the output would be essentially the same whether any individual's data was included or not, limiting what can be learned about any individual from the results.
+
+Differential privacy can be applied to AI training, producing models with formal guarantees about privacy loss. The tradeoff is between privacy (measured by the privacy budget or epsilon parameter) and utility (model accuracy). Stronger privacy guarantees typically require accepting some reduction in accuracy.
+
+Major technology companies have deployed differentially private AI training for certain applications, and the technique is an active area of research. Governance programs should consider differential privacy for applications involving sensitive data, though the technical complexity may require specialized expertise.
+
+### Federated Learning
+
+Federated learning is an approach to training AI models on decentralized data without centralizing that data. Instead of collecting data into a central repository for training, federated learning trains models locally on data where it resides, sharing only model updates rather than raw data.
+
+This approach can reduce privacy risks by keeping sensitive data local. For example, a hospital collaboration could train a medical AI model without any hospital sharing patient data with others; each hospital trains on its local data and shares only learned model parameters.
+
+Federated learning has limitations. It requires appropriate infrastructure and coordination among participants. It may be vulnerable to certain attacks that infer information about training data from model updates. It does not eliminate privacy concerns but rather changes their character.
+
+### Synthetic Data
+
+Synthetic data is artificially generated data that mimics the statistical properties of real data without containing actual individual records. Training AI models on synthetic data rather than real data can reduce privacy risks if the synthetic data generation process provides adequate privacy protections.
+
+The challenge is generating synthetic data that captures enough of the real data's structure to train effective models while not capturing so much that it enables individual identification. Sophisticated approaches use generative models to produce synthetic data, potentially combining with differential privacy to provide formal guarantees.
+
+Synthetic data is an active area of development with growing commercial offerings. Governance programs should evaluate synthetic data approaches for applications where privacy constraints limit use of real data.
+
+## Chapter 3 Summary
+
+This chapter examined governance throughout AI development from initial use case definition through release and ongoing maintenance.
+
+Governance begins before development with use case intake and assessment that evaluates appropriateness, classifies risk, and defines success criteria. Impact assessments provide structured processes for identifying and planning to mitigate risks across categories including privacy, algorithmic fairness, and fundamental rights. Legal analysis identifies applicable requirements that become design constraints.
+
+Design decisions have lasting governance implications, affecting explainability, testability, and auditability. Understanding common failure modes including brittleness, hallucination, concept drift, and feedback loops enables governance processes that address them.
+
+Data governance for AI addresses quality including relevance, representativeness, completeness, and timeliness; provenance and lineage documentation; bias identification and mitigation; and standardized dataset documentation. Training practices should support reproducibility and honest evaluation. Testing must address performance, fairness, robustness, explainability, and security using metrics aligned with defined success criteria.
+
+Documentation including model cards and regulatory technical documentation should be produced continuously throughout development rather than retrospectively. Release readiness assessment verifies that governance requirements have been satisfied before deployment. Ongoing monitoring detects issues that testing did not reveal. Maintenance processes address model updates and retraining. Incident management enables rapid response when problems occur.
+
+Privacy-enhancing technologies including anonymization, differential privacy, federated learning, and synthetic data offer approaches to enable AI while managing privacy risks.
+
+## Chapter 3 Review Questions
+
+1. An organization is evaluating a proposed AI system that would analyze employee communications to identify workers at risk of leaving the company. The system would process email content, chat messages, and calendar data. During use case assessment, which consideration should receive the highest priority?
+
+2. An AI development team has completed model training and achieved accuracy metrics that exceed the targets defined during use case specification. However, when accuracy is disaggregated by demographic group, the team discovers significant disparities, with accuracy for one protected group substantially lower than for others. How should governance processes address this situation?
+
+3. A healthcare AI system trained to identify skin cancer from images performs well in clinical testing at the hospital where it was developed. After deployment to other hospitals, performance drops significantly, with increased false negative rates. Which common AI failure mode does this most likely represent?
+
+4. An organization is using data originally collected for customer service quality monitoring to train an AI model that will predict which customers are likely to cancel their subscriptions. Under the GDPR, how should the organization analyze the use of this data?
+
+5. A financial services company is preparing to release an AI credit scoring model. The release readiness assessment reveals that while required documentation is complete and testing shows adequate performance, the monitoring infrastructure is not yet operational. What should the governance process recommend?
+
+## References
+
+IAPP. AIGP Body of Knowledge, Version 2.0.1. International Association of Privacy Professionals, 2025.
+
+Mitchell, Margaret, et al. "Model Cards for Model Reporting." Proceedings of the Conference on Fairness, Accountability, and Transparency, 2019.
+
+Gebru, Timnit, et al. "Datasheets for Datasets." Communications of the ACM 64, no. 12 (2021).
+
+National Institute of Standards and Technology. AI Risk Management Framework 1.0. NIST AI 100-1, 2023.
+
+Government of Canada. Algorithmic Impact Assessment Tool. Treasury Board of Canada Secretariat, 2019.
+
+European Parliament and Council. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). Official Journal of the European Union, 2024.
+
+Dwork, Cynthia, and Aaron Roth. "The Algorithmic Foundations of Differential Privacy." Foundations and Trends in Theoretical Computer Science 9, no. 3-4 (2014).
+
+McMahan, Brendan, et al. "Communication-Efficient Learning of Deep Networks from Decentralized Data." Proceedings of AISTATS, 2017.
+
+Chouldechova, Alexandra. "Fair Prediction with Disparate Impact: A Study of Bias in Recidivism Prediction Instruments." Big Data 5, no. 2 (2017).
+
+Ogunseye, S. "They Can Include AI, But Should They? Teaching students about sensible solutions in the age of AI hype." Communications of the ACM Blog, 2025. https://cacm.acm.org/blogcacm/they-can-include-ai-but-should-they/
+
+---
+
+

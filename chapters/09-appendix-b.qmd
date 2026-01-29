@@ -1,0 +1,159 @@
+# Quick Reference Tables
+
+## B.1 EU AI Act Risk Classification Quick Reference
+
+**Prohibited AI (Article 5)**
+
+- Manipulative/deceptive techniques causing significant harm
+- Exploitation of vulnerabilities (age, disability, economic situation)
+- Social scoring by public authorities
+- Emotion inference in workplace/education (with exceptions)
+- Untargeted facial image scraping for databases
+- Real-time remote biometric identification (with limited exceptions)
+- Risk assessment predicting criminal behavior from profiling alone
+
+**High-Risk AI (Annex III)**
+
+Biometrics: identification, categorization, emotion recognition
+
+Critical infrastructure: safety components in infrastructure management
+
+Education: access, admission, assessment, monitoring, proctoring
+
+Employment: recruitment, screening, evaluation, promotion, termination, task allocation, monitoring
+
+Essential services: credit, insurance, emergency services, public benefits, creditworthiness assessment
+
+Law enforcement: risk assessment, polygraphs, evidence analysis, profiling, crime analytics
+
+Migration: risk assessment, verification, application examination
+
+Justice: research assistance, legal interpretation
+
+**Limited Risk (Article 50)**
+
+- Systems interacting with natural persons (disclosure required)
+- Emotion recognition / biometric categorization (disclosure required)
+- Deep fakes / synthetic content (labeling required)
+
+**Minimal Risk**
+
+- All other AI systems
+- No specific requirements; codes of conduct encouraged
+
+## B.2 Key Deadlines and Dates
+
+**EU AI Act Implementation**
+
+February 2, 2025: Prohibited AI practices effective
+August 2, 2025: GPAI model provisions effective; governance structures established
+August 2, 2026: Most provisions effective including high-risk requirements
+August 2, 2027: High-risk systems in Annex I products effective
+
+**US State Laws**
+
+Colorado AI Act: February 1, 2026 effective date
+NYC Local Law 144: July 5, 2023 effective date (already in effect)
+
+## B.3 NIST AI RMF Core Functions
+
+**GOVERN (GV)**
+Establish accountability, culture, and organizational commitment to AI risk management
+
+GV-1: Policies, processes, procedures
+GV-2: Accountability structures
+GV-3: Workforce diversity and expertise
+GV-4: Organizational culture
+GV-5: Stakeholder engagement
+GV-6: Integration with enterprise risk management
+
+**MAP (MP)**
+Understand context and identify risks
+
+MP-1: Context establishment
+MP-2: AI system characterization
+MP-3: Impact and harm identification
+MP-4: Risk and benefit analysis
+MP-5: AI actor identification
+
+**MEASURE (ME)**
+Assess, analyze, and track identified risks
+
+ME-1: Risk measurement approaches
+ME-2: Metric identification and tracking
+ME-3: Risk monitoring
+ME-4: Feedback mechanisms
+
+**MANAGE (MG)**
+Prioritize and treat risks
+
+MG-1: Risk prioritization
+MG-2: Risk treatment strategies
+MG-3: Risk response and recovery
+MG-4: Residual risk management
+
+## B.4 Common Fairness Metrics
+
+**Group Fairness Metrics**
+
+Demographic Parity (Statistical Parity): Positive outcomes are proportional across groups
+Formula: P(Ŷ=1|A=a) = P(Ŷ=1|A=b)
+
+Equalized Odds: True positive and false positive rates are equal across groups
+Formula: P(Ŷ=1|A=a,Y=y) = P(Ŷ=1|A=b,Y=y) for y ∈ {0,1}
+
+Equal Opportunity: True positive rates are equal across groups
+Formula: P(Ŷ=1|A=a,Y=1) = P(Ŷ=1|A=b,Y=1)
+
+Predictive Parity: Positive predictive values are equal across groups
+Formula: P(Y=1|Ŷ=1,A=a) = P(Y=1|Ŷ=1,A=b)
+
+Calibration: Predicted probabilities match actual outcomes across groups
+Formula: P(Y=1|S=s,A=a) = P(Y=1|S=s,A=b) for all s
+
+**Individual Fairness**
+
+Similar individuals should be treated similarly
+Requires defining similarity metric
+
+**Note**: Some fairness metrics are mathematically incompatible. Organizations must choose which metrics are appropriate for their context.
+
+## B.5 Documentation Requirements Comparison
+
+**GDPR Article 30 Records**
+
+- Purposes of processing
+- Categories of data subjects
+- Categories of personal data
+- Recipients
+- International transfers
+- Retention periods
+- Security measures
+
+**EU AI Act Technical Documentation (Annex IV)**
+
+- General description
+- Detailed description of AI system elements
+- Detailed description of monitoring, functioning, control
+- Risk management system
+- Data and data governance
+- Logging capabilities
+- Information about human oversight measures
+- Pre-determined changes
+- Metrics for accuracy, robustness, cybersecurity
+- Discriminatory impacts assessment
+
+**Model Cards (Mitchell et al.)**
+
+- Model details
+- Intended use
+- Factors (groups, instruments, environments)
+- Metrics
+- Evaluation data
+- Training data
+- Quantitative analyses
+- Ethical considerations
+- Caveats and recommendations
+
+---
+

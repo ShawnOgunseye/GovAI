@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Understanding How to Govern AI Deployment and Use</title>
+<title>4&nbsp; Governing AI Deployment – Governing AI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-development.html">Governing the AI Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/04-deployment.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-development.html">Governing the AI Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/04-deployment.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Governing AI Deployment</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -97,11 +97,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../cover.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
       <img src="../cover.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Governing AI</a> 
+    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -151,13 +154,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/03-development.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Development</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Governing AI Development</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-deployment.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Governing AI Deployment</span></span></a>
   </div>
 </li>
       </ul>
@@ -266,6 +269,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#due-diligence" id="toc-due-diligence" class="nav-link" data-scroll-target="#due-diligence">Due Diligence</a></li>
   <li><a href="#contractual-provisions" id="toc-contractual-provisions" class="nav-link" data-scroll-target="#contractual-provisions">Contractual Provisions</a></li>
   <li><a href="#ongoing-vendor-management" id="toc-ongoing-vendor-management" class="nav-link" data-scroll-target="#ongoing-vendor-management">Ongoing Vendor Management</a></li>
+  <li><a href="#open-source-ai-models" id="toc-open-source-ai-models" class="nav-link" data-scroll-target="#open-source-ai-models">Open Source AI Models</a></li>
   </ul></li>
   <li><a href="#deployment-options-and-their-governance-implications" id="toc-deployment-options-and-their-governance-implications" class="nav-link" data-scroll-target="#deployment-options-and-their-governance-implications"><span class="header-section-number">4.4</span> Deployment Options and Their Governance Implications</a>
   <ul class="collapse">
@@ -273,6 +277,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#on-premise-deployment" id="toc-on-premise-deployment" class="nav-link" data-scroll-target="#on-premise-deployment">On-Premise Deployment</a></li>
   <li><a href="#edge-deployment" id="toc-edge-deployment" class="nav-link" data-scroll-target="#edge-deployment">Edge Deployment</a></li>
   <li><a href="#hybrid-deployment" id="toc-hybrid-deployment" class="nav-link" data-scroll-target="#hybrid-deployment">Hybrid Deployment</a></li>
+  <li><a href="#model-customization-approaches" id="toc-model-customization-approaches" class="nav-link" data-scroll-target="#model-customization-approaches">Model Customization Approaches</a></li>
   </ul></li>
   <li><a href="#governing-ai-during-operation" id="toc-governing-ai-during-operation" class="nav-link" data-scroll-target="#governing-ai-during-operation"><span class="header-section-number">4.5</span> Governing AI During Operation</a>
   <ul class="collapse">
@@ -327,9 +332,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-development.html">Governing the AI Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/04-deployment.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-development.html">Governing the AI Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/04-deployment.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Governing AI Deployment</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Deployment and Use</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Governing AI Deployment</span></h1>
 </div>
 
 
@@ -424,6 +429,15 @@ Figure&nbsp;4.1: AI Deployment Governance Framework
 <p>Compliance monitoring tracks whether the provider continues to meet contractual and regulatory obligations. Regular review should verify that required documentation is current, required notifications are being made, and representations remain accurate.</p>
 <p>Relationship management maintains communication with the provider about system issues, upcoming changes, and evolving requirements. Organizations should ensure they have appropriate contacts and escalation paths at the provider.</p>
 <p>Risk assessment should be updated periodically and when circumstances change. A provider that was appropriate when selected may become inappropriate if their practices change, their financial condition weakens, or organizational requirements evolve.</p>
+</section>
+<section id="open-source-ai-models" class="level3">
+<h3 class="anchored" data-anchor-id="open-source-ai-models">Open Source AI Models</h3>
+<p>Open source AI models present distinct governance considerations compared to commercial vendor relationships. Models released under open source licenses offer advantages including transparency into model architecture and training approaches, freedom to modify and adapt models for organizational needs, and avoidance of vendor lock-in. However, they also introduce specific risks that governance programs must address.</p>
+<p>License compliance requires understanding the terms under which the model is released. Open source AI licenses vary significantly. Some permit commercial use freely; others impose restrictions on commercial deployment or require attribution. Some licenses require that modifications be shared under the same license terms. Organizations should evaluate whether license terms are compatible with intended use cases and whether compliance obligations can be met.</p>
+<p>Support and maintenance differ from commercial relationships. Open source models typically lack guaranteed support, service level agreements, or committed maintenance schedules. Organizations deploying open source models assume responsibility for monitoring security vulnerabilities, applying updates, and addressing issues that arise. This requires technical capability that may not be needed with fully managed commercial services.</p>
+<p>Provenance and training data transparency vary across open source releases. Some projects provide detailed documentation of training data sources, preprocessing, and known limitations. Others offer minimal information. Organizations should assess whether available documentation is sufficient for governance needs including impact assessments and compliance obligations.</p>
+<p>Liability allocation differs fundamentally from commercial contracts. Open source licenses typically disclaim warranties and limit liability. If an open source model causes harm, the organization deploying it generally bears full responsibility. There is no vendor to pursue for indemnification or remediation support.</p>
+<p>Community dynamics affect long-term viability. Open source projects depend on community contributions and maintainer commitment. A project that is actively maintained today may become abandoned. Organizations should assess project health indicators including contributor activity, release frequency, and community engagement when making deployment decisions.</p>
 <div id="fig-third-party" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-third-party-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -463,6 +477,14 @@ Figure&nbsp;4.2: Third-Party AI Governance Lifecycle
 <h3 class="anchored" data-anchor-id="hybrid-deployment">Hybrid Deployment</h3>
 <p>Many organizations use hybrid approaches combining cloud, on-premise, and edge deployment for different systems or different aspects of the same system. For example, model training might occur in the cloud while inference runs on-premise, or a mobile app might use on-device AI for routine processing while calling cloud services for complex requests.</p>
 <p>Hybrid deployment requires governance approaches that address each deployment context and the interactions between them. Data flows between environments must be understood and protected. Consistency must be maintained when the same model runs in different environments.</p>
+</section>
+<section id="model-customization-approaches" class="level3">
+<h3 class="anchored" data-anchor-id="model-customization-approaches">Model Customization Approaches</h3>
+<p>Organizations deploying AI models—whether proprietary or third-party—often customize them to improve performance for specific use cases. These customization approaches have distinct governance implications.</p>
+<p>Fine-tuning adjusts a pre-trained model’s parameters using organization-specific data. This creates a derivative model that reflects both the original training and the fine-tuning data. Governance considerations include ensuring the fine-tuning data is appropriate and properly governed, understanding how fine-tuning affects model behavior and safety properties, and maintaining documentation of what data was used and how the model changed.</p>
+<p>Retrieval Augmented Generation (RAG) supplements a language model with retrieved information from organizational knowledge bases at inference time. Rather than changing the model itself, RAG provides context that shapes outputs. Governance considerations include ensuring the knowledge base contains accurate and appropriate information, managing access controls for sensitive retrieved content, and understanding how retrieval failures affect system behavior.</p>
+<p>Prompt engineering shapes model behavior through carefully crafted instructions without modifying the model or providing additional data. System prompts, few-shot examples, and structured output formats can significantly affect how models perform. Governance considerations include documenting and version-controlling prompts, testing prompt effectiveness across scenarios, and understanding prompt injection risks.</p>
+<p>Each customization approach affects the division of responsibility between model providers and deploying organizations. Fine-tuning creates greater organizational responsibility for model behavior. RAG makes the organization responsible for knowledge base quality. Prompt engineering makes the organization responsible for instruction design. Governance programs should address how customization affects accountability and what controls are appropriate for each approach.</p>
 </section>
 </section>
 <section id="governing-ai-during-operation" class="level2" data-number="4.5">
@@ -1136,8 +1158,8 @@ Figure&nbsp;4.4: AI Governance in Enterprise Risk Management
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/03-development.html" class="pagination-link" aria-label="Understanding How to Govern AI Development">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding How to Govern AI Development</span></span>
+      <a href="../chapters/03-development.html" class="pagination-link" aria-label="Governing AI Development">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Governing AI Development</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

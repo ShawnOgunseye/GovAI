@@ -1,0 +1,43 @@
+# About the Author {.unnumbered}
+
+**Shawn Ogunseye, PhD** is a researcher and educator working at the intersection of artificial intelligence, information quality, and digital transformation. His work focuses on how organizations can harness AI responsibly while navigating the complex governance challenges that emerge when intelligent systems meet human institutions.
+
+Dr. Ogunseye brings both academic rigor and practical perspective to AI governance. Before entering academia, he accumulated extensive industry experience in software development and IT management. He earned his PhD in Information Systems from Memorial University of Newfoundland, Canada, and served as a postdoctoral research and teaching fellow at the Sauder School of Business, University of British Columbia.
+
+His research on intelligence augmentation, data quality, and the sociotechnical dimensions of AI has been published in leading venues including *AI & Society*, *Communications of the ACM*, and proceedings of the International Conference on Information Systems (ICIS). He has organized workshops on the social impact of AI for the Association for the Advancement of Artificial Intelligence (AAAI) and serves as Secretary for the AIS Special Interest Group on Systems Analysis and Design (SIGSAND).
+
+Dr. Ogunseye is an award-winning educator, recognized for innovation in teaching. He is a member of the Association for Computing Machinery (ACM) and the Association for Information Systems (AIS), and contributes to advancing the field through service on conference committees and editorial boards.
+
+---
+
+## Connect {.unnumbered}
+
+::: {.callout-tip}
+## Stay Updated
+This is a living book. Follow the author for updates on new chapters, corrections, and supplementary materials.
+:::
+
+**LinkedIn:** [linkedin.com/in/shawnogunseye](https://www.linkedin.com/in/shawnogunseye)
+
+**Web:** [ogunseye.com](https://ogunseye.com)
+
+**Email:** shawn[at]ogunseye[.]com
+
+---
+
+## Also by Shawn Ogunseye {.unnumbered}
+
+**Selected Publications:**
+
+- "Letter to the Head of AI" — *AI & Society* (2025)
+- "They Can Include AI, But Should They? Teaching students about sensible solutions in the age of AI hype" — *Communications of the ACM Blog* (2025)
+- "Stop Training Your Competitor's AI" — *Communications of the ACM Blog* (2025)
+- "Agile Development: The Promise, the Reality, the Opportunity" — *CAiSE Workshop on Agile Information Systems Engineering* (2024)
+
+---
+
+## Acknowledgments {.unnumbered}
+
+This book reflects the contributions of many colleagues, students, and practitioners who have shaped my thinking about AI governance. Special thanks to the AI governance community whose questions and challenges continue to push the field forward.
+
+To Dolapo, Tara, and Tessa—for the patience, support, and joy that make all work meaningful.

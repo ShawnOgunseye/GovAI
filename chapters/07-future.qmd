@@ -1,0 +1,383 @@
+# Ongoing Issues and Future Directions
+
+## Introduction
+
+AI governance is a young field addressing a rapidly evolving technology within shifting legal and social landscapes. Many fundamental questions remain unsettled: how liability for AI harms should be allocated, how intellectual property law should adapt to AI, what the AI auditing profession should look like, how workforces will transform as AI capabilities expand, and how individuals who prefer not to interact with AI can be accommodated.
+
+This chapter examines ongoing issues that AI governance professionals should monitor and prepare for, even where clear answers have not yet emerged. It also looks toward future directions, considering how the field may develop as AI capabilities advance, regulatory frameworks mature, and organizational practices evolve. The goal is not to predict the future but to prepare readers to engage with emerging challenges as they arise.
+
+The issues discussed here appear in the AIGP Body of Knowledge as topics requiring awareness without necessarily having settled best practices. AI governance professionals should understand these issues, track developments, and help their organizations navigate uncertainty as clarity emerges.
+
+## Liability Frameworks for AI Harms
+
+When AI systems cause harm, questions arise about who bears legal responsibility. Traditional liability frameworks were not designed for AI's distinctive characteristics, and how those frameworks will adapt remains unsettled.
+
+### Challenges in AI Liability
+
+AI complicates traditional liability analysis in several ways.
+
+Causation is difficult to establish. When a deep learning model contributes to a harmful outcome, tracing causation through millions of parameters and learned patterns may be practically impossible. Traditional liability often requires showing how the defendant's conduct caused the plaintiff's harm; AI opacity can make this showing difficult.
+
+Multiple parties contribute. An AI system might involve a model developed by one company, trained on data from multiple sources, deployed by another company, operating on infrastructure from a cloud provider. When harm occurs, identifying which party's contribution was legally significant may be contentious.
+
+Foreseeability is uncertain. Liability often depends on whether harm was foreseeable. AI systems can behave in unexpected ways, and developers may genuinely not have anticipated harmful behaviors that emerged from learning processes they did not fully control.
+
+Existing categories may not fit. Product liability traditionally distinguishes manufacturing defects (individual units deviate from design) from design defects (the design itself is dangerous). AI "defects" may not fit these categories neatly.
+
+### Emerging Approaches
+
+Jurisdictions are developing approaches to AI liability, though consensus has not emerged.
+
+The EU is most advanced with its proposed AI Liability Directive, which would establish rebuttable presumptions that make it easier for claimants to establish AI-related causation. If a defendant failed to comply with certain duties of care, and harm occurred that the compliance failure made more likely, the defendant would be presumed to have caused the harm unless they could prove otherwise. The directive would also require defendants to disclose evidence relevant to AI systems.
+
+The United States has no comprehensive AI liability framework, leaving courts to apply existing doctrines with uncertain results. Product liability, negligence, and other traditional theories apply, but how they apply to AI is being worked out case by case.
+
+Some propose strict liability for certain AI uses, holding deployers liable for harms without requiring proof of fault. This approach would simplify liability determination and create strong incentives for care, but critics argue it could chill beneficial AI innovation.
+
+### Implications for Governance
+
+Even without settled liability rules, governance professionals can take steps to manage liability exposure.
+
+Documentation of diligence provides evidence that the organization acted reasonably, which matters under most liability standards. Impact assessments, testing records, monitoring data, and incident response documentation all support defense against liability claims.
+
+Insurance can transfer some financial risk, though AI-specific coverage is still developing. Organizations should evaluate their insurance coverage for AI-related claims and consider whether specialized coverage is warranted.
+
+Contractual allocation addresses liability as between contracting parties, even if it does not affect third-party claims. Vendor contracts, deployment agreements, and terms of service should address AI-related liability allocation.
+
+Risk-proportionate use means avoiding high-risk AI applications where the organization is not prepared to accept potential liability. If liability exposure for an AI application is unacceptable, the application should not proceed.
+
+## Intellectual Property and AI
+
+AI intersects with intellectual property law in novel ways that existing frameworks do not cleanly address.
+
+### Training Data and Copyright
+
+Training AI models on copyrighted works raises unresolved questions. Model training involves making copies of training data, which implicates reproduction rights. The trained model arguably derives from those works, which implicates derivative work rights.
+
+Whether training on copyrighted works constitutes fair use (in the United States) or falls under other exceptions (in other jurisdictions) is unsettled. Major lawsuits are pending, and outcomes will significantly shape the legal landscape for AI training.
+
+Organizations training AI models should understand their training data sources and the intellectual property implications. Using data without clear rights creates legal risk that may materialize as case law develops.
+
+### AI-Generated Outputs and Copyright
+
+Whether AI-generated outputs are copyrightable is contested. The U.S. Copyright Office has stated that copyright requires human authorship, and works created autonomously by AI without creative human involvement are not copyrightable. This leaves AI-generated content in a precarious position where it may lack copyright protection.
+
+The human authorship requirement does not mean AI-assisted works are never copyrightable. Works where humans provide creative input and use AI as a tool may qualify for copyright based on the human contribution. The boundary between AI-as-tool and AI-as-creator is not clearly defined.
+
+Organizations should understand the copyright status of AI-generated content they create or rely upon. Content that is not copyrightable cannot be protected from copying by others.
+
+### Patents and AI
+
+Patent systems globally have determined that AI cannot be listed as an inventor; only humans can be inventors for patent purposes. This does not prevent patenting inventions developed with AI assistance, provided a human qualifies as inventor.
+
+AI may increasingly contribute to patentable inventions, raising questions about inventorship that current frameworks do not fully address. If AI contributes the inventive step while humans merely implement or select from AI-generated options, does human inventorship still apply?
+
+### Trade Secrets and AI
+
+Trade secret law may protect AI-related assets including trained models, training data, and development techniques, provided they meet trade secret requirements: they derive economic value from secrecy and are subject to reasonable secrecy measures.
+
+Maintaining trade secret protection requires ongoing diligence. Organizations must implement and maintain secrecy measures appropriate to the asset's value and the threats it faces.
+
+## The Emerging AI Auditing Profession
+
+As AI regulation expands and organizational commitment to responsible AI grows, demand increases for independent verification of AI systems and practices. An AI auditing profession is emerging to meet this demand, though it remains in early stages.
+
+### Current State
+
+AI auditing is currently fragmented. Some traditional audit firms are building AI audit capabilities. Specialized AI audit firms are emerging. Academic researchers conduct AI audits as research projects. Regulatory bodies conduct examinations of AI in regulated industries. Civil society organizations conduct accountability investigations.
+
+No single professional framework governs AI auditing comparable to financial auditing frameworks. Standards for what AI audits should examine, what methodologies are appropriate, and what assurance audits can provide are still developing.
+
+### Challenges in AI Auditing
+
+Several challenges complicate AI audit practice.
+
+Technical complexity requires auditors to understand AI systems deeply enough to evaluate them meaningfully. This requires technical expertise that traditional auditors may lack.
+
+Access limitations constrain what auditors can examine. Organizations may not provide full access to training data, model parameters, or system operations. Black-box testing may be all that is possible.
+
+Dynamic systems change over time. An audit conducted at one point may not reflect system behavior after subsequent updates or learning.
+
+Standard setting is incomplete. Without agreed standards for what constitutes adequate AI, auditors must make judgment calls that may be contested.
+
+Assurance limitations mean auditors cannot guarantee AI system behavior. Audit findings reflect what was observed during the audit period using available methods; they cannot promise future performance.
+
+### Emerging Frameworks
+
+Several efforts aim to develop AI auditing frameworks.
+
+The NIST AI Risk Management Framework provides a structure for AI risk management that auditors can use as a reference, though it is not specifically an audit standard.
+
+ISO/IEC 42001 provides requirements for AI management systems that can be audited for conformance.
+
+Regulatory requirements like the EU AI Act create audit-relevant obligations that auditors can verify.
+
+Industry initiatives are developing sector-specific audit frameworks, such as frameworks for AI in financial services or healthcare.
+
+### Implications for Governance
+
+Governance professionals should prepare for increased audit scrutiny of AI systems.
+
+Documentation practices should produce audit-ready records. If auditors will want to see evidence of testing, monitoring, incident response, and governance processes, that evidence should exist and be accessible.
+
+Internal audit should build AI audit capabilities or ensure access to external expertise. As AI governance matures, internal audit attention to AI will increase.
+
+External audit relationships should address AI. Whether through existing audit relationships or specialized AI auditors, organizations should have access to independent AI assurance.
+
+Audit readiness should be part of AI governance maturity. Organizations should periodically assess whether their AI systems and practices could withstand audit scrutiny.
+
+## Workforce Transformation
+
+AI is transforming how work gets done, affecting both how workers use AI and which work AI might displace. These workforce implications are significant ongoing issues for organizations and society.
+
+### AI Augmentation
+
+AI increasingly augments worker capabilities rather than replacing workers entirely. Knowledge workers use AI assistants for research, writing, and analysis. Customer service workers use AI to handle routine inquiries while focusing on complex issues. Creative workers use AI for ideation and production assistance.
+
+Effective AI augmentation requires attention to how AI and humans work together. Poor integration can frustrate workers, reduce quality, or create new risks. Effective integration amplifies human capabilities while maintaining appropriate human judgment.
+
+Training workers to use AI effectively becomes an organizational priority. Workers need to understand what AI can and cannot do, how to evaluate AI outputs critically, when to rely on AI and when to exercise independent judgment, and how to identify when AI is making errors.
+
+### Workforce Displacement
+
+AI may reduce demand for certain types of work, potentially displacing workers. While economists debate long-term employment effects, transition disruptions are real.
+
+Some tasks are more susceptible to AI displacement: routine cognitive work, pattern matching, data processing, and content generation among them. Work requiring physical presence, complex interpersonal interaction, novel problem-solving, and creative judgment may be more resistant.
+
+Organizations face choices about how to manage AI's workforce impacts. Some approaches prioritize automation efficiency; others prioritize worker retention and transition. Organizational values, stakeholder expectations, and strategic considerations all inform these choices.
+
+### Worker Well-being
+
+AI in the workplace affects worker well-being in ways governance should consider.
+
+Surveillance concerns arise when AI monitors worker performance, communications, or behavior. Intensive monitoring can feel dehumanizing and may affect mental health and job satisfaction.
+
+Autonomy concerns arise when AI directs work rather than supporting it. Workers who feel controlled by algorithms may experience reduced job satisfaction and engagement.
+
+Skill concerns arise when AI handles tasks that previously developed worker capabilities. Workers may lose skills they do not practice, potentially reducing their value and adaptability.
+
+Job quality concerns arise when AI changes the nature of work. Work that was varied may become routine; work that was meaningful may become mechanical.
+
+Governance should consider these impacts alongside efficiency gains. Sustainable AI adoption requires attention to the humans who work alongside AI.
+
+### Implications for Governance
+
+Workforce considerations should be part of AI governance.
+
+Workforce impact assessment should be part of evaluating proposed AI applications. How will this AI affect workers? What training or support do they need? What displacement might occur?
+
+Worker voice should inform AI decisions. Workers who will use or be affected by AI systems have perspectives that governance should consider.
+
+Transition support should be part of AI deployment planning. When AI will displace work, plans should address affected workers.
+
+Well-being monitoring should track AI's effects on workers. If AI is harming well-being, adjustments may be needed.
+
+## Opt-Out Rights and Alternatives
+
+As AI becomes ubiquitous, questions arise about whether and how individuals can avoid AI interactions. Some people prefer not to interact with AI for various reasons: distrust of technology, desire for human connection, concerns about privacy, or simply personal preference.
+
+### The Opt-Out Challenge
+
+Providing meaningful opt-out is challenging when AI is deeply integrated into products and services.
+
+Practical challenges arise when AI is embedded in systems rather than offered as a separate option. If a company uses AI for customer service, offering a non-AI alternative may require maintaining parallel systems.
+
+Quality differences may exist between AI and non-AI alternatives. If the AI option is faster, more accurate, or otherwise better, the non-AI alternative may be inferior in ways that disadvantage those who opt out.
+
+Discrimination concerns arise if opt-out is harder for some populations. If opting out requires technical sophistication, digital access, or awareness that AI is involved, some people may be unable to exercise opt-out even if they would prefer to.
+
+Business model challenges arise when AI is essential to the service. If AI enables pricing, availability, or features that make the service viable, requiring non-AI alternatives may not be economically feasible.
+
+### Legal Requirements
+
+Some legal frameworks require alternatives to AI processing.
+
+GDPR Article 22 provides the right not to be subject to decisions based solely on automated processing with legal or significant effects. This right includes the ability to obtain human intervention. However, significant exceptions apply, and what constitutes meaningful human intervention is not fully defined.
+
+Emerging laws in some jurisdictions require human alternatives in specific contexts. For example, some laws require human review options for AI in employment decisions.
+
+Consumer protection principles may require that essential services not be conditioned entirely on AI interaction, though this principle is not universally established.
+
+### Implications for Governance
+
+Governance should address opt-out and alternatives where appropriate.
+
+Assessment should identify where individuals might reasonably want to avoid AI interaction. Consequential decisions, sensitive contexts, and situations where human connection matters may warrant alternatives.
+
+Design should enable alternatives where they are appropriate. Building in human pathways from the start is easier than retrofitting them later.
+
+Communication should inform individuals about AI involvement so they can make informed choices. Transparency enables autonomy even if full opt-out is not feasible.
+
+Equity should ensure that alternatives do not disadvantage those who use them. If opting out of AI means worse service, the alternative is not meaningful.
+
+## Preventive Governance and the Limits of Point-in-Time Consent
+
+Much of contemporary AI governance operates reactively. Organizations deploy systems, regulators respond with rules, auditors examine compliance after the fact, and enforcement arrives when harms have already occurred. This pattern—build first, govern later—has deep roots in technology regulation. But AI systems present characteristics that make reactive governance structurally inadequate.
+
+### The Reactive Governance Problem
+
+Consider the typical consent interaction: a user clicks "I agree" to terms permitting data use for "service improvement and AI training." At that moment, neither party can fully specify what this means. The organization doesn't know what models it will build in three years, what capabilities those models will have, or how the data might combine with other sources. The user certainly doesn't know. The consent is real, but what exactly has been consented to?
+
+This is not a disclosure problem that better privacy policies can solve. It is a temporal problem: the meaning of the agreement is constituted by future events that haven't happened yet.
+
+### Three Conditions That Undermine Point-in-Time Consent
+
+Traditional consent works reasonably well when you know what you're agreeing to, when you can change your mind later, and when the consequences are bounded. AI and data systems often fail all three conditions.
+
+**Practical irreversibility.** Once data enters training pipelines, the effects propagate in ways that are difficult or impossible to undo. A model trained on your data doesn't have a "delete this person's contribution" button. Derived inferences, downstream models, and knowledge representations persist even after source data deletion. The GDPR's right to erasure runs into technical limits when erasure cannot meaningfully reach the artifacts that matter.
+
+**Compounding downstream value.** Data and model capabilities compound over time. Your browsing history from 2019 might be marginally useful alone, but combined with millions of other users' data, processed through increasingly sophisticated models, and integrated into systems you've never heard of, it becomes part of something far more valuable—and potentially more consequential—than anything you could have anticipated. The value extracted grows geometrically while any compensation or control you retained remains fixed at the moment of agreement.
+
+**Temporally unknowable consequences.** Future uses depend on technologies that don't exist yet, business models not yet invented, and regulatory environments not yet established. When you agreed to let a photo app use your images in 2018, you weren't agreeing to facial recognition training—that use emerged from later capabilities and decisions. The downstream meaning of consent is constructed by subsequent events, not merely revealed.
+
+When all three conditions hold, consent becomes a weak legitimating mechanism. It finalizes authority before anyone can know what that authority will mean.
+
+### From Reactive to Preventive Governance
+
+Preventive governance doesn't abandon consent—it restructures how and when authority settles. Instead of treating agreement as a single legitimating event, preventive governance distributes authorization across time, binding it to actual uses rather than hypothetical possibilities.
+
+The core insight is that if the problem is temporal, the solution must be temporal. Governance must shape the conditions under which authority becomes final, not merely respond after finalization has occurred.
+
+This is not paternalism. The mechanisms don't override user choices or prohibit transactions. They create structured opportunities for reconsideration as circumstances change, ensuring that authority settles only when its meaning can be meaningfully understood.
+
+### Mechanisms for Preventive Governance
+
+Several design patterns can implement preventive governance in practice.
+
+**Phased and staged permissions.** Rather than requesting all possible permissions at onboarding, systems can stage authorization to match actual use categories. A minimal tier covers what's strictly necessary for service delivery. Additional tiers—for personalization, for model training, for external sharing—activate only when those uses actually arise, with specific disclosure tied to concrete purposes rather than speculative future possibilities. This approach aligns authority settlement with actual use. Users aren't asked to authorize model training until the organization actually wants to use their data for training, at which point both parties have clearer understanding of what's involved.
+
+**Time-bounded authority with renewal.** Permissions, especially for high-uncertainty uses, can expire unless renewed. Rolling renewal cycles—annually for training rights, more frequently for sharing permissions—prevent "perpetual consent" and force periodic re-legitimation as contexts evolve. This doesn't mean bombarding users with renewal requests. Low-risk operational permissions remain stable. The renewal requirement applies to high-risk, high-uncertainty authorizations where the gap between consent time and consequence time is largest.
+
+**Usage-contingent escalation.** Systems can detect when usage patterns change materially and require re-authorization at the moment of change. Triggers might include: data entering training pipelines for the first time, new inference categories being created (especially sensitive attributes), sharing with new recipient classes, or use in high-stakes decision support. This couples consent to concrete use rather than hypothetical possibility. The user who agreed to personalization isn't automatically enrolled in model training—that transition requires a new authorization tied to the specific new use.
+
+**Renegotiation windows.** When downstream uses change materially, users can be offered renegotiation rather than binary accept/exit choices. Options might include accepting revised terms, accepting with constraints, accepting with compensation alternatives, or declining expanded uses while retaining core service access. This makes authority settlement conditional rather than absolute. Material changes reopen the legitimacy question rather than hiding behind original consent.
+
+**Quarantine and cooling-off periods.** For high-irreversibility transfers, a deliberate delay before authority becomes final creates space for reflection. Data might enter a quarantine buffer before inclusion in training corpora. Higher permission tiers might activate only after a waiting period following initial grant. This adds temporal structure without prohibiting the transaction. It acknowledges that the moment of agreement is often not the best moment for final settlement.
+
+### Implementing Preventive Governance
+
+These mechanisms require both technical and organizational implementation.
+
+**Technical requirements** include: consent state machines that track authorization across tiers and time, logging that links downstream uses to consent state at time of use, trigger detection for usage-contingent escalation, renewal scheduling and notification systems, and quarantine buffers for high-risk processing.
+
+**Organizational requirements** include: governance roles with authority over tier definitions and trigger criteria, processes for reviewing material changes and renegotiation terms, integration with model lifecycle governance so that training gates connect to consent states, and audit capabilities that can verify consent-to-use linkage.
+
+The RACI matrix for preventive governance typically involves:
+
+- **Product teams** defining staged permissions and user flows
+- **Privacy functions** defining risk tiers and decay schedules
+- **Legal** ensuring contract terms accommodate staged authority
+- **AI governance or model risk** connecting model lifecycle gates to consent triggers
+- **Data engineering** building separate processing paths and traceability infrastructure
+
+### Tensions and Tradeoffs
+
+Preventive governance is not without costs or tensions.
+
+**Friction concerns.** Critics argue that staged permissions and renewal requirements add friction that impedes adoption and innovation. The response is proportionality: low-risk permissions remain low-friction, while high-risk authorizations bear appropriately higher process costs. The alternative—bundling all permissions into a single low-friction click—merely shifts costs onto users who bear consequences they couldn't anticipate.
+
+**Technical complexity.** Implementing consent state machines, trigger detection, and use-to-consent traceability requires engineering investment. But this infrastructure increasingly aligns with regulatory expectations. The EU AI Act's logging and documentation requirements, deployer transparency obligations, and incident reporting duties all assume traceability that preventive governance also requires.
+
+**Competitive dynamics.** Organizations that implement preventive governance may face competitive disadvantage against those that extract maximum permissions through simpler flows. This is a collective action problem that regulation can address—but organizations with strong governance postures may also benefit from trust premiums and reduced compliance risk.
+
+**Imperfect reversibility.** Even with quarantine buffers and staged rollout, some irreversibility remains. Models can't always be untrained. Preventive governance reduces harm from premature settlement but doesn't guarantee full reversibility. Honesty about these limits is part of the transparency that preventive governance demands.
+
+### Implications for AI Governance Professionals
+
+For practitioners, preventive governance suggests several action areas.
+
+**Assess current consent architecture.** Where does your organization rely on point-in-time consent for uses whose meaning will emerge later? What permissions bundle together uses with very different risk profiles?
+
+**Identify high-risk authorization gaps.** Which data uses involve irreversibility, compounding value, and unknowable downstream consequences? These are candidates for staged permissions, time bounds, or escalation triggers.
+
+**Connect consent to model lifecycle.** Does your model governance process know what consent state applies to training data? Can you verify that models in production were trained under appropriate authorization?
+
+**Design for renegotiation.** When your organization's capabilities or uses change materially, do affected individuals have meaningful options beyond accept-all or exit-entirely?
+
+**Build traceability.** Can you demonstrate, for any given downstream use, what consent state authorized it and when? This capability increasingly matters for regulatory compliance and will matter more.
+
+Preventive governance represents a maturation of the consent paradigm—not its abandonment. It acknowledges that legitimacy requires more than a moment of agreement when consequences unfold over time. For AI governance professionals, this framing offers both a diagnostic lens for current gaps and a design orientation for more durable governance architectures.
+
+## Looking Forward
+
+AI governance will continue to evolve as technology advances, regulation matures, and organizational practices develop. Several directions seem likely.
+
+### Regulatory Convergence and Divergence
+
+Some regulatory convergence is likely as jurisdictions learn from each other and international coordination efforts continue. Core concepts like risk-based regulation, transparency requirements, and human oversight are appearing across jurisdictions.
+
+Divergence will also persist as different jurisdictions prioritize different values and approaches. The EU's comprehensive regulatory approach, China's sector-specific regulations, and the United States' fragmented approach reflect different governance philosophies that may not converge.
+
+Organizations operating globally will need governance approaches that can accommodate multiple regulatory frameworks while maintaining coherent practices.
+
+### Maturing Standards and Assurance
+
+AI governance standards will continue to develop and mature. ISO standards, industry frameworks, and regulatory requirements will provide increasingly detailed guidance on what good AI governance looks like.
+
+AI assurance and auditing will professionalize. Standards for AI audits will develop, professional credentials will emerge, and independent assurance will become more common and more meaningful.
+
+Maturity models will help organizations assess their AI governance capabilities and identify improvement priorities.
+
+### Technical Advances in Governance
+
+Technical approaches to governance will advance. Explainability techniques will improve, making AI decisions more interpretable. Fairness tools will become more sophisticated and widely deployed. Privacy-enhancing technologies will enable AI on sensitive data with stronger protections.
+
+AI will be used to govern AI. Automated compliance checking, continuous testing, and monitoring systems will use AI to provide governance at the speed and scale that AI systems require.
+
+However, technical solutions will not eliminate the need for human judgment on governance questions. Technical tools can support governance; they cannot replace the human deliberation that governance ultimately requires.
+
+### Organizational Evolution
+
+AI governance will become more embedded in organizational operations. Separate AI governance functions may merge into enterprise risk management, privacy, or compliance functions as AI governance becomes normalized.
+
+AI literacy will become a basic organizational competency. As AI becomes ubiquitous, everyone will need some understanding of AI capabilities, limitations, and appropriate use.
+
+Governance by design will become standard practice. Building governance into AI development from the start, rather than adding it afterward, will become the expected approach.
+
+## Chapter Summary
+
+This chapter examined ongoing issues where AI governance questions remain unsettled and future directions where the field may evolve.
+
+Liability frameworks for AI harms remain unclear as traditional doctrines adapt to AI's distinctive characteristics. Causation, multi-party contribution, foreseeability, and categorical fit all present challenges. The EU is developing AI-specific liability rules; other jurisdictions are working within existing frameworks. Governance should emphasize documentation, insurance, contractual allocation, and risk-proportionate use.
+
+Intellectual property and AI raises questions about training data copyright, AI-generated output copyrightability, patent inventorship, and trade secret protection. Organizations should understand the intellectual property implications of their AI activities and prepare for evolving legal treatment.
+
+The AI auditing profession is emerging but immature. Technical complexity, access limitations, dynamic systems, incomplete standards, and assurance limitations all challenge audit practice. Governance should prepare for increased audit scrutiny through documentation, internal audit capability, external audit relationships, and audit readiness.
+
+Workforce transformation includes AI augmentation of workers, potential displacement, and effects on worker well-being. Governance should assess workforce impacts, incorporate worker voice, plan transition support, and monitor well-being.
+
+Opt-out rights and alternatives present challenges when AI is deeply integrated. Legal requirements in some contexts mandate human alternatives. Governance should assess where alternatives are appropriate, design to enable them, communicate about AI involvement, and ensure equity.
+
+Preventive governance addresses the structural limitations of point-in-time consent for AI systems characterized by irreversibility, compounding value, and unknowable downstream consequences. Mechanisms including phased permissions, time-bounded authority, usage-contingent escalation, renegotiation windows, and quarantine periods can distribute authorization across time rather than finalizing it prematurely. This represents an emerging area where governance professionals can lead organizational practice.
+
+Looking forward, regulatory convergence and divergence will both continue, standards and assurance will mature, technical governance capabilities will advance, and AI governance will become more embedded in organizational operations.
+
+## Review Questions
+
+1. An organization is evaluating an AI application that could cause significant harm to individuals if it malfunctions. The legal team notes that liability rules for AI harms are unsettled. How should this uncertainty affect the governance decision?
+
+2. A company is using a generative AI system to produce marketing content. The company wants to claim copyright in this content to prevent competitors from copying it. What intellectual property considerations should inform this strategy?
+
+3. An external auditor is conducting an AI audit of a company's customer service chatbot. The company refuses to provide access to the chatbot's training data, citing competitive sensitivity. How might the auditor respond to this access limitation?
+
+4. An organization is deploying an AI system that will automate work currently performed by customer service representatives. Some workers will be retrained for other roles; others may be laid off. What workforce governance considerations apply?
+
+5. A healthcare organization uses AI to analyze patient symptoms and recommend treatment plans. Some patients express preference for human-only care without AI involvement. How should the organization address this preference?
+
+6. A social media company's terms of service include broad consent for data use in AI training, obtained when users sign up. Three years later, the company develops new AI capabilities that can infer sensitive attributes from user content—capabilities that didn't exist when consent was obtained. What preventive governance mechanisms might have addressed this situation, and what should the company do now?
+
+## References
+
+European Commission. Proposal for a Directive on adapting non-contractual civil liability rules to artificial intelligence (AI Liability Directive). COM(2022) 496, 2022.
+
+U.S. Copyright Office. Copyright Registration Guidance: Works Containing Material Generated by Artificial Intelligence. Federal Register Vol. 88, No. 51, 2023.
+
+Raji, Inioluwa Deborah, et al. "Closing the AI Accountability Gap: Defining an End-to-End Framework for Internal Algorithmic Auditing." FAT* '20: Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency, 2020.
+
+Mökander, Jakob, et al. "Auditing large language models: a three-layered approach." AI and Ethics (2023).
+
+Acemoglu, Daron, and Pascual Restrepo. "Tasks, Automation, and the Rise in US Wage Inequality." Econometrica 90, no. 5 (2022).
+
+International Organization for Standardization. ISO/IEC 42001:2023 Information technology — Artificial intelligence — Management system, 2023.
+
+IAPP. AIGP Body of Knowledge, Version 2.0.1. International Association of Privacy Professionals, 2025.
