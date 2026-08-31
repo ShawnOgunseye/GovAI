@@ -165,6 +165,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<!-- A book's index page always emits Quarto's own title block, which repeats the
+     title, subtitle and author that the .cover block below sets by hand, and adds
+     a normalised date. `title-block-style: none` in the front matter is ignored on
+     a book index, so the block is hidden here. Scoped to this page deliberately:
+     the chapters get their titles from that same block and must keep it. -->
+<style>#title-block-header { display: none; }</style>
 <div class="cover">
 <div class="cover-mark">
 <svg viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three nested rectangles">
