@@ -1,7 +1,26 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+# This repository publishes the rendered site only.
+#
+# GitHub Pages serves docs/ from main. Everything else in this folder stays on
+# this machine: the chapters, the figures, the theme, the gate scripts, the
+# working notes, and the archived first edition at v1/. CNAME, .nojekyll and v1/
+# are copied into docs/ on every render by `resources:` in _quarto.yml, so the
+# published site carries them without this repository tracking the originals.
+#
+# Chapters 3 and 4 are drafted but held back. They are ignored here as well as
+# commented out of the chapters list, so that holding them back means something.
+#
+# This is deliberately the arrangement MIRROR.md replaces. Until the private
+# source repository exists, the second edition's manuscript is backed up nowhere
+# except this machine. Setting up the mirror is the fix, and it is ten minutes.
+# When you do, replace this file with the one that tracks everything.
+
+/*
+
+!/.gitignore
+!/docs/
+!/CNAME
+!/.nojekyll
+!/README.md
 
 /.quarto/
 **/*.quarto_ipynb

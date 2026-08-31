@@ -1,0 +1,58 @@
+<svg viewBox="0 0 960 540" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="f0102t f0102d">
+<!-- REQUIRED ELEMENTS
+  Five harm levels: individual, group, organizational, societal, environmental.
+  A documented instance named at each level.
+  The lifecycle stage where the preventing control sits, per level.
+  Control stages in lifecycle order left to right, labelled.
+  Controls must visibly move EARLIER as harm becomes more diffuse.
+  For the two most diffuse levels, show that later stages cannot reach them.
+  EXCLUDED: severity ranking between levels. These are not ordered by badness.
+  SOURCE: original. Harm levels conventional; pairing to control stage is ours.
+  AUDIT: pass 1 [x] · pass 2 blind [x] · rendered and viewed [x]
+-->
+<title id="f0102t">Where harm lands and where the preventing control sits</title>
+<desc id="f0102d">Five rows, one per level of harm, from individual at the top to environmental at the bottom. Each names a documented instance. A control marker sits in the column for the lifecycle stage where the preventing control belongs, and the markers move progressively leftward down the rows. For societal and environmental harm the marker sits at the decision to build, and the remaining stages are shown greyed to indicate that no later control reaches those harms.</desc>
+<g font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif">
+
+<g font-size="11" font-family="'IBM Plex Mono',monospace" fill="#2B3A42" letter-spacing="1">
+<text x="300" y="30">DECIDE</text><text x="432" y="30">ASSESS</text><text x="566" y="30">TEST</text><text x="690" y="30">RELEASE</text><text x="828" y="30">USE</text>
+</g>
+<line x1="286" y1="42" x2="940" y2="42" stroke="#2B3A42" stroke-width="1.5"/>
+<g stroke="#B8C4CA" stroke-width="1" stroke-dasharray="2 6">
+<line x1="292" y1="48" x2="292" y2="466"/><line x1="424" y1="48" x2="424" y2="466"/>
+<line x1="558" y1="48" x2="558" y2="466"/><line x1="682" y1="48" x2="682" y2="466"/><line x1="820" y1="48" x2="820" y2="466"/>
+</g>
+
+<g font-size="14.5" fill="#2B3A42" font-weight="600">
+<text x="20" y="94">Individual</text><text x="20" y="176">Group</text><text x="20" y="258">Organizational</text>
+<text x="20" y="340">Societal</text><text x="20" y="422">Environmental</text>
+</g>
+<g font-size="11.5" fill="#2B3A42" opacity="0.72">
+<text x="20" y="114">wrongful arrest, Detroit 2020</text><text x="20" y="196">care algorithm, cost as proxy</text>
+<text x="20" y="278">recruiting tool, abandoned</text><text x="20" y="360">synthetic content at scale</text>
+<text x="20" y="442">energy and water at scale</text>
+</g>
+
+<rect x="770" y="82" width="160" height="34" rx="3" fill="#FFFFFF" stroke="#1F6FEB" stroke-width="1.5"/>
+<text x="850" y="104" font-size="12" text-anchor="middle" fill="#1F6FEB">human oversight</text>
+
+<rect x="500" y="164" width="176" height="34" rx="3" fill="#FFFFFF" stroke="#1F6FEB" stroke-width="1.5"/>
+<text x="588" y="186" font-size="12" text-anchor="middle" fill="#1F6FEB">disaggregated testing</text>
+
+<rect x="376" y="246" width="164" height="34" rx="3" fill="#FFFFFF" stroke="#1F6FEB" stroke-width="1.5"/>
+<text x="458" y="268" font-size="12" text-anchor="middle" fill="#1F6FEB">impact assessment</text>
+
+<rect x="366" y="328" width="574" height="34" rx="3" fill="#F4F6F7" stroke="none"/>
+<rect x="244" y="328" width="118" height="34" rx="3" fill="#FFFFFF" stroke="#B3541E" stroke-width="2"/>
+<text x="303" y="350" font-size="12" text-anchor="middle" fill="#B3541E">build or not</text>
+<text x="380" y="350" font-size="11.5" fill="#2B3A42" opacity="0.55">no later stage reaches this harm</text>
+
+<rect x="366" y="410" width="574" height="34" rx="3" fill="#F4F6F7" stroke="none"/>
+<rect x="244" y="410" width="118" height="34" rx="3" fill="#FFFFFF" stroke="#B3541E" stroke-width="2"/>
+<text x="303" y="432" font-size="12" text-anchor="middle" fill="#B3541E">build or not</text>
+<text x="380" y="432" font-size="11.5" fill="#2B3A42" opacity="0.55">no later stage reaches this harm</text>
+
+<line x1="20" y1="480" x2="940" y2="480" stroke="#B8C4CA" stroke-width="1"/>
+<text x="20" y="510" font-size="13.5" fill="#2B3A42">The more diffuse the harm, the earlier the only control that reaches it.</text>
+</g>
+</svg>

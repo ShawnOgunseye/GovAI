@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1. What AI Governance Actually Is – How to Govern AI</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02-regulatory-landscape.html" rel="next">
+<link href="./00-preface.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-9742bcba801a1a2fcbb7e48fd152ccc9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7ea5ea04e1fd13a9013c4633f529ecdc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-what-ai-governance-is.html">Foundations</a></li><li class="breadcrumb-item"><a href="./01-what-ai-governance-is.html"><span class="chapter-title">1. What AI Governance Actually Is</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">How to Govern AI</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/shawnogunseye/GovAI" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to Govern AI</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-what-ai-governance-is.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">1. What AI Governance Actually Is</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-regulatory-landscape.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2. The Regulatory Landscape</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#what-you-will-be-able-to-do" id="toc-what-you-will-be-able-to-do" class="nav-link active" data-scroll-target="#what-you-will-be-able-to-do">What you will be able to do</a></li>
+  <li><a href="#defining-ai-for-governance-purposes" id="toc-defining-ai-for-governance-purposes" class="nav-link" data-scroll-target="#defining-ai-for-governance-purposes">1.1 Defining AI for governance purposes</a></li>
+  <li><a href="#how-machine-learning-actually-works" id="toc-how-machine-learning-actually-works" class="nav-link" data-scroll-target="#how-machine-learning-actually-works">1.2 How machine learning actually works</a></li>
+  <li><a href="#three-kinds-of-system" id="toc-three-kinds-of-system" class="nav-link" data-scroll-target="#three-kinds-of-system">1.3 Three kinds of system</a></li>
+  <li><a href="#narrow-ai-and-the-agi-question" id="toc-narrow-ai-and-the-agi-question" class="nav-link" data-scroll-target="#narrow-ai-and-the-agi-question">1.4 Narrow AI and the AGI question</a></li>
+  <li><a href="#ai-as-socio-technical-systems" id="toc-ai-as-socio-technical-systems" class="nav-link" data-scroll-target="#ai-as-socio-technical-systems">1.5 AI as socio-technical systems</a></li>
+  <li><a href="#governance-ethics-and-compliance" id="toc-governance-ethics-and-compliance" class="nav-link" data-scroll-target="#governance-ethics-and-compliance">1.6 Governance, ethics, and compliance</a></li>
+  <li><a href="#why-ai-requires-its-own-governance" id="toc-why-ai-requires-its-own-governance" class="nav-link" data-scroll-target="#why-ai-requires-its-own-governance">1.7 Why AI requires its own governance</a></li>
+  <li><a href="#what-ai-harms-look-like" id="toc-what-ai-harms-look-like" class="nav-link" data-scroll-target="#what-ai-harms-look-like">1.8 What AI harms look like</a></li>
+  <li><a href="#principles-and-what-they-leave-open" id="toc-principles-and-what-they-leave-open" class="nav-link" data-scroll-target="#principles-and-what-they-leave-open">1.9 Principles, and what they leave open</a></li>
+  <li><a href="#case-in-focus-the-arrest" id="toc-case-in-focus-the-arrest" class="nav-link" data-scroll-target="#case-in-focus-the-arrest">Case in focus: the arrest</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review questions</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-what-ai-governance-is.html">Foundations</a></li><li class="breadcrumb-item"><a href="./01-what-ai-governance-is.html"><span class="chapter-title">1. What AI Governance Actually Is</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">1. What AI Governance Actually Is</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>On a January morning in 2020, police officers arrived at a house in Farmington Hills, Michigan, and arrested Robert Williams on his front lawn while his wife and two young daughters watched. He was held for thirty hours. During questioning, detectives showed him a grainy still from a shop’s security camera and asked whether it was him. Williams held the picture next to his own face and said that it was not. One of the detectives, according to Williams’ account, replied that the computer must have got it wrong.</p>
+<p>The computer had got it wrong. A facial recognition system had matched the surveillance image against a database of driver’s licence photographs and returned Williams as a candidate. An investigator passed that candidate to a photo lineup. A witness who had not been present at the theft picked him out. No one at any point in that chain treated the match as what it actually was, which was a probabilistic suggestion generated by a system with known and documented accuracy problems on images of this quality and on faces like his.</p>
+<p>Every element of what follows in this book is visible in that morning. A system produced an output. A process treated the output as a conclusion. An institution acted on the conclusion. A person absorbed the consequence, and had no way of knowing that a machine had been involved until someone told him. The model was one component among several and it was not the component that failed hardest.</p>
+<p>Governance is the discipline of making sure that chain has someone answerable at every link. Stated as a definition, and this is the one the rest of the book works from:</p>
+<div class="definition">
+<p><strong>AI governance is how an organization decides what its AI systems may do, establishes that they do it, and makes clear who answers when they do not.</strong></p>
+</div>
+<p>Three parts, and each is a body of work. Deciding what a system may do covers whether the use case is appropriate at all, which populations it may touch, what a model is permitted to act on, and where the boundaries sit. Establishing that it does it covers testing, monitoring, and the evidence that would satisfy someone who did not build it. Making clear who answers covers naming the person accountable for each decision and keeping the record that shows they made it. A programme missing any one of the three is not partially effective. It fails in a specific and predictable way, and later chapters return to each failure.</p>
+<section id="what-you-will-be-able-to-do" class="level2 unnumbered objectives">
+<h2 class="unnumbered anchored" data-anchor-id="what-you-will-be-able-to-do">What you will be able to do</h2>
+<ul>
+<li>Distinguish AI from conventional software in the terms that determine how it must be governed</li>
+<li>Explain why behaviour learned from data produces problems that behaviour specified in code does not</li>
+<li>Identify harms at five levels and name a documented instance of each</li>
+<li>Describe what a stated principle commits an organization to, and what it leaves open</li>
+<li>Explain why technical excellence in a model does not by itself produce a safe system</li>
+</ul>
+</section>
+<section id="defining-ai-for-governance-purposes" class="level2">
+<h2 class="anchored" data-anchor-id="defining-ai-for-governance-purposes">1.1 Defining AI for governance purposes</h2>
+<p>Definitions of artificial intelligence are contested, and for most purposes the argument is unproductive. For governance the argument matters, because the definition decides what falls inside your programme and what does not.</p>
+<p>Two definitions carry weight because regulators use them. The United States National Institute of Standards and Technology describes an AI system as an engineered system that, for a given set of objectives, generates outputs such as predictions, recommendations, or decisions that influence real or virtual environments, operating with varying levels of autonomy. The European Union’s AI Act describes a machine-based system designed to operate with varying levels of autonomy, which may exhibit adaptiveness after deployment, and which infers from the input it receives how to generate outputs.</p>
+<p>Strip both to the operative element and you get the same thing.</p>
+<div class="definition">
+<p><strong>A system is artificial intelligence, for governance purposes, when it infers how to produce its output rather than following a rule that a person wrote down for that case.</strong></p>
+</div>
+<p>That gives you a usable test. Did somebody specify what to do in this situation, or did the system work it out from patterns in data? If the former, it is software. If the latter, it is within scope.</p>
+<p>The test fails in two ways, and both are worth knowing before you rely on it.</p>
+<p>It can return both answers at once. A fraud system applies twelve hand-written rules and passes the transactions no rule catches to a learned model. The rules are specified and the model infers. It is one product, with one interface and one owner. Scope only the model and you govern the minority of cases while ignoring the rules that decide which cases reach it, and those rules encode judgments about who is suspicious.</p>
+<p>It can also be impossible to run. A purchased scheduling tool describes its prioritization as configurable, and during implementation an engineer notices that the priorities shift over time in ways the configuration does not explain. Nobody in the buying organization decided to deploy AI. They may have anyway, and that they cannot tell is itself the finding.</p>
+<p>Neither case is a flaw in the definition. The definition tells you whether a component is AI. It does not tell you where governance should draw its boundary around the system that contains it. That boundary is the more consequential question.</p>
+</section>
+<section id="how-machine-learning-actually-works" class="level2">
+<h2 class="anchored" data-anchor-id="how-machine-learning-actually-works">1.2 How machine learning actually works</h2>
+<p>You do not need to build models to govern them. You do need enough of the mechanism to know what can go wrong, because the failure modes follow from how the thing works.</p>
+<p>Nearly all deployed AI is built by <strong>machine learning</strong>, and most of that by <strong>supervised learning</strong>. The pattern is consistent. A developer assembles examples where the answer is already known. The algorithm adjusts internal numbers, called <strong>parameters</strong>, until the system’s outputs match the known answers as closely as possible. The trained system is then applied to cases it has not seen.</p>
+<p>Take fraud detection at a bank. The bank assembles several million historical transactions, each labelled as legitimate or fraudulent according to what was eventually discovered. The algorithm searches for combinations of features that separate the two: unusual hour, unusual location, unusual amount, unusual sequence following a recent password change. It settles on parameter values that make the separation as accurate as it can on those examples. The result scores new transactions.</p>
+<p>Three consequences follow, and they are the reason this book exists.</p>
+<p>The first is that patterns learned from data carry the history in that data. The model has no concept of fraud. It has a statistical relationship between features and a label, and the label came from what human investigators found. If those investigators historically scrutinized some customers more closely than others, they found more fraud among them, and the model learns that those customers are riskier. It has learned the investigation pattern and it will reproduce it. Nobody wrote a discriminatory rule. The discrimination is in the parameters, which is a much harder place to find it.</p>
+<p>The second is that learned behaviour resists explanation. A model with millions of parameters produces its output through arithmetic across all of them. There is no line to point at. Ask why a transaction was flagged and the honest answer describes an interaction no person can hold in mind. This collides directly with legal requirements to explain automated decisions, and Chapter 2 examines the collision.</p>
+<p>The third is that performance decays without anyone touching anything. Conventional software behaves identically until someone edits it. A model’s accuracy depends on the world continuing to resemble its training data. Fraud techniques change, customer behaviour shifts, a new payment method appears. The code is unchanged and the system is quietly getting worse. Nobody is notified, because nothing broke.</p>
+<p>Three other paradigms appear in practice. <strong>Unsupervised learning</strong> finds structure in data with no labels, which is useful for detecting anomalies and dangerous when someone treats a cluster as a category with meaning it was never given. <strong>Semi-supervised learning</strong> trains on a small labelled set together with a much larger unlabelled one, which is common wherever labelling is expensive and which propagates whatever the small set got wrong across all of it. <strong>Reinforcement learning</strong> trains by acting and receiving feedback, which produces systems that optimize what they are scored on with more literalism than anyone intended.</p>
+<p>A fourth, <strong>self-supervised learning</strong>, is how generative systems are built, and it is worth separating because it changes what there is to govern. The labels are manufactured from the data itself: a word is withheld and the system is scored on predicting it, across a corpus large enough that no one has read it. Nothing here corresponds to the fraud investigators whose judgments the supervised model inherited. There is no label set to audit, because there is no label set. What can be examined is the corpus, which is why the obligations attaching to these models concern training-data provenance and disclosure rather than label quality, and why an organization that fine-tunes one inherits a history it cannot inspect.</p>
+</section>
+<section id="three-kinds-of-system" class="level2">
+<h2 class="anchored" data-anchor-id="three-kinds-of-system">1.3 Three kinds of system</h2>
+<p>The book distinguishes three kinds of system throughout, and it is worth being clear about them now, because governance treats them differently at every stage.</p>
+<p>The first kind are <strong>predictive systems</strong>, which analyze what exists in order to produce a judgment about it. Will this borrower default. Does this scan show disease. Is this transaction fraudulent. The output is a number or a category attached to something real, and there is usually, eventually, a fact of the matter about whether it was right. Governance for these systems has decades of precedent in credit scoring and actuarial practice, and its central concerns are accuracy and whether accuracy holds across groups.</p>
+<p><strong>Generative systems</strong>, by contrast, produce content that did not exist before. Text, images, audio, code. The output is not a judgment about the world and there is no fact of the matter about whether it was correct, only whether it was appropriate, accurate, useful, or harmful. Their best-known failure is <strong>fabrication</strong>, and it is worth understanding as a property rather than a defect. You will meet it as <em>hallucination</em> in most writing and in vendor documentation, and as <em>confabulation</em> in NIST’s generative AI profile. This book uses fabrication because hallucination suggests a perceptual malfunction, and nothing has malfunctioned. A language model produces text that is statistically plausible given what came before. It has no representation of truth against which to check, so it cannot know when it is inventing. A fabricated citation is generated by exactly the same mechanism as a correct one and arrives with exactly the same fluency. Confidence in the output carries no information about accuracy, which is why people trust these systems in precisely the situations where they should not.</p>
+<p>The third kind, <strong>agentic systems</strong>, take actions. They call tools, write files, send messages, execute transactions, and invoke other systems, pursuing a goal across many steps with a person supervising loosely or not at all. The governance question shifts. For a predictive or generative system you ask whether the output was right. For an agent you ask what it did, under whose authority, and whether it can be undone. Review before the fact stops being possible at the speed these systems operate, so control moves to what the agent is permitted to touch and whether you can stop it.</p>
+<p>Most real deployments are combinations. A customer service system retrieves records with a predictive component, drafts a reply with a generative one, and issues a refund with an agentic one. Governing it means governing all three.</p>
+</section>
+<section id="narrow-ai-and-the-agi-question" class="level2">
+<h2 class="anchored" data-anchor-id="narrow-ai-and-the-agi-question">1.4 Narrow AI and the AGI question</h2>
+<p>Every system in deployment today is <strong>narrow</strong> in the sense that matters for governance: its competence is bounded, and it degrades or fails outside those bounds. Where the bounds fall is easy to state for a fraud model built for one task and hard to state for a model trained on everything, but in neither case does the system work reliably everywhere. Boundedness is what makes governance possible at all, because behaviour that can be characterized can be specified, tested, and monitored, and a system whose behaviour cannot be characterized cannot be governed by the methods in this book.</p>
+<p><strong>Artificial general intelligence</strong>, meaning a system matching human capability across arbitrary tasks, does not exist. Whether it will and when is disputed among people with the relevant expertise, and the published estimates range widely enough that no governance programme should be built on any of them.</p>
+<p>Most of the regulation lands between these two. A <strong>general purpose model</strong> is not built for one task and is not general intelligence either: it is trained broadly, adapted to particular uses by whoever deploys it, and bounded in ways nobody can fully specify in advance. That is what makes it awkward to govern, being narrow enough to deploy and too broad to characterize the way a fraud model can be.</p>
+<p>Capability at that frontier already carries present obligations, and the common framing of it as a distraction gets that wrong. The EU AI Act imposes additional duties on general purpose models presenting systemic risk. Several US states have enacted laws reaching developers of the most capable models, requiring published safety frameworks covering internal governance, cybersecurity, and catastrophic risk thresholds. Chapter 2 covers both. An organization developing or fine-tuning at that scale carries obligations today arising from anticipated capability, which is an unusual regulatory structure and worth recognizing as one.</p>
+<p>The distinction that organizes this book is therefore not narrow against general. It is between governing a system someone has deployed and governing the development of a model that many others will deploy. Those are different activities, with different evidence, different actors, and different regulators. This book addresses the first, because it is what nearly every reader will be responsible for, and it covers the second where regulation turns it into a compliance question. Neither choice implies a position on which risk is larger.</p>
+</section>
+<section id="ai-as-socio-technical-systems" class="level2">
+<h2 class="anchored" data-anchor-id="ai-as-socio-technical-systems">1.5 AI as socio-technical systems</h2>
+<p>The most important idea in this chapter is that the model is not the unit of concern.</p>
+<div class="definition">
+<p><strong>An AI system is a socio-technical system: its behaviour is produced jointly by the technology and by the people, processes, and incentives around it, and cannot be predicted from either alone.</strong></p>
+</div>
+<p>A model does not deny anyone a loan. An institution denies the loan, using a model, inside a process, under commercial pressure, subject to law, staffed by people with quotas and queues. Change any of those and the same model produces different outcomes for real people.</p>
+<p>Take <code>FAIRLEND</code>, Meridian Financial’s credit model. Suppose it is excellent by every technical measure: accurate, calibrated, tested across demographic groups, with differences within tolerance. Now place it in an organization.</p>
+<p>The threshold at which a score becomes a denial was not chosen by the model. Someone chose it, balancing losses from bad loans against revenue from good ones, and that choice determines who is refused. Loan officers can override, and whether they do depends on whether overriding requires a written justification that a supervisor reviews. The appeals process exists, and whether it is a real check depends on whether the reviewer sees the application afresh or sees the score first. Marketing determines who applies at all, so the population the model sees is already shaped before the model does anything. And the applicant, at the end, receives a letter listing principal reasons for denial in language that satisfies a regulation without conveying anything actionable.</p>
+<p>The model is one component in that account and not the one most likely to fail. This is why a book about AI governance spends as much time on processes, roles, and records as on models. It is also why technical excellence does not settle the question. A well-built model in a badly designed process produces harm efficiently.</p>
+</section>
+<section id="governance-ethics-and-compliance" class="level2">
+<h2 class="anchored" data-anchor-id="governance-ethics-and-compliance">1.6 Governance, ethics, and compliance</h2>
+<p>Three words circulate in this field as though they were synonyms. They name different activities, and the confusion between them is precisely how an organization ends up with a published set of values and no mechanism.</p>
+<p><strong>Ethics</strong> asks what an organization ought to do. It is normative inquiry: reasoning about which outcomes are acceptable, whose interests count, and what fairness requires in a particular situation. Its output is a judgment, and thoughtful people reach different ones.</p>
+<p><strong>Compliance</strong> asks whether the organization met a rule that someone else wrote. Its output is a determination rather than a judgment, because the rule is given rather than argued.</p>
+<p><strong>Governance</strong> asks how the organization ensures it does what it ought and what it must. Its output is neither a judgment nor a determination but a mechanism: a requirement specific enough to test, a record someone can inspect, and a decision that a named person is accountable for having made.</p>
+<p>The relationship is easiest to see at the point where they meet, and this chapter has already walked past that point without naming it. Fairness, as the next section describes, has several definitions that cannot all be satisfied at once. Ethics is what tells you that choosing among them is a moral question rather than a technical one, and it supplies the arguments for preferring one over another. What ethics cannot tell you is which definition this organization actually chose, whether anyone with authority made that choice or whether it was settled by whoever configured the model, what testing verifies it, and what happens when the disparity it permits begins to grow. Those questions have factual answers, or the organization has a problem, and producing those answers is governance.</p>
+<p>Run the relationship in the other direction and the point sharpens. Governance without ethics is machinery aimed at nothing in particular. A programme can inventory every system, classify each one, document every decision, satisfy every applicable rule, and still produce harm with great efficiency, because not one of those activities asks whether the system should exist. This is not a hypothetical failure mode. It is the ordinary shape of a compliance function that has been handed AI and told to cover it.</p>
+<p>A useful way to tell the two apart in a real organization is to ask about decision rights. A committee that publishes principles and issues opinions is doing ethics, and doing it is worthwhile. A function that can decline a deployment is doing governance. An organization may have both, either, or neither, and the answer is visible in the record of what has actually been decided rather than in the statement of what is valued.</p>
+<p>This book is about governance. That does not make it neutral, and a book claiming neutrality here would be misleading you, so it is worth naming the commitments it proceeds on. It takes as settled that a person affected by an automated decision has interests which count independently of the deploying organization’s interests, that a disparity nobody can justify is a harm rather than a statistical curiosity, and that someone should be answerable for what a system does. Those are ethical positions. They are not seriously contested in law or in professional practice, and the book assumes rather than argues them. A reader who rejects any of the three will find the rest of the book resting on something they do not accept, which is worth knowing at the outset.</p>
+<p>Above that floor the questions are open and the book does not settle them. Which account of fairness applies to a particular system, what accuracy is adequate when the errors fall unevenly across people, whether a use case should exist at all: these belong to the organization deploying the system, and reasonable people inside the same organization will disagree.</p>
+<p>What governance contributes is not the answer. It is the insistence that the question was asked, that somebody with the authority to decide it did decide it, and that the reasoning is written down. A value choice made deliberately and recorded can be examined, challenged, and revisited when conditions change. The same choice made by default, absorbed into a threshold by whoever configured the system, cannot be any of those things, and in most organizations that is how it is actually made.</p>
+</section>
+<section id="why-ai-requires-its-own-governance" class="level2">
+<h2 class="anchored" data-anchor-id="why-ai-requires-its-own-governance">1.7 Why AI requires its own governance</h2>
+<p>Organizations already govern software. They have change control, testing standards, access management, and audit. Five properties of AI defeat those controls, and each defeats them in a specific way worth naming.</p>
+<p>The first is <strong>opacity</strong>. Conventional software is complex but inspectable; a developer can trace what happened. A learned model has no trace to follow, only parameters. Debugging becomes statistics rather than reading. Testing cannot enumerate the input space. And the accountability practice of asking someone to explain a decision runs into a system where no complete explanation exists.</p>
+<p>The second is <strong>autonomy at speed</strong>. Conventional systems support human decisions. AI systems increasingly make them, at volumes that make individual review arithmetically impossible. A platform assessing millions of items a day cannot have a person look at each one. Governance must therefore distinguish oversight that reviews each decision from oversight that watches the aggregate and can intervene, and be honest about which one it has.</p>
+<p>Agentic systems take this to its limit. When a system acts rather than recommending, review before the fact is not merely impractical but incoherent, because there is no interval between the output and the consequence in which a person could stand. Control has to move upstream, to what the system is permitted to do at all, and downstream, to whether the action can be reversed. The shift is visible in the third row of the figure below.</p>
+<p>The third is <strong>data dependency</strong>. Change the code and conventional software changes. Change the data and an AI system changes with the code untouched. This puts data provenance, quality, and representativeness inside the governance boundary, and it means a system can be altered by a pipeline change nobody flagged as a change.</p>
+<p>It also means a system can change without anything changing at all, if it is moved. <code>MEDASSIST</code> predicts clinical deterioration and was trained at an academic medical centre on that centre’s patients. Deployed unchanged to a community hospital, it meets a different population: older on average, more comorbidity, different referral patterns, different reasons for being admitted at all. Nothing about the model has altered. What it is being asked to do has. A system whose accuracy is a property of the population it was trained on does not carry that accuracy with it, and the organisation receiving it has usually been told only the first number.</p>
+<p>The fourth is <strong>probabilistic output</strong>. Conventional software given the same input returns the same answer. A model returns a likelihood, and someone must decide what to do at each level of it. That decision is a value judgment about which errors are more tolerable, and it is usually made by whoever configured the system rather than by anyone accountable for the consequence.</p>
+<p>The fifth is <strong>emergent behaviour</strong>. Conventional software does what it was built to do, and deviations are bugs. Learned systems exhibit behaviours nobody designed. Sometimes that is capability. Sometimes a recommender optimizing engagement discovers that outrage is engaging, and no one wrote that rule or intended it. Testing against a specification cannot find behaviour the specification never contemplated.</p>
+</section>
+<section id="what-ai-harms-look-like" class="level2">
+<h2 class="anchored" data-anchor-id="what-ai-harms-look-like">1.8 What AI harms look like</h2>
+<p>Harm from AI is often discussed abstractly. It is more useful to see it at five levels, each with a documented instance, because the levels call for different governance responses.</p>
+<p>Individuals absorb harm as a specific event in a specific life. Robert Williams was arrested in front of his children. His case is not unique, and the pattern in the known wrongful arrests attributed to facial recognition matching is that the technology performed worst on the people it was used against most.</p>
+<p>Groups absorb harm as a pattern that no individual can see. Researchers examining an algorithm used across the United States health system to identify patients for extra care found that it systematically underestimated the needs of Black patients. The mechanism deserves attention because it is so ordinary. The algorithm predicted healthcare costs as a proxy for healthcare need. Cost is a reasonable-sounding proxy and a bad one, because unequal access means less money is spent on patients who face more barriers, not on patients who are healthier. The algorithm read lower spending as lower need. It worked exactly as designed. No variable named race, and race did not need to be named.</p>
+<p>Organizations absorb harm as consequence for the deploying institution. Amazon’s experimental recruiting tool, trained on a decade of the company’s own hiring, learned to penalize indicators of being a woman. It was abandoned before use, and the case is still cited a decade later, which is the point. The reputational cost of a governance failure outlives the system that caused it.</p>
+<p>Society absorbs harm as damage to shared conditions. Generative systems have reduced the cost of producing convincing false content to nearly zero, at a moment when the institutions for establishing what is true were already under strain. No single output is the harm. The aggregate is.</p>
+<p>The environment absorbs harm as consumption. Training and serving large models requires substantial energy and water, concentrated in specific places, and the growth in demand has so far outpaced improvements in efficiency.</p>
+<p>Agentic systems do not add a sixth level. They change the shape of harm at every one of the five, because the output is an action rather than a judgment, and an action can be irreversible. A wrong prediction can be overridden by the person who receives it. A wrong action has already happened by the time anyone reads about it, and undoing it, where undoing is possible at all, is a separate piece of work that somebody has to do. The documented case record here is thinner than for the harms above, because these systems have been deployed at scale for a short time, and a reader should treat the absence of famous examples as a fact about the calendar rather than about the risk. <code>TALENTSCREEN</code> supplies the shape: a scheduling component that sends rejection messages to candidates without review does not produce a disputable decision. It produces a message the candidate has already read.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="figures/fig-01-01-system-classes.svg" class="img-fluid figure-img"></p>
+<figcaption>Three kinds of system and where governance attaches</figcaption>
+</figure>
+</div>
+<p>Read the figure across rather than down. All three kinds of system share the left column, because every one of them takes an input and involves a model. They diverge at what leaves the system, and that divergence is what governance has to follow. A predictive system emits a judgment, so the governing question is whether the judgment was right and whether it was right for everyone. A generative system emits content, so there is no ground truth to check against and the question becomes whether the content was grounded, appropriate, and marked as synthetic. An agentic system emits an action, and the question becomes what was done, under whose authority, and whether it can be reversed. Notice that the control points shift left as you move down. For predictive systems you can inspect the output before anything happens. For agents, by the time there is an output to inspect, the action has occurred, which is why control moves back to permissions.</p>
+<p>In an organization deploying only predictive models, the bottom row is theoretical. Most organizations reading this book are one procurement away from it.</p>
+</section>
+<section id="principles-and-what-they-leave-open" class="level2">
+<h2 class="anchored" data-anchor-id="principles-and-what-they-leave-open">1.9 Principles, and what they leave open</h2>
+<p>Most organizations that publish AI principles converge on a familiar set. The convergence is real and it is also the least useful thing about them. Principles matter for what they commit you to when they conflict, so each is worth stating alongside the tension it contains.</p>
+<p><strong>Fairness</strong> asks that a system not produce unjustified disparities between groups of people. Made precise, that turns out to mean several different things. One reading is that the proportion of people selected should be similar across groups. A second is that among the people who would in fact have succeeded, the proportion the system identifies should be similar across groups. A third is that a stated probability should mean the same thing whichever group the person belongs to. Each is a reasonable account of the same word, each can be measured, and except in special circumstances they cannot all hold at once. What follows for governance is that fairness is a choice among defensible definitions rather than a property a system either has or lacks, that the choice is a judgment about values rather than a technical finding, and that someone should be identifiable as having made it.</p>
+<p><strong>Safety and reliability</strong> concern whether a system works as intended and fails in ways somebody anticipated, which in practice means knowing what it does at the edges of its competence and what happens when it exceeds them. The tension is that anticipating a failure mode requires having thought of it, and emergent behaviour is by definition what nobody listed.</p>
+<p><strong>Privacy</strong> covers two demands: that a system neither expose what a person disclosed for another purpose nor derive what they chose not to disclose at all, the second of which is the newer problem, since a model can often infer a sensitive attribute from behaviour that seems unrelated to it. The tension here is direct. minimization asks for less data, model performance asks for more, and inference lets a system derive what was withheld.</p>
+<p><strong>Transparency</strong> requires that a person know when an AI system was involved in a decision about them and be able to find out, in terms they can act on, what drove it. The tension is that the most accurate systems are the least explicable, so transparency sometimes has a measurable cost in accuracy, paid by the same people it protects.</p>
+<p><strong>Accountability</strong> means that a named person or function answers for what a system does, which presupposes having had the authority to prevent it. The tension is that a modern AI system involves a model developer, a platform, an integrator, a deploying organization, and an operator, and each can point at another.</p>
+<p><strong>Human oversight</strong> requires that people be able to understand what a system is doing, watch it while it runs, and stop it. The tension is that oversight which reviews every decision does not scale, and oversight that does scale is easily satisfied by a person clicking approve. Where the system acts rather than recommends, the word means something different again: not review of an output but a boundary on what the system may do and a tested ability to halt it partway.</p>
+<p>A principle that has not been reduced to a requirement someone can test is a statement of intent. The rest of this book is about the reduction.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="figures/fig-01-02-harm-levels.svg" class="img-fluid figure-img"></p>
+<figcaption>Where harm lands, and where the control that would have prevented it sits</figcaption>
+</figure>
+</div>
+<p>The figure pairs each level of harm with the stage where the preventing control belongs. Reading it upward from the bottom is the useful direction. Environmental and societal harms are addressed almost entirely at the decision to build, because once a system exists its aggregate effects are largely fixed. Organizational harm is addressed at assessment and release. Group harm is addressed by testing, which is the only control that can see a pattern no individual case reveals. Individual harm is the only level where a control at the point of use still helps, which is why human oversight is necessary and also why it is the last line rather than the first.</p>
+</section>
+<section id="case-in-focus-the-arrest" class="level2 unnumbered case">
+<h2 class="unnumbered anchored" data-anchor-id="case-in-focus-the-arrest">Case in focus: the arrest</h2>
+<p><code>REAL CASE</code> · Documented</p>
+<p>Detroit police were investigating the theft of watches from a shop. They had security footage. An analyst ran a still from that footage through a facial recognition system against a database of state driver’s licence photographs. The system returned candidates. Robert Williams’ licence photograph was among them.</p>
+<p>That is the entire technical contribution. Everything after it was process.</p>
+<p>The candidate photograph was placed in a photo lineup shown to a witness. That witness had not seen the theft; she had reviewed the same security footage. She selected Williams. On that basis a warrant was issued, and in January 2020 Williams was arrested at his home and held for thirty hours before release. The prosecutor’s office later withdrew the charge and the case became one of the first publicly documented wrongful arrests attributed to a facial recognition match in the United States.</p>
+<p>Four controls were absent, and none of them are technical.</p>
+<p>There was no rule preventing an algorithmic candidate from being treated as an investigative lead. The system returned a ranked list of possible matches, which is what such systems do. Nothing in the process marked that list as a starting point requiring corroboration rather than a result.</p>
+<p>There was no accuracy requirement matched to the conditions of use. Published evaluation by NIST had already established that face recognition algorithms varied substantially in demographic differentials, with higher false positive rates for some groups than others depending on the algorithm. That evidence existed. It was not connected to a policy about what the system could be used for.</p>
+<p>There was no independent corroboration before arrest. The lineup was built from the algorithm’s output and shown to a witness who had only seen the same footage the algorithm processed. The identification confirmed the algorithm using the algorithm’s own input.</p>
+<p>And there was no disclosure. Williams learned that software had been involved only because a detective told him during questioning. Had the interview gone differently, he would have had no way to know what to contest.</p>
+<p>What would have changed the outcome is the least sophisticated item on that list. A written rule stating that an algorithmic candidate may not be the sole basis for an identification procedure would have stopped the chain at its second link. That is a governance control, it costs nothing, and it requires no improvement to the technology at all.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Artificial intelligence, for governance purposes, is a system that infers how to produce its output rather than following rules a person specified. That single property generates the field. Because behaviour is learned from data, it carries whatever the data recorded, including patterns of past treatment nobody would have written as a rule. Because behaviour is learned, it resists explanation. And because behaviour depends on the world resembling the training data, it degrades while the code sits unchanged.</p>
+<p>Three kinds of system need distinguishing. Predictive systems produce judgments and can be checked against outcomes. Generative systems produce content, cannot be checked against ground truth, and fabricate as a property of how they work rather than as a defect. Agentic systems produce actions, which moves the governing question from whether the output was right to what was done, under whose authority, and whether it can be undone.</p>
+<p>The model is not the unit of concern. Thresholds, override practices, appeal routes, incentives, and disclosure decide what a model does to people, and most of them are set by someone other than the people who built it. This is why governance is a discipline about institutions that happens to involve technology.</p>
+<p>Harm arrives at five levels and each needs a control at a different stage. Principles name the commitments, and every one of them contains a tension that only becomes visible when you try to turn it into something testable.</p>
+</section>
+<section id="review-questions" class="level2">
+<h2 class="anchored" data-anchor-id="review-questions">Review questions</h2>
+<p><code>COMPREHENSION</code></p>
+<ol type="1">
+<li><p>An organization publishes a set of AI principles, convenes an ethics advisory board that meets quarterly, and has never declined to deploy a system. Using the distinction in 1.6, say what the organization has and what it lacks, and name the single question that would settle it.</p></li>
+<li><p>Explain why a generative system’s confidence in an output carries no information about whether the output is accurate. What follows for how such systems should be deployed?</p></li>
+</ol>
+<p><code>APPLIED</code></p>
+<ol start="3" type="1">
+<li><p>A hospital’s diagnostic support tool performs at high accuracy in validation. Eighteen months after deployment, clinicians report it is missing cases it used to catch. Nobody has modified the system. Give three distinct explanations consistent with these facts, and say what evidence would distinguish them.</p></li>
+<li><p>A company states publicly that its AI is fair, and supports this with testing showing equal accuracy across demographic groups. An advocacy organization responds that the system is unfair because selection rates differ substantially by group. Both are describing the same system correctly. Explain how, and state what the company should have published instead.</p></li>
+</ol>
+<p><code>SPOT THE RISK</code></p>
+<ol start="5" type="1">
+<li>A retailer deploys a system that reviews customer service conversations, drafts a resolution, and for refunds below a threshold issues the refund automatically. It was tested on twelve months of historical conversations and achieved high agreement with what human agents had decided. Success is measured by resolution time and refund cost. A supervisor samples ten conversations a week. Identify at least five governance concerns, and for each say which of the three kinds of system it arises from.</li>
+</ol>
+<p><code>COMPARE AND DECIDE</code></p>
+<ol start="6" type="1">
+<li>A lender must choose between a model achieving 84 percent accuracy whose decisions can be explained to an applicant in terms they can act on, and one achieving 91 percent accuracy whose decisions cannot. The more accurate model would approve more applicants who repay and decline more who default. What should inform the choice, who should make it, and what would you need to know that is not stated here?</li>
+</ol>
+<p><code>RUNNING CASE</code></p>
+<ol start="7" type="1">
+<li><code>FAIRLEND</code> Meridian’s model is technically excellent by every measure available. Using the socio-technical account in 1.5, identify four decisions outside the model that determine what it does to applicants. For each, name who in the bank makes it and what would make it visible to governance.</li>
+</ol>
+<hr>
+<p>Nothing so far has said what anyone is required to do. That question has answers, they come from several directions at once, they use different words for similar ideas, and they have been moving quickly enough that a book stating them must also state when it checked. Chapter 2 sets out the landscape and, more importantly, the habit of tracking it.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/aigov\.ogunseye\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./00-preface.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Preface</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02-regulatory-landscape.html" class="pagination-link" aria-label="2. The Regulatory Landscape">
+        <span class="nav-page-text"><span class="chapter-title">2. The Regulatory Landscape</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>How to Govern AI · Foundations and Practical Guide to AI Governance</p>
+</div>   
+    <div class="nav-footer-center">
+<p>First edition archived at <a href="./v1/">/v1/</a></p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>CC BY-NC 4.0</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
