@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>18. Governing Under Uncertainty – How to Govern AI</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./appendix-a-technique-reference.html" rel="next">
+<link href="./17-implementing-ai-governance.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-176b1e44b272a30ec08500e73512b2cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3a8111a00e81ba936536c7054a308c39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13-organizing-the-governance-function.html">Running the Governance Function</a></li><li class="breadcrumb-item"><a href="./18-governing-under-uncertainty.html"><span class="chapter-title">18. Governing Under Uncertainty</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">How to Govern AI</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to Govern AI</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-what-ai-governance-is.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. What AI Governance Is</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-regulatory-landscape.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2. The Regulatory Landscape</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-scoping-inventory-classification.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3. Scoping, Inventory, and Risk Classification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-defining-the-problem.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. Defining the Problem and Use Case</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Building and Governing the System</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-data-governance-for-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. Data Governance for AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-model-selection-and-development.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Model Selection and Development</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-testing-evaluation-and-red-teaming.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Testing, Evaluation, and Red Teaming</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-deployment-and-release.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Deployment and Release</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-operations-and-monitoring.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Operations and Monitoring</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-incident-response-and-remediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10. Incident Response and Remediation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">System Classes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-governing-generative-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11. Governing Generative Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-governing-agentic-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12. Governing Agentic Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Running the Governance Function</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-organizing-the-governance-function.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">13. Organizing the Governance Function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-risk-assessment-and-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Risk Assessment and Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-documentation-and-evidence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Documentation and Evidence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-third-party-vendor-and-supply-chain-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. Third-Party, Vendor, and Supply Chain Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-implementing-ai-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">17. Implementing AI Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-governing-under-uncertainty.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">18. Governing Under Uncertainty</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-a-technique-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A: Technique Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-b-regulatory-quick-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B: Regulatory Quick Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-c-templates-and-checklists.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C: Templates and Checklists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#what-you-will-be-able-to-do" id="toc-what-you-will-be-able-to-do" class="nav-link active" data-scroll-target="#what-you-will-be-able-to-do">What you will be able to do</a></li>
+  <li><a href="#why-compliance-calendars-fail" id="toc-why-compliance-calendars-fail" class="nav-link" data-scroll-target="#why-compliance-calendars-fail">18.1 Why compliance calendars fail</a></li>
+  <li><a href="#horizon-scanning" id="toc-horizon-scanning" class="nav-link" data-scroll-target="#horizon-scanning">18.2 Horizon scanning</a></li>
+  <li><a href="#regime-agnostic-design" id="toc-regime-agnostic-design" class="nav-link" data-scroll-target="#regime-agnostic-design">18.3 Regime-agnostic design</a></li>
+  <li><a href="#what-stays-stable" id="toc-what-stays-stable" class="nav-link" data-scroll-target="#what-stays-stable">18.4 What stays stable</a></li>
+  <li><a href="#the-profession" id="toc-the-profession" class="nav-link" data-scroll-target="#the-profession">18.5 The profession</a></li>
+  <li><a href="#from-compliance-to-advantage" id="toc-from-compliance-to-advantage" class="nav-link" data-scroll-target="#from-compliance-to-advantage">18.6 From compliance to advantage</a></li>
+  <li><a href="#case-in-focus-three-systems-three-years-later" id="toc-case-in-focus-three-systems-three-years-later" class="nav-link" data-scroll-target="#case-in-focus-three-systems-three-years-later">Case in focus: three systems, three years later</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review questions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13-organizing-the-governance-function.html">Running the Governance Function</a></li><li class="breadcrumb-item"><a href="./18-governing-under-uncertainty.html"><span class="chapter-title">18. Governing Under Uncertainty</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">18. Governing Under Uncertainty</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In July 2026, the European Union deferred the high-risk obligations of its AI Act by more than a year, moving standalone high-risk systems to December 2027 and high-risk systems embedded in regulated products to August 2028. That legal sequence is documented and verifiable; how any specific organization actually behaved in response to it generally is not, and this chapter does not claim to have surveyed one. What the sequence makes visible is two planning risks any organization faces regardless of which one it happened to fall into. An organization that treats the original date as immovable risks finishing conformity work built for standards that are not yet ready to certify against, work that often has to be redone once the standard itself changes. An organization that treats a proposed delay as settled before it becomes law risks stopping preparation during the gap between the proposal and its actual enactment, when the original date remains the legally operative one regardless of what everyone expects to happen to it. These are governance scenarios inferred from the legal sequence itself, not documented findings about how organizations subject to the Act actually behaved. Colorado ran a sharper version of the same structural pattern at the state level. A 1 February 2026 compliance date became 30 June 2026 by amendment, and enforcement was then suspended by court stipulation. The underlying statute was then repealed and reenacted as a different regime entirely, effective 1 January 2027, with the duty of reasonable care, the impact assessment requirement, and the risk management program obligation all removed from what replaced it. An organization that built two years of preparation toward Colorado’s original risk-management architecture built infrastructure that, whatever its other value, was not what the replacement statute’s documentation-and-disclosure regime went on to require. That is an inference this chapter draws from comparing the two statutes’ texts rather than from evidence of what any specific organization did.</p>
+<p>This chapter treats these facts as a pattern, not as this year’s news. A governance program built to a fixed regulatory calendar will keep experiencing this same failure, on some regime, indefinitely, because the pattern is structural rather than incidental to any one law. Building a program that survives the pattern, instead of getting lucky on any single date, is this chapter’s subject. This closes the book on the discipline the reader now carries forward rather than on a snapshot of law that will have moved again before this book is old.</p>
+<section id="what-you-will-be-able-to-do" class="level2 unnumbered objectives">
+<h2 class="unnumbered anchored" data-anchor-id="what-you-will-be-able-to-do">What you will be able to do</h2>
+<ul>
+<li>Explain why a governance program built around fixed compliance dates fails, using a concrete regulatory deferral as the mechanism, not an abstract warning</li>
+<li>Run horizon scanning as an operating discipline built from source selection, cadence, triage, and translation of regulatory change into a tracked internal change request</li>
+<li>Design a classification and mapping structure that survives regime change, connecting the practice directly to the inventory and classification work Chapter 3 established</li>
+<li>Name the obligations that stay stable beneath any specific regulatory framework, and describe what the AI governance field asks of the people who practice it</li>
+</ul>
+</section>
+<section id="why-compliance-calendars-fail" class="level2">
+<h2 class="anchored" data-anchor-id="why-compliance-calendars-fail">18.1 Why compliance calendars fail</h2>
+<p>A compliance calendar treats a regulatory date as though it were the plan itself, not one input into a plan that has to accommodate the date moving. The EU deferral shows both failure modes the same calendar produces. Over-investment against a date treated as immovable spends budget and attention finishing certification work against harmonizing standards that, in the deferral’s own telling, were the reason the date moved in the first place. Work finished early against an unready standard often has to be redone once the standard itself changes. Under-investment against a date treated as already moved before the law changed leaves an organization with no active preparation running at all during the gap between the proposed delay and its actual enactment. During that gap, the original date remained the legally operative one regardless of what everyone expected to happen to it.</p>
+<p>Colorado’s sequence makes the same point with less ambiguity, because there the date did not merely move once. SB24-205 set a compliance date of 1 February 2026. SB25B-004 moved it to 30 June 2026. A stipulated stay then suspended enforcement before that date arrived, and SB26-189 replaced the entire framework, effective 1 January 2027, stripping out the risk management program and impact assessment requirements that had been the statute’s compliance spine. An organization that built to any one of the first two dates built toward obligations that a later date changed again, and an organization that built toward the risk-management architecture the original statute required built infrastructure a documentation-and-disclosure regime does not ask for. Two years of preparation produced compliance readiness for a law that, in the form prepared for, never took effect.</p>
+<p>Both failures, the EU’s and Colorado’s, share the same root cause. Both treat a regulatory date as though it carries the certainty of a plan, rather than the uncertainty of one changeable input into a plan. A plan built correctly treats the date as the best current estimate of when an obligation takes effect, revisable the moment new information arrives. The underlying governance work, the inventory, the classification, the risk assessment, the documentation, proceeds on its own schedule regardless of which specific date currently governs when it must be finished.</p>
+</section>
+<section id="horizon-scanning" class="level2">
+<h2 class="anchored" data-anchor-id="horizon-scanning">18.2 Horizon scanning</h2>
+<p>Horizon scanning is the operating discipline that keeps a governance program from being surprised by exactly the kind of change section 18.1 described. It needs a named owner and a defined set of actors, in addition to the structure this book has already given every other governance process. That structure has defined sources, a cadence, a triage step, and a translation of what is found into something the rest of the program can act on and eventually closes. A scanning owner collects; a qualified analyst assesses status and applicability; legal counsel owns the authoritative legal interpretation where one is needed rather than leaving that judgment to whoever read the source first. The affected system and business owners assess impact; an authorized decision-maker approves the resulting action; and, for a material change, assurance validates that closure actually happened instead of accepting a status update at face value.</p>
+<p>Source selection means identifying a specific, finite set of places regulatory change will actually appear before it reaches general news coverage. Those places are the relevant regulator’s own rulemaking docket, legislative tracking services for jurisdictions where the organization operates, industry association bulletins, and, for frontier obligations specifically, the small number of standards bodies whose work product determines when a conformity presumption becomes available at all. They also include the court docket for any litigation testing an obligation already in force, the source that would have surfaced Colorado’s stipulated stay directly, not through the later docket that replaced the statute it stayed. Reading whatever a general news feed happens to surface is not horizon scanning; it is reacting to whatever a search algorithm decided was newsworthy, weeks after the docket entry that mattered was actually filed. Whatever a source captures, it needs to capture with the source’s own authoritative text, publisher, version, status, date, and a stable locator, since a secondary summary of a rule is not the same evidentiary artifact as the rule itself. A mapping rule built from a paraphrase misfires the moment the regime’s own text diverges from the shorthand an organization has been using internally.</p>
+<p>Cadence is a risk decision, not a universal fixed interval. No single schedule catches every kind of change with enough lead time to matter, because a court order, a final rule, a security directive, and a supplier’s own contract notice do not arrive on the same clock a legislative tracking service does. The right design sets a service level per source and per obligation, uses automated alerts where an authoritative source provides them, scheduled review for slower-moving sources, and event-driven escalation for court orders, final rules, incidents, and provider notices. This is different from checking every source on the same calendar regardless of how fast that particular source actually moves.</p>
+<p>Triage is more than a two-way split between what to watch and what to act on immediately, because a proposal’s own lead time can be shorter than the implementation time a response would need. A signed law, too, can turn out not to apply to the organization, the actor, the system, the territory, or the date at all. A workable triage scores each item on the authority of its source, its legal status, its applicability to what the organization actually does, and the probability it takes effect as drafted. It also scores the item’s lead time, its impact if it does take effect, its reversibility, what else depends on it, and the actual decision deadline. It then assigns the item to one of several states, not only two. Those states are watch, analyze, prepare, implement, challenge, pause, and close. A proposed bill with a short statutory lead time and a high probability of passage can legitimately land in prepare rather than watch. A signed law that plainly does not reach the organization’s own actors or systems can legitimately close without ever becoming an active change request.</p>
+<p>Translation and the steps after it connect horizon scanning to everything else this book has built. A regulatory change that clears triage becomes a tracked change request carrying, at minimum, its owner, scope, source, legal status, applicability analysis, decision, implementation evidence, validation, and a closure date, in exactly the sense Chapter 15 already established for a requirement’s own record generally. That is different from a fact noted in an email and left to whoever happens to remember it when the next audit runs. A missed deadline, a conflicting authority, an unavailable source, a failed control, or uncertain scope escalates instead of stalling silently, with restriction, a pause, a rollback, seeking relief, or decommissioning available as the actual response depending on what the escalation finds. Closure records what the change revealed and updates the source list, the cadence, or the mapping structure when the case shows one of them missed something, rather than filing the outcome away unexamined. This same change record is what has to reach into the rest of the program, not terminate at the horizon-scanning desk. A change that alters a system’s applicable duties needs the same authority Chapter 17 gives to a target-model change, and a change that originates in a supplier’s own notice, rather than a regulator’s, needs the vendor-relationship handling Chapter 16 already established for a supplier-initiated change. This book has not built the two into one fully unified schema, which is a genuine open design question for a future edition, not a gap this chapter can close on its own. The Colorado sequence is a worked illustration of the complete lifecycle rather than only its translation step. A well-run horizon-scanning practice opens a change request at SB25B-004’s passage, with the bill text and its enactment date as the source, the organization’s Colorado-covered systems as the applicability, and a decision to prepare toward the amended date. It revises that request at the stipulated stay, recording that enforcement was suspended while the underlying obligation was not yet repealed, and deciding to pause implementation while keeping the assessment work already done. It then closes the original request and opens a new one at SB26-189’s enactment, recording that the prior statute was repealed and replaced and reanalyzing applicability against the new statute’s different duties. The decision is to rebuild the change record from the new statute’s actual text instead of carrying the old one forward. Each version is dated, retained, and tied to the same underlying system records, so that a later question about what the organization believed it had to comply with, and when, has an answer traceable to a specific source and decision rather than to memory.</p>
+</section>
+<section id="regime-agnostic-design" class="level2">
+<h2 class="anchored" data-anchor-id="regime-agnostic-design">18.3 Regime-agnostic design</h2>
+<p>Chapter 3 already established the structure this section extends. What gets recorded once and reused across regimes has to be a system’s stable factual attributes, not any single regime’s legal conclusion about those facts. “High risk” is not a regime-neutral fact; it is the EU AI Act’s own label for what its own Annex III trigger produces. Colorado’s statute, New York City’s Local Law 144, and every other regime that might apply to the same system each define their own covered objects, actors, triggers, exclusions, and duties, which do not line up with the AI Act’s tiers or with each other. A system’s intended purpose, the decision domain it operates in, and the population it affects are facts that stay constant across regimes. So do its actors and their roles, its autonomy, scale, and data, where it is deployed, what models and suppliers it depends on, and its deployment status. All of these change only when the system itself changes. Each applicable regime’s own dated trigger gets evaluated against that stable fact record separately, producing that regime’s own applicability result and duties, not one jurisdiction’s risk-tier label being fed into another jurisdiction’s rule as though it were itself a fact.</p>
+<!-- FIGURE 18.1 REQUIRED ELEMENTS (comment placed above the image per
+badw-book.md check 80)
+Must appear as three panels. Panel A, a versioned fact record: intended
+purpose, decision domain, affected people, actor and role, autonomy,
+scale, data, locations, model and supplier dependencies, deployment
+status, owner, and evidence confidence, with no regime-specific
+conclusion (no "high risk" label) stored inside it. Panel B is one
+mapping card per applicable regime (EU AI Act, Colorado's statute, NYC
+Local Law 144 among them). Each card shows that regime's own instrument
+and version, its legal trigger test, the applicability result the test
+produced against Panel A's facts, and the duties that follow. It also
+shows an owner, whether legal review occurred, an effective date, an
+evidence link, and a next-review date. Arrows from Panel A to each card
+must read as "evaluated against," never as "inherits risk tier." No
+card may borrow another card's conclusion. Panel C is change handling
+with two distinct entry arrows, one for a legal or source change and
+one for a system-fact change, both leading to affected-record
+identification, analysis, an authorized decision, implementation,
+validation, an archived prior version, and closure or escalation. An
+unresolved, conflicting, or missing-primary-text case routes to legal
+escalation and a restrict, pause, roll back, or decommission decision
+instead of disappearing. Entry condition: Chapter 3's inventory and classification
+work already exists. Exit condition: it is visually explicit that a
+regime's own conclusion is never treated as another regime's input, and
+that a legal change and a system-fact change are handled as two
+distinct triggers into the same change-handling structure. Deliberately
+excluded: the horizon-scanning detection process itself (section 18.2's
+job). Must work in black and white; every label must fit inside its box
+at expected book width; a legend distinguishes the three panels.
+SOURCE: original; redrawn 2026-09-13 per CH336 (Pass 32), which found the
+prior two-panel SVG still stored a shared "HIGH RISK · EMPLOYMENT
+DECISION" label and described regime arrows as inheriting that
+classification, directly contradicting this section's prose. The current
+SVG implements the three-panel design above: Panel A holds only
+regime-neutral facts, and Panel B gives the EU AI Act, Colorado's
+SB26-189, and NYC Local Law 144 each their own dated card with no
+shared conclusion. Panel C routes a legal change and a system-fact
+change through the same analysis-to-closure sequence with an escalation branch.
+Checked 2026-09-13.
+AUDIT: pass 1 [x] against list, pass 2 blind [x], rendered and viewed [x]
+-->
+<div id="fig-regime-agnostic-mapping" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-regime-agnostic-mapping-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/fig-18-01-regime-agnostic-mapping.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regime-agnostic-mapping-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19.1: Figure 18.1. Regime-agnostic mapping architecture
+</figcaption>
+</figure>
+</div>
+<p>Read Figure 18.1 as three connected structures, not one. One of those structures is a fact record that never itself states a legal conclusion. Another is a set of independent mapping cards, one per applicable regime, each running its own dated legal trigger against the same shared facts. The third is a change-handling structure that treats a legal change and a system-fact change as two separate kinds of event feeding the same downstream analysis, decision, and closure steps. A regime changing, whether by deferral, amendment, or full repeal and reenactment as Colorado’s did, updates only that regime’s own mapping card. The fact record does not change because the law changed, since the record describes what the system does and to whom, not what any particular law currently calls that. A system’s own facts changing, a new population, an added capability, a different deployment location, is the other entry into the same change-handling structure. Re-evaluating every regime’s mapping card against the new facts, rather than assuming an old classification still holds, is what that second entry exists to force.</p>
+<p>This is also where Chapter 2’s point about regulatory machinery connects forward. A mapping card’s trigger test has to encode a regime’s actual statutory or annex text, not a paraphrase of it, which means someone has to have read the specific provision the card references. A card built from a paraphrase misfires the moment the regime’s own text diverges from the shorthand an organization has been using internally. Maintaining each mapping card as a dated, versioned artifact, with its own legal-review and next-review fields, is what lets an organization answer, months or years later, exactly which obligations applied to a given system under a given regime on a given date. That is a question section 18.2’s horizon-scanning record and this section’s mapping structure together are built to answer without reconstruction from memory.</p>
+</section>
+<section id="what-stays-stable" class="level2">
+<h2 class="anchored" data-anchor-id="what-stays-stable">18.4 What stays stable</h2>
+<p>Beneath the specific vocabulary of any given regime, whether it calls a document a data protection impact assessment, an AI impact assessment, or nothing at all, a small set of reusable governance capabilities recurs across many of the frameworks this book has examined. These capabilities do not recur as identical legal duties, however. A specific regime may require a given capability in full, require only a narrower piece of it, permit it without requiring it, or omit it entirely, and this section names the capabilities themselves instead of asserting that every regime demands each one alike. Know what you have. An inventory, the subject of Chapter 3, is useful independently of which regime asks for one, and several of the regimes this book has covered require it directly. Assess before deploying. An impact or risk assessment, Chapter 14’s subject, is required in some form by several frameworks and is good practice regardless of whether a specific statute names it. Test for disparate effect. Chapter 7’s fairness testing answers a question several consequential-decision frameworks ask in some form, whether the question is named algorithmic discrimination, disparate impact, or an equal-opportunity standard, though not every applicable regime imposes a testing duty as such. Document. Chapter 15’s evidence discipline produces a record several regimes ask an organization to produce on demand, and some regimes require considerably less documentation than others. Oversee. A human review point, Chapter 8’s subject, appears under several frameworks governing automated decisions about people, though the scope of required oversight varies by regime and by use case. Monitor. Chapter 9’s ongoing performance and drift monitoring answers whether a system still behaves the way its initial assessment assumed, a capability few regimes mandate in that specific form but that a well-run program benefits from regardless. Respond. Chapter 10’s incident process is what several regimes’ breach or serious-incident notification duties presuppose already exists, though notification triggers, deadlines, and recipients differ by regime.</p>
+<p>A program built on this convergent capability set is positioned to survive a regime changing its name for a requirement, its exact threshold, or even its entire enforcement architecture. The inventory, the assessment, the testing, the documentation, the oversight point, the monitoring, and the incident process it built stay useful infrastructure regardless of which specific regime’s vocabulary currently describes them. This is a claim about what the capabilities make available to an organization when a regime changes, not a documented finding about how organizations that held Colorado’s replaced statute actually fared. What such a program loses when a regime changes is the specific vocabulary and the specific threshold, both of which the mapping structure in section 18.3 is built to absorb. What it does not lose is the underlying capability the vocabulary was describing, provided the new regime’s own trigger is checked against that capability, not assumed to match the old regime’s.</p>
+</section>
+<section id="the-profession" class="level2">
+<h2 class="anchored" data-anchor-id="the-profession">18.5 The profession</h2>
+<p>What this field asks of the people who practice it is a specific, uncommon combination, not any one deep specialization. Technical literacy without technical expertise means enough grasp of how a model is built, tested, and deployed to ask a developer a real question and recognize an evasive answer, without needing to be able to build the model personally. Legal literacy without legal training means enough grasp of how an obligation is structured, and enough of the actual habit of reading a statute’s own text rather than a secondary summary of it, to spot an issue and gather the relevant facts. It also means being able to draft a candidate mapping rule for section 18.3’s structure, without that draft becoming authoritative on its own. That last qualification matters on its own terms. Issue-spotting and evidence assembly are not the same activity as authoritative legal interpretation. A mapping rule needs a named, qualified legal owner, a documented review before it governs a live system, and a clear escalation and appeal path for a disputed reading, not resting on whichever practitioner drafted it first. Judgment to distinguish real risk from theater, the distinction Chapter 17 named directly and this book has returned to throughout, applies now to an entire regulatory landscape rather than to one program. The practitioner has to be able to tell a genuine new obligation from a compliance vendor’s marketing about one. Standing to say no is the fourth quality, and the rarest of the four, the one no amount of technical or legal literacy substitutes for. It is not a personal trait some practitioners happen to have, but a delegated authority an organization has to grant on record, with its own scope, review, and escalation path, before the moment it is needed. That way, a business sponsor hears that a deployment does not proceed as designed from someone the organization has actually agreed in advance can say so, instead of discovering only in the moment that no one clearly can.</p>
+<p>Where the discipline is heading remains unsettled on more than one axis. The 99 to 1 vote by which the United States Senate stripped a proposed decade-long moratorium on state AI enforcement from a 2025 reconciliation bill is the clearest available evidence that the question of federal preemption is contested on grounds other than party. That means an organization operating across US states cannot assume the current patchwork of state law will simplify by federal action on any predictable timeline. Colorado’s own rulemaking on its replacement statute remained in progress when this chapter was checked on 13 September 2026, with the Attorney General’s public comment period open and a revised draft still pending. Even the specific state whose sequence this chapter uses as its central example has not finished settling its own rules. A reader arriving at this book after either of those developments has resolved should treat this chapter’s account of them as a demonstration of the horizon-scanning discipline section 18.2 describes, not as a claim that the landscape has stopped moving.</p>
+</section>
+<section id="from-compliance-to-advantage" class="level2">
+<h2 class="anchored" data-anchor-id="from-compliance-to-advantage">18.6 From compliance to advantage</h2>
+<p>This book’s own argument, made most directly in Chapter 4 and repeated here rather than newly established, is that a governance program’s cost is best justified by preventing a system that should never have been built from consuming a year of engineering time. That happens before someone finally asks whether the system should exist. Governance that instead spends its effort documenting the right system after the fact protects the organization’s evidentiary position without preventing the more expensive failure a wrong system produces in the first place. That is this book’s rationale for where governance’s value concentrates, not a demonstrated finding independent of the argument that produced it. Stating it plainly as a rationale is worth more than dressing it in the language of competitive differentiation that the evidence available to this book does not actually support. No rigorous, generalizable finding establishes that AI governance produces a market advantage distinguishable from ordinary risk avoidance. A reader who wants that specific claim should look elsewhere for it, not to this book, which has tried throughout to say only what its sources support.</p>
+</section>
+<section id="case-in-focus-three-systems-three-years-later" class="level2 unnumbered case">
+<h2 class="unnumbered anchored" data-anchor-id="case-in-focus-three-systems-three-years-later">Case in focus: three systems, three years later</h2>
+<p><code>MEDASSIST</code> · <code>FAIRLEND</code> · <code>TALENTSCREEN</code> · Hypothetical, following the running cases</p>
+<p><code>MedAssist</code>’s community hospital gap, the delayed sepsis alerts Chapter 10 traced to three parallel contributing factors spanning testing, monitoring, and process, prompted the remediation this book has already described. Northfield’s subsequent effort to demonstrate compliance under Chapter 15’s evidence discipline then surfaced the deeper problem that the underlying acceptance criteria had never actually been written down. Northfield has since written them. Whether the community hospital population’s performance now genuinely matches the academic center’s, or merely produces a cleaner-looking record than before, is a question this book cannot answer from outside Northfield’s own ongoing monitoring. Neither can Northfield’s governance function answer it with full confidence yet, since a single remediation cycle is not the same as a demonstrated pattern across the population the original gap affected.</p>
+<p><code>FairLend</code>’s boundary dispute between AI governance and model risk management, the eighteen-month process Chapter 13 traced, resolved into the working division of authority that chapter described. The division has held for the deployments that have gone through it since. Whether it holds the next time a deployment falls on the boundary rather than cleanly on one side of it, the way Chapter 13 itself acknowledged some future case eventually will, remains untested, because Meridian has not yet had one.</p>
+<p><code>TalentScreen</code>’s governance program, Chapter 17’s sequencing failure and correction, now runs a properly tiered process across all three of Calloway’s systems in that composite case. What Calloway has not yet done is extend the same tiered discipline to whatever it adds to its portfolio next. Chapter 17’s own argument was that a target operating model earns nothing by existing on paper for a system count that has already grown past it. Calloway’s inventory, per Chapter 3’s original finding, was incomplete the first time anyone actually looked for shadow AI. Nothing in this book gives a reason to believe that a single look ever finds everything, and Calloway’s next inventory sweep is not guaranteed to find nothing new either.</p>
+<p>None of the three organizations has reached a finished state, and none should expect to. A governance program that considered any of these three resolved would be exhibiting exactly the theater Chapter 17 warned against, mistaking the absence of a currently visible problem for the absence of one.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Compliance calendars fail because a regulatory date is a changeable estimate, not a plan, and both over-investing against a date treated as fixed and under-investing against a date treated as already moved come from the same underlying mistake. The EU’s 2026 deferral and Colorado’s repeal-and-reenactment sequence show the pattern the legal record actually documents, while what any specific organization did in response is inference, not observed finding. Horizon scanning turns the underlying risk into a manageable operating discipline with a named owner and defined actors. That discipline includes sources selected for where change actually appears first, a cadence set by risk and source volatility rather than one fixed interval, and a triage step scoring authority, applicability, probability, lead time, and reversibility into more than a simple watch-or-act split. It also includes translation of what clears triage into a tracked, dated change request carried through implementation, validation, and closure. Regime-agnostic design keeps a stable, regime-neutral fact record separate from each regime’s own independently evaluated mapping card, so that a regime change touches only that regime’s card, and no regime’s own legal conclusion, such as a “high risk” label, is treated as another regime’s input.</p>
+<p>Beneath any specific regime’s vocabulary, a set of reusable governance capabilities recurs, though not as identical legal duties. They are knowing what you have, assessing before deploying, testing for disparate effect, documenting, overseeing, monitoring, and responding, each required, permitted, narrowed, or omitted differently by any given regime. A program built on this capability set is positioned to keep that infrastructure useful when a regime’s name, threshold, or entire enforcement architecture changes. The field asks its practitioners for technical literacy without technical expertise, and legal literacy without legal training, kept separate from authoritative legal interpretation and backed by a qualified legal owner. It also asks for judgment to distinguish real risk from theater, and for the standing to say no as a delegated authority granted in advance rather than a personal trait. More than one axis of where the discipline is heading remains unsettled. This book’s own argument is that governance earns its return primarily by preventing the wrong system from being built in the first place, a rationale worth stating plainly without dressing it as a demonstrated business case the evidence does not yet support.</p>
+</section>
+<section id="review-questions" class="level2">
+<h2 class="anchored" data-anchor-id="review-questions">Review questions</h2>
+<p><code>COMPREHENSION</code></p>
+<ol type="1">
+<li><p>Explain the shared root cause behind over-investing against a regulatory date treated as immovable and under-investing against a date treated as already settled before it is law.</p></li>
+<li><p>Explain why this chapter sets horizon-scanning cadence from source volatility and risk, not a single fixed interval, and describe two triage states, beyond simply watching or acting, that a proposal or a signed law might legitimately be assigned to.</p></li>
+</ol>
+<p><code>APPLIED</code></p>
+<ol start="3" type="1">
+<li><p>A system’s fact record shows an employment use case with a given autonomy, scale, and affected population. Explain why this chapter says that record should not itself store a conclusion such as “high risk,” and what changes and what does not change in the system’s governance record when a regime governing that use case is repealed and replaced with a different framework.</p></li>
+<li><p>Using the reusable governance capabilities this chapter names, identify which chapter of this book each capability was originally established in, and explain why a specific regime might require, permit, narrow, or omit any one of them rather than imposing an identical duty.</p></li>
+</ol>
+<p><code>SPOT THE RISK</code></p>
+<ol start="5" type="1">
+<li>A governance program treats a proposed but not yet enacted regulatory delay as though compliance work against the original date can stop immediately. Identify what this chapter would say is at risk in that decision and what a properly run horizon-scanning triage step would have done differently.</li>
+</ol>
+<p><code>COMPARE AND DECIDE</code></p>
+<ol start="6" type="1">
+<li>Compare classifying a system separately under each applicable regime against classifying it once and maintaining a mapping to each regime’s obligations, for an organization operating across multiple jurisdictions whose laws change independently of each other, and state which approach this book favors and why.</li>
+</ol>
+<p><code>RUNNING CASE</code></p>
+<ol start="7" type="1">
+<li><code>MEDASSIST</code> <code>FAIRLEND</code> <code>TALENTSCREEN</code> Using the case in focus, explain why this chapter declines to describe any of the three organizations’ governance programs as finished, and what risk that description itself would create if a governance program actually believed it.</li>
+</ol>
+<hr>
+<p>Every chapter in this book has argued, in its own subject, for the same underlying discipline. Know what a system is before deciding what to do about it. Assess before deploying. Design controls proportionate to what is actually at stake. And keep the evidence that lets the organization demonstrate, rather than merely believe, that it did. The specific laws this book has cited will have moved again by the time it is read. That discipline is what was meant to survive the move.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./17-implementing-ai-governance.html" class="pagination-link" aria-label="17. Implementing AI Governance">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">17. Implementing AI Governance</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./appendix-a-technique-reference.html" class="pagination-link" aria-label="Appendix A: Technique Reference">
+        <span class="nav-page-text"><span class="chapter-title">Appendix A: Technique Reference</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>How to Govern AI · Foundations and Practical Guide to AI Governance</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Full current draft, rendered 2026-09-14</p>
+</div>
+    <div class="nav-footer-right">
+<p>CC BY-NC 4.0</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

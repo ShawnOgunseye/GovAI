@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>2. The Regulatory Landscape – How to Govern AI</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -30,18 +36,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./03-scoping-inventory-classification.html" rel="next">
 <link href="./01-what-ai-governance-is.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-9742bcba801a1a2fcbb7e48fd152ccc9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-176b1e44b272a30ec08500e73512b2cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7ea5ea04e1fd13a9013c4633f529ecdc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3a8111a00e81ba936536c7054a308c39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -96,14 +102,9 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">How to Govern AI</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/shawnogunseye/GovAI" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -135,12 +136,156 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-what-ai-governance-is.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. What AI Governance Actually Is</span></a>
+  <a href="./01-what-ai-governance-is.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. What AI Governance Is</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-regulatory-landscape.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">2. The Regulatory Landscape</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-scoping-inventory-classification.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3. Scoping, Inventory, and Risk Classification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-defining-the-problem.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. Defining the Problem and Use Case</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Building and Governing the System</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-data-governance-for-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. Data Governance for AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-model-selection-and-development.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Model Selection and Development</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-testing-evaluation-and-red-teaming.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Testing, Evaluation, and Red Teaming</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-deployment-and-release.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Deployment and Release</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-operations-and-monitoring.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Operations and Monitoring</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-incident-response-and-remediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10. Incident Response and Remediation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">System Classes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-governing-generative-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11. Governing Generative Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-governing-agentic-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12. Governing Agentic Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Running the Governance Function</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-organizing-the-governance-function.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">13. Organizing the Governance Function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-risk-assessment-and-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Risk Assessment and Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-documentation-and-evidence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Documentation and Evidence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-third-party-vendor-and-supply-chain-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. Third-Party, Vendor, and Supply Chain Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-implementing-ai-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">17. Implementing AI Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-governing-under-uncertainty.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">18. Governing Under Uncertainty</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-a-technique-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A: Technique Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-b-regulatory-quick-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B: Regulatory Quick Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-c-templates-and-checklists.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C: Templates and Checklists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
       </ul>
@@ -162,16 +307,16 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#consumer-protection-liability-and-intellectual-property" id="toc-consumer-protection-liability-and-intellectual-property" class="nav-link" data-scroll-target="#consumer-protection-liability-and-intellectual-property">2.4 Consumer protection, liability, and intellectual property</a></li>
   <li><a href="#the-eu-ai-act" id="toc-the-eu-ai-act" class="nav-link" data-scroll-target="#the-eu-ai-act">2.5 The EU AI Act</a></li>
   <li><a href="#the-digital-omnibus-amendments" id="toc-the-digital-omnibus-amendments" class="nav-link" data-scroll-target="#the-digital-omnibus-amendments">2.6 The Digital Omnibus amendments</a></li>
-  <li><a href="#conformity-assessment-and-why-it-decides-everything" id="toc-conformity-assessment-and-why-it-decides-everything" class="nav-link" data-scroll-target="#conformity-assessment-and-why-it-decides-everything">2.7 Conformity assessment and why it decides everything</a></li>
+  <li><a href="#standards-and-conformity-routes" id="toc-standards-and-conformity-routes" class="nav-link" data-scroll-target="#standards-and-conformity-routes">2.7 Standards and conformity routes</a></li>
   <li><a href="#what-iso-42001-does-and-does-not-do" id="toc-what-iso-42001-does-and-does-not-do" class="nav-link" data-scroll-target="#what-iso-42001-does-and-does-not-do">2.8 What ISO 42001 does and does not do</a></li>
   <li><a href="#the-united-states" id="toc-the-united-states" class="nav-link" data-scroll-target="#the-united-states">2.9 The United States</a></li>
+  <li><a href="#case-in-focus-ftc-v.-rite-aid" id="toc-case-in-focus-ftc-v.-rite-aid" class="nav-link" data-scroll-target="#case-in-focus-ftc-v.-rite-aid">Case in focus: FTC v. Rite Aid</a></li>
   <li><a href="#where-the-law-runs-out" id="toc-where-the-law-runs-out" class="nav-link" data-scroll-target="#where-the-law-runs-out">2.10 Where the law runs out</a></li>
   <li><a href="#making-this-tractable" id="toc-making-this-tractable" class="nav-link" data-scroll-target="#making-this-tractable">2.11 Making this tractable</a></li>
-  <li><a href="#case-in-focus-ftc-v.-rite-aid" id="toc-case-in-focus-ftc-v.-rite-aid" class="nav-link" data-scroll-target="#case-in-focus-ftc-v.-rite-aid">Case in focus: FTC v. Rite Aid</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review questions</a></li>
   </ul>
-<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -197,8 +342,8 @@ ul.task-list li input[type="checkbox"] {
 
 <p>The European Union’s AI Act is the most comprehensive law written specifically for artificial intelligence anywhere in the world. It sorts systems by how much risk they present, bans a few outright, and imposes substantial obligations on those it calls high risk, a category that includes AI used in hiring, lending, healthcare, and education. Section 2.5 sets out what it requires. It was adopted in 2024, and the obligations were scheduled to arrive in stages.</p>
 <p>On 24 July 2026, the European Union published a regulation amending that Act. Nine days before its most significant deadline was due to take effect, the deadline moved by sixteen months.</p>
-<p>Organizations had spent two years preparing for 2 August 2026. Some had built compliance programmes against it, hired against it, and committed budget to it. Others had read the Commission’s November 2025 proposal to defer and concluded that the deadline would not hold, and had slowed down. When the amending regulation entered into force on 27 July, both groups discovered they had been wrong in the same way. The first had treated a date as a certainty. The second had treated a proposal as a decision. Neither had treated the date as what it was, which was one input to a plan that should have been able to absorb its movement.</p>
-<p>That is the most useful thing this chapter has to teach, and it is worth stating before the substance rather than after. What follows is an accurate account of the obligations in force as of August 2026. Parts of it will be wrong by the time you read it. The skill this chapter is trying to build is not memorization of a compliance calendar but the ability to work out, for a system in front of you, which regimes reach it and what they demand, and to notice when that answer changes.</p>
+<p>That sequence shows two planning risks. An organization that treats a date as a certainty risks building compliance programmes, hiring, and committing budget against a deadline that then moves out from under the plan. An organization that treats a proposal as a decision risks reading a proposal to defer, such as the Commission’s November 2025 proposal, as though it had already settled the matter. It then risks slowing down during the gap before actual enactment, when the original date remained the legally operative one. Treating the date as what it was, one input to a plan that should have been able to absorb its movement, avoids both.</p>
+<p>What follows is an accurate account of the obligations in force as of August 2026. Parts of it will be wrong by the time you read it. The real skill is not memorizing a compliance calendar. It is working out, for a system in front of you, which regimes reach it and what they demand, and noticing when that answer changes.</p>
 <section id="what-you-will-be-able-to-do" class="level2 unnumbered objectives">
 <h2 class="unnumbered anchored" data-anchor-id="what-you-will-be-able-to-do">What you will be able to do</h2>
 <ul>
@@ -212,21 +357,21 @@ ul.task-list li input[type="checkbox"] {
 <section id="privacy-law-reaches-ai-first" class="level2">
 <h2 class="anchored" data-anchor-id="privacy-law-reaches-ai-first">2.1 Privacy law reaches AI first</h2>
 <p>Before any AI-specific regulation existed, privacy law already applied, and for most organizations it remains the regime that bites soonest. AI systems process personal data at training, at inference, and in their outputs.</p>
-<p>The European Union’s General Data Protection Regulation applies wherever personal data of people in the EU is processed, regardless of where the processing happens. Four of its requirements press directly on how AI is built.</p>
-<p>A <strong>lawful basis</strong> is required, and six exist, and AI development typically reaches for consent or legitimate interests. Consent must be specific and informed, which means that consent obtained for providing a service does not cover training a model on the resulting data unless that use was disclosed. Legitimate interests requires a <strong>legitimate interests assessment</strong>, a documented weighing of the organization’s interest against the individual’s rights and expectations, and regulators have been sceptical of it where the processing has significant effects on people. The assessment has three parts: identify the interest, show the processing is necessary to achieve it rather than merely convenient, and demonstrate that the individual’s interests do not override it. Where the answer to the second part is that the model would work slightly better with the data, the assessment usually fails.</p>
-<p><strong>Data minimization</strong> requires that only data which is adequate, relevant, and necessary be collected. This sits in unresolved tension with machine learning, where more data generally produces better models, and no amount of careful drafting dissolves the tension. What it requires in practice is that each category of data be justified against the specific purpose rather than collected because it might prove useful.</p>
+<p>The European Union’s General Data Protection Regulation applies to processing carried out through an establishment in the EU. It can also reach a controller or processor outside the EU when the processing relates to offering goods or services to people in the EU or monitoring their behaviour there. A person’s presence in the EU is not, by itself, the test. Four of its requirements press directly on how AI is built.</p>
+<p>A <strong>lawful basis</strong> is required, and six exist. The available one depends on the actor and the purpose. Private development typically considers legitimate interests or consent, while public task, legal obligation, contract, or vital interests can apply in narrower settings. Consent must be freely given, specific, informed, and unambiguous, so telling users that their data will be used for training does not by itself make prior consent, given for another purpose, valid for that new one. Where the data includes health, biometric, or other special categories, a separate <strong>Article 9 condition</strong> is required in addition to the Article 6 basis, and it is easy to secure the first and forget the second. Legitimate interests requires a <strong>legitimate interests assessment</strong>, a documented weighing of the organization’s interest against the individual’s rights and expectations. This means identifying the interest, showing the processing is necessary to achieve it, not merely convenient, and demonstrating that the individual’s interests do not override it. Regulators have been sceptical of the basis where the processing has significant effects on people, though no fixed threshold of expected benefit decides the necessity question on its own.</p>
+<p><strong>Data minimization</strong> requires that only data which is adequate, relevant, and necessary be collected. This sits in unresolved tension with machine learning, where more data generally produces better models, and no amount of careful drafting dissolves the tension. What it requires in practice is that each category of data be justified against the specific purpose, not collected because it might prove useful.</p>
 <p><strong>Purpose limitation</strong> constrains reuse. Data collected for one purpose may not be processed for an incompatible one. Whether training a model counts as compatible reuse depends on the relationship between the purposes, what people would reasonably expect, and what safeguards apply. Using service transcripts to improve the service that generated them is more defensible than using them to train something unrelated.</p>
-<p>Data subject rights create difficulties specific to AI. Access means telling a person whether their data was used in training and what has been inferred about them. Rectification means correcting inaccurate data, but correcting a record does not remove its influence from a model already trained on it. Erasure raises the same problem more sharply. The data is gone from storage; its effect on the parameters is not. Whether erasure obliges retraining is unsettled, and organizations should document the position they have taken rather than hoping the question does not arise.</p>
+<p>Data subject rights create difficulties specific to AI. Access means telling a person whether their data was used in training and what has been inferred about them. Rectification means correcting inaccurate data, but correcting a record does not remove its influence from a model already trained on it. Erasure raises the same problem more sharply. The data is gone from storage; its effect on the parameters is not. Whether erasure obliges retraining is unsettled, and organizations should document the position they have taken instead of hoping the question does not arise.</p>
 </section>
 <section id="article-22-in-depth" class="level2">
 <h2 class="anchored" data-anchor-id="article-22-in-depth">2.2 Article 22 in depth</h2>
 <p>One provision deserves extended treatment because it governs the situations where AI most directly determines what happens to a person.</p>
 <p>GDPR Article 22 gives a person the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning them or similarly significantly affects them. Three elements determine whether it applies.</p>
 <p>The first is whether the decision is <strong>solely automated</strong>. If a person is meaningfully involved, the article does not engage. Everything turns on what meaningfully means, and regulators have been clear that involvement which is nominal does not count. A reviewer who approves whatever the system produces has not removed the decision from the article’s scope.</p>
-<p>What distinguishes real involvement from nominal involvement is observable. Real involvement means the reviewer has authority to reach a different conclusion, has access to information beyond the system’s output, has time proportionate to the decision, and actually reaches different conclusions in some proportion of cases. Nominal involvement shows the opposite signature: approval rates approaching unity, review times too short for the information to have been read, no access to anything the system did not surface, and performance measures that reward agreeing with the system. That last one is the most reliable indicator and the least often examined. Where a reviewer is measured on throughput and overriding requires written justification, the organization has designed nominal involvement whatever its policy says.</p>
-<p>The second is whether the effect is <strong>legal or similarly significant</strong>. Legal effects are those that change someone’s legal position: a contract terminated, a benefit refused, a licence withdrawn. Similarly significant effects are those with comparable practical weight, which clearly includes credit, employment, insurance, and access to education or essential services. Online advertising generally does not reach the threshold. Content moderation is contested, and the answer probably depends on what the platform is to the person affected.</p>
-<p>The third is the set of exceptions. Solely automated decisions with significant effects are permitted where necessary for a contract, authorized by law, or based on explicit consent. Even then, safeguards are mandatory: the right to obtain human intervention, to express a point of view, and to contest the decision. An exception permits the automation; it does not remove the recourse.</p>
-<p>For <code>FAIRLEND</code>, working this properly is instructive. Meridian’s model scores applications and a loan officer approves or declines. On paper this is not solely automated. Now check the signature. If officers agree with the model in 97 percent of cases, if the average review takes forty seconds, if the officer sees the score before the application, and if departing from the model requires a memo that a supervisor reviews, then Meridian is making solely automated decisions with a person present. The article applies, no exception has been claimed, and the safeguards do not exist. Nothing about that conclusion required examining the model.</p>
+<p>The Article itself does not name a test. The European Data Protection Board’s guidance, and the Court of Justice’s 2023 SCHUFA judgment, establish two things as law. Token involvement does not remove a decision from Article 22, and a score can itself be a decision within the Article even when a person formally signs off afterward, if that score effectively determines the outcome. What counts as genuine involvement in a given case is then a matter of evidence, not a fixed formula. In practice, auditors look for whether the reviewer has authority to reach a different conclusion, access to information beyond the system’s output, time proportionate to the decision, and a nonzero override rate. They also look for the opposite signature, where approval rates approach unity, review times are too short for the information to have been read, nothing beyond the system’s output is available, and performance measures reward agreeing with the system. None of these indicators is a settled legal threshold, and their weight depends on the context. What the law is clear on is that a reviewer who rubber-stamps has not removed the decision from the Article’s scope, and that an upstream score which effectively decides the outcome can fall within Article 22 on its own.</p>
+<p>The second is whether the effect is <strong>legal or similarly significant</strong>. Legal effects are those that change someone’s legal position, such as a contract terminated, a benefit refused, or a licence withdrawn. Similarly significant effects are those with comparable practical weight, which clearly includes credit, employment, insurance, and access to education or essential services. Online advertising generally does not reach the threshold. Content moderation is contested, and the answer probably depends on what the platform is to the person affected.</p>
+<p>The third is the set of exceptions. Solely automated decisions with significant effects are permitted where necessary for a contract, authorized by law, or based on explicit consent. Even then, safeguards are mandatory, including the right to obtain human intervention, to express a point of view, and to contest the decision. An exception permits the automation; it does not remove the recourse.</p>
+<p>For <code>FAIRLEND</code>, working this properly is instructive. Meridian’s model scores applications and a loan officer approves or declines. On paper this is not solely automated. Now check the signature. If officers agree with the model in 97 percent of cases, if the average review takes forty seconds, if the officer sees the score before the application, and if departing from the model requires a memo that a supervisor reviews, those are the facts. They are the indicators regulators and courts look to, not a self-executing test. They trigger the investigation and may support a conclusion that Meridian is making solely automated decisions with a person present. What that investigation cannot skip is the missing legal element, whether the safeguards Article 22 requires exist at all, and it should proceed under qualified legal review instead of resting on the pattern-match alone. Nothing about running that investigation required examining the model.</p>
 </section>
 <section id="anti-discrimination-law" class="level2">
 <h2 class="anchored" data-anchor-id="anti-discrimination-law">2.3 Anti-discrimination law</h2>
@@ -238,29 +383,41 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Such a practice is unlawful unless the employer shows it is job-related and consistent with business necessity, and even then the plaintiff may prevail by identifying a less discriminatory alternative that serves the same interest.</p>
 <p>This is the doctrine that catches machine learning, and the mechanism is worth being precise about. A model that never sees race can still produce racially disparate outcomes, because other variables carry the information. Postcode correlates with race in most American cities because of a documented history of segregation in housing policy. Name carries information about ethnicity. The gaps in an employment record carry information about caregiving and therefore about sex. Purchasing patterns carry information about almost everything. Removing the protected variable removes the label, not the signal, and a model trained to find predictive structure will find the proxies whether or not anyone intended it to.</p>
-<p>For <code>TALENTSCREEN</code>, this produces the most commonly misunderstood point in the chapter. Calloway bought the tool. The vendor built it, trained it, and holds the information about how. If the tool produces disparate impact in Calloway’s hiring, Calloway is the employer and Calloway is liable. The vendor may have contractual exposure to Calloway. It has no exposure to the applicant. Liability does not transfer with the purchase, and this is what makes vendor due diligence a legal obligation rather than good practice.</p>
+<p>For <code>TALENTSCREEN</code>, this produces the most commonly misunderstood point in the chapter. Calloway bought the tool. The vendor built it, trained it, and holds the information about how. If the tool produces disparate impact in Calloway’s hiring, Calloway is the employer and Calloway is liable regardless of the purchase. That much is settled. What is not settled is whether the vendor is also exposed. In <code>Mobley v. Workday</code>, a federal court allowed federal discrimination claims against a screening vendor to proceed on the theory that a vendor performing traditional hiring functions on an employer’s behalf can itself be treated as the employer’s agent. That is a ruling that claims may proceed, not a final finding of liability, and it will turn on the vendor’s role, its control over the outcome, and its conduct. But it defeats any categorical assurance that a vendor has no exposure to the applicant, and it is why the contract between Calloway and its vendor allocates risk between the two of them without deciding what either owes the applicant under the statute.</p>
 <p>Some jurisdictions have added AI-specific procedural duties on top. New York City requires an annual independent bias audit of automated employment decision tools, with results published and candidates notified before use. Illinois regulates AI analysis of video interviews through notice and consent requirements. Verify the current form of these before relying on them.</p>
 </section>
 <section id="consumer-protection-liability-and-intellectual-property" class="level2">
 <h2 class="anchored" data-anchor-id="consumer-protection-liability-and-intellectual-property">2.4 Consumer protection, liability, and intellectual property</h2>
 <p>Three further bodies of law reach AI without naming it.</p>
 <p>Consumer protection law is the first. The Federal Trade Commission Act prohibits unfair and deceptive practices, and state equivalents do the same. Deception covers claims about what a system does, including describing a process as human-reviewed when it is not, and overstating accuracy in marketing. Unfairness covers substantial injury that consumers cannot reasonably avoid and that is not outweighed by benefits. The remedy worth knowing about is <strong>algorithmic disgorgement</strong>, in which the FTC has required companies to delete models trained on improperly obtained data. That converts a data governance failure into the destruction of the asset the data was collected to build, which changes how the risk should be priced.</p>
-<p>Product liability is the second, and how it applies to AI is still being worked out. The doctrine distinguishes three kinds of defect: a manufacturing defect, where one unit departs from its design; a design defect, where the design itself is unreasonably dangerous; and a failure to warn. None of the three maps cleanly onto a system whose behaviour emerges from training rather than from a specification someone wrote. The European Union has revised its Product Liability Directive to bring software within scope, and the movement is toward making claims easier to bring rather than harder.</p>
+<p>Product liability is the second, and how it applies to AI is still being worked out. The doctrine distinguishes three kinds of defect, a manufacturing defect, where one unit departs from its design; a design defect, where the design itself is unreasonably dangerous; and a failure to warn. None of the three maps cleanly onto a system whose behaviour emerges from training, not from a specification someone wrote. The European Union has revised its Product Liability Directive to bring software within scope, and the movement is toward making claims easier to bring, not harder.</p>
 <p>Intellectual property is the third, and it raises two separate questions. Whether training on copyrighted material is infringement or fair use is being litigated and is not settled. Whether AI-generated output attracts copyright depends on human authorship, and purely machine-generated work generally does not qualify, which means content produced this way may not be protectable. Practical governance here consists of documenting the provenance of training data, understanding what vendor indemnities actually cover, and setting policy on what may be produced with these tools and how it is marked.</p>
 </section>
 <section id="the-eu-ai-act" class="level2">
 <h2 class="anchored" data-anchor-id="the-eu-ai-act">2.5 The EU AI Act</h2>
-<p>The AI Act is the most comprehensive AI-specific regulation in force. It regulates by risk tier rather than by sector, and it allocates duties by role.</p>
-<p>Some practices are <strong>prohibited</strong> outright. These include manipulative techniques that cause significant harm, exploitation of vulnerability, social scoring by public authorities, certain uses of real-time remote biometric identification in public spaces, emotion inference in workplaces and educational settings, and untargeted scraping to build facial recognition databases. The July 2026 amendments added prohibitions covering AI-generated non-consensual intimate imagery and child sexual abuse material.</p>
-<p><strong>High-risk systems</strong> are permitted, subject to substantial obligations. Two routes into the category exist. Annex I covers AI that is a safety component of a product already regulated under EU product legislation, such as medical devices and machinery. Annex III lists standalone applications including biometrics, critical infrastructure, education, employment, essential public and private services including credit, law enforcement, migration, and justice. All three running cases in this book land here.</p>
-<p>The obligations on a high-risk system are a risk management system operating across the lifecycle rather than at a point in it, data governance covering training, validation, and testing data, technical documentation sufficient for an authority to assess conformity, automatic logging, transparency to the deployer, human oversight designed in rather than asserted, and appropriate accuracy, robustness, and cybersecurity.</p>
-<p><strong>Limited-risk systems</strong> carry transparency duties under Article 50: disclosure when a person is interacting with an AI system, disclosure of emotion recognition and biometric categorization, and marking of AI-generated content in a machine-readable form.</p>
+<p>The AI Act is the most comprehensive AI-specific regulation in force. It regulates by risk tier, not by sector, and it allocates duties by role.</p>
+<p>Some practices are <strong>prohibited</strong> outright. These include manipulative techniques that cause significant harm, exploitation of vulnerability, social scoring by public authorities, certain uses of real-time remote biometric identification in public spaces, emotion inference in workplaces and educational settings, and untargeted scraping to build facial recognition databases. The July 2026 amendments added prohibitions covering AI-generated non-consensual intimate imagery and child sexual abuse material, applying from 2 December 2026.</p>
+<p><strong>High-risk systems</strong> are permitted, subject to substantial obligations. Two routes into the category exist. Annex I covers AI that is a safety component of a product already regulated under EU product legislation, such as medical devices and machinery. Annex III lists standalone applications including biometrics, critical infrastructure, education, employment, essential public and private services including credit, law enforcement, migration, and justice. Landing in one of these sectors is a starting point for the analysis, not its conclusion. High-risk status has to be determined from Article 6, the applicable Annex entry, intended purpose, product status, actor, exclusions, and current application date, since a sector label such as healthcare or education does not by itself complete the test.</p>
+<p>Once high-risk status is confirmed, the obligations form a risk management system operating across the lifecycle, not at a single point in it. They include data governance covering training, validation, and testing data, and technical documentation sufficient for an authority to assess conformity. They also include automatic logging, transparency to the deployer, human oversight designed in rather than asserted, and appropriate accuracy, robustness, and cybersecurity.</p>
+<p><strong>Limited-risk systems</strong> carry transparency duties under Article 50, including disclosure when a person is interacting with an AI system, disclosure of emotion recognition and biometric categorization, and marking of AI-generated content in a machine-readable form.</p>
 <p><strong>General purpose AI models</strong> are regulated separately from the tier system, with documentation, downstream information, copyright policy, and a published summary of training content. Models presenting systemic risk carry additional evaluation, mitigation, incident reporting, and cybersecurity duties.</p>
 <p>Duties attach by role.</p>
 <div class="definition">
 <p><strong>A provider develops an AI system and places it on the market. A deployer uses one in the course of a professional activity.</strong></p>
 </div>
-<p>Providers carry the design and conformity obligations; deployers carry obligations of use, oversight, monitoring, and informing affected people. Calloway is a deployer of <code>TALENTSCREEN</code>. Northfield is both a provider and a deployer of <code>MEDASSIST</code>, because it built the system it uses. An organization that fine-tunes a purchased model, or puts its own name on it, may become a provider of a system it did not originally build.</p>
+<p>Providers carry the design and conformity obligations. Deployers carry obligations of use, oversight, monitoring, and informing affected people, though the specific duties within each category depend on the system’s risk tier and the deployer’s own role and activity; they do not form one uniform bundle every deployer owes in the same form. Calloway is a deployer of <code>TALENTSCREEN</code>. Northfield is both a provider and a deployer of <code>MEDASSIST</code>, because it built the system it uses. An organization that fine-tunes a purchased model, or puts its own name on it, may become a provider of a system it did not originally build.</p>
+<p>Four regimes have now each supplied their own trigger, and it is worth seeing them side by side before moving on, because they do not share a source of truth and running them separately is the point, not an inconvenience.</p>
+<div id="fig-regime-applicability" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-regime-applicability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/fig-02-01-regime-applicability.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regime-applicability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Which regimes reach this system
+</figcaption>
+</figure>
+</div>
+<p>Read <a href="#fig-regime-applicability" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> from the left. One entry node holds a system’s own facts, its activity, its actors and their roles, its data, the population it affects, its deployment location, and its autonomy. Four arrows leave that single node, one to each regime’s own trigger test, because the facts are shared but the tests are not. GDPR Article 3 asks a territorial question. GDPR Article 22 asks whether a decision is solely automated with a significant effect. Anti-discrimination law asks whether a protected-basis outcome results, regardless of what the model was given as input. The AI Act’s Article 6 asks about an Annex entry, an intended purpose, a product status, an actor role, an exclusion, and a date. Each test produces its own result box stating what applies if the test is met, and the footer band is the point of the whole figure. A “yes” under one regime is not evidence for another regime’s test, and none of the four results is derived from an internal risk tier. An internal classification can be built on top of these regime results, but never in place of them.</p>
 </section>
 <section id="the-digital-omnibus-amendments" class="level2">
 <h2 class="anchored" data-anchor-id="the-digital-omnibus-amendments">2.6 The Digital Omnibus amendments</h2>
@@ -269,83 +426,172 @@ ul.task-list li input[type="checkbox"] {
 <p>By late 2025 the implementation machinery was visibly behind. Member states had not all designated national competent authorities. More consequentially, the harmonized technical standards being developed by the European standardization bodies were not finished. Those standards are the practical route to demonstrating compliance, and without them organizations faced obligations stated in general terms with no agreed benchmark for meeting them.</p>
 <p>The Commission proposed targeted amendments in November 2025. Negotiations were difficult, with an initial trilogue in April 2026 ending without agreement. Provisional agreement came in May, the Parliament endorsed the text in June, the Council approved at the end of that month, and the amending regulation was published on 24 July 2026 and entered into force on 27 July.</p>
 <p>The deferrals are substantial. Standalone high-risk systems under Annex III now have until 2 December 2027. High-risk AI embedded in regulated products under Annex I has until 2 August 2028.</p>
-<p>Reading only that summary produces a serious error, because several things did not move. The Article 50 transparency obligations applied from 2 August 2026 as originally scheduled, with a narrow transitional provision giving generative systems already on the market until 2 December 2026 to meet the machine-readable marking requirement. Systems entering the market after August had no such grace. The prohibitions have been in force since February 2025 and were extended rather than relaxed. General purpose model obligations have been in force since August 2025. And the supervisory powers of the EU AI Office were broadened.</p>
-<p>The lesson for practice is the one the chapter opened with. The obligations did not change; the time to prepare for them did. An organization that stopped work on reading the proposal has lost sixteen months it will need.</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="figures/fig-02-01-ai-act-timeline.svg" class="img-fluid figure-img"></p>
-<figcaption>EU AI Act obligations and when each applies, as amended</figcaption>
+<p>Reading only that summary produces a serious error, because several things did not move. The Article 50 transparency obligations applied from 2 August 2026 as originally scheduled, with a narrow transitional provision giving generative systems already on the market until 2 December 2026 to meet the machine-readable marking requirement. Systems entering the market after August had no such grace. The prohibitions have been in force since February 2025 and were extended, not relaxed. General purpose model obligations have been in force since August 2025. And the supervisory powers of the EU AI Office were broadened.</p>
+<p>The lesson for practice is broader than a moved deadline. The amendment changed substance as well as timing. The extended prohibitions and broadened supervisory powers noted above are two examples; a third is the AI literacy duty, which softened from a requirement to ensure literacy into a requirement to support its development. A programme that tracks only the date misses changes like this one. An organization that stopped work on reading the proposal has lost sixteen months it will need, and it needs to check what changed as well as when it takes effect.</p>
+<div id="fig-ai-act-timeline" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ai-act-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/fig-02-03-ai-act-timeline.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ai-act-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: EU AI Act obligations and when each applies, as amended
+</figcaption>
 </figure>
 </div>
-<p>Read the figure as two bands. The upper band shows obligations already in force, and it is longer than most summaries of the deferral imply. The lower band shows what moved. Notice that the deferral applies to one category, high-risk conformity, and that everything else on the chart either never moved or moved by four months rather than sixteen. Notice also that the marker for harmonized standards sits before the deferred deadline rather than after it, because a conformity obligation without an available standard is an obligation nobody can discharge, and that dependency is what produced the deferral. An organization reading this chart in 2027 should check the standards marker first, because if it has moved again, so will everything to the right of it.</p>
+<p>Read <a href="#fig-ai-act-timeline" class="quarto-xref">Figure&nbsp;<span>3.2</span></a> as two bands, obligations already in force above, which run longer than most summaries of the deferral imply, and below them the ones that moved. Notice that the deferral applies to one category, high-risk conformity, and that everything else on the chart either never moved or moved by four months, not sixteen. Notice also that the marker for harmonized standards sits before the deferred deadline, not after it. That is a sequence, not a legal dependency. Standards are voluntary. A provider may always demonstrate compliance by other adequate means, so their absence never made the obligation impossible to discharge. What it removed was the cheaper, more certain route, leaving most providers to document on their own, without a benchmark, how their systems met the Act’s requirements. Multiplied across an industry, that cost matches the reason the regulation’s own recitals give for the deferral, the same delayed national governance frameworks and unfinished harmonized standards this section opened with. The recitals of the amending regulation itself are the primary source to check before citing that reasoning elsewhere. The dates now enacted will not move because a standard slips; they move only if the law is amended again.</p>
 </section>
-<section id="conformity-assessment-and-why-it-decides-everything" class="level2">
-<h2 class="anchored" data-anchor-id="conformity-assessment-and-why-it-decides-everything">2.7 Conformity assessment and why it decides everything</h2>
+<section id="standards-and-conformity-routes" class="level2">
+<h2 class="anchored" data-anchor-id="standards-and-conformity-routes">2.7 Standards and conformity routes</h2>
 <p>Legislation of this kind states requirements in general terms because it must apply across every sector and outlast the technology it regulates. The AI Act says training data must be sufficiently representative and that systems must achieve appropriate accuracy. It does not say how representativeness is measured or what level of accuracy counts as appropriate. Something has to supply that specificity before anyone can comply, and what supplies it turns out to matter as much as the legislation itself.</p>
-<p><strong>Conformity assessment</strong> is the process of establishing that a system meets the requirements. For most standalone high-risk systems the provider may assess internally, evaluating its own system against the requirements and documenting the result. For some systems, notably certain biometric applications, and for high-risk AI inside products already subject to third-party assessment, a notified body must be involved. <strong>Notified bodies</strong> are independent organizations designated by member states to perform this function.</p>
+<p><strong>Conformity assessment</strong> is the process of establishing that a system meets the requirements. For most standalone high-risk systems, those listed in Annex III points 2 through 8, the provider always assesses internally, evaluating its own system against the requirements and documenting the result. For the biometric systems listed in Annex III point 1, internal assessment is available only when the provider has applied a harmonized standard or a common specification covering the requirement; otherwise a notified body must be involved. High-risk AI embedded in a product already subject to third-party assessment under other EU product law follows that product law’s own procedure instead. <strong>Notified bodies</strong> are independent organizations designated by member states to perform this function.</p>
 <p><strong>Harmonized standards</strong> are the bridge. Developed by the European standardization organizations at the Commission’s request and cited in the Official Journal, they translate the Act’s general requirements into specific technical practice.</p>
 <div class="definition">
-<p><strong>A provider that conforms to a harmonized standard receives a presumption of conformity with the requirement that standard addresses: the requirement is treated as met, without further proof.</strong></p>
+<p><strong>Conformity with a harmonized standard creates a presumption of conformity only for the requirements and obligations the cited parts cover.</strong> Record the standard, version, Official Journal citation, covered requirement, system category, and Article 43 route. The presumption does not convert the standard into a complete certificate for the system or prevent a competent authority from examining conformity.</p>
 </div>
-<p>Deviation is permitted, but it shifts the burden: the provider must then demonstrate compliance by other means, which is more expensive and more contestable.</p>
+<p>Deviation is permitted, and this is the point most often missed. A provider that does not rely on a harmonized standard must instead document how its own technical solution meets the requirement, which is more expensive and more contestable than citing a standard, but it is a route the legislation deliberately keeps open. A separate mechanism applies once the Commission has adopted a common specification for a requirement. A provider that departs from that specification must then justify that its own solution meets the requirement to at least an equivalent level.</p>
 <p>Once conformity is established the provider draws up an EU declaration of conformity, affixes CE marking, and registers the system in an EU database before placing it on the market.</p>
-<p>This machinery explains the deferral. The standards were not ready, so the presumption of conformity was not available, so the obligation could not be discharged in the way the legislation contemplated. The standardization bodies responded by accelerating their process, permitting direct publication after a positive enquiry vote rather than requiring a separate formal vote. Whether the standards are cited in the Official Journal by the time you read this is the single most useful thing to check about the current state of the Act.</p>
+<p>This machinery explains the deferral. Delayed standards removed a shared benchmark and a limited presumption of conformity. They did not place every provider on one route. Annex III points 2 through 8 remain on internal control. Annex III point 1 follows the Article 43 conditions for internal or notified-body assessment. Annex I systems follow the procedure in the applicable product legislation. The current production check is therefore not simply whether standards exist. It is which cited standard covers which requirement, which system category is involved, and which route Article 43 assigns. None of this made compliance unlawful or impossible. It made compliance costly and uncertain, which for an obligation landing on thousands of firms in the same month amounts to the same political problem. The standardization bodies responded by accelerating their process, permitting direct publication after a positive enquiry vote instead of requiring a separate formal vote. Whether the standards are cited in the Official Journal by the time you read this is the single most useful thing to check about the current state of the Act.</p>
 </section>
 <section id="what-iso-42001-does-and-does-not-do" class="level2">
 <h2 class="anchored" data-anchor-id="what-iso-42001-does-and-does-not-do">2.8 What ISO 42001 does and does not do</h2>
-<p>ISO/IEC 42001 is a <strong>management system standard</strong>, which is a particular kind of document and worth understanding before assessing what it is good for. It does not say how an AI system should behave. It says what an organization must have in place to manage AI deliberately rather than incidentally: a stated policy, assigned responsibilities, a process for identifying and treating risk, objectives that can be measured, internal audit, and periodic review by management. Its close relatives are ISO 9001 for quality and ISO 27001 for information security, and it works in the same way. An accredited body examines the organization against the standard and, if satisfied, certifies it. That certificate is meaningful. It tells a customer or a regulator that an independent examiner found a systematic approach rather than an improvised one.</p>
-<p>Organizations frequently treat that certificate as the route to AI Act compliance. It is not, and the reason is conceptual rather than a matter of coverage.</p>
+<p>ISO/IEC 42001 is a <strong>management system standard</strong>, which is a particular kind of document and worth understanding before assessing what it is good for. It does not say how an AI system should behave. It says what an organization must have in place to manage AI deliberately, not incidentally, a stated policy, assigned responsibilities, a process for identifying and treating risk, objectives that can be measured, internal audit, and periodic review by management. Its close relatives are ISO 9001 for quality and ISO 27001 for information security, and it works in the same way. An accredited body examines the organization against the standard and, if satisfied, certifies it. That certificate is meaningful. It tells a customer or a regulator that an independent examiner found a systematic approach rather than an improvised one.</p>
+<p>Organizations frequently treat that certificate as the route to AI Act compliance. It is not, and the reason is conceptual, not a matter of coverage.</p>
 <p>The ISO catalogue in this area has grown substantially. Beyond 42001 and the terminology standard 22989, recent additions address impact assessment, requirements for the bodies that audit and certify management systems, conformity assessment schemes, transparency taxonomy, explainability, and environmental sustainability, with further work on AI cybersecurity and testing. The impact assessment standard bears directly on how impact assessments are defined and conducted, and the certification-body standard is what makes certification against 42001 mean anything at all. Verify publication status before relying on any of them.</p>
 <p>But the European standardization committee working on AI Act standards has stated that ISO/IEC 42001 does not cover all the quality management requirements the Act imposes, and a separate European standard is being developed to fulfil the complete set.</p>
-<p>The reason is a difference in subject. ISO/IEC 42001 is a management system standard in the tradition of ISO 9001 and 27001, and management system standards manage risk to the organization. The AI Act’s risk management provisions manage risk to people outside the organization, who are not the standard’s customer and have no relationship with the certified body. These are different accountability structures, and no mapping between clauses bridges them, because the gap is not in what is covered but in whose interests the system is designed to protect.</p>
-<p>This is the argument of Chapter 1 reappearing in concrete form. A framework that treats the deploying organization as the entity whose risk matters will produce a well-run process that is silent about the person the system acts upon. Certification is worth having. It demonstrates that an organization has a systematic approach and that an accredited body has examined it. It does not demonstrate that the system is safe for the people it affects, and it should not be presented as though it does.</p>
+<p>The reason is not that management system standards ignore people outside the organization. The related ISO/IEC 42005 impact assessment standard expressly directs an organization to identify affected stakeholders, groups, and society-level effects, and 42001 itself requires the organization to consider their interests when setting objectives. The gap is one of legal scope and evidence. Certification shows that an accredited body examined the management system within a defined scope and found it systematic. It does not show that any particular high-risk system satisfies every AI Act requirement, that a specific impact was actually prevented, or that the certified scope matches the deployed system. A well-run management system and a compliant deployment are different claims, verified by different evidence, and a certificate answers only the first.</p>
+<p>This is the same point Chapter 1 made, now concrete. Certification is worth having. It demonstrates that an organization has a systematic approach and that an accredited body has examined it. It does not demonstrate that a particular system meets the Act’s requirements, and it should not be presented as though it does.</p>
 </section>
 <section id="the-united-states" class="level2">
 <h2 class="anchored" data-anchor-id="the-united-states">2.9 The United States</h2>
-<p>The United States has no equivalent standards machinery, and the document that fills the space is voluntary. The <strong>NIST AI Risk Management Framework</strong> was published in 2023 by the National Institute of Standards and Technology at the direction of Congress. It organizes the work into four functions. Govern establishes the policies, roles, and culture the other three depend on, and it runs across the whole lifecycle rather than sitting at one point in it. Map establishes the context a system operates in and identifies what could go wrong. Measure analyzes and tracks those risks using methods suited to each. Manage prioritizes them and acts.</p>
-<p>The framework is descriptive rather than prescriptive. It says what an organization should attend to and leaves the thresholds to the organization, which is what makes it usable across sectors and also what limits it. There is no conformity assessment, no accredited body, and no certificate. An organization stating that it follows the AI RMF is making a claim that nobody outside it can check.</p>
+<p>The United States has no equivalent standards machinery, and the document that fills the space is voluntary. The <strong>NIST AI Risk Management Framework</strong> was published in 2023 by the National Institute of Standards and Technology at the direction of Congress. It organizes the work into four functions. Govern establishes the policies, roles, and culture the other three depend on, and it runs across the whole lifecycle instead of sitting at one point in it. Map establishes the context a system operates in and identifies what could go wrong. Measure analyzes and tracks those risks using methods suited to each. Manage prioritizes them and acts, which can send a system back to be re-mapped instead of closing the work out.</p>
+<div id="fig-nist-rmf" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nist-rmf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/fig-02-02-nist-rmf-functions.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nist-rmf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.3: The NIST AI RMF’s four functions
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-nist-rmf" class="quarto-xref">Figure&nbsp;<span>3.3</span></a> draws Govern as a band underneath the other three, not as a first box in a line, because that is the relationship the framework itself describes. Govern is not a phase that finishes before Map starts, and a program that treats it that way has usually skipped naming an accountable owner or an escalation path, not skipped a step. Map, Measure, and Manage are drawn as a cycle, not a pipeline with an end, since a decision made in Manage routinely sends a system back to Map when a control changes what the system does or who it reaches. None of this is enforced by anything outside the organization that adopts it, which the figure’s own footer states directly.</p>
+<p>The framework is descriptive rather than prescriptive. It says what an organization should attend to and leaves the thresholds to the organization, which is what makes it usable across sectors and also what limits it. There is no conformity assessment, no accredited body, and no built-in certificate. An organization stating that it follows the AI RMF is not making an uncheckable claim, but it is making one with no legal presumption attached. The claim can still be tested against the required artifacts (a governance policy, a risk register, measurement records), against contractual commitments, or through an independent assessment, but that testing has to happen, because no certificate does it automatically. NIST reports that AI RMF 1.0 is under revision, so any mapping to it should record the version relied on and its date.</p>
 <p>That is not a criticism of a document never built to be certifiable. It matters because the claim is made in procurement and in contracts as though it carried the weight of an ISO certificate, and it does not. The claim needs testing whenever a vendor offers the framework as evidence.</p>
 <p>The United States has no comprehensive federal AI statute. What exists is a contest between federal executive policy seeking uniformity, an active and expanding body of state law, and congressional proposals that have not become law.</p>
 <p>Federal executive policy shifted substantially in late 2025. Earlier direction emphasizing safety testing and civil rights protections was revoked. A December 2025 executive order on a national AI policy framework directed agencies to identify state AI laws considered inconsistent with national policy and to challenge them, and a litigation task force was announced in January 2026. A March 2026 framework directed Congress toward a unified federal approach and called for preemption of state AI law, with carve-outs including child safety, state government procurement and use, and AI infrastructure regulation.</p>
-<p><strong>Preemption</strong>, the displacement of state law by federal law, is not settled, and this is the practically important point. An executive order cannot by itself displace state law. Whether state AI laws are affected will be determined through litigation and possibly through federal legislation, and a bipartisan group of more than twenty state attorneys general has opposed the effort. <strong>State AI laws remain enforceable until preempted by statute or struck down by a court.</strong> Comply with them and monitor the contest.</p>
-<p>Congress has become more active without legislating. A June 2026 bipartisan discussion draft would require frontier model developers to disclose model information and obtain third-party audits through designated verification organizations, and would preempt state laws regulating AI development for three years. That preemption is narrower than it first appears, reaching development activity rather than deployment or laws of general application.</p>
-<p>Federal agencies continue applying existing authority within their domains regardless of the preemption question, because that authority rests on statutes rather than on AI-specific policy. The FTC acts under its consumer protection authority, the EEOC on employment, banking regulators through model risk management frameworks that predate AI, and the FDA on medical devices.</p>
-<p>State legislation has developed along two tracks that reach different parties. The algorithmic discrimination track reaches deployers making consequential decisions about people, requiring reasonable care, impact assessments, disclosure, and notification. The frontier model track reaches developers of the largest models, requiring published safety frameworks covering internal governance, cybersecurity, and catastrophic risk thresholds, together with transparency reporting. California and Texas laws took effect in January 2026 and New York and Illinois laws take effect in January 2027. Verify current effective dates, several of which have been adjusted since enactment.</p>
-<p>Colorado is the instructive case, and it is instructive for what happened to it rather than for what it required.</p>
-<p>Colorado enacted SB 24-205 in May 2024, the first comprehensive state AI law in the United States. It imported the shape of the AI Act: duties of care on developers and deployers of high-risk systems, risk management programs, impact assessments, and obligations to prevent algorithmic discrimination across employment, housing, lending, insurance, health care, and education. Its start date slipped from February 2026 to June 2026. In April 2026 xAI sued to enjoin it on constitutional grounds, the Department of Justice intervened in support, and a federal magistrate stayed enforcement. On 14 May 2026 the governor signed SB 26-189, repealing SB 24-205 and replacing it with a narrower Automated Decision-Making Technology Act built on disclosure and individual rights rather than a duty of care. The replacement takes effect on 1 January 2027.</p>
+<p><strong>Preemption</strong>, the displacement of state law by federal law, is not settled, and this is the practically important point. An executive order cannot by itself displace state law. Whether state AI laws are affected will be determined through litigation and possibly through federal legislation, and a bipartisan group of more than twenty state attorneys general has opposed the effort. <strong>Each state AI law remains enforceable on its own terms, from its own effective date, unless and until a court enjoins or stays it specifically or a statute preempts it.</strong> That is not a uniform default outcome. Colorado’s SB 24-205 shows a law can be stayed by a federal court well before any final ruling on preemption or constitutionality, so the operative question for a given law is its own current procedural status, not a general presumption that state law survives untouched. Comply with each law as it currently stands and monitor the contest.</p>
+<p>Congress has become more active without legislating. A June 2026 bipartisan discussion draft would require frontier model developers to disclose model information and obtain third-party audits through designated verification organizations, and would preempt state laws regulating AI development for three years. That preemption is narrower than it first appears, reaching development activity, not deployment or laws of general application.</p>
+<p>Federal agencies continue applying existing authority within their domains regardless of the preemption question, because that authority rests on statutes, not on AI-specific policy. The FTC acts under its consumer protection authority, the EEOC on employment, banking regulators through model risk management frameworks that predate AI, and the FDA on medical devices.</p>
+<p>State legislation has developed along two tracks that reach different parties, and the two are easy to conflate because both arrived at once. The <strong>algorithmic discrimination track</strong> reaches deployers making consequential decisions about people, typically through notice, disclosure, and duties tied to specific decision types. The <strong>frontier model track</strong> reaches developers of the largest models, requiring published safety frameworks and transparency reporting, not deployment-level duties. The table below is a snapshot as of the date checked. State AI legislation is moving fast, and each row should be verified against the current statute before you rely on it.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Jurisdiction</th>
+<th>Instrument</th>
+<th>Track</th>
+<th>Status (checked 2026-09-13)</th>
+<th>Effective date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Illinois</td>
+<td>HB 3773, amending the Illinois Human Rights Act</td>
+<td>Algorithmic discrimination (employment)</td>
+<td>Enacted, in force</td>
+<td>1 Jan 2026</td>
+</tr>
+<tr class="even">
+<td>New York</td>
+<td>RAISE Act</td>
+<td>Frontier model</td>
+<td>Enacted</td>
+<td>1 Jan 2027</td>
+</tr>
+<tr class="odd">
+<td>California</td>
+<td>SB 53</td>
+<td>Frontier model</td>
+<td>Enacted, in force</td>
+<td>1 Jan 2026</td>
+</tr>
+<tr class="even">
+<td>Texas</td>
+<td>TRAIGA, Responsible AI Governance Act</td>
+<td>Neither track cleanly, a disclosure-and-prohibition statute enforced only by the state attorney general</td>
+<td>Enacted, in force</td>
+<td>1 Jan 2026</td>
+</tr>
+<tr class="odd">
+<td>California</td>
+<td>SB 7, would have created deployer duties for automated employment decisions</td>
+<td>Algorithmic discrimination (employment)</td>
+<td>Vetoed October 2025; not in force</td>
+<td>Did not take effect</td>
+</tr>
+<tr class="even">
+<td>Colorado</td>
+<td>SB 24-205</td>
+<td>Comprehensive, AI Act-style duty of care</td>
+<td>Repealed before its own deferred start date arrived</td>
+<td>Never took effect</td>
+</tr>
+<tr class="odd">
+<td>Colorado</td>
+<td>SB 26-189, Automated Decision-Making Technology Act, replacing SB 24-205</td>
+<td>Disclosure and individual rights</td>
+<td>Enacted</td>
+<td>1 Jan 2027</td>
+</tr>
+</tbody>
+</table>
+<p>Two entries in that table need more care than a row can hold.</p>
+<p>Texas is the case to be careful with. TRAIGA took effect 1 January 2026 alongside Illinois’s statute, which invites filing it next to Illinois as another 2026 employment-adjacent AI law. It is not. Its consumer-facing provisions exclude anyone acting in an employment context, but its separate unlawful-discrimination provision reaches any person who develops or deploys AI with intent to discriminate against a protected class, private employers included. It imposes no impact-assessment or due-diligence duty, and it expressly declines to treat disparate impact alone as evidence of that intent. A reader who files Texas next to Illinois on the strength of the date alone will misclassify what each one requires.</p>
+<p>California is the case to watch for the opposite error. No California law creating deployer duties for automated employment decisions was in force as of this writing; SB 7 would have imposed one and was vetoed. Treat any claim that California regulates automated employment decisions the way this chapter’s opening treated the AI Act’s original deadline, and verify it against the current statute before relying on it.</p>
+<p>Colorado is the instructive case, and it is instructive for what happened to it, not for what it required.</p>
+<p>Colorado enacted SB 24-205 in May 2024, the first comprehensive state AI law in the United States. It imported the shape of the AI Act, duties of care on developers and deployers of high-risk systems, risk management programs, impact assessments, and obligations to prevent algorithmic discrimination across employment, housing, lending, insurance, health care, and education. Its start date slipped from February 2026 to June 2026. In April 2026 xAI sued to enjoin it on constitutional grounds, the Department of Justice intervened in support, and a federal magistrate stayed enforcement. On 14 May 2026 the governor signed SB 26-189, repealing SB 24-205 and replacing it with a narrower Automated Decision-Making Technology Act built on disclosure and individual rights, not a duty of care. The replacement takes effect on 1 January 2027.</p>
 <p>The original law never became operative. It was repealed before its own deferred start date arrived.</p>
-<p>Two things follow that matter more than the details. An organization that built a Colorado compliance program in 2024 spent two years preparing for obligations that never applied, which is the failure this chapter opened with in a different jurisdiction. And any account describing Colorado’s duty of care in the present tense, including a course or a consultant, is describing something that does not exist. Check the current text before relying on any description of a state law, this one included.</p>
-</section>
-<section id="where-the-law-runs-out" class="level2">
-<h2 class="anchored" data-anchor-id="where-the-law-runs-out">2.10 Where the law runs out</h2>
-<p>Every regime in this chapter was drafted for systems that produce an output which a person then acts on. None was drafted for systems that act.</p>
-<p>That does not leave agentic systems unregulated. The AI Act classifies by use and by risk rather than by architecture, so an agent that screens job applicants is high risk on exactly the same footing as a model that scores them, and <code>TALENTSCREEN</code>’s obligations do not change because its vendor added autonomy. The obligations attach. The difficulty is that several of them were written on an assumption that autonomy removes.</p>
-<p>Article 14 is the clearest instance. It requires that high-risk systems be designed so a person can oversee them during use, and it names what oversight requires, including the ability to intervene or interrupt. For a scoring model a person sits between the output and the effect, and intervention means declining to act on a recommendation. For an agent that has already sent the message, moved the money, or rejected the candidate, intervention after the fact is not available, and oversight has to mean something else: constraining in advance what the agent may do, and being able to stop it mid-task. The Article does not say this, because the systems it was drafted against did not require it.</p>
-<p>Article 12 has the same shape. It requires records enabling traceability of the system’s functioning, which for an agent means recording not only what was decided but under whose authority it acted. No current text says so.</p>
-<p>Dedicated guidance is thin. Singapore’s Infocomm Media Development Authority has published a framework addressed specifically to agentic systems, the first from a national regulator, and it has been revised at least once, so check the current version before relying on it. In the United States NIST has published work adjacent to the problem, including guidance on post-deployment monitoring in March 2026, but nothing on the specific question. Its Center for AI Standards and Innovation launched an AI Agent Standards Initiative in February 2026, and its National Cybersecurity Center of Excellence issued a concept paper on agent identity and authorization the same month, which as of August 2026 remains a concept paper. There is no published NIST standard on agent identity, authorization, or accountability, and a governance function told otherwise has been told something inaccurate.</p>
-<p>The practical position is uncomfortable and worth stating plainly. An organization deploying agents today carries obligations written for a different kind of system, with no authoritative guidance on how to meet them, and will be assessed against those obligations by an authority reasoning from first principles. The controls that follow from taking those obligations seriously anyway, and the logging Article 12 implies once you accept that authority, and not only action, has to be reconstructable, are developed later in the book.</p>
-</section>
-<section id="making-this-tractable" class="level2">
-<h2 class="anchored" data-anchor-id="making-this-tractable">2.11 Making this tractable</h2>
-<p>Reading the preceding sections in sequence suggests an impossible compliance burden. It is tractable, and the technique that makes it tractable is the subject of the next chapter.</p>
-<p>Maintaining a separate compliance programme per regime does not scale, and it produces the situation where one system is assessed three times by three teams reaching three conclusions. The alternative is to classify each system once against an internal scheme, then maintain a mapping from internal classifications to the obligations each applicable regime imposes. When a regime moves, and this chapter has demonstrated that regimes move, the mapping rule is edited and every affected system is identified at once. The classifications survive untouched.</p>
+<p>Two things follow that matter more than the details. An organization that built a Colorado compliance program in 2024 toward SB 24-205’s duty-of-care architecture would have spent two years preparing for obligations that never took effect, the same risk a moving deadline creates for the AI Act, now shown in a state law. And any account describing Colorado’s duty of care in the present tense, including a course or a consultant, is describing something that does not exist. Check the current text before relying on any description of a state law, this one included.</p>
 </section>
 <section id="case-in-focus-ftc-v.-rite-aid" class="level2 unnumbered case">
 <h2 class="unnumbered anchored" data-anchor-id="case-in-focus-ftc-v.-rite-aid">Case in focus: FTC v. Rite Aid</h2>
-<p>Between 2012 and 2020, Rite Aid deployed facial recognition across hundreds of United States stores to identify people it believed had previously shoplifted or behaved disruptively. Employees received match alerts and acted on them: following customers, searching them, calling the police, ordering them to leave.</p>
-<p>The Federal Trade Commission’s complaint, filed in December 2023, describes a system deployed with almost no governance. Rite Aid did not test the technology’s accuracy before deploying it. Its first vendor disclaimed accuracy in the contract, in capital letters. The enrollment database was built from low-quality images, many from grainy security cameras and mobile phones. Between December 2019 and July 2020 the system generated more than five thousand match alerts in stores over a hundred miles from where the person had been enrolled, and a single enrollment produced more than nine hundred alerts across more than a hundred and thirty stores in five days.</p>
+<p>Between 2012 and 2020, Rite Aid deployed facial recognition across hundreds of United States stores to identify people it believed had previously shoplifted or behaved disruptively. Employees received match alerts and acted on them, following customers, searching them, calling the police, and ordering them to leave.</p>
+<p>The Federal Trade Commission’s complaint, filed in December 2023, describes a system deployed with almost no governance. Rite Aid did not test the technology’s accuracy before deploying it. Its first vendor disclaimed accuracy in the contract, in capital letters. The enrollment database was built from low-quality images, many from grainy security cameras and mobile phones. Between December 2019 and July 2020 the system generated more than five thousand match alerts in stores over a hundred miles from where the person had been enrolled. A single enrollment produced more than nine hundred alerts across more than a hundred and thirty stores in five days.</p>
 <p>The distributional facts are the ones to sit with. Roughly eighty per cent of Rite Aid’s stores were in areas with a plurality of white residents. Roughly sixty per cent of the stores equipped with facial recognition were in areas with a plurality of Black, Asian, or Latino residents. The technology was deployed where its errors would fall on people who were not the majority of the company’s customers, and nothing in the record indicates that anyone decided this. It indicates that nobody examined it.</p>
 <p>The stipulated order, entered in February 2024, is the part to read closely. Within forty-five days Rite Aid had to delete all photographs and videos collected in connection with the system, and any data, models, or algorithms derived in whole or in part from them. Within sixty days it had to instruct third parties who had received that material to do the same. Facial recognition was prohibited for five years. The order runs for twenty.</p>
-<p>Two features of that remedy deserve notice. It reaches the model rather than only the data, so the organization could not keep the asset built from improperly handled inputs. And it contains no exception for technical infeasibility, which an order against Ring the previous year had included. That earlier order required deletion of derived models unless such deletion was technically infeasible, a concession that model deletion may not be achievable in practice.</p>
-<p>Every failure in the complaint is a control this book teaches. No problem statement establishing what the system was for. No assessment of the enrollment data. No accuracy testing before deployment and no fairness testing at any point. No deployment decision recording who accepted the risk. No monitoring that would have surfaced nine hundred alerts from one enrollment. No assessment of the vendor’s disclaimer.</p>
+<p>Two features of that remedy deserve notice. It reaches the model, not only the data, so the organization could not keep the asset built from improperly handled inputs. And it contains no exception for technical infeasibility, which an order against Ring the previous year had included. That earlier order required deletion of derived models unless such deletion was technically infeasible, a concession that model deletion may not be achievable in practice.</p>
+<p>The complaint itself documents missing risk assessment, missing accuracy and fairness testing before deployment, poor enrollment image quality, inadequate employee training, monitoring too thin to catch nine hundred alerts from a single enrollment, and no response to a vendor’s own written warning about accuracy. Those same facts also suggest an absent or ineffective problem statement, no deployment decision recording who accepted the risk, and no real assessment of the vendor’s disclaimer, though that second layer is inference from the complaint’s facts, not a finding the Commission made. Keep the two separate: what the FTC alleged, and what can reasonably be inferred from it.</p>
 <p>One caution against reading a trend into this. In December 2025 the Commission set aside an order against Rytr, an AI writing tool, on the grounds that the alleged facts did not support a violation. No algorithmic deletion order has issued since Rite Aid. The remedy exists and is available. Whether it is currently being used is a different question, and a governance function that assumed either answer would be guessing.</p>
+</section>
+<section id="where-the-law-runs-out" class="level2">
+<h2 class="anchored" data-anchor-id="where-the-law-runs-out">2.10 Where the law runs out</h2>
+<p>Most regimes in this chapter were drafted with a person acting on a system’s output in mind, and their machinery shows it. That is a drafting emphasis, not a scope limit. The AI Act itself reaches systems that influence a physical or virtual environment directly, and product safety regimes have long applied to autonomous products. What is genuinely missing is guidance on how obligations written around a human decision point apply once the system is the one acting.</p>
+<p>That does not leave agentic systems unregulated. The AI Act classifies by use and by risk rather than by architecture. So an agent that screens job applicants is high risk on exactly the same footing as a model that scores them, and <code>TALENTSCREEN</code>’s obligations do not change because its vendor added autonomy. The obligations attach. The difficulty is that several of them were written on an assumption that autonomy removes.</p>
+<p>Article 14 scales oversight to risk, autonomy, and context. It permits oversight measures built into a system before placement on the market and requires a way to intervene during operation or bring the system to a safe stop. Agentic deployment makes the control placement concrete. Consequential or irreversible actions may need approval before execution. Lower-consequence actions may proceed within fixed authority, subject to monitoring, interruption, and recovery.</p>
+<p>Article 12 requires logging that supports traceability, risk detection, and post-deployment monitoring. It does not prescribe one universal agent identity record. Recording the identity and delegated authority under which an agent acted follows from that traceability objective, but the Act itself does not mandate that specific record. Keep the legal duty and the added design control separate.</p>
+<p>Technical guidance remains incomplete. NIST’s agent work includes an initiative and an identity and authorization concept paper rather than a finished universal standard. The organization must therefore record three things separately. They are the legal duty, current technical guidance, and the additional control adopted for its own deployment.</p>
+<p>Missing implementation guidance does not remove the underlying duty or prove that pre-action review is impossible.</p>
+<p>Dedicated guidance is thin. Singapore’s Infocomm Media Development Authority has published one of the earliest national frameworks addressed specifically to agentic systems. It has been revised at least once, so check the current version before relying on it. In the United States, NIST has published work adjacent to the problem, including guidance on post-deployment monitoring in March 2026, but nothing yet that squarely answers the agent identity, authorization, and accountability question. Its Center for AI Standards and Innovation launched an AI Agent Standards Initiative in February 2026. Its National Cybersecurity Center of Excellence issued a concept paper on agent identity and authorization the same month, which as of August 2026 remains a concept paper, not a published standard. Verify the current status of both before relying on this description. Treat any claim that a published NIST standard already answers this question with suspicion until you have checked it yourself.</p>
+<p>The practical position is uncomfortable. An organization deploying agents today carries obligations written for a different kind of system, with no authoritative guidance on how to meet them, and will be assessed against those obligations by an authority reasoning from first principles. That means Article 12’s logging has to reconstruct not just what happened, but under whose authority.</p>
+</section>
+<section id="making-this-tractable" class="level2">
+<h2 class="anchored" data-anchor-id="making-this-tractable">2.11 Making this tractable</h2>
+<p>Reading the preceding sections in sequence suggests an impossible compliance burden. It is tractable.</p>
+<p>Maintaining a separate compliance programme per regime does not scale, and it produces the situation where one system is assessed three times by three teams reaching three conclusions. The alternative is to record each system’s facts once and run every applicable regime’s own test against that shared record, the architecture <a href="#fig-regime-applicability" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> laid out earlier in this chapter. The record of results, not a single internal risk label, is what the organization maintains. It records which regimes apply, on what test, with what evidence, and as of when. When a regime moves, and this chapter has demonstrated that regimes move, only that regime’s result needs to be rerun against the affected systems. What survives untouched is the fact record and each regime’s own test, not a mapping that substitutes for them. A recorded result states what was true about a specific system at the time it was checked, and it still has to be revisited whenever the system’s own facts change or the regime’s own rule changes.</p>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <p>Privacy law reached AI before AI-specific regulation existed and still governs most of what organizations do with data. Article 22 restricts solely automated decisions with significant effects, and whether human involvement is meaningful is determined by observable indicators rather than by whether a person is nominally present.</p>
-<p>Anti-discrimination law reaches AI through disparate impact, which requires no intent. Removing protected characteristics from a model removes the label rather than the signal, because other variables carry the same information. Liability sits with the deploying organization regardless of who built the system.</p>
-<p>The EU AI Act regulates by risk tier and allocates duties by role. Its high-risk obligations were deferred in July 2026, to December 2027 for standalone systems and August 2028 for embedded ones, but prohibitions, general purpose model duties, and transparency obligations all remain in force. The deferral happened because the harmonized standards that make conformity demonstrable were not ready, which is the clearest available demonstration that compliance depends on machinery as much as on legislation.</p>
-<p>ISO/IEC 42001 certification demonstrates a systematic management approach. It does not demonstrate AI Act conformity, because a management system standard manages risk to the organization while the Act manages risk to the people the system acts upon.</p>
+<p>Anti-discrimination law reaches AI through disparate impact, which requires no intent. Removing protected characteristics from a model removes the label, not the signal, because other variables carry the same information. Liability sits with the deploying organization regardless of who built the system.</p>
+<p>The EU AI Act regulates by risk tier and allocates duties by role. Its high-risk obligations were deferred in July 2026, to December 2027 for standalone systems and August 2028 for embedded ones, but prohibitions, general purpose model duties, and transparency obligations all remain in force. The deferral happened because the harmonized standards that make conformity cheap to demonstrate were not ready, which is the clearest available demonstration that compliance depends on machinery as much as on legislation.</p>
+<p>ISO/IEC 42001 certification demonstrates a systematic management approach, examined and confirmed by an accredited body. It does not demonstrate AI Act conformity for a particular system, because the certificate answers a scope-and-process question, not the question of whether that system meets every requirement the Act imposes.</p>
 <p>United States law is a contest between federal preemption efforts and active state legislation. State law binds until preempted.</p>
 <p>None of this is stable, and a programme built to survive its movement is worth more than a programme built to satisfy its current form.</p>
 </section>
@@ -391,7 +637,7 @@ ul.task-list li input[type="checkbox"] {
     anchorJS.add('.anchored');
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/aigov\.ogunseye\.com");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -725,11 +971,14 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01-what-ai-governance-is.html" class="pagination-link" aria-label="1. What AI Governance Actually Is">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">1. What AI Governance Actually Is</span></span>
+      <a href="./01-what-ai-governance-is.html" class="pagination-link" aria-label="1. What AI Governance Is">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">1. What AI Governance Is</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./03-scoping-inventory-classification.html" class="pagination-link" aria-label="3. Scoping, Inventory, and Risk Classification">
+        <span class="nav-page-text"><span class="chapter-title">3. Scoping, Inventory, and Risk Classification</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -739,8 +988,8 @@ ul.task-list li input[type="checkbox"] {
 <p>How to Govern AI · Foundations and Practical Guide to AI Governance</p>
 </div>   
     <div class="nav-footer-center">
-<p>First edition archived at <a href="./v1/">/v1/</a></p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+<p>Full current draft, rendered 2026-09-14</p>
+</div>
     <div class="nav-footer-right">
 <p>CC BY-NC 4.0</p>
 </div>

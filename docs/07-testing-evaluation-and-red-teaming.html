@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7. Testing, Evaluation, and Red Teaming – How to Govern AI</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./08-deployment-and-release.html" rel="next">
+<link href="./06-model-selection-and-development.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-176b1e44b272a30ec08500e73512b2cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3a8111a00e81ba936536c7054a308c39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-data-governance-for-ai.html">Building and Governing the System</a></li><li class="breadcrumb-item"><a href="./07-testing-evaluation-and-red-teaming.html"><span class="chapter-title">7. Testing, Evaluation, and Red Teaming</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">How to Govern AI</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to Govern AI</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-what-ai-governance-is.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. What AI Governance Is</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-regulatory-landscape.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2. The Regulatory Landscape</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-scoping-inventory-classification.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3. Scoping, Inventory, and Risk Classification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-defining-the-problem.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. Defining the Problem and Use Case</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Building and Governing the System</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-data-governance-for-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. Data Governance for AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-model-selection-and-development.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Model Selection and Development</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-testing-evaluation-and-red-teaming.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">7. Testing, Evaluation, and Red Teaming</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-deployment-and-release.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Deployment and Release</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-operations-and-monitoring.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Operations and Monitoring</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-incident-response-and-remediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10. Incident Response and Remediation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">System Classes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-governing-generative-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11. Governing Generative Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-governing-agentic-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12. Governing Agentic Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Running the Governance Function</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-organizing-the-governance-function.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">13. Organizing the Governance Function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-risk-assessment-and-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Risk Assessment and Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-documentation-and-evidence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Documentation and Evidence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-third-party-vendor-and-supply-chain-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. Third-Party, Vendor, and Supply Chain Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-implementing-ai-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">17. Implementing AI Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-governing-under-uncertainty.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">18. Governing Under Uncertainty</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-a-technique-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A: Technique Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-b-regulatory-quick-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B: Regulatory Quick Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-c-templates-and-checklists.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C: Templates and Checklists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#what-you-will-be-able-to-do" id="toc-what-you-will-be-able-to-do" class="nav-link active" data-scroll-target="#what-you-will-be-able-to-do">What you will be able to do</a></li>
+  <li><a href="#performance-testing" id="toc-performance-testing" class="nav-link" data-scroll-target="#performance-testing">7.1 Performance testing</a></li>
+  <li><a href="#fairness-testing" id="toc-fairness-testing" class="nav-link" data-scroll-target="#fairness-testing">7.2 Fairness testing</a></li>
+  <li><a href="#robustness-and-adversarial-testing" id="toc-robustness-and-adversarial-testing" class="nav-link" data-scroll-target="#robustness-and-adversarial-testing">7.3 Robustness and adversarial testing</a></li>
+  <li><a href="#evaluating-generative-systems" id="toc-evaluating-generative-systems" class="nav-link" data-scroll-target="#evaluating-generative-systems">7.4 Evaluating generative systems</a></li>
+  <li><a href="#benchmark-contamination" id="toc-benchmark-contamination" class="nav-link" data-scroll-target="#benchmark-contamination">7.5 Benchmark contamination</a></li>
+  <li><a href="#model-as-judge" id="toc-model-as-judge" class="nav-link" data-scroll-target="#model-as-judge">7.6 Model as judge</a></li>
+  <li><a href="#testing-agentic-systems" id="toc-testing-agentic-systems" class="nav-link" data-scroll-target="#testing-agentic-systems">7.7 Testing agentic systems</a></li>
+  <li><a href="#red-teaming" id="toc-red-teaming" class="nav-link" data-scroll-target="#red-teaming">7.8 Red teaming</a></li>
+  <li><a href="#specifying-the-unspecifiable" id="toc-specifying-the-unspecifiable" class="nav-link" data-scroll-target="#specifying-the-unspecifiable">7.9 Specifying the unspecifiable</a></li>
+  <li><a href="#release-readiness" id="toc-release-readiness" class="nav-link" data-scroll-target="#release-readiness">7.10 Release readiness</a></li>
+  <li><a href="#case-in-focus-a-fairness-decision-made-on-the-record-and-an-audit-built-without-training-data" id="toc-case-in-focus-a-fairness-decision-made-on-the-record-and-an-audit-built-without-training-data" class="nav-link" data-scroll-target="#case-in-focus-a-fairness-decision-made-on-the-record-and-an-audit-built-without-training-data">Case in focus: a fairness decision made on the record, and an audit built without training data</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review questions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-data-governance-for-ai.html">Building and Governing the System</a></li><li class="breadcrumb-item"><a href="./07-testing-evaluation-and-red-teaming.html"><span class="chapter-title">7. Testing, Evaluation, and Red Teaming</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">7. Testing, Evaluation, and Red Teaming</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Meridian’s fairness review of the <code>FAIRLEND</code> ensemble ran four standard tests before the model risk function signed off. Approval rates were compared across protected groups. True positive rates were compared across protected groups. The model’s predicted probabilities were checked against actual repayment outcomes within each group. Every test passed at a threshold the review team considered reasonable. Then a member of the review team, reading the four results side by side instead of one at a time, asked a question nobody else had framed explicitly. If the approval rate is now equal across groups, and the true positive rate is also equal across groups, and the group base rates for actual repayment differ, how can the false positive rate also be equal? It cannot, not because the team made an error, but because the four things being asked for are not simultaneously achievable whenever the groups being compared actually differ in their underlying repayment rates. The review had been treating fairness as a checklist of properties a good model should have all of. It is not a checklist. It is a set of tradeoffs. Someone has to choose among them, on the record, and be prepared to explain the choice to a regulator, a plaintiff’s attorney, or an applicant who wants to know why the model treated their case the way it did.</p>
+<p>This chapter teaches verification for systems whose behavior cannot be fully specified in advance, which is most of what this book has been building toward. Chapter 1 established that a generative system’s output is a plausible continuation rather than a verified fact, and that a rule extracted from data is confident on cases it has never actually seen. Chapters 5 and 6 established what data and model choices set up before a system is ever tested. This chapter is where all of that becomes an operational discipline. It covers what to test, how to test it, and what a passing test actually tells you. The chapter’s most demanding section shows how to specify a requirement for a property, like refusing to fabricate an answer, that resists being written down as a rule at all.</p>
+<section id="what-you-will-be-able-to-do" class="level2 unnumbered objectives">
+<h2 class="unnumbered anchored" data-anchor-id="what-you-will-be-able-to-do">What you will be able to do</h2>
+<ul>
+<li>Select and justify a fairness metric for a specific decision, and explain to a skeptical reviewer why several widely used metrics cannot all be satisfied at once when group base rates differ</li>
+<li>Design an evaluation set for a generative system, including a grading rubric and an inter-rater reliability check</li>
+<li>Explain benchmark contamination and the holdout discipline that survives it</li>
+<li>Recognize the specific, documented failure modes of using a model to grade another model’s output</li>
+<li>Structure a red team exercise, including scope, team composition, and what happens to a finding afterward</li>
+<li>Decompose a property that cannot be directly specified into a verifiable proxy, a stated threshold, a verification method, and a named residual</li>
+</ul>
+</section>
+<section id="performance-testing" class="level2">
+<h2 class="anchored" data-anchor-id="performance-testing">7.1 Performance testing</h2>
+<p>Before any of this chapter’s harder questions, a system has to pass the ordinary test of doing the narrow thing it claims to do, measured on data it has not seen during training. For a classifier, the appropriate metric depends on what an error actually costs, and choosing the wrong one produces a model optimized for the wrong failure. A system screening resumes for further review can tolerate a higher false positive rate, letting through more candidates than strictly necessary, because the cost of a false positive is a wasted interview. A system flagging patients for sepsis risk should weight false negatives far more heavily, because the cost of a missed case is a preventable death. Accuracy alone, treating both error types as equally costly, obscures exactly the distinction that matters for <code>MEDASSIST</code> and would never have been an acceptable metric for it in the first place. Regression tasks require an analogous judgment between metrics that penalize large errors heavily and metrics that treat all errors proportionally, and ranking tasks require a judgment about which position in a ranked list actually drives the outcome a user experiences.</p>
+<p>Held-out data discipline underlies every number this section produces. A model evaluated on data it trained on will report a performance figure that describes its ability to memorize instead of its ability to generalize. The gap between the two is invisible unless the evaluation set was kept genuinely separate from training from the start, not merely sampled after the fact from data the model may have already influenced through earlier iterations of the same pipeline. Section 7.5 extends this discipline to a harder case, where the held-out set itself can leak into training through a channel the organization does not control.</p>
+<p>A known correct answer to compare against is not always available on the timeline, or in the form, that testing needs. An outcome can be delayed, as when a loan’s repayment is not known until the loan matures years later, or selectively observed, as when a hiring model is checked only against people the organization actually hired, saying nothing directly about applicants who were declined. Other times it is contested, as when clinicians reviewing the same case disagree about whether it was high risk, or affected by the intervention being tested, as when a fraud model’s own flag changes what happens to a transaction and therefore what outcome gets recorded. Or it can be a proxy for the thing actually meant, the label problem Chapter 5 raised at the data layer and that testing inherits directly. None of this makes performance testing meaningless. It means the evaluation unit is better named a labeled or otherwise justified reference outcome, where available, than a known correct answer. A test report has to state which of these conditions applies to its own outcome variable, instead of presenting the comparison as though the reference were simply known.</p>
+</section>
+<section id="fairness-testing" class="level2">
+<h2 class="anchored" data-anchor-id="fairness-testing">7.2 Fairness testing</h2>
+<p>Fairness testing is the section this chapter weights most heavily, because it is where a technical choice most directly becomes a values choice. Several widely used metrics, introduced below as a selected comparison, not an exhaustive list, can conflict with each other under conditions that are mathematically settled rather than an open engineering problem.</p>
+<p><strong>Demographic parity</strong> requires that the proportion of each group receiving a favorable outcome be equal across groups, regardless of whether the groups actually differ in the underlying rate of whatever the outcome is meant to predict. Applied to <code>FAIRLEND</code>, demographic parity would require that the loan approval rate be the same for every protected group, full stop.</p>
+<p><strong>Equal opportunity</strong> requires that among applicants who would actually repay the loan, the approval rate be equal across groups. This is a narrower, more targeted requirement than demographic parity. It does not require equal approval rates overall, only equal rates among those who deserve approval by the model’s own definition of deserving.</p>
+<p><strong>Equalized odds</strong> requires equal opportunity’s condition and adds a second one. Among applicants who would not repay, the approval rate must also be equal across groups. This is equal opportunity plus an equal false positive rate, and it is a strictly harder condition to satisfy than either demographic parity or equal opportunity alone.</p>
+<p><strong>Calibration</strong> requires that a predicted probability mean the same thing regardless of group. Among all applicants a model scores at, say, a seventy percent likelihood of repayment, seventy percent should actually repay, within each group separately as well as overall. Calibration is the property that makes a risk score interpretable as a probability at all, and a lender relying on the score to price a loan is relying on calibration whether or not the fairness review named it explicitly. Calibration is a property of the score itself, before any cutoff is applied to it; demographic parity, equal opportunity, and equalized odds are properties of a decision made by applying a threshold to that score. Keeping this distinction explicit matters because a claim about the score’s calibration does not, by itself, settle what happens to any of the three threshold-based criteria once a specific cutoff is chosen.</p>
+<p>The impossibility result, established independently by multiple researchers in the mid-2010s and now treated as settled in the fairness literature, is narrower than “no two fairness criteria can coexist,” and it is worth stating with its conditions attached, not as a blanket rule. For imperfect, nontrivial risk scores, when the base rate, the actual proportion of the outcome being predicted, differs between two groups, calibration cannot generally be combined with equal balance for the positive and negative classes, the condition equalized odds requires. Related thresholded criteria can also conflict with calibration under the same base-rate condition. Perfect prediction and other degenerate cases are the exceptions the result carves out, and the result does not show that every pair of fairness criteria is always incompatible with every other. Review question 6 asks the reader to work out a case where two of them coexist. This is worth understanding as a proof rather than a rule of thumb. A reviewer who treats it as a rule of thumb will keep looking for the clever fix that resolves the specific tension between calibration and equalized odds, but no such fix exists when the base rates genuinely differ.</p>
+<p>The consequence for <code>FAIRLEND</code>’s review is the one the chapter opened with. Selecting which fairness property to prioritize is a decision about which kind of unfairness the organization is willing to accept, not a technical optimization with a single correct answer. A decision of that character needs a named, accountable owner and a documented rationale, not a default inherited silently from whichever metric a data science team happened to compute first. A calibrated score may still yield unequal error rates after thresholding, especially when base rates and score distributions differ; which threshold-based criterion ends up unequal under a calibrated score is a question to measure in the actual decision outcomes, not one calibration answers by itself. Meridian’s eventual decision, worked through in this chapter’s case in focus, prioritized equal opportunity over calibration because measuring the decision outcomes under each option showed that keeping calibration meant a materially higher false negative rate for one group. In the judgment of the people accountable for the decision, that was a more direct harm than the pricing complication that came with giving up calibration, a judgment reasonable people inside the same institution disagreed with. The disagreement itself was recorded, not resolved by silence.</p>
+<div id="fig-fairness-metrics" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fairness-metrics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/fig-07-01-fairness-metrics.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fairness-metrics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Figure 7.1. The four fairness metrics and where they conflict
+</figcaption>
+</figure>
+</div>
+<!-- FIGURE 7.1 REQUIRED ELEMENTS (revised per CH043, CH044; REBUILT, applied)
+Must appear: four widely used criteria (demographic parity, equal
+opportunity, equalized odds, calibration), presented explicitly as a
+selected comparison, not an exhaustive list, each with a one-line precise
+definition. Calibration must be visually distinguished as a property of the
+score, while the other three are marked as properties of a thresholded
+decision. Must show the impossibility relationship narrowly and with its
+conditions: for imperfect, nontrivial scores, calibration and equalized
+odds cannot generally both hold when group base rates differ, and perfect
+prediction and other degenerate cases are exceptions. The figure must not
+imply that every pair of the four criteria is mutually exclusive. Entry
+condition: two or more groups with a decision made about each. Exit
+condition: a chosen metric, with the tradeoff it accepts named explicitly,
+stated as a measured decision outcome instead of inferred from
+calibration alone. Deliberately excluded: which metric is "best"; the
+chapter's point is that this is a values choice. Must work in black and
+white.
+SOURCE: Kleinberg, Mullainathan, and Raghavan, "Inherent Trade-Offs in the
+Fair Determination of Risk Scores" (arXiv:1609.05807); Chouldechova, "Fair
+Prediction with Disparate Impact" (arXiv:1610.07524); the figure's
+presentation is original.
+AUDIT: pass 1 [x] against list, pass 2 blind [x], rendered and viewed [x].
+Rebuilt as a two-tier layout: score property above, thresholded-decision
+properties below, joined by a labelled "apply a threshold" arrow, so the
+calibration/decision distinction is structural, not just a label. The
+impossibility connector runs only between calibration and equalized odds,
+with its base-rate condition and the perfect-prediction exception stated
+in the figure itself. A caption states explicitly that demographic parity
+and equal opportunity are not shown as conflicting. Checked 13 Sep 2026.
+-->
+<p>Figure 7.1 is a map of a specific, narrow conflict, not four independent boxes to check off or a claim that every pair is mutually exclusive. Demographic parity and equal opportunity can coexist with each other, and with calibration, under conditions review question 6 asks the reader to work out directly; they are not proven incompatible in general. The pairing the mid-2010s impossibility result actually proves incompatible, for imperfect, nontrivial scores when group base rates differ, is calibration and equalized odds. This is the specific tension <code>FAIRLEND</code>’s review discovered, and every comparable fairness review will discover it if it looks for it, whether or not the discovery gets named explicitly in the review’s own documentation.</p>
+</section>
+<section id="robustness-and-adversarial-testing" class="level2">
+<h2 class="anchored" data-anchor-id="robustness-and-adversarial-testing">7.3 Robustness and adversarial testing</h2>
+<p>A model tested only against data resembling its training distribution has not been tested against the conditions most likely to produce a costly failure, because the conditions that matter most are frequently the ones furthest from what the model has seen. Distribution shift testing deliberately evaluates a model against data that differs from its training population along dimensions the deployment is likely to encounter. This extends the representativeness question Chapter 5 raised at the data layer into an explicit test performed before release, instead of a hoped-for property assumed to hold. Boundary behavior testing probes cases that sit at the edge of a model’s decision categories, where small input differences produce different outputs. A model that is accurate on average can still be unstable exactly at the boundary a real decision turns on, a fact ordinary accuracy metrics average away rather than surface.</p>
+<p>Adversarial testing goes further, deliberately constructing inputs designed to cause a specific failure instead of sampling from a natural distribution. A predictive fraud model can be probed with inputs engineered to sit just inside the range the model treats as low risk, testing whether an adversary who understands the model’s decision boundary could exploit it. A generative or agentic system carries an additional, distinct category of adversarial input, one that Chapters 11 and 12 develop at length. This is an input crafted not to fool a classification boundary but to override the system’s own instructions, embedding a competing instruction inside content the system was only supposed to read. Testing for this category requires the instruction-hierarchy evaluation Chapter 6 flagged as an affordance that cannot be taken on faith from a vendor’s description and has to be checked directly, with adversarial inputs constructed specifically to probe it.</p>
+</section>
+<section id="evaluating-generative-systems" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-generative-systems">7.4 Evaluating generative systems</h2>
+<p>Testing a classifier asks whether a single output matches a known correct answer. Testing a generative system asks a different kind of question, because there is often no single correct output to match against, and the discipline this section teaches is a different one, not a variation on the same theme.</p>
+<p>Eval design starts from decomposing a broad claim about quality into specific, checkable tasks. A claim that a documentation assistant “writes good clinical summaries” is not testable as stated. Decomposing it into whether it correctly extracts the admitting diagnosis, whether it flags missing information instead of fabricating it, and whether it uses terminology consistent with the hospital’s own documentation standards turns each part into a task a specific evaluation item can check. This decomposition, task by task and not claim by claim, is the same discipline section 7.9 develops in full for properties that resist specification even after decomposition.</p>
+<p>Rubric construction turns each task into a graded standard instead of a pass or fail judgment call left to whoever happens to be reading. A rubric for the missing-information task states explicitly what counts as correctly flagging an absence and what counts as fabricating a value that was not present in the source material. It also states what counts as an ambiguous case that the rubric itself should resolve, not leave to a grader’s private judgment. Two graders applying an underspecified rubric to the same output will disagree, and the disagreement is a defect in the rubric, not in either grader.</p>
+<p>Inter-rater reliability is how that disagreement gets measured instead of assumed away, and it depends on a specific workflow as much as on the statistic at the end of it. The rubric and its worked examples have to be frozen before the scored sample is graded. Each grader has to produce an independent first rating before seeing any other grader’s judgment or discussing the item, and only after those independent ratings are recorded does adjudication of the disagreements begin. This order matters, because a grader who sees another’s judgment first tends to anchor toward it, which manufactures agreement rather than measuring it. The statistic has to match the design. Cohen’s kappa applies to two graders scoring categorical judgments, weighted kappa to two graders scoring ordered categories, an intraclass correlation to suitable continuous ratings, and Krippendorff’s alpha where its added flexibility, more than two graders or a mixed measurement level, is actually needed. A low agreement score is not automatically a personnel problem to be solved by training the graders harder. It is often evidence that the rubric itself has not resolved the ambiguity that different graders are resolving differently. Low agreement can also come from inconsistent training, genuine subjectivity in the construct being rated, a skewed distribution of easy versus hard items, or uneven evidence quality across the sample, and distinguishing among these before rewriting anything is part of the review. Where the rubric is at fault, the fix is to rewrite it, log what changed and why, and retest agreement on a fresh sample before trusting the evaluation’s results.</p>
+</section>
+<section id="benchmark-contamination" class="level2">
+<h2 class="anchored" data-anchor-id="benchmark-contamination">7.5 Benchmark contamination</h2>
+<p>A public benchmark’s usefulness depends on the model being evaluated not having seen the benchmark’s own answers during training, and this condition is increasingly hard to guarantee. A model trained on a broad scrape of publicly available text is likely to have encountered the benchmark itself somewhere in that scrape, along with discussion of it, worked solutions to it, or both. Contamination inflates a model’s apparent performance on the contaminated benchmark without producing any genuine improvement in the capability the benchmark claims to measure. That inflation is invisible from the score alone, because a contaminated model and a genuinely capable model produce the same high number.</p>
+<p>The holdout discipline that survives contamination is not a one-time fix but a standing practice. An evaluation set an organization builds and keeps private, never published or shared outside a small group with a specific need to see it, cannot be contaminated by a training process the organization does not control. This is precisely why section 7.9’s sentinel construct is built as a private, rotating set instead of being drawn from any public source. Where a public benchmark must be used, one warning signal, not a contamination audit on its own, is testing whether a model can complete a benchmark item verbatim from a partial prompt. Completing it that way would only be possible if the model had memorized the item. Completing the prefix is evidence of exposure, but failing to complete it does not establish that the benchmark was unseen, since a model can be contaminated on a paraphrased or lightly modified copy that a verbatim-completion test misses entirely. A more defensible check combines several signals. These include private and rotating held-out sets alongside the public benchmark, canary items planted to detect scraping, and a timestamp and version record showing when the benchmark was published relative to the model’s training cutoff. They also include a training-data provenance statement where the developer has published one, lexical and semantic overlap checks between the benchmark and known training sources, and repeated evaluation on transformed or reworded versions of the same items. Finally, they include an explicit statement of uncertainty where the training data cannot be inspected at all, rather than a silent assumption of no contamination.</p>
+</section>
+<section id="model-as-judge" class="level2">
+<h2 class="anchored" data-anchor-id="model-as-judge">7.6 Model as judge</h2>
+<p>Using one model to grade another model’s output, instead of a human, has become common because it scales in a way human grading does not, and it is widely misunderstood in a way that produces confident, wrong conclusions when its specific failure modes go unchecked.</p>
+<p>Position bias is the tendency of a judge model, asked to compare two candidate outputs presented in a fixed order, to systematically favor whichever position, first or second, regardless of content. The effect is strong enough that swapping the order of the same two outputs can flip the judge’s verdict. Self-preference is the tendency of a judge model to rate more favorably an output that resembles its own style or that was produced by a model in its own family. This means using a model to judge outputs, including its own family’s, is a specific, checkable source of distortion, not a theoretical concern. Verbosity bias is the tendency to rate a longer answer more favorably independent of whether the additional length adds correct or useful content, which rewards padding over precision unless the rubric explicitly corrects for it.</p>
+<p>A pattern reported in the model-as-judge literature, not yet a universal law to be assumed for every task and judge model, is that correlation with human judgment tends to degrade most on exactly the cases where human graders themselves disagree most. That means a judge model can be least trustworthy precisely on the hard, contested cases where its judgment would need to be most trustworthy to be useful, and most trustworthy on the easy cases where a cheaper check would have sufficed anyway. Whether that pattern holds for a specific judge model and task is itself something to check, not assume, which is why using a judge model at all needs a validation process, not only an awareness of the three biases above. That process swaps the order in which the two candidate outputs are shown to the judge and checks whether the verdict flips, which tests directly for position bias. It controls for length, either by instructing the judge to disregard it or by normalizing scores against it separately, to test for verbosity bias. It blinds the judge to which system produced which output, particularly where the judge model’s own family is among the systems compared, to test for self-preference. It also runs more than one judge model, from different families where feasible, and checks whether they agree, since a bias specific to a single judge cannot be caught by that judge alone. And it anchors a sample of the judge’s verdicts against human ratings on the same items, concentrated on the contested cases this section has flagged as the hardest, together with checks for prompt sensitivity, score calibration, inter-judge disagreement, and sensitivity to the reference answer used. A contested case a validated process cannot resolve with confidence is routed to human review rather than accepted on the judge’s verdict alone. Using a judge model to scale evaluation is not disqualified by any of this. But skipping the validation process, and trusting a judge model’s verdict on a genuinely contested case the same as its verdict on an easy one, is a specification error this section’s own findings make predictable, not surprising.</p>
+</section>
+<section id="testing-agentic-systems" class="level2">
+<h2 class="anchored" data-anchor-id="testing-agentic-systems">7.7 Testing agentic systems</h2>
+<p>An agentic system takes actions instead of only producing output. Testing it is a distinct discipline from both classifier testing and generative evaluation, because the object being evaluated is a sequence of decisions with consequences rather than a single output that can be checked in isolation.</p>
+<p>A sandbox with realistic tools and reversible consequences is the precondition for testing an agent honestly at all. An agent tested only in a stripped-down environment that does not resemble its production tool access will pass tests that say nothing about how it behaves once given the actual scheduling system, the actual file access, or the payment authority it will hold in production. An agent tested directly against production systems, on the other hand, risks the exact irreversible harm testing exists to prevent. This is why the sandbox has to be realistic and reversible at once, instead of trading one property for the other.</p>
+<p>Evaluating action sequences instead of single outputs means grading the path an agent took to a result, not only the result itself, because two agents can reach the same acceptable final state by paths that differ enormously in the risk they carried along the way. <code>TALENTSCREEN</code>’s scheduling component, once it acts autonomously rather than only recommending, has to be evaluated on whether it checked availability before committing to a time, not only on whether an interview eventually got scheduled. A path that skips the availability check and later cancels is a materially worse outcome for the candidate, even where the final scheduled state looks identical to an evaluator checking only the endpoint.</p>
+<p>Deliberately probing what an agent does when its goal conflicts with its constraints is the testing step most often skipped. It requires constructing scenarios where succeeding at the assigned task and staying within a stated boundary cannot both happen, and observing which one the agent sacrifices. An agent instructed to schedule an interview within a candidate’s stated availability, placed in a scenario where no slot exists that satisfies every stated constraint, reveals its actual priority ordering by what it does next. It may report the conflict and ask for guidance, silently relax a constraint it was not authorized to relax, or fabricate a resolution that appears to satisfy every constraint on the surface without actually doing so. This category of test has no equivalent in classifier or generative evaluation and is, for an agentic system, not optional.</p>
+<p>A sandbox, action-sequence grading, and a goal-versus-constraint probe are necessary and still not sufficient, because an agent that passes all three can still fail once operational conditions a stripped-down test never produces are introduced. A complete agent test process adds the following stages before a system is considered tested. First, freeze the exact versions of the agent, its model, its prompts, its tools, its permissions, its memory contents, and its environment, so a later failure can be traced to a specific configuration instead of an unrecorded one. Second, state the goals, the constraints, the prohibited actions, the escalation rules, and measurable postconditions in advance of testing, not inferred afterward from what the agent happened to do. Third, test normal tasks with the same, production-equivalent tool permissions and representative state the agent will actually hold, not a broadened test account that would mask a permission-boundary failure. Fourth, test malicious and malformed instructions arriving from the user, from retrieved content, from tool output, and from the agent’s own memory. An agent that resists a hostile instruction typed by a user can still follow the same instruction when it arrives inside a document, a webpage, or an API response the agent was only supposed to read. Fifth, test timeouts, retries, partial failures, stale state, duplicate actions, and concurrency, where more than one instance of the agent or more than one agent acts on shared state at once. Sixth, run long-horizon tests repeatedly to measure variance and compounding error, since an agent correct on a single fresh turn can still drift into an incorrect belief over an extended interaction that a one-shot test never exercises. Seventh, verify the actual side effects and postconditions in the systems the agent touched, not only the natural-language response it returned, since a response can describe an action the agent did not actually take, or took incorrectly. Eighth, exercise human pause, override, rollback, recovery, and incident escalation directly, rather than assuming they work because they were designed. Ninth, preserve full execution traces, triage every finding, remediate, retest independently, and add the failure to a regression suite so it is checked again on every future version instead of re-discovered by accident.</p>
+<div id="fig-evaluation-by-class" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-evaluation-by-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/fig-07-02-evaluation-by-class.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-evaluation-by-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: Figure 7.2. Evaluation approach by system class
+</figcaption>
+</figure>
+</div>
+<!-- FIGURE 7.2 REQUIRED ELEMENTS (revised per CH054; REBUILT, applied)
+Must appear: three columns (predictive, generative, agentic), each naming
+its distinct evaluation unit (single output vs. graded output vs. action
+sequence), its distinct failure mode to probe for, and its distinct testing
+requirement. A fourth, system-level band below the three columns must
+also appear, covering component interaction, orchestration, human workflow,
+access and recourse, operational outcomes, monitoring, and downstream
+effects, with a visual note that a real deployment can draw from more than
+one column at once. Must show these are different disciplines, not one method
+applied three times, and must show that passing every column individually
+does not by itself establish the combined system works. Entry condition: a
+system has passed performance testing (7.1). Exit condition: the
+evaluation approach matching the system's class has been applied, not
+assumed transferable from another class, AND the system-level band has
+been checked for a deployment combining more than one class. Deliberately
+excluded: fairness metrics (7.2 owns that content). Must work in black and
+white.
+SOURCE: original; structure follows this chapter's own sections 7.1, 7.4,
+and 7.7.
+AUDIT: pass 1 [x] against list, pass 2 blind [x], rendered and viewed [x].
+Rebuilt to add CH054's fourth, system-level band, fed by convergence
+arrows from all three columns and naming its seven components, with an
+explicit statement that passing every column individually does not
+establish the assembled system works. Checked 13 Sep 2026.
+-->
+<p>Figure 7.2 lays out three genuinely different disciplines, not one evaluation method with three sets of examples. A predictive system’s unit of evaluation is a single output checked against a labeled or otherwise justified reference outcome, where available, per the ground-truth caveats section 7.1 raises. A generative system’s unit is a graded output checked against a rubric, with inter-rater reliability confirming the rubric itself is sound. An agentic system’s unit is a sequence of actions checked for the path taken, not only the endpoint reached, with a deliberate test of what the system does when its goal and its constraints cannot both be satisfied. A team that runs only the predictive column’s tests against a system that also generates or acts has tested a fraction of what the system actually does. Even a team that correctly runs all three column-specific disciplines still owes the system a combined, system-level check afterward. A predictive component, a generative component, and an agentic controller can each individually pass their own column’s tests while the assembled system, its orchestration, its human workflow, and its access and recourse paths, still fails in ways no single column’s test was designed to catch. Most real deployments are not one class or another but a combination, and the figure’s column boundaries describe evaluation disciplines, not a claim that any given system sits in only one column.</p>
+</section>
+<section id="red-teaming" class="level2">
+<h2 class="anchored" data-anchor-id="red-teaming">7.8 Red teaming</h2>
+<p>Red teaming is structured adversarial evaluation, distinct from the testing this chapter has covered so far in that its explicit purpose is to find the failure a standard evaluation was not designed to look for. It is conducted by people whose job in the exercise is to attack the system rather than to confirm it works. The process this section teaches has seven stages, not only the scope, composition, technique, and disposition elements a shorter treatment might stop at, and the stage most often skipped is the one that turns a finding into a closed loop instead of a one-time discovery.</p>
+<p>First, authorize the exercise and record, before any testing begins, the system version under test, the named owners, the threat model the exercise is testing against, and the scope and explicit exclusions. Record also the environment the testing will run in, the rules governing test data, and the conditions that would stop the exercise early. Scope has to be stated before the exercise begins, naming which categories of harm the exercise is probing for and which are explicitly out of scope for this particular exercise. An unscoped red team exercise either wanders unproductively across every conceivable harm at shallow depth, or narrows implicitly, without anyone deciding to, to whatever the specific red team happens to think of first.</p>
+<p>Second, design scenarios and the evidence each one expects to produce across safety, security, privacy, misuse, fairness, and operational failure. Team composition matters at this stage, because a red team drawn entirely from the system’s own development team will miss what that team’s own assumptions make invisible to them. That is why an effective exercise typically includes people without a stake in the system’s success, and, for higher-stakes systems, external participants with no institutional loyalty to the result coming back clean. Technique categories give the exercise structure. These include adversarial prompting for a generative or agentic system, boundary and edge-case probing carried over from section 7.3, and scenario-based social engineering attempts, where the target is not the model’s technical boundary but a human operator’s willingness to be misled by a plausible-sounding request.</p>
+<p>Third, execute the exercise with reproducible traces, protecting the people, systems, and data involved in the testing itself. Fourth, triage and rate every finding, and assign each one a named owner and a deadline. Fifth, remediate the finding or document, through a decision by an authorized decision maker, that the residual risk is being knowingly accepted instead of fixed. Sixth, retest independently, by someone other than whoever implemented the fix, and add the case to the system’s regression evaluation so it is checked again on every future version. Seventh, close the finding only once that evidence exists; a finding marked fixed that was never independently retested is a claim of closure the exercise has not actually earned. Feedback runs in both directions. A retest that fails routes back to remediation, and an incident or a monitoring signal discovered later routes back to the first stage, updating the threat model for the next exercise.</p>
+<p>Documentation and disposition, carried through all seven stages instead of added at the end, are where a red team exercise either produces governance value or produces an exercise that happened once and changed nothing. A red team report that lists findings without recording what happened to each one, through triage, remediation, and independent retest, is a report that documents the exercise occurred without documenting that it mattered.</p>
+<!-- FIGURE NEEDED (CH053): this section has no figure, and the process
+above is exactly the kind of multi-stage process with feedback loops this
+book otherwise renders as a figure. A red-team process figure should show
+the seven stages above as a pipeline (authorize, design, execute, triage,
+remediate, retest, close) with a feedback arrow from retest back to
+remediate and a second feedback arrow from incidents or monitoring back to
+authorize. Not created in this pass; tracked under the figure-remediation
+task (see rules/badw-book-log.md, Pass 2 log, Chapter 7 section) so a NEW
+figure file is produced and audited, not retrofitted from an existing one.
+-->
+</section>
+<section id="specifying-the-unspecifiable" class="level2">
+<h2 class="anchored" data-anchor-id="specifying-the-unspecifiable">7.9 Specifying the unspecifiable</h2>
+<p>This section is the chapter’s intellectual core, and the discipline it teaches is what most distinguishes verification for AI systems from verification for the software this book’s readers likely learned to test first.</p>
+<p>Some properties resist direct specification entirely. “The system does not fabricate an answer” cannot be verified directly, because verifying it directly would require checking every possible output against every possible fact the output could touch, an unbounded task no test suite can complete. The property is real, and it matters, and a test plan that gives up on it because it cannot be checked directly has abandoned exactly the requirement most worth keeping.</p>
+<p>The method that recovers a testable requirement from an unspecifiable property has four parts, and skipping any one of them produces a test that looks rigorous without actually being so. First, decompose the property into a verifiable proxy, something narrower than the full property that actually can be checked, chosen because passing the proxy is evidence, though not proof, that the fuller property holds. Second, state a threshold, how well the system must perform on the proxy for the result to count as passing, stated as a specific number, not a qualitative impression. Third, specify the verification method, exactly how the proxy will be measured, by whom or by what, on what data, on what schedule. Fourth, and the step most often skipped, document the residual, what the proxy does not cover, stated explicitly rather than left implicit, so that a later reader of the test result knows what passing it does and does not establish.</p>
+<p>A full worked example makes the method concrete, using a construct this book proposes for teaching purposes, not a term of art drawn from an established standard. This proposed, recurring, held-out answerability evaluation is called a sentinel evaluation here, for the way it stands watch on an ongoing basis rather than checking once at launch. It is a fixed-format check run periodically, before and after a batch of a generative system’s real work, not only once before launch. It is built as a set of items deliberately weighted toward questions that cannot be answered from the material the system has been given. The only correct response to a sentinel item is therefore a refusal or an explicit statement of uncertainty, not an answer. This is the proxy. A system’s rate of correctly declining to answer the unanswerable items stands in for its broader tendency to fabricate rather than for direct verification of every real answer it produces. The threshold is stated as a specific pass rate on the sentinel set, agreed in advance by whoever is accountable for the system’s release, not adjusted after seeing a disappointing result. That same person also has to be able to say what evidence supports the threshold chosen. The verification method specifies exactly how the sentinel items are sampled, rotated so the system cannot be tuned specifically to the visible set, and secured so the full set is not exposed to anyone able to adjust the system. It also specifies how they are scored against a stated standard and periodically revalidated, with a portion held out entirely so that some part of the check remains uncontaminated by anyone’s knowledge of what it contains.</p>
+<p>The residual has to be stated as plainly as the pass rate itself. A sentinel evaluation establishes the system’s propensity to fabricate on a specific, narrow category of item, unanswerable questions structured like the sentinel set, at the specific time the check was run. It does not establish that any particular real output the system produced on a particular day was truthful, and it does not establish the system’s behavior on categories of question the sentinel set does not resemble. Treating a passed sentinel evaluation as verification of a specific work product, rather than as a periodic, population-level check on a general tendency, is a traceability failure in the sense Chapter 3 gave that term. It is a claim of assurance attached to an artifact the evidence does not actually cover.</p>
+<div id="fig-decomposition" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-decomposition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/fig-07-03-decomposition.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-decomposition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.3: Figure 7.3. Decomposing an unspecifiable property into a testable requirement
+</figcaption>
+</figure>
+</div>
+<!-- FIGURE 7.3 REQUIRED ELEMENTS
+Must appear as a process canvas: the unspecifiable property at the top,
+decomposing into the four elements (verifiable proxy, stated threshold,
+verification method, documented residual) as sequential or parallel
+components, with the sentinel evaluation example populating each of the
+four. Must show the residual explicitly, not as an afterthought box but as
+a required, equally weighted output alongside the pass/fail result.
+Entry condition: a property that cannot be directly specified. Exit
+condition: a testable requirement plus a named residual, not a false claim
+of complete verification. Must work in black and white.
+SOURCE: original; the four-part decomposition method is this book's own
+structuring of standard verification-and-validation practice applied to
+the specific case of properties that resist direct specification.
+AUDIT: pass 1 [x] against list, pass 2 blind [x], rendered and viewed [x].
+Content re-verified against this section's current text 13 Sep 2026; no
+factual change required. Accessibility markup upgraded to match the
+title/desc plus aria-labelledby convention used from fig-18-01 forward.
+-->
+<p>Figure 7.3 reads top to bottom as a derivation, not a checklist completed in any order. The unspecifiable property sits at the top because it is the thing actually wanted and the reason the exercise exists at all. The four boxes beneath it are not four independent tasks; each depends on the one above it, a threshold is meaningless without a proxy to apply it to, and a verification method is meaningless without a threshold it is checking against. The residual sits at the bottom at the same visual weight as the pass or fail result above it. The figure’s argument is that a residual omitted is a claim of completeness the evidence does not support, not a minor footnote to an otherwise finished verification.</p>
+<p>State the terminal difference plainly, because it is easy to read the four-part method as a temporary workaround for a problem better tooling will eventually solve, and it is just as easy to overstate the contrast with conventional software in the other direction. Some AI systems make residual uncertainty especially prominent because their behavior is probabilistic, their inputs and environments are open ended, and the property being tested may resist complete specification. Conventional software can face the same limits when its environment, specification, state, or interactions are not fully bounded. Formal verification, where it is used at all, establishes a specified property under stated assumptions, but it does not prove every real-world behavior or remove the risk of a wrong specification. Verification therefore states the property, the model, the assumptions, the coverage, and the residual, rather than claiming that one technology class can always reach zero residual while the other cannot. Verification for AI reaches a characterized and accepted residual, not a verified state, and that is not a temporary compromise pending better methods, or a concession that AI is held to a lower standard than software achieves in practice. It is the standard this book teaches, because it is the honest one.</p>
+</section>
+<section id="release-readiness" class="level2">
+<h2 class="anchored" data-anchor-id="release-readiness">7.10 Release readiness</h2>
+<p>This chapter’s methods produce several kinds of result, including performance figures, fairness metrics with the tradeoff named, robustness findings, generative evaluation scores with their rubrics, red team findings with their dispositions, and sentinel results with their residuals. Every one of these has to be integrated into a single documented decision before a system reaches production. That decision has to be made by someone with the authority and the accountability to make it, not inferred simply because no individual test happened to fail outright. On the buy path, release readiness carries an additional question this chapter’s earlier sections have already prepared the reader to ask. Given what a vendor’s own testing, disclosed through the system card Chapter 6 taught how to read adversarially, actually covers, what does the deploying organization still need to test itself? The answer determines whether the vendor’s coverage and the organization’s own coverage together add up to a readiness decision the organization can actually stand behind.</p>
+<p>Naming the decision is not the same as being able to make it, and what makes the decision usable is a release record with a specific, minimum set of fields, not a narrative summary of how testing went. That record states a specific set of fields explicitly, without exception. It names the exact system and model versions being released; the intended uses and the uses the release explicitly prohibits; and an evaluation coverage map showing which of this chapter’s methods were run against which claim, and which claims remain untested. It also carries every unresolved finding from testing or red teaming, carried forward instead of dropped once triaged; the criteria the release decision was actually measured against; and the named signoffs of everyone accountable for the decision. It records every residual risk accepted knowingly, with the name of who accepted it; confirmation that legal and rights review has occurred, required wherever the system touches a regulated decision or personal data; and the monitoring plan that will run after release. It states the training the system’s operators have received; a rollback or deactivation test confirming the organization can actually revert if the release fails; and incident readiness, meaning a stated plan for what happens when a failure is detected in production. Finally, it fixes the deployment’s operational constraints and the specific changes, in the system or its environment, that would trigger a re-review before the next scheduled one. It also sets an expiry date on the approval itself and a revalidation schedule stating when the release will be checked again regardless of whether anything has changed. A release record missing one of these fields is not a smaller version of a complete one; it is a decision made without knowing, or without recording, something the decision depended on.</p>
+</section>
+<section id="case-in-focus-a-fairness-decision-made-on-the-record-and-an-audit-built-without-training-data" class="level2 unnumbered case">
+<h2 class="unnumbered anchored" data-anchor-id="case-in-focus-a-fairness-decision-made-on-the-record-and-an-audit-built-without-training-data">Case in focus: a fairness decision made on the record, and an audit built without training data</h2>
+<p><code>FAIRLEND</code> and <code>TALENTSCREEN</code> · Hypothetical, following the running cases</p>
+<p>Meridian’s model risk function discovered that <code>FAIRLEND</code>’s ensemble could not satisfy equalized odds and calibration simultaneously, once the applicant pool’s base rates were examined by group. It brought the choice to a committee that included model risk, legal, and a consumer advocate the bank retained specifically for reviews of this kind. Repayment is the positive class this chapter’s definitions use throughout, so a creditworthy applicant, one who would in fact repay, who is wrongly declined is a false negative, not a false positive, and the committee’s own numbers were read on that basis. The committee considered two options. Prioritizing calibration would keep the model’s risk scores meaningful as probabilities across every group, supporting consistent pricing. But it would also tolerate a materially different false negative rate between groups, meaning creditworthy applicants in one group would be wrongly declined at a higher rate than creditworthy applicants in another. Prioritizing equal opportunity would equalize the true positive rate, so that creditworthy applicants faced the same approval odds regardless of group. That came at the cost of calibration, meaning the same risk score would imply a different actual repayment likelihood depending on group, complicating the pricing model downstream. The committee chose equal opportunity, on the stated reasoning that an unequal rate of wrongly declining creditworthy applicants was a more direct harm to individuals than a pricing model whose scores meant different things across groups once calibration was given up. What to do about the pricing complication was treated as a separate, harder question than the committee’s first framing had allowed. A per-group pricing adjustment, restoring something like calibration by pricing each group’s risk separately, was raised and then set aside. Adjusting price by protected-group membership, even to correct for a statistical artifact rather than animus, raises its own fair-lending exposure under Regulation B that no amount of engineering work resolves on its own. Any such adjustment would also need legal review before it could be treated as a fix at all. The committee’s memo instead listed the options actually available to it. These included reconsidering the target variable the model was trained to predict, improving the training data’s representativeness, and choosing a different decision rule. They also included adding a review-and-recourse path for declined applicants, limiting where the system could be deployed, or declining to deploy it. One committee member dissented in writing, arguing that giving up calibration’s guarantee that a risk score meant the same thing across groups deserved more weight in the decision than the majority had given it. The dissent was recorded in the decision memo instead of resolved by majority vote and left unmentioned. The decision, the reasoning, and the dissent all became part of <code>FAIRLEND</code>’s governance record, available to a future reviewer who wants to know not only what was decided but what the alternative would have cost and who thought the decision was wrong.</p>
+<p>Calloway’s audit of <code>TALENTSCREEN</code> faced a different problem entirely. There was no training data to test against at all, because the vendor had disclosed only that the model was trained on “a large and diverse dataset of resumes and hiring outcomes,” a sentence that names nothing checkable. Unable to audit the training data section 7.2’s methods assume, Calloway’s compliance team instead ran an outcome-based audit using its own applicant data. For a full hiring cycle, it tracked the tool’s pass-through recommendations against applicant demographic categories it collected separately for exactly this purpose. It computed the same four metrics section 7.2 defines, not on the vendor’s training data, which it could not see, but on its own deployment population, which it could. The audit found a materially lower pass-through rate for one age category, a finding the vendor’s own documentation had not surfaced and had no obligation to surface. The vendor’s testing, to the extent any had been disclosed, covered its own broader customer base, not Calloway’s specific applicant pool. Calloway’s finding did not establish why the disparity existed, since the training data producing it remained invisible. It did establish that the disparity existed in Calloway’s own deployment, which was enough to trigger a mitigation Calloway’s own legal team judged necessary, regardless of the vendor’s position on the model’s overall fairness.</p>
+<p>The two audits differ in what they had available to work with, a full technical postmortem in one case and only outcome data in the other. They nonetheless share a structure this chapter has argued for throughout. A fairness or evaluation finding is not complete until it produces a documented decision, made by a named party, that a later reviewer can trace back to the reasoning behind it. That decision may affirm a tradeoff accepted on purpose, or it may trigger a mitigation for a gap a vendor’s own disclosure never required it to close.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Verification for AI systems has to answer a harder question than verification for conventional software, because much of what these systems do cannot be checked against a single correct answer and some of what they need to do cannot be specified directly at all. Performance testing picks the metric that matches what a specific error actually costs, and held-out data discipline is what keeps the resulting number honest.</p>
+<p>Fairness testing is this chapter’s central section, because two of several widely used criteria, calibration and equalized odds, cannot generally both be satisfied for imperfect scores whenever the groups under comparison differ in their underlying base rates. That is a mathematical fact, not an engineering shortfall, and not a claim that every pair among demographic parity, equal opportunity, equalized odds, and calibration is always incompatible. Selecting which criterion to prioritize is a values decision requiring a named, accountable owner rather than a default computed by whoever built the model. Robustness and adversarial testing probe distribution shift, boundary behavior, and deliberately constructed failure inputs, including the instruction-override inputs specific to generative and agentic systems. Evaluating generative systems requires eval design, task decomposition, rubric construction, and inter-rater reliability, a distinct discipline from classifier testing, not a variant of it. Benchmark contamination degrades public evaluation silently, and private, rotating, partly held-out evaluation sets are what survive it. Model-as-judge grading carries documented, specific biases, position, self-preference, and verbosity, and degrades most exactly on the contested cases where its judgment would need to be most trustworthy. Testing agentic systems means a realistic, reversible sandbox, grading action sequences, not only endpoints, and deliberately probing what a system does when its goal and its constraints conflict. Red teaming finds what standard evaluation was not designed to look for, and only produces governance value when scope, team composition, and finding disposition are all documented.</p>
+<p>Specifying the unspecifiable is this chapter’s core method. It decomposes a property that resists direct verification into a proxy, a threshold, a verification method, and an explicitly documented residual, illustrated in full through a proposed sentinel evaluation that checks a general propensity, not any single output’s truth. Open-ended inputs, probabilistic behavior, and properties that resist complete specification make residual uncertainty especially prominent for AI systems, though conventional software can face the same limits when its own environment or specification is not fully bounded. Verification for AI reaches a characterized, accepted residual instead of a verified state, not because AI is held to a lower bar, but because the property, model, assumptions, and coverage available to state make that the honest description of what has actually been established.</p>
+<p><strong>Evidence carried forward.</strong> This chapter’s output for the rest of the book is evaluation evidence. That evidence includes the coverage map of which methods were run against which claim, every finding with its disposition, every documented residual, and a release recommendation grounded in that coverage instead of in the absence of a failed test. Chapter 8 binds this evidence, together with Chapter 5’s and Chapter 6’s, into an actual deployment decision.</p>
+</section>
+<section id="review-questions" class="level2">
+<h2 class="anchored" data-anchor-id="review-questions">Review questions</h2>
+<p><code>COMPREHENSION</code></p>
+<ol type="1">
+<li><p>Explain, using base rates, why a model cannot simultaneously satisfy calibration and equalized odds when two groups have different underlying rates of the outcome being predicted.</p></li>
+<li><p>Distinguish evaluating a generative system from evaluating a predictive classifier, and explain why inter-rater reliability matters specifically for the former.</p></li>
+</ol>
+<p><code>APPLIED</code></p>
+<ol start="3" type="1">
+<li><p>A team is building a sentinel evaluation for a customer-support generative system. Specify the verifiable proxy, a plausible threshold, the verification method, and the residual you would document, following section 7.9’s four-part structure.</p></li>
+<li><p>An organization is deciding whether to use a judge model to grade a batch of ten thousand generated summaries for accuracy. Identify two specific biases from section 7.6 that could distort the results, and describe a check you would run to detect each.</p></li>
+</ol>
+<p><code>SPOT THE RISK</code></p>
+<ol start="5" type="1">
+<li>A team reports that its agentic system passed all functional tests, defined as reaching the correct final state in every test scenario. Identify what this testing approach has not checked, and explain what section 7.7 requires in addition.</li>
+</ol>
+<p><code>COMPARE AND DECIDE</code></p>
+<ol start="6" type="1">
+<li>Construct a confusion matrix, actual counts of qualified and unqualified candidates and how each is decided, for two candidate groups with different qualification base rates, choosing numbers so that equal opportunity and demographic parity both hold at once despite the base-rate difference. Then identify what happens to the false positive rate in your example. State what each metric protects, and explain why this shows that the two criteria are not proven mutually exclusive in general, unlike calibration and equalized odds.</li>
+</ol>
+<p><code>RUNNING CASE</code></p>
+<ol start="7" type="1">
+<li><code>TALENTSCREEN</code> Using the case in focus, explain what Calloway’s outcome-based audit could and could not establish about the tool’s fairness, and specify what additional access or information would be needed to close the gap between what was tested and what section 7.2’s full methodology requires.</li>
+</ol>
+<hr>
+<p>A system that has been tested is not yet a system that is ready to operate. The next chapter turns to deployment and release, and to the uncomfortable pattern this book will show recurring across every system class. A system is usually ready for production before the organization around it is, and releasing anyway, because the technical checklist is complete, is where a well-tested system meets an unready operator and produces a failure that no test in this chapter was designed to catch.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06-model-selection-and-development.html" class="pagination-link" aria-label="6. Model Selection and Development">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">6. Model Selection and Development</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./08-deployment-and-release.html" class="pagination-link" aria-label="8. Deployment and Release">
+        <span class="nav-page-text"><span class="chapter-title">8. Deployment and Release</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>How to Govern AI · Foundations and Practical Guide to AI Governance</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Full current draft, rendered 2026-09-14</p>
+</div>
+    <div class="nav-footer-right">
+<p>CC BY-NC 4.0</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

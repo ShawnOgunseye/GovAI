@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>16. Third-Party, Vendor, and Supply Chain Governance – How to Govern AI</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./17-implementing-ai-governance.html" rel="next">
+<link href="./15-documentation-and-evidence.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-176b1e44b272a30ec08500e73512b2cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3a8111a00e81ba936536c7054a308c39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13-organizing-the-governance-function.html">Running the Governance Function</a></li><li class="breadcrumb-item"><a href="./16-third-party-vendor-and-supply-chain-governance.html"><span class="chapter-title">16. Third-Party, Vendor, and Supply Chain Governance</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">How to Govern AI</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to Govern AI</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-what-ai-governance-is.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. What AI Governance Is</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-regulatory-landscape.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2. The Regulatory Landscape</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-scoping-inventory-classification.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3. Scoping, Inventory, and Risk Classification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-defining-the-problem.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. Defining the Problem and Use Case</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Building and Governing the System</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-data-governance-for-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. Data Governance for AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-model-selection-and-development.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Model Selection and Development</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-testing-evaluation-and-red-teaming.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Testing, Evaluation, and Red Teaming</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-deployment-and-release.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Deployment and Release</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-operations-and-monitoring.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Operations and Monitoring</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-incident-response-and-remediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10. Incident Response and Remediation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">System Classes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-governing-generative-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11. Governing Generative Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-governing-agentic-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12. Governing Agentic Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Running the Governance Function</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-organizing-the-governance-function.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">13. Organizing the Governance Function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-risk-assessment-and-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Risk Assessment and Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-documentation-and-evidence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Documentation and Evidence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-third-party-vendor-and-supply-chain-governance.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">16. Third-Party, Vendor, and Supply Chain Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-implementing-ai-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">17. Implementing AI Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-governing-under-uncertainty.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">18. Governing Under Uncertainty</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-a-technique-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A: Technique Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-b-regulatory-quick-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B: Regulatory Quick Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-c-templates-and-checklists.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C: Templates and Checklists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#what-you-will-be-able-to-do" id="toc-what-you-will-be-able-to-do" class="nav-link active" data-scroll-target="#what-you-will-be-able-to-do">What you will be able to do</a></li>
+  <li><a href="#due-diligence-as-structured-inquiry" id="toc-due-diligence-as-structured-inquiry" class="nav-link" data-scroll-target="#due-diligence-as-structured-inquiry">16.1 Due diligence as structured inquiry</a></li>
+  <li><a href="#assessment-dimensions" id="toc-assessment-dimensions" class="nav-link" data-scroll-target="#assessment-dimensions">16.2 Assessment dimensions</a></li>
+  <li><a href="#vendor-resistance" id="toc-vendor-resistance" class="nav-link" data-scroll-target="#vendor-resistance">16.3 Vendor resistance</a></li>
+  <li><a href="#evaluating-vendor-supplied-evidence" id="toc-evaluating-vendor-supplied-evidence" class="nav-link" data-scroll-target="#evaluating-vendor-supplied-evidence">16.4 Evaluating vendor-supplied evidence</a></li>
+  <li><a href="#contract-provisions" id="toc-contract-provisions" class="nav-link" data-scroll-target="#contract-provisions">16.5 Contract provisions</a></li>
+  <li><a href="#the-supply-chain" id="toc-the-supply-chain" class="nav-link" data-scroll-target="#the-supply-chain">16.6 The supply chain</a></li>
+  <li><a href="#model-developer-policy-as-inherited-governance" id="toc-model-developer-policy-as-inherited-governance" class="nav-link" data-scroll-target="#model-developer-policy-as-inherited-governance">16.7 Model developer policy as inherited governance</a></li>
+  <li><a href="#open-weight-models" id="toc-open-weight-models" class="nav-link" data-scroll-target="#open-weight-models">16.8 Open-weight models</a></li>
+  <li><a href="#procurement-leverage-across-the-relationship" id="toc-procurement-leverage-across-the-relationship" class="nav-link" data-scroll-target="#procurement-leverage-across-the-relationship">16.9 Procurement leverage across the relationship</a></li>
+  <li><a href="#ongoing-management" id="toc-ongoing-management" class="nav-link" data-scroll-target="#ongoing-management">16.10 Ongoing management</a></li>
+  <li><a href="#case-in-focus-the-gaps-a-vendor-would-not-close" id="toc-case-in-focus-the-gaps-a-vendor-would-not-close" class="nav-link" data-scroll-target="#case-in-focus-the-gaps-a-vendor-would-not-close">Case in focus: the gaps a vendor would not close</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review questions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13-organizing-the-governance-function.html">Running the Governance Function</a></li><li class="breadcrumb-item"><a href="./16-third-party-vendor-and-supply-chain-governance.html"><span class="chapter-title">16. Third-Party, Vendor, and Supply Chain Governance</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">16. Third-Party, Vendor, and Supply Chain Governance</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Consider a constructed scenario, continuing the running cases. Calloway Industries did not build <code>TalentScreen</code>. It licensed the resume-screening and candidate-ranking tool from a vendor, and licensing it did not by itself settle who would bear the cost if a disparate-impact claim under Title VII ever arrived. An employer’s own use of a hiring tool typically remains its own exposure regardless of who built the tool, while how far that exposure extends to the vendor as well depends on the claim, the jurisdiction, the facts, and what the contract actually allocates. Governing a purchased or licensed system is different in kind from the discipline Part II developed for a system an organization controls end to end. It requires due diligence conducted with a party whose interests are not identical to the deploying organization’s own, and evidence supplied by that same party and requiring independent scrutiny before it can be trusted. It also requires contract terms that either serve governance or leave the organization exposed by omission. Finally, it depends on a supply chain running from a base model through fine-tuning, adapters, and integration to deployment, where visibility to the deploying organization typically runs out well before its legal responsibility does.</p>
+<p>This chapter gives the vendor governance discipline in full. It covers how to structure due diligence as inquiry, what an unanswered question actually establishes and what to do about it, and how to evaluate evidence a vendor supplies instead of accepting it. It also covers what contract provisions actually serve governance, how obligation and visibility diverge across a supply chain’s layers, and what a model developer’s own policies quietly inherit into an organization’s product. Finally, it covers where procurement leverage actually comes from across the life of a vendor relationship, not only before signature.</p>
+<section id="what-you-will-be-able-to-do" class="level2 unnumbered objectives">
+<h2 class="unnumbered anchored" data-anchor-id="what-you-will-be-able-to-do">What you will be able to do</h2>
+<ul>
+<li>Structure vendor due diligence as a risk-based inquiry using open, specific, and limitation-focused questions as one technique within it, and record what a declined question establishes without assuming why it was declined</li>
+<li>Evaluate vendor-supplied evidence, including a vendor bias audit, by interrogating its methodology, independence, and scope instead of accepting its stated result</li>
+<li>Draft contract provisions that actually serve governance, with defined variables in place of vague placeholders, and identify where procurement leverage exists both before and after signature</li>
+<li>Assess a supply chain’s obligation and visibility at each layer as separately assessed attributes, and identify what a model developer’s own policy terms quietly inherit into an organization’s own product</li>
+</ul>
+</section>
+<section id="due-diligence-as-structured-inquiry" class="level2">
+<h2 class="anchored" data-anchor-id="due-diligence-as-structured-inquiry">16.1 Due diligence as structured inquiry</h2>
+<p>Due diligence is a risk-based process, not a single conversation, and it starts before a vendor is even contacted. That starting work means defining the intended use, the statutory roles involved, the affected people, the system’s criticality, and the evidence a decision will actually require. Inside that process, one effective interview technique moves from open questions that let a vendor’s own framing reveal what it considers important, to specific questions that pin down the details the open answers surfaced. It finishes with limitation questions that name what the vendor is least likely to volunteer, but this sequence is not the whole of due diligence. An open question asked first might ask the vendor to describe the system’s intended use cases and the populations it was developed and tested against. A specific question asked second, once the open answer names a population, asks what the disaggregated performance is, broken out by the specific demographic groups this deployment will actually serve, not the aggregate figure the vendor’s marketing material leads with. A limitation question asks what this system has failed to do correctly in the past twelve months, and what use cases the vendor explicitly declines to support. Material limitation questions belong early enough in the process that a vendor’s answer, or refusal to answer, can still affect the decision. Asked only once relationship momentum has built, the same questions make declining look like the harder path. A due diligence sequence built to make refusal costly for the vendor is a negotiation tactic, not a governance control, and this chapter treats the technique as a way to surface information clearly, not as leverage over the vendor’s incentives.</p>
+<p>Due diligence closes with a decision, not a completed questionnaire. The accountable risk owner, with the legal, security, privacy, and technical review a system’s risk tier calls for, rejects the relationship, requires remediation, approves it with named conditions and an expiry date, or escalates it. Contracting, onboarding, monitoring, incident response, and exit, sections 16.5 and 16.10 develop each, follow from that decision and do not substitute for it.</p>
+</section>
+<section id="assessment-dimensions" class="level2">
+<h2 class="anchored" data-anchor-id="assessment-dimensions">16.2 Assessment dimensions</h2>
+<p>Due diligence assesses, at minimum, four dimensions, and a weak or unclear answer on any one is itself a finding, not automatically a signal of what the vendor is hiding. The provider dimension asks who the vendor is, how long they have operated, and what their financial stability suggests about long-term support. An answer that leaves this unclear is a real gap in the evidence needed for a support and continuity decision, whatever the reason for it. The system dimension asks what the system actually does, on what data it was built, and how it performs across the populations it will encounter. An answer that stays in marketing terms rather than technical specifics leaves that question open, rather than establishing which of several possible explanations, an unflattering technical answer, an incomplete internal understanding, or simply an unpracticed sales process, actually accounts for it. The documentation dimension asks whether a model card, technical specification, or equivalent artifact exists at all; its absence is itself the finding, not a gap to route around. The compliance dimension asks what regulatory obligations the vendor has already assessed against the deployment’s jurisdiction and sector. A fuller review, proportionate to the system’s risk tier, also reaches data provenance, security and resilience, privacy, safety and accessibility, human-oversight design, subprocessors and dependencies, incident history, intellectual property and licensing terms, business continuity, and exit and portability. A review scoped only to the four core dimensions above should say so explicitly instead of implying completeness it does not have.</p>
+</section>
+<section id="vendor-resistance" class="level2">
+<h2 class="anchored" data-anchor-id="vendor-resistance">16.3 Vendor resistance</h2>
+<p>A vendor’s interests are not identical to the deploying organization’s, and due diligence has to account for that gap without assuming it resolves in one direction. An unanswered question is evidence of an evidentiary gap, not proof of what caused it, and the record should reflect exactly that distinction. The first useful move is distinguishing a request that touches a genuine trade secret from one that does not. Whether disclosing model architecture or training methodology would expose a protected trade secret depends on the applicable law and the specific facts, not on a fixed, universal boundary. Some jurisdictions and some architectures make that a strong claim, and a deploying organization pressing past a well-founded one is rarely productive without an alternative like a nondisclosure agreement, a clean-room review, or an independent assessor bound by confidentiality. Disaggregated performance figures, documented failure modes, and known limitations sit differently. None of them requires disclosing how the system works internally, and a vendor declining to share information of that kind has left the deploying organization with an unresolved evidentiary gap, whatever the vendor’s actual reason for declining.</p>
+<p>What an organization needs from a vendor depends on the system’s risk tier and use, and a short, fixed list understates it. Disaggregated performance, documented failure modes, and known limitations are usually part of that evidence. A consequential deployment typically also needs intended-use scope, version history, training and evaluation provenance, security and privacy posture, human-oversight design, incident history, monitoring and change-management practices, subcontractor dependencies, and applicable licensing and support terms. Specific follow-up questions carry the inquiry further when a vendor first declines a broader request. If a vendor calls an audit’s methodology proprietary, the follow-up asks whether the audit’s date, sample size, and the names of the metrics used can be shared without the underlying calculations. If a vendor declines to share training data, the follow-up asks whether it will share the demographic composition of that data at a summary level. Neither follow-up discloses methodology, and a vendor that continues declining even a narrowed, non-proprietary request has still not resolved the underlying question, which the record should state as an unresolved gap, not as proof the vendor was concealing an unfavorable result. The deploying organization does not need to know why the information was withheld to decide whether it can proceed without it.</p>
+<p>Some gaps are disqualifying and should be named that way directly rather than negotiated around indefinitely. A vendor unwilling to disclose any disaggregated performance data at all, for a system deployed in a context Chapter 3’s classification would place at meaningful risk tier, has left the deploying organization with no basis for the risk assessment Chapter 14 requires. Proceeding anyway is proceeding on an unverified assumption rather than on governance. Whether a specific gap is disqualifying depends on the system’s risk tier and what alternative evidence, if any, can substitute for what the vendor withholds. The discipline is deciding this in advance, rather than rationalizing acceptance after the fact because a deployment deadline has already created momentum toward proceeding.</p>
+<p>Every declined question should be documented, not discarded, because the record of what a vendor would not answer is itself evidence, useful in exactly the circumstance Chapter 15 anticipates. A later challenge might ask what the organization knew and when, and “the vendor declined to answer this and we proceeded on the following alternative basis” is a materially different record than no record of the question having been asked at all. A documented gap is evidence that the question was asked; it is not, on its own, a substitute for the answer, and section 16.4 turns to what happens when a vendor does answer.</p>
+<div id="fig-due-diligence-sequence" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-due-diligence-sequence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/fig-16-01-due-diligence-sequence.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-due-diligence-sequence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17.1: Figure 16.1. Due diligence sequence
+</figcaption>
+</figure>
+</div>
+<!-- FIGURE 16.1 REQUIRED ELEMENTS
+Must appear as a process canvas: the three-stage question sequence (open,
+specific, limitation) feeding into an evidence-verification step rather
+than ending at the answer itself. It must also show a decline branch,
+at any stage, that routes to a narrower non-proprietary version of the
+same question before reaching a disqualifying-gap check. The affirmative-answer branch has to route through independent
+verification or corroboration, not directly to acceptance. Finally, it
+must show a closing decision point with named branches (approve,
+approve with conditions, remediate, defer, reject) instead of a single
+undifferentiated "documented decision" box, feeding forward into
+contracting. Entry condition: a vendor relationship is under evaluation.
+Exit condition: every path, whether it started with a decline or an
+answer, ends at one of the named decision branches with its supporting
+evidence recorded. Deliberately excluded: the supply chain layers
+(Table 16.1's job). Must work in black and white.
+SOURCE: original; the sequence is this chapter's own synthesis of section
+16.1 and 16.3's argument, built from the TalentScreen case, revised to
+route affirmative answers through verification instead of straight to
+acceptance and to give the closing decision named branches. Checked
+2026-09-13.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<p>Read Figure 16.1 by following both branches, not only the decline branch. An answer is not itself acceptance, and the figure’s affirmative path still runs through verification before reaching the same decision point a decline eventually reaches by a different route.</p>
+</section>
+<section id="evaluating-vendor-supplied-evidence" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-vendor-supplied-evidence">16.4 Evaluating vendor-supplied evidence</h2>
+<p>Obtaining a metric from a vendor is not the same as being able to trust it, because a vendor bias audit is an artifact built on a chosen methodology, a chosen population, and a chosen metric. Those are choices a vendor with a stake in a favorable result has an incentive to make in its own favor, whether or not it actually did. Chapter 7 established that a fairness metric is a values choice among definitions that can conflict under some distributions and constraints, though several can be reported together to show where they agree and where they diverge, and a vendor-supplied audit inherits every question Chapter 7 raised there. Which fairness metric or metrics did the audit use, and would a different one, applied to the identical data, have produced a materially different result. On which population was the audit run, and does that population resemble the specific population this deployment will actually screen, or a more favorable one the vendor happened to have available. Against what threshold was pass or fail determined, and who set that threshold. A vendor audit that answers none of these questions, presenting only a clean top-line result, has supplied a number without the information needed to evaluate whether the number means what it appears to mean. Evaluating that evidence properly also means distinguishing what kind of evidence it is. A vendor’s own self-assessment, a commissioned but vendor-selected auditor, an independent auditor the deploying organization selected or approved, and the deploying organization’s own testing carry different degrees of assurance. Treating any of these as equivalent to another because all of them produced a number is its own error.</p>
+</section>
+<section id="contract-provisions" class="level2">
+<h2 class="anchored" data-anchor-id="contract-provisions">16.5 Contract provisions</h2>
+<p>Several categories of contract provision serve governance directly instead of merely documenting the commercial relationship, and the sample language below illustrates the kind of specificity each needs. A real clause fills in the bracketed variables rather than leaving them as vague placeholders, and legal review should confirm each clause against the applicable jurisdiction and relationship. Information rights convert the disaggregated performance data and known limitations sections 16.1 through 16.4 describe from an informal request into a standing entitlement. A workable clause reads, “Vendor shall provide [named performance metrics, disaggregated by the population categories specified in Schedule X] in [a specified format], covering [the deployment population], no less frequently than [a stated interval]. Vendor shall also provide it within [a stated number] of days following any material change to the System, with [named remediation and escalation rights] if a delivery is late or incomplete”. Audit rights let the deploying organization or an independent party actually verify vendor claims. A workable clause reads, “Customer or an independent auditor meeting [stated independence criteria] may conduct a bias and security audit of the System as deployed, no less frequently than [a stated interval]. The audit may also occur upon [named cause triggers such as a material change or a substantiated complaint], with Vendor providing the technical access, environment, and data specified in Schedule Y, subject to [confidentiality terms]. Findings must be addressed under a remediation timeline stated in the audit report”. Change notification and approval rights address a vendor’s ability to alter a model’s behavior after signature without the deploying organization’s knowledge. A workable clause defines what counts as a material change and sets a notice period for routine changes, while carving out an expedited path for emergency security fixes. It also gives the customer rollback, version-pinning, or a penalty-free decline appropriate to which kind of change occurred, rather than treating every change, urgent or routine, on the same thirty-day clock. Incident cooperation obligates the vendor to participate in Chapter 10’s response procedures. A workable clause defines what counts as an incident, sets a notification clock that shortens for more severe events, and specifies evidence preservation, secure log transfer, and a post-incident report, not a bare “good faith” promise with a single fixed deadline regardless of severity. Liability allocation states who bears the cost of a failure. Liability for a deployment’s effects does not automatically follow the vendor merely because the vendor built the underlying system, nor does it automatically stay with the deploying organization merely because the organization chose to deploy. Exit provisions address data portability, transition support, and verified deletion if the relationship ends. This list is not exhaustive. Scope and permitted use, service levels, security and privacy terms, data location and subprocessor flow-down, intellectual property and licensing, records and regulator access, business continuity, and dispute and remediation procedures round out a complete supplier contract, tailored to what the specific relationship’s risk calls for.</p>
+</section>
+<section id="the-supply-chain" class="level2">
+<h2 class="anchored" data-anchor-id="the-supply-chain">16.6 The supply chain</h2>
+<p>An AI system purchased today can pass through several layers before reaching deployment, and a base model, a fine-tune, an adapter, an integration, and the deployment itself is one common shape that layering takes, not the only one. A real supply chain can also include data and labeling providers, independent evaluators, a model hosting or cloud provider, a retrieval or grounding source, an orchestration layer, and one or more subprocessors, and these can branch and repeat rather than forming a single line. Visibility and legal or reputational responsibility are separate attributes of each layer, not two ends of one fixed gradient, and neither should be assumed without being checked. A deploying organization can have strong visibility into an upstream open model whose weights and documentation are public, and weak visibility into a downstream integrator’s own proprietary wrapper. Visibility therefore has to be assessed layer by layer; it does not decrease steadily with distance from deployment. What generally does hold is that a harm traceable to an upstream layer’s decisions, a base model’s training data, for instance, lands in practice on the deploying organization’s own users. This holds regardless of how many layers of supply chain separate the two, and whatever that layer’s own visibility turned out to be.</p>
+<p>Table 16.1 replaces a single obligation-level reading of the supply chain with what actually varies layer by layer. That variation covers the actor’s role, what the deploying organization can actually see into that layer, and what duty attaches there.</p>
+<p>Table 16.1. Supply-chain actors, visibility, and duty (a representative example, not a universal template)</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer or actor</th>
+<th>What the deploying organization typically receives</th>
+<th>Visibility into this layer</th>
+<th>Duty that typically attaches</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Base model developer</td>
+<td>Model weights or API access, published documentation</td>
+<td>Usually low. Training data and internal decisions are rarely disclosed in full</td>
+<td>Developer duties under the applicable regime (for example, general-purpose-model documentation duties); does not by itself relieve downstream actors of their own duties</td>
+</tr>
+<tr class="even">
+<td>Fine-tuning or hosting provider</td>
+<td>A tuned or hosted variant, a data-processing or subprocessor relationship</td>
+<td>Contract-reported unless independently verified; varies by what the contract requires</td>
+<td>Duties tied to the actor’s actual role (processor, provider, or distributor) and to what the contract allocates</td>
+</tr>
+<tr class="odd">
+<td>Integrator</td>
+<td>The product embedding the tuned model</td>
+<td>Usually high for the integration layer itself</td>
+<td>Duties tied to whether the integration counts as placing a new or substantially modified system on the market under the applicable regime</td>
+</tr>
+<tr class="even">
+<td>Deploying organization</td>
+<td>The finished system in its own operating context</td>
+<td>Full over its own documented configuration and use; the deployed system’s actual runtime behavior, provider-managed updates, and subprocessor activity still need separate verification</td>
+<td>Deployer duties under the applicable regime, plus operational responsibility for the system’s effects on its own users, regardless of how limited its visibility into upstream layers was</td>
+</tr>
+</tbody>
+</table>
+<p>A role can also change. Substantially modifying a model, rebranding it, or putting it to a materially different intended use can convert a downstream actor into something closer to a provider under some legal regimes, with the fuller duties that role carries. An organization’s actual duties therefore depend on what it did to the system, not only on where it sits in the chain by default.</p>
+</section>
+<section id="model-developer-policy-as-inherited-governance" class="level2">
+<h2 class="anchored" data-anchor-id="model-developer-policy-as-inherited-governance">16.7 Model developer policy as inherited governance</h2>
+<p>Chapter 6 established that selecting a model means inheriting the terms attached to it, and this section addresses what to actually do about that inheritance. A frontier developer’s published enterprise-tier terms are a genuine starting point for what might be negotiable, and checking them before assuming any term is open to discussion saves wasted effort. Which specific terms change at which contract size, though, is set by each developer’s own current terms, not by a fixed rule this book can state once and expect to remain accurate. A due diligence checklist works better when it names data retention, training use of customer inputs, and support responsiveness as terms worth checking by name. It should also require the dated, named provider terms actually governing the account in question before relying on any of them. That approach holds up better than a general claim about what enterprise tiers usually include. Since those specific practices vary by provider, product, and configuration, they are exactly the kind of claim this book cannot keep current on its own.</p>
+<p>Deprecation risk deserves explicit assessment instead of being discovered when it happens. A developer can retire a model version, and a forced migration to a replacement is not a routine upgrade but a revalidation event. Chapter 14’s reassessment triggers already establish that a material model change requires redoing risk identification and mitigation, and a deprecation-forced migration is exactly that trigger arriving on the developer’s schedule, not the deploying organization’s own. Budgeting for this means holding migration readiness, and the revalidation work a migration will require, as a standing line item rather than an unplanned emergency each time a developer’s roadmap forces the question.</p>
+<p>A usage policy prohibiting a use an organization considers legitimate creates a genuine conflict rather than a compliance question, and the response is to escalate it as a vendor negotiation point or seek an alternative provider instead of attempting to route around the restriction. What actually follows from a later-discovered usage-policy violation, whether it voids a specific protection, triggers suspension, or has some other consequence, is a question the actual contract language answers, not something this book can state as a uniform rule across contracts. A related and less obvious inheritance is refusal behavior, and it has more than one layer. A foundation model’s underlying safety training sets a policy floor calibrated by the developer against its own broad customer base. The model actually deployed also reflects configurable choices, system instructions, tool policy, and any fine-tuning layered on top, so refusal behavior an organization observes in its own product is a mix of an inherited policy floor and its own configuration, not a single fixed inheritance. It needs to be tested as the assembled system actually behaves rather than assumed from the base model’s reputation alone. Consider <code>MedAssist</code>’s documentation-assistant extension, built in Chapter 11 on a hosted foundation model. When it refuses a clinically legitimate request because the underlying model’s safety training was calibrated for a general audience, not a clinical one, that refusal is Northfield’s product behavior in the eyes of the clinician who encountered it. This holds regardless of whose safety decision actually produced it. Before permitting patient data near the hosted model, Northfield’s due diligence needs exactly this assessment. It covers what the developer’s policy would and would not allow the system to do, what the organization’s own configuration changes about that, and what disclosure to clinicians the inherited and configured behavior together warrants once deployed.</p>
+</section>
+<section id="open-weight-models" class="level2">
+<h2 class="anchored" data-anchor-id="open-weight-models">16.8 Open-weight models</h2>
+<p>Open-weight models shift the supply chain’s obligation structure instead of simplifying or removing it. License terms vary meaningfully across open-weight releases, from permissive terms resembling standard open-source licensing to restricted commercial-use terms that function much closer to a proprietary agreement, and assuming uniformity across “open-weight” as a category is a mistake specific organizations have made expensively. What support actually looks like also varies more than the phrase “no vendor” suggests. A community-maintained release with no commercial backer is a different dependency than a commercial open-weight license sold with a support subscription, or a managed hosting arrangement built on open weights. The deploying organization needs to assess which of these it actually has, rather than treat “open-weight” as automatically meaning no counterparty at all. Provenance varies as well. Some open-weight releases document training data and methodology thoroughly, and others disclose almost nothing, leaving the deploying organization to assess a black box regardless of the weights themselves being downloadable. Liability does not automatically land entirely on the deployer merely because there is no purchase contract to allocate it elsewhere. What a specific actor, developer, distributor, integrator, or deployer, actually owes and what it can actually be held liable for depends on jurisdiction, conduct, license terms, modification, and the specific claim. An open-weight developer or an integrator that substantially modified or redistributed the model can retain duties and exposure of its own under some regimes. What is true is that open-weight deployment usually shifts more of the operational load, validation, security, and maintenance work specifically, onto the organization that selects and runs the model, whatever the eventual legal allocation of liability turns out to be. Community viability, whether the model’s maintaining community or organization will continue supporting and patching it, is a real dependency an organization is taking on even when no invoice reflects it. A community that disperses leaves an open-weight deployment in an unsupported position, without even the exit provisions section 16.5 describes as a contractual right.</p>
+</section>
+<section id="procurement-leverage-across-the-relationship" class="level2">
+<h2 class="anchored" data-anchor-id="procurement-leverage-across-the-relationship">16.9 Procurement leverage across the relationship</h2>
+<p>Leverage is often strongest before a contract is signed. A requirement placed in a solicitation document puts every responding vendor in competition to meet it, while an identical request made to an already-selected vendor after signature has lost that competitive pressure. Putting disaggregated performance disclosure, audit rights, and change notification into the solicitation stage specifically, instead of introducing them for the first time at contract negotiation, captures leverage that is harder to recover later. That is not the only leverage a relationship ever has, though. Renewal and expansion negotiations, competitive rebids, an audit finding, a service failure or breach, a regulatory change affecting the vendor’s own obligations, and credible alternative suppliers all create real leverage after signature. Preserving it means building measurable obligations, audit and access rights, termination and portability rights, and tested exit options into the contract itself, so that a post-signature problem has a contractual lever attached to it rather than only the hope of the vendor’s continued goodwill. How much leverage actually exists at any point varies with market concentration, switching cost, the system’s criticality, and the specific regulatory context. An organization that waits for a post-signature problem to create leverage from nothing will usually find there is less of it than the solicitation stage offered.</p>
+</section>
+<section id="ongoing-management" class="level2">
+<h2 class="anchored" data-anchor-id="ongoing-management">16.10 Ongoing management</h2>
+<p>Vendor governance does not end at signature. Performance requires the ongoing monitoring Chapter 9 already established, applied to a vendor-supplied system using whatever visibility the contract’s information rights actually secured, against named metrics and thresholds, not an undefined sense of whether things still seem fine. Compliance requires periodically confirming the vendor’s regulatory posture has not shifted as law changes, since a vendor’s compliance assessment at signature can age exactly the way Chapter 14’s reassessment triggers describe for an individual system’s own risk assessment. Relationship management means maintaining enough ongoing contact, and enough visibility into the vendor’s own financial condition, subcontractor changes, and concentration risk, that a vendor’s material changes or business instability surface before they become a surprise, with a named owner responsible for noticing. Reassessment, on the same trigger logic Chapter 14 established for any system regardless of how it was acquired, applies fully to a purchased system. A vendor’s model update, an extension to a new population, a control failure, or elapsed time all trigger the same redone assessment a build-path system would require. Ending the relationship needs the same deliberateness as starting one. It calls for verified data return or deletion, a rehearsed rather than assumed migration or contingency path, and a closing record of what was learned that feeds back into how the next vendor gets selected. Exit is not an afterthought to a decision that was actually made when the contract was signed.</p>
+<p>Table 16.2 replaces a two-tier comparison that would otherwise assert specific provider outcomes with a due-diligence checklist. Every cell is a field to fill in from that organization’s own dated, current provider terms, not a claimed fact this book can state once and expect to remain accurate.</p>
+<p>Table 16.2. Contract-tier verification checklist (fields to fill in from the vendor’s own dated, current terms, not asserted outcomes)</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term to verify</th>
+<th>Published term (cite and date)</th>
+<th>Actually negotiated term</th>
+<th>Evidence date</th>
+<th>Owner</th>
+<th>Gap or fallback</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data retention</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Training use of customer inputs</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Support responsiveness</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Refusal and safety calibration</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Usage policy prohibitions</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Subprocessor and hosting terms</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Read Table 16.2 as a verification exercise, not a lookup table. Refusal and safety calibration in particular is not fixed at any tier the way a retention period might be, since the assembled system’s behavior also depends on configuration, system instructions, and fine-tuning layered on top of the base model’s policy floor. That row needs testing the actual deployed system, not reading a provider’s general policy statement.</p>
+</section>
+<section id="case-in-focus-the-gaps-a-vendor-would-not-close" class="level2 unnumbered case">
+<h2 class="unnumbered anchored" data-anchor-id="case-in-focus-the-gaps-a-vendor-would-not-close">Case in focus: the gaps a vendor would not close</h2>
+<p><code>TALENTSCREEN</code> · Hypothetical, following the running cases</p>
+<p>Calloway’s due diligence on <code>TalentScreen</code>, conducted before the original manufacturing-floor licensing decision, followed the open-to-specific-to-limitation sequence section 16.1 describes and reached the limitation questions once a working relationship was already established. The vendor answered the open questions readily, describing intended use in general terms, and answered the specific questions about aggregate performance with a clean, favorable summary. The limitation questions produced the friction. Asked for disaggregated performance broken out by race and gender, the vendor stated the underlying bias audit methodology was proprietary and declined to share the disaggregated results at all, only the audit’s overall pass conclusion.</p>
+<p>Calloway’s evaluator, applying the narrowing approach section 16.3 describes, asked whether the audit’s date, population size, and metric names could be shared without the proprietary calculations. The vendor agreed to share the date and population size, a national applicant pool from several years prior, but continued declining the metric names and any disaggregated figures, stating this went beyond what the audit contract permitted disclosing even in summary form.</p>
+<p>This left Calloway with a decision to make, not a resolved question. The gap was real. No disaggregated evidence existed for Calloway to evaluate, on a system that would be used to screen candidates for a manufacturer with a workforce composition the vendor’s national applicant pool may not have resembled closely. Calloway proceeded anyway, reasoning that the vendor’s aggregate pass result and the contract’s audit rights, negotiated under section 16.5’s approach and permitting Calloway’s own future bias audit, were sufficient mitigation for an initial deployment. Judged against Chapter 14’s own residual-risk acceptance standard, this reasoning does not actually hold up. A future audit right is a plan to obtain evidence later, not evidence that the present risk is acceptable now. The decision as made named no accountable acceptor with the authority to accept a disparate-impact risk, and it set no conditions or expiry on the acceptance. It also considered no alternative to proceeding, among them an independent predeployment evaluation on a more representative sample, a narrower initial population, or delaying deployment until better evidence existed. The declined questions were documented in the due diligence file rather than discarded, which is a real, separate good; it is not the same thing as having made a valid risk decision, and Calloway’s file shows the first without the second.</p>
+<p>What followed, traced across Chapters 9 and 14, was the disparity the manufacturing-floor bias audit was never positioned to catch when Calloway extended <code>TalentScreen</code> to its logistics job family without a new assessment. The documented record of the vendor’s original refusal became directly relevant once that disparity surfaced. It established that Calloway had identified the evidentiary gap at the outset and could show precisely what it knew and did not know at the time of the original decision. It had not simply overlooked the question. The record did not prevent the disparity, and it did not, on its own, make the original decision to proceed a sound one. What it did establish is that the exposure was a documented, if inadequately accepted, risk rather than an undetected one, which is worth something in an eventual review. But that is not the same claim as the decision having met Chapter 14’s own standard for accepting it.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Due diligence is a risk-based process that closes with a decision by an accountable owner, and the open-to-specific-to-limitation question sequence is one useful technique inside it, not the whole of it. It is assessed across at minimum four dimensions, provider, system, documentation, and compliance, with a weak or unclear answer on any one recorded as a gap, not assumed to reveal what the vendor is hiding. Vendor resistance calls for narrowing a declined question to its non-proprietary core, documenting every decline as evidence in its own right, and treating some gaps as disqualifying, without converting an unresolved gap into a claim about the vendor’s motive. Vendor-supplied evidence, including a bias audit, carries the same methodology, population, and threshold choices Chapter 7 raised for any fairness metric, and its assurance value also depends on who performed it, vendor self-assessment, a vendor-selected auditor, an independent one, or the buyer’s own testing.</p>
+<p>Several categories of contract provision, information rights, audit rights, change notification, incident cooperation, liability allocation, and exit terms among them, serve governance when their variables are actually specified instead of left as vague placeholders like “reasonable access” or “good faith”. A supply chain can run through several layers, base model, fine-tune, adapter, integration, and deployment among common ones, with visibility and obligation assessed separately at each layer rather than assumed to move in a fixed pattern together. A model developer’s own policy terms are inherited governance. They are worth checking against the vendor’s own current, dated terms, not assumed from a general rule, and they are subject to deprecation risk that a forced migration turns into a revalidation event. They are also capable of exporting a policy floor, shaped further by the deploying organization’s own configuration, into a product’s behavior. Open-weight models redistribute rather than remove these obligations, with license terms, support, provenance, and liability all depending on the specific release and the specific actor’s conduct rather than following a fixed category rule. Procurement leverage is usually strongest before signature but is not the only leverage a relationship ever has, and ongoing management, performance, compliance, relationship, and reassessment, continues past signature on the same terms Chapter 14 already established for any system regardless of how it was acquired.</p>
+</section>
+<section id="review-questions" class="level2">
+<h2 class="anchored" data-anchor-id="review-questions">Review questions</h2>
+<p><code>COMPREHENSION</code></p>
+<ol type="1">
+<li><p>State the three-stage due diligence question sequence and explain why it is one technique within a larger due diligence process, not the whole of it.</p></li>
+<li><p>Name the four core assessment dimensions and explain why a weak answer on the documentation dimension is a finding in itself rather than something to route around.</p></li>
+</ol>
+<p><code>APPLIED</code></p>
+<ol start="3" type="1">
+<li><p>A vendor declines to share a bias audit’s disaggregated results, citing proprietary methodology. Describe the narrowed follow-up question this chapter would ask next, and state precisely what a continued refusal of that narrower request does and does not establish.</p></li>
+<li><p>Draft a contract provision serving the information rights category that specifies what a vendor must supply, in what form, and how often, rather than leaving those terms as an unspecified placeholder.</p></li>
+</ol>
+<p><code>SPOT THE RISK</code></p>
+<ol start="5" type="1">
+<li>An organization discovers, only after a model developer deprecates a version it depends on, that the migration requires substantial revalidation. Identify what this chapter’s guidance says should have prevented the discovery from being a surprise.</li>
+</ol>
+<p><code>COMPARE AND DECIDE</code></p>
+<ol start="6" type="1">
+<li>Compare a hosted commercial model’s obligation structure against an open-weight model’s for support and liability specifically, and state which risk shifts most directly onto the deploying organization under the open-weight option, without assuming liability lands entirely on either party by default.</li>
+</ol>
+<p><code>RUNNING CASE</code></p>
+<ol start="7" type="1">
+<li><code>TALENTSCREEN</code> Using the case in focus, explain what Calloway’s documentation of the vendor’s refusal actually established after the disparity surfaced, and what it did not establish about whether the original decision to proceed was itself sound.</li>
+</ol>
+<hr>
+<p>A vendor’s refusal, a supply chain’s obligation gap, and an inherited policy term are all ways an organization’s governance depends on choices made outside its own walls. The book’s final part turns from the specific governance problems Parts II through IV have worked through to the discipline of building and running the governance program itself. It starts with treating that program as something designed and deployed with the same rigor this book has applied to every AI system it has governed.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./15-documentation-and-evidence.html" class="pagination-link" aria-label="15. Documentation and Evidence">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">15. Documentation and Evidence</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./17-implementing-ai-governance.html" class="pagination-link" aria-label="17. Implementing AI Governance">
+        <span class="nav-page-text"><span class="chapter-title">17. Implementing AI Governance</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>How to Govern AI · Foundations and Practical Guide to AI Governance</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Full current draft, rendered 2026-09-14</p>
+</div>
+    <div class="nav-footer-right">
+<p>CC BY-NC 4.0</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
