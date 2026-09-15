@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "How to Govern AI",
     "section": "",
-    "text": "Foundations and Practical Guide to AI Governance\nShawn Ogunseye\n\n2026-08-01\n\n\n\n\n\n\n\n\nSecond Edition\n\n\nHow to Govern AI\n\nHow to\n\n\n\nGovern\n\n\n\nAI\n\n\nFoundations and Practical Guide to AI Governance\n\n\n\n\nShawn Ogunseye\n\nCC BY-NC 4.0\n\n\n\n\n\n\nVERSION\n2.0\n\n\nDATE\nAugust 2026\n\n\nLICENSE\nCC BY-NC 4.0\n\n\nSUPERSEDES\nGoverning AI, v1.5.2\n\n\n\n\n\nAll 18 chapters and four appendices are published. About the Authors, a References list, and a back-of-book Index are not yet built.\nThis book supersedes Governing AI: Leading Responsible Innovation, which remains citable at doi.org/10.5281/zenodo.18407349.",
+    "text": "Foundations and Practical Guide to AI Governance\nShawn Ogunseye\n\n2026-08-01\n\n\n\n\n\n\n\n\nSecond Edition\n\n\nHow to Govern AI\n\nHow to\n\n\n\nGovern\n\n\n\nAI\n\n\nFoundations and Practical Guide to AI Governance\n\n\n\n\nShawn Ogunseye\n\nCC BY-NC 4.0\n\n\n\n\n\n\nVERSION\n2.0\n\n\nDATE\nAugust 2026\n\n\nLICENSE\nCC BY-NC 4.0\n\n\nSUPERSEDES\nGoverning AI, v1.5.2\n\n\n\n\n\nAll 18 chapters, four appendices, the references, and the index are published. An About the Authors page is still to come.\nThis book supersedes Governing AI: Leading Responsible Innovation, which remains citable at doi.org/10.5281/zenodo.18407349.",
     "crumbs": [
       "Foundations and Practical Guide to AI Governance"
     ]
@@ -2887,6 +2887,259 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Appendix D: Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/90-references.html",
+    "href": "chapters/90-references.html",
+    "title": "References",
+    "section": "",
+    "text": "Legislation and regulation\nSources are grouped by type, because the verification each type needs differs. Legislation is cited by instrument number and, where a provision carries the argument, by article. Standards are cited by number and year. Enforcement actions and litigation are cited by case name, court, docket, and the date of the operative order, since the order rather than the coverage of it is what the book relies on. Scholarship is cited in full.\nWhere a source moves faster than a printed book can, the text says so in place rather than only here. Statutory effective dates and standards publication statuses below were confirmed in September 2026 and should be re-checked before being relied on.\nRegulation (EU) 2024/1689, laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). Cited throughout Chapter 2, principally Articles 5, 6, and 9 through 15, and Annexes I and III.\nRegulation (EU) 2026/1744, amending Regulation (EU) 2024/1689 (Digital Omnibus on AI). Official Journal, 24 July 2026; in force 27 July 2026.\nRegulation (EU) 2016/679, General Data Protection Regulation. Principally Articles 5, 6, 9, 22, and 35.\nCalifornia SB 53, frontier developer safety framework disclosure. Effective 1 January 2026.\nColorado SB 26-189, Automated Decision-Making Technology Act. Effective 1 January 2027. Repealed SB 24-205 on 14 May 2026, before that act’s own deferred start date.\nIllinois HB 3773, amending the Illinois Human Rights Act. Effective 1 January 2026.\nNew York RAISE Act, frontier model transparency. Effective 1 January 2027.\nTexas HB 149, Responsible Artificial Intelligence Governance Act. Effective 1 January 2026. Government-use disclosure and prohibitions, enforced by the Attorney General; it is not an algorithmic-discrimination duty-of-care statute and does not reach private employment.\nNew York City Local Law 144 of 2021, automated employment decision tools. Bias audit, published summary, and candidate notice.\nCivil Rights Act of 1964, Title VII; Americans with Disabilities Act; Age Discrimination in Employment Act; Equal Credit Opportunity Act; Fair Credit Reporting Act; Fair Housing Act.",
+    "crumbs": [
+      "End Matter",
+      "References"
+    ]
+  },
+  {
+    "objectID": "chapters/90-references.html#standards-and-frameworks",
+    "href": "chapters/90-references.html#standards-and-frameworks",
+    "title": "References",
+    "section": "Standards and frameworks",
+    "text": "Standards and frameworks\nNational Institute of Standards and Technology. Artificial Intelligence Risk Management Framework (AI RMF 1.0). NIST AI 100-1, January 2023.\nNational Institute of Standards and Technology. Generative Artificial Intelligence Profile. NIST AI 600-1.\nISO/IEC 42001:2023, Information technology — Artificial intelligence — Management system.\nISO/IEC 42005, Information technology — Artificial intelligence — AI system impact assessment.\nISO/IEC 42006:2025, Requirements for bodies providing audit and certification of artificial intelligence management systems.\nISO/IEC 22989, Artificial intelligence concepts and terminology.\nISO/IEC 23894, Guidance on risk management.\nISO/IEC 38507, Governance implications of the use of artificial intelligence by organizations.\nCEN-CENELEC JTC 21, prEN 18286, quality management system for AI Act purposes. In development.\nOrganisation for Economic Co-operation and Development. OECD AI Principles, and the OECD framework for the classification of AI systems.\nInfocomm Media Development Authority (Singapore). Model AI Governance Framework for Agentic AI, version 1.5, 20 May 2026.\nInstitute of Internal Auditors. The IIA’s Three Lines Model, 2020.",
+    "crumbs": [
+      "End Matter",
+      "References"
+    ]
+  },
+  {
+    "objectID": "chapters/90-references.html#enforcement-actions-and-litigation",
+    "href": "chapters/90-references.html#enforcement-actions-and-litigation",
+    "title": "References",
+    "section": "Enforcement actions and litigation",
+    "text": "Enforcement actions and litigation\nWilliams v. City of Detroit, No. 2:21-cv-10827 (E.D. Mich.). Final Order of Dismissal and Settlement Agreement entered 28 June 2024. The operative governance terms cited in Chapter 1 are Detroit Police Department Manual Directives 307.5 and 203.11, incorporated by the order, together with the retrospective audit requirement and the court’s retention of jurisdiction to 28 June 2028.\nFederal Trade Commission v. Rite Aid Corporation, No. 2:23-cv-05023 (E.D. Pa.). Complaint filed 19 December 2023; Stipulated Order for Permanent Injunction entered 26 February 2024. Provision II.A, deletion of photographs, videos, and any data, models, or algorithms derived from them; five-year facial recognition ban; twenty-year order term. Quantified allegations cited in the text are at complaint paragraphs 31, 41, 50, 51, and 139.\nEqual Employment Opportunity Commission v. iTutorGroup, Inc. Settled 2023 by public consent decree, $365,000. The allegation concerned application software that automatically rejected older applicants. Whether the screening tool used machine learning was never established on the record.",
+    "crumbs": [
+      "End Matter",
+      "References"
+    ]
+  },
+  {
+    "objectID": "chapters/90-references.html#scholarship-and-documented-findings",
+    "href": "chapters/90-references.html#scholarship-and-documented-findings",
+    "title": "References",
+    "section": "Scholarship and documented findings",
+    "text": "Scholarship and documented findings\nBuolamwini, J., & Gebru, T. (2018). Gender shades: intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 77–91.\nChouldechova, A. (2017). Fair prediction with disparate impact: a study of bias in recidivism prediction instruments. Big Data, 5(2), 153–163. https://doi.org/10.1089/big.2016.0047\nGebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé III, H., & Crawford, K. (2021). Datasheets for datasets. Communications of the ACM, 64(12), 86–92. https://doi.org/10.1145/3458723\nKleinberg, J., Mullainathan, S., & Raghavan, M. (2017). Inherent trade-offs in the fair determination of risk scores. 8th Innovations in Theoretical Computer Science Conference (ITCS 2017), LIPIcs vol. 67, article 43. https://doi.org/10.4230/LIPIcs.ITCS.2017.43\nMitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I. D., & Gebru, T. (2019). Model cards for model reporting. Proceedings of the Conference on Fairness, Accountability, and Transparency, 220–229. https://doi.org/10.1145/3287560.3287596\nObermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). Dissecting racial bias in an algorithm used to manage the health of populations. Science, 366(6464), 447–453. https://doi.org/10.1126/science.aax2342",
+    "crumbs": [
+      "End Matter",
+      "References"
+    ]
+  },
+  {
+    "objectID": "chapters/90-references.html#journalism-as-documenting-source",
+    "href": "chapters/90-references.html#journalism-as-documenting-source",
+    "title": "References",
+    "section": "Journalism as documenting source",
+    "text": "Journalism as documenting source\nWhere no primary document exists, the book says so in the text and names the reporting rather than treating it as established fact.\nDastin, J. (2018, 10 October). Amazon scraps secret AI recruiting tool that showed bias against women. Reuters. The sole source for the Amazon recruiting tool. No primary document, regulatory action, litigation, or company confirmation exists; the account rests on anonymous sources, and Chapter 1 presents it on those terms.\nHill, K. (2020, 24 June). Wrongfully accused by an algorithm. The New York Times. The reporting that first documented the Williams arrest, cited alongside the settlement rather than in place of it.",
+    "crumbs": [
+      "End Matter",
+      "References"
+    ]
+  },
+  {
+    "objectID": "chapters/90-references.html#prior-edition",
+    "href": "chapters/90-references.html#prior-edition",
+    "title": "References",
+    "section": "Prior edition",
+    "text": "Prior edition\nOgunseye, S. (2026). Governing AI: Leading Responsible Innovation, version 1.5.2. Archived at aigov.ogunseye.com/v1 and citable at doi.org/10.5281/zenodo.18407349. Superseded by this edition.",
+    "crumbs": [
+      "End Matter",
+      "References"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html",
+    "href": "chapters/91-index.html",
+    "title": "Index",
+    "section": "",
+    "text": "A\nLocators are chapter numbers. A dagger marks a term that also carries a short definition in Appendix D.\nAcceptable use policy †. 3, 13\nAcceptance criteria †. 15, 18\nAction sequence †. 7, 15\nAdverse action notice †. 15\nAgent registration †. Appendix C\nAI governance †. 1, 2, 3, 12, 13, 17, 18, Appendix B\nAI literacy. 2, 17\nAI system lifecycle †. 10\nAlgorithmic disgorgement †. 2\nAnnex III. 2, 3, 10, 12, 13, 15, Appendix B\nAnonymization †. 5\nArticle 22. 2, 3\nArtificial general intelligence †. 1\nAudit trail. 15\nAuthority chain †. 12, 15\nAutomation bias †. 6, 8, 9, 12",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#b",
+    "href": "chapters/91-index.html#b",
+    "title": "Index",
+    "section": "B",
+    "text": "B\nBase rate. 7\nBenchmark contamination. 7\nBenefit proportionality †. 4\nBias audit. 2, 3, 12, 14, 15, 16, Appendix B\nBlast radius †. 3, 8, 12\nBuild, fine-tune, or buy †. Appendix C",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#c",
+    "href": "chapters/91-index.html#c",
+    "title": "Index",
+    "section": "C",
+    "text": "C\nCalibration †. 6, 7, 11, 13, 15, 16\nCircuit breaker †. 12, 13\nConformity assessment †. 2, 17, Appendix B\nContext alignment †. 8, 9",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#d",
+    "href": "chapters/91-index.html#d",
+    "title": "Index",
+    "section": "D",
+    "text": "D\nData minimization †. 2, 5\nDatasheet †. 5\nDemographic parity †. 7\nDeployer †. 2, 4, 6, 9, 10, 11, 13, 15, 16, 17, Appendix B\nDeprecation schedule †. 6\nDifferential privacy †. 5\nDisparate impact †. 2, 7, 14, 18, Appendix B\nDistribution shift †. 7\nDrift †. 5, 6, 7, 9, 11, 13, 14, 17, 18, Appendix A, Appendix B\nDue diligence. 3, 5, 12, 13, 16",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#e",
+    "href": "chapters/91-index.html#e",
+    "title": "Index",
+    "section": "E",
+    "text": "E\nEEOC. 1, 2, 14\nEqual opportunity †. 7\nEqualized odds †. 7\nEU AI Act. 1, 2, 3, 6, 9, 10, 12, 13, 14, 15, 17, 18, Appendix B, Appendix C",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#f",
+    "href": "chapters/91-index.html#f",
+    "title": "Index",
+    "section": "F",
+    "text": "F\nFabrication †. 1, 11\nFederated governance. 13\nFine-tuning data †. 5, 14\nFTC. 2\nFundamental rights impact assessment †. 4",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#g",
+    "href": "chapters/91-index.html#g",
+    "title": "Index",
+    "section": "G",
+    "text": "G\nGDPR. 2, 5, 14, 15\nGender Shades. 5\nGeneral-purpose AI model †. Appendix B\nGovernance body †. 13, 14, 17\nGovernance boundary †. 1, 3\nGroundedness †. 9",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#h",
+    "href": "chapters/91-index.html#h",
+    "title": "Index",
+    "section": "H",
+    "text": "H\nHarmonized standard †. 2, Appendix B\nHB 3773. 2\nHistorical bias †. 5\nHorizon scanning †. 18\nHuman oversight. 1, 2, 3, 4, 9, 12, Appendix B",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#i",
+    "href": "chapters/91-index.html#i",
+    "title": "Index",
+    "section": "I",
+    "text": "I\nIMDA. 12\nImpact assessment †. 2, 3, 4, 14, 17, 18, Appendix B, Appendix C\nIncident response. 1, 4, 8, 9, 10, 11, 12, 13, 16, 17, Appendix C\nInstruction hierarchy †. 6, 11\nIntake †. 3, 4, 5, 10, 13\nISO/IEC 23894. Appendix B\nISO/IEC 38507. Appendix B\nISO/IEC 42001. 2, Appendix B\nISO/IEC 42005. 2, 14, Appendix B\nISO/IEC 42006. Appendix B\nITutorGroup. 1",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#l",
+    "href": "chapters/91-index.html#l",
+    "title": "Index",
+    "section": "L",
+    "text": "L\nLeast privilege †. 11, 12\nLineage †. 5\nLocal Law 144. 3, 14, 15, 18, Appendix B",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#m",
+    "href": "chapters/91-index.html#m",
+    "title": "Index",
+    "section": "M",
+    "text": "M\nMeasurement bias †. 5\nModel as judge. 7\nModel bill of materials †. 6\nModel card †. 6, 15, 16, 17, Appendix A, Appendix C",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#n",
+    "href": "chapters/91-index.html#n",
+    "title": "Index",
+    "section": "N",
+    "text": "N\nNIST AI Risk Management Framework †. 2, Appendix B\nNIST AI RMF. 2, 9, 10, 13, 14",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#o",
+    "href": "chapters/91-index.html#o",
+    "title": "Index",
+    "section": "O",
+    "text": "O\nOECD. 3\nOpen-weight model. 4, 16\nOperating model †. 13, 17, 18, Appendix A\nOrganizational readiness †. 8, 9",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#p",
+    "href": "chapters/91-index.html#p",
+    "title": "Index",
+    "section": "P",
+    "text": "P\nPost-hoc explanation †. 6\nPost-market monitoring. 9\nPost-market monitoring plan †. 9\nPreemption †. 2, 18, Appendix B\nPrivilege separation †. 11, 12\nProblem statement †. 2, 4, Appendix C\nProcurement. 1, 2, 3, 4, 6, 8, 11, 12, 13, 16, Appendix B, Appendix C\nProgressive rollout †. 8\nPrompt injection †. 5, 6, 9, 11, 12\nProvenance †. 1, 2, 3, 4, 5, 6, 7, 11, 13, 15, 16\nProvider †. 2, 6, 9, 10, 11, 12, 13, 15, 16, 17, 18, Appendix B, Appendix C\nProximate cause †. 9, 10\nProxy †. 1, 4, 5, 7, 9, 14, 15, 17",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#r",
+    "href": "chapters/91-index.html#r",
+    "title": "Index",
+    "section": "R",
+    "text": "R\nRACI †. 13, Appendix A\nRAISE Act. 1, 2, Appendix B\nReassessment trigger †. 14, 15, 16, Appendix C\nRed teaming. 7\nRegulation-agnostic design †. 18\nRepresentativeness †. 1, 2, 4, 5, 7, 8, 9, 10\nResidual risk †. 4, 5, 7, 8, 9, 11, 13, 14, 15, 17, Appendix C\nReversibility †. 3, 10, 12, 14, 17, 18\nRisk tier. 2, 3, 11, 13, 14, 16, 17, 18, Appendix B, Appendix C\nRite Aid. 2\nRollback †. 6, 7, 8, 9, 10, 11, 12, 16, 17, 18, Appendix C\nRoot cause analysis †. 4, 9, 10, Appendix A\nRuntime intervention †. 12, 13, 15",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#s",
+    "href": "chapters/91-index.html#s",
+    "title": "Index",
+    "section": "S",
+    "text": "S\nSB 26-189. 2\nSB 53. 1, 2\nScope creep †. 8, 9\nSelection bias †. 5\nSentinel evaluation †. 7\nSeverity classification †. 10, 13, Appendix C\nShadow AI †. 3, 18, Appendix A, Appendix C\nSocio-technical system †. 1\nSolely automated decision †. 2, 3\nSupply chain. 3, 6, 13, 16, Appendix B\nSystem card. 6, 7, 15\nSystem readiness †. 8",
+    "crumbs": [
+      "End Matter",
+      "Index"
+    ]
+  },
+  {
+    "objectID": "chapters/91-index.html#t",
+    "href": "chapters/91-index.html#t",
+    "title": "Index",
+    "section": "T",
+    "text": "T\nTarget operating model †. 17, 18, Appendix A\nTechnical documentation. 2, 9, 15, Appendix B\nThree Lines Model †. 13\nTitle VII. 2, 4, 14, 16, Appendix B\nTraceability. 2, 5, 7, 14, 15, Appendix A\nTraceability matrix †. 14, 15, Appendix A\nTRAIGA. 2, Appendix B\nTwo-speed problem †. 17",
+    "crumbs": [
+      "End Matter",
+      "Index"
     ]
   },
   {
