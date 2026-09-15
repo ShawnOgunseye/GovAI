@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5. Data Governance for AI – How to Govern AI</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/06-model-selection-and-development.html" rel="next">
+<link href="../chapters/04-defining-the-problem.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-176b1e44b272a30ec08500e73512b2cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2ac2194f70e1841eb0bfd2f3ea7731ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-scoping-inventory-classification.html">Part II: The AI System Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/05-data-governance-for-ai.html"><span class="chapter-title">5. Data Governance for AI</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">How to Govern AI</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/shawnogunseye/GovAI" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations and Practical Guide to AI Governance</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part I: Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-what-ai-governance-is.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. What AI Governance Is</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-regulatory-landscape.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2. The Regulatory Landscape</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II: The AI System Lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-scoping-inventory-classification.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3. Scoping, Inventory, and Risk Classification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-defining-the-problem.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. Defining the Problem and Use Case</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-data-governance-for-ai.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">5. Data Governance for AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-model-selection-and-development.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Model Selection and Development</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-testing-evaluation-and-red-teaming.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Testing, Evaluation, and Red Teaming</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-deployment-and-release.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Deployment and Release</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-operations-and-monitoring.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Operations and Monitoring</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-incident-response-and-remediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10. Incident Response and Remediation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part III: Generative and Agentic Systems</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-governing-generative-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11. Governing Generative Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-governing-agentic-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12. Governing Agentic Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part IV: The Governance Function</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-organizing-the-governance-function.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">13. Organizing the Governance Function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/14-risk-assessment-and-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Risk Assessment and Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/15-documentation-and-evidence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Documentation and Evidence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/16-third-party-vendor-and-supply-chain-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. Third-Party, Vendor, and Supply Chain Governance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part V: Building and Sustaining the Program</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/17-implementing-ai-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">17. Implementing AI Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/18-governing-under-uncertainty.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">18. Governing Under Uncertainty</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-a-technique-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A: Technique Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-b-regulatory-quick-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B: Regulatory Quick Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-c-templates-and-checklists.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C: Templates and Checklists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/99-back-cover.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Back Cover</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#what-you-will-be-able-to-do" id="toc-what-you-will-be-able-to-do" class="nav-link active" data-scroll-target="#what-you-will-be-able-to-do">What you will be able to do</a></li>
+  <li><a href="#what-data-means-at-each-path-and-system-class" id="toc-what-data-means-at-each-path-and-system-class" class="nav-link" data-scroll-target="#what-data-means-at-each-path-and-system-class">5.1 What data means at each path and system class</a></li>
+  <li><a href="#why-data-problems-compound-in-machine-learning" id="toc-why-data-problems-compound-in-machine-learning" class="nav-link" data-scroll-target="#why-data-problems-compound-in-machine-learning">5.2 Why data problems compound in machine learning</a></li>
+  <li><a href="#quality-dimensions" id="toc-quality-dimensions" class="nav-link" data-scroll-target="#quality-dimensions">5.3 Quality dimensions</a></li>
+  <li><a href="#provenance-and-lineage" id="toc-provenance-and-lineage" class="nav-link" data-scroll-target="#provenance-and-lineage">5.4 Provenance and lineage</a></li>
+  <li><a href="#representativeness" id="toc-representativeness" class="nav-link" data-scroll-target="#representativeness">5.5 Representativeness</a></li>
+  <li><a href="#bias-mechanisms" id="toc-bias-mechanisms" class="nav-link" data-scroll-target="#bias-mechanisms">5.6 Bias mechanisms</a></li>
+  <li><a href="#retrieval-corpus-governance" id="toc-retrieval-corpus-governance" class="nav-link" data-scroll-target="#retrieval-corpus-governance">5.7 Retrieval corpus governance</a></li>
+  <li><a href="#fine-tuning-data" id="toc-fine-tuning-data" class="nav-link" data-scroll-target="#fine-tuning-data">5.8 Fine-tuning data</a></li>
+  <li><a href="#privacy-enhancing-technologies" id="toc-privacy-enhancing-technologies" class="nav-link" data-scroll-target="#privacy-enhancing-technologies">5.9 Privacy-enhancing technologies</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">5.10 Documentation</a></li>
+  <li><a href="#case-in-focus-two-data-failures-inside-one-system" id="toc-case-in-focus-two-data-failures-inside-one-system" class="nav-link" data-scroll-target="#case-in-focus-two-data-failures-inside-one-system">Case in focus: two data failures inside one system</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review questions</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-scoping-inventory-classification.html">Part II: The AI System Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/05-data-governance-for-ai.html"><span class="chapter-title">5. Data Governance for AI</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">5. Data Governance for AI</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><code>MEDASSIST</code> was accurate at the academic medical center where it was trained. Ten years of records, a large nursing staff following consistent documentation practice, and a patient population the model had effectively seen before, spread across a decade. Deployed unchanged to one of Northfield’s community hospitals, its sepsis alerts started arriving late, and sometimes not at all, for patients whose deterioration a nurse would have caught on sight. Nobody had touched the model. What had changed was the population underneath it. It was older on average, had more comorbidity, a smaller nursing staff charting on a different schedule, and lab panels ordered in a different order because the community hospital’s protocol was not the academic center’s. The model had learned the statistical signature of deterioration at one hospital and applied it, faithfully, to a population it did not describe.</p>
+<p>Nothing about this is a story about a bad model. The model did exactly what supervised learning does; it found the pattern in the data it was given. The failure sits upstream of the model, in a question nobody asked before deployment, which is whether the data the model was trained on described the population it would be used on. That question, and the family of questions like it, is what this chapter is about, and it is the reason data governance gets its own chapter, not a section inside model development. A report built on bad data produces one bad report. A model trained on bad data can convert a pattern present in that data into parameters that shape many later outputs, so the same distortion can recur at scale even when no single runtime record is malformed. Data is, for that reason, one major source of AI risk, alongside the task definition, the model, the interface, the deployment setting, and the monitoring that would otherwise catch the recurrence.</p>
+<section id="what-you-will-be-able-to-do" class="level2 unnumbered objectives">
+<h2 class="unnumbered anchored" data-anchor-id="what-you-will-be-able-to-do">What you will be able to do</h2>
+<ul>
+<li>Identify the governable data surface for a system on the build path and on the buy path, across predictive, generative, and agentic systems</li>
+<li>Assess a dataset against five named quality dimensions and state what each failure produces once the data is trained on, not merely read</li>
+<li>Evaluate representativeness between a training population and a deployment population, and say what evidence would settle the question</li>
+<li>Distinguish historical bias, measurement bias, and selection bias in a described dataset, and name the different remedy each requires</li>
+<li>Govern a retrieval corpus and a fine-tuning set as data surfaces in their own right, not as afterthoughts of model selection</li>
+<li>Choose among four privacy-enhancing technologies for a stated purpose and state what each does not protect against</li>
+</ul>
+</section>
+<section id="what-data-means-at-each-path-and-system-class" class="level2">
+<h2 class="anchored" data-anchor-id="what-data-means-at-each-path-and-system-class">5.1 What data means at each path and system class</h2>
+<p>A chapter that opens with training data excludes most of its readers before the first section ends. Most organizations select a model instead of building one, and an organization on the buy path usually has no training data to govern at all. It would be a mistake to conclude from that fact that the buy path has no data governance surface. It has a different one, and naming it precisely is the first job of this chapter.</p>
+<p>Four kinds of data recur across the systems this book follows, and a given deployment carries some subset of them depending on its path and its system class.</p>
+<p><strong>Training data</strong> exists on the build path in the fullest sense. The organization holds it, can inspect it, and controls what happens to it. <code>MEDASSIST</code> is in exactly this position, because Northfield trained the model on its own academic medical center’s records. On the buy path the data does not disappear; it moves upstream and out of reach. <code>TALENTSCREEN</code> sits on the buy path. Calloway licensed its hiring system, so the training data exists somewhere in the vendor’s pipeline, but Calloway has limited or no access to it and no control over it. That distinction is between a data surface that does not exist and one that exists but is not visible or governable from where the organization sits. It matters because Chapter 6 shows an organization on the buy path inheriting the developer’s training choices whether or not it can see what those choices were. Training data is the most extensively studied of the four, and sections 5.2 through 5.6 concentrate on it. But it is not the only data surface. Treating an invisible surface as an absent one is precisely the error that stranded <code>MEDASSIST</code>’s community hospitals in a different guise, mistaking what cannot be seen for what is not there.</p>
+<p><strong>Fine-tuning data</strong> exists wherever an organization adapts a model it did not train from scratch, whether that model was built in-house and is being specialized, or purchased and is being adjusted to a narrower task. It is usually far smaller than a training set, sometimes a few thousand examples, and section 5.8 explains why its small size is exactly what makes it dangerous to govern casually.</p>
+<p><strong>Retrieval corpus data</strong> exists wherever a generative system retrieves documents to ground its output, an architecture common enough that most organizations deploying a purchased language model against their own content are governing a corpus whether or not anyone has named it that. <code>MEDASSIST</code>’s later documentation assistant, introduced in section 5.7, retrieves from Northfield’s clinical guidelines and prior notes. Nothing about this system was trained; the model is unchanged from what the vendor shipped. The corpus is where the organization’s own judgment, and its own risk, actually lives.</p>
+<p><strong>Runtime data</strong> exists for every system class, but it becomes structurally different once a system acts instead of only producing output. A predictive system’s runtime data is the record fed to it at inference. A generative system’s runtime data includes whatever context is assembled for it, which for a retrieval-augmented system means the corpus above plus anything else concatenated into the prompt at the moment of use. An agentic system’s runtime data additionally includes what the agent reads and writes while it works. That includes the files it opens, the records it queries, and the actions it logs. Chapter 12 develops the specific controls an agent’s runtime data requires; this chapter’s job is to establish that the surface exists and that it is a data governance question before it is anything else.</p>
+<p><code>TALENTSCREEN</code> illustrates the buy-path pattern precisely. Training data for the resume-screening model exists, because some corpus taught the model to score résumés, but Calloway cannot see it, because the vendor trained the model and has not disclosed what on. The data exists upstream, with no direct access or control on Calloway’s side. What Calloway does have direct governance authority over is the applicant data it feeds the system at inference, the résumés and application forms that constitute its runtime surface. If the vendor’s newer offering adds a retrieval component drawing on Calloway’s own hiring history, that is a corpus to govern as well. An organization that concludes it has no data to govern because it bought rather than built has misdiagnosed its situation in a way that will surface, usually badly, the first time a regulator or a plaintiff’s lawyer asks what data the system actually touches.</p>
+<p>The pattern generalizes into a rule worth stating plainly before the chapter goes further. Identify the full data surface before governing any part of it. A governance programme that inventories training data with rigor while leaving the retrieval corpus untouched has not under-governed by a small margin. It has governed the part of the system that happened to have precedent in older data governance practice and ignored the part where new risk actually concentrates.</p>
+<div id="fig-data-surface" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/fig-05-01-data-surface.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: Figure 5.1. What data surface exists, by path and by system class
+</figcaption>
+</figure>
+</div>
+<!-- FIGURE 5.1 REQUIRED ELEMENTS
+Must appear: two paths (build, buy) as rows, three system classes
+(predictive, generative, agentic) as columns, and for each of the six cells
+which of the four data kinds (training, fine-tuning, retrieval corpus,
+runtime) is actually present. Must show explicitly that the buy path is not
+empty. It still carries fine-tuning, corpus, or runtime data depending on
+system class. Training data on the buy path must be marked as existing
+upstream with limited or no direct access or control, never as a false
+absence. Entry condition: a system is selected or built. Exit condition:
+its data surface is named. Deliberately excluded: specific governance
+controls for each cell; that is the rest of the chapter's job, not this
+figure's. Must work in black and white.
+SOURCE: original; no published framework organizes data governance by this
+build/buy by system-class cross, which is this book's own argument.
+AUDIT: pass 1 [x] against list, pass 2 blind [x], rendered and viewed [x].
+Redrawn to close CH025/CH537: the buy-path training-data cell now reads
+"training data, exists upstream, at the vendor" in a dashed pale marker
+distinct from absence, for all three system classes, matching section
+5.1's exists/control/inspect distinction.
+-->
+<p>Read Figure 5.1 by path first, then by column. The build-path row is where training data is directly held and governed, and that is true for every system class, because something had to be trained regardless of what the system produces. The buy-path row does not show an empty training-data cell; it shows one marked existing upstream, with limited or no direct access or control, which is the distinction organizations most often collapse into a false absence. A purchased predictive model still has runtime data the deploying organization fully governs. A purchased generative model typically adds a retrieval corpus and may add a fine-tuning set, both under direct organizational control even though the base model’s training data is not. A purchased agentic system adds runtime data of its own kind, what the agent reads and writes while it works. <code>TALENTSCREEN</code> sits in the buy-path, predictive-leaning-agentic cells at once, since Calloway’s vendor supplies both screening and, later, autonomous scheduling. No cell in this figure is a control. It is a map of where a control would have something to act on, which the rest of the chapter fills in one surface at a time.</p>
+</section>
+<section id="why-data-problems-compound-in-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="why-data-problems-compound-in-machine-learning">5.2 Why data problems compound in machine learning</h2>
+<p>Each surface just named can carry an error, and an error behaves differently once it trains a model than it does sitting in an ordinary program. Ordinary software processes are wrong in the ordinary way software is wrong. A bad record produces one bad output, visible at the moment it occurs, correctable by fixing that record. A spreadsheet with an error in one cell has an error in one cell.</p>
+<p>A trained model does not fail this way, and the difference is worth being precise about because it explains why data governance for AI cannot simply borrow data governance for conventional systems. When a model is trained on data containing a systematic pattern, whether that pattern is a genuine signal or an artifact of how the data was collected, the model extracts the pattern as a general rule and applies it to every case it subsequently sees. A single mislabeled transaction in a fraud dataset is a data-entry error. A dataset in which one demographic group was historically investigated more closely, so that fraud “found” tracks who was looked at rather than who offended, teaches the model an investigation pattern. The model will then apply that pattern, confidently and at scale, to every future transaction from that group. The error has moved from one record to a pattern the model has generalized into its parameters, which is what makes a data problem in a trained model categorically harder to contain than a data problem in a single report.</p>
+<p>This is also why data problems in AI resist the debugging instinct conventional software has trained practitioners to expect. When conventional software misbehaves, a developer traces execution and finds the line that is wrong. A model’s behaviour is an interaction across millions of parameters shaped by every example it saw, and there is no line to point at. The data problem is discoverable, but only by examining the data and the outcomes it produced, not by reading code. Sections 5.3 through 5.6 develop the specific tools for that examination, named quality dimensions, provenance discipline, representativeness assessment, and the three bias mechanisms that most often turn a dataset’s history into a model’s rule.</p>
+</section>
+<section id="quality-dimensions" class="level2">
+<h2 class="anchored" data-anchor-id="quality-dimensions">5.3 Quality dimensions</h2>
+<p>“Bad data” is not a diagnosis a governance programme can act on. Five named dimensions turn the complaint into something a team can test for, and each produces a specific and different failure once the data is trained on, not merely stored. Treat the five as a minimum diagnostic set for this chapter’s purposes, not as a complete definition of data quality. Operational quality frameworks also name uniqueness, integrity, relevance, traceability, and fitness for purpose, and representativeness, privacy, and lawful use, each already given its own treatment elsewhere in this chapter, should not be collapsed into a field-level quality check. An organization extends the set to match its decision and domain instead of treating these five as the whole of the question.</p>
+<p><strong>Accuracy</strong> asks whether a recorded value matches the true value it claims to describe. Inaccurate accuracy in AI is not always the mislabeled outlier a spreadsheet audit would catch. It also includes labels that were correct when recorded and wrong by the time they matter, such as a diagnosis code entered before a later correction that never propagated back. A model trained on systematically inaccurate labels learns to predict the inaccuracy, and it will do so with the same confidence it would show predicting the truth, because nothing in the training signal distinguishes the two.</p>
+<p><strong>Completeness</strong> is a question of whether the data that should exist actually does. Missing data is rarely missing at random, and the pattern of absence often carries the signal a naive analysis would miss entirely. A lending dataset can disproportionately decline thin-file applicants, people with little credit history, before they reach the stage where outcome data is recorded. Training on that dataset produces a model that has never seen what a thin-file applicant who succeeds looks like, because that case was systematically prevented from entering the dataset. <code>FAIRLEND</code>’s data science team should be asking not only whether fields are populated but whether entire categories of applicant are underrepresented because of exactly the kind of decision the model is now being trained to make.</p>
+<p><strong>Consistency</strong> concerns whether the same fact is recorded the same way across the dataset. A field populated by manual entry across six community hospitals, each with its own charting convention, produces a dataset that looks complete and accurate by any single-hospital check while encoding six different measurement practices as though they were one. <code>MEDASSIST</code>’s later failure at the community hospitals had a consistency component alongside its representativeness problem. Vital signs were entered on a different cadence, at a different level of granularity, by staff following a different protocol, none of which is visible in an accuracy audit run against any single hospital’s own records.</p>
+<p><strong>Timeliness</strong> is a question of whether the data reflects the world as it currently is, not as it was when collected. A model is a photograph of the patterns present at training time, and the world it operates on keeps moving after the photograph is taken. This is the mechanism behind performance decay discussed in Chapter 1. Fraud techniques evolve, clinical practice guidelines update, hiring markets shift, and a model trained on last year’s patterns degrades against this year’s world without anyone having changed a line of code. Timeliness is therefore not a one-time check at training but a standing question that Chapter 9’s monitoring discipline exists to keep answering.</p>
+<p><strong>Validity</strong> asks whether a value falls within the range and format the field’s definition permits, and whether the definition itself still matches what the field is being used to mean. A validity failure that quality checks miss most often is not the malformed entry, which automated checks catch easily. It is the field being repurposed, an “other” category absorbing cases nobody built a proper category for. That category quietly becomes a bucket that a model reads as one coherent thing when it is actually several unrelated ones.</p>
+<p>None of these five dimensions is checked by reading the data once. Each requires a specific test, run against the specific way the data will be used. A governance function that has not named which of the five it checked, and how, has not actually checked data quality, regardless of how much time it spent looking at the data. Record quality, established this way, is still a narrower question than dataset coverage, provenance, lawful use, and fitness for purpose, each of which can fail even when every field passes every test in this section.</p>
+</section>
+<section id="provenance-and-lineage" class="level2">
+<h2 class="anchored" data-anchor-id="provenance-and-lineage">5.4 Provenance and lineage</h2>
+<p>Knowing that a dataset is currently accurate, complete, consistent, timely, and valid answers a narrower question than governance needs. It says nothing about where the data came from, what was done to it, or what permission existed for each of those things, and each of those omissions has produced documented failures on its own.</p>
+<p>Provenance and lineage are not simply recorded after the fact; the sequence in which they are established matters. Legal, ethical, and contractual authority for a given use has to be settled before collection or receipt, not checked afterward as a final gate, because a purpose settled after data has already been gathered cannot retroactively justify the gathering. GDPR’s principles of lawfulness, purpose limitation, and minimization operate as conditions on processing from the outset, not as a compliance step appended once a dataset already exists. The four elements below are presented in the order a governance function tends to encounter them when examining a dataset already in use, but authority is the one that has to be settled first in time, not last.</p>
+<p><strong>Source</strong> is where the data originated, and it is worth documenting for a reason less obvious than provenance for its own sake. The source determines what the data can be assumed to mean. Data collected for one purpose carries the assumptions of that purpose invisibly into any other use. <code>MEDASSIST</code>’s training records were collected to support clinical care and billing, not to train a predictive model, and every field in them reflects choices made for those purposes. Which vitals get charted how often, which findings get a structured field versus a free-text note, and which patients get the more thorough workup because a physician suspected something, are all choices the model will never see documented anywhere.</p>
+<p><strong>Collection circumstances</strong> matter because how data was gathered shapes what gaps and skews it carries. Data collected through a voluntary survey differs systematically from data collected through mandatory intake, because the population that chooses to respond is not the population that is required to. A retrieval corpus assembled by whichever documents happened to be digitized first differs from one assembled by deliberate coverage of every clinical guideline the organization uses. That difference is invisible in the corpus itself; it is visible only in the record of how the corpus was built.</p>
+<p><strong>Transformations</strong> are every operation performed on data between collection and use, and each one is a place where meaning can silently change. This is where a common data-cleaning instinct becomes a governance risk instead of a governance improvement. Cleaning that removes outliers as noise removes legitimate rare cases along with genuine errors, and a rare case removed from training data is a case the model will not later recognize, however important recognizing it turns out to be. A governance function that cannot answer what was removed from a dataset and why cannot evaluate whether the removal improved the data or simply deleted the hard cases.</p>
+<p><strong>Permissions</strong> are the legal, ethical, and contractual authority for each use the data is put to, and Chapter 2’s treatment of purpose limitation applies here with particular force. Consent is one possible basis for that authority, not the only one; applicable law can permit or restrict a given use through several lawful bases, statutory duties, and sector-specific rules, and which one governs depends on jurisdiction and context. What is constant across all of them is that authority for the new use has to be established, not assumed. Consent obtained to provide a clinical service does not automatically extend to training a predictive model on the resulting records. An organization that assumes it does has made a purpose-limitation error with a compliance consequence, not merely a documentation gap, regardless of which basis it believed it was relying on.</p>
+<div id="fig-data-lineage" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-lineage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/fig-05-02-data-lineage.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-lineage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: Figure 5.2. A data lineage record, from source to use
+</figcaption>
+</figure>
+</div>
+<!-- FIGURE 5.2 REQUIRED ELEMENTS, REBUILT per CH026.
+CH026 finding: the prior sequence checked authority after collection and
+transformation. That misteaches the order GDPR Articles 5 and 6 require:
+lawfulness, purpose limitation, and minimization apply from the outset,
+not as a final gate. The prior version also omitted ownership, sensitivity
+classification, access control, quality testing, approval, versioning,
+retention, correction, revocation, deletion, and monitoring feedback.
+The rebuilt figure shows nine steps in order. Step (1) is purpose,
+affected population, accountable owner, and decision defined. Step (2) is
+legal/ethical/contractual authority established, with source restrictions
+and minimization requirements recorded, BEFORE collection. Step (3) is
+collection or receipt with provenance, sensitivity classification, and
+access controls. Step (4) is quality testing against the dimensions of
+section 5.3 plus representativeness and fitness for use. Step (5) is
+transformation or labelling under version control preserving lineage.
+Step (6) is reassessment of purpose, authority, and permission before each
+materially changed use. Step (7) is approval binding the dataset version
+to the model or corpus version. Step (8) is monitoring of quality, drift,
+access, complaints, and downstream effects. Step (9) is correction,
+revocation, quarantine, retirement, retention, or deletion under defined
+triggers. Dashed feedback arrows run from monitoring and disposition back
+to the owner, authority decision, quality tests, and approval gate. Entry
+condition: a data need is identified. Exit condition: the record is
+closed. Must work in black and white.
+SOURCE: original; structure informed by the categories in Gebru et al.,
+"Datasheets for Datasets" (arXiv:1803.09010), redrawn in this book's own
+visual language and reordered to place authority before collection, not
+reproduced from that source's own sequence.
+AUDIT: pass 1 [x] against list, pass 2 blind [x], rendered and viewed [x],
+CH026 correction APPLIED. Checked 13 Sep 2026.
+-->
+<p>Read Figure 5.2 as a nine-stage sequence, not five independent boxes and not a single straight line. Authority is checked second, immediately after purpose and ownership are named and before any collection happens, exactly reversing the order a governance function tends to fall into when it examines a dataset already in use rather than designing the intake for one not yet collected. Each stage still supplies the record the next stage needs to be trustworthy; a transformation cannot be evaluated without knowing the source it started from, and a use decision at approval is meaningless without knowing what authority was actually established for it. <code>MEDASSIST</code>’s training data has a strong record at collection, since Northfield’s own clinical systems logged where it came from and how. Its record is weaker at transformation, since the specific cleaning steps applied before training were not retained in a form anyone could later consult. A gap kept at any numbered stage breaks the chain for everything after it, whatever the quality of the stages that came before it.</p>
+<p>Figure 5.2’s two dashed feedback arrows are its second argument, not a decoration on the first. Disposition, the point at which a dataset is corrected, retired, retained, or deleted, reassesses the same owner and authority decision made at stages one and two, because a disposition trigger is frequently evidence that the original purpose or authority no longer holds. Monitoring, running continuously rather than once, rechecks quality testing and forces the dataset back through approval when what it finds warrants it. A lineage record that only ever moves forward cannot represent a dataset an organization keeps using for years; the feedback arrows in Figure 5.2 are what make it a governed record instead of a one-time intake form.</p>
+<p>The discipline that ties source, collection circumstances, transformations, and permissions together is <strong>lineage</strong>. Lineage is a traceable record of every step data took from its origin to its use in a model, sufficient that a later question about any field can be answered by consulting the record instead of guessing. Lineage is what makes the other three dimensions auditable rather than merely asserted, and its absence is why so many organizations, asked what their training data actually contains, can describe its schema but not its history.</p>
+</section>
+<section id="representativeness" class="level2">
+<h2 class="anchored" data-anchor-id="representativeness">5.5 Representativeness</h2>
+<p>Representativeness asks a single, deceptively simple question. Does the population a model was trained on resemble the population it will be used on? <code>MEDASSIST</code> answers the question badly, and working the case in full shows why the question is harder to answer well than it looks.</p>
+<p>The academic medical center where the model was trained differs from Northfield’s community hospitals along several dimensions at once, and the dimensions interact instead of adding up independently. The patient population differs. An academic center draws a case mix skewed toward more complex, often more severe presentations, referred precisely because the originating facility could not manage them, while a community hospital sees a broader, generally less acute population managing its own primary care. Equipment differs too. The academic center’s monitoring infrastructure captures vitals on a tighter cadence with lower missingness. A community hospital’s older equipment and thinner staffing produce a data stream with more gaps and coarser granularity, feeding the model inputs of a quality it was never trained to expect. Documentation practice differs, in ways sections 5.3 and 5.4 already established are their own quality and provenance dimensions, compounding the population gap instead of merely coexisting with it.</p>
+<p>A model that is excellent by every measure computed on its academic-center test set carries none of that excellence automatically to a community hospital, because the test set was drawn from the same population as the training set. Testing a model against a population it was trained on cannot detect a representativeness problem by construction. This is a distinct failure from the fairness testing Chapter 7 addresses, which asks whether a model performs consistently across groups within a single deployment population. Representativeness asks the prior question, whether the deployment population is one the model has any evidence about at all.</p>
+<p>Settling a representativeness question requires evidence that goes beyond eyeballing summary statistics. A rigorous comparison specifies the dimensions that matter for the task, in <code>MEDASSIST</code>’s case things like age distribution, comorbidity burden, admitting diagnosis mix, and the specific vital-sign collection cadence and completeness the model was trained to expect. It then tests whether the deployment population’s distribution on those dimensions falls within a range the training data covered with enough density to support reliable prediction. A population that differs on a dimension the model never learned to use is a smaller problem than a population that differs on a dimension the model relies on heavily. The assessment has to be specific to the model’s actual behaviour, not generic to the dataset.</p>
+<p>What follows from an unfavourable answer is not necessarily “do not deploy.” It is a decision, made by someone accountable for it. The options include retraining on data from the new population, monitoring the new population closely enough to catch degradation early, restricting the model’s use to the subset of cases where the populations do overlap, or declining to deploy at all. What is not an acceptable answer is deploying without having asked the question, which is what happened to Northfield’s community hospitals and what Chapter 9 will show the organization discovering the hard way.</p>
+</section>
+<section id="bias-mechanisms" class="level2">
+<h2 class="anchored" data-anchor-id="bias-mechanisms">5.6 Bias mechanisms</h2>
+<p>A population can match on every dimension section 5.5 measures and still teach a model something unjust. “The data was biased” names a symptom without pointing at a cause, and different causes require different remedies. Three mechanisms recur often enough in documented failures to be worth learning separately, because a fix aimed at the wrong one does not help and can create the appearance of due diligence without the substance of it.</p>
+<p><strong>Historical bias</strong> exists when the data accurately records a world that was itself unjust, so that a model trained on it learns and then perpetuates a pattern of past treatment. The mechanism does not require any error in the data at all. Chapter 1’s fraud-detection example carries it. If investigators historically scrutinized some customers more closely than others, the resulting labels of “fraud found” accurately reflect what those investigators found, and a model trained on those labels learns the investigation pattern precisely because the data correctly recorded it. The remedy for historical bias is not a data-quality fix, because there is no error to fix. It requires either a different label that does not encode the historical practice or a different population to train on. Alternatively, it requires a decision, made explicitly and by someone accountable for it, that the historical pattern should not be reproduced going forward regardless of what the data shows.</p>
+<p><strong>Measurement bias</strong> occurs when the variable actually recorded means something different across groups than the variable the model is meant to be predicting, so that an apparently neutral proxy carries a hidden distortion. The healthcare cost-proxy algorithm from Chapter 1 is the precise case. The model predicted healthcare cost as a proxy for healthcare need. Cost is a reasonable-sounding measure of need, but it is nonetheless a bad one, because unequal access to care means less money is spent on patients facing more barriers to it, not on patients who are healthier. The variable “cost” does not mean the same thing across a population with unequal access; it means “resources actually consumed,” which tracks access as much as it tracks need. The model, reading lower spending as lower need, worked exactly as designed, and no variable in the dataset needed to name race for the distortion to reproduce it. The remedy for measurement bias is finding or constructing a variable that tracks the actual target more directly, or, where no such variable is available, treating the model’s output as evidence about the proxy, not the target it was meant to stand in for.</p>
+<p><strong>Selection bias</strong> exists when cases are systematically absent from the data, so that the model never learns from a population that exists in the world but not in the training set. The Gender Shades study of commercial facial analysis systems, published by Joy Buolamwini and Timnit Gebru in 2018, demonstrates the mechanism with unusual clarity. It is worth reporting precisely because the study itself is more disciplined than the mechanism it demonstrates is often given credit for. The researchers evaluated three commercial gender-classification systems across intersectional groups and found aggregate error rates no higher than 0.8 percent for lighter-skinned men, rising to between 20.8 and 34.7 percent for darker-skinned women depending on the system. The study documented that disparity; it did not disclose the vendors’ training data, so it could not prove by itself that a particular training composition caused the result. What the paper did show directly is that prominent public face benchmarks, the data used to evaluate commercial systems, not necessarily to train them, were themselves demographically skewed. Two widely used benchmarks the paper audited were more than three-quarters male and more than three-quarters lighter-skinned. That finding illustrates the mechanism this section is teaching. Dataset composition has to be measured, not assumed, because a skew invisible to a schema check can still be large enough to produce a training population, or an evaluation population, that does not resemble the population a system will actually encounter. The remedy for selection bias is deliberate, measured inclusion of the missing population, verified by checking the resulting composition instead of taking a broadened collection effort’s success on faith. IBM’s public response to the study illustrates the remedy applied at the scale the problem required, building a subsequent system on a stated half a million images with balanced demographic composition.</p>
+<p>The three mechanisms are not mutually exclusive within a single dataset. <code>MEDASSIST</code>’s community hospital gap likely involves more than one at once, a selection component, since the training data was drawn entirely from a population the community hospitals do not match, layered onto a measurement component in whatever vital-sign fields are recorded differently across sites. Diagnosing which mechanism, or which combination, is operating in a specific dataset is analytical work that cannot be shortcut. The diagnosis determines whether the fix is a different label, a different variable, or a different population, three different pieces of work that a single word like “bias” obscures rather than clarifies.</p>
+<div id="fig-bias-mechanisms" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bias-mechanisms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/fig-05-03-bias-mechanisms.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bias-mechanisms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.3: Figure 5.3. Bias mechanisms and their remedies
+</figcaption>
+</figure>
+</div>
+<!-- FIGURE 5.3 REQUIRED ELEMENTS
+Must appear: three mechanisms (historical, measurement, selection), each with
+a one-line definition, a named documented instance, and its specific remedy.
+Must show that the three remedies are different in kind, not variations on
+one fix. Deliberately excluded: statistical formulas for detecting each
+mechanism; that is a testing-chapter concern (Chapter 7), not a data-
+governance one. Must work in black and white; colour is not used to
+distinguish the three mechanisms, position and labelling carry that.
+SOURCE: mechanisms are standard in the fairness literature; the pairing of a
+governance remedy to each is this book's structuring choice.
+AUDIT: pass 1 [x] against list · pass 2 blind [x] · rendered and viewed [x].
+Content re-verified against this section's current text 13 Sep 2026; no
+factual change required. Accessibility markup upgraded to match the
+title/desc plus aria-labelledby convention used from fig-18-01 forward.
+-->
+<p>Read Figure 5.3 as three columns, not one continuum. Historical bias sits under a data source that is not wrong, only inherited from a world that was; its remedy changes the label or the population, not the data’s accuracy. Measurement bias sits under a proxy that quietly stopped tracking its target; its remedy changes the variable. Selection bias sits under an absence the dataset cannot reveal by being read more carefully, because what is missing does not announce itself; its remedy changes who is included, verified by recomputing the composition instead of assumed from the effort spent. A team that has checked accuracy, completeness, consistency, timeliness, and validity per section 5.3 has not thereby ruled out any of the three, because all three mechanisms can produce a dataset that is clean, complete, and internally consistent by every measure section 5.3 names.</p>
+</section>
+<section id="retrieval-corpus-governance" class="level2">
+<h2 class="anchored" data-anchor-id="retrieval-corpus-governance">5.7 Retrieval corpus governance</h2>
+<p>A generative system that retrieves documents before answering, an architecture usually called retrieval-augmented generation, is common enough that it is now close to the default way organizations connect a purchased language model to their own content. That architecture creates a data surface that training-data governance has no vocabulary for, because nothing about it is trained. The model is exactly what the vendor shipped. What changes between deployments is the corpus, and the corpus is where an organization’s own judgment, and its own exposure, actually sits.</p>
+<p>Three questions govern a corpus, and a deployment that has not answered all three has not governed it regardless of how carefully the model itself was selected.</p>
+<p><strong>What enters the corpus</strong> is the first, and it is a curation decision with consequences that a governance function should treat with the seriousness Chapter 2’s discussion of purpose limitation and data minimization would apply to any other collection of personal or sensitive material. A corpus assembled by pointing a retrieval system at an entire shared drive inherits everything on that drive, including documents nobody intended to make available to a system that will surface their contents in response to a query nobody anticipated.</p>
+<p><strong>Who may see what</strong> is the second, and it is the question where a specific, well-documented failure recurs across deployments, permission inheritance. A retrieval system that indexes documents without preserving the access controls that governed those documents when a person read them directly can surface material to a user who was never entitled to see it. That happens because retrieval operates on the index, not on the original permission structure, unless someone has deliberately carried that structure through. Northfield’s clinical documentation assistant has to preserve exactly this distinction. A nurse’s query should retrieve from the guidelines and notes a nurse is entitled to see, not from every note in the system regardless of the unit or the patient. Chapter 11 develops the runtime dimension of this failure, where it manifests as the system’s actual behaviour. This chapter’s job is to establish that the failure originates in corpus governance, at the point where documents were indexed without their permissions, not in anything the model does at inference.</p>
+<p><strong>Corpus freshness</strong> is the third, and it names a failure mode specific to retrieval that training-data timeliness, discussed in section 5.3, does not fully capture. A retrieval corpus can contain a superseded clinical guideline alongside its replacement, both indexed, both retrievable, with nothing in the corpus itself indicating which one is current. The model treats retrieved text as authoritative context, not as a claim to be checked against other claims. Because of that, a stale document retrieved and injected into a generative system’s context is not merely outdated information sitting unused in storage. It becomes the basis for an answer the system delivers with the same fluency and the same absence of a truth-check that Chapter 1 established as the defining property of generative output. Corpus governance therefore requires an active retirement discipline, not merely an addition discipline, one in which superseded material is removed or explicitly marked as superseded, on a cadence that matches how fast the underlying material actually changes, and checked, not assumed.</p>
+<p>These three questions are necessary and not sufficient. A corpus that has answered all three still needs a named owner and a full lifecycle around it. That lifecycle runs from approval of each source before it enters the corpus, through the acquisition step itself, to parsing and chunking decisions that determine what a single retrieved unit actually contains. It includes propagation of metadata and access controls through indexing, not only at the source, and a recorded embedding and index version, so a later question about why a given answer was retrieved can be traced to the index state that produced it. It also requires deliberate testing for poisoning and indirect prompt injection introduced through the corpus itself, evaluation of retrieval quality and citation behaviour, not only the model’s fluency, and monitoring in operation. Finally, it needs a deletion-synchronization path so that removing a source document actually removes it from the index rather than leaving a retrievable copy behind, and an incident-response path for the case where the corpus itself is the vector. It also needs a retirement process for the corpus or any part of it. This section’s job is to establish that the lifecycle, not only the three governing questions, is what corpus governance actually requires; what an agent or a generative system does with a retrieved document at runtime is Chapter 11’s concern.</p>
+</section>
+<section id="fine-tuning-data" class="level2">
+<h2 class="anchored" data-anchor-id="fine-tuning-data">5.8 Fine-tuning data</h2>
+<p>Fine-tuning sets are usually far smaller than training sets, sometimes a few thousand examples against a training corpus of millions, and the size difference is precisely why fine-tuning data warrants review that its modest scale tempts organizations to skip. A model’s broad behaviour is shaped by its full training corpus and resists the influence of any small addition. Its narrow, task-specific behaviour, the register it adopts, the categories it treats as natural, the edge cases it handles confidently versus the ones it stumbles on, is exactly what a small, targeted fine-tuning set is capable of shifting, and shifting quickly. A few thousand examples chosen to teach a support model a particular tone can, without anyone intending it, also teach the model which kinds of customer complaint get a sympathetic response and which get a dismissive one. That happens if the examples used to demonstrate the tone happen to correlate with anything about who is complaining.</p>
+<p>The review a fine-tuning set warrants is not identical to full training-data governance, because the questions that matter are different at this scale. Provenance still matters, but the question sharpens to where each example came from and whether whoever selected it was applying a consistent, examinable standard or an intuitive one that cannot be reconstructed later. Representativeness still matters. At the scale of a few thousand examples, a skew has less room to be diluted than the same proportional skew would have across a training corpus of millions. There is no general guarantee that a large corpus averages a skew away, but a small one gives a distortion far less competing signal to be diluted by. A fine-tuning set overrepresenting one kind of case teaches the model that kind of case is typical, in a much stronger sense than an equivalent skew would in a full training corpus. The bias mechanisms of section 5.6 apply undiminished, and arguably with less room to hide, because a fine-tuning set small enough to review in full is small enough that a governance function has no excuse for not reviewing it in full before it ships.</p>
+</section>
+<section id="privacy-enhancing-technologies" class="level2">
+<h2 class="anchored" data-anchor-id="privacy-enhancing-technologies">5.9 Privacy-enhancing technologies</h2>
+<p>Every surface this chapter has covered can carry personal or sensitive data. Four techniques recur in discussions of how to use that data while limiting what it exposes. Each earns a place in this chapter only alongside a clear statement of what it does not protect against. A technique adopted for the protection it does not actually provide is worse than no technique, since it creates confidence without creating safety.</p>
+<p><strong>Anonymization</strong> removes or alters identifying fields so that a record can no longer be traced to a specific person. Its limitation is well documented, not theoretical. Re-identification attacks have repeatedly demonstrated that anonymized records can be traced back to individuals by combining the anonymized data with other available information, an outcome that has recurred across multiple documented releases of supposedly anonymized datasets. Anonymization is appropriate where the residual re-identification risk, evaluated against what other data plausibly exists to combine with it, is genuinely low, and it is not a substitute for a lawful basis or for the data minimization discipline Chapter 2 requires.</p>
+<p><strong>Differential privacy</strong> offers a mathematical guarantee, not a removal of identifying fields. It bounds, using a parameter conventionally called epsilon, how much any single individual’s presence in a dataset can change the statistical output computed from it, so that an observer cannot reliably determine whether a specific person’s data was included at all. The tradeoff is direct and unavoidable. A smaller epsilon gives a stronger privacy guarantee and adds more statistical noise, which degrades the accuracy of whatever is computed from the data. Choosing epsilon is therefore a governance decision about how much accuracy loss a given privacy guarantee is worth, not a parameter a data science team should set unilaterally. Differential privacy protects against inferring whether an individual’s data was used or reconstructing their specific record. It does not protect against a model learning and reproducing a general pattern true of a group the individual belongs to. That is a different question the technique was never designed to answer.</p>
+<p><strong>Federated learning</strong> trains a model across decentralized data sources without moving the raw data to a central location, sending only model updates for aggregation instead. Its privacy properties are real but narrower than the architecture’s description tends to imply. The model updates themselves have been shown to leak information about the underlying data. This happens through gradient inversion, in which an adversary reconstructs approximations of training inputs from the shared updates. It also happens through membership inference, in which an adversary determines whether a particular record was part of a given source’s training data by observing how the model responds to it. Federated learning solves the problem of moving raw data across an organizational or jurisdictional boundary. It does not by itself solve the problem of a knowledgeable adversary examining the updates that do cross that boundary. Deployments that rely on it for privacy protection need additional safeguards, often differential privacy applied to the updates themselves, to close that gap.</p>
+<p><strong>Synthetic data</strong> generates artificial records intended to preserve a dataset’s statistical properties without containing any actual individual’s information. Its central risk is memorization. A generative model trained to produce synthetic data can, particularly on rare or distinctive records, reproduce examples close enough to specific real records that the synthetic data functions as a disclosure of the real data it was meant to replace. This means synthetic data has to be tested for the privacy properties it is meant to provide, not merely for whether it looks statistically similar to the source. Look-alike similarity and memorization can coexist in the same dataset, so a synthetic dataset that has been checked for utility but not for memorization has been half-evaluated.</p>
+<p>Choosing among the four is a judgment about the specific threat a specific deployment faces, not a default setting, and none of the four is a privacy guarantee by category name alone. Each requires a stated threat model, the specific configuration or parameter chosen, an honest account of residual risk, a utility test, and, where the deployment’s stakes warrant it, an attack or disclosure evaluation, not a claim of protection taken on faith. Pseudonymization, encryption at rest and in transit, secure multiparty computation, homomorphic encryption, and trusted execution environments belong in the same conversation as possible controls. This does not imply that every deployment needs all nine. Which ones apply depends on the threat model just stated, not on completeness for its own sake. A retrieval corpus drawn from internal clinical guidelines with no patient-level data in it may need none of the nine. A fine-tuning set built from real patient interactions, by contrast, is exactly the case where the choice among them, made explicitly, configured deliberately, and evaluated rather than assumed, is the difference between a defensible privacy posture and an assumed one.</p>
+</section>
+<section id="documentation" class="level2">
+<h2 class="anchored" data-anchor-id="documentation">5.10 Documentation</h2>
+<p>Every discipline this chapter has developed, quality dimensions, provenance, representativeness, bias mechanisms, corpus governance, fine-tuning review, and privacy-enhancing technique choice, produces findings. Those findings are only useful to a governance function if they are written down somewhere a later reviewer, a regulator, or the organization’s own future self can actually find them. The standard structure for that record is the <strong>datasheet</strong>, a documentation format proposed by Timnit Gebru and colleagues in 2018. It was developed for exactly the case where a dataset’s users are removed from its creators and would otherwise have no way to answer basic questions about what they are working with.</p>
+<p>A datasheet organizes what needs recording into categories that track the sections of this chapter closely, because the categories were developed to answer the same questions this chapter has been asking. Motivation covers why the dataset was created and by whom. Composition covers what the instances represent, whether any confidential or sensitive information is present, and what is known about gaps or absences of the kind section 5.6 treats as a bias mechanism in its own right. Collection process covers how the data was acquired, tracking directly to the provenance discipline of section 5.4. Preprocessing and labelling covers what transformations were applied and what was removed, again tracking section 5.4’s transformation question. Uses covers what the dataset has been and could be used for, including uses the creators consider inappropriate. This is where a fine-tuning set’s intended narrow purpose should be stated explicitly enough that a later team does not repurpose it for a use the original review never considered. Distribution and maintenance cover who may access the dataset and who is responsible for it going forward, which is where corpus freshness and retirement discipline from section 5.7 get a named owner.</p>
+<p>A datasheet populated honestly, including the sections that record what is unknown or unresolved, not only what is settled, is the artifact that makes the rest of this chapter’s work durable past the memory of the person who did it. <code>MEDASSIST</code>’s community hospital failure, examined again from Chapter 9’s monitoring perspective, was in part a documentation failure. Nothing was recorded, in a place anyone deploying to a new hospital would have consulted, that the training population was drawn entirely from the academic medical center. A representativeness assessment that is never written down has to be redone, imperfectly and from memory, by whoever eventually asks the question the first deployment never answered.</p>
+</section>
+<section id="case-in-focus-two-data-failures-inside-one-system" class="level2 unnumbered case">
+<h2 class="unnumbered anchored" data-anchor-id="case-in-focus-two-data-failures-inside-one-system">Case in focus: two data failures inside one system</h2>
+<p><code>MEDASSIST</code> · Hypothetical, following the running case</p>
+<p>Northfield Health trained <code>MEDASSIST</code> on ten years of records from its academic medical center, drawn from a large, high-acuity population with dense vital-sign monitoring and consistent documentation practice built up over a decade by a stable clinical staff. Validated against a held-out slice of that same population, the model performed well by every measure the validation exercise computed. It was then deployed unchanged across all seven of Northfield’s hospitals, including six community sites whose patient population, equipment, and documentation practice none of the validation work had touched.</p>
+<p>The representativeness gap section 5.5 develops in full produced the first failure. Sepsis alerts at the community hospitals arrived late or not at all for patients whose deterioration, in retrospect, resembled patterns the model had learned to catch at the academic center. Their surrounding data did not match closely enough for the model’s learned pattern to fire reliably, since it carried a coarser vital-sign cadence, a different case mix, and documentation entered on a different schedule. No one had asked, before deployment, whether the training population resembled the deployment population on the dimensions the model actually relied on, and the gap was invisible to any test run against data from the training site itself.</p>
+<p>Two years later, Northfield extended <code>MEDASSIST</code> with a generative documentation assistant that retrieves from the organization’s clinical guidelines and prior clinical notes to help draft admission summaries. The model itself was purchased, unmodified, from an external developer; nothing about it was trained on Northfield’s data. The corpus it retrieves from, however, was assembled by indexing a shared clinical-documents repository without preserving the access distinctions that governed who could read which notes when a clinician opened them directly. A nurse’s query could retrieve material from a note the querying nurse was never authorized to see under the hospital’s own access policy, and the assistant could surface that material in a drafted summary. This happened because the retrieval system operated on the index instead of the permission structure the original documents carried.</p>
+<p>The two failures share a structure worth naming explicitly, because it is the structure this chapter has organized itself around. Neither failure was a defect in a model. The predictive model performed exactly as its training taught it to; the generative model retrieved exactly what its corpus made available. Both failures originated in a data decision made, or more precisely not made, before either model ever ran, a representativeness question never asked, and a permission structure never carried forward into an index. A governance function that reviews model performance without reviewing the data underneath it, on the build path or the buy path, will keep finding failures that look like the model’s fault and are not.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Data is one major source of AI risk, and treating it as a section inside model development instead of a discipline in its own right is how organizations miss where a large share of their actual risk sits. The governable data surface is broader than training data. It includes fine-tuning sets, retrieval corpora, and runtime data, and a system on the buy path, which describes most deployments, still has a data surface even when it has no training data at all.</p>
+<p>Five quality dimensions, accuracy, completeness, consistency, timeliness, and validity, turn a vague complaint about bad data into something a team can test for, and each produces a specific failure once trained on, not merely stored. Provenance and lineage make source, collection circumstances, transformations, and permissions traceable, which is what makes the other dimensions auditable rather than asserted. Representativeness asks whether a training population resembles a deployment population, a question testing against the training population’s own held-out data cannot answer by construction, as <code>MEDASSIST</code>’s community hospitals demonstrated. Historical, measurement, and selection bias are three distinct mechanisms requiring three distinct remedies, and diagnosing which is operating in a given dataset is analytical work a single word like “bias” cannot substitute for.</p>
+<p>Retrieval corpus governance and fine-tuning data review extend these disciplines to surfaces that training-data governance has no native vocabulary for. Privacy-enhancing technologies each protect against a specific threat while leaving others open, so choosing among them is a judgment about the threat at hand, not a default setting. Documentation, in the form of a datasheet populated honestly, is what makes every finding in this chapter durable past the memory of the person who made it.</p>
+<p><strong>Evidence carried forward.</strong> This chapter’s output for the rest of the book is approved data and corpus evidence. That evidence includes the datasheet, the representativeness and bias findings, the retrieval corpus’s governance record, and any residual data-quality issue left open instead of resolved, each tied to a specific data or corpus version. Chapter 6 consumes this evidence when it evaluates a model’s own training and data-handling claims against it.</p>
+</section>
+<section id="review-questions" class="level2">
+<h2 class="anchored" data-anchor-id="review-questions">Review questions</h2>
+<p><code>COMPREHENSION</code></p>
+<ol type="1">
+<li><p>Explain why testing a model against a held-out sample from its own training population cannot detect a representativeness problem, and state what kind of evidence could.</p></li>
+<li><p>Distinguish historical bias from measurement bias using the healthcare cost-proxy case, and explain why the remedy for one would not fix the other.</p></li>
+</ol>
+<p><code>APPLIED</code></p>
+<ol start="3" type="1">
+<li><p>An organization purchases a language model and connects it to a retrieval system drawing on its internal wiki. Six months after deployment, a compliance review discovers that queries have surfaced draft HR investigation notes to employees outside HR. Identify which section of this chapter’s framework the failure traces to, and specify at least three controls that would have prevented it.</p></li>
+<li><p>A fine-tuning set of four thousand customer service transcripts is assembled by pulling the most recent transcripts available. Explain two distinct ways this selection method could introduce bias, and describe how you would check for each.</p></li>
+</ol>
+<p><code>SPOT THE RISK</code></p>
+<ol start="5" type="1">
+<li>A team preparing a dataset for a new credit model reports the following. All fields are populated, a manual review found no incorrect values, the schema has not changed in three years, and null values are rare. They conclude the data is high quality and ready for training. Identify at least four questions this assessment leaves unanswered, and for each, name the section of this chapter that supplies it.</li>
+</ol>
+<p><code>COMPARE AND DECIDE</code></p>
+<ol start="6" type="1">
+<li>An organization must choose between differential privacy, applied to a dataset of patient interactions used to fine-tune a clinical assistant, and synthetic data generated to replace the real interactions entirely. State what each option protects against, what it does not, and what you would need to know about the intended use to decide between them.</li>
+</ol>
+<p><code>RUNNING CASE</code></p>
+<ol start="7" type="1">
+<li><code>MEDASSIST</code> Using the two failures described in this chapter’s case in focus, identify what a properly completed datasheet would have recorded for the training data, and explain specifically how having that record available would have changed what happened at deployment to the community hospitals.</li>
+</ol>
+<hr>
+<p>A model trained on well-governed data and evaluated only against the population it was trained on has answered a narrower question than deployment requires. The next chapter turns to the model itself, to what an organization inherits when it builds one, fine-tunes one, or simply selects one someone else built. It also explains why that choice forecloses governance options long before the system ever sees the data this chapter has just spent its attention on.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Reader feedback widget. Injected on every chapter page via _quarto.yml's
+     include-after-body. Self-configures per page (reads the chapter's own H1),
+     posts anonymously to a Google Form, and can be removed by deleting the
+     include-after-body line in _quarto.yml plus this file. -->
+<div id="reader-feedback" style="margin-top:3.5rem;padding:1.5rem 1.5rem 1.75rem;border-top:1px solid #dfe3e8;">
+  <div id="rf-form-state">
+    <h3 style="font-size:1.05rem;margin:0 0 .35rem;color:#1F4E79;">Was this chapter useful?</h3>
+    <p style="font-size:.9rem;color:#5b6570;margin:0 0 1rem;">
+      Quick, anonymous feedback on this chapter. No account needed, and you can send more than once.
+    </p>
+
+    <div id="rf-rating" style="display:flex;gap:.4rem;margin-bottom:1rem;" role="radiogroup" aria-label="Rating">
+      <!-- five buttons injected by JS -->
+    </div>
+
+    <textarea id="rf-comment" placeholder="What was unclear, wrong, or worth changing? (optional)" style="width:100%;min-height:5.5rem;padding:.6rem .7rem;border:1px solid #cdd4db;border-radius:6px;
+      font:inherit;font-size:.92rem;resize:vertical;box-sizing:border-box;"></textarea>
+
+    <div style="margin-top:.85rem;display:flex;align-items:center;gap:.75rem;">
+      <button id="rf-submit" type="button" style="background:#1F4E79;color:#fff;border:none;border-radius:6px;padding:.55rem 1.1rem;
+        font:inherit;font-size:.92rem;cursor:pointer;">
+        Send feedback
+      </button>
+      <span id="rf-hint" style="font-size:.82rem;color:#8a929b;"></span>
+    </div>
+  </div>
+
+  <div id="rf-thanks" style="display:none;font-size:.95rem;color:#1F4E79;">
+    Thanks — that's recorded. <a href="#" id="rf-again" style="color:#1F4E79;">Send more feedback on this chapter</a>.
+  </div>
+</div>
+
+<!-- Hidden iframe used as the form's POST target so the page never navigates away. -->
+<iframe name="rf-target" style="display:none;" title="feedback submission target"></iframe>
+
+<script>
+(function () {
+  var FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSd9_CLKYge5lybG71ff2xAJKTUC0H76P7SSF8X0esvVgOQTTQ/formResponse";
+  var ENTRY_CHAPTER = "entry.339002275";
+  var ENTRY_RATING  = "entry.39522218";
+  var ENTRY_COMMENT = "entry.995180468";
+
+  function chapterLabel() {
+    var h1 = document.querySelector("main h1, #title-block-header h1, h1");
+    var text = h1 ? h1.textContent.trim() : document.title.trim();
+    return text.replace(/\s+/g, " ");
+  }
+
+  function buildStars(container) {
+    var selected = null;
+    for (var i = 1; i <= 5; i++) {
+      (function (n) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.textContent = n;
+        b.setAttribute("aria-label", n + " out of 5");
+        b.dataset.value = n;
+        b.style.cssText = "width:2.1rem;height:2.1rem;border-radius:6px;border:1px solid #cdd4db;" +
+          "background:#fff;color:#3c4650;font:inherit;font-size:.92rem;cursor:pointer;";
+        b.addEventListener("click", function () {
+          selected = n;
+          Array.prototype.forEach.call(container.children, function (el) {
+            var on = Number(el.dataset.value) <= n;
+            el.style.background = on ? "#1F4E79" : "#fff";
+            el.style.color = on ? "#fff" : "#3c4650";
+            el.style.borderColor = on ? "#1F4E79" : "#cdd4db";
+          });
+        });
+        container.appendChild(b);
+      })(i);
+    }
+    return function () { return selected; };
+  }
+
+  function ready(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+
+  ready(function () {
+    var root = document.getElementById("reader-feedback");
+    if (!root) return;
+    // Not a teaching page — front/back cover, etc. Those set data-no-feedback
+    // on the body via a tiny inline script in the page's own front matter.
+    if (document.body.hasAttribute("data-no-feedback")) {
+      root.style.display = "none";
+      return;
+    }
+
+    var ratingWrap = document.getElementById("rf-rating");
+    var getRating = buildStars(ratingWrap);
+    var commentEl = document.getElementById("rf-comment");
+    var submitBtn = document.getElementById("rf-submit");
+    var hint = document.getElementById("rf-hint");
+    var formState = document.getElementById("rf-form-state");
+    var thanks = document.getElementById("rf-thanks");
+    var again = document.getElementById("rf-again");
+
+    submitBtn.addEventListener("click", function () {
+      var rating = getRating();
+      var comment = commentEl.value.trim();
+      if (!rating && !comment) {
+        hint.textContent = "Pick a rating or add a comment first.";
+        return;
+      }
+
+      var form = document.createElement("form");
+      form.action = FORM_ACTION;
+      form.method = "POST";
+      form.target = "rf-target";
+      form.style.display = "none";
+
+      function field(name, value) {
+        var inp = document.createElement("input");
+        inp.type = "hidden";
+        inp.name = name;
+        inp.value = value;
+        form.appendChild(inp);
+      }
+
+      field(ENTRY_CHAPTER, chapterLabel());
+      if (rating) field(ENTRY_RATING, String(rating));
+      if (comment) field(ENTRY_COMMENT, comment);
+
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+
+      formState.style.display = "none";
+      thanks.style.display = "block";
+    });
+
+    again.addEventListener("click", function (e) {
+      e.preventDefault();
+      commentEl.value = "";
+      Array.prototype.forEach.call(ratingWrap.children, function (el) {
+        el.style.background = "#fff";
+        el.style.color = "#3c4650";
+        el.style.borderColor = "#cdd4db";
+      });
+      hint.textContent = "";
+      thanks.style.display = "none";
+      formState.style.display = "block";
+    });
+  });
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/aigov\.ogunseye\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/04-defining-the-problem.html" class="pagination-link" aria-label="4. Defining the Problem and Use Case">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">4. Defining the Problem and Use Case</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/06-model-selection-and-development.html" class="pagination-link" aria-label="6. Model Selection and Development">
+        <span class="nav-page-text"><span class="chapter-title">6. Model Selection and Development</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>How to Govern AI · Foundations and Practical Guide to AI Governance</p>
+</div>   
+    <div class="nav-footer-center">
+<p>First edition archived at <a href="../v1/">/v1/</a></p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>CC BY-NC 4.0</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

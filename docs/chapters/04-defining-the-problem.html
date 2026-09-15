@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4. Defining the Problem and Use Case – How to Govern AI</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/05-data-governance-for-ai.html" rel="next">
+<link href="../chapters/03-scoping-inventory-classification.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-176b1e44b272a30ec08500e73512b2cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2ac2194f70e1841eb0bfd2f3ea7731ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-scoping-inventory-classification.html">Part II: The AI System Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/04-defining-the-problem.html"><span class="chapter-title">4. Defining the Problem and Use Case</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">How to Govern AI</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/shawnogunseye/GovAI" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations and Practical Guide to AI Governance</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part I: Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-what-ai-governance-is.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. What AI Governance Is</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-regulatory-landscape.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2. The Regulatory Landscape</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II: The AI System Lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-scoping-inventory-classification.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3. Scoping, Inventory, and Risk Classification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-defining-the-problem.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">4. Defining the Problem and Use Case</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-data-governance-for-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. Data Governance for AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-model-selection-and-development.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Model Selection and Development</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-testing-evaluation-and-red-teaming.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Testing, Evaluation, and Red Teaming</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-deployment-and-release.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Deployment and Release</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-operations-and-monitoring.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Operations and Monitoring</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-incident-response-and-remediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10. Incident Response and Remediation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part III: Generative and Agentic Systems</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-governing-generative-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11. Governing Generative Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-governing-agentic-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12. Governing Agentic Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part IV: The Governance Function</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-organizing-the-governance-function.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">13. Organizing the Governance Function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/14-risk-assessment-and-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Risk Assessment and Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/15-documentation-and-evidence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Documentation and Evidence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/16-third-party-vendor-and-supply-chain-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. Third-Party, Vendor, and Supply Chain Governance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part V: Building and Sustaining the Program</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/17-implementing-ai-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">17. Implementing AI Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/18-governing-under-uncertainty.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">18. Governing Under Uncertainty</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-a-technique-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A: Technique Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-b-regulatory-quick-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B: Regulatory Quick Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-c-templates-and-checklists.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C: Templates and Checklists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/99-back-cover.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Back Cover</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#what-you-will-be-able-to-do" id="toc-what-you-will-be-able-to-do" class="nav-link active" data-scroll-target="#what-you-will-be-able-to-do">What you will be able to do</a></li>
+  <li><a href="#naming-the-gap-before-naming-a-solution" id="toc-naming-the-gap-before-naming-a-solution" class="nav-link" data-scroll-target="#naming-the-gap-before-naming-a-solution">4.1 Naming the gap before naming a solution</a></li>
+  <li><a href="#intake" id="toc-intake" class="nav-link" data-scroll-target="#intake">4.2 Intake</a></li>
+  <li><a href="#problem-statements" id="toc-problem-statements" class="nav-link" data-scroll-target="#problem-statements">4.3 Problem statements</a></li>
+  <li><a href="#root-cause-analysis" id="toc-root-cause-analysis" class="nav-link" data-scroll-target="#root-cause-analysis">4.4 Root cause analysis</a></li>
+  <li><a href="#identifying-who-is-affected" id="toc-identifying-who-is-affected" class="nav-link" data-scroll-target="#identifying-who-is-affected">4.5 Identifying who is affected</a></li>
+  <li><a href="#getting-the-requirement-right-not-just-the-person-right" id="toc-getting-the-requirement-right-not-just-the-person-right" class="nav-link" data-scroll-target="#getting-the-requirement-right-not-just-the-person-right">4.6 Getting the requirement right, not just the person right</a></li>
+  <li><a href="#evaluating-appropriateness" id="toc-evaluating-appropriateness" class="nav-link" data-scroll-target="#evaluating-appropriateness">4.7 Evaluating appropriateness</a></li>
+  <li><a href="#recording-the-assessment" id="toc-recording-the-assessment" class="nav-link" data-scroll-target="#recording-the-assessment">4.8 Recording the assessment</a></li>
+  <li><a href="#build-buy-or-stop" id="toc-build-buy-or-stop" class="nav-link" data-scroll-target="#build-buy-or-stop">4.9 Build, buy, or stop</a></li>
+  <li><a href="#case-how-talentscreen-entered-calloway" id="toc-case-how-talentscreen-entered-calloway" class="nav-link" data-scroll-target="#case-how-talentscreen-entered-calloway">Case: how TalentScreen entered Calloway</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review questions</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-scoping-inventory-classification.html">Part II: The AI System Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/04-defining-the-problem.html"><span class="chapter-title">4. Defining the Problem and Use Case</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">4. Defining the Problem and Use Case</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this book’s hypothetical Calloway case, Calloway Industries did not decide to buy an AI hiring tool. A recruiting manager attended a conference, saw a demonstration, and came back with a proposal. The proposal described the product. It listed the features, the vendor’s accuracy claims, the integration path, and the licence cost. It did not describe a problem.</p>
+<p>Eleven months later the tool was screening applications for warehouse and logistics roles across four states, and nobody at Calloway could say what it was supposed to have improved. Time to hire had not moved. Quality of hire was not measured before the tool arrived and so could not be compared afterwards. What had changed was that four thousand applications a month were now being ranked by a system whose behaviour nobody in the building could account for.</p>
+<p>This chapter is about the work that Calloway skipped. Its omissions are among the hardest to repair later, because a system that should not have been built cannot be fixed by testing it more carefully.</p>
+<section id="what-you-will-be-able-to-do" class="level2 unnumbered objectives">
+<h2 class="unnumbered anchored" data-anchor-id="what-you-will-be-able-to-do">What you will be able to do</h2>
+<ul>
+<li>State a business need in terms of a current state, a desired state, and the gap between them, before any proposal names a technology</li>
+<li>Gather what stakeholders actually need, distinguishing it from what they first say they want</li>
+<li>Convert a proposed solution into a problem statement with success criteria that can be measured</li>
+<li>Work a root cause analysis to a depth where the branches separate, and recognize when the useful branch is not the one AI addresses</li>
+<li>Identify who is affected by a system, including the parties who will never know it ran</li>
+<li>Judge whether a use case is appropriate on four grounds, and recommend against building when it is not</li>
+<li>Distinguish what each subsequent lifecycle stage demands when you build a system from what it demands when you buy one</li>
+</ul>
+</section>
+<section id="naming-the-gap-before-naming-a-solution" class="level2">
+<h2 class="anchored" data-anchor-id="naming-the-gap-before-naming-a-solution">4.1 Naming the gap before naming a solution</h2>
+<p>Calloway’s recruiting manager did not arrive at a vendor demonstration by accident. Something in the recruiting function was already wrong, and had been wrong for long enough that a conference pitch looked like relief. A proposal that reaches governance already assumes it exists on someone’s desk, which is exactly why so many proposals arrive pre-shaped around a product before anyone in governance sees them. By the time a proposal is written down, the gap it claims to close has usually been reasoned about only once, informally, by whoever wrote it, and that reasoning rarely survives contact with a vendor’s roadmap.</p>
+<p>The gap is worth naming on its own terms before any solution enters the picture. Current state is where the organization is now, stated in the same measurable terms a problem statement demands. Calloway’s current state, reconstructed after the fact, was 260 hours a month of recruiter capacity short against a fixed volume of applications, with 38 per cent of applicants unanswered inside thirty days. Desired state is where the organization wants to be, stated at a level rather than as a direction. Below seven days to first response, without the probation pass rate falling below 71 per cent. The gap is the distance between the two, and naming it precisely is what makes visible that more than one path could close it.</p>
+<p>A gap named this early can be closed several ways. Raising the bar for what counts as a complete application, changing where roles are advertised, adding contract recruiters for a seasonal peak, and licensing a screening tool are all live candidates once the gap is stated instead of assumed. Some routes require little AI-specific governance at all. Others, including a staffing change or an advertising change, still carry their own labor, privacy, or procurement duties, so naming the gap does not exempt the alternatives from scrutiny, it only makes the comparison possible. Working out which candidate route to take, and what it would actually require to execute, is a small analysis worth doing deliberately rather than skipping to whichever option a vendor happened to pitch first.</p>
+<p>That small analysis is worth the time it takes for two reasons. The first is that a real gap can rarely be closed in one step. Calloway’s route to closing 260 hours of recruiter capacity against fixed volume might run through a pilot confined to one warehouse region before a four-state rollout, or through a phased threshold change tested for two hiring cycles before it becomes permanent. Each of those intermediate states is a point where the organization can check whether the gap is actually closing and whether anything unexpected has shown up. Naming them in advance is cheaper than discovering after full deployment that the chosen route needed a step nobody planned for. The second is that the comparison between routes has to happen before anyone is attached to one of them. A route chosen after a vendor relationship exists, or after a budget line has been approved for a specific product, is a route being rationalized, not compared.</p>
+<p>That comparison is what intake, starting in the next section, cannot fully recover once it has been skipped. Intake still evaluates a proposal once it exists, and its seven questions work whether or not the proposal was shaped by the reasoning above. But an organization whose proposals routinely arrive already shaped around one vendor’s offering has usually skipped this gap-naming step, and by the time intake sees the proposal, the comparison against other routes has already been foreclosed by what got demonstrated at a conference.</p>
+</section>
+<section id="intake" class="level2">
+<h2 class="anchored" data-anchor-id="intake">4.2 Intake</h2>
+<p>Governance that begins when a system is ready for release is not governance. It is inspection, and inspection at that point can only pass, fail, or delay something that has already consumed a year of budget and carries the reputation of the people who built it. The realistic outcome is a conditional pass with findings, the least useful thing a governance function produces.</p>
+<p><strong>Intake</strong> is the process by which a proposed AI system enters governance before it is built or bought. It exists to catch the systems that should not proceed at all, and to attach the right level of scrutiny to the ones that should.</p>
+<p>An intake process that asks for too much becomes a form people route around. One that asks too little produces a queue nobody can triage. The seven questions below earn their place because each one, left unasked, produces a specific failure later.</p>
+<p><em>What decision or task is this system involved in?</em> Not what the product does, but what happens differently in the organization because it exists. Calloway’s proposal could not answer this without describing software, and the consequence appeared eleven months later when nobody could say what had improved. A proposal that cannot name the decision it touches cannot be classified, because classification in Chapter 3 depends on consequence, and consequence is a property of the decision, not of the technology.</p>
+<p><em>Who is affected by the output, and do they know?</em> The second half does most of the work. Where the answer is that they do not know, several later obligations follow at once, notice, an explanation route, and a testing programme designed to detect effects that nobody will report. Section 4.5 develops how to answer it.</p>
+<p><em>What is the consequence of being wrong, and can it be reversed?</em> These are the two dimensions that drive classification, and asking them at intake means the classification exists before design choices foreclose the options. A system classified after the architecture is settled will be classified around what was built.</p>
+<p><em>Are we building this, buying it, or building on something we did not train?</em> Left unanswered, this does not stay unanswered. It gets settled by whoever signs the contract, and the organization discovers the answer at monitoring, when it turns out nobody negotiated access to the logs. Section 4.9 sets out what follows from each path.</p>
+<p><em>What would tell us this worked?</em> If the answer is that the system will be adopted, or that it will be accurate, there are no success criteria and section 4.3 applies. Adoption measures whether people used it. Accuracy measures whether the model matched its training distribution. Neither measures whether the problem was solved.</p>
+<p><em>What data will it use, and where did that data come from?</em> A provisional answer suffices here. What intake needs is enough to know whether the data plausibly exists and whether its provenance is knowable at all, because a proposal resting on data the organization cannot lawfully use is one that should stop now, not after acquisition. Chapter 5 makes this demanding.</p>
+<p><em>Who is accountable for the decision to proceed?</em> A name, not a committee. A committee can approve and cannot be asked afterwards what it was thinking. This record is the beginning of the system record described in Chapter 3, and it is the reason that record can later show who decided what on what basis.</p>
+<p>These seven are a floor, not the complete field set a governance record eventually needs. They are the questions that determine whether a proposal should be classified and scrutinized at all, which is what intake has to decide before anything else. Once a proposal proceeds, the record built from it still needs a legal jurisdiction and actor-role screen, since consequence and geography together decide which regulations reach the system. It also needs an explicit statement of the authority and permissions the system will have, and a review date and expiry so the record does not describe a system that has since changed. Appendix C’s Template 1 carries the fuller version of this record; the seven questions here are what a requester answers to start it.</p>
+<section id="proportionate-scrutiny" class="level3">
+<h3 class="anchored" data-anchor-id="proportionate-scrutiny">Proportionate scrutiny</h3>
+<p>Applying the same process to every proposal guarantees one of two outcomes. Either the process is light enough for a chatbot that drafts internal announcements, in which case it is too light for a system that screens job applicants. Or it is heavy enough for the screening system, in which case teams will avoid it for everything smaller.</p>
+<p>The resolution is to fix the questions and vary what the answers trigger. Every proposal answers the same seven. What differs is the depth of evidence required, who reviews it, and what must exist before the system runs.</p>
+<p>At the lowest level, a self-assessment is recorded, an automated or brief qualified screen checks it against a short list of non-compensable triggers, a prohibited practice, a regulated activity, personal-data processing, a known cybersecurity exposure, a supplier restriction, and the system proceeds if none fire. Nobody conducts a full review, but the trigger screen exists precisely because an internal low tier is not a legal exemption. The value of the record is that the system is now in the inventory and can be found when the rules change or a sampled second-line check reaches it. At the middle level, a governance reviewer reads the assessment and can ask for more, an impact assessment is produced, and the system carries defined monitoring. At the highest level, an independent party who did not build the system evaluates it, the impact assessment is reviewed, not filed, deployment is staged, and someone named holds authority to halt it.</p>
+<p>The levels come from the classification, which is why the classification is made at intake instead of derived later. An organization that assigns scrutiny by seniority of the requester, or by budget, has a process that responds to influence, not to consequence.</p>
+</section>
+<section id="what-intake-decides" class="level3">
+<h3 class="anchored" data-anchor-id="what-intake-decides">What intake decides</h3>
+<p>Intake produces one of three outcomes, and they are equally available. A proposal may stop, with the reason recorded so that the same proposal arriving in eighteen months is assessed against what was decided, not relitigated from nothing. It may proceed with conditions, which are written down and checked later instead of remembered, each with a named owner, a due date, and a stated consequence for the condition going unmet rather than remaining open indefinitely. Or it may proceed, at which point the build or buy fork determines the work at every stage that follows. These three are the outcomes this book follows through the running cases. A live process also needs the ability to return a proposal for missing information, defer it pending a specific event, or refer it to a specialist reviewer, instead of forcing every incomplete proposal into a premature stop or approval.</p>
+<div id="fig-intake" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-intake-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/fig-04-01-intake.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-intake-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Intake and its three outcomes
+</figcaption>
+</figure>
+</div>
+<p>Section 4.9 returns to all three, because the first is the one organizations find hardest to reach and the third is the one they most often leave undecided.</p>
+</section>
+</section>
+<section id="problem-statements" class="level2">
+<h2 class="anchored" data-anchor-id="problem-statements">4.3 Problem statements</h2>
+<p>The recruiting manager at Calloway arrived with a solution. This is the ordinary case, and the discipline that governance contributes is refusing to accept a solution as a statement of a problem.</p>
+<p>Consider two framings of the same situation.</p>
+<p>The first. <em>We need an AI screening tool to handle our application volume.</em></p>
+<p>The second. <em>Warehouse roles receive four thousand applications a month against forty openings. Recruiters spend an average of nine minutes per application on an initial pass, which consumes 600 hours a month against a team capacity of 340. The backlog means that 38 per cent of applicants receive no response within thirty days, and our exit interviews with declined candidates indicate this is the largest source of reputational complaint. We want to reduce time to first response below seven days without reducing the proportion of hires who pass their probationary period, currently 71 per cent.</em></p>
+<p>The second framing takes longer to write and it is worth the time, because of what it makes possible.</p>
+<p>It makes the proposal falsifiable. There is now something that can be measured before and after, so the question of whether the system worked has an answer.</p>
+<p>It exposes the constraint. The bottleneck is 260 hours a month of recruiter capacity against a fixed volume. Once that is visible, screening automation is one option among several. Raising the threshold for what counts as a complete application, changing where the roles are advertised, or adding two contract recruiters for the peak season all address the same constraint, and two of them carry little AI-specific governance burden, though not none. Any operational change can create its own labor, privacy, or procurement duties worth checking, not assumed away.</p>
+<p>It names the thing that must not get worse. A system that cuts response time to two days while dropping probation pass rates to 55 per cent has failed, and without the second clause it would have been reported as a success.</p>
+<p>And it makes rejection possible on the proposal’s own terms. If the vendor’s tool improves response time but cannot demonstrate anything about hire quality, the second framing gives you the grounds to decline. The first gives you nothing, because a tool that handles volume is by definition a tool that handles volume.</p>
+<p>A usable problem statement has four parts, and each has a characteristic way of going wrong.</p>
+<p>The current state, in numbers somebody can verify. It fails when the numbers are estimates nobody sourced, because the comparison you make in a year will be against a figure that was never true.</p>
+<p>The desired state, in the same terms. It fails when stated as a direction rather than a level. Reducing response time is not a target; below seven days is. A direction cannot be missed, which is why proposals prefer it.</p>
+<p>The constraint that prevents the second from following from the first. This is the part most often omitted, and omitting it is what makes a solution look inevitable. Calloway’s constraint is 260 hours of recruiter capacity against fixed volume. Once it is named, screening automation is one way to relieve it and there are others. Left unnamed, the proposal on the table is the only option because it is the only one that has been described.</p>
+<p>What must not degrade. It fails when nobody asks what the system could damage while succeeding at its stated purpose. A tool that cuts response time to two days while dropping probation pass rates to 55 per cent has failed, and without this clause it would be reported as a success and the failure would surface as turnover eighteen months later, attributed to something else.</p>
+<p>Note what the strong framing does not contain. It does not mention AI, and a statement that cannot be written without naming the technology is describing a purchase, not a problem.</p>
+</section>
+<section id="root-cause-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="root-cause-analysis">4.4 Root cause analysis</h2>
+<p>Problem statements describe a situation. They do not explain why it persists, and a governance function that stops at the description will approve systems aimed at the wrong layer.</p>
+<p>A clinic asks for a system to predict which patients will miss appointments, so that those slots can be double-booked. The request is coherent, the data exists, and comparable systems are in use elsewhere. Before assessing the model, ask why patients miss appointments, and keep asking.</p>
+<p><em>Why do patients miss appointments?</em> Because a substantial proportion do not attend and do not cancel.</p>
+<p><em>Why do they not cancel?</em> Cancellation requires a phone call during clinic hours, and the line has a median wait of eleven minutes.</p>
+<p><em>Why is the line the only route?</em> The scheduling system has no patient-facing interface, because it was procured in 2011 as an internal tool and the module that would provide one was never licensed.</p>
+<p><em>Why has it not been licensed since?</em> The cost sits with facilities, the benefit accrues to clinical operations, and no budget cycle has assigned it to either.</p>
+<p><em>Why has nobody escalated it?</em> Missed appointments are reported as a clinical utilisation metric, and utilisation is managed by filling slots rather than by reducing non-attendance.</p>
+<p>Five levels down, this chain terminates at a budget boundary and a metric that rewards the workaround, though as the next section shows, a different second question would have produced a different terminus equally worth acting on. The AI system addresses none of what this chain found. It manages the consequence of a cancellation route that does not work, and it does so by predicting which patients will fail to use it. The population it will predict most confidently is the population that finds an eleven-minute daytime phone call hardest, which is a group already defined by inflexible working hours and limited phone access. Double-booking their slots means they arrive to find their appointment given away.</p>
+<p>This is a strong argument that governance produces value rather than friction. This particular analysis took an afternoon, though a more contested or less documented chain can take longer. It surfaced a licence purchase that solves the problem at the layer where it originates, and it prevented a system that would have concentrated its errors on the patients least able to absorb them.</p>
+<p>Not every branch terminates outside AI. A clinic where non-attendance is unpredictable and evenly distributed may have a real forecasting problem. The point is not that AI is usually the wrong answer. The point is that the question is rarely asked, and a proposal that arrives naming its own solution has skipped it.</p>
+<p>Three things govern whether the analysis is worth anything.</p>
+<p>Know when to stop. Every chain eventually reaches something outside the organization’s control, and continuing past that point produces true statements of no use. Underfunding of public health explains the clinic’s position and cannot be acted on by anyone in the room. The useful terminus is the last cause somebody present could change, which in the clinic is the licence and the metric. Stopping earlier leaves the problem intact; stopping later converts an analysis into a complaint.</p>
+<p>Follow more than one chain. The sequence above is the one the analysis happened to take, and a different second question produces a different terminus. Ask instead why non-attendance matters and the chain runs through slot utilisation, capacity planning, and the decision to schedule at fixed intervals rather than in blocks. Both chains are true. An analysis that follows only the first has found a cause rather than the cause, and the way to tell them apart is to work at least two and compare where they land.</p>
+<p>Distinguish causes from conditions. The eleven-minute phone wait causes missed appointments in the sense that removing it would reduce them. That some patients have inflexible working hours is a condition, real, relevant, and not something the clinic changes. Conditions belong in the analysis because they determine who the causes fall on, which is exactly what makes the predictive system’s errors land where they do. They do not belong in the list of things to fix.</p>
+</section>
+<section id="identifying-who-is-affected" class="level2">
+<h2 class="anchored" data-anchor-id="identifying-who-is-affected">4.5 Identifying who is affected</h2>
+<p>Root cause analysis in 4.4 showed that conditions determine who a problem’s causes fall on. Naming those parties precisely is the next task. Governance frameworks call it stakeholder identification, and done without discipline, the exercise produces a list of the people in the room. The parties who matter most are usually absent, and the reason is structural, not careless.</p>
+<p>Four groups warrant separate treatment.</p>
+<p><strong>Users</strong> operate the system or act on its output. Calloway’s recruiters are users. They are easy to identify, they are consulted, and their concerns are heard because they are colleagues.</p>
+<p>The system produces an output about its <strong>subjects</strong>, and Calloway’s applicants are the subjects here. There are four thousand a month, none of them is in the building, and most will never learn that a model ranked them. This is the defining feature of the category, not an incidental one. Subjects usually do not know they are subjects, which is why they cannot raise the concerns that would be most useful to hear.</p>
+<p><strong>Third parties</strong> are affected without being either. The staffing agency whose candidates are ranked lower as a group. The successful hire’s new colleagues, who inherit whatever the screening let through. The competitor whose applicants are the ones Calloway rejects.</p>
+<p>At the aggregate level, <strong>society</strong> absorbs what no individual assessment captures. If every large logistics employer in a region adopts similar screening trained on similar histories, a candidate rejected by one is likely to be rejected by all, and the individual effect of each system understates the joint effect of the set.</p>
+<section id="finding-the-parties-you-cannot-see" class="level3">
+<h3 class="anchored" data-anchor-id="finding-the-parties-you-cannot-see">Finding the parties you cannot see</h3>
+<p>Users and sponsors identify themselves. Subjects and third parties have to be derived, and there is a procedure for it that works better than asking around.</p>
+<p>Follow the output. Take what the system emits and trace where it goes, one step at a time, asking at each step who is now different because of it. TalentScreen emits a ranking. The ranking goes to a recruiter, who is a user. The recruiter’s shortlist determines who is interviewed, so every applicant is a subject, including the ones nobody looks at. The interview outcome determines who is hired, so the successful candidate’s future colleagues are affected. The rejected applicant may reapply, and if the system retains a record, the second rejection is not independent of the first. That last step is easy to miss and produces one of the more serious effects, because a candidate can be excluded permanently by a decision made once.</p>
+<p>Then follow the inputs backwards. Whose data trained this, and are they a different population from the people it will be applied to? Calloway’s model learned from applicants it previously advanced. Those people are not subjects of the deployed system, but their historical treatment determines its behaviour, which is a relationship worth recording even though no obligation attaches to it.</p>
+<p>Finally, ask what happens if everyone does this. A single employer’s screening tool affects its own applicants. An industry converging on similar tools trained on similar histories produces a candidate who is rejected everywhere for the same reason, and no individual assessment of any one system will show it.</p>
+</section>
+<section id="influence-and-interest" class="level3">
+<h3 class="anchored" data-anchor-id="influence-and-interest">Influence and interest</h3>
+<p>For the parties you have identified, two dimensions determine what to do about them.</p>
+<p><em>Influence</em> is the capacity to affect whether and how the system proceeds. <em>Interest</em> is the degree to which the outcome affects them, judged by severity and by whether the party affected can absorb or contest a wrong outcome, not merely by how often a decision touches them. The dimensions are independent, which is what makes the pairing useful. The parties with the most at stake frequently have the least ability to act on it.</p>
+<p>High influence and high interest describes the project sponsor and the operational lead. They will be consulted whether or not you plan it. The governance task is not securing their attention but recording what they decided and on what basis, because their reasoning is what a later reviewer will need and what nobody thinks to write down at the time.</p>
+<p>High influence and low interest describes the legal function, the works council, and in regulated sectors the supervisory body. They can stop the system and they are not thinking about it. Reaching them early is cheap and reaching them late is expensive, and the asymmetry is worth understanding. An objection raised at intake changes a paragraph in a proposal. The same objection raised at release changes a system that has been built, integrated, and staffed, so the realistic response is a mitigation bolted on, not the design change that would have been available three months earlier.</p>
+<p>Low influence and high interest describes the subjects, and this quadrant is where harm concentrates. Its defining feature is not that its occupants are ignored but that they cannot participate. Nothing they do changes the outcome, and most do not know there is an outcome to change. Consultation is therefore unavailable, and something has to substitute for it.</p>
+<p>Two things do. The first is representation, meaning a named person whose task in the process is to state what this group would say if it were present. This is not a symbolic role and it fails when treated as one. Done properly it requires someone who has looked at how the system will actually reach these people, who has read whatever complaints or appeals the predecessor process generated, and who has standing to object, not only to comment. Where an organization has an ombudsman, a customer advocate, or a union representative, that person is usually better placed than anyone in the project.</p>
+<p>The second is testing designed around what this group would have reported. If applicants cannot tell you that the system disadvantages people with employment gaps, the testing programme has to look for it, which means the effects you would have heard about become test cases in Chapter 7. Representation without that testing produces a well-intentioned advocate with no evidence.</p>
+<p>Low influence and low interest is where most of a stakeholder list ends up, and a party genuinely unaffected in any way touching their rights or safety can be recorded there and left alone. That placement depends on the interest assessment above actually having checked for rights and vulnerability rather than only for how often or how visibly a decision touches the party. Someone rarely affected but severely so when they are belongs in the quadrant that matters, not this one. Recording the low quadrant still matters, because the reason a party was judged to belong there is the thing a later reviewer will want when circumstances change.</p>
+<p>The quadrant that matters is the third. A process that consults the first two and calls the exercise complete has consulted the people who were going to be consulted anyway.</p>
+<div id="fig-stakeholders" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stakeholders-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/fig-04-02-stakeholders.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stakeholders-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: Affected parties by influence and interest
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="getting-the-requirement-right-not-just-the-person-right" class="level2">
+<h2 class="anchored" data-anchor-id="getting-the-requirement-right-not-just-the-person-right">4.6 Getting the requirement right, not just the person right</h2>
+<p>Calloway’s legal function, asked what it needed from a screening tool, said the system had to be fair. Recorded as written, that sentence produced nothing a later reviewer could test the system against. Fair to whom, measured how, checked against what threshold, was left for someone downstream to guess at, and the guess that was eventually made, a single aggregate pass rate across all applicants, was not what the legal function meant. Someone sat with the legal function and asked what a fair outcome would look like in a specific rejected case. What it actually needed was for the pass rate not to diverge by more than a stated margin across the demographic groups Title VII protects, checked before each hiring cycle, with a named reviewer authorized to halt the rollout if it did. “The system has to be fair” was the sentence that pointed at that requirement. It was not the requirement itself.</p>
+<p>The distance between what the legal function said and what it needed is not a matter of the legal function being unclear. Most people asked what they need from a system describe the outcome they want in terms that make sense to them and skip the operational detail, because they are not thinking in the vocabulary a requirement needs and have no reason to. A governance record built from the first sentence alone tests against whatever the builder privately decided “fair” meant, because nobody did the work of closing the distance between what was said and what was needed.</p>
+<p>Closing that distance takes more than one conversation, for a reason visible once Calloway asked past the legal function. A recruiter wanted the system to reduce the volume reaching a human reviewer. A works council representative wanted every rejection to be explainable to the applicant on request. The three statements did not contradict each other, but a requirement written from only one of them would have missed what the other two needed. Reconciling them into one specification means checking each one against what would happen to the other two if only it were satisfied. A system tuned purely for volume reduction can widen the margin an aggregate pass rate hides, undoing the legal function’s requirement. A system tuned purely for explainability can slow the recruiter down past the point that justified building it at all. Where the three genuinely conflict, the conflict is a finding for whoever accepts the residual risk in section 4.8’s assessment, not something resolved quietly by dropping one requirement and not recording that it was dropped.</p>
+<p>Recording what a stakeholder said instead of what they meant is the first of two failures that account for most of what goes wrong closing that distance, and both are checkable before a requirement is finalized. A recruiter who says the system should “flag anything unusual” is not asking for anomaly detection in the technical sense. Asking what an unusual case looked like the last time one slipped through, and what happened as a result, surfaced the actual concern in Calloway’s case. Incomplete applications were advancing past a stage that should have caught them, a narrower and more testable requirement than “flag anything unusual” ever was. The second failure is treating the first answer as final. What a stakeholder says in a first conversation is a draft. Reading it back in the stakeholder’s own terms, rather than the requirement’s eventual technical language, catches the case where a detail was misheard or a qualification dropped before it hardens into a written requirement nobody revisits.</p>
+<p>Neither failure can be checked, though, for the people who cannot be asked in the first place. Some of the people whose needs matter most cannot be sat down and asked at all, for the same reason section 4.5 gave for TalentScreen’s applicants. Chapter 14 develops what to do when direct engagement is not available, representation, structured advocacy, and evidence drawn from comparable systems and complaint records among the methods, and what each substitute can and cannot recover.</p>
+</section>
+<section id="evaluating-appropriateness" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-appropriateness">4.7 Evaluating appropriateness</h2>
+<p>A use case can be well specified, correctly aimed at a real cause, and still be one that should not proceed. Four grounds carry most of the weight. The second is the one that most often turns out to be the real objection once the others have been worked through.</p>
+<p>The first is <strong>data sufficiency</strong>, which has three components that fail independently.</p>
+<p>Volume is the one people check. There must be enough examples for a model to learn a pattern instead of memorising noise, and how much is enough depends on how many things the model must distinguish. This is the component least likely to be the binding constraint, and it is the one proposals cite.</p>
+<p>Coverage is whether the data spans the situations the system will meet. A model trained on applications for warehouse roles in three states will be applied to a fourth, and the question is whether anything about that state’s labour market differs in a way the model has never seen. Coverage failures are invisible in aggregate accuracy, because the uncovered cases are rare in the test set for the same reason they were rare in training.</p>
+<p>The third is the one that sinks Calloway, and it has a name worth knowing. The organization has ten years of hiring history, which sounds ample. What that history records is which applicants Calloway advanced and how they performed. It records nothing about the applicants Calloway rejected, because they never got the chance to perform. The model therefore learns from a sample selected by the very process it is meant to replace, and it can only learn to reproduce that process’s judgments. If the old screening was systematically wrong about a group, the data contains no evidence of the error, because the counter-examples were never hired.</p>
+<p>This is why a proposal can be data-rich and still fail on sufficiency. Sufficiency turns on coverage of the outcomes you care about across the population you will apply the system to. Historical decision records rarely provide it, because they record only the cases the previous process let through. Chapter 5 develops what can be done about it.</p>
+<p>The second is <strong>objective specifiability</strong>, meaning whether what you want can be stated precisely enough to optimize against. The failure here has a characteristic shape. What an organization wants is usually not measurable, so a measurable stand-in is chosen, and the system then optimises the stand-in.</p>
+<div class="definition">
+<p><strong>A proxy is a measurable quantity used in place of the outcome an organization actually wants. A proxy typically diverges from its target, and governing an AI system means testing where and by how much, rather than assuming the divergence away.</strong></p>
+</div>
+<p>Calloway wants to hire people who will do the job well and stay. What it has is which past applicants were hired and how long they remained. The system therefore learns to predict resemblance to people Calloway previously hired, a different thing wearing the same name. The divergence is not a defect to be corrected, because in most cases no better proxy exists. What governance requires is that the gap is stated, that a named person has judged it acceptable for this use, and that testing looks specifically for the ways the two come apart. An organization that has not noticed it is using a proxy will optimize the stand-in with great efficiency and report success.</p>
+<p>Objective specifiability works differently across the three kinds of system, and the difference determines what can be assessed at this stage at all. A predictive system has a target that will eventually be observable, so the question is whether the available proxy is close enough to it. Calloway’s is answerable, if uncomfortably. A generative system has no target of that kind. There is no fact of the matter about whether a drafted job description was the right one, so the specifiable objective becomes a set of properties the output must have, not an outcome it must match. An agentic system has an objective expressed as an action taken in the world, which means the specification question is not only what good looks like but what the system is permitted to do while pursuing it. A proposal to have the scheduling component send rejections without review is not a proposal about accuracy at all. It is a proposal about authority, and it should be assessed as one.</p>
+<p>The third ground is <strong>benefit proportionality</strong>, meaning whether the expected benefit justifies the risk introduced. The difficulty is that the two sides are measured in different units, and no formula converts between them.</p>
+<p>Run this comparison only after a prior, non-negotiable check. Some harms are not to be weighed against any benefit at all, because they cross a legal prohibition, a safety floor, or a right the organization has decided not to trade off regardless of magnitude. Where a use case crosses that kind of floor, the analysis stops there instead of proceeding to a benefit comparison. Where it does not, what can be done is to state both concretely and let the comparison be made in the open. Calloway’s benefit is 260 recruiter hours a month, which has a wage cost that can be calculated. The exposure is four thousand consequential decisions a month about people’s access to work, of which some proportion will be wrong in ways the applicant cannot detect or contest. Writing those two sentences next to each other is often enough, because a proportionality judgment that looks obvious in a slide deck frequently does not survive being written down in specific terms.</p>
+<p>Three questions sharpen it. Does the benefit accrue to the same parties who bear the risk, or is it captured by one group and borne by another? Calloway captures the saving; applicants bear the error. Could a smaller version of the system capture most of the benefit with less exposure, such as ranking only within the pool a recruiter would have reviewed anyway, instead of filtering the pool? And what happens to the benefit if the risk controls work, since a system that only pays for itself when nobody reviews its output is not a proportionate system but an unsupervised one.</p>
+<p>The fourth is <strong>value alignment</strong>, meaning whether the system comports with what the organization says it stands for. Stated that way it is close to useless, because published values are drafted to be agreeable and almost nothing contradicts them directly.</p>
+<p>The operative version is narrower and harder to evade. Describe the system accurately to the people it will be applied to, in terms they would use, and see whether the description is one the organization is willing to give. Calloway’s would read as follows. A model trained on our past hiring decisions ranks your application, and applications ranked low are not read by a person. That is accurate and Calloway would not have put it on the careers page.</p>
+<p>The gap between what an organization is doing and what it is prepared to say it is doing is diagnostic. Sometimes it reveals that the system is defensible and the description was clumsy, in which case the fix is the description. Sometimes it reveals a practice the organization has not examined, and testing will not surface it because nothing is malfunctioning. Value alignment is the only one of the four grounds that catches a system working exactly as designed.</p>
+<p>Treat the disclosure question as a diagnostic, not proof, in either direction. An organization can disclose a harmful or unlawful practice without ever having examined it, and it can hesitate to disclose a defensible practice for reasons unrelated to its merits, because the plain-language description is imprecise, or because the detail is confidential or security-sensitive. A gap between practice and disclosure is a reason to look closer, at the practice itself, at whether it is consistent with the organization’s specific commitments and legal duties, and at evidence from the people it affects, not a verdict to stop at.</p>
+</section>
+<section id="recording-the-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="recording-the-assessment">4.8 Recording the assessment</h2>
+<p>The work in this chapter produces judgments. An <strong>impact assessment</strong> is the artifact that records them, and two are required by name.</p>
+<p>Data protection law has required a <strong>data protection impact assessment</strong> for high-risk processing since well before AI-specific rules existed. It examines processing likely to create high risk for people’s rights and freedoms. It describes the processing and its purposes, assesses necessity and proportionality, evaluates risks to the people affected, and records the measures addressing those risks.</p>
+<p>The AI Act adds a <strong>fundamental rights impact assessment</strong> under Article 27, and its scope is narrower than the Act’s high-risk category but wider than is often assumed. It binds bodies governed by public law and private entities providing public services, which is the part most summaries mention. It also binds private deployers of high-risk systems used for assessing creditworthiness and for risk assessment and pricing in life and health insurance. <code>FAIRLEND</code> is a consumer credit model operated by a private company, and it falls inside Article 27 for that reason. An organization that reads the obligation as a public-sector rule will conclude it is exempt when it is not. Where it applies, Article 27 requires the deployer’s own record of its processes, the duration and frequency of use, the categories of people affected, the specific risks, and the human oversight measures, and it carries notification and updating duties the data protection assessment does not.</p>
+<p>The two assessments are not usefully separated as “data” versus “people.” A data protection impact assessment already assesses risk to people’s rights and freedoms, not only to data itself, and a fundamental rights impact assessment still depends on the same underlying processing facts. What actually distinguishes them is scope and required content. The data protection assessment runs a necessity-and-proportionality test against processing purposes. The fundamental rights assessment has its own required fields, oversight measures, duration and frequency, affected categories, plus notification and updating duties the data protection assessment does not carry. Where a data protection assessment already covers equivalent ground, the Act treats the fundamental rights assessment as complementing it, not replacing it. Timing follows the high-risk timetable set out in Chapter 2, which moved in July 2026.</p>
+<p>The regulatory obligation is worth separating from the governance purpose, because organizations that treat them as the same thing produce documents that satisfy neither. The obligation is to produce a record. The purpose is to make the judgments explicit enough that someone can disagree with them.</p>
+<p>A useful assessment records seven things.</p>
+<ul>
+<li>what the system does, and to whom</li>
+<li>its classification, and the rule that produced it</li>
+<li>the affected parties, including those who cannot be consulted</li>
+<li>the proxy in use, and the judgment that it is acceptable here</li>
+<li>what could go wrong, and for whom</li>
+<li>what will be done about each</li>
+<li>what remains unaddressed</li>
+</ul>
+<p>The last carries the most information and is the most often omitted. An assessment listing only mitigated risks is describing an aspiration.</p>
+<p>These seven are a common evidence core, not the complete field set a specific regulation requires. Appendix C’s Template 5 carries a fuller version. A live assessment still needs to map each of its own fields to the exact provision it is meant to satisfy, since legal sufficiency for a given regulation cannot be inferred from having filled in an internal template. Several fields a rigorous version needs, the legal role and jurisdiction of each actor involved, the duration and frequency of the processing or use, and the specific authority who accepts residual risk, are not fields this book’s own templates fully specify yet. That is a gap this pass records instead of silently accepting.</p>
+<p>It should be written before the decision to proceed, not after. An assessment produced to document a decision already taken is a different genre of document, and experienced reviewers can tell.</p>
+<p>The assessment is also where the same exercise serves several regulations at once. The AI Act, data protection law, and an internal risk process each want an overlapping subset of the same material, and Chapter 3’s principle applies. Assess once, then map the assessment to each regulation’s required form. Redoing the analysis in three formats produces three chances to say something inconsistent.</p>
+</section>
+<section id="build-buy-or-stop" class="level2">
+<h2 class="anchored" data-anchor-id="build-buy-or-stop">4.9 Build, buy, or stop</h2>
+<p>Three outcomes are available at the end of this work. The first is the one organizations find hardest to reach, for reasons that have little to do with the merits of any particular proposal.</p>
+<p><strong>Stopping</strong> is a legitimate result. Several pressures work against it, and none of them is evidence about the system. By the time a proposal reaches governance, someone has attached their credibility to it, a vendor relationship may exist, and the effort spent reaching this point argues for continuing. None of that is evidence about whether the system should be built.</p>
+<p>Amazon’s experimental recruiting tool is the useful case, because it was abandoned. The organization had invested substantially, the technical work was competent, and the system was discontinued when it became clear that it had learned to penalise indicators of being a woman. The decision is cited a decade later, which is the point. The reputational cost of a governance failure outlives the system that caused it, and stopping is cheap by comparison.</p>
+<p>For a governance function to be able to stop anything, three conditions must hold. The authority must be explicit rather than implied. It must be exercised at intake, not at release, because stopping something at release means writing off a year. And a stop must be recorded with its reasoning, so that the same proposal returning in eighteen months is assessed against what was decided instead of relitigated from nothing.</p>
+<p>If the answer is to proceed, the next question determines the shape of everything that follows.</p>
+<div class="definition">
+<p><strong>Building means the organization trains the model on its own data, or fine-tunes one it did not train. Buying means acquiring a system somebody else built, whether as a product, a hosted service, or a model reached through an interface.</strong></p>
+</div>
+<p>The lifecycle stages are the same on both paths. The work at each stage is not, and the difference runs through every remaining chapter of Part II. It is worth understanding why, instead of memorising the table, because the underlying asymmetry explains cases the table does not cover.</p>
+<p>On the build path, the organization holds the artifacts. It has the training data, the code, the parameters, the evaluation results, and the ability to change any of them. Governance is therefore a question of whether the organization does the work, and the failures are failures of will, resource, or attention.</p>
+<p>On the buy path, the organization typically holds a contract and an interface rather than the underlying artifacts, though the exact split varies with the arrangement. An open-weight model can hand over parameters without training data, and a managed service can grant substantial monitoring access by contract while withholding training details. Where the vendor does withhold the artifacts, its commercial interest usually favors non-disclosure. Its evaluation was designed for a general market, not for this deployment, and its incentives on disclosure often run opposite to the buyer’s. Governance on this path becomes a question of what can be obtained, verified independently, and required in writing, and the failures are failures of leverage. Leverage is highest before signature and declines steeply afterwards, which is why the buy path front-loads work that the build path can defer.</p>
+<p>That asymmetry produces the differences below.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stage</th>
+<th>Building</th>
+<th>Buying</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data governance</td>
+<td>Govern your own training data, covering provenance, quality, and representativeness</td>
+<td>Interrogate someone else’s, usually without seeing it</td>
+</tr>
+<tr class="even">
+<td>Model development</td>
+<td>Choose the architecture and make the trade-offs</td>
+<td>Assess what was chosen and what it forecloses</td>
+</tr>
+<tr class="odd">
+<td>Testing</td>
+<td>Design the evaluation and run it</td>
+<td>Evaluate the evidence supplied, then decide what to test yourself</td>
+</tr>
+<tr class="even">
+<td>Documentation</td>
+<td>Produce the record as you go</td>
+<td>Obtain the record, and record what you could not obtain</td>
+</tr>
+<tr class="odd">
+<td>Monitoring</td>
+<td>Instrument what you built</td>
+<td>Negotiate access to what you did not</td>
+</tr>
+<tr class="even">
+<td>Incident response</td>
+<td>Diagnose and fix</td>
+<td>Detect, escalate, and wait</td>
+</tr>
+</tbody>
+</table>
+<p>Three of those rows deserve expansion, because they are where buyers are most often surprised.</p>
+<p>Testing is not simply harder on the buy path. It is a different activity. A builder designs an evaluation to answer questions about a system whose behaviour is under its control. A buyer receives an evaluation designed by the vendor to support a sale across a general market, and the governance task is to work out what that evaluation does not cover. A vendor reporting 94 per cent accuracy has told you almost nothing until you know the population it was measured on, whether that population resembles yours, whether performance was reported by subgroup, and what the errors cost in your context rather than in the average one. Whatever the supplied evidence leaves open, the buyer tests, which means a buyer needs testing capability even though it built nothing.</p>
+<p>Monitoring is where the buy path most often fails outright, and the failure is contractual, not technical. Detecting that a system’s behaviour has changed requires access to its outputs over time, joined to what actually happened afterwards. A buyer who did not negotiate that access at purchase is not in a weak position to obtain it later. In most cases the buyer has no position at all, because the vendor is under no obligation and the data lives on their infrastructure. Chapter 9 sets out what to ask for, and the point that matters here is that it has to be asked for now.</p>
+<p>Incident response differs most sharply of all. A builder who discovers a defect can diagnose it and deploy a fix on its own timetable. A buyer can detect the symptom, report it, and wait. What determines the outcome is what was agreed in advance, whether the vendor is obliged to investigate, within what period, whether the buyer can suspend the system without penalty, and what happens if the vendor concludes there is no defect. An organization that has not settled those questions has an incident process ending in an email.</p>
+<p>There is also a third position between the two, and it is increasingly the common one. An organization that fine-tunes a model it did not train, or that builds a product around a model reached through an interface, is on the build path for its own layer and the buy path for everything underneath. Both columns apply, to different parts of the same system, and the governance failure is to assume that building the visible layer means the organization controls the system. Chapter 6 develops what is inherited in that arrangement.</p>
+<p>The buy path is the common one and the harder one to govern, because the questions are the same and the answers are held by someone whose interest is in not answering them. Chapter 16 addresses that directly. What matters here is that the choice is made deliberately at this stage and recorded, because a system acquired without anyone noticing it was an acquisition arrives at monitoring with no access rights and at incident response with no contractual route to a fix.</p>
+</section>
+<section id="case-how-talentscreen-entered-calloway" class="level2 unnumbered cases-box">
+<h2 class="unnumbered anchored" data-anchor-id="case-how-talentscreen-entered-calloway">Case: how TalentScreen entered Calloway</h2>
+<p>Calloway’s proposal named a product and a price. Reconstructed as a problem statement, it would have read as follows. Four thousand applications a month against forty openings, 260 hours a month of recruiter capacity short, 38 per cent of applicants unanswered within thirty days, and a probation pass rate of 71 per cent that must not fall.</p>
+<p>Two things follow from that framing that did not follow from the proposal.</p>
+<p>The first is that Calloway would have had a measurement. Eleven months on, nobody could say whether the tool had worked, because nothing had been recorded to compare against. The absence was not an oversight in the evaluation. It was determined at intake, when a proposal describing a product was accepted in place of a proposal describing a problem.</p>
+<p>The second is that the buy path would have been visible as a choice. TalentScreen was purchased, which meant Calloway acquired a model trained on a population it had never seen, evaluated against benchmarks it did not select, with monitoring access defined by a contract nobody in governance read. All of them were settled here, by default, in a conversation about features.</p>
+</section>
+<section id="summary" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="summary">Summary</h2>
+<p>Governance that begins at release can only inspect. Intake exists to catch what should not proceed and to attach scrutiny proportionate to consequence, and the questions it asks earn their place by changing what happens next.</p>
+<p>A proposal that names its own solution has skipped the problem. A problem statement gives the current state, the desired state, the constraint between them, and what must not degrade, in terms that can be measured. It makes the proposal falsifiable, exposes options that carry no governance burden, and supplies grounds to decline.</p>
+<p>Root cause analysis worked to real depth often terminates outside AI. Where a branch ends in a licence purchase or a metric definition, that is where the problem originates and where it can be solved.</p>
+<p>Among affected parties, the quadrant that matters is the one with high interest and no influence. Its occupants cannot advocate for themselves, and most do not know the system exists. Representation and targeted testing substitute for a consultation that is not available.</p>
+<p>Appropriateness turns on data sufficiency, objective specifiability, benefit proportionality, and value alignment. The characteristic failure is the proxy, a measurable stand-in optimised with great efficiency in place of the thing actually wanted.</p>
+<p>Stopping is a legitimate outcome, and it requires explicit authority, exercise at intake and not release, and a recorded reason. If the system proceeds, the choice between building and buying determines the work at every subsequent stage, and leaving it undecided means arriving at monitoring without access and at incident response without recourse.</p>
+</section>
+<section id="review-questions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="review-questions">Review questions</h2>
+<ol type="1">
+<li><p>A logistics company proposes a system to predict which deliveries will be late so that customers can be notified in advance. Write a problem statement for this situation in the four-part structure given in 4.3, inventing the figures you need. Then identify one non-AI intervention that your own statement makes visible.</p></li>
+<li><p>Work the missed-appointment analysis in 4.4 down a different branch from the one given, starting again from the second level. State where your branch terminates and whether an AI system addresses it.</p></li>
+<li><p><code>TALENTSCREEN</code> ranks four thousand applicants a month. Place each of the following in the influence and interest grid, and say what the placement obliges Calloway to do. Consider a recruiter, a rejected applicant, the staffing agency supplying candidates, and the works council at Calloway’s German subsidiary.</p></li>
+<li><p>Explain why a proxy cannot simply be replaced with a better measure in most cases, and state what governance requires instead.</p></li>
+<li><p><code>MEDASSIST</code> was built by Northfield Health on its own data and later deployed to community hospitals that did not build it. Using the table in 4.9, identify two stages where Northfield’s obligations and the community hospitals’ obligations differ, and say how.</p></li>
+<li><p>An organization’s governance function has never declined a proposal in three years. Give two explanations consistent with a well-functioning process and two consistent with a failing one, and state what evidence would distinguish them.</p></li>
+<li><p>A vendor demonstration is scheduled before any problem statement exists, which is how most proposals originate. Argue that this ordering should be prohibited, then argue that prohibiting it would be counterproductive. Say which position you hold.</p></li>
+</ol>
+<hr>
+<p>The use case is defined, the parties are identified, and the path is chosen. What carries forward is not yet a complete record. Chapter 5 needs the intended population, the proposed data’s provenance status, and any known lawful-use constraint in addition to what this chapter has produced. Where this chapter’s assessment left one of those fields uncertain, that uncertainty is itself something Chapter 5 has to pick up, not something intake resolved. What the system will learn from comes next. Chapter 5 takes the build path first, where the data is yours and the questions are about provenance, quality, and representativeness. Then it takes the buy path, where the same questions apply to data you will never see and the work becomes finding out what you can.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Reader feedback widget. Injected on every chapter page via _quarto.yml's
+     include-after-body. Self-configures per page (reads the chapter's own H1),
+     posts anonymously to a Google Form, and can be removed by deleting the
+     include-after-body line in _quarto.yml plus this file. -->
+<div id="reader-feedback" style="margin-top:3.5rem;padding:1.5rem 1.5rem 1.75rem;border-top:1px solid #dfe3e8;">
+  <div id="rf-form-state">
+    <h3 style="font-size:1.05rem;margin:0 0 .35rem;color:#1F4E79;">Was this chapter useful?</h3>
+    <p style="font-size:.9rem;color:#5b6570;margin:0 0 1rem;">
+      Quick, anonymous feedback on this chapter. No account needed, and you can send more than once.
+    </p>
+
+    <div id="rf-rating" style="display:flex;gap:.4rem;margin-bottom:1rem;" role="radiogroup" aria-label="Rating">
+      <!-- five buttons injected by JS -->
+    </div>
+
+    <textarea id="rf-comment" placeholder="What was unclear, wrong, or worth changing? (optional)" style="width:100%;min-height:5.5rem;padding:.6rem .7rem;border:1px solid #cdd4db;border-radius:6px;
+      font:inherit;font-size:.92rem;resize:vertical;box-sizing:border-box;"></textarea>
+
+    <div style="margin-top:.85rem;display:flex;align-items:center;gap:.75rem;">
+      <button id="rf-submit" type="button" style="background:#1F4E79;color:#fff;border:none;border-radius:6px;padding:.55rem 1.1rem;
+        font:inherit;font-size:.92rem;cursor:pointer;">
+        Send feedback
+      </button>
+      <span id="rf-hint" style="font-size:.82rem;color:#8a929b;"></span>
+    </div>
+  </div>
+
+  <div id="rf-thanks" style="display:none;font-size:.95rem;color:#1F4E79;">
+    Thanks — that's recorded. <a href="#" id="rf-again" style="color:#1F4E79;">Send more feedback on this chapter</a>.
+  </div>
+</div>
+
+<!-- Hidden iframe used as the form's POST target so the page never navigates away. -->
+<iframe name="rf-target" style="display:none;" title="feedback submission target"></iframe>
+
+<script>
+(function () {
+  var FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSd9_CLKYge5lybG71ff2xAJKTUC0H76P7SSF8X0esvVgOQTTQ/formResponse";
+  var ENTRY_CHAPTER = "entry.339002275";
+  var ENTRY_RATING  = "entry.39522218";
+  var ENTRY_COMMENT = "entry.995180468";
+
+  function chapterLabel() {
+    var h1 = document.querySelector("main h1, #title-block-header h1, h1");
+    var text = h1 ? h1.textContent.trim() : document.title.trim();
+    return text.replace(/\s+/g, " ");
+  }
+
+  function buildStars(container) {
+    var selected = null;
+    for (var i = 1; i <= 5; i++) {
+      (function (n) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.textContent = n;
+        b.setAttribute("aria-label", n + " out of 5");
+        b.dataset.value = n;
+        b.style.cssText = "width:2.1rem;height:2.1rem;border-radius:6px;border:1px solid #cdd4db;" +
+          "background:#fff;color:#3c4650;font:inherit;font-size:.92rem;cursor:pointer;";
+        b.addEventListener("click", function () {
+          selected = n;
+          Array.prototype.forEach.call(container.children, function (el) {
+            var on = Number(el.dataset.value) <= n;
+            el.style.background = on ? "#1F4E79" : "#fff";
+            el.style.color = on ? "#fff" : "#3c4650";
+            el.style.borderColor = on ? "#1F4E79" : "#cdd4db";
+          });
+        });
+        container.appendChild(b);
+      })(i);
+    }
+    return function () { return selected; };
+  }
+
+  function ready(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+
+  ready(function () {
+    var root = document.getElementById("reader-feedback");
+    if (!root) return;
+    // Not a teaching page — front/back cover, etc. Those set data-no-feedback
+    // on the body via a tiny inline script in the page's own front matter.
+    if (document.body.hasAttribute("data-no-feedback")) {
+      root.style.display = "none";
+      return;
+    }
+
+    var ratingWrap = document.getElementById("rf-rating");
+    var getRating = buildStars(ratingWrap);
+    var commentEl = document.getElementById("rf-comment");
+    var submitBtn = document.getElementById("rf-submit");
+    var hint = document.getElementById("rf-hint");
+    var formState = document.getElementById("rf-form-state");
+    var thanks = document.getElementById("rf-thanks");
+    var again = document.getElementById("rf-again");
+
+    submitBtn.addEventListener("click", function () {
+      var rating = getRating();
+      var comment = commentEl.value.trim();
+      if (!rating && !comment) {
+        hint.textContent = "Pick a rating or add a comment first.";
+        return;
+      }
+
+      var form = document.createElement("form");
+      form.action = FORM_ACTION;
+      form.method = "POST";
+      form.target = "rf-target";
+      form.style.display = "none";
+
+      function field(name, value) {
+        var inp = document.createElement("input");
+        inp.type = "hidden";
+        inp.name = name;
+        inp.value = value;
+        form.appendChild(inp);
+      }
+
+      field(ENTRY_CHAPTER, chapterLabel());
+      if (rating) field(ENTRY_RATING, String(rating));
+      if (comment) field(ENTRY_COMMENT, comment);
+
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+
+      formState.style.display = "none";
+      thanks.style.display = "block";
+    });
+
+    again.addEventListener("click", function (e) {
+      e.preventDefault();
+      commentEl.value = "";
+      Array.prototype.forEach.call(ratingWrap.children, function (el) {
+        el.style.background = "#fff";
+        el.style.color = "#3c4650";
+        el.style.borderColor = "#cdd4db";
+      });
+      hint.textContent = "";
+      thanks.style.display = "none";
+      formState.style.display = "block";
+    });
+  });
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/aigov\.ogunseye\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/03-scoping-inventory-classification.html" class="pagination-link" aria-label="3. Scoping, Inventory, and Risk Classification">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">3. Scoping, Inventory, and Risk Classification</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/05-data-governance-for-ai.html" class="pagination-link" aria-label="5. Data Governance for AI">
+        <span class="nav-page-text"><span class="chapter-title">5. Data Governance for AI</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>How to Govern AI · Foundations and Practical Guide to AI Governance</p>
+</div>   
+    <div class="nav-footer-center">
+<p>First edition archived at <a href="../v1/">/v1/</a></p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>CC BY-NC 4.0</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10. Incident Response and Remediation – How to Govern AI</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/11-governing-generative-systems.html" rel="next">
+<link href="../chapters/09-operations-and-monitoring.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-176b1e44b272a30ec08500e73512b2cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2ac2194f70e1841eb0bfd2f3ea7731ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-scoping-inventory-classification.html">Part II: The AI System Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/10-incident-response-and-remediation.html"><span class="chapter-title">10. Incident Response and Remediation</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">How to Govern AI</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/shawnogunseye/GovAI" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations and Practical Guide to AI Governance</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part I: Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-what-ai-governance-is.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. What AI Governance Is</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-regulatory-landscape.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2. The Regulatory Landscape</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II: The AI System Lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-scoping-inventory-classification.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3. Scoping, Inventory, and Risk Classification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-defining-the-problem.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. Defining the Problem and Use Case</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-data-governance-for-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. Data Governance for AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-model-selection-and-development.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Model Selection and Development</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-testing-evaluation-and-red-teaming.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Testing, Evaluation, and Red Teaming</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-deployment-and-release.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Deployment and Release</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-operations-and-monitoring.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Operations and Monitoring</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-incident-response-and-remediation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">10. Incident Response and Remediation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part III: Generative and Agentic Systems</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-governing-generative-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11. Governing Generative Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-governing-agentic-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12. Governing Agentic Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part IV: The Governance Function</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-organizing-the-governance-function.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">13. Organizing the Governance Function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/14-risk-assessment-and-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Risk Assessment and Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/15-documentation-and-evidence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Documentation and Evidence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/16-third-party-vendor-and-supply-chain-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. Third-Party, Vendor, and Supply Chain Governance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part V: Building and Sustaining the Program</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/17-implementing-ai-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">17. Implementing AI Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/18-governing-under-uncertainty.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">18. Governing Under Uncertainty</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-a-technique-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A: Technique Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-b-regulatory-quick-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B: Regulatory Quick Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-c-templates-and-checklists.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C: Templates and Checklists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/99-back-cover.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Back Cover</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#what-you-will-be-able-to-do" id="toc-what-you-will-be-able-to-do" class="nav-link active" data-scroll-target="#what-you-will-be-able-to-do">What you will be able to do</a></li>
+  <li><a href="#detection-channels" id="toc-detection-channels" class="nav-link" data-scroll-target="#detection-channels">10.1 Detection channels</a></li>
+  <li><a href="#severity-classification" id="toc-severity-classification" class="nav-link" data-scroll-target="#severity-classification">10.2 Severity classification</a></li>
+  <li><a href="#response-procedures" id="toc-response-procedures" class="nav-link" data-scroll-target="#response-procedures">10.3 Response procedures</a></li>
+  <li><a href="#regulatory-reporting" id="toc-regulatory-reporting" class="nav-link" data-scroll-target="#regulatory-reporting">10.4 Regulatory reporting</a></li>
+  <li><a href="#root-cause-analysis" id="toc-root-cause-analysis" class="nav-link" data-scroll-target="#root-cause-analysis">10.5 Root cause analysis</a></li>
+  <li><a href="#post-incident-review" id="toc-post-incident-review" class="nav-link" data-scroll-target="#post-incident-review">10.6 Post-incident review</a></li>
+  <li><a href="#case-in-focus-an-incident-worked-end-to-end" id="toc-case-in-focus-an-incident-worked-end-to-end" class="nav-link" data-scroll-target="#case-in-focus-an-incident-worked-end-to-end">Case in focus: an incident worked end to end</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review questions</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-scoping-inventory-classification.html">Part II: The AI System Lifecycle</a></li><li class="breadcrumb-item"><a href="../chapters/10-incident-response-and-remediation.html"><span class="chapter-title">10. Incident Response and Remediation</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">10. Incident Response and Remediation</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><code>MEDASSIST</code>’s community hospital gap, the subject of Chapter 9’s case in focus, did not end when the retrospective chart review confirmed it. Confirmation was the beginning of a different kind of work. Someone had to decide how serious the finding was and who had the authority to act on it in the next hour, not the next committee cycle. Someone had to decide whether any regulator needed to hear about it and on what clock, and why the gap existed in a form deeper than “the model performed worse at six hospitals”. Someone also had to decide what would actually change afterward so the same pattern could not recur unnoticed for months a second time. Every one of those questions belongs to incident response, and Northfield’s answers to them, worked through in this chapter’s case in focus, determine whether the community hospital gap becomes a contained, documented, corrected episode or the first chapter of a worse one.</p>
+<p>This chapter treats response as a discipline with its own structure, not an improvisation that begins once monitoring or a user report produces a bad enough number. A system fails; how the organization responds is a separate variable the organization actually controls, and it is the variable that determines whether a given failure remains a governance success story or becomes the harm this book’s first chapter used to make the stakes concrete.</p>
+<section id="what-you-will-be-able-to-do" class="level2 unnumbered objectives">
+<h2 class="unnumbered anchored" data-anchor-id="what-you-will-be-able-to-do">What you will be able to do</h2>
+<ul>
+<li>Identify the detection channels a monitoring program alone will not cover, and explain what each is positioned to find that designed monitoring did not anticipate</li>
+<li>Apply a severity classification scheme and state what response each tier triggers</li>
+<li>Execute the full incident response lifecycle, including the universal obligation to remedy effects already produced and the additional checks an agentic system’s lookback requires</li>
+<li>Identify which incidents carry a regulatory reporting obligation and on what timeline</li>
+<li>Conduct a root cause analysis that reaches systemic factors rather than stopping at the first proximate cause</li>
+</ul>
+</section>
+<section id="detection-channels" class="level2">
+<h2 class="anchored" data-anchor-id="detection-channels">10.1 Detection channels</h2>
+<p>An incident becomes known to an organization through one of several distinct channels, and the channel that surfaces a given incident is rarely the one a governance program was built to rely on.</p>
+<p>Detection channels are broader than the handful a governance program tends to build first, and grouping them keeps the list usable instead of a sprawl of examples. Automated internal signals are monitoring, the subject of Chapter 9, and it catches exactly what its dimensions are built to watch, no more. Human internal reports include a frontline employee’s direct observation, the way the nurses in <code>MEDASSIST</code>’s case in focus noticed alert timing that felt wrong well before any aggregate number confirmed it. The category also covers internal audit, security operations, safety surveillance, and an employee escalation or whistleblower report raised through a channel built for exactly that purpose. Affected-person and customer channels are the people a system’s decisions land on, not the staff operating it, surfacing an incident through a complaint, a request for explanation, or litigation, often long after the organization’s own channels should have caught the same pattern. Supplier and partner notifications cover a vendor disclosing a problem in a purchased component or an upstream service incident propagating into the organization’s own system. Assurance activity covers what a scheduled test, audit, or evaluation turns up outside its original purpose. Regulators and legal processes surface an incident through an inquiry or a legal claim, not through anything the organization reported first. Public external discovery, a journalist or academic examining a system from outside with no obligation to notify the organization before publishing, can turn a contained internal matter into a public one on a schedule the organization does not control.</p>
+<p>Every channel on this list needs the same operational support to actually work. It needs accessible intake that a person can find and use without specialized knowledge, a named triage owner who reviews what comes in, and correlation across channels so that a pattern several channels are separately hinting at gets recognized as one thing. It also needs acknowledgment to whoever raised the concern, protection against retaliation for raising it, and, where appropriate, feedback on what happened as a result. The organizing point is not that the channel an organization did not build is the one most likely to find the next incident. That claim has no evidence behind it. The real point is that channels an organization did not build can reveal failures that designed monitoring did not anticipate, which argues for building several instead of treating any one, including monitoring, as sufficient on its own. A governance program can be confident in its monitoring dashboard while providing no accessible channel for a nurse’s informal observation or an applicant’s complaint. That program has optimized detection for the failures it already expected. It has left every other failure mode to whichever of these other channels happens to notice first, or to none of them.</p>
+</section>
+<section id="severity-classification" class="level2">
+<h2 class="anchored" data-anchor-id="severity-classification">10.2 Severity classification</h2>
+<p>A severity scheme sorts an incident into a tier the moment it is identified, and the tier determines who responds, how fast, and with what authority, instead of leaving those decisions to be negotiated fresh under the time pressure each incident brings.</p>
+<p>A workable scheme needs criteria specific enough that two different reviewers classify the same incident the same way, which rules out a scheme built only on adjectives, and it also needs to avoid the opposite failure. A rule can be too blunt in two ways. It can treat any health, safety, or fundamental-rights outcome as automatically critical regardless of scale, or it can treat an anomaly with no confirmed harm as automatically low tier regardless of how fast it is accumulating. Either version creates the same two failure modes. It will overclassify a minor, reversible event, and it will underclassify a serious near miss, an active security compromise, a large but not yet confirmed exposure, or a risk accumulating rapidly enough that waiting for confirmation would be its own mistake. The classification a severity scheme produces at the moment of detection is necessarily provisional, because the facts available at that moment are incomplete, and the scheme has to be built around that fact. It should assess actual and credible potential harm, which affected right or domain is implicated, the scale and vulnerability of the population involved, and the reversibility and duration of the harm. It should also assess how far the harm has spread geographically or across systems, whether exposure is ongoing, and how detectable the problem is. It should weigh whether a legal threshold is implicated or data has been compromised, how operationally critical the affected function is, and how much uncertainty remains in the assessment itself. Uncertainty is a reason to escalate immediately instead of waiting for it to resolve, and a provisional severity assigned under uncertainty is expected to be reclassified, upward or downward, as better evidence arrives, not treated as a one-time judgment locked in at detection.</p>
+<p>Each severity level, once assigned, maps to a specific response time, a specific authority empowered to act, specific containment options, a specific communication obligation, a legal assessment requirement, and a review cadence. Classifying an incident is therefore, immediately, an instruction, not the start of a debate about what to do next. A scheme that sorts incidents into tiers without pre-committing each tier to this full set has built a taxonomy, not an incident response capability.</p>
+</section>
+<section id="response-procedures" class="level2">
+<h2 class="anchored" data-anchor-id="response-procedures">10.3 Response procedures</h2>
+<p>Once an incident is classified, a fuller lifecycle runs than the five procedures, notification, assessment, containment, communication, documentation, this chapter opened with, and naming only those five omits stages a real response cannot skip. Those missing stages include declaring the incident and assigning a named commander, protecting people and stopping active harm as its own step before broader containment, and preserving evidence before anything else changes it. They also include correcting or eradicating the active cause instead of only containing it, recovering service through a validated path, verifying that recovery actually worked, and defining a closure authority, not leaving an implicit end for when attention moves elsewhere. In sequence, the lifecycle runs as follows. The response team first receives and acknowledges the triggering signal and preserves the evidence around it; it then triages the incident, formally declares it, assigns an incident commander, and sets the provisional severity from section 10.2. Next it protects people and stops active harm, then contains the system, the data, the access, and, where relevant, the supplier path. At the same time it assesses the scope, checking whether the cause is still active, who is affected, what legal duties attach, and what communication is needed. Notification reaches the required internal and external parties on each party’s own clock, with a decision log kept throughout. Alongside that, the team corrects or eradicates the active cause and remedies prior effects for every system class, not only the agentic one. Recovery follows, through a validated system, a restricted service, or a manual fallback; it verifies that recovery worked, watches for recurrence, and updates severity and scope as new evidence arrives. Root cause analysis and post-incident review, from sections 10.5 and 10.6, run while communication and documentation continue without pausing for them to finish, and the incident closes only once the technical, human, legal, and process actions each have evidence and an owner. These stages are not strictly sequential for a severe incident, several run in parallel, and new evidence at any point loops back to update severity, scope, containment, communication, or the legal assessment rather than only feeding forward.</p>
+<p>Containment stops the harm from continuing or spreading, and it is not a single lever to pull but a set of layered options, chosen for the specific incident and not defaulted to the same response every time. Those options include local access revocation, credential rotation, isolating a specific integration, stopping a data feed, restricting which users can reach the system, invoking a vendor’s contractual suspension right, a feature flag, a rollback to a prior version, a manual fallback process, or full shutdown. The right choice is the least disruptive option that actually controls the credible harm within the time the severity tier requires. That choice comes from comparing the harm, the uncertainty still remaining about its cause and extent, and what fallback is actually available, not from a rule that treats one system class’s containment options as inherently narrower than another’s. A purchased system’s containment is not limited to a contractual disable right just because the deploying organization does not control the vendor’s infrastructure. The deployer can typically still revoke local access, rotate its own credentials, disable its own integration, stop sending data to the system, or restrict which of its own users can reach it. An organization should confirm which of these options actually exist, and on what timeline, before an incident makes the question urgent. That is part of building the containment capability, not an afterthought once the vendor relationship becomes the bottleneck. A generative system’s containment is not automatically better served by narrowing what it can generate than by a fuller restriction. Which containment choice is correct again depends on the harm, the uncertainty, and the available fallback. A policy that treats continued availability as the default worth protecting, without a documented comparison against the credible harm, has made that tradeoff by default rather than by decision.</p>
+<p>For every system class, not only the agentic one, containing future harm is a different question from remedying harm already done, and a response that stops at the first without addressing the second has not finished the job. A predictive decision that wrongly denied an applicant, a generative output that disclosed sensitive data or published false content, and an agentic action all leave effects that persist after the system itself has been contained. Each needs its own lookback, notification, correction, recourse, or remedy for whoever was affected while the system was misbehaving. An agentic incident carries additional checks specific to its own record, tool actions taken, transactions initiated, commitments made, messages sent, state changes recorded, and any downstream automation the agent’s actions triggered. Each of these needs its own assessment of whether it can be reversed, and a compensating action where it cannot. The underlying discipline, that stopping future behavior is not the same task as addressing past effects, applies across every system class this book covers, not only to the one where the point is easiest to see. <code>TALENTSCREEN</code>’s scheduling agent, caught by the action volume anomaly in Chapter 9’s case in focus, illustrates the point directly. Halting the agent the moment the anomaly was confirmed stopped it from scheduling further interviews through the broader calendar access it should never have had. But it left open the separate question of what to do about every interview already scheduled through that access, some of which needed to be reviewed, and in a few cases unwound, before the response could be considered complete.</p>
+<p>Communication keeps affected parties, whether internal stakeholders, regulators, or the people harmed, informed at a cadence and level of detail proportional to the severity tier. This is distinct from any regulatory notification, which has its own legal form and timeline. Documentation records what was known, when, and what was decided, in real time, not reconstructed afterward, because a reconstruction written after the fact tends to describe the response the organization wishes it had run rather than the one it actually did.</p>
+<p>Decision authority under time pressure is the procedural detail most incident plans get wrong by omission. A plan that names a response but not a specific person or role empowered to invoke it at three in the morning has not actually built a response capability, only a description of one that depends on improvised authority exactly when improvisation is least reliable. The severity scheme’s job, from section 10.2, is to have already answered the authority question before any specific incident makes it urgent.</p>
+<!-- FIGURE 10.1 REQUIRED ELEMENTS (revised per CH080 and CH473, comment moved above the figure per badw-book.md check 80; NOT YET APPLIED TO SVG, release blocking)
+Must redraw as the full ten-stage lifecycle, not five procedures. The
+stages run receive and acknowledge (preserve evidence); triage, declare,
+assign command, set provisional severity; protect people and stop active
+harm, then contain system/data/access/supplier path; and assess scope,
+active cause, affected population, legal duties, communication needs.
+The stages continue with notify on each party's own clock with a running
+decision log; correct or eradicate the cause and remedy prior effects for
+every system class; and recover via validated system, restricted service,
+or manual fallback. The stages close with verify recovery and monitor
+recurrence, updating severity/scope as evidence changes; conduct root
+cause analysis and post-incident review (10.5, 10.6) while
+communication/documentation continue; and close only with evidence and
+owners across technical, human, legal, and process actions. Must show BOTH a
+standard-timeline branch and an emergency/critical-timeline branch from
+the severity decision point, not only the emergency branch. Must show the
+universal lookback-and-remedy step applying to predictive, generative,
+AND agentic incidents, with the agentic-specific additional checks (tool
+actions, transactions, commitments, messages, state changes, downstream
+automations) as an annotation on that step rather than a separate branch
+implying only agentic incidents need it. Must show feedback loops from
+new evidence back to severity, scope, containment, communication, and
+legal assessment. Entry condition: an incident has been detected through
+any channel in 10.1. Exit condition: closure with evidence and owners
+across all four action types. Deliberately excluded: the severity
+criteria themselves (10.2's job) and root cause analysis's own internal
+structure (10.5's figure). Must work in black and white.
+SOURCE: Google SRE Incident Response
+(https://sre.google/workbook/incident-response/) and Postmortem Culture;
+NIST SP 800-61 Rev. 3; EU AI Act Article 73; the ten-stage structure is
+this chapter's own synthesis adapted to the AI system lifecycle stages
+this book has already developed.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<div id="fig-response-flow" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-response-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/fig-10-01-response-flow.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-response-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.1: Figure 10.1. Incident response flow with decision points
+</figcaption>
+</figure>
+</div>
+<p>Read Figure 10.1 as a ten-stage lifecycle with two timeline branches, standard and emergency, both gated by the same severity decision point, not as five boxes with a single emergency path. New evidence at any stage loops back to update severity, scope, containment, communication, or the legal assessment instead of flowing in one direction only. The correct-or-eradicate-and-remedy stage applies to every system class; the agentic-specific checks, tool actions, transactions, commitments, messages, state changes, and downstream automations, are additional detail within that same universal stage, not evidence that only an agentic incident needs to look backward at what already happened.</p>
+<p><code>TALENTSCREEN</code>’s scheduling agent, caught by the action volume anomaly in Chapter 9’s case in focus, illustrates the agentic containment obligation directly. Halting the agent the moment the anomaly was confirmed stopped it from scheduling further interviews through the broader calendar access it should never have had. But it left open the separate question of what to do about every interview already scheduled through that access, some of which needed to be reviewed, and in a few cases unwound, before containment could be considered complete. A response plan that treated halting the agent as the end of containment would have closed the incident while several of its consequences were still live.</p>
+<p>The buy path adds a specific option to confirm in advance, not a specific limitation to assume. <code>TALENTSCREEN</code> is licensed rather than built, and Calloway does not control the infrastructure the agent runs on, so a full shutdown may require invoking a contractual right to disable functionality instead of simply flipping a switch Calloway itself owns. That does not mean the vendor holds the only lever; Calloway’s own local access revocation, credential rotation, and integration isolation remain available regardless of what the contract says about a full disable. A response plan for a purchased system needs to know, before an incident, which of the layered containment options it actually controls itself and which depend on the vendor, on what timeline, not discovering the answer while the incident is already underway. That confirmation should also cover evidence access, log retention, and the vendor’s contractual duty to cooperate with the organization’s own investigation, since a disable right alone does not establish what happened or satisfy a reporting obligation.</p>
+<p>A generative system’s containment has the same full range of layered options as any other system class, and which one is right is a judgment about the incident’s harm, uncertainty, and available fallback, not a rule that generative incidents default to narrowing over shutdown. A generative incident is often a pattern of bad outputs rather than a single confirmed decision, so restricting capability, disabling a specific feature, or routing outputs through mandatory human review is frequently sufficient and less disruptive than a full disable. But where the credible harm is severe enough, or too uncertain to bound with a narrower control, shutting the capability down entirely is the correct choice, and the framework should not be read as discouraging it.</p>
+</section>
+<section id="regulatory-reporting" class="level2">
+<h2 class="anchored" data-anchor-id="regulatory-reporting">10.4 Regulatory reporting</h2>
+<p>A reporting decision depends on the applicable date before it depends on anything else. Checked against the EU AI Act text current on 2026-09-12, the AI Omnibus Regulation, in force since 27 July 2026, moved the Act’s own high-risk timetable back. The obligations tied to Annex III high-risk systems, the category most of this book’s examples fall into, now apply from 2 December 2027. The obligations tied to Annex I high-risk product systems now apply from 2 August 2028. A team building its reporting workflow today is preparing for a duty that has not yet started for most systems, not meeting one already in force.</p>
+<p>Once that date arrives, a serious incident is not simply a bad outcome. Article 3(49) defines it as an incident or malfunction that leads, directly or indirectly, to death or serious harm to a person’s health, serious and irreversible disruption to critical infrastructure, infringement of Union law protecting fundamental rights, or serious harm to property or the environment. Severity, from section 10.2, and this legal test are separate decisions; an incident can demand the organization’s most urgent internal response without meeting Article 3(49), and one that meets it still needs the response section 10.3 describes.</p>
+<p>For high-risk AI systems placed on the Union market, Article 73 places the serious-incident reporting duty primarily on providers, not on deployers generally, and Article 26 places a separate set of notification and suspension duties on deployers. The recipient is the market surveillance authority in the state where the incident occurred. The general outer limit for initial notification is fifteen days after the provider becomes aware of the incident, subject to the Article’s own causal-link wording connecting the incident to the system. That outer limit shortens to two days for a widespread infringement or the specified serious disruption of critical infrastructure, and extends to ten days where the incident involves a death. Reports are due immediately within whichever of these limits applies, not at the end of an investigation, and an initial report that is incomplete may, and should, be supplemented as the investigation progresses, not held back until it is complete. Article 73 also specifies that a provider should not alter the system in a way that could affect a later evaluation of the incident’s cause before informing the competent authorities. This means containment and correction, both discussed above, have to be sequenced with this reporting duty in mind, not run as though the two were independent. The organization’s own classification, its actual role for the specific system, and any implementing rule issued since 2026-09-12 still need verification for each real event rather than assumed from this general statement.</p>
+<p>This ordering matters because it inverts the intuition a first-time incident responder often brings to the situation. The instinct to finish investigating before saying anything is precisely backward when the obligation is to notify promptly and then supplement the notification as the investigation progresses. An organization that waits for a complete picture before making its first report has typically already missed the deadline for that first report. A compliance program is not ready to meet this clock unless it has already identified, in advance, which of its systems could trigger this obligation and which role it holds for each one. It also needs a working internal escalation path to the person authorized to file the notification, since a clock the organization does not control leaves no time to build one after the fact.</p>
+<p><code>MEDASSIST</code>’s community hospital gap required this assessment directly. Northfield’s incident team had to determine, quickly and under the same time pressure the rest of the response operated under, which role it actually held for <code>MEDASSIST</code> at each of the seven hospitals, whether provider, deployer, or both for different parts of the system. The team then had to determine whether the gap met Article 3(49)’s definition of a reportable serious incident given that role, a determination this chapter’s case in focus works through as a documented legal assessment rather than a foregone conclusion.</p>
+</section>
+<section id="root-cause-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="root-cause-analysis">10.5 Root cause analysis</h2>
+<p>Root cause analysis begins after the immediate response has stabilized the situation, and its purpose is to reach systemic factors instead of stopping at the first proximate cause an investigation happens to find. The proximate cause produces a patch, while the systemic factors produce the process change that prevents the next incident of the same shape. Reaching those factors is analytical work, not a predetermined chain of four boxes connected by “why” arrows that assumes in advance that each gap caused the next one in a single line. A testing gap, a monitoring gap, and a process gap are more honestly treated as parallel contributing conditions under a broader governance failure until the evidence actually shows one causing another. A method is not analysis if it starts with the answer already chosen, with no evidence collection, no competing hypothesis, and no consideration of organizational pressure, human factors, a supplier’s role, or which specific control failed. It is narration.</p>
+<p>A causal analysis map replaces the forced ladder with seven steps that keep the investigation honest about what it actually knows. First, build a verified timeline and separate facts from assumptions and from genuine unknowns. Second, identify the harm itself, what triggered it, the active mechanism that produced it, and which controls failed or were missing. Third, examine contributing factors across every plausible category, data, model, software, workflow, people, organization, supplier, environment, and governance, not the one or two categories that come to mind first. Fourth, test competing causal explanations against the evidence and the counterevidence, instead of accepting the first explanation that fits. Fifth, identify where a control should have prevented, detected, limited, or helped recover from the event, since a missing control is itself a finding distinct from the event it failed to catch. Sixth, assign corrective actions to the specific causal factors they address, prioritize them, and state the uncertainty that remains instead of presenting the analysis as more conclusive than the evidence supports. Seventh, validate that a correction actually worked and watch for recurrence, since a corrective action that was never checked is a claim, not a result.</p>
+<p>Applied to <code>MEDASSIST</code>’s gap, this method does not conclude that a testing gap caused a monitoring gap which caused a process gap in a single chain; it more plausibly finds three parallel contributing factors under one governance failure. The validation population was drawn overwhelmingly from the academic center, a sampling decision nobody flagged as a limitation at the time, which Chapter 7’s testing did not catch. The monitoring program tracked only the technical and aggregate-performance dimensions and never built the human-oversight dimension that would have caught the diverging dismissal rates months sooner, which Chapter 9’s monitoring did not catch. No stage of the lifecycle, from testing through deployment through monitoring, assigned anyone the responsibility of checking that a validation population’s composition matched the population the system would actually serve once deployed across seven distinct sites. That is the process gap that let the other two coexist undetected. Labeling any one of these three “the root cause” would overstate what the evidence supports; the honest finding is that all three were contributing factors, and the corrective actions have to address all three, not whichever one is easiest to fix first. A root cause analysis that stops at “the model needs retraining” has produced a technically accurate finding that will not prevent the next system from repeating exactly the same failure through exactly the same process gap.</p>
+<!-- FIGURE 10.2 REQUIRED ELEMENTS (revised per CH085 and CH473, comment moved above the figure per badw-book.md check 80; NOT YET APPLIED TO SVG, release blocking)
+Must redraw as a causal analysis map, not a forced four-level "why"
+ladder. That ladder uses single arrows implying each level caused the
+next. Must show the seven steps. These include a verified timeline
+separating fact/assumption/unknown; harm, trigger, mechanism, failed or
+missing controls; and contributing factors across data, model, software,
+workflow, people, organization, supplier, environment, governance. They
+also include competing causal explanations tested against evidence and
+counterevidence; where controls should have prevented, detected, limited,
+or recovered; corrective actions assigned to specific factors with
+priority and stated residual uncertainty; and validation of effectiveness
+and recurrence watch. Must show contributing factors that
+can sit in PARALLEL under a shared governance failure, using `MEDASSIST`'s
+testing gap, monitoring gap, and process gap as an example of three
+parallel factors, not a linear chain. Must NOT label a single box "the
+root cause" when the evidence supports multiple contributing factors.
+Entry condition: the immediate incident response from 10.3 has stabilized
+the situation. Exit condition: contributing factors identified and tested
+against evidence, corrective actions assigned with stated uncertainty,
+handed to 10.6's post-incident review. Deliberately excluded: the
+post-incident review's ownership and verification tracking (10.6's job).
+Must work in black and white.
+SOURCE: Google SRE Postmortem Culture
+(https://sre.google/workbook/postmortem-culture/); NIST AI RMF 1.0;
+NIST SP 800-61 Rev. 3; the seven-step causal-map structure is this
+chapter's own synthesis, replacing a single linear "why" chain with an
+evidence-tested map of parallel contributing factors.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<div id="fig-root-cause" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-root-cause-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/fig-10-02-root-cause.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-root-cause-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.2: Figure 10.2. Root cause analysis to systemic factors
+</figcaption>
+</figure>
+</div>
+<p>Read Figure 10.2 as a map built from evidence, not a ladder assumed in advance. The seven steps run in the order listed, but the output is a set of tested contributing factors, not a single traced chain. <code>MEDASSIST</code>’s case populates the map with three factors sitting in parallel under one governance failure, not one causing the next. Those three factors are a testing gap, a monitoring gap, and a process gap that let both persist undetected. Each factor gets its own corrective action; none of the three is labeled the root cause on its own, because the evidence supports all three as contributing rather than any one as sufficient by itself.</p>
+</section>
+<section id="post-incident-review" class="level2">
+<h2 class="anchored" data-anchor-id="post-incident-review">10.6 Post-incident review</h2>
+<p>A post-incident review converts root cause findings into process change with tracked ownership, and the distinction between a review that produces this and one that produces only a report matters more than it sounds.</p>
+<p>A complete post-incident record covers more ground than owner, change, date, and verification alone. It also covers the impact actually caused, a timeline of what happened, how the incident was detected, and how the response and communication actually unfolded. It covers the contributing factors from section 10.5’s causal map, the assumptions the investigation made and where they might be wrong, what went well during the response, what went poorly, and, honestly, where luck rather than the response itself limited how bad the harm became. It preserves the evidence the investigation relied on, states the priority of each corrective action, and defines how the action’s effectiveness will actually be measured, not only whether it was implemented. It also specifies how recurrence will be monitored afterward, states who else in the organization needs to see the findings, and names the criteria that would reopen the review, a recurrence, new harm, or new evidence that invalidates the original analysis. Each finding from section 10.5 needs an assigned owner, a specific change, and a date by which the change is verified as actually implemented, not merely proposed. Accountability for the action has to stay separate from personal blame for the incident, since a review that functions as a blame exercise will get less honest information the next time something goes wrong. A finding without an owner is a sentence in a document that nobody is accountable for acting on. A governance function can treat a well-written post-incident report as the deliverable instead of treating the subsequent process change as the deliverable. If it does, it will accumulate a library of accurate diagnoses next to an unchanged set of processes. An action closes only once it has been implemented and shown, with evidence, to actually be effective, not when a tracking ticket is marked complete. The review should also verify that the fix addresses the systemic factors, not only the proximate cause. A review that closes <code>MEDASSIST</code>’s incident by confirming the model was retrained, without confirming that the validation and monitoring process changes section 10.5 identified were actually implemented and shown to work, has closed the incident without closing the gap that produced it.</p>
+</section>
+<section id="case-in-focus-an-incident-worked-end-to-end" class="level2 unnumbered case">
+<h2 class="unnumbered anchored" data-anchor-id="case-in-focus-an-incident-worked-end-to-end">Case in focus: an incident worked end to end</h2>
+<p><code>MEDASSIST</code> · Hypothetical, following the running cases</p>
+<p>The retrospective chart review that surfaced Northfield’s community hospital gap arrived on a Thursday afternoon, and the first decision the newly assembled incident team had to make was severity. The gap involved a health-safety outcome, delayed sepsis alerts, across six of seven hospitals. Under Northfield’s severity scheme, that outcome classified as a critical incident regardless of how many specific patients had been affected. It triggered immediate executive notification and a cross-functional response inside the four-hour window the scheme specified, not the more measured, business-day response a lower tier would have permitted.</p>
+<p>Response ran several procedures in parallel instead of in sequence. Containment was worked as a decision requiring clinical-safety, operational, and legal evidence, not a default reached by elimination. The team compared suspension of the alerting function, restriction to a subset of use cases, recalibration of thresholds, switching to an alternative validated tool, an enhanced protocol without changing the model, and a manual fallback process, weighing each against harm, uncertainty, and available capacity. Northfield’s clinical safety officer, not the incident team alone, made the final call, choosing a defined reduced-confidence mode, an explicitly specified higher alert threshold paired with a mandatory, time-bound nurse review of every borderline case, over suspension. The documented basis was that removing automated screening at six hospitals carried its own credible safety risk, one the assessment judged larger than the risk the reduced-confidence mode still carried once workload capacity at each site was checked against the added review burden it created. The decision record specified the affected sites, the expected duration, the staffing capacity confirmed to support the added review load, explicit success and halt criteria, a patient-communication plan where required, and a monitoring commitment specifically watching for the alert-fatigue signal section 9.8 describes. Adding manual review at exactly the sites already showing elevated dismissal rates was a plausible way to make that specific problem worse, not better, if left unmonitored. Assessment, run concurrently, worked to establish how many patients across the six hospitals had experienced a delayed or missed alert during the affected period. The task was complicated by exactly the intervention-affected truth problem Chapter 9 described, since a prevented deterioration leaves no confirmed case. The team had to rely on the same retrospective chart-review method that surfaced the gap in the first place, now applied fully instead of as a sample, evaluating the process and the available evidence rather than claiming to reconstruct each patient’s individual counterfactual. Communication reached hospital leadership and clinical staff at all seven sites within the same day, with a level of technical detail calibrated to what each audience needed to act on, not a single message sent everywhere unchanged. Documentation captured each decision and its timestamp as the response unfolded, producing a record the post-incident review would later rely on instead of a reconstruction assembled afterward from memory.</p>
+<p>This hypothetical assumes MEDASSIST’s Annex III obligations are already in force, since section 10.4’s applicable date has to be reached before Article 73’s clock can start. Regulatory reporting required its own determination, run by Northfield’s compliance lead in parallel with the clinical response, and the determination itself, not just its outcome, is what the incident record preserves. The compliance lead first documented Northfield’s role for <code>MEDASSIST</code> at each hospital. The academic medical center’s original validation work made a provider determination plausible for some functions, while the community-hospital deployment made Northfield a deployer for others, and the applicable duties depend on getting that role right, not assumed. Two branches were then assessed against Article 3(49)’s definition, using the facts already established by the sample-based retrospective review that had surfaced the gap, delayed and missed alerts tied to a confirmed pattern of health harm across multiple sites. That assessment ran even though the full chart review the response’s own assessment procedure was still running had not yet finished. If the facts already in hand met the definition’s threshold for Northfield’s provider-side obligations, an initial report would go to the competent authority within the applicable outer limit, explicitly incomplete and flagged for supplementation once the full review concluded. If they did not clearly meet it, the assessment would instead be recorded as a documented decision that Article 73 reporting did not apply, alongside confirmation that sector-specific health reporting obligations and any contractual notification duties to the community hospitals were still being completed regardless. Northfield’s compliance lead concluded the first branch applied on the facts available and filed within the window instead of waiting for the full review to complete. The record kept both the reasoning and the branch not taken, so a later reviewer can see why the determination went the way it did rather than only the conclusion it reached.</p>
+<p>Root cause analysis, beginning once the immediate response stabilized, first used Chapter 3’s system-to-model link to confirm which model version each hospital was actually running, ruling out a version mismatch before the analysis went further. It then followed the same three questions this chapter’s section 10.5 develops, tracing the confirmed performance gap back through the validation population’s composition and the monitoring program’s missing human-oversight dimension. Both traced to a lifecycle-wide absence of any checkpoint verifying that a validation population matched its eventual deployment context. The post-incident review that followed assigned two owners. The clinical informatics director was responsible for building a representativeness check into every future validation before Chapter 7’s testing sign-off. The operations lead was responsible for adding the human-oversight monitoring dimension Chapter 9 specifies to every deployed clinical model within a fixed quarter, with both changes tracked to specific verification dates instead of left as recommendations in a closed file.</p>
+<p>The incident closed not when the retrained model shipped, but when both process owners confirmed their changes were implemented and verified, the distinction section 10.6 draws between an incident that produces a corrected model and one that produces a corrected process.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Detection arrives through automated internal signals, human internal reports, affected-person and customer channels, supplier and partner notifications, assurance activity, regulators and legal processes, and public external discovery. A channel an organization did not build can reveal failures that designed monitoring did not anticipate, which argues for building several accessible, triaged, and correlated channels instead of trusting any one of them alone. A workable severity scheme assigns a provisional tier from a stated multi-factor assessment, escalating under uncertainty instead of waiting for certainty. It also pre-commits each tier to a specific response, authority, containment options, communication obligation, legal assessment, and review cadence, so that classification is an instruction, not the start of a negotiation under time pressure.</p>
+<p>Response runs a full incident lifecycle, not five isolated procedures, from declaration and command through protection, containment, assessment, notification, correction, recovery, verification, root cause analysis, and closure, with feedback loops carrying new evidence back to severity, scope, containment, communication, and legal assessment throughout. Containment is a layered set of options chosen for the specific incident’s harm, uncertainty, and available fallback, available in some form to every system class and every acquisition path. Correcting the active cause and remedying prior effects is a universal step, not one specific to agentic systems, though an agentic incident adds its own checks for actions, transactions, commitments, and downstream automations already taken. Regulatory reporting depends first on which role, provider or deployer, an organization holds for a given system. It attaches to a defined seriousness threshold with different outer limits by consequence, and starts its clock at awareness, not at the conclusion of investigation, inverting the instinct to finish investigating before reporting anything. A provider is barred from altering the system in a way that would affect a later cause evaluation before informing authorities.</p>
+<p>Root cause analysis builds a causal map from verified evidence instead of assuming a predetermined chain. Multiple contributing factors, a testing gap, a monitoring gap, a process gap, can sit in parallel under one governance failure, not one causing the next in a single line. A post-incident review converts those findings into owned, dated, verified process changes, kept separate from personal blame, and an incident is not closed when the immediate technical fix ships but when the process changes that prevent its recurrence are confirmed, with evidence, as actually effective.</p>
+</section>
+<section id="review-questions" class="level2">
+<h2 class="anchored" data-anchor-id="review-questions">Review questions</h2>
+<p><code>COMPREHENSION</code></p>
+<ol type="1">
+<li><p>Explain why a governance program built entirely around its monitoring dashboard is structurally likely to miss some incidents, and name two other detection channels from section 10.1 and what each is positioned to catch that monitoring is not built to anticipate.</p></li>
+<li><p>Explain why correcting the active cause and remedying prior effects is a universal step for every system class, not an agentic-specific one, and state the additional checks an agentic incident’s lookback needs beyond what a predictive or generative incident’s lookback needs.</p></li>
+</ol>
+<p><code>APPLIED</code></p>
+<ol start="3" type="1">
+<li><p>Design a three-tier severity scheme for a generative customer-support system, specifying the criteria for each tier and the response each tier triggers.</p></li>
+<li><p>A serious incident’s initial investigation will take three weeks to complete, but the regulatory reporting clock requires notification within days of awareness. Describe what the initial notification should contain given this timing mismatch.</p></li>
+</ol>
+<p><code>SPOT THE RISK</code></p>
+<ol start="5" type="1">
+<li>A post-incident review concludes with a retrained model and a report describing the root cause in detail, but assigns no owner or verification date to any process change. Identify what is missing and why the incident should not be considered closed.</li>
+</ol>
+<p><code>COMPARE AND DECIDE</code></p>
+<ol start="6" type="1">
+<li>A root cause analysis reaches two candidate systemic factors. They are a testing gap and a monitoring gap. State the case for addressing both simultaneously versus prioritizing one first, and what would determine which is more urgent.</li>
+</ol>
+<p><code>RUNNING CASE</code></p>
+<ol start="7" type="1">
+<li><code>MEDASSIST</code> Using the case in focus, explain why Northfield’s compliance lead filed an initial regulatory report before the full chart review was complete, and what the supplemental report was expected to add.</li>
+</ol>
+<hr>
+<p>Part II applied one incident lifecycle to predictive, generative, and agentic systems alike, already following <code>TALENTSCREEN</code>’s scheduling agent through that same lifecycle in this chapter’s own case in focus. Chapter 11 and Chapter 12 now each take up one of the two capabilities this book has tracked throughout, generation and autonomous action, and develop the controls specific to each. Chapter 11 takes up generation first, beginning with why a system that produces open-ended content needs controls the shared lifecycle does not by itself supply.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Reader feedback widget. Injected on every chapter page via _quarto.yml's
+     include-after-body. Self-configures per page (reads the chapter's own H1),
+     posts anonymously to a Google Form, and can be removed by deleting the
+     include-after-body line in _quarto.yml plus this file. -->
+<div id="reader-feedback" style="margin-top:3.5rem;padding:1.5rem 1.5rem 1.75rem;border-top:1px solid #dfe3e8;">
+  <div id="rf-form-state">
+    <h3 style="font-size:1.05rem;margin:0 0 .35rem;color:#1F4E79;">Was this chapter useful?</h3>
+    <p style="font-size:.9rem;color:#5b6570;margin:0 0 1rem;">
+      Quick, anonymous feedback on this chapter. No account needed, and you can send more than once.
+    </p>
+
+    <div id="rf-rating" style="display:flex;gap:.4rem;margin-bottom:1rem;" role="radiogroup" aria-label="Rating">
+      <!-- five buttons injected by JS -->
+    </div>
+
+    <textarea id="rf-comment" placeholder="What was unclear, wrong, or worth changing? (optional)" style="width:100%;min-height:5.5rem;padding:.6rem .7rem;border:1px solid #cdd4db;border-radius:6px;
+      font:inherit;font-size:.92rem;resize:vertical;box-sizing:border-box;"></textarea>
+
+    <div style="margin-top:.85rem;display:flex;align-items:center;gap:.75rem;">
+      <button id="rf-submit" type="button" style="background:#1F4E79;color:#fff;border:none;border-radius:6px;padding:.55rem 1.1rem;
+        font:inherit;font-size:.92rem;cursor:pointer;">
+        Send feedback
+      </button>
+      <span id="rf-hint" style="font-size:.82rem;color:#8a929b;"></span>
+    </div>
+  </div>
+
+  <div id="rf-thanks" style="display:none;font-size:.95rem;color:#1F4E79;">
+    Thanks — that's recorded. <a href="#" id="rf-again" style="color:#1F4E79;">Send more feedback on this chapter</a>.
+  </div>
+</div>
+
+<!-- Hidden iframe used as the form's POST target so the page never navigates away. -->
+<iframe name="rf-target" style="display:none;" title="feedback submission target"></iframe>
+
+<script>
+(function () {
+  var FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSd9_CLKYge5lybG71ff2xAJKTUC0H76P7SSF8X0esvVgOQTTQ/formResponse";
+  var ENTRY_CHAPTER = "entry.339002275";
+  var ENTRY_RATING  = "entry.39522218";
+  var ENTRY_COMMENT = "entry.995180468";
+
+  function chapterLabel() {
+    var h1 = document.querySelector("main h1, #title-block-header h1, h1");
+    var text = h1 ? h1.textContent.trim() : document.title.trim();
+    return text.replace(/\s+/g, " ");
+  }
+
+  function buildStars(container) {
+    var selected = null;
+    for (var i = 1; i <= 5; i++) {
+      (function (n) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.textContent = n;
+        b.setAttribute("aria-label", n + " out of 5");
+        b.dataset.value = n;
+        b.style.cssText = "width:2.1rem;height:2.1rem;border-radius:6px;border:1px solid #cdd4db;" +
+          "background:#fff;color:#3c4650;font:inherit;font-size:.92rem;cursor:pointer;";
+        b.addEventListener("click", function () {
+          selected = n;
+          Array.prototype.forEach.call(container.children, function (el) {
+            var on = Number(el.dataset.value) <= n;
+            el.style.background = on ? "#1F4E79" : "#fff";
+            el.style.color = on ? "#fff" : "#3c4650";
+            el.style.borderColor = on ? "#1F4E79" : "#cdd4db";
+          });
+        });
+        container.appendChild(b);
+      })(i);
+    }
+    return function () { return selected; };
+  }
+
+  function ready(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+
+  ready(function () {
+    var root = document.getElementById("reader-feedback");
+    if (!root) return;
+    // Not a teaching page — front/back cover, etc. Those set data-no-feedback
+    // on the body via a tiny inline script in the page's own front matter.
+    if (document.body.hasAttribute("data-no-feedback")) {
+      root.style.display = "none";
+      return;
+    }
+
+    var ratingWrap = document.getElementById("rf-rating");
+    var getRating = buildStars(ratingWrap);
+    var commentEl = document.getElementById("rf-comment");
+    var submitBtn = document.getElementById("rf-submit");
+    var hint = document.getElementById("rf-hint");
+    var formState = document.getElementById("rf-form-state");
+    var thanks = document.getElementById("rf-thanks");
+    var again = document.getElementById("rf-again");
+
+    submitBtn.addEventListener("click", function () {
+      var rating = getRating();
+      var comment = commentEl.value.trim();
+      if (!rating && !comment) {
+        hint.textContent = "Pick a rating or add a comment first.";
+        return;
+      }
+
+      var form = document.createElement("form");
+      form.action = FORM_ACTION;
+      form.method = "POST";
+      form.target = "rf-target";
+      form.style.display = "none";
+
+      function field(name, value) {
+        var inp = document.createElement("input");
+        inp.type = "hidden";
+        inp.name = name;
+        inp.value = value;
+        form.appendChild(inp);
+      }
+
+      field(ENTRY_CHAPTER, chapterLabel());
+      if (rating) field(ENTRY_RATING, String(rating));
+      if (comment) field(ENTRY_COMMENT, comment);
+
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+
+      formState.style.display = "none";
+      thanks.style.display = "block";
+    });
+
+    again.addEventListener("click", function (e) {
+      e.preventDefault();
+      commentEl.value = "";
+      Array.prototype.forEach.call(ratingWrap.children, function (el) {
+        el.style.background = "#fff";
+        el.style.color = "#3c4650";
+        el.style.borderColor = "#cdd4db";
+      });
+      hint.textContent = "";
+      thanks.style.display = "none";
+      formState.style.display = "block";
+    });
+  });
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/aigov\.ogunseye\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/09-operations-and-monitoring.html" class="pagination-link" aria-label="9. Operations and Monitoring">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">9. Operations and Monitoring</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/11-governing-generative-systems.html" class="pagination-link" aria-label="11. Governing Generative Systems">
+        <span class="nav-page-text"><span class="chapter-title">11. Governing Generative Systems</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>How to Govern AI · Foundations and Practical Guide to AI Governance</p>
+</div>   
+    <div class="nav-footer-center">
+<p>First edition archived at <a href="../v1/">/v1/</a></p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>CC BY-NC 4.0</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

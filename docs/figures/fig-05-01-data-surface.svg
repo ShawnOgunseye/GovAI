@@ -1,0 +1,97 @@
+<svg viewBox="0 0 900 450" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig0501t fig0501d" aria-label="What data surface exists, by path and by system class">
+<title id="fig0501t">What data surface exists, by path and by system class</title>
+<desc id="fig0501d">A comparison table crossing two paths, build and buy, against three system classes, predictive, generative, and agentic. The build-path row shows training data and runtime data present and directly governed for every class. The buy-path row never shows an empty training-data cell: it marks training data as existing upstream, at the vendor, with limited or no direct access or control, while showing runtime data always present, and a retrieval corpus and fine-tuning data present and directly governed for the generative class specifically. No cell in the figure is a control; it maps where a control would have something to act on.</desc>
+<!-- FIGURE 5.1 REQUIRED ELEMENTS
+Must appear: two paths (build, buy) as rows, three system classes
+(predictive, generative, agentic) as columns, and for each of the six
+cells which of the four data kinds (training, fine-tuning, retrieval
+corpus, runtime) is actually present. Must show explicitly that the buy
+path is not empty: it still carries fine-tuning, corpus, or runtime data
+depending on system class, AND that training data on the buy path is not
+absent but exists upstream with limited or no direct access or control
+(CH025/CH537 correction: the buy-path training-data cell must never read
+as a false absence). Entry condition: a system is selected or built. Exit
+condition: its data surface is named. Deliberately excluded: specific
+governance controls for each cell; that is the rest of the chapter's job,
+not this figure's. Must work in black and white.
+DESIGN: three fill states carry the distinction, not colour. Dark fill:
+an owned corpus the organization holds and can inspect directly (training
+data on the build path; retrieval corpus and fine-tuning data on the buy
+path, which remain under direct organizational control even though the
+base model's own training data is not). Pale solid fill: runtime data,
+governed at the point of use, present for every cell. Pale dashed fill:
+present but upstream, at the vendor, not directly accessible or
+governable from where the deploying organization sits — this is the
+corrected buy-path training-data marker, distinct from true absence.
+SOURCE: original; no published framework organizes data governance by
+this build/buy by system-class cross, which is this book's own argument.
+AUDIT: pass 1 [x] against list, pass 2 blind [x], rendered and viewed [x]
+Rebuilt to close CH025/CH537 (buy-path training data previously read as
+simple absence; corrected to the exists-upstream/not-accessible marker
+the chapter prose at section 5.1 specifies) and to add the buy-path
+generative column's own upstream training-data marker, previously
+omitted entirely. Checked 13 Sep 2026.
+-->
+<style>
+text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.ttl{font-size:17px;font-weight:700;}
+.cls{font-size:14px;font-weight:700;}
+.bx{font-size:12.5px;font-weight:400;}
+.col{font-size:11px;font-weight:700;letter-spacing:.06em;}
+.sm{font-size:11px;font-weight:400;}
+.em{font-size:10.5px;font-style:italic;}
+</style>
+<rect x="0" y="0" width="900" height="450" fill="#ffffff"/>
+<text x="20" y="34" class="ttl" fill="#1a2230">Figure 5.1 &#183; Data surface by path and system class</text>
+<text x="252" y="80" class="col" fill="#46536b" text-anchor="middle">PREDICTIVE</text>
+<text x="495" y="80" class="col" fill="#46536b" text-anchor="middle">GENERATIVE</text>
+<text x="738" y="80" class="col" fill="#46536b" text-anchor="middle">AGENTIC</text>
+<line x1="20" y1="90" x2="880" y2="90" stroke="#1a2230" stroke-width="1.6"/>
+<line x1="373" y1="96" x2="373" y2="352" stroke="#c9d1dc" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="617" y1="96" x2="617" y2="352" stroke="#c9d1dc" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="20" y="130" class="cls" fill="#1a2230">BUILD</text>
+<text x="20" y="148" class="sm" fill="#46536b">PATH</text>
+<rect x="144" y="100" width="215" height="32" rx="3" fill="#46536b" stroke="#1a2230" stroke-width="1.8"/>
+<text x="252" y="120" class="bx" fill="#ffffff" text-anchor="middle">training data</text>
+<rect x="144" y="140" width="215" height="32" rx="3" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="252" y="160" class="bx" fill="#1a2230" text-anchor="middle">runtime data</text>
+<rect x="387" y="100" width="215" height="32" rx="3" fill="#46536b" stroke="#1a2230" stroke-width="1.8"/>
+<text x="495" y="120" class="bx" fill="#ffffff" text-anchor="middle">training data</text>
+<rect x="387" y="140" width="215" height="32" rx="3" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="495" y="160" class="bx" fill="#1a2230" text-anchor="middle">runtime data</text>
+<rect x="631" y="100" width="215" height="32" rx="3" fill="#46536b" stroke="#1a2230" stroke-width="1.8"/>
+<text x="738" y="120" class="bx" fill="#ffffff" text-anchor="middle">training data</text>
+<rect x="631" y="140" width="215" height="32" rx="3" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="738" y="160" class="bx" fill="#1a2230" text-anchor="middle">runtime data</text>
+<line x1="20" y1="190" x2="880" y2="190" stroke="#1a2230" stroke-width="1"/>
+<text x="20" y="277" class="cls" fill="#1a2230">BUY</text>
+<text x="20" y="295" class="sm" fill="#46536b">PATH</text>
+<rect x="144" y="210" width="215" height="30" rx="3" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="252" y="229" class="bx" fill="#1a2230" text-anchor="middle">runtime data</text>
+<rect x="387" y="210" width="215" height="26" rx="3" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="495" y="227" class="bx" fill="#1a2230" text-anchor="middle">runtime data</text>
+<rect x="387" y="240" width="215" height="26" rx="3" fill="#46536b" stroke="#1a2230" stroke-width="1.4"/>
+<text x="495" y="257" class="bx" fill="#ffffff" text-anchor="middle">retrieval corpus</text>
+<rect x="387" y="270" width="215" height="26" rx="3" fill="#46536b" stroke="#1a2230" stroke-width="1.4"/>
+<text x="495" y="287" class="bx" fill="#ffffff" text-anchor="middle">fine-tuning data</text>
+<rect x="631" y="210" width="215" height="30" rx="3" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="738" y="229" class="bx" fill="#1a2230" text-anchor="middle">runtime data</text>
+<rect x="144" y="312" width="215" height="40" rx="3" fill="#eef1f5" stroke="#8794a8" stroke-width="1.4" stroke-dasharray="5 3"/>
+<text x="252" y="329" class="bx" fill="#1a2230" text-anchor="middle">training data</text>
+<text x="252" y="345" class="em" fill="#46536b" text-anchor="middle">exists upstream, at the vendor</text>
+<rect x="387" y="312" width="215" height="40" rx="3" fill="#eef1f5" stroke="#8794a8" stroke-width="1.4" stroke-dasharray="5 3"/>
+<text x="495" y="329" class="bx" fill="#1a2230" text-anchor="middle">training data</text>
+<text x="495" y="345" class="em" fill="#46536b" text-anchor="middle">exists upstream, at the vendor</text>
+<rect x="631" y="312" width="215" height="40" rx="3" fill="#eef1f5" stroke="#8794a8" stroke-width="1.4" stroke-dasharray="5 3"/>
+<text x="738" y="329" class="bx" fill="#1a2230" text-anchor="middle">training data</text>
+<text x="738" y="345" class="em" fill="#46536b" text-anchor="middle">exists upstream, at the vendor</text>
+<line x1="20" y1="368" x2="880" y2="368" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="20" y="384" width="14" height="14" rx="2" fill="#46536b" stroke="#1a2230" stroke-width="1"/>
+<text x="40" y="395" class="sm" fill="#1a2230">Owned corpus, held and inspectable directly</text>
+<rect x="300" y="384" width="14" height="14" rx="2" fill="#eef1f5" stroke="#1a2230" stroke-width="1"/>
+<text x="320" y="395" class="sm" fill="#1a2230">Runtime data, governed at point of use</text>
+<rect x="580" y="384" width="14" height="14" rx="2" fill="#eef1f5" stroke="#8794a8" stroke-width="1.2" stroke-dasharray="4 2"/>
+<text x="600" y="395" class="sm" fill="#1a2230">Present, but upstream: not directly accessible</text>
+<text x="20" y="418" class="sm" fill="#46536b">No cell is empty on the buy path. Limited or no access does not mean the data does not exist, and it does not mean the</text>
+<text x="20" y="436" class="sm" fill="#46536b">organization has nothing to govern; it means the governable surface sits where the figure marks it.</text>
+</svg>

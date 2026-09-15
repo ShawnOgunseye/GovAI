@@ -1,58 +1,126 @@
-<svg viewBox="0 0 960 540" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="f0102t f0102d">
+<svg viewBox="0 0 1300 496" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="f0102t f0102d" aria-label="Harm level changes what must be observed and remedied">
+<title id="f0102t">Harm level changes what must be observed and remedied</title>
+<desc id="f0102d">A matrix with five rows, individual, group, organizational, societal, and environmental harm, each naming a documented exemplar or evidence type, against four control columns: prevent, detect, respond and remedy, and learn and change. Every row carries a control in every column. Individual harm is caught most distinctively through audit and complaint review and answered through disclosure and correction. Group harm is caught through disaggregated testing. Organizational harm is answered through incident response. Societal and environmental harm are prevented earliest, at the decision to build and the choice of model and infrastructure, and are also detected through ongoing monitoring. This is an author-proposed synthesis, not a universal observed process, and the rows carry no severity order.</desc>
 <!-- REQUIRED ELEMENTS
-  Five harm levels: individual, group, organizational, societal, environmental.
-  A documented instance named at each level.
-  The lifecycle stage where the preventing control sits, per level.
-  Control stages in lifecycle order left to right, labelled.
-  Controls must visibly move EARLIER as harm becomes more diffuse.
-  For the two most diffuse levels, show that later stages cannot reach them.
-  EXCLUDED: severity ranking between levels. These are not ordered by badness.
-  SOURCE: original. Harm levels conventional; pairing to control stage is ours.
-  AUDIT: pass 1 [x] · pass 2 blind [x] · rendered and viewed [x]
+  Rebuilt per CH pass-47 CH590/CH417 spec, method following the Chapter 18
+  Figure 18.1 rebuild in Pass 32: a black/white/grey matrix, no dot-grid, no
+  unexplained weight, monochrome-verified, rendered and collision-checked
+  before delivery.
+  One black/white/grey matrix. Five rows: individual, group, organizational,
+  societal, environmental. Each row names a documented exemplar or evidence
+  type and is scored against four control columns: prevent, detect, respond
+  and remedy, learn and change. Every row has text in every column: no row
+  reduces to a single stage. Bold marks the one or two columns each row's
+  own case-evidence source (see CASE_SOURCES.md) shows carrying the most
+  distinctive weight for that harm level; it is not a severity ranking
+  between rows, and rows are not ordered by how bad the harm is.
+  EXCLUDED: filled/open dots, icons, gradients, colour coding, severity order.
+  SOURCE: NIST AI 600-1 Generative AI Profile; NIST AI RMF Measure playbook;
+  this chapter's own documented cases (CASE_SOURCES.md). Matrix structure,
+  cell content and emphasis pattern original, per CH590.
+  REPLACES the dot-grid version flagged under CH009/CH417 (Pass 16) for
+  bottom overflow, a text/line collision, and unexplained dot weight.
+  Pass 48 CH417 repair: added aria-label, moved title/desc immediately after
+  the opening svg tag, and replaced the ORGANIZATIONAL and SOCIETAL exemplar
+  cells (previously sourcing-instruction placeholder text) with the two
+  named exemplars CH verified with primary sources: the EEOC's iTutorGroup
+  settlement and the FCC's AI-voice robocall ruling. Final-size type-scale
+  and layout (CH417 defect 1) remains OPEN, logged in badw-book-log.md
+  Pass 48; it is a page-format decision this pass did not make unilaterally.
+  Pass 51 CH417 repair: every fill/stroke of #2B3A42 (a blue-tinted dark,
+  not a neutral grey) replaced with #1A1A1A, matching the header ink
+  already in use in this file. Palette is now #ffffff, #1A1A1A, #BFBFBF
+  only. Re-checked well-formed (xmllint) and re-rendered (rsvg-convert)
+  after the change; no clipping or collision introduced. CH's Pass 51 ask
+  to replace the ENVIRONMENTAL row's "measured evidence" exemplar with a
+  cited measured case was not actioned; see badw-book-log.md Pass 51 (the
+  chapter's own prose at the matching passage states, and gives the reason,
+  that it deliberately does not pin this figure to a fast-moving specific
+  number). The "rows carry no severity order" sentence CH asked to
+  preserve was already present in both the desc and the footer and both
+  are unchanged. Final-size type-scale/layout remains OPEN as in Pass 48.
+  Checked 13 Sep 2026.
 -->
-<title id="f0102t">Where harm lands and where the preventing control sits</title>
-<desc id="f0102d">Five rows, one per level of harm, from individual at the top to environmental at the bottom. Each names a documented instance. A control marker sits in the column for the lifecycle stage where the preventing control belongs, and the markers move progressively leftward down the rows. For societal and environmental harm the marker sits at the decision to build, and the remaining stages are shown greyed to indicate that no later control reaches those harms.</desc>
+<rect x="0" y="0" width="1300" height="496" fill="#ffffff"/>
 <g font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif">
-
-<g font-size="11" font-family="'IBM Plex Mono',monospace" fill="#2B3A42" letter-spacing="1">
-<text x="300" y="30">DECIDE</text><text x="432" y="30">ASSESS</text><text x="566" y="30">TEST</text><text x="690" y="30">RELEASE</text><text x="828" y="30">USE</text>
+<g font-size="10.2" font-family="'IBM Plex Mono',monospace" fill="#1A1A1A" letter-spacing="0.5">
+<text x="281.0" y="42" text-anchor="middle">EXEMPLAR OR</text>
+<text x="281.0" y="56" text-anchor="middle">EVIDENCE</text>
+<text x="503.0" y="42" text-anchor="middle">PREVENT</text>
+<text x="725.0" y="42" text-anchor="middle">DETECT</text>
+<text x="947.0" y="42" text-anchor="middle">RESPOND &amp;</text>
+<text x="947.0" y="56" text-anchor="middle">REMEDY</text>
+<text x="1169.0" y="42" text-anchor="middle">LEARN &amp;</text>
+<text x="1169.0" y="56" text-anchor="middle">CHANGE</text>
 </g>
-<line x1="286" y1="42" x2="940" y2="42" stroke="#2B3A42" stroke-width="1.5"/>
-<g stroke="#B8C4CA" stroke-width="1" stroke-dasharray="2 6">
-<line x1="292" y1="48" x2="292" y2="466"/><line x1="424" y1="48" x2="424" y2="466"/>
-<line x1="558" y1="48" x2="558" y2="466"/><line x1="682" y1="48" x2="682" y2="466"/><line x1="820" y1="48" x2="820" y2="466"/>
-</g>
-
-<g font-size="14.5" fill="#2B3A42" font-weight="600">
-<text x="20" y="94">Individual</text><text x="20" y="176">Group</text><text x="20" y="258">Organizational</text>
-<text x="20" y="340">Societal</text><text x="20" y="422">Environmental</text>
-</g>
-<g font-size="11.5" fill="#2B3A42" opacity="0.72">
-<text x="20" y="114">wrongful arrest, Detroit 2020</text><text x="20" y="196">care algorithm, cost as proxy</text>
-<text x="20" y="278">recruiting tool, abandoned</text><text x="20" y="360">synthetic content at scale</text>
-<text x="20" y="442">energy and water at scale</text>
-</g>
-
-<rect x="770" y="82" width="160" height="34" rx="3" fill="#FFFFFF" stroke="#1F6FEB" stroke-width="1.5"/>
-<text x="850" y="104" font-size="12" text-anchor="middle" fill="#1F6FEB">human oversight</text>
-
-<rect x="500" y="164" width="176" height="34" rx="3" fill="#FFFFFF" stroke="#1F6FEB" stroke-width="1.5"/>
-<text x="588" y="186" font-size="12" text-anchor="middle" fill="#1F6FEB">disaggregated testing</text>
-
-<rect x="376" y="246" width="164" height="34" rx="3" fill="#FFFFFF" stroke="#1F6FEB" stroke-width="1.5"/>
-<text x="458" y="268" font-size="12" text-anchor="middle" fill="#1F6FEB">impact assessment</text>
-
-<rect x="366" y="328" width="574" height="34" rx="3" fill="#F4F6F7" stroke="none"/>
-<rect x="244" y="328" width="118" height="34" rx="3" fill="#FFFFFF" stroke="#B3541E" stroke-width="2"/>
-<text x="303" y="350" font-size="12" text-anchor="middle" fill="#B3541E">build or not</text>
-<text x="380" y="350" font-size="11.5" fill="#2B3A42" opacity="0.55">no later stage reaches this harm</text>
-
-<rect x="366" y="410" width="574" height="34" rx="3" fill="#F4F6F7" stroke="none"/>
-<rect x="244" y="410" width="118" height="34" rx="3" fill="#FFFFFF" stroke="#B3541E" stroke-width="2"/>
-<text x="303" y="432" font-size="12" text-anchor="middle" fill="#B3541E">build or not</text>
-<text x="380" y="432" font-size="11.5" fill="#2B3A42" opacity="0.55">no later stage reaches this harm</text>
-
-<line x1="20" y1="480" x2="940" y2="480" stroke="#B8C4CA" stroke-width="1"/>
-<text x="20" y="510" font-size="13.5" fill="#2B3A42">The more diffuse the harm, the earlier the only control that reaches it.</text>
-</g>
-</svg>
+<line x1="20" y1="76" x2="1280" y2="76" stroke="#1A1A1A" stroke-width="1.5"/>
+<line x1="170.0" y1="76" x2="170.0" y2="416.0" stroke="#BFBFBF" stroke-width="1" stroke-dasharray="2 5"/>
+<line x1="392.0" y1="76" x2="392.0" y2="416.0" stroke="#BFBFBF" stroke-width="1" stroke-dasharray="2 5"/>
+<line x1="614.0" y1="76" x2="614.0" y2="416.0" stroke="#BFBFBF" stroke-width="1" stroke-dasharray="2 5"/>
+<line x1="836.0" y1="76" x2="836.0" y2="416.0" stroke="#BFBFBF" stroke-width="1" stroke-dasharray="2 5"/>
+<line x1="1058.0" y1="76" x2="1058.0" y2="416.0" stroke="#BFBFBF" stroke-width="1" stroke-dasharray="2 5"/>
+<line x1="1280.0" y1="76" x2="1280.0" y2="416.0" stroke="#BFBFBF" stroke-width="1" stroke-dasharray="2 5"/>
+<text x="24.0" y="106.0" font-size="13" font-weight="700" fill="#1A1A1A">INDIVIDUAL</text>
+<text x="180.0" y="106.0" font-size="9.6" font-style="italic" fill="#1A1A1A">Robert Williams</text>
+<text x="402.0" y="106.0" font-size="9.6" font-weight="400" fill="#1A1A1A">Evidence rule;</text>
+<text x="402.0" y="119.2" font-size="9.6" font-weight="400" fill="#1A1A1A">independent review; use</text>
+<text x="402.0" y="132.4" font-size="9.6" font-weight="400" fill="#1A1A1A">restriction</text>
+<text x="624.0" y="106.0" font-size="9.6" font-weight="600" fill="#1A1A1A">Audit decisions and</text>
+<text x="624.0" y="119.2" font-size="9.6" font-weight="600" fill="#1A1A1A">complaints</text>
+<text x="846.0" y="106.0" font-size="9.6" font-weight="600" fill="#1A1A1A">Disclosure; correction;</text>
+<text x="846.0" y="119.2" font-size="9.6" font-weight="600" fill="#1A1A1A">remedy</text>
+<text x="1068.0" y="106.0" font-size="9.6" font-weight="400" fill="#1A1A1A">Revise workflow and</text>
+<text x="1068.0" y="119.2" font-size="9.6" font-weight="400" fill="#1A1A1A">supervision</text>
+<line x1="20" y1="152.0" x2="1280" y2="152.0" stroke="#BFBFBF" stroke-width="1"/>
+<text x="24.0" y="172.0" font-size="13" font-weight="700" fill="#1A1A1A">GROUP</text>
+<text x="180.0" y="172.0" font-size="9.6" font-style="italic" fill="#1A1A1A">Health cost proxy study</text>
+<text x="402.0" y="172.0" font-size="9.6" font-weight="400" fill="#1A1A1A">Construct and data</text>
+<text x="402.0" y="185.2" font-size="9.6" font-weight="400" fill="#1A1A1A">review</text>
+<text x="624.0" y="172.0" font-size="9.6" font-weight="600" fill="#1A1A1A">Disaggregated testing</text>
+<text x="624.0" y="185.2" font-size="9.6" font-weight="600" fill="#1A1A1A">and outcome monitoring</text>
+<text x="846.0" y="172.0" font-size="9.6" font-weight="400" fill="#1A1A1A">Investigate disparity;</text>
+<text x="846.0" y="185.2" font-size="9.6" font-weight="400" fill="#1A1A1A">adjust or stop</text>
+<text x="1068.0" y="172.0" font-size="9.6" font-weight="400" fill="#1A1A1A">Reassess proxy and</text>
+<text x="1068.0" y="185.2" font-size="9.6" font-weight="400" fill="#1A1A1A">affected population</text>
+<line x1="20" y1="218.0" x2="1280" y2="218.0" stroke="#BFBFBF" stroke-width="1"/>
+<text x="24.0" y="238.0" font-size="13" font-weight="700" fill="#1A1A1A">ORGANIZATIONAL</text>
+<text x="180.0" y="238.0" font-size="9.6" font-style="italic" fill="#1A1A1A">iTutorGroup age-screening</text>
+<text x="180.0" y="251.2" font-size="9.6" font-style="italic" fill="#1A1A1A">settlement, 2023</text>
+<text x="402.0" y="238.0" font-size="9.6" font-weight="400" fill="#1A1A1A">Release authority and</text>
+<text x="402.0" y="251.2" font-size="9.6" font-weight="400" fill="#1A1A1A">ownership</text>
+<text x="624.0" y="238.0" font-size="9.6" font-weight="400" fill="#1A1A1A">Operational monitoring</text>
+<text x="624.0" y="251.2" font-size="9.6" font-weight="400" fill="#1A1A1A">and assurance</text>
+<text x="846.0" y="238.0" font-size="9.6" font-weight="600" fill="#1A1A1A">Incident response and</text>
+<text x="846.0" y="251.2" font-size="9.6" font-weight="600" fill="#1A1A1A">continuity</text>
+<text x="1068.0" y="238.0" font-size="9.6" font-weight="400" fill="#1A1A1A">Correct controls and</text>
+<text x="1068.0" y="251.2" font-size="9.6" font-weight="400" fill="#1A1A1A">accountability</text>
+<line x1="20" y1="284.0" x2="1280" y2="284.0" stroke="#BFBFBF" stroke-width="1"/>
+<text x="24.0" y="304.0" font-size="13" font-weight="700" fill="#1A1A1A">SOCIETAL</text>
+<text x="180.0" y="304.0" font-size="9.6" font-style="italic" fill="#1A1A1A">FCC voice-cloning robocall</text>
+<text x="180.0" y="317.2" font-size="9.6" font-style="italic" fill="#1A1A1A">ruling, 2024</text>
+<text x="402.0" y="304.0" font-size="9.6" font-weight="600" fill="#1A1A1A">Use case and</text>
+<text x="402.0" y="317.2" font-size="9.6" font-weight="600" fill="#1A1A1A">distribution decision</text>
+<text x="624.0" y="304.0" font-size="9.6" font-weight="600" fill="#1A1A1A">Abuse and ecosystem</text>
+<text x="624.0" y="317.2" font-size="9.6" font-weight="600" fill="#1A1A1A">monitoring</text>
+<text x="846.0" y="304.0" font-size="9.6" font-weight="400" fill="#1A1A1A">Limit distribution;</text>
+<text x="846.0" y="317.2" font-size="9.6" font-weight="400" fill="#1A1A1A">notify relevant</text>
+<text x="846.0" y="330.4" font-size="9.6" font-weight="400" fill="#1A1A1A">authority</text>
+<text x="1068.0" y="304.0" font-size="9.6" font-weight="400" fill="#1A1A1A">Redesign policy or</text>
+<text x="1068.0" y="317.2" font-size="9.6" font-weight="400" fill="#1A1A1A">retire the use</text>
+<line x1="20" y1="350.0" x2="1280" y2="350.0" stroke="#BFBFBF" stroke-width="1"/>
+<text x="24.0" y="370.0" font-size="13" font-weight="700" fill="#1A1A1A">ENVIRONMENTAL</text>
+<text x="180.0" y="370.0" font-size="9.6" font-style="italic" fill="#1A1A1A">Measured energy, water,</text>
+<text x="180.0" y="383.2" font-size="9.6" font-style="italic" fill="#1A1A1A">and location evidence</text>
+<text x="402.0" y="370.0" font-size="9.6" font-weight="600" fill="#1A1A1A">Model, infrastructure,</text>
+<text x="402.0" y="383.2" font-size="9.6" font-weight="600" fill="#1A1A1A">and siting decision</text>
+<text x="624.0" y="370.0" font-size="9.6" font-weight="600" fill="#1A1A1A">Metered resource use</text>
+<text x="846.0" y="370.0" font-size="9.6" font-weight="400" fill="#1A1A1A">Reduce load and local</text>
+<text x="846.0" y="383.2" font-size="9.6" font-weight="400" fill="#1A1A1A">impact</text>
+<text x="1068.0" y="370.0" font-size="9.6" font-weight="400" fill="#1A1A1A">Change architecture,</text>
+<text x="1068.0" y="383.2" font-size="9.6" font-weight="400" fill="#1A1A1A">procurement, or</text>
+<text x="1068.0" y="396.4" font-size="9.6" font-weight="400" fill="#1A1A1A">retirement plan</text>
+<line x1="20" y1="416.0" x2="1280" y2="416.0" stroke="#1A1A1A" stroke-width="1.5"/>
+<text x="20" y="442.0" font-size="13" fill="#1A1A1A">Illustrative control coverage. The context determines emphasis. Every material control needs an owner,</text>
+<text x="20" y="462.0" font-size="13" fill="#1A1A1A">evidence, an exception route, and a closure test. Rows are not ordered by how severe the harm is.</text>
+<text x="20" y="484.0" font-size="10.2" font-style="italic" fill="#1A1A1A" opacity="0.7">Author-proposed synthesis, not an observed universal process. Checked 13 Sep 2026.</text>
+</g></svg>

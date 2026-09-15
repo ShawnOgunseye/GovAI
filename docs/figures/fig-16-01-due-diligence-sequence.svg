@@ -1,0 +1,57 @@
+<svg viewBox="0 0 900 452" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Due diligence sequence">
+<!-- FIGURE 16.1 REQUIRED ELEMENTS
+Must appear as a process canvas: the three-stage due diligence sequence
+(open questions, specific questions, limitation questions) in order, with
+a branch showing what happens when a vendor declines a question at any
+stage, feeding into documentation of the decline and a disqualifying-gap
+check. Entry condition: a vendor relationship is under evaluation. Exit
+condition: either sufficient evidence has been gathered or a disqualifying
+gap has been identified and documented. Deliberately excluded: the supply
+chain layers (Figure 16.2's job). Must work in black and white.
+SOURCE: original; the sequence is this chapter's own synthesis of section
+16.1 and 16.3's argument, built from the TalentScreen case.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<title>Due diligence sequence</title>
+<style>
+text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.ttl{font-size:17px;font-weight:700;}
+.cls{font-size:14px;font-weight:700;}
+.bx{font-size:12.5px;font-weight:400;}
+.col{font-size:11px;font-weight:700;letter-spacing:.06em;}
+.sm{font-size:11px;font-weight:400;}
+.em{font-size:11px;font-style:italic;}
+</style>
+<rect x="0" y="0" width="900" height="452" fill="#ffffff"/>
+<text x="20" y="34" class="ttl" fill="#1a2230">Figure 16.1 &#183; Due diligence sequence</text>
+<rect x="30" y="58" width="430" height="82" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="42" y="82" class="bx" font-weight="700" fill="#1a2230">1. OPEN QUESTIONS</text>
+<text x="42" y="102" class="sm" fill="#46536b">describe intended use and the</text>
+<text x="42" y="118" class="sm" fill="#46536b">populations tested (16.1)</text>
+<rect x="30" y="166" width="430" height="96" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="42" y="190" class="bx" font-weight="700" fill="#1a2230">2. SPECIFIC QUESTIONS</text>
+<text x="42" y="210" class="sm" fill="#46536b">disaggregated performance for</text>
+<text x="42" y="226" class="sm" fill="#46536b">the populations this deployment</text>
+<text x="42" y="242" class="sm" fill="#46536b">will actually serve (16.1)</text>
+<rect x="30" y="288" width="430" height="96" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="42" y="312" class="bx" font-weight="700" fill="#1a2230">3. LIMITATION QUESTIONS</text>
+<text x="42" y="332" class="sm" fill="#46536b">failures in the past twelve months;</text>
+<text x="42" y="348" class="sm" fill="#46536b">use cases explicitly not</text>
+<text x="42" y="364" class="sm" fill="#46536b">supported, asked last (16.1)</text>
+<line x1="245.0" y1="140.0" x2="245.0" y2="158.0" stroke="#1a2230" stroke-width="1.8"/><polygon points="245.0,166.0 241.0,158.0 249.0,158.0" fill="#1a2230"/>
+<line x1="245.0" y1="262.0" x2="245.0" y2="280.0" stroke="#1a2230" stroke-width="1.8"/><polygon points="245.0,288.0 241.0,280.0 249.0,280.0" fill="#1a2230"/>
+<rect x="510" y="58" width="370" height="326" rx="4" fill="#ffffff" stroke="#8a3324" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="522" y="80" class="bx" font-weight="700" fill="#8a3324">ON ANY DECLINE (16.3)</text>
+<text x="522" y="104" class="sm" fill="#46536b">1. narrow to the non-proprietary core:</text>
+<text x="522" y="121" class="sm" fill="#46536b">   date, sample size, metric names</text>
+<text x="522" y="138" class="sm" fill="#46536b">2. still declines? document the decline</text>
+<text x="522" y="155" class="sm" fill="#46536b">   as evidence in its own right</text>
+<text x="522" y="172" class="sm" fill="#46536b">3. check whether the gap is</text>
+<text x="522" y="189" class="sm" fill="#46536b">   disqualifying for this risk tier</text>
+<line x1="468.0" y1="99.0" x2="502.0" y2="99.0" stroke="#8a3324" stroke-width="1.8"/><polygon points="510.0,99.0 502.0,103.0 502.0,95.0" fill="#8a3324"/>
+<line x1="468.0" y1="214.0" x2="502.0" y2="214.0" stroke="#8a3324" stroke-width="1.8"/><polygon points="510.0,214.0 502.0,218.0 502.0,210.0" fill="#8a3324"/>
+<line x1="468.0" y1="336.0" x2="502.0" y2="336.0" stroke="#8a3324" stroke-width="1.8"/><polygon points="510.0,336.0 502.0,340.0 502.0,332.0" fill="#8a3324"/>
+<line x1="20" y1="402" x2="880" y2="402" stroke="#c9d1dc" stroke-width="1"/>
+<text x="20" y="418" class="sm" fill="#46536b">A decline does not end the inquiry; it redirects to a narrower, non-proprietary version of the same</text>
+<text x="20" y="436" class="sm" fill="#46536b">question, and only a decline that survives that narrowing gets evaluated against the disqualifying-gap standard.</text>
+</svg>
