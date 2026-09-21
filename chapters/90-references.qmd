@@ -32,6 +32,14 @@ National Institute of Standards and Technology. *Artificial Intelligence Risk Ma
 
 National Institute of Standards and Technology. *Generative Artificial Intelligence Profile*. NIST AI 600-1.
 
+International Organization for Standardization and International Electrotechnical Commission. *ISO/IEC 23894:2023, Information technology, Artificial intelligence, Guidance on risk management*.
+
+Board of Governors of the Federal Reserve System. *SR 26-2: Supervisory Guidance on Model Risk Management*, 17 April 2026. Supersedes SR 11-7 (2011).
+
+Prudential Regulation Authority. *SS1/23: Model risk management principles for banks*, 2023.
+
+Treasury Board of Canada Secretariat. *Algorithmic Impact Assessment tool*, and *Directive on Automated Decision-Making*, Appendix B.
+
 ISO/IEC 42001:2023, *Information technology — Artificial intelligence — Management system*.
 
 ISO/IEC 42005, *Information technology — Artificial intelligence — AI system impact assessment*.
@@ -61,6 +69,12 @@ Institute of Internal Auditors. *The IIA's Three Lines Model*, 2020.
 *Equal Employment Opportunity Commission v. iTutorGroup, Inc.* Settled 2023 by public consent decree, $365,000. The allegation concerned application software that automatically rejected older applicants. Whether the screening tool used machine learning was never established on the record.
 
 ## Scholarship and documented findings
+
+Cox, L. A. "What's Wrong with Risk Matrices?" *Risk Analysis* 28, no. 2 (2008): 497–512.
+
+Cox, L. A., D. Babayev, and W. Huber. "Some Limitations of Qualitative Risk Rating Systems." *Risk Analysis* 25, no. 3 (2005): 651–662.
+
+Kiritz, N., M. Ravitz, and M. Levonian. "Model risk tiering: an exploration of industry practices and principles." *Journal of Risk Model Validation* 13, no. 2 (2019): 47–77.
 
 Buolamwini, J., & Gebru, T. (2018). Gender shades: intersectional accuracy disparities in commercial gender classification. *Proceedings of Machine Learning Research*, 81, 77–91.
 
