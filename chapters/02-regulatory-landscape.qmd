@@ -20,7 +20,7 @@ What follows is an accurate account of the obligations in force as of August 202
 
 ## 2.1 GDPR and AI
 
-Before any AI-specific regulation existed, privacy law already applied, and for most organizations it remains the regulation that bites soonest. AI systems process personal data at training, at inference, and in their outputs.
+Before any AI-specific regulation existed, privacy law already applied, and for most organizations it remains the regulation that applies soonest. AI systems process personal data at training, at inference, and in their outputs.
 
 The European Union's General Data Protection Regulation applies to processing carried out through an establishment in the EU. It can also reach a controller or processor outside the EU when the processing relates to offering goods or services to people in the EU or monitoring their behaviour there. A person's presence in the EU is not, by itself, the test. Four of its requirements press directly on how AI is built.
 
@@ -38,7 +38,7 @@ One provision deserves extended treatment because it governs the situations wher
 
 GDPR Article 22 gives a person the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning them or similarly significantly affects them. Three elements determine whether it applies.
 
-The first is whether the decision is **solely automated**. If a person is meaningfully involved, the article does not engage. Everything turns on what meaningfully means, and regulators have been clear that involvement which is nominal does not count. A reviewer who approves whatever the system produces has not removed the decision from the article's scope.
+The first is whether the decision is **solely automated**. If a person is meaningfully involved, the article does not engage. Everything depends on what meaningfully means, and regulators have been clear that involvement which is nominal does not count. A reviewer who approves whatever the system produces has not removed the decision from the article's scope.
 
 The Article itself does not name a test. The European Data Protection Board's guidance, and the Court of Justice's 2023 SCHUFA judgment, establish two things as law. Token involvement does not remove a decision from Article 22, and a score can itself be a decision within the Article even when a person formally signs off afterward, if that score effectively determines the outcome. What counts as genuine involvement in a given case is then a matter of evidence, not a fixed formula. In practice, auditors look for whether the reviewer has authority to reach a different conclusion, access to information beyond the system's output, time proportionate to the decision, and a nonzero override rate. They also look for the opposite signature, where approval rates approach unity, review times are too short for the information to have been read, nothing beyond the system's output is available, and performance measures reward agreeing with the system. None of these indicators is a settled legal threshold, and their weight depends on the context. What the law is clear on is that a reviewer who rubber-stamps has not removed the decision from the Article's scope, and that an upstream score which effectively decides the outcome can fall within Article 22 on its own.
 

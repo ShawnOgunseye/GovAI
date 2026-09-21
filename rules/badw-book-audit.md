@@ -846,6 +846,66 @@ authorial decisions about a hypothetical case, not defects an agent should resol
 
 ---
 
+## A18-018 — Borrowed verbs, book-wide, 2026-09-21
+
+**Raised by:** the author, after reading a teaching note I wrote. "If you follow W, we
+won't have such things like 'turn on'." Then, correctly sharpening it: "fires? it is not
+in the subject domain so shouldn't be used. any word not in the domain should never be
+used. surfaces?"
+
+**My first answer was wrong and is recorded as such.** I measured 292 instances of vague
+metaphor, fixed the obvious ones, and then defended `surfaces`, `fires`, `reaches` and
+`attaches` as domain vocabulary. Two of those four are not. A trigger does not ignite. A
+dependency does not rise through water. I had drawn the line at what sounded
+professional to me rather than at what a reader can picture, which is the same fault the
+rule is supposed to catch.
+
+**The rule as it now stands.** "Is this word from the domain" cannot be the test, because
+almost no verb originates in AI governance. The usable test is whether the reader has to
+picture a physical action to recover the meaning. Ask what is physically happening in the
+sentence; if the literal answer is absurd, the verb is borrowed and the translation is
+work the writer left undone. The same word passes or fails by subject: software **runs**,
+a record **carries** a date, an obligation **attaches** to a system, a law **reaches** a
+deployer. None of those asks the reader to picture anything. Written into section 6 with
+a six-row table of failures and their replacements.
+
+**Measurement.** 693 instances of twelve borrowed verbs book-wide. Of those, `runs` (146)
+and `carries` (166) are overwhelmingly literal and were left alone.
+
+**Instrument faults recorded and withdrawn.** Three. `sweep` is a defined term in section
+3.5 with its own Appendix C template. `collapse`, as in collapsing two categories into
+one, is standard analytic usage. `data surface` is a defined term in Chapter 5, and 11 of
+that chapter's 24 `surfac*` hits are the noun, not the verb. Reporting any of these would
+have been a finding against the book's own vocabulary.
+
+**Fixed in Chapters 1 through 6.**
+
+| Was | Now |
+|---|---|
+| the trace surfaces a dependency | the trace finds it |
+| an automatic trigger fires | an automatic trigger applies |
+| a deployment lands here when | a deployment belongs here when |
+| averaging buries the factor that should drive the decision | averaging hides the factor that should decide the outcome |
+| record which factor drove it | record which factor decided it |
+| everything turns on what meaningfully means | everything depends on what meaningfully means |
+| the regulation that bites soonest | the regulation that applies soonest |
+| the full apparatus | the full set of high-tier controls |
+| two questions are in play | two questions have to be answered |
+| materially is doing work in that sentence | materially is the word that decides the outcome |
+| no purchase on the training decisions | no way to influence the training decisions |
+| the boundary a real decision turns on | the boundary where a real decision is made |
+
+**CORE-05A, found while here.** Chapter 7 carried 37 `judg*` hits. 24 are `judge model`,
+the technical term for LLM-as-a-judge evaluation, which is protected field vocabulary and
+was withdrawn as a fourth instrument fault. The other 13 were real and are fixed. Chapter
+2's single hit is `SCHUFA judgment`, a case name, which the rule does not reach.
+
+**Open.** 59 borrowed-verb instances remain in Chapters 7 through 18 and the appendices.
+Those chapters have not been audited and are queued for the weekly batches. The rule is
+now in section 6, so those runs will catch them.
+
+---
+
 ## Portfolio measurements, 2026-09-21
 
 Recorded so the outstanding audit work is bounded. A measurement is not an audit

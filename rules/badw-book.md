@@ -519,6 +519,54 @@ construction only where the reader actually holds Y.
 **Meta-commentary.** The chapter makes its argument; it does not announce that it is
 about to. If it needs to say "this is important", it has not yet shown why.
 
+**Metaphor standing in for a verb.** A reader who cannot picture the action does not
+know what was claimed. "Everything turns on what meaningfully means" reads as
+sophisticated and says only "depends on". The same fault produces "the regulation that
+bites soonest", "the full apparatus", "two questions are in play", "materially is doing
+work in that sentence", "no purchase on the training decisions", and "the boundary a
+decision turns on". Each replaces a plain verb with a figure the reader has to decode.
+**Test:** read the sentence aloud to someone outside the field and ask what the verb
+means. If they hesitate, or answer with the metaphor rather than the action, the word
+is not carrying meaning. **On failure:** name the action. Depends on. Applies. Controls.
+Decides. Asks. Influences.
+
+**The borrowed-verb test.** Almost no verb originates in AI governance, so "is this word
+from the domain" cannot be the test. The usable test is whether the reader has to picture
+a physical action to recover the meaning.
+
+Ask: *what is physically happening in this sentence?* If the answer is an image the reader
+must translate, the word is borrowed and the translation is work the writer should have
+done. A dependency does not rise through water, so it does not **surface**; the trace
+finds it. A trigger does not ignite, so it does not **fire**; its condition is met. A
+system does not have a seat, so it does not **sit** inside a boundary; it is inside one.
+A finding does not fall from a height, so it does not **land** in a tier; it is placed
+there. Nothing is **swept** up, **buried**, or **collapsed** in a governance process.
+
+The same word can pass or fail depending on the subject. Software **runs**, because that
+is what execution is called. A test is **run**. A record **carries** a date, because
+recording is what records do. An obligation **attaches** to a system and a law **reaches**
+a deployer, because those are the operative verbs in legal drafting and the alternatives
+are longer and less precise. None of those requires the reader to picture anything.
+
+| Fails | Because | Use |
+|---|---|---|
+| the trace surfaces a dependency | nothing rises | the trace finds it |
+| the trigger fires | nothing ignites | the condition is met |
+| the system sits inside the boundary | nothing is seated | it is inside |
+| the finding lands in the high tier | nothing falls | it is placed there |
+| the sweep surfaces shadow AI | two borrowed words | the sweep finds it |
+| averaging buries the driving factor | nothing is interred | averaging hides it |
+
+**Test:** for every verb in a sentence, ask what is physically happening. If the literal
+answer is absurd, the verb is borrowed. **On failure:** name the action in the words the
+reader would use to describe it.
+
+**Vagueness that survives because it sounds authoritative.** Some words pass unnoticed
+because they signal expertise rather than convey it: *apparatus* for a set of controls,
+*traction* for progress, *in play* for relevant, *goes to* for concerns. **Test:**
+replace the word with the plainest available alternative. If the sentence loses nothing,
+the word was decoration. **On failure:** keep the plain version.
+
 **Fluff.** "It is worth noting", "in order to", "the fact that", "plays a critical
 role in", "a number of", "in the context of".
 
