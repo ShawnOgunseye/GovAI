@@ -1,0 +1,66 @@
+<svg viewBox="0 0 900 362" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Retrieval pipeline with governance and injection points">
+<!-- FIGURE 11.2 REQUIRED ELEMENTS
+Must appear as an architecture canvas with a trust boundary: the retrieval
+pipeline stages (query, retrieve, assemble context, generate) with the
+permission-check point marked explicitly as occurring at retrieval, not
+after, and the injection surface marked at the point where retrieved
+content crosses into the same context the system instructions occupy.
+Entry condition: a user submits a query to a retrieval-augmented
+generative system. Exit condition: a response grounded in
+permission-appropriate, provenance-tracked source material. Deliberately
+excluded: the corpus governance question of what material exists in the
+store at all (Chapter 5's job). Must work in black and white.
+SOURCE: original; pipeline stages are standard retrieval-augmented
+generation architecture; the explicit permission-check placement and
+injection-surface marking are this book's own governance overlay.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<title>Retrieval pipeline with governance and injection points</title>
+<style>
+text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.ttl{font-size:17px;font-weight:700;}
+.cls{font-size:14px;font-weight:700;}
+.bx{font-size:12.5px;font-weight:400;}
+.col{font-size:11px;font-weight:700;letter-spacing:.06em;}
+.sm{font-size:11px;font-weight:400;}
+.em{font-size:11px;font-style:italic;}
+</style>
+<rect x="0" y="0" width="900" height="362" fill="#ffffff"/>
+<text x="20" y="34" class="ttl" fill="#1a2230">Figure 11.2 &#183; Retrieval pipeline with governance and injection points</text>
+<rect x="30" y="58" width="300" height="66" rx="4" fill="#ffffff" stroke="#46536b" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="40" y="78" class="col" fill="#46536b">TRUSTED CHANNEL</text>
+<text x="40" y="98" class="sm" fill="#1a2230">system instructions, kept</text>
+<text x="40" y="113" class="sm" fill="#1a2230">separate from retrieved data</text>
+<rect x="435" y="58" width="195" height="66" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.6"/>
+<text x="532.5" y="78" class="sm" font-weight="700" fill="#8a3324" text-anchor="middle">INJECTION SURFACE</text>
+<text x="532.5" y="96" class="sm" fill="#1a2230" text-anchor="middle">retrieved content meets</text>
+<text x="532.5" y="111" class="sm" fill="#1a2230" text-anchor="middle">system instructions</text>
+<line x1="180.0" y1="124.0" x2="462.0" y2="153.2" stroke="#46536b" stroke-width="1.8"/><polygon points="470.0,154.0 461.6,157.2 462.5,149.2" fill="#46536b"/>
+<line x1="532.5" y1="124.0" x2="532.5" y2="146.0" stroke="#8a3324" stroke-width="1.8"/><polygon points="532.5,154.0 528.5,146.0 536.5,146.0" fill="#8a3324"/>
+<rect x="30" y="158" width="165" height="60" rx="4" fill="#1a2230"/>
+<text x="112.5" y="180" class="bx" fill="#ffffff" text-anchor="middle" font-weight="700">QUERY</text>
+<text x="112.5" y="196" class="sm" fill="#ffffff" text-anchor="middle">user's request,</text>
+<text x="112.5" y="210" class="sm" fill="#ffffff" text-anchor="middle">with identity</text>
+<line x1="195.0" y1="188.0" x2="224.0" y2="188.0" stroke="#1a2230" stroke-width="1.8"/><polygon points="232.0,188.0 224.0,192.0 224.0,184.0" fill="#1a2230"/>
+<rect x="240" y="158" width="165" height="60" rx="4" fill="#1a2230"/>
+<text x="322.5" y="180" class="bx" fill="#ffffff" text-anchor="middle" font-weight="700">RETRIEVE</text>
+<text x="322.5" y="196" class="sm" fill="#ffffff" text-anchor="middle">fetch by requester's</text>
+<text x="322.5" y="210" class="sm" fill="#ffffff" text-anchor="middle">own permissions</text>
+<line x1="405.0" y1="188.0" x2="434.0" y2="188.0" stroke="#1a2230" stroke-width="1.8"/><polygon points="442.0,188.0 434.0,192.0 434.0,184.0" fill="#1a2230"/>
+<rect x="450" y="158" width="165" height="60" rx="4" fill="#1a2230"/>
+<text x="532.5" y="180" class="bx" fill="#ffffff" text-anchor="middle" font-weight="700">ASSEMBLE</text>
+<text x="532.5" y="196" class="sm" fill="#ffffff" text-anchor="middle">context: source plus</text>
+<text x="532.5" y="210" class="sm" fill="#ffffff" text-anchor="middle">instructions combine</text>
+<line x1="615.0" y1="188.0" x2="644.0" y2="188.0" stroke="#1a2230" stroke-width="1.8"/><polygon points="652.0,188.0 644.0,192.0 644.0,184.0" fill="#1a2230"/>
+<rect x="660" y="158" width="165" height="60" rx="4" fill="#1a2230"/>
+<text x="742.5" y="180" class="bx" fill="#ffffff" text-anchor="middle" font-weight="700">GENERATE</text>
+<text x="742.5" y="196" class="sm" fill="#ffffff" text-anchor="middle">produce grounded</text>
+<text x="742.5" y="210" class="sm" fill="#ffffff" text-anchor="middle">response</text>
+<line x1="322.5" y1="218.0" x2="322.5" y2="222.0" stroke="#8a3324" stroke-width="1.8"/><polygon points="322.5,230.0 318.5,222.0 326.5,222.0" fill="#8a3324"/>
+<rect x="225" y="234" width="195" height="54" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.6"/>
+<text x="322.5" y="254" class="sm" font-weight="700" fill="#8a3324" text-anchor="middle">PERMISSION CHECK HERE</text>
+<text x="322.5" y="270" class="sm" fill="#1a2230" text-anchor="middle">not filtered afterward</text>
+<line x1="20" y1="312" x2="880" y2="312" stroke="#c9d1dc" stroke-width="1"/>
+<text x="20" y="328" class="sm" fill="#46536b">The permission check belongs at retrieval, filtering what is fetched by the requester&#39;s own entitlements.</text>
+<text x="20" y="346" class="sm" fill="#46536b">The injection surface sits where retrieved content and system instructions first share one context together.</text>
+</svg>

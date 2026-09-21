@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>17. Implementing AI Governance – How to Govern AI</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/18-governing-under-uncertainty.html" rel="next">
+<link href="../chapters/16-third-party-vendor-and-supply-chain-governance.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-176b1e44b272a30ec08500e73512b2cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2ac2194f70e1841eb0bfd2f3ea7731ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/17-implementing-ai-governance.html">Part V: Building Governance Capability</a></li><li class="breadcrumb-item"><a href="../chapters/17-implementing-ai-governance.html"><span class="chapter-title">17. Implementing AI Governance</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">How to Govern AI</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/shawnogunseye/GovAI" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations and Practical Guide to AI Governance</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part I: Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-what-ai-governance-is.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. What AI Governance Is</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-regulatory-landscape.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2. The Regulatory Landscape</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-scoping-inventory-classification.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3. Scoping, Inventory, and Risk Classification</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part II: The AI System Lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-defining-the-problem.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. Defining the Problem and Use Case</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-data-governance-for-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. Data Governance for AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-model-selection-and-development.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Model Selection and Development</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-testing-evaluation-and-red-teaming.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Testing, Evaluation, and Red Teaming</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-deployment-and-release.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Deployment and Release</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-operations-and-monitoring.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Operations and Monitoring</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-incident-response-and-remediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10. Incident Response and Remediation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part III: Governing Content Generation and Autonomous Action</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-governing-generative-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11. Governing Generative Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-governing-agentic-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12. Governing Agentic Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part IV: The Governance Function</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-organizing-the-governance-function.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">13. Organizing the Governance Function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/14-risk-assessment-and-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Risk Assessment and Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/15-documentation-and-evidence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Documentation and Evidence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/16-third-party-vendor-and-supply-chain-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. Third-Party, Vendor, and Supply Chain Governance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V: Building Governance Capability</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/17-implementing-ai-governance.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">17. Implementing AI Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/18-governing-under-uncertainty.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">18. Governing Under Uncertainty</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-a-technique-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A: Technique Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-b-regulatory-quick-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B: Regulatory Quick Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-c-templates-and-checklists.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C: Templates and Checklists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">End Matter</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/90-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/91-index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/99-back-cover.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Back Cover</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#what-you-will-be-able-to-do" id="toc-what-you-will-be-able-to-do" class="nav-link active" data-scroll-target="#what-you-will-be-able-to-do">What you will be able to do</a></li>
+  <li><a href="#governance-as-something-you-build" id="toc-governance-as-something-you-build" class="nav-link" data-scroll-target="#governance-as-something-you-build">17.1 Governance as something you build</a></li>
+  <li><a href="#current-state-assessment" id="toc-current-state-assessment" class="nav-link" data-scroll-target="#current-state-assessment">17.2 Current state assessment</a></li>
+  <li><a href="#target-operating-model" id="toc-target-operating-model" class="nav-link" data-scroll-target="#target-operating-model">17.3 Target operating model</a></li>
+  <li><a href="#gap-analysis-and-sequencing" id="toc-gap-analysis-and-sequencing" class="nav-link" data-scroll-target="#gap-analysis-and-sequencing">17.4 Gap analysis and sequencing</a></li>
+  <li><a href="#requirements-for-the-governance-function" id="toc-requirements-for-the-governance-function" class="nav-link" data-scroll-target="#requirements-for-the-governance-function">17.5 Requirements for the governance function</a></li>
+  <li><a href="#designing-controls-artifacts-and-workflows" id="toc-designing-controls-artifacts-and-workflows" class="nav-link" data-scroll-target="#designing-controls-artifacts-and-workflows">17.6 Designing controls, artifacts, and workflows</a></li>
+  <li><a href="#cost-as-a-design-constraint" id="toc-cost-as-a-design-constraint" class="nav-link" data-scroll-target="#cost-as-a-design-constraint">17.7 Cost as a design constraint</a></li>
+  <li><a href="#ai-literacy-and-training" id="toc-ai-literacy-and-training" class="nav-link" data-scroll-target="#ai-literacy-and-training">17.8 AI literacy and training</a></li>
+  <li><a href="#rollout-and-adoption" id="toc-rollout-and-adoption" class="nav-link" data-scroll-target="#rollout-and-adoption">17.9 Rollout and adoption</a></li>
+  <li><a href="#evaluating-whether-governance-works" id="toc-evaluating-whether-governance-works" class="nav-link" data-scroll-target="#evaluating-whether-governance-works">17.10 Evaluating whether governance works</a></li>
+  <li><a href="#case-in-focus-sequencing-a-program-across-three-systems-and-one-call-that-had-to-be-undone" id="toc-case-in-focus-sequencing-a-program-across-three-systems-and-one-call-that-had-to-be-undone" class="nav-link" data-scroll-target="#case-in-focus-sequencing-a-program-across-three-systems-and-one-call-that-had-to-be-undone">Case in focus: sequencing a program across three systems, and one call that had to be undone</a></li>
+  <li><a href="#the-two-speed-problem" id="toc-the-two-speed-problem" class="nav-link" data-scroll-target="#the-two-speed-problem">17.11 The two-speed problem</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review questions</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/17-implementing-ai-governance.html">Part V: Building Governance Capability</a></li><li class="breadcrumb-item"><a href="../chapters/17-implementing-ai-governance.html"><span class="chapter-title">17. Implementing AI Governance</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">17. Implementing AI Governance</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Consider a constructed scenario, continuing the running cases. Calloway Industries chartered its AI governance program the same year <code>TalentScreen</code>’s scheduling capability became agentic, and the program’s first designers wrote a thorough charter, assembled a governance body, and specified an impact assessment process before a single deployment had passed through it. Six months later, an internal review found that the assessment process existed in exactly the form the charter described but was being used for only two of Calloway’s three AI deployments, with no one having decided to exempt the third. The process had not failed to be documented. It had failed to be used by the population it was chartered to cover, with no legitimate exception on record for the deployment that skipped it. A governance program that its intended users are not actually using, with no documented and authorized exception, has failed at governance. This holds regardless of how thoroughly its documentation describes what it was supposed to do. A process genuinely unused because no qualifying deployment occurred in a given period is a different, unremarkable case this standard is not meant to catch.</p>
+<p>This chapter treats the governance program itself as something built, not something declared. It is a designed artifact with users who must actually run it day to day, requirements those users can state if asked, and failure modes that show up as documented process quietly diverging from what people actually do. This chapter’s subject is assessing where a program currently stands, defining what it should look like given the organization’s own size and exposure, and sequencing the path from one to the other. It also covers gathering requirements from the people the process falls on, designing controls against a real budget, and measuring whether any of it actually manages risk instead of merely documenting activity. The chapter closes on the structural mismatch between how fast systems change and how slowly programs do.</p>
+<section id="what-you-will-be-able-to-do" class="level2 unnumbered objectives">
+<h2 class="unnumbered anchored" data-anchor-id="what-you-will-be-able-to-do">What you will be able to do</h2>
+<ul>
+<li>Assess a governance program’s current state by distinguishing documented process from actual practice, treating any unexplained gap between them as a finding, not an oversight</li>
+<li>Define a target operating model appropriate to a specific organization’s risk exposure, legal duties, and portfolio, not to its size alone, and sequence the path from current to target by dependency where a real dependency exists</li>
+<li>Gather requirements from the people a governance process falls on, treating a workaround as diagnostic evidence to investigate rather than a validated requirement in itself, and design controls proportionate to risk and viable against a real operating budget</li>
+<li>Evaluate whether a governance program actually manages risk, using outcome metrics instead of activity counts, and diagnose why a program is being bypassed</li>
+</ul>
+</section>
+<section id="governance-as-something-you-build" class="level2">
+<h2 class="anchored" data-anchor-id="governance-as-something-you-build">17.1 Governance as something you build</h2>
+<p>A governance program has users in the same sense a deployed system does. Those users are the developers whose work it reviews, the business owners whose deployment decisions it gates, and the reviewers who staff it. It has requirements, whether or not anyone has written them down, because every one of those users forms an expectation of what the process should do and how long it should take. And it has failure modes. The most common is silent divergence, where the documented process stays pristine on paper while actual practice drifts away from it, because the paper version stopped matching what the work actually required. A program that its intended users are not actually using, with no documented and authorized exception covering the gap, has failed at governance regardless of how complete its documentation is. The standard needs that qualification, since a legitimate exception, or simply the absence of any qualifying event in a given period, is not the same failure this section is naming.</p>
+<p>Treating the program as a designed artifact, not only a policy statement, changes what building one actually involves, though the analogy has real limits worth naming alongside it. A policy’s approval is the beginning of its implementation, not its completion. The policy still needs communication to the people it binds, training, integration into the controls and tooling that will enforce it, a channel for exceptions, and periodic review. A policy that stops at “written and approved” has completed the smaller half of the work. The design discipline this book applies to AI systems, assessment before design, requirements from actual users, proportionate controls, a cost model, staged rollout, and outcome measurement, transfers usefully to the governance process itself. A governance program is not simply a product built for a different subject, however. It involves legal authority a product does not need, organizational change management, and incentive design reaching people outside any single reporting line. It also involves the independence an assurance function needs from the process it assesses, and institutional accountability, which a piece of software can never carry. The parallel is a useful design lens, not a claim that implementing a program is the same activity as building a system.</p>
+</section>
+<section id="current-state-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="current-state-assessment">17.2 Current state assessment</h2>
+<p>Assessing where a program currently stands means distinguishing three things that get collapsed together by default. Those three things are what exists on paper, what actually functions, and what is theater, meaning activity that occurs and produces artifacts without materially affecting any decision. Before calling anything theater, the assessment needs its own effectiveness criteria stated in advance. Does the process actually catch issues before deployment. What is the quality of the evidence a review relies on. Does it ever impose conditions or escalate a case. Does it produce measurable risk reduction over time. Do its decisions hold up on appeal or in a later outcome review. Calloway’s own assessment found its deployment approval process existed exactly as documented and was actually used for a portion of deployments. For the deployments that did go through it, that process produced a governance body sign-off that had never once resulted in a rejection or a required change. A zero-rejection record is consistent with theater, but it is also consistent with a process that correctly screens out problems earlier so that only sound cases ever reach that specific review. Calloway’s team could not tell which explanation was correct without checking the effectiveness criteria above instead of the rejection rate alone. The assessment’s output is broader than one gap statement. It includes a current profile of what exists, the confidence the evidence supports in that profile, a baseline of capability and resources, the effectiveness results described, the root causes behind any material gap, and the risks and dependencies a prioritized gap list needs to reflect.</p>
+<p>Conducting the assessment honestly requires triangulating multiple sources, not trusting or discounting any one of them by category. Interviewing the governance body about how well its own review works produces one useful data point, and so does interviewing the developers and business owners the process falls on. Each carries its own bias, the reviewers toward defending a process they run and the developers toward a process that constrains their own work. Neither position is automatically the more diagnostic one. Deployment records, ticketing system timestamps, and the systems inventory itself supply a third kind of evidence, harder to shade because a system either has a matching assessment record on file or it does not. Combining all three, interviews from both sides plus the documentary record, is what an honest assessment actually requires rather than privileging one source over the others by assumption.</p>
+</section>
+<section id="target-operating-model" class="level2">
+<h2 class="anchored" data-anchor-id="target-operating-model">17.3 Target operating model</h2>
+<p>What a governance program should look like depends on the same factors Chapter 13 already established determine operating model choice. Those factors are organizational scale, existing risk function maturity, sector regulatory exposure, the portfolio of systems actually being governed, and what functions already exist to build on or coordinate with. This chapter deliberately supplies no universal target operating model description, because supplying one would produce exactly the mismatch a governance program transplanted wholesale from a different organization’s context tends to produce. It would produce a process sized for a portfolio and risk exposure the adopting organization does not actually have. Organizational size is one input to that sizing, not a proxy for how much governance depth is warranted on its own. A small organization running even one high-impact, high-tier system carries a duty that scales to the system’s own risk, legal exposure, and affected population, not to the organization’s headcount. A target built purely on “small organization, therefore light program” can under-govern the specific system that actually needs more.</p>
+<p>Existing functions an organization already runs are part of the target, not a competing structure to route around. A bank already running a model risk management function under prudential regulation has infrastructure for validation, documentation standards, and independent review that an AI governance program should extend rather than duplicate. What that existing function actually covers needs checking against the organization’s current, dated supervisory guidance, not assumed. Interagency model risk management guidance updated in 2026, for instance, extends to qualifying traditional and non-generative models while explicitly excluding generative and agentic AI models from that specific framework’s scope (checked 2026-09-13). A bank therefore cannot assume its existing MRM program already covers every AI system it runs, and it has to build the coverage that guidance does not reach. A manufacturer with no equivalent function starts from less, but starts from less overhead too, and a target sized to that organization’s actual system portfolio and risk exposure, not to its headcount, is what section 17.4 sequences toward.</p>
+</section>
+<section id="gap-analysis-and-sequencing" class="level2">
+<h2 class="anchored" data-anchor-id="gap-analysis-and-sequencing">17.4 Gap analysis and sequencing</h2>
+<p>The path from current state to target state has real dependencies in places and genuine parallel opportunity in others. Telling the two apart is the actual work of a gap analysis, not an aspirational timeline. A target profile, what the program is actually trying to become and why, needs to exist early enough to give the rest of the work something to build toward. Building a detailed proportionate process before any target exists, then discovering there is nothing to scale it against, wastes exactly the effort a target-first sequence avoids. Within that frame, a minimum inventory schema needs to exist before systems can be classified against it, and classification needs to exist before a tiered process has anything to tier against. But neither of these has to reach full completion before the next one begins. Discovery and classification can run iteratively and continuously against an evolving inventory, and training material for a proportionate process can be drafted while classification is underway. The target profile itself can be refined as inventory and classification evidence accumulates, rather than fixed once at the start. Treating every step as strictly sequential when only part of it is a real dependency chain wastes time the organization did not need to lose. Treating the whole roadmap as an unordered list when a real dependency exists produces rework once the skipped dependency finally has to be built. An inventory, once built, is also never simply complete. It needs a stated confidence level, continuous discovery for what it has not yet found, and provisional controls and escalation for any system that surfaces unclassified, instead of being treated as a one-time state that, once reached, needs no further maintenance.</p>
+<div id="fig-current-to-target" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-current-to-target-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/fig-17-01-current-to-target.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-current-to-target-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18.1: Figure 17.1. Current to target, with an iterative roadmap between them
+</figcaption>
+</figure>
+</div>
+<!-- FIGURE 17.1 REQUIRED ELEMENTS
+Must appear as a process canvas: current state and target state as
+endpoints, with the target profile established early and shown feeding
+back into every later stage as it is refined, not placed after the
+process stages that depend on it. A minimum inventory schema and
+continuous, iterative discovery feed an evolving classification, both
+shown as an ongoing loop, not a single completed stage, each
+carrying an explicit confidence or coverage indicator rather than an
+implied 100 percent. A track for work that can run in parallel
+(documentation, training material) sits alongside the track that has
+genuine sequential dependency. An explicit unclassified-system path
+routes to provisional controls and escalation. Entry condition: a current-state
+assessment under 17.2 has identified the gap. Exit condition: which
+parts of the roadmap are a genuine dependency chain and which can run in
+parallel is visually distinct, and the target profile's role as an early,
+revisable input is legible instead of only asserted in prose.
+Deliberately excluded: the requirements-gathering mechanics of 17.5. Must
+work in black and white.
+SOURCE: original; revised per this book's own review process to place
+the target profile early instead of after the dependent process stages
+and to show inventory and classification as an ongoing loop with a
+coverage indicator rather than a completed state. The revision also
+distinguishes genuine sequential dependency from parallelizable work. Checked 2026-09-13.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<p>Read Figure 17.1 by checking which arrows represent a genuine dependency and which represent work that could just as well run alongside its neighbor. The figure is a roadmap with real ordering constraints in specific places, not a checklist where sequence is arbitrary, but it is also not a rigid chain where nothing may proceed until everything before it is fully finished.</p>
+</section>
+<section id="requirements-for-the-governance-function" class="level2">
+<h2 class="anchored" data-anchor-id="requirements-for-the-governance-function">17.5 Requirements for the governance function</h2>
+<p>The rest of this book applies a requirements discipline to the AI systems it reviews. Applying that same discipline to the governance process itself means treating the program’s own users as a source of requirements, not only a population to train. Programs fail most often for an unglamorous reason. Nobody asked the development teams, business owners, and reviewers who actually run the process what they need from it. A process designed without that input tends to fit an imagined workflow, not the real one. Asking a developer directly where the process obstructs their actual work surfaces friction a governance team sitting outside that workflow will not notice on its own. Observing what people actually do when the process becomes inconvenient, not what the documented process says they should do, is a second and often earlier-available source of the same information. A workaround people have already built, though, is diagnostic evidence to investigate, not a validated requirement to adopt outright. The underlying cause might be a genuinely missed requirement, but it might instead be inadequate training, a poorly designed tool, misaligned incentives, an unclear scope boundary, or a deliberate attempt to avoid a control that is working exactly as intended. Only investigating the specific workaround reveals which explanation actually applies.</p>
+<p>A third source, less direct than either but frequently the earliest available, is the pattern of exception requests a process generates. A process receiving frequent requests for an expedited path is reporting, in the aggregate, that its default timeline does not fit some identifiable category of deployment. Treating each request as an isolated one-off instead of examining the pattern across all of them misses a requirement the requesters are already stating collectively. Requirements gathered from any of these sources should be validated against the risk classification the affected systems actually carry, and against which of the causes above actually produced the workaround or the exception pattern, before being adopted. Section 17.6’s proportionate design is what turns a validated requirement into an actual control rather than an accommodation granted case by case.</p>
+</section>
+<section id="designing-controls-artifacts-and-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="designing-controls-artifacts-and-workflows">17.6 Designing controls, artifacts, and workflows</h2>
+<p>Proportionate design means a control’s weight matches the risk it addresses, instead of applying one review depth uniformly regardless of tier. Calloway’s own program initially got this wrong, in the way this chapter’s case in focus develops in full. Automation fits wherever a check can be run mechanically rather than requiring a person’s judgment. An inventory field’s completeness, a classification’s internal consistency, or a required document’s presence can all be checked by tooling before anything reaches a human reviewer, reserving human judgment for the parts of a review that actually need it. Making the compliant path the easier path is one real design lever, not a complete adoption strategy on its own. A workflow where the fastest way to deploy is also the way that automatically produces the inventory entry, the classification, and the required documentation improves the odds of compliance. Ease has to work alongside clear authority, genuine incentives, training, visible support, a legitimate exception route, and actual monitoring and enforcement. A path that is merely easy, with no accountability attached to skipping it, still gets skipped by whoever finds skipping it easier still.</p>
+<p>Artifacts should be built as reusable objects, not documents drafted fresh for each system, in the same sense Chapter 15 already established for templates generally. A model card template, an impact assessment template, and a classification rubric that a development team fills in instead of composing from scratch reduce the effort a control demands without reducing what the control actually checks. A deployment pipeline that will not let a build proceed to production without a completed inventory entry converts a policy requirement into a technical one. A technical requirement embedded in the pipeline is generally harder to route around under deadline pressure than an equivalent policy a manager can waive informally, though it is not immune to circumvention. A system deployed entirely outside the pipeline, an administrator override, a shadow deployment, or a false attestation that satisfies the gate’s check without satisfying its intent, all need their own controls. A technical gate raises the cost of bypassing it, but it does not eliminate the possibility.</p>
+</section>
+<section id="cost-as-a-design-constraint" class="level2">
+<h2 class="anchored" data-anchor-id="cost-as-a-design-constraint">17.7 Cost as a design constraint</h2>
+<p>A control’s viability depends on whether an organization can actually afford to run it at the volume the deployment produces, not merely on whether the control addresses the risk in principle. Human review of every output a system generates is straightforward to specify, and unaffordable the moment volume exceeds what a review team can actually process. A control specified without regard to this constraint tends toward one of two unsafe outcomes. It gets quietly abandoned in practice while the documentation continues to claim it is running. That creates false assurance, often worse than an openly acknowledged gap, because it looks like an active safeguard when it is not. Alternatively, it is never actually deployed at all, leaving the risk it addressed with no mitigation whatsoever. Neither outcome is acceptable. The actual response to an unaffordable control is a deliberate choice, not something that resolves itself by quiet neglect. That choice runs among redesigning the control to fit the budget, restricting the deployment’s scope or volume, or securing the resources the control needs. It can also mean deferring the deployment until one of those is possible, rejecting the deployment outright, or decommissioning a control that turns out not to be worth its cost relative to the risk it addresses.</p>
+<p>Model cost and required oversight do not move together by any fixed rule. Assuming a cheaper model needs more monitoring, to compensate for an accuracy gap it may not actually have, replaces the benchmark the decision actually needs with a guess. The right basis for how much oversight a specific model needs is its own measured accuracy, reliability, and failure pattern on the task at hand, not its price relative to an alternative. Rate limits imposed by a vendor or a budget shape what an architecture can actually do in real time regardless of what an unconstrained design would prefer. Designing a control means designing it against the budget that will actually fund its operation, not the budget a proposal hopes to receive.</p>
+<p>Costing a control accurately means costing it at the volume the deployment will actually reach, not the volume a pilot ran at. Volume is only one part of a fuller cost picture. That picture includes fixed costs alongside the variable per-case cost, peak load, not an average, the tooling a control needs to run at all, the cost of handling false positives and exceptions, and the training and supervision reviewers need. It also includes quality assurance on the review itself, and the cost the control avoids, incident response, rework, and consequences the control was built to prevent. All of this belongs in the model, not only the reviewer-minutes-times-case-volume calculation a pilot’s own numbers make tempting to stop at. This is why cost modeling belongs in the design stage, not after deployment. A control redesigned after it has already been quietly abandoned in practice has cost the organization the appearance of a safeguard it did not actually have, for however long the gap went unnoticed.</p>
+</section>
+<section id="ai-literacy-and-training" class="level2">
+<h2 class="anchored" data-anchor-id="ai-literacy-and-training">17.8 AI literacy and training</h2>
+<p>AI literacy is a regulatory obligation reaching both providers and deployers under the EU AI Act specifically, not merely a good practice an organization adopts voluntarily. What the obligation actually requires, though, is narrower than a specific competence test. Article 4 requires providers and deployers to take measures ensuring, to their best extent, a sufficient level of AI literacy among staff and others dealing with AI systems on their behalf. That literacy must account for their technical knowledge, experience, education, training, and the context the system will be used in. Current European Commission guidance states that Article 4 does not itself mandate a specific individual competence level or a formal knowledge test, leaving the deploying organization to design measures proportionate to its own context (checked 2026-09-13). High-risk-system human-oversight training carries its own separate, more specific duties under other provisions of the same regulation. Effective training is role-differentiated, not uniform, regardless of what the letter of the obligation requires. A developer needs different content than a business owner approving a deployment, who needs different content again than a governance body reviewer evaluating one. A single generic training module delivered to everyone regardless of role misses what each specific role actually needs to do its part correctly. Evidence of completion, records showing who was trained, on what content, and when, is evidence that training was delivered. It is not, by itself, evidence that the training worked. A program that stops at completion records still needs some measure of role-relevant competence, observed behavior, error rates, or escalation quality to know whether the delivered training actually changed what people do.</p>
+<p>What role-differentiated content actually means in practice becomes clear role by role. A developer needs to know how the classification system determines tier and what triggers a reassessment, because those are the decisions the developer’s own work affects. A business owner approving a deployment needs to understand what the impact assessment is checking and why a rejection is not a bureaucratic obstacle but a finding about a specific risk, because that is the decision on the business owner’s desk. A governance body reviewer needs the deepest content of the three, including how to read a vendor’s model card adversarially in the sense Chapter 15 described, and how to recognize the theater pattern section 17.2 named. That is because the reviewer is the last check before a deployment proceeds. Training that gives all three the same content wastes the developer’s time on material aimed at the reviewer and leaves the reviewer under-prepared for judgment calls a generic module never covers.</p>
+</section>
+<section id="rollout-and-adoption" class="level2">
+<h2 class="anchored" data-anchor-id="rollout-and-adoption">17.9 Rollout and adoption</h2>
+<p>A governance program benefits from the same staged introduction Chapter 8 already established for deploying an AI system. That means a pilot with a limited scope, feedback incorporated before wider rollout, and a broader introduction only once the pilot has demonstrated the process actually works for the population it will eventually cover. Selecting a pilot deliberately means covering both the workflows the rollout will encounter most often and at least one genuinely hard case. A pilot scoped only to the easiest, most representative-looking unit can generalize well for common cases while leaving the harder ones the full rollout will include never actually tested. A pilot’s own report should state explicitly which lessons are expected to transfer directly and which specific harder cases still need dedicated testing before scaling further. Calloway’s uniform, all-at-once rollout applied the same review depth to every system regardless of risk tier, from the very first deployment, and skipped staging of this kind entirely. Section 17.10 traces what that produced.</p>
+<p>Feedback collected during the pilot should come from the same sources section 17.5 already identified for requirements generally. Those sources are the developers, business owners, and reviewers who ran the pilot process, not the governance team that designed it. A pilot evaluated only by the team that built it tends to confirm what that team already believed. The people least likely to notice a friction point are the ones who designed the process around their own assumptions about what would be frictionless. Widening the rollout before the pilot’s feedback has actually been incorporated defeats the purpose of piloting at all; a pilot that runs, collects complaints, and proceeds to full rollout unchanged has produced a record of problems rather than a corrected process.</p>
+</section>
+<section id="evaluating-whether-governance-works" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-whether-governance-works">17.10 Evaluating whether governance works</h2>
+<p>Almost no program asks the question this section poses directly. Does the governance process actually manage risk, as distinct from producing activity that looks like risk management. Process metrics count activity. How many assessments were completed, how many reviews were held, how many documents were filed. Outcome metrics measure something different, and a fuller set matters, not only the three easiest to compute. Are issues found before deployment, when they are still cheap to fix, or only after, when a real harm has often already occurred, weighted by severity, not counted as interchangeable events. Are classifications accurate on independent review. How long does detection and containment actually take once something goes wrong. What happens to the people or groups a system’s decisions affect, including appeals and their outcomes. Does a problem recur after it was supposedly fixed. How many systems remain unknown to the inventory at any given time. Do accepted residual risks actually expire and get revisited on schedule. And is the process being bypassed, by whom, and for which category of system. A bypass pattern concentrated in one business unit or one system class is diagnostic, in exactly the way Calloway’s uniform rollout eventually revealed.</p>
+<p>A near-zero rejection rate deserves the same scrutiny a perfect audit result deserved in Chapter 15. It is consistent with a process that correctly screens out problems before they ever reach formal review. It is equally consistent with a review that no longer meaningfully evaluates anything it is shown. Distinguishing the two requires looking past the rate itself to what the review actually changed, if anything, in the cases it passed. Did a reviewer request modifications, flag a residual risk for acceptance at a named level of authority in the sense Chapter 14 already established, or ever send a system back for rework. A review process that has never once produced any of these outcomes, across a meaningful number of cases, is a candidate for the theater finding section 17.2 introduced. That candidacy is tested against the effectiveness criteria that section names, regardless of how many reviews its logs show as completed.</p>
+</section>
+<section id="case-in-focus-sequencing-a-program-across-three-systems-and-one-call-that-had-to-be-undone" class="level2 unnumbered case">
+<h2 class="unnumbered anchored" data-anchor-id="case-in-focus-sequencing-a-program-across-three-systems-and-one-call-that-had-to-be-undone">Case in focus: sequencing a program across three systems, and one call that had to be undone</h2>
+<p><code>TALENTSCREEN</code> · Hypothetical, following the running cases</p>
+<p>Calloway’s governance program, chartered to cover its full AI portfolio, launched with three systems in scope. They were <code>TalentScreen</code> itself, the scheduling and candidate-communication capability that Chapter 12 traced becoming agentic, and a newly adopted generative tool for drafting job postings and candidate correspondence. The program followed the correct sequence at the portfolio level. Inventory came first, establishing that all three systems existed and were in scope. Classification came second, placing <code>TalentScreen</code> and the scheduling agent at a meaningfully higher risk tier than the job-posting drafting tool, given the disparate-impact and autonomous-action exposure the first two carried against the third’s comparatively narrower, human-reviewed-before-use profile. Even a human-reviewed drafting tool still carries its own real risks worth naming, not assuming trivial, among them discriminatory or exclusionary language a reviewer might miss, criteria that could run afoul of employment law, and accessibility gaps in generated postings. Other risks include privacy exposure from candidate correspondence, a hallucinated qualification attributed to a role, and reputational harm from a visibly careless posting. This is exactly why the classification placed the drafting tool at a lower tier rather than no tier at all.</p>
+<p>The wrong call came at the design stage, in section 17.6’s terms. Calloway’s initial rollout applied the same full impact assessment and governance body review to all three systems uniformly, instead of building a proportionate process that matched review depth to the tier the classification had just established. The reasoning was that a single consistent process would be simpler to administer than three tiered ones. The job-posting drafting tool went through the identical multi-week review cycle built for <code>TalentScreen</code>’s disparate-impact exposure, a mismatch of process weight to actual risk rather than a case of the tool having no real risk to review at all.</p>
+<p>The predictable result, visible within two months in exactly the bypass pattern section 17.10 describes watching for, was that recruiters began using the drafting tool without routing it through the review process at all. They reasoned informally that the tool’s stakes did not justify the delay a process built for <code>TalentScreen</code> imposed. The bypass was not malicious or even particularly hidden; it was the rational response of the tool’s actual users to a process whose weight had no relationship to the risk it was reviewing, precisely the dynamic section 17.6 warns a uniform process invites. Calloway’s governance team, discovering the bypass through the same outcome-metric monitoring section 17.10 recommends, not through anyone confessing to it, rebuilt the process as a genuinely tiered one. The job-posting tool moved to a lightweight path with defined eligibility criteria for which uses actually qualify for it, named prohibited data and use cases, and a required named owner. That path also included a sample of outputs reviewed on a set cadence, monitoring for the specific harms named above, and an escalation path if a reviewed sample surfaces a problem. It also added an automatic trigger back to fuller review if the tool’s use case changed, replacing the bare description-and-owner formality that carried no ongoing check. The lightweight path was adopted immediately and completely in this constructed scenario, which illustrates the proportionality argument section 17.6 makes. A real program would still want to confirm the diagnosis against before-and-after evidence, incident rates, review quality, and independently gathered user feedback among it. It would also want to consider whether some other factor changed at the same time, rather than treating one clean before-and-after contrast alone as proof of a single cause.</p>
+<p>The call that had to be undone was not the classification, which had been correct from the start; it was the design decision to override a correct classification with a uniform process on the theory that uniformity would be simpler to administer. Calloway’s governance team drew the lesson forward into how it now treats every new addition to the portfolio. A classification result now sets the default review route and minimum controls for the process design that follows it, not a ceiling on what a system’s own risk can require. A proposal to make the process lighter than that default, or heavier with no specific factor behind it, however administratively convenient, is treated as a finding requiring the same documented justification section 17.2 requires of any other departure. A stronger process justified by the system’s own law, severity, irreversibility, or affected population is not itself such a departure.</p>
+</section>
+<section id="the-two-speed-problem" class="level2">
+<h2 class="anchored" data-anchor-id="the-two-speed-problem">17.11 The two-speed problem</h2>
+<p>System cycles often run in days. A model is updated, a prompt is changed, a new feature ships. Program cycles often run in quarters. A governance body meets on a fixed schedule, a policy revision goes through review, a training update rolls out to a workforce. Where this mismatch actually exists and how large it is varies by organization. It is a pattern worth measuring directly, lead time, decision latency, change frequency, review frequency, queue time, and how often an emergency path gets invoked, not assumed as a fixed days-versus-quarters ratio true of every program. A team operating on a genuinely fast cycle running into a genuinely slow governance cycle will tend to route around it long before the mismatch gets formally acknowledged. Measuring the actual gap is what turns that tendency into a diagnosis rather than a generalization asserted about “most” programs.</p>
+<p>The responses that actually address a real structural gap do more than ask people to be more patient with it. They embed governance controls directly into development tooling so that compliance happens as a byproduct of the workflow instead of as a separate gate bolted onto it. They automate whatever can be automated, following section 17.6’s principle, so that a mechanical check runs at system speed even when a human review cannot. They tier controls by risk, so that only the systems whose stakes justify a slower-cycle review actually go through one. And, where appropriate, they shift some weight from predeployment gates toward the runtime controls and ongoing monitoring Chapter 9 and Chapter 12 already established. That last response needs real conditions attached, not a blanket rule that continuous monitoring justifies a lighter predeployment gate. The shift is defensible where the harm a failure could cause is reversible, where monitoring would detect the failure quickly enough to matter, where containment and safe rollback are available, and where no legal requirement or affected right demands predeployment assurance regardless of monitoring quality. A system whose failure could cause an irreversible harm, or one operating under a regulation that requires premarket conformity assessment specifically, may need stronger predeployment assurance precisely because it is well monitored afterward. Excellent detection after an irreversible harm has already occurred does not undo the harm. Monitoring and predeployment testing are complementary controls addressing different failure windows, not substitutes for each other. None of these responses closes a genuine speed gap entirely. A program claiming it has eliminated the mismatch rather than managed it should be read skeptically for exactly the reason section 17.2 already gave for treating a clean-looking process as a possible signal of theater, not function.</p>
+<div id="fig-governance-cadence" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-governance-cadence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/fig-17-02-governance-cadence.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-governance-cadence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18.2: Figure 17.2. Governance cadence against development cadence
+</figcaption>
+</figure>
+</div>
+<!-- FIGURE 17.2 REQUIRED ELEMENTS
+Must appear: a qualitative comparison of a faster system-change cadence
+against a slower governance-review cadence on a shared timeline. It
+should use relative labels (frequent, occasional, rare) or an
+organization's own measured cadence data with a cited source and date,
+never an invented tick count or change count with no data behind it.
+This keeps the mismatch pattern legible without asserting specific
+unsupported quantities. The comparison should be paired with the named
+structural responses this section gives for narrowing the gap (embed in
+tooling, automate, tier by risk, shift toward runtime monitoring
+conditioned on reversibility, detection speed, containment, and legal
+requirements). Entry condition: the bypass dynamics of 17.9 and
+17.10 have already established that a mismatch, where a real one exists,
+produces workarounds. Exit condition: the pattern and the conditioned
+responses to it are both legible without implying a universal, fixed
+ratio between system and program cadence. Deliberately excluded: the
+bypass case narrative (the case in focus's job). Must work in black and
+white.
+SOURCE: original; revised per this book's own review process to remove
+unsupported invented tick and change counts, present the cadence gap
+qualitatively or from cited organizational data, and attach explicit
+conditions to the runtime-monitoring response instead of presenting it
+as unconditional. Checked 2026-09-13.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<p>Read Figure 17.2 as a pattern to check against an organization’s own measured cadence, not a claim about how large the gap is universally. The shape of the mismatch, when it is real, is what the figure shows, and the four responses below the timelines are what narrows that gap where it exists. Each of them, the runtime-monitoring response in particular, applies only once its own conditions actually hold, rather than being assumed automatically from continuous monitoring’s mere existence.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>A governance program is a designed artifact with users, requirements, and failure modes. A program its intended users are not actually using, with no documented and authorized exception, has failed, regardless of its documentation. Current state assessment distinguishes what exists, what functions, and what is theater, tested against effectiveness criteria stated in advance, not inferred from a rejection rate alone. It produces a current profile, evidence confidence, a capability baseline, root causes, and prioritized gaps, not one gap statement. The target operating model depends on organizational scale, sector exposure, legal duties, and portfolio, not on size alone, with no universal answer supplied. The path from current to target follows real dependencies where they exist, with a target profile established early and refined over time, and genuine parallel work run alongside the sequenced parts instead of treated as one rigid chain.</p>
+<p>Requirements for the governance function come from the people the process falls on, gathered by asking where it obstructs and by investigating, rather than automatically adopting, what a workaround or an exception pattern is actually diagnosing. Controls should be proportionate to risk, automated wherever mechanical checking suffices, and designed so the compliant path is easy alongside real authority, incentives, and enforcement, not eased in place of them. Cost determines viability directly, costed at production volume with the full economics a control involves. An unaffordable control needs a deliberate redesign, restriction, resourcing, deferral, rejection, or decommissioning decision, not quiet abandonment or simply going undeployed. AI literacy training is a regulatory obligation under the EU AI Act, role-differentiated, evidenced by completion records that show delivery, not by themselves effectiveness. Rollout benefits from staging that covers hard cases as well as common ones. Evaluating whether governance works requires a fuller set of outcome metrics than activity counts or a bypass rate alone. Severity-weighted issues, detection and containment time, affected-party outcomes, recurrence, and unknown-system counts are among them. The two-speed mismatch between system and program cycles, where a real one exists and is worth measuring rather than assumed, is addressed by embedding controls into tooling, automating what can be automated, and tiering by risk. It is also addressed by shifting weight toward runtime monitoring only where reversibility, detection speed, containment, and legal requirements actually support that shift.</p>
+</section>
+<section id="review-questions" class="level2">
+<h2 class="anchored" data-anchor-id="review-questions">Review questions</h2>
+<p><code>COMPREHENSION</code></p>
+<ol type="1">
+<li><p>Explain why a governance program with complete, accurate documentation can still have failed, and state the qualification that keeps this standard from wrongly condemning a process nobody needed to use in a given period.</p></li>
+<li><p>Identify which parts of the path from inventory to classification to proportionate process represent a genuine dependency and which parts can proceed in parallel, and explain what goes wrong when the two are confused in either direction.</p></li>
+</ol>
+<p><code>APPLIED</code></p>
+<ol start="3" type="1">
+<li><p>Describe two specific methods this chapter gives for gathering requirements from the people a governance process falls on, and explain why a workaround needs investigation into its cause, not automatic adoption as a validated requirement.</p></li>
+<li><p>A proposed control specifies human review of every system output. Explain what cost consideration this chapter would raise before accepting the control as designed, and what the actual response should be if the control turns out to be unaffordable at production volume.</p></li>
+</ol>
+<p><code>SPOT THE RISK</code></p>
+<ol start="5" type="1">
+<li>A governance program reports a high volume of completed reviews with a near-zero rejection rate. Identify what this pattern might signal under this chapter’s distinction between process and outcome metrics, and what additional evidence, beyond the rejection rate itself, would confirm or rule it out.</li>
+</ol>
+<p><code>COMPARE AND DECIDE</code></p>
+<ol start="6" type="1">
+<li>A system is continuously monitored after deployment. State the specific conditions this chapter says must hold before that monitoring justifies a lighter predeployment gate, and describe a case where excellent monitoring would not justify the lighter gate despite being genuinely excellent.</li>
+</ol>
+<p><code>RUNNING CASE</code></p>
+<ol start="7" type="1">
+<li><code>TALENTSCREEN</code> Using the case in focus, explain why applying a uniform review process across all three of Calloway’s systems produced a bypass, and identify the specific design change that addressed it, along with what further evidence a real program would still want before concluding the fix fully worked.</li>
+</ol>
+<hr>
+<p>A governance program built, sequenced, and evaluated by this chapter’s discipline still has to survive a fact this book has not yet addressed directly. The regulatory ground it operates on will keep shifting after this book is finished. The final chapter turns to governing durably under exactly that uncertainty.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Reader feedback widget. Injected on every chapter page via _quarto.yml's
+     include-after-body. Self-configures per page (reads the chapter's own H1),
+     posts anonymously to a Google Form, and can be removed by deleting the
+     include-after-body line in _quarto.yml plus this file. -->
+<div id="reader-feedback" style="margin-top:3.5rem;padding:1.5rem 1.5rem 1.75rem;border-top:1px solid #dfe3e8;">
+  <div id="rf-form-state">
+    <h3 style="font-size:1.05rem;margin:0 0 .35rem;color:#1F4E79;">Was this chapter useful?</h3>
+    <p style="font-size:.9rem;color:#5b6570;margin:0 0 1rem;">
+      Quick, anonymous feedback on this chapter. No account needed, and you can send more than once.
+    </p>
+
+    <div id="rf-rating" style="display:flex;gap:.4rem;margin-bottom:1rem;" role="radiogroup" aria-label="Rating">
+      <!-- five buttons injected by JS -->
+    </div>
+
+    <textarea id="rf-comment" placeholder="What was unclear, wrong, or worth changing? (optional)" style="width:100%;min-height:5.5rem;padding:.6rem .7rem;border:1px solid #cdd4db;border-radius:6px;
+      font:inherit;font-size:.92rem;resize:vertical;box-sizing:border-box;"></textarea>
+
+    <div style="margin-top:.85rem;display:flex;align-items:center;gap:.75rem;">
+      <button id="rf-submit" type="button" style="background:#1F4E79;color:#fff;border:none;border-radius:6px;padding:.55rem 1.1rem;
+        font:inherit;font-size:.92rem;cursor:pointer;">
+        Send feedback
+      </button>
+      <span id="rf-hint" style="font-size:.82rem;color:#8a929b;"></span>
+    </div>
+  </div>
+
+  <div id="rf-thanks" style="display:none;font-size:.95rem;color:#1F4E79;">
+    Thanks — that's recorded. <a href="#" id="rf-again" style="color:#1F4E79;">Send more feedback on this chapter</a>.
+  </div>
+</div>
+
+<!-- Hidden iframe used as the form's POST target so the page never navigates away. -->
+<iframe name="rf-target" style="display:none;" title="feedback submission target"></iframe>
+
+<script>
+(function () {
+  var FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSd9_CLKYge5lybG71ff2xAJKTUC0H76P7SSF8X0esvVgOQTTQ/formResponse";
+  var ENTRY_CHAPTER = "entry.339002275";
+  var ENTRY_RATING  = "entry.39522218";
+  var ENTRY_COMMENT = "entry.995180468";
+
+  function chapterLabel() {
+    var h1 = document.querySelector("main h1, #title-block-header h1, h1");
+    var text = h1 ? h1.textContent.trim() : document.title.trim();
+    return text.replace(/\s+/g, " ");
+  }
+
+  function buildStars(container) {
+    var selected = null;
+    for (var i = 1; i <= 5; i++) {
+      (function (n) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.textContent = n;
+        b.setAttribute("aria-label", n + " out of 5");
+        b.dataset.value = n;
+        b.style.cssText = "width:2.1rem;height:2.1rem;border-radius:6px;border:1px solid #cdd4db;" +
+          "background:#fff;color:#3c4650;font:inherit;font-size:.92rem;cursor:pointer;";
+        b.addEventListener("click", function () {
+          selected = n;
+          Array.prototype.forEach.call(container.children, function (el) {
+            var on = Number(el.dataset.value) <= n;
+            el.style.background = on ? "#1F4E79" : "#fff";
+            el.style.color = on ? "#fff" : "#3c4650";
+            el.style.borderColor = on ? "#1F4E79" : "#cdd4db";
+          });
+        });
+        container.appendChild(b);
+      })(i);
+    }
+    return function () { return selected; };
+  }
+
+  function ready(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+
+  ready(function () {
+    var root = document.getElementById("reader-feedback");
+    if (!root) return;
+    // Not a teaching page — front/back cover, etc. Those set data-no-feedback
+    // on the body via a tiny inline script in the page's own front matter.
+    if (document.body.hasAttribute("data-no-feedback")) {
+      root.style.display = "none";
+      return;
+    }
+
+    var ratingWrap = document.getElementById("rf-rating");
+    var getRating = buildStars(ratingWrap);
+    var commentEl = document.getElementById("rf-comment");
+    var submitBtn = document.getElementById("rf-submit");
+    var hint = document.getElementById("rf-hint");
+    var formState = document.getElementById("rf-form-state");
+    var thanks = document.getElementById("rf-thanks");
+    var again = document.getElementById("rf-again");
+
+    submitBtn.addEventListener("click", function () {
+      var rating = getRating();
+      var comment = commentEl.value.trim();
+      if (!rating && !comment) {
+        hint.textContent = "Pick a rating or add a comment first.";
+        return;
+      }
+
+      var form = document.createElement("form");
+      form.action = FORM_ACTION;
+      form.method = "POST";
+      form.target = "rf-target";
+      form.style.display = "none";
+
+      function field(name, value) {
+        var inp = document.createElement("input");
+        inp.type = "hidden";
+        inp.name = name;
+        inp.value = value;
+        form.appendChild(inp);
+      }
+
+      field(ENTRY_CHAPTER, chapterLabel());
+      if (rating) field(ENTRY_RATING, String(rating));
+      if (comment) field(ENTRY_COMMENT, comment);
+
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+
+      formState.style.display = "none";
+      thanks.style.display = "block";
+    });
+
+    again.addEventListener("click", function (e) {
+      e.preventDefault();
+      commentEl.value = "";
+      Array.prototype.forEach.call(ratingWrap.children, function (el) {
+        el.style.background = "#fff";
+        el.style.color = "#3c4650";
+        el.style.borderColor = "#cdd4db";
+      });
+      hint.textContent = "";
+      thanks.style.display = "none";
+      formState.style.display = "block";
+    });
+  });
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/aigov\.ogunseye\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/16-third-party-vendor-and-supply-chain-governance.html" class="pagination-link" aria-label="16. Third-Party, Vendor, and Supply Chain Governance">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">16. Third-Party, Vendor, and Supply Chain Governance</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/18-governing-under-uncertainty.html" class="pagination-link" aria-label="18. Governing Under Uncertainty">
+        <span class="nav-page-text"><span class="chapter-title">18. Governing Under Uncertainty</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>How to Govern AI · Foundations and Practical Guide to AI Governance</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Last updated 21 September 2026</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>CC BY-NC 4.0</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
