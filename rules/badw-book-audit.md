@@ -745,6 +745,107 @@ in front of the author rather than an agent.
 
 ---
 
+## A18-017 — Chapter 3 CORE-02A flow audit after revision, 2026-09-21
+
+**Why run it.** Chapter 3 had been revised heavily in one session: a new section
+inserted, 3.3 through 3.8 renumbered, three filled record tables added, a figure
+added, and 3.7 restructured. New material that has not been re-cohered with its
+surroundings is the predictable failure, and it is what the audit found.
+
+**Method.** Three independent readers per §18b, separate contexts: Pass 1 local
+cohesion, Pass 2 whole-artifact coherence, and three reader perspectives (student,
+practitioner, hostile expert). File hash recorded before reading per CORE-02B:
+2d97584feb1ea20f, 74,186 bytes.
+
+**Consensus findings, raised independently by all three readers.**
+
+*The eight grounds were never enumerated.* The definition box ran them as a prose
+comma-string and the chapter then referred to "the eight grounds" three times, plus
+`Grounds:` cells in a filled record. A reader had to count commas in a seventy-word
+sentence to discover both the number and the name. Fixed: the box now names and
+glosses all eight.
+
+*The trace came after the example that needed it.* Section 3.2 worked a full boundary
+on a list of seven dependencies, and section 3.3 then explained how to generate such a
+list. Section 3.2 apologised for this in a parenthetical rather than fixing it. The
+four passes have been moved ahead of the worked example, which now opens "Run the four
+passes over Calloway's deployment and seven dependencies surface." Section 3.3 keeps
+the two conceptual subsections and is retitled.
+
+**Damage from my own edits, found and fixed.** Three defects traced to this session's
+renumbering and insertions, not to the original text.
+
+| Defect | Cause |
+|---|---|
+| "risk classification, in sections 3.6 through 3.8" | Old numbering carried forward; the range now sweeps in the two sections the chapter works hardest to distinguish from classification |
+| "Section 3.4 describes what an inventory later found inside it" | Should be 3.5; renumbering |
+| "Calloway's record above" pointing twenty-four lines below it | Filled record inserted after the sentence that referred to it |
+
+**Contradiction between two worked accounts.** Section 3.7 said TalentScreen's
+scheduling component went from low to high on reversibility and population. The
+section 3.9 case box said TalentScreen went from medium to high on unmeasured human
+review, citing "the reason given earlier in this chapter" for a reason not given
+earlier. Review question 7 examines the first version. Section 3.7 made authoritative;
+3.9 now reports the autonomy measurement as a separate finding about screening rather
+than as the reclassification.
+
+**Legal error, verified before correction.** The hostile reader identified the worst
+finding in the audit, and independent verification against GDPR Article 3, Article 22,
+and EDPB Guidelines 3/2018 confirmed it. Section 3.8 argued that a mapping rule must
+encode a regulation's own trigger rather than a paraphrase, and then paraphrased
+Article 22 wrongly in the sentence demonstrating the standard. It folded territorial
+scope into the Article 22 trigger and stated that scope as a per-data-subject location
+check. Article 3(1) applies to processing by a controller established in the Union
+regardless of where the data subject is; the location test describes only Article 3(2),
+which covers controllers not established in the Union. EDPB Example 4 is direct
+authority. A Dublin-established controller processing data about a person in Brazil is
+inside the regulation, and the book's rule would have let it out. Rewritten as two
+rules: Article 3 decides whether the regulation applies, Article 22 then has its own
+trigger, which is a decision based solely on automated processing producing legal or
+similarly significant effects.
+
+**Substantive objections answered rather than deflected.** The hostile reader raised
+three the chapter could not leave standing.
+
+*The exclusion asymmetry.* The chapter included dependencies on eight broad grounds and
+excluded payroll on the narrow input-output test section 3.2 spends its length
+rejecting. The exclusion now runs the same eight grounds in the negative and says
+explicitly that the shorter argument is the rejected one, which would also have
+excluded single sign-on.
+
+*"Materially" had no threshold.* The load-bearing qualifier in the whole test was
+undefined. Now: a dependency affects a ground materially when its failure would change
+what a reviewer could establish or what an affected person could do. The three
+dispositions, including limited depth, are named as the answer to the everything-is-in
+problem.
+
+*The maximum rule inflates tiers.* Section 3.7 names "a scheme that classifies
+everything as high risk is functionally identical to having no scheme at all" as the
+failure condition, then supplied a rule that produces it. Answered with two checks: the
+driving factor must independently meet the high-tier inclusion rule, and the governance
+a high tier attracts is set by the driving factor rather than applied wholesale.
+
+*The amnesty promises what the employer does not own.* An employer can waive its own
+response and cannot waive a duty running to a regulator or a counterparty. Section 3.5
+now states the limit before the period opens.
+
+**Post-fix gates.** CV 0.61, The/This 22%, nominalisation 5.3%, em dashes 0,
+`judg*` 0, triple blank lines 0, dangling section references 0, enumeration frames all
+discharged. Nine sections, correct order, three filled records rendering, no broken
+figures.
+
+**Open, recorded, not fixed.** The objectives list and the summary do not cover the new
+section 3.3 or section 3.9's "scope broadly and govern proportionately," which Pass 2
+identified as the chapter's most actionable rule and the disposition Chapter 4's intake
+assumes. The Calloway case numbers carry argumentative weight the hostile reader showed
+hypothetical figures cannot bear: the eleven-to-forty-three improvement is attributed
+to method while the first pass is retroactively recharacterised, the amnesty's success
+criterion is redefined after its result, and 400 person-hours for 43 systems is an
+order of magnitude below what the chapter's own worked boundary implies. Those are
+authorial decisions about a hypothetical case, not defects an agent should resolve.
+
+---
+
 ## Portfolio measurements, 2026-09-21
 
 Recorded so the outstanding audit work is bounded. A measurement is not an audit
