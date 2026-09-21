@@ -1,0 +1,68 @@
+<svg viewBox="0 0 900 530" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Inherited terms by contract tier">
+<!-- FIGURE 16.3 REQUIRED ELEMENTS
+Must appear: a comparison across at least two contract tiers (standard
+or self-serve terms versus enterprise terms) showing which specific terms
+change between tiers (data retention, training use of customer inputs,
+support responsiveness) and which remain fixed regardless of tier,
+making legible that negotiation only moves specific, named terms rather
+than the full agreement. Entry condition: an organization is selecting a
+contract tier with a model developer. Exit condition: which terms are
+negotiable at which tier is explicit rather than assumed. Deliberately
+excluded: due diligence and supply chain mechanics (Figures 16.1 and
+16.2's job). Must work in black and white.
+SOURCE: original; the tier comparison is this chapter's own synthesis of
+section 16.7's argument.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<title>Inherited terms by contract tier</title>
+<style>
+text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.ttl{font-size:17px;font-weight:700;}
+.cls{font-size:14px;font-weight:700;}
+.bx{font-size:12.5px;font-weight:400;}
+.col{font-size:11px;font-weight:700;letter-spacing:.06em;}
+.sm{font-size:11px;font-weight:400;}
+.em{font-size:11px;font-style:italic;}
+</style>
+<rect x="0" y="0" width="900" height="530" fill="#ffffff"/>
+<text x="20" y="34" class="ttl" fill="#1a2230">Figure 16.3 &#183; Inherited terms by contract tier</text>
+<text x="30" y="62" class="col" fill="#46536b">TERM</text>
+<text x="430" y="62" class="col" fill="#46536b">STANDARD / SELF-SERVE</text>
+<text x="660" y="62" class="col" fill="#46536b">ENTERPRISE TIER</text>
+<line x1="20" y1="76" x2="880" y2="76" stroke="#1a2230" stroke-width="1.6"/>
+<rect x="20" y="90" width="860" height="66" rx="4" fill="#eef1f5" stroke="#46536b" stroke-width="1.2"/>
+<text x="32" y="114" class="bx" font-weight="700" fill="#1a2230">Data retention</text>
+<text x="32" y="132" class="sm" font-weight="700" fill="#46536b">NEGOTIABLE</text>
+<text x="430" y="112" class="sm" fill="#46536b">provider default,</text>
+<text x="430" y="128" class="sm" fill="#46536b">often extended</text>
+<text x="660" y="112" class="sm" fill="#46536b">negotiated window,</text>
+<text x="660" y="128" class="sm" fill="#46536b">often shortened</text>
+<rect x="20" y="166" width="860" height="66" rx="4" fill="#eef1f5" stroke="#46536b" stroke-width="1.2"/>
+<text x="32" y="190" class="bx" font-weight="700" fill="#1a2230">Training use of customer inputs</text>
+<text x="32" y="208" class="sm" font-weight="700" fill="#46536b">NEGOTIABLE</text>
+<text x="430" y="188" class="sm" fill="#46536b">frequently permitted</text>
+<text x="430" y="204" class="sm" fill="#46536b">by default</text>
+<text x="660" y="188" class="sm" fill="#46536b">typically excluded</text>
+<text x="660" y="204" class="sm" fill="#46536b">by contract</text>
+<rect x="20" y="242" width="860" height="66" rx="4" fill="#eef1f5" stroke="#46536b" stroke-width="1.2"/>
+<text x="32" y="266" class="bx" font-weight="700" fill="#1a2230">Support responsiveness</text>
+<text x="32" y="284" class="sm" font-weight="700" fill="#46536b">NEGOTIABLE</text>
+<text x="430" y="264" class="sm" fill="#46536b">community or</text>
+<text x="430" y="280" class="sm" fill="#46536b">best-effort</text>
+<text x="660" y="264" class="sm" fill="#46536b">contracted SLA</text>
+<rect x="20" y="318" width="860" height="66" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<text x="32" y="342" class="bx" font-weight="700" fill="#1a2230">Underlying safety and refusal calibration</text>
+<text x="32" y="360" class="sm" font-weight="700" fill="#8794a8">FIXED</text>
+<text x="430" y="340" class="sm" fill="#46536b">fixed by developer,</text>
+<text x="430" y="356" class="sm" fill="#46536b">not customer-specific</text>
+<text x="660" y="340" class="sm" fill="#46536b">fixed by developer,</text>
+<text x="660" y="356" class="sm" fill="#46536b">not customer-specific</text>
+<rect x="20" y="394" width="860" height="66" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<text x="32" y="418" class="bx" font-weight="700" fill="#1a2230">Usage policy prohibitions</text>
+<text x="32" y="436" class="sm" font-weight="700" fill="#8794a8">FIXED</text>
+<text x="430" y="416" class="sm" fill="#46536b">fixed by developer</text>
+<text x="660" y="416" class="sm" fill="#46536b">fixed by developer</text>
+<line x1="20" y1="478" x2="880" y2="478" stroke="#c9d1dc" stroke-width="1"/>
+<text x="20" y="496" class="sm" fill="#46536b">Enterprise tier moves the first three rows; the last two stay fixed regardless of tier or contract size,</text>
+<text x="20" y="514" class="sm" fill="#46536b">since they reflect the developer's own calibration and policy rather than a commercial term.</text>
+</svg>
