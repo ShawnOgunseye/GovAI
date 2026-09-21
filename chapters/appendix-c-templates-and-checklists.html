@@ -354,6 +354,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#tpl-10" id="toc-tpl-10" class="nav-link" data-scroll-target="#tpl-10">10. Scope Decision Record</a></li>
   <li><a href="#tpl-11" id="toc-tpl-11" class="nav-link" data-scroll-target="#tpl-11">11. Risk Classification and Regulatory Applicability Record</a></li>
   <li><a href="#tpl-12" id="toc-tpl-12" class="nav-link" data-scroll-target="#tpl-12">12. Discovery Sweep Record</a></li>
+  <li><a href="#tpl-13" id="toc-tpl-13" class="nav-link" data-scroll-target="#tpl-13">13. Dataset Datasheet</a></li>
+  <li><a href="#tpl-14" id="toc-tpl-14" class="nav-link" data-scroll-target="#tpl-14">14. Model Bill of Materials</a></li>
+  <li><a href="#tpl-15" id="toc-tpl-15" class="nav-link" data-scroll-target="#tpl-15">15. Intake Decision Record</a></li>
   </ul>
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -379,8 +382,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>These twelve templates are offered under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) for readers to copy, adapt, and use directly in their own organizations. Reuse under that license has to satisfy its actual conditions, not a looser summary of them. The license requires attribution and a notice of changes made. Its NonCommercial term is defined by whether the use is primarily intended for or directed toward commercial advantage or monetary compensation, a broader test than resale alone. This paragraph is a summary for convenience, not a substitute for the license text itself, which a reader relying on these templates commercially or without attribution should read directly. Within those conditions, fill in the fields, cut what your organization does not need, add what it does, and use the result as a working document instead of treating this appendix as an illustration to reference from a distance. Each field below is cross-referenced to the chapter section that establishes it, so a filled-in template can be traced back to the specific requirement it satisfies.</p>
-<p>Each template below is scoped to hold one record for one system, model, agent, or event; an organization with many systems keeps many filled instances of the same template instead of trying to make a single instance cover a portfolio. Fields marked as cross-references exist so the twelve templates link into one connected set of records, rather than twelve disconnected documents. That is what lets a later reviewer trace a specific system’s history across inventory, assessment, and incident records without reconstructing the connections from memory. Because a specific chapter’s model can itself be revised in a later edition, each template also carries the same minimal record-control header. That header records a template ID and version, the book edition and chapter section it was built from, and the date it was last checked against that section’s current text. That lets a later reviewer tell which version of a chapter’s model a specific filled instance was built against. Every filled instance should also carry its own status, author, reviewer, approver, effective date, and change history in addition to its substantive fields, following Chapter 15’s evidence-record discipline generally, not restating it individually in each template below.</p>
+<p>These fifteen templates are offered under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) for readers to copy, adapt, and use directly in their own organizations. Reuse under that license has to satisfy its actual conditions, not a looser summary of them. The license requires attribution and a notice of changes made. Its NonCommercial term is defined by whether the use is primarily intended for or directed toward commercial advantage or monetary compensation, a broader test than resale alone. This paragraph is a summary for convenience, not a substitute for the license text itself, which a reader relying on these templates commercially or without attribution should read directly. Within those conditions, fill in the fields, cut what your organization does not need, add what it does, and use the result as a working document instead of treating this appendix as an illustration to reference from a distance. Each field below is cross-referenced to the chapter section that establishes it, so a filled-in template can be traced back to the specific requirement it satisfies.</p>
+<p>Each template below is scoped to hold one record for one system, model, agent, or event; an organization with many systems keeps many filled instances of the same template instead of trying to make a single instance cover a portfolio. Fields marked as cross-references exist so the fifteen templates link into one connected set of records, rather than fifteen disconnected documents. That is what lets a later reviewer trace a specific system’s history across inventory, assessment, and incident records without reconstructing the connections from memory. Because a specific chapter’s model can itself be revised in a later edition, each template also carries the same minimal record-control header. That header records a template ID and version, the book edition and chapter section it was built from, and the date it was last checked against that section’s current text. That lets a later reviewer tell which version of a chapter’s model a specific filled instance was built against. Every filled instance should also carry its own status, author, reviewer, approver, effective date, and change history in addition to its substantive fields, following Chapter 15’s evidence-record discipline generally, not restating it individually in each template below.</p>
 <section id="tpl-1" class="level2">
 <h2 class="anchored" data-anchor-id="tpl-1">1. AI Use Case Documentation</h2>
 <p>Complete before any development or procurement work begins, per Chapter 4’s argument that governance starting after a system exists is inspection rather than governance.</p>
@@ -393,13 +396,13 @@ ul.task-list li input[type="checkbox"] {
 <li>Proposed path: build, fine-tune, or buy (Chapter 6)</li>
 <li>System class: predictive, generative, or agentic, or a mix (Chapter 3, section 3.1)</li>
 <li>Affected population, naming who experiences this system’s outputs or actions</li>
-<li>Decision type: recommendation to a human, or autonomous action (Chapter 3, section 3.6)</li>
+<li>Decision type: recommendation to a human, or autonomous action (Chapter 3, section 3.7)</li>
 <li>Date submitted and date entered into the system inventory below</li>
 </ul>
 </section>
 <section id="tpl-2" class="level2">
 <h2 class="anchored" data-anchor-id="tpl-2">2. System Inventory Record</h2>
-<p>One record per system, maintained per Chapter 3, section 3.3, as a living artifact with an owner and a review date, not a one-time exercise. A system discovered through the shadow AI discovery process in Chapter 3, section 3.4, uses this same record; note the discovery method in the last field rather than treating a discovered system as a different kind of record.</p>
+<p>One record per system, maintained per Chapter 3, section 3.4, as a living artifact with an owner and a review date, not a one-time exercise. A system discovered through the shadow AI discovery process in Chapter 3, section 3.5, uses this same record; note the discovery method in the last field rather than treating a discovered system as a different kind of record.</p>
 <ul>
 <li>System name and internal identifier</li>
 <li>Business owner and technical owner (may differ)</li>
@@ -409,7 +412,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Model or models used (cross-reference to Model Inventory Record entries)</li>
 <li>Data sources and categories of personal data processed, if any</li>
 <li>Risk classification and the date it was assigned (cross-reference to Impact Assessment)</li>
-<li>Applicable regulatory mappings (Chapter 3, section 3.7; Chapter 18, section 18.3)</li>
+<li>Applicable regulatory mappings (Chapter 3, section 3.8; Chapter 18, section 18.3)</li>
 <li>Date of last review and scheduled next review date</li>
 <li>Record owner, last update date, and, if applicable, discovery method if this system was not originally self-reported</li>
 </ul>
@@ -458,7 +461,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Duration and frequency of the processing or use, as required of a deployer under Article 27 of the AI Act and distinct from the deployment status recorded on the System Inventory Record (Chapter 4, section 4.8)</li>
 <li>The specific authority who accepts residual risk, named as a person and role with the scope of what that person is empowered to accept, which the documented decision field above assumes but does not itself establish (Chapter 4, section 4.8)</li>
 <li>What remains unaddressed, stated explicitly rather than left implied by the absence of an entry. An assessment listing only mitigated risks is describing an aspiration (Chapter 4, section 4.8)</li>
-<li>Mapping from each field above to the specific provision it is meant to satisfy, per regulation. Legal sufficiency for a given instrument cannot be inferred from having completed an internal template (Chapter 4, section 4.8; Chapter 3, section 3.7)</li>
+<li>Mapping from each field above to the specific provision it is meant to satisfy, per regulation. Legal sufficiency for a given instrument cannot be inferred from having completed an internal template (Chapter 4, section 4.8; Chapter 3, section 3.8)</li>
 </ul>
 </section>
 <section id="tpl-6" class="level2">
@@ -531,13 +534,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="tpl-10" class="level2">
 <h2 class="anchored" data-anchor-id="tpl-10">10. Scope Decision Record</h2>
-<p>One record per scoping exercise, per Chapter 3, section 3.2. The boundary is a property of the deployment rather than of the software, and it moves without anyone changing the code when a step that acts on the output is added. A boundary drawn once and left unrecorded cannot be defended later or revisited when the deployment changes, which is why the judgment needs its own record rather than a field on the system record it produces.</p>
+<p>One record per scoping exercise, per Chapter 3, section 3.2. The boundary is a property of the deployment rather than of the software, and it moves without anyone changing the code when a step that acts on the output is added. A boundary drawn once and left unrecorded cannot be defended later or revisited when the deployment changes, which is why the decision needs its own record rather than a field on the system record it produces.</p>
 <ul>
 <li>Scope decision identifier, and the system or candidate system it concerns</li>
 <li>Date of the decision, and the person accountable for it by name and role</li>
 <li>What triggered this scoping exercise: intake, procurement, a discovery sweep, a change to an existing deployment, or a periodic review</li>
 <li>Description of the deployment as it actually runs, distinguished from the vendor’s description of the product</li>
-<li>The AI component or components, which are in scope intensively and are not the subject of the judgment below</li>
+<li>The AI component or components, which are in scope intensively and are not at issue below</li>
 <li>For each dependency considered, its name, and the decision recorded as in scope, out of scope, or in scope at limited depth</li>
 <li>For each dependency, the one-sentence justification, naming which of the eight materiality grounds applies: purpose, authority, data, behaviour, exposure, evidence, ability to be intervened upon, or remedy available afterward</li>
 <li>Dependencies explicitly considered and excluded, with the reason each cannot materially affect any of the eight grounds. An exclusion with no recorded reason is an omission rather than a decision</li>
@@ -549,7 +552,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="tpl-11" class="level2">
 <h2 class="anchored" data-anchor-id="tpl-11">11. Risk Classification and Regulatory Applicability Record</h2>
-<p>One record per system, per Chapter 3, sections 3.6 and 3.7. The two parts below answer two independent questions and must be completed in order, without the first informing the second. The internal tier is an operating decision about how much governance attention a system receives. Legal applicability is decided by each regulation’s own trigger tested against the system’s own facts. A high internal tier is not evidence that any regulation applies, and a regulation applying does not set the internal tier. The most common failure this record exists to prevent is answering the second question by restating the first.</p>
+<p>One record per system, per Chapter 3, sections 3.7 and 3.7. The two parts below answer two independent questions and must be completed in order, without the first informing the second. The internal tier is an operating decision about how much governance attention a system receives. Legal applicability is decided by each regulation’s own trigger tested against the system’s own facts. A high internal tier is not evidence that any regulation applies, and a regulation applying does not set the internal tier. The most common failure this record exists to prevent is answering the second question by restating the first.</p>
 <p><strong>Part A. Internal classification.</strong></p>
 <ul>
 <li>System identifier and cross-reference to its System Inventory Record</li>
@@ -558,7 +561,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Autonomy, stating whether the system recommends to a human or acts, and what the human can actually change in the time available</li>
 <li>Population, naming who is affected and how many, including those affected without interacting with the system</li>
 <li>Reversibility, stating whether an incorrect outcome can be undone, by whom, within what period, and at whose cost</li>
-<li>How the four factors weigh for this system class specifically, per section 3.6, since the same factors do not carry the same weight across predictive, generative, and agentic systems</li>
+<li>How the four factors weigh for this system class specifically, per section 3.7, since the same factors do not carry the same weight across predictive, generative, and agentic systems</li>
 <li>Internal tier assigned, and the one-sentence defence of it</li>
 <li>Person accountable for the classification by name and role, and the date assigned</li>
 </ul>
@@ -581,19 +584,78 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="tpl-12" class="level2">
 <h2 class="anchored" data-anchor-id="tpl-12">12. Discovery Sweep Record</h2>
-<p>One record per sweep, per Chapter 3, section 3.4. What an inventory does not contain is not a random sample. Formally procured systems are visible, and what escapes correlates with small budgets, individual initiative, and the absence of the review that would have caught a problem. The method is therefore the governed object. Without a record of which channels were searched and which were not, a completed sweep cannot be distinguished from an incomplete one, and coverage cannot be shown to improve between sweeps.</p>
+<p>One record per sweep, per Chapter 3, section 3.5. What an inventory does not contain is not a random sample. Formally procured systems are visible, and what escapes correlates with small budgets, individual initiative, and the absence of the review that would have caught a problem. The method is therefore the governed object. Without a record of which channels were searched and which were not, a completed sweep cannot be distinguished from an incomplete one, and coverage cannot be shown to improve between sweeps.</p>
 <ul>
 <li>Sweep identifier, start and end dates, and the person accountable for it by name and role</li>
 <li>Scope of the sweep, naming which business units, regions, and system types were in and out</li>
 <li>Channels searched, with the method used for each and the date searched. Channels to consider include procurement and expense records, software asset and licence inventories, low-code and automation platforms, API gateway and egress logs, browser or SaaS discovery tooling, existing vendor contracts for AI features added after signature, code repositories, and structured interviews with named roles</li>
 <li>Channels not searched, each with the reason, whether cost, access, tooling, or a decision to defer. This field carries the sweep’s residual blind spot and is the reason the record exists</li>
-<li>Why self-reporting alone was not relied on, per section 3.4’s finding that the people running undisclosed systems do not describe themselves as deploying AI</li>
+<li>Why self-reporting alone was not relied on, per section 3.5’s finding that the people running undisclosed systems do not describe themselves as deploying AI</li>
 <li>Systems found, with a count and a cross-reference to the System Inventory Record created for each. Record the discovery method per system in that record’s discovery field rather than here</li>
 <li>Findings that changed an existing record rather than creating one, such as a system already inventoried that proved to contain a second component</li>
 <li>Items examined and determined not to be in scope, with the ground, so the next sweep does not re-examine them without cause</li>
-<li>Estimated residual exposure, stated as a reasoned judgment from the unsearched channels rather than as a percentage of what was found. A percentage of known systems cannot measure what the sweep did not reach</li>
+<li>Estimated residual exposure, reasoned from the unsearched channels rather than as a percentage of what was found. A percentage of known systems cannot measure what the sweep did not reach</li>
 <li>What would change before the next sweep, naming channels to add and access to obtain</li>
 <li>Date of the next scheduled sweep, and the trigger conditions that would require one sooner</li>
+</ul>
+</section>
+<section id="tpl-13" class="level2">
+<h2 class="anchored" data-anchor-id="tpl-13">13. Dataset Datasheet</h2>
+<p>One record per dataset, per Chapter 5, section 5.10. The structure follows the datasheet format proposed by Timnit Gebru and colleagues in 2018, built for the case where a dataset’s later users are removed from its creators and would otherwise have no way to answer basic questions about what they are working with. The fields that make it worth keeping are the ones recording what is unknown or unresolved. A datasheet listing only what is settled describes a dataset nobody has interrogated.</p>
+<ul>
+<li>Dataset identifier and version, and the models or corpora built from this version</li>
+<li>Named owner, and the date the datasheet was last checked against the dataset itself rather than against a previous datasheet</li>
+<li><strong>Motivation.</strong> Why the dataset was created, by whom, and who funded it. Whether it was created for this use or repurposed from another</li>
+<li><strong>Composition.</strong> What each instance represents, how many there are, and what the instances do not include. Whether the dataset is a sample of a larger set, and if so how the sample was drawn, since this is where selection bias enters</li>
+<li>Whether the data relates to people, and if so which populations, in what proportions, and measured how. Composition stated as measured rather than assumed, per section 5.6</li>
+<li><strong>Collection.</strong> How the data was acquired, over what period, by whom, and under what authority. Whether the subjects consented, to what, and whether that consent covers model training, per the purpose-limitation question in section 5.4</li>
+<li><strong>Preprocessing.</strong> Cleaning, labelling, and transformation steps, in enough detail that a later question about any field can be answered from the record instead of reconstructed. Whether the raw data was retained</li>
+<li><strong>Uses.</strong> What the dataset has been used for, what it should not be used for, and what about its composition makes those uses inappropriate</li>
+<li><strong>Distribution and maintenance.</strong> Who may receive it, under what terms, who maintains it, and how a correction or deletion propagates to everything built from it</li>
+<li><strong>What is unknown.</strong> Every question above that could not be answered, with the reason. A blank field is indistinguishable from an unasked question; a field reading “requested from vendor, refused, escalated” is evidence of diligence and a live item</li>
+<li>Representativeness assessment: the deployment population this data was compared against, the dimensions compared, the result, and the decision taken on an unfavourable result, per section 5.5. Where the organization is on the buy path and cannot answer, record that as the finding</li>
+<li>Cross-reference to the Model Inventory Records built on this dataset, and to the system records those models serve</li>
+</ul>
+</section>
+<section id="tpl-14" class="level2">
+<h2 class="anchored" data-anchor-id="tpl-14">14. Model Bill of Materials</h2>
+<p>One record per model in use, per Chapter 6, section 6.8. This extends the Model Inventory Record rather than replacing it: Template 3 establishes what the model is and which systems it serves, and this record establishes what it is made of, in enough detail that the record rather than anyone’s memory answers a later question. An organization that cannot produce one cannot investigate its own system, because an investigation that cannot establish which artifact produced an output has nothing to investigate.</p>
+<p>Mark every field with how it is known: directly verified by this organization, attested by a supplier without independent verification, or unavailable. That marking is the point of the record. A field that looks complete but rests entirely on supplier attestation describes what someone said, not what is running.</p>
+<p><strong>Starting minimum.</strong> A record carrying less than this cannot support an investigation.</p>
+<ul>
+<li>Base model and version</li>
+<li>The specific weights in use, identified so that the artifact running can be confirmed rather than assumed</li>
+<li>Training or fine-tuning data, cross-referenced to its Dataset Datasheet where one exists</li>
+<li>Adapters or fine-tuning layers, the method used, and who added them. Where the method adjusted the base weights rather than adding separable parameters, record that the two cannot be separated</li>
+<li>Software dependencies required to run the model</li>
+</ul>
+<p><strong>Fuller record.</strong></p>
+<ul>
+<li>Artifact hashes and identifiers confirming which weights are actually running. On the selection path, where the weights are not in the organization’s possession, a hash is not obtainable; record instead the provider’s version identifier as returned at inference, the endpoint and region, the contracted service tier, and the date and content of the provider’s last change notice</li>
+<li>Dataset versions and their provenance</li>
+<li>Licensing terms of every component, and what each permits</li>
+<li>Intended and prohibited uses, as the developer states them</li>
+<li>Evaluation evidence behind every performance claim, and the claims made with no evidence behind them</li>
+<li>Runtime environment and configuration</li>
+<li>Upstream suppliers and service dependencies</li>
+<li>Known limitations, and known vulnerabilities recorded separately from them</li>
+<li>Change history producing the current version</li>
+<li>Deployment configuration in force</li>
+</ul>
+</section>
+<section id="tpl-15" class="level2">
+<h2 class="anchored" data-anchor-id="tpl-15">15. Intake Decision Record</h2>
+<p>One record per proposal, per Chapter 4, sections 4.2 and 4.7. A proposal that proceeds becomes a system with a system record. A proposal that stops, or proceeds with conditions, produces no system and therefore has no home in the inventory, which is why the hardest outcome to reach is the one the book’s records were least equipped to hold. A stop that is not recorded will be relitigated from nothing when the same proposal returns.</p>
+<ul>
+<li>Proposal identifier, title, date received, and the requester by name and role</li>
+<li>Outcome, recorded as one of: proceed, proceed with conditions, return for more information, defer with a stated review date, refer elsewhere, or stop</li>
+<li>The person holding authority for this outcome, named, with the scope of what they were empowered to decide</li>
+<li><strong>For a stop:</strong> the reasoning, in enough detail that the same proposal arriving in eighteen months is assessed against what was decided rather than argued again from the beginning. Which of section 4.7’s four grounds it failed, and whether it crossed a prohibition or safety floor, in which case the analysis stopped before any benefit comparison</li>
+<li><strong>For conditions:</strong> each condition, its named owner, its due date, and the stated consequence of the due date passing with the condition unmet. A condition with no consequence is a note</li>
+<li>Scrutiny level applied, and what determined it</li>
+<li>The appropriateness assessment: data sufficiency, objective specifiability, benefit proportionality, and value alignment, each with its conclusion and the reasoning behind it</li>
+<li>Dissent recorded rather than resolved silently, naming who held which position</li>
+<li>Cross-references to the System Inventory Record and Impact Assessment where the proposal proceeded, and to the Scope Decision Record that bounded it</li>
 </ul>
 
 
