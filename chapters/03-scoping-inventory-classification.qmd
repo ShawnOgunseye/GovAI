@@ -49,7 +49,7 @@ The question you will face is that a largely conventional system has an AI compo
 
 The rule follows from the socio-technical account in Chapter 1. If a system's behaviour is produced jointly by the model and by the people and processes around it, then a boundary drawn around the model alone cannot capture what produces the behaviour. The rule works because it tracks causation broadly, not one narrow technical relationship. A retrieval step that determines what the model sees is shaping its inputs, so it is in. A dashboard that displays the model's output to someone who acts on it is shaped by its outputs, so it is in. The authentication service both of them run on touches neither input nor output directly. But if a failure or compromise in it could let the wrong person reach the system, change what it does, or erase the trail a reviewer would need afterward, it can still create governable risk. It belongs in scope at whatever depth that risk warrants. Something is safely excluded only once it cannot materially affect purpose, authority, data, behaviour, exposure, evidence, intervention, or remedy, not merely because it sits outside the input-output path.
 
-The decision needs its own record, because a boundary that was never written down cannot be defended when it is questioned or revisited when the deployment changes. Template 10 in Appendix C has fields for the grounds applied to each dependency, for what was excluded and why, and for the changes that would require the boundary to be drawn again.
+The decision needs its own record, because a boundary that was never written down cannot be defended when it is questioned or revisited when the deployment changes. [Template 10, the Scope Decision Record](appendix-c-templates-and-checklists.qmd#tpl-10), has fields for the grounds applied to each dependency, for what was excluded and why, and for the changes that would require the boundary to be drawn again.
 
 The boundary test produces the unit the inventory has to record. It does not make every dependency inside the boundary a separate AI system. It determines what one system record must describe, which model records it must link to, and which human and technical dependencies have to stay visible in it. Calloway's record above is one system with five dependencies named in it, not six records. The inventory in section 3.3 is where that decision becomes durable, and a boundary that never reaches a record is a conversation, not a control.
 
@@ -70,6 +70,30 @@ The **recruiter interface** is in on behaviour and on intervention. It is shaped
 The **billing portal** is out. Take each ground in turn. It cannot affect what the system is for, who may operate it, what data it sees, how it behaves, who can reach it, what evidence survives, whether anyone can intervene, or what remedy a candidate has. It records a commercial fact after the governed activity has finished. The reason is what makes this an exclusion rather than an omission.
 
 The **reporting warehouse** is out for the deployment and in for something else, which is the distinction most often missed. Hiring outcomes copied nightly into workforce analytics cannot flow back to change a score, so it fails every ground as a dependency of the screening system. But the copy is a second processing activity with its own population and its own purpose, and it gets its own intake rather than a line in this record. Out of scope here is not out of scope everywhere.
+
+That reasoning is what the record holds. Template 10 filled for this deployment, before the vendor enabled scheduling, reads as follows. The fields are the template's; only the entries are Calloway's.
+
+::: {.record .record--filled}
+| | |
+|---|---|
+| `SCOPE ID` | SCP-2024-017 · TalentScreen applicant screening |
+| `DATE` | 14 March 2024 |
+| `ACCOUNTABLE` | R. Okafor, Director of Talent Acquisition |
+| `TRIGGER` | Procurement, pre-implementation review |
+| `DEPLOYMENT` | Vendor-hosted model ranks applicants; recruiters review ranked lists in a vendor interface and decide who advances; candidate records held in Calloway's own ATS. The vendor's product description presents one system. |
+| `AI COMPONENT` | Vendor scoring model. In scope intensively; not at issue below. |
+| `IN SCOPE` | Applicant tracking system. Grounds: data, evidence. Supplies what the model scores, and holds what a reviewer would reconstruct. |
+| | Recruiter interface. Grounds: behaviour, intervention. Where oversight happens or fails to. |
+| `LIMITED DEPTH` | Single sign-on. Grounds: authority, exposure, evidence. Touches neither input nor output, but controls who can reach the system and whether the trail survives. Not governed as an AI system; access scoped and logged, identity team named as dependency owner. |
+| `OUT OF SCOPE` | Vendor billing portal. Fails all eight grounds: records a commercial fact after the governed activity has finished. |
+| | Reporting warehouse. Fails all eight here: outcomes copied nightly, no path back to a score. Its own processing activity; separate intake WFA-2024-006. |
+| `DISAGREEMENT` | IT security argued single sign-on was infrastructure and fully out. Retained at limited depth on the evidence ground. |
+| `WOULD MOVE THIS` | A step added that acts on the output without a person in between. A new population affected. A vendor model change. Contract renewal. |
+| `PRODUCED` | SYS-2024-041, MDL-2024-019 |
+| `NEXT REVIEW` | 14 March 2025, or on any trigger above |
+:::
+
+Two entries carry most of the weight, and neither is an inclusion. The billing portal is out with a reason, which is what separates a decision from an omission. And `WOULD MOVE THIS` names, in March 2024, the exact event that arrived eighteen months later.
 
 Then the boundary moved. The vendor enabled the scheduling component during implementation, and a system that recommended began to act. Nothing in Calloway's code changed. What changed is that a step now took an action on a candidate without a person in between, which brought the message templates, the sending authority, and the record of what was sent inside a boundary drawn eighteen months earlier around a system that only ranked. A scope record naming "a step added that acts on the output" as a trigger would have caught it at the moment the vendor asked Calloway to enable the feature. Calloway had no such record, so the boundary was redrawn by an inventory exercise four days into reconstructing what the component had done.
 
@@ -113,6 +137,42 @@ Without the link, a defect found in a model cannot be propagated to every system
 
 Each field earns its place by naming what fails without it. Without a named owner, escalation has no destination and the system is governed by whoever happens to notice a problem. Without recorded populations affected, disaggregated testing has no groups to disaggregate by. Without deployment context, nobody can tell whether the system is still being used where it was validated. Without a next review date, the record ages silently and describes a system that has since changed. Without evidence location, every regulatory inquiry becomes an excavation.
 
+The pair looks like this, filled for the same deployment. Note what the two records share and what only one of them can hold.
+
+::: {.record .record--filled}
+| | |
+|---|---|
+| `SYSTEM` | SYS-2024-041 · TalentScreen applicant screening |
+| `OWNER` | R. Okafor, Director of Talent Acquisition |
+| `PURPOSE` | Rank applicants for recruiter review, 40 openings against roughly 4,000 monthly applications |
+| `CLASS` | Predictive |
+| `DECISION TYPE` | Recommendation to a human |
+| `POPULATIONS` | Applicants, including those who never learn the system ran and those who reapply. |
+| `DEPLOYMENT` | Live, four warehouse regions, since September 2024 |
+| `BOUNDARY` | SCP-2024-017 |
+| `MODELS USED` | MDL-2024-019 |
+| `EVIDENCE AT` | Vendor portal export, monthly; Calloway ATS audit log |
+| `DISCOVERY` | Procurement intake |
+| `NEXT REVIEW` | March 2025 |
+:::
+
+::: {.record .record--filled}
+| | |
+|---|---|
+| `MODEL` | MDL-2024-019 · TalentScreen scoring model |
+| `DEVELOPER` | Vendor. Not trained by Calloway. |
+| `VERSION` | 4.2, per vendor portal, 11 September 2024 |
+| `TRAINING DATA` | Requested 3 March 2024, refused as proprietary, escalated to procurement, unresolved. Asked and refused, not blank. |
+| `LIMITATIONS` | Vendor states evaluation on general recruitment data; silent on warehouse and logistics roles. |
+| `INHERITED POLICY` | Vendor acceptable use terms, tier 2; retention 90 days; no contractual notice of model change |
+| `USED BY SYSTEMS` | SYS-2024-041 |
+| `NEXT REVIEW` | On vendor version change, or March 2025 |
+:::
+
+Four things are visible here that a single merged record could not show. `USED BY SYSTEMS` is a list because one model can serve several, and it is the field that answers "which of our systems are running the version the vendor just disclosed a problem with." `TRAINING DATA` records a refusal rather than sitting empty, which is the difference between a governance function that knows what it does not know and one that has not asked. `LIMITATIONS` names a silence rather than an absence of concern, and that silence is a testing requirement for Chapter 7, not a clean bill. And `BOUNDARY` points back at the scope decision, so a reviewer asking why the reporting warehouse is absent from this record finds the reason instead of guessing.
+
+Both records exist as templates. [Template 2, the System Inventory Record](appendix-c-templates-and-checklists.qmd#tpl-2), and [Template 3, the Model Inventory Record](appendix-c-templates-and-checklists.qmd#tpl-3), carry the fields set out above together with the cross-reference fields that hold the link between them. They are separate templates for the reason this section has just given: the relationship is many-to-many, and one record cannot express it. A system discovered by the sweep in section 3.4 uses the same system record rather than a different kind, with the discovery method noted in it, because a system found late is not a different sort of system from one recorded at intake.
+
 Populate this at intake, not as an annual exercise. Chapter 4 describes the intake process, and the system record begins there. An inventory built as a periodic census will be wrong between censuses, which is most of the time.
 
 ## 3.4 Discovering shadow AI
@@ -129,7 +189,7 @@ It takes five forms, and they divide into two kinds. Three concern systems that 
 
 The other two concern systems that were recorded correctly and then changed, and they are the forms an organization with a good inventory is most exposed to, because the record's existence is mistaken for the record's currency. A capability is added to a system already in the inventory, and the boundary drawn around what that system used to do no longer contains what it now does. Calloway's scheduling component is this form. The screening tool was recorded, and then it began to act. Or a model is substituted underneath a system whose record still names the old one, which happens on the buy path without anyone at the deploying organization being told, and which means the linked model record now describes something that is not running. The first kind is a hole in the inventory. The second is a lie in it, and a confident inventory that has never been tested for the second kind is worse than an incomplete one that knows it is incomplete.
 
-Both kinds end in the same place. Discovery surfaces a candidate; it does not produce a record. Each candidate has to be examined for what it actually is, bounded by the test in section 3.2, entered as a system record with its model records linked, and then classified. A finding written straight into the inventory as an unexplained line has skipped the two steps that make it governable. So the method becomes the governed object. A sweep has to record which channels it searched and which it did not. Exposure sits in the ones it did not reach. Appendix C template 12 is built around that omission.
+Both kinds end in the same place. Discovery surfaces a candidate; it does not produce a record. Each candidate has to be examined for what it actually is, bounded by the test in section 3.2, entered as a system record with its model records linked, and then classified. A finding written straight into the inventory as an unexplained line has skipped the two steps that make it governable. So the method becomes the governed object. A sweep has to record which channels it searched and which it did not. Exposure sits in the ones it did not reach. [Template 12, the Discovery Sweep Record](appendix-c-templates-and-checklists.qmd#tpl-12), is built around that omission.
 
 Four approaches find most of it, and they complement one another instead of substituting for one another.
 
@@ -221,7 +281,7 @@ Separating those two raises a further question. The four factors were built for 
 
 An organization operating across jurisdictions faces overlapping regulations with different vocabularies for similar ideas. The tempting response is a compliance programme per regulation. This does not scale, and it produces the situation where the same system is assessed three times by three teams reaching three conclusions.
 
-The alternative is to build one fact record and test each applicable regulation's own trigger against it, instead of letting one regulation's conclusion stand in for another's. The internal tier from section 3.6 allocates review effort; it does not decide what a regulation requires. Keeping the two apart is easier when the record itself separates them. Template 11 in Appendix C puts the internal tier in one part and each regulation's own trigger test in another, and closes with a check that no legal result was read off the tier.
+The alternative is to build one fact record and test each applicable regulation's own trigger against it, instead of letting one regulation's conclusion stand in for another's. The internal tier from section 3.6 allocates review effort; it does not decide what a regulation requires. Keeping the two apart is easier when the record itself separates them. [Template 11, the Risk Classification and Regulatory Applicability Record](appendix-c-templates-and-checklists.qmd#tpl-11), puts the internal tier in one part and each regulation's own trigger test in another, and closes with a check that no legal result was read off the tier.
 
 ![One internal classification mapped to the obligations of several regulations](/figures/fig-03-02-classify-map.svg){#fig-classify-map}
 

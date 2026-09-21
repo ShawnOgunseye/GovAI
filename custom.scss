@@ -1,0 +1,328 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+// Palette. These five are the same values the figures use, so page and
+// diagram stay consistent. Every colour carries an assigned meaning.
+$ink:      #2B3A42;   // structure, body text
+$surface:  #F4F6F7;   // block backgrounds
+$ctx:      #B8C4CA;   // context, rules, de-emphasis
+$focus:    #1F6FEB;   // the element under discussion
+$exception:#B3541E;   // failure states, gaps, prohibited paths
+
+$body-color:  $ink;
+$body-bg:     #fff;
+$link-color:  $focus;
+$primary:     $focus;
+
+$font-family-sans-serif: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+$font-family-monospace:  "IBM Plex Mono", ui-monospace, Menlo, monospace;
+$font-size-root: 19px;
+$line-height-base: 1.62;
+
+$h1-font-size: 1.9rem;
+$h2-font-size: 1.28rem;
+$h3-font-size: 1.06rem;
+
+$toc-font-size: 0.78rem;
+$sidebar-font-size: 0.86rem;
+$sidebar-font-size-section: 0.8rem;
+
+/*-- scss:rules --*/
+
+// Body is serif for reading; headings and furniture are sans.
+body { font-family: Spectral, "Iowan Old Style", Georgia, serif; }
+
+h1, h2, h3, h4, .sidebar-title, .quarto-title-block {
+  font-family: $font-family-sans-serif;
+  letter-spacing: -0.015em;
+}
+h1 { font-weight: 600; line-height: 1.15; }
+h2 {
+  font-weight: 600;
+  margin-top: 3.2rem;
+  padding-top: 1.9rem;
+  border-top: 2px solid $ink;
+}
+h3 { font-weight: 600; margin-top: 2.2rem; }
+p  { margin-bottom: 1.15rem; }
+
+// The signature: every reference element is monospaced, because the book's
+// argument is that governance runs on identifiers. Case names, version
+// records and question-type labels all use inline code.
+code:not(.sourceCode) {
+  font-family: $font-family-monospace;
+  font-size: 0.72em;
+  letter-spacing: 0.06em;
+  background: $surface;
+  color: $focus;
+  padding: 0.18em 0.5em;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+// Blocks
+.objectives, .cases-box, .case {
+  background: $surface;
+  border-left: 3px solid $focus;
+  padding: 1.5rem 1.5rem 0.4rem;
+  margin: 2.5rem 0;
+  border-radius: 2px;
+}
+.case { border-left-color: $exception; }
+.objectives h2, .objectives h3,
+.cases-box h2, .cases-box h3,
+.case h2, .case h3 {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+  font-family: $font-family-monospace;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $focus;
+}
+.case h2, .case h3 { color: $exception; }
+.objectives ul { margin-bottom: 1.1rem; }
+.objectives li { margin-bottom: 0.5rem; line-height: 1.5; }
+.cases-box p, .case p { font-size: 0.95em; }
+
+// Figures
+figure, .quarto-figure { margin: 2.8rem 0; }
+figure img, .quarto-figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid $ctx;
+  padding: 1.4rem 1.2rem;
+  background: #fff;
+}
+figcaption, .figure-caption {
+  font-family: $font-family-sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  opacity: 0.72;
+  text-align: left;
+  margin-top: 0.85rem;
+}
+
+// Landing page cover
+//
+// A flat ink-coloured panel carries the whole cover: no photography, no
+// icon system. The single graphic idea is typographic — "Govern" sits on
+// a redaction/stamp bar, "AI" sits in an open form-field box — so the book
+// reads as a real, considered title rather than a tech-product screen.
+// Cover-only palette. Deliberately separate from the book's $ink/$ctx/$exception
+// design tokens, which are dark-slate + rust and read too close to generic
+// AI-product branding when blown up to full-cover scale. Deep forest green +
+// brass reads as a considered, printed book instead.
+$cover-bg:     #1B2E28; // deep forest green, the whole panel
+$cover-ctx:    #9DB0A4; // muted sage-grey for de-emphasised cover text
+$cover-accent: #C9A227; // brass/gold — the one accent, used twice: the bar and the AI box
+
+.cover-jacket {
+  background: $cover-bg;
+  color: $surface;
+  padding: 4.2rem 3.2rem 3.4rem;
+  margin: 0 0 3rem;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+.cover-jacket::after {
+  content: "";
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 220px; height: 220px;
+  border: 1px solid rgba(244,246,247,.08);
+  border-radius: 4px;
+  transform: rotate(8deg);
+}
+.cover-kicker {
+  font-family: $font-family-monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $cover-ctx;
+  margin: 0 0 5.5rem;
+}
+.cover-titleblock { position: relative; z-index: 1; }
+.cover-how {
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.01em;
+  color: $cover-ctx;
+  margin: 0 0 0.3rem;
+}
+.cover-govern-row { position: relative; display: inline-block; }
+.cover-govern-row::before {
+  content: "";
+  position: absolute;
+  left: -6px; right: -6px; bottom: 12%;
+  height: 22%;
+  background: $cover-accent;
+  z-index: 0;
+}
+.cover-govern-row .cover-title {
+  position: relative;
+  z-index: 1;
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  font-size: clamp(3.2rem, 7vw, 5rem);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  color: $surface;
+  display: inline-block;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.cover-ai-box {
+  display: inline-block;
+  margin-top: 0.5rem;
+  border: 3px solid $cover-accent;
+  padding: 0 0.3em;
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  font-size: clamp(3.2rem, 7vw, 5rem);
+  letter-spacing: -0.03em;
+  color: $surface;
+}
+h3.cover-sub {
+  font-family: Spectral, Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: $cover-ctx;
+  opacity: 1;
+  margin: 1.8rem 0 0;
+  max-width: 30ch;
+  border: 0;
+}
+.cover-foot {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 3.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(244,246,247,.22);
+  font-family: $font-family-monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: $cover-ctx;
+}
+.cover-author {
+  font-family: $font-family-sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0;
+  color: $surface;
+  margin: 0;
+}
+
+.record table { border-collapse: collapse; font-family: $font-family-monospace;
+  font-size: 0.72rem; line-height: 1.9; }
+.record td { padding: 0 2.2rem 0 0; border: 0; vertical-align: top; }
+.record td:first-child { color: $focus; letter-spacing: 0.05em; white-space: nowrap; }
+.record td:last-child  { opacity: 0.8; }
+.record thead { display: none; }
+
+// Filled artifact records shown inside a chapter, as opposed to the short
+// masthead block on the landing page. The landing-page .record holds four
+// one-line values and collapses to its content, which is right there and
+// wrong here: a filled template has long values that then wrap at about
+// thirty characters and run for two pages. These rules widen the value
+// column, cap the label column, and set the whole block at full width, so
+// a filled record reads as a document rather than a ribbon.
+.record--filled {
+  margin: 1.8rem 0;
+  border-left: 2px solid $focus;
+  padding: 0.9rem 0 0.9rem 1.4rem;
+  background: rgba(0, 0, 0, 0.015);
+}
+.record--filled table { width: 100%; table-layout: fixed; font-size: 0.70rem;
+  line-height: 1.75; }
+.record--filled td:first-child { width: 8.5rem; padding-right: 1.2rem;
+  white-space: normal; word-break: break-word; }
+.record--filled td:last-child { opacity: 0.9; }
+.record--filled td { padding-top: 0.18rem; padding-bottom: 0.18rem; }
+@media (prefers-color-scheme: dark) {
+  .record--filled { background: rgba(255, 255, 255, 0.02); }
+}
+
+// Back-cover block: same cover palette, jacket copy instead of imagery.
+.back-cover {
+  background: $cover-bg;
+  color: $surface;
+  padding: 3rem 3.2rem;
+  margin: 3rem 0;
+  border-radius: 3px;
+}
+.back-cover-label {
+  font-family: $font-family-monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $cover-ctx;
+  margin: 0 0 1.6rem;
+}
+.back-cover p {
+  font-family: Spectral, Georgia, serif;
+  font-size: 1.08rem;
+  line-height: 1.62;
+  color: $surface;
+  max-width: 62ch;
+}
+.back-cover-contents {
+  margin-top: 1.8rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(244,246,247,.22);
+  font-family: $font-family-monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.03em;
+  color: $cover-ctx;
+  line-height: 2;
+}
+.back-cover-contents b { color: $surface; font-weight: 500; }
+
+// Furniture
+#quarto-margin-sidebar .toc-active { color: $focus; }
+.sidebar nav[role=doc-toc] ul > li > a.active { border-left-color: $focus; }
+#quarto-sidebar { border-right: 1px solid $ctx; }
+.nav-page a { font-family: $font-family-sans-serif; }
+.page-footer { font-family: $font-family-monospace; font-size: 0.66rem;
+  letter-spacing: 0.06em; opacity: 0.55; }
+
+@media print {
+  #quarto-sidebar, #quarto-margin-sidebar, .nav-page, .page-footer { display: none; }
+  h2 { break-after: avoid; }
+  figure { break-inside: avoid; }
+}
+
+.notice { background: $surface; border-left: 3px solid $ctx; padding: 1.1rem 1.3rem;
+  margin: 2.5rem 0; font-size: 0.88rem; opacity: 0.9; border-radius: 2px; }
+.notice p { margin: 0; }
+
+// Display definition: the book's central definitions, set off and fully bold.
+.definition {
+  margin: 2.2rem 0;
+  padding: 1.4rem 0 1.4rem 1.6rem;
+  border-left: 3px solid $focus;
+  p { margin: 0; font-family: $font-family-sans-serif; font-weight: 600;
+      font-size: 1.14rem; line-height: 1.42; letter-spacing: -0.012em; max-width: 46ch; }
+  strong { font-weight: 600; }
+}

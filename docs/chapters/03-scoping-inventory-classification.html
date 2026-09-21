@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-176b1e44b272a30ec08500e73512b2cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4c3f6eeccce1a8e733fd5a4018ea187f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bf0dd87e7c3689b24483e63a0519db7d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -423,7 +423,7 @@ Figure&nbsp;4.1: Three nested lifecycle layers, with the cadence and owner of ea
 <p><strong>Draw the boundary around whatever can materially affect the system’s purpose, authority, data, behaviour, exposure, evidence, ability to be intervened upon, or the remedy available afterward, not only around what technically shapes the AI component’s inputs or is shaped by its outputs. The AI component is in scope intensively. A dependency is not excluded from scope merely because it does not transform the component’s input or output.</strong></p>
 </div>
 <p>The rule follows from the socio-technical account in Chapter 1. If a system’s behaviour is produced jointly by the model and by the people and processes around it, then a boundary drawn around the model alone cannot capture what produces the behaviour. The rule works because it tracks causation broadly, not one narrow technical relationship. A retrieval step that determines what the model sees is shaping its inputs, so it is in. A dashboard that displays the model’s output to someone who acts on it is shaped by its outputs, so it is in. The authentication service both of them run on touches neither input nor output directly. But if a failure or compromise in it could let the wrong person reach the system, change what it does, or erase the trail a reviewer would need afterward, it can still create governable risk. It belongs in scope at whatever depth that risk warrants. Something is safely excluded only once it cannot materially affect purpose, authority, data, behaviour, exposure, evidence, intervention, or remedy, not merely because it sits outside the input-output path.</p>
-<p>The decision needs its own record, because a boundary that was never written down cannot be defended when it is questioned or revisited when the deployment changes. Template 10 in Appendix C has fields for the grounds applied to each dependency, for what was excluded and why, and for the changes that would require the boundary to be drawn again.</p>
+<p>The decision needs its own record, because a boundary that was never written down cannot be defended when it is questioned or revisited when the deployment changes. <a href="../chapters/appendix-c-templates-and-checklists.html#tpl-10">Template 10, the Scope Decision Record</a>, has fields for the grounds applied to each dependency, for what was excluded and why, and for the changes that would require the boundary to be drawn again.</p>
 <p>The boundary test produces the unit the inventory has to record. It does not make every dependency inside the boundary a separate AI system. It determines what one system record must describe, which model records it must link to, and which human and technical dependencies have to stay visible in it. Calloway’s record above is one system with five dependencies named in it, not six records. The inventory in section 3.3 is where that decision becomes durable, and a boundary that never reaches a record is a conversation, not a control.</p>
 <p>Two consequences follow that are worth stating before the disputes. The boundary is a property of the deployment, not of the software, so the same product can be in scope at one organization and out at another depending on what surrounds it. And the boundary can move without anyone changing the code, because adding a step that acts on the output brings that step inside.</p>
 <p>Before the disputes, one boundary worked through in full, because the eight grounds are easier to state than to apply.</p>
@@ -434,6 +434,78 @@ Figure&nbsp;4.1: Three nested lifecycle layers, with the cadence and owner of ea
 <p><strong>Single sign-on</strong> is the interesting one, and it is the case the definition box was written for. It touches neither the model’s inputs nor its outputs. It is in scope anyway, at limited depth, on authority, exposure, and evidence. If the wrong person can reach the scheduling component, they can send messages to candidates in Calloway’s name. If session logging is thin, the question of who changed a threshold has no answer. Calloway does not govern its identity provider as an AI system. It records the dependency, confirms that access to both components is scoped and logged, and names who would be asked if that stopped being true.</p>
 <p>The <strong>billing portal</strong> is out. Take each ground in turn. It cannot affect what the system is for, who may operate it, what data it sees, how it behaves, who can reach it, what evidence survives, whether anyone can intervene, or what remedy a candidate has. It records a commercial fact after the governed activity has finished. The reason is what makes this an exclusion rather than an omission.</p>
 <p>The <strong>reporting warehouse</strong> is out for the deployment and in for something else, which is the distinction most often missed. Hiring outcomes copied nightly into workforce analytics cannot flow back to change a score, so it fails every ground as a dependency of the screening system. But the copy is a second processing activity with its own population and its own purpose, and it gets its own intake rather than a line in this record. Out of scope here is not out of scope everywhere.</p>
+<p>That reasoning is what the record holds. Template 10 filled for this deployment, before the vendor enabled scheduling, reads as follows. The fields are the template’s; only the entries are Calloway’s.</p>
+<div class="record record--filled">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><code>SCOPE ID</code></td>
+<td>SCP-2024-017 · TalentScreen applicant screening</td>
+</tr>
+<tr class="even">
+<td><code>DATE</code></td>
+<td>14 March 2024</td>
+</tr>
+<tr class="odd">
+<td><code>ACCOUNTABLE</code></td>
+<td>R. Okafor, Director of Talent Acquisition</td>
+</tr>
+<tr class="even">
+<td><code>TRIGGER</code></td>
+<td>Procurement, pre-implementation review</td>
+</tr>
+<tr class="odd">
+<td><code>DEPLOYMENT</code></td>
+<td>Vendor-hosted model ranks applicants; recruiters review ranked lists in a vendor interface and decide who advances; candidate records held in Calloway’s own ATS. The vendor’s product description presents one system.</td>
+</tr>
+<tr class="even">
+<td><code>AI COMPONENT</code></td>
+<td>Vendor scoring model. In scope intensively; not at issue below.</td>
+</tr>
+<tr class="odd">
+<td><code>IN SCOPE</code></td>
+<td>Applicant tracking system. Grounds: data, evidence. Supplies what the model scores, and holds what a reviewer would reconstruct.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Recruiter interface. Grounds: behaviour, intervention. Where oversight happens or fails to.</td>
+</tr>
+<tr class="odd">
+<td><code>LIMITED DEPTH</code></td>
+<td>Single sign-on. Grounds: authority, exposure, evidence. Touches neither input nor output, but controls who can reach the system and whether the trail survives. Not governed as an AI system; access scoped and logged, identity team named as dependency owner.</td>
+</tr>
+<tr class="even">
+<td><code>OUT OF SCOPE</code></td>
+<td>Vendor billing portal. Fails all eight grounds: records a commercial fact after the governed activity has finished.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Reporting warehouse. Fails all eight here: outcomes copied nightly, no path back to a score. Its own processing activity; separate intake WFA-2024-006.</td>
+</tr>
+<tr class="even">
+<td><code>DISAGREEMENT</code></td>
+<td>IT security argued single sign-on was infrastructure and fully out. Retained at limited depth on the evidence ground.</td>
+</tr>
+<tr class="odd">
+<td><code>WOULD MOVE THIS</code></td>
+<td>A step added that acts on the output without a person in between. A new population affected. A vendor model change. Contract renewal.</td>
+</tr>
+<tr class="even">
+<td><code>PRODUCED</code></td>
+<td>SYS-2024-041, MDL-2024-019</td>
+</tr>
+<tr class="odd">
+<td><code>NEXT REVIEW</code></td>
+<td>14 March 2025, or on any trigger above</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Two entries carry most of the weight, and neither is an inclusion. The billing portal is out with a reason, which is what separates a decision from an omission. And <code>WOULD MOVE THIS</code> names, in March 2024, the exact event that arrived eighteen months later.</p>
 <p>Then the boundary moved. The vendor enabled the scheduling component during implementation, and a system that recommended began to act. Nothing in Calloway’s code changed. What changed is that a step now took an action on a candidate without a person in between, which brought the message templates, the sending authority, and the record of what was sent inside a boundary drawn eighteen months earlier around a system that only ranked. A scope record naming “a step added that acts on the output” as a trigger would have caught it at the moment the vendor asked Calloway to enable the feature. Calloway had no such record, so the boundary was redrawn by an inventory exercise four days into reconstructing what the component had done.</p>
 <p>Apply that to the cases that generate real disputes.</p>
 <p>A vendor product contains a model the vendor has not disclosed. The organization bought a scheduling tool and discovers that its prioritization is learned, not rule-based. This is in scope, and not having known it is itself the finding. Chapter 16 addresses what to do when a vendor will not discuss it.</p>
@@ -458,6 +530,109 @@ Figure&nbsp;4.1: Three nested lifecycle layers, with the cadence and owner of ea
 <p>The link between the two is the part that matters and the part most often skipped. It is a many-to-many relationship, which is why it cannot be collapsed into a single record. One model may sit inside four systems, and one system may call three models for different steps.</p>
 <p>Without the link, a defect found in a model cannot be propagated to every system deploying it, which is the situation the model layer exists to prevent. The propagation runs in both directions and both are needed. From model to systems, so that a disclosed weakness reaches everyone affected by it. From system to models, so that an incident in one system can be traced to whichever component produced the behaviour, which Chapter 10 depends on entirely. When a developer discloses that a model version underperforms for a particular population, the question that follows is which of your systems are running it. An inventory that cannot answer in minutes is an inventory that will answer in weeks, after someone has gone through systems one at a time.</p>
 <p>Each field earns its place by naming what fails without it. Without a named owner, escalation has no destination and the system is governed by whoever happens to notice a problem. Without recorded populations affected, disaggregated testing has no groups to disaggregate by. Without deployment context, nobody can tell whether the system is still being used where it was validated. Without a next review date, the record ages silently and describes a system that has since changed. Without evidence location, every regulatory inquiry becomes an excavation.</p>
+<p>The pair looks like this, filled for the same deployment. Note what the two records share and what only one of them can hold.</p>
+<div class="record record--filled">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><code>SYSTEM</code></td>
+<td>SYS-2024-041 · TalentScreen applicant screening</td>
+</tr>
+<tr class="even">
+<td><code>OWNER</code></td>
+<td>R. Okafor, Director of Talent Acquisition</td>
+</tr>
+<tr class="odd">
+<td><code>PURPOSE</code></td>
+<td>Rank applicants for recruiter review, 40 openings against roughly 4,000 monthly applications</td>
+</tr>
+<tr class="even">
+<td><code>CLASS</code></td>
+<td>Predictive</td>
+</tr>
+<tr class="odd">
+<td><code>DECISION TYPE</code></td>
+<td>Recommendation to a human</td>
+</tr>
+<tr class="even">
+<td><code>POPULATIONS</code></td>
+<td>Applicants, including those who never learn the system ran and those who reapply.</td>
+</tr>
+<tr class="odd">
+<td><code>DEPLOYMENT</code></td>
+<td>Live, four warehouse regions, since September 2024</td>
+</tr>
+<tr class="even">
+<td><code>BOUNDARY</code></td>
+<td>SCP-2024-017</td>
+</tr>
+<tr class="odd">
+<td><code>MODELS USED</code></td>
+<td>MDL-2024-019</td>
+</tr>
+<tr class="even">
+<td><code>EVIDENCE AT</code></td>
+<td>Vendor portal export, monthly; Calloway ATS audit log</td>
+</tr>
+<tr class="odd">
+<td><code>DISCOVERY</code></td>
+<td>Procurement intake</td>
+</tr>
+<tr class="even">
+<td><code>NEXT REVIEW</code></td>
+<td>March 2025</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="record record--filled">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><code>MODEL</code></td>
+<td>MDL-2024-019 · TalentScreen scoring model</td>
+</tr>
+<tr class="even">
+<td><code>DEVELOPER</code></td>
+<td>Vendor. Not trained by Calloway.</td>
+</tr>
+<tr class="odd">
+<td><code>VERSION</code></td>
+<td>4.2, per vendor portal, 11 September 2024</td>
+</tr>
+<tr class="even">
+<td><code>TRAINING DATA</code></td>
+<td>Requested 3 March 2024, refused as proprietary, escalated to procurement, unresolved. Asked and refused, not blank.</td>
+</tr>
+<tr class="odd">
+<td><code>LIMITATIONS</code></td>
+<td>Vendor states evaluation on general recruitment data; silent on warehouse and logistics roles.</td>
+</tr>
+<tr class="even">
+<td><code>INHERITED POLICY</code></td>
+<td>Vendor acceptable use terms, tier 2; retention 90 days; no contractual notice of model change</td>
+</tr>
+<tr class="odd">
+<td><code>USED BY SYSTEMS</code></td>
+<td>SYS-2024-041</td>
+</tr>
+<tr class="even">
+<td><code>NEXT REVIEW</code></td>
+<td>On vendor version change, or March 2025</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Four things are visible here that a single merged record could not show. <code>USED BY SYSTEMS</code> is a list because one model can serve several, and it is the field that answers “which of our systems are running the version the vendor just disclosed a problem with.” <code>TRAINING DATA</code> records a refusal rather than sitting empty, which is the difference between a governance function that knows what it does not know and one that has not asked. <code>LIMITATIONS</code> names a silence rather than an absence of concern, and that silence is a testing requirement for Chapter 7, not a clean bill. And <code>BOUNDARY</code> points back at the scope decision, so a reviewer asking why the reporting warehouse is absent from this record finds the reason instead of guessing.</p>
+<p>Both records exist as templates. <a href="../chapters/appendix-c-templates-and-checklists.html#tpl-2">Template 2, the System Inventory Record</a>, and <a href="../chapters/appendix-c-templates-and-checklists.html#tpl-3">Template 3, the Model Inventory Record</a>, carry the fields set out above together with the cross-reference fields that hold the link between them. They are separate templates for the reason this section has just given: the relationship is many-to-many, and one record cannot express it. A system discovered by the sweep in section 3.4 uses the same system record rather than a different kind, with the discovery method noted in it, because a system found late is not a different sort of system from one recorded at intake.</p>
 <p>Populate this at intake, not as an annual exercise. Chapter 4 describes the intake process, and the system record begins there. An inventory built as a periodic census will be wrong between censuses, which is most of the time.</p>
 </section>
 <section id="discovering-shadow-ai" class="level2">
@@ -469,7 +644,7 @@ Figure&nbsp;4.1: Three nested lifecycle layers, with the cadence and owner of ea
 <p>The gap is the most common governance problem organizations face, and it has a property that makes it worse than an ordinary inventory shortfall. The systems it hides are not a random sample. Anything procured through a formal channel is visible. What escapes is what arrived some other way, which correlates with small budgets, individual initiative, and an absence of the review that would have caught a problem.</p>
 <p>It takes five forms, and they divide into two kinds. Three concern systems that were never recorded at all. Employees use external models through personal accounts, sometimes with organizational data in the prompt. Business units licence tools with model components through expense claims, not procurement. Analysts build workflows on low-code platforms that call models through connectors, and teams add generative features to internal tools without recognizing that they have started building AI. None of these people think of themselves as deploying AI, which is why asking them will not find it.</p>
 <p>The other two concern systems that were recorded correctly and then changed, and they are the forms an organization with a good inventory is most exposed to, because the record’s existence is mistaken for the record’s currency. A capability is added to a system already in the inventory, and the boundary drawn around what that system used to do no longer contains what it now does. Calloway’s scheduling component is this form. The screening tool was recorded, and then it began to act. Or a model is substituted underneath a system whose record still names the old one, which happens on the buy path without anyone at the deploying organization being told, and which means the linked model record now describes something that is not running. The first kind is a hole in the inventory. The second is a lie in it, and a confident inventory that has never been tested for the second kind is worse than an incomplete one that knows it is incomplete.</p>
-<p>Both kinds end in the same place. Discovery surfaces a candidate; it does not produce a record. Each candidate has to be examined for what it actually is, bounded by the test in section 3.2, entered as a system record with its model records linked, and then classified. A finding written straight into the inventory as an unexplained line has skipped the two steps that make it governable. So the method becomes the governed object. A sweep has to record which channels it searched and which it did not. Exposure sits in the ones it did not reach. Appendix C template 12 is built around that omission.</p>
+<p>Both kinds end in the same place. Discovery surfaces a candidate; it does not produce a record. Each candidate has to be examined for what it actually is, bounded by the test in section 3.2, entered as a system record with its model records linked, and then classified. A finding written straight into the inventory as an unexplained line has skipped the two steps that make it governable. So the method becomes the governed object. A sweep has to record which channels it searched and which it did not. Exposure sits in the ones it did not reach. <a href="../chapters/appendix-c-templates-and-checklists.html#tpl-12">Template 12, the Discovery Sweep Record</a>, is built around that omission.</p>
 <p>Four approaches find most of it, and they complement one another instead of substituting for one another.</p>
 <p>Network and endpoint visibility identifies traffic to known model interfaces. This finds direct API use and browser-based tools. It does not find models embedded inside software that also does other things.</p>
 <p>Expense and procurement review finds licensed tools. Search for the vendors, and also for the pattern of small recurring charges that indicate a team has been paying for something out of a departmental budget.</p>
@@ -534,7 +709,7 @@ Figure&nbsp;4.2: The loop: discovery, boundary, inventory, classification, and t
 <section id="record-once-test-independently" class="level2">
 <h2 class="anchored" data-anchor-id="record-once-test-independently">3.7 Record once, test independently</h2>
 <p>An organization operating across jurisdictions faces overlapping regulations with different vocabularies for similar ideas. The tempting response is a compliance programme per regulation. This does not scale, and it produces the situation where the same system is assessed three times by three teams reaching three conclusions.</p>
-<p>The alternative is to build one fact record and test each applicable regulation’s own trigger against it, instead of letting one regulation’s conclusion stand in for another’s. The internal tier from section 3.6 allocates review effort; it does not decide what a regulation requires. Keeping the two apart is easier when the record itself separates them. Template 11 in Appendix C puts the internal tier in one part and each regulation’s own trigger test in another, and closes with a check that no legal result was read off the tier.</p>
+<p>The alternative is to build one fact record and test each applicable regulation’s own trigger against it, instead of letting one regulation’s conclusion stand in for another’s. The internal tier from section 3.6 allocates review effort; it does not decide what a regulation requires. Keeping the two apart is easier when the record itself separates them. <a href="../chapters/appendix-c-templates-and-checklists.html#tpl-11">Template 11, the Risk Classification and Regulatory Applicability Record</a>, puts the internal tier in one part and each regulation’s own trigger test in another, and closes with a check that no legal result was read off the tier.</p>
 <div id="fig-classify-map" class="quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-classify-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">

@@ -2,9 +2,9 @@
 
 These twelve templates are offered under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) for readers to copy, adapt, and use directly in their own organizations. Reuse under that license has to satisfy its actual conditions, not a looser summary of them. The license requires attribution and a notice of changes made. Its NonCommercial term is defined by whether the use is primarily intended for or directed toward commercial advantage or monetary compensation, a broader test than resale alone. This paragraph is a summary for convenience, not a substitute for the license text itself, which a reader relying on these templates commercially or without attribution should read directly. Within those conditions, fill in the fields, cut what your organization does not need, add what it does, and use the result as a working document instead of treating this appendix as an illustration to reference from a distance. Each field below is cross-referenced to the chapter section that establishes it, so a filled-in template can be traced back to the specific requirement it satisfies.
 
-Each template below is scoped to hold one record for one system, model, agent, or event; an organization with many systems keeps many filled instances of the same template instead of trying to make a single instance cover a portfolio. Fields marked as cross-references exist so the nine templates link into one connected set of records, rather than nine disconnected documents. That is what lets a later reviewer trace a specific system's history across inventory, assessment, and incident records without reconstructing the connections from memory. Because a specific chapter's model can itself be revised in a later edition, each template also carries the same minimal record-control header. That header records a template ID and version, the book edition and chapter section it was built from, and the date it was last checked against that section's current text. That lets a later reviewer tell which version of a chapter's model a specific filled instance was built against. Every filled instance should also carry its own status, author, reviewer, approver, effective date, and change history in addition to its substantive fields, following Chapter 15's evidence-record discipline generally, not restating it individually in each template below.
+Each template below is scoped to hold one record for one system, model, agent, or event; an organization with many systems keeps many filled instances of the same template instead of trying to make a single instance cover a portfolio. Fields marked as cross-references exist so the twelve templates link into one connected set of records, rather than twelve disconnected documents. That is what lets a later reviewer trace a specific system's history across inventory, assessment, and incident records without reconstructing the connections from memory. Because a specific chapter's model can itself be revised in a later edition, each template also carries the same minimal record-control header. That header records a template ID and version, the book edition and chapter section it was built from, and the date it was last checked against that section's current text. That lets a later reviewer tell which version of a chapter's model a specific filled instance was built against. Every filled instance should also carry its own status, author, reviewer, approver, effective date, and change history in addition to its substantive fields, following Chapter 15's evidence-record discipline generally, not restating it individually in each template below.
 
-## 1. AI Use Case Documentation
+## 1. AI Use Case Documentation {#tpl-1}
 
 Complete before any development or procurement work begins, per Chapter 4's argument that governance starting after a system exists is inspection rather than governance.
 
@@ -19,7 +19,7 @@ Complete before any development or procurement work begins, per Chapter 4's argu
 - Decision type: recommendation to a human, or autonomous action (Chapter 3, section 3.6)
 - Date submitted and date entered into the system inventory below
 
-## 2. System Inventory Record
+## 2. System Inventory Record {#tpl-2}
 
 One record per system, maintained per Chapter 3, section 3.3, as a living artifact with an owner and a review date, not a one-time exercise. A system discovered through the shadow AI discovery process in Chapter 3, section 3.4, uses this same record; note the discovery method in the last field rather than treating a discovered system as a different kind of record.
 
@@ -35,7 +35,7 @@ One record per system, maintained per Chapter 3, section 3.3, as a living artifa
 - Date of last review and scheduled next review date
 - Record owner, last update date, and, if applicable, discovery method if this system was not originally self-reported
 
-## 3. Model Inventory Record
+## 3. Model Inventory Record {#tpl-3}
 
 One record per model, distinct from the System Inventory Record above because one model can serve several systems and one system can call several models, per Chapter 3's system-versus-model distinction.
 
@@ -49,7 +49,7 @@ One record per model, distinct from the System Inventory Record above because on
 - Date last validated and validation method used
 - Reassessment triggers that would require re-validation (Chapter 14, section 14.5)
 
-## 4. Model Card
+## 4. Model Card {#tpl-4}
 
 For a model an organization builds or fine-tunes itself. For a purchased model, use this same structure to record what the vendor has and has not disclosed, per Chapter 15's adversarial reading approach, marking undisclosed fields explicitly instead of leaving them blank.
 
@@ -63,7 +63,7 @@ For a model an organization builds or fine-tunes itself. For a purchased model, 
 - Retraining or update history and how a user of this card is notified of changes
 - Contact point for questions this card does not answer
 
-## 5. Impact Assessment
+## 5. Impact Assessment {#tpl-5}
 
 Follow Chapter 14's five-component structure as it stands in this book's current text. That structure is itself the subject of ongoing refinement across this book's own chapters, so record which edition and check date this template instance was built against rather than assuming the structure is fixed for all time. Complete before deployment, and again whenever a reassessment trigger fires. Where a stakeholder who would normally be consulted cannot be reached, record which of Chapter 14's consultation substitutes was used instead and what it cannot recover compared to direct consultation.
 
@@ -79,7 +79,7 @@ Follow Chapter 14's five-component structure as it stands in this book's current
 - What remains unaddressed, stated explicitly rather than left implied by the absence of an entry. An assessment listing only mitigated risks is describing an aspiration (Chapter 4, section 4.8)
 - Mapping from each field above to the specific provision it is meant to satisfy, per regulation. Legal sufficiency for a given instrument cannot be inferred from having completed an internal template (Chapter 4, section 4.8; Chapter 3, section 3.7)
 
-## 6. Vendor Assessment
+## 6. Vendor Assessment {#tpl-6}
 
 Structured across Chapter 16's four assessment dimensions, built against this book's current chapter text and, like template 5, worth re-checking against a later edition rather than assumed fixed. Log every question the vendor declined to answer in the final field; a declined question is itself evidence.
 
@@ -91,7 +91,7 @@ Structured across Chapter 16's four assessment dimensions, built against this bo
 - Questions the vendor declined to answer, and whether each decline is disqualifying (Chapter 16, section 16.3)
 - Overall recommendation and named approver
 
-## 7. Agent Registration and Permission Scope
+## 7. Agent Registration and Permission Scope {#tpl-7}
 
 One record per agentic system or agent role, per Chapter 12's argument that an agent's authority must be recorded before it acts, not reconstructed afterward.
 
@@ -109,7 +109,7 @@ One record per agentic system or agent role, per Chapter 12's argument that an a
 - Review cadence and the date of last permission-scope review
 - Deregistration or scope-revocation process, who is authorized to invoke it, and what recovery or rollback applies to actions already taken under a credential later found to have been wrongly scoped
 
-## 8. Incident Response
+## 8. Incident Response {#tpl-8}
 
 Structured per Chapter 10's response sequence. Open a record at the moment an incident is identified, not after it is resolved.
 
@@ -129,7 +129,7 @@ Structured per Chapter 10's response sequence. Open a record at the moment an in
 - Closure criteria met, post-incident review date, and the lesson fed back into the relevant control, template, or training material
 - For a system with delayed or absent ground truth (Chapter 9), the method used to establish how many cases were actually affected, since a prevented or undetected outcome leaves no confirmed case to count directly
 
-## 9. Governance Readiness
+## 9. Governance Readiness {#tpl-9}
 
 Per Chapter 17. Use this to conduct a current-state assessment, not to describe an aspirational future state.
 
@@ -143,7 +143,7 @@ Per Chapter 17. Use this to conduct a current-state assessment, not to describe 
 - Outcome metrics, covering issues found before deployment versus after, classification accuracy on independent review, and bypass rate by system and by team
 - Named owner of this readiness assessment and date completed
 
-## 10. Scope Decision Record
+## 10. Scope Decision Record {#tpl-10}
 
 One record per scoping exercise, per Chapter 3, section 3.2. The boundary is a property of the deployment rather than of the software, and it moves without anyone changing the code when a step that acts on the output is added. A boundary drawn once and left unrecorded cannot be defended later or revisited when the deployment changes, which is why the judgment needs its own record rather than a field on the system record it produces.
 
@@ -160,7 +160,7 @@ One record per scoping exercise, per Chapter 3, section 3.2. The boundary is a p
 - Cross-reference to the System Inventory Record or Records this decision produced
 - Record owner, last update date, and scheduled date for the next boundary review
 
-## 11. Risk Classification and Regulatory Applicability Record
+## 11. Risk Classification and Regulatory Applicability Record {#tpl-11}
 
 One record per system, per Chapter 3, sections 3.6 and 3.7. The two parts below answer two independent questions and must be completed in order, without the first informing the second. The internal tier is an operating decision about how much governance attention a system receives. Legal applicability is decided by each regulation's own trigger tested against the system's own facts. A high internal tier is not evidence that any regulation applies, and a regulation applying does not set the internal tier. The most common failure this record exists to prevent is answering the second question by restating the first.
 
@@ -193,9 +193,9 @@ Complete one block per regulation considered. Do not carry any value from Part A
 - Confirmation that no Part B result was inferred from the Part A tier, recorded by the person who completed Part B
 - Any place where the two answers diverge, such as a low internal tier with a regulation that fires or a high tier with none that do. A divergence is an expected outcome of testing independently, not an error to reconcile
 
-## 12. Discovery Sweep Record
+## 12. Discovery Sweep Record {#tpl-12}
 
-One record per sweep, per Chapter 3, section 3.4. What an inventory does not contain is not a random sample: formally procured systems are visible, and what escapes correlates with small budgets, individual initiative, and the absence of the review that would have caught a problem. The method is therefore the governed object. Without a record of which channels were searched and which were not, a completed sweep cannot be distinguished from an incomplete one, and coverage cannot be shown to improve between sweeps.
+One record per sweep, per Chapter 3, section 3.4. What an inventory does not contain is not a random sample. Formally procured systems are visible, and what escapes correlates with small budgets, individual initiative, and the absence of the review that would have caught a problem. The method is therefore the governed object. Without a record of which channels were searched and which were not, a completed sweep cannot be distinguished from an incomplete one, and coverage cannot be shown to improve between sweeps.
 
 - Sweep identifier, start and end dates, and the person accountable for it by name and role
 - Scope of the sweep, naming which business units, regions, and system types were in and out
