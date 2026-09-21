@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 480">
+  <defs>
+    <linearGradient id="headerGrad33" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a365d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c5282;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="stageGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3182ce;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2b6cb0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="checkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#38a169;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2f855a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow33" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-opacity="0.2"/>
+    </filter>
+    <marker id="arrow33" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#718096"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="950" height="480" fill="#f7fafc"/>
+  
+  <!-- Title -->
+  <rect x="0" y="0" width="950" height="45" fill="url(#headerGrad33)"/>
+  <text x="475" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">Figure 3.3: Data Governance for AI</text>
+  
+  <!-- Data Flow Pipeline -->
+  <text x="475" y="70" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1a365d" text-anchor="middle">Data Pipeline Stages</text>
+  
+  <!-- Stage 1: Collection -->
+  <rect x="30" y="90" width="120" height="60" rx="6" fill="url(#stageGrad)" filter="url(#shadow33)"/>
+  <text x="90" y="118" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Collection</text>
+  <text x="90" y="133" font-family="Arial, sans-serif" font-size="8" fill="white" fill-opacity="0.9" text-anchor="middle">Source identification</text>
+  
+  <!-- Arrow -->
+  <line x1="150" y1="120" x2="175" y2="120" stroke="#718096" stroke-width="2" marker-end="url(#arrow33)"/>
+  
+  <!-- Stage 2: Quality -->
+  <rect x="180" y="90" width="120" height="60" rx="6" fill="url(#stageGrad)" filter="url(#shadow33)"/>
+  <text x="240" y="118" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Quality</text>
+  <text x="240" y="133" font-family="Arial, sans-serif" font-size="8" fill="white" fill-opacity="0.9" text-anchor="middle">Assessment</text>
+  
+  <!-- Arrow -->
+  <line x1="300" y1="120" x2="325" y2="120" stroke="#718096" stroke-width="2" marker-end="url(#arrow33)"/>
+  
+  <!-- Stage 3: Bias Analysis -->
+  <rect x="330" y="90" width="120" height="60" rx="6" fill="url(#stageGrad)" filter="url(#shadow33)"/>
+  <text x="390" y="118" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Bias</text>
+  <text x="390" y="133" font-family="Arial, sans-serif" font-size="8" fill="white" fill-opacity="0.9" text-anchor="middle">Analysis</text>
+  
+  <!-- Arrow -->
+  <line x1="450" y1="120" x2="475" y2="120" stroke="#718096" stroke-width="2" marker-end="url(#arrow33)"/>
+  
+  <!-- Stage 4: Preprocessing -->
+  <rect x="480" y="90" width="120" height="60" rx="6" fill="url(#stageGrad)" filter="url(#shadow33)"/>
+  <text x="540" y="118" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Preprocessing</text>
+  <text x="540" y="133" font-family="Arial, sans-serif" font-size="8" fill="white" fill-opacity="0.9" text-anchor="middle">Transform &amp; clean</text>
+  
+  <!-- Arrow -->
+  <line x1="600" y1="120" x2="625" y2="120" stroke="#718096" stroke-width="2" marker-end="url(#arrow33)"/>
+  
+  <!-- Stage 5: Documentation -->
+  <rect x="630" y="90" width="120" height="60" rx="6" fill="url(#stageGrad)" filter="url(#shadow33)"/>
+  <text x="690" y="118" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Documentation</text>
+  <text x="690" y="133" font-family="Arial, sans-serif" font-size="8" fill="white" fill-opacity="0.9" text-anchor="middle">Datasheets</text>
+  
+  <!-- Arrow -->
+  <line x1="750" y1="120" x2="775" y2="120" stroke="#718096" stroke-width="2" marker-end="url(#arrow33)"/>
+  
+  <!-- Stage 6: Training Use -->
+  <rect x="780" y="90" width="120" height="60" rx="6" fill="url(#checkGrad)" filter="url(#shadow33)"/>
+  <text x="840" y="118" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Training</text>
+  <text x="840" y="133" font-family="Arial, sans-serif" font-size="8" fill="white" fill-opacity="0.9" text-anchor="middle">Approved for use</text>
+  
+  <!-- Governance Checkpoints -->
+  <text x="475" y="175" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1a365d" text-anchor="middle">Governance Checkpoints</text>
+  
+  <!-- Checkpoint boxes below each stage -->
+  <!-- Collection checkpoint -->
+  <rect x="30" y="190" width="120" height="130" rx="6" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1"/>
+  <text x="90" y="210" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#2f855a" text-anchor="middle">Key Questions</text>
+  <text x="40" y="228" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Legal basis for</text>
+  <text x="40" y="240" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  collection?</text>
+  <text x="40" y="255" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Consent obtained?</text>
+  <text x="40" y="270" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• IP rights clear?</text>
+  <text x="40" y="285" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Provenance</text>
+  <text x="40" y="297" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  documented?</text>
+  
+  <!-- Quality checkpoint -->
+  <rect x="180" y="190" width="120" height="130" rx="6" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1"/>
+  <text x="240" y="210" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#2f855a" text-anchor="middle">Key Questions</text>
+  <text x="190" y="228" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Accurate data?</text>
+  <text x="190" y="243" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Complete data?</text>
+  <text x="190" y="258" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Timely/current?</text>
+  <text x="190" y="273" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Relevant to</text>
+  <text x="190" y="285" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  purpose?</text>
+  <text x="190" y="300" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Representative?</text>
+  
+  <!-- Bias checkpoint -->
+  <rect x="330" y="190" width="120" height="130" rx="6" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1"/>
+  <text x="390" y="210" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#2f855a" text-anchor="middle">Key Questions</text>
+  <text x="340" y="228" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Historical bias</text>
+  <text x="340" y="240" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  present?</text>
+  <text x="340" y="255" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Groups under-</text>
+  <text x="340" y="267" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  represented?</text>
+  <text x="340" y="282" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Label quality</text>
+  <text x="340" y="294" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  consistent?</text>
+  
+  <!-- Preprocessing checkpoint -->
+  <rect x="480" y="190" width="120" height="130" rx="6" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1"/>
+  <text x="540" y="210" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#2f855a" text-anchor="middle">Key Questions</text>
+  <text x="490" y="228" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Transformations</text>
+  <text x="490" y="240" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  documented?</text>
+  <text x="490" y="255" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Train/val/test</text>
+  <text x="490" y="267" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  properly split?</text>
+  <text x="490" y="282" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Anonymization</text>
+  <text x="490" y="294" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  adequate?</text>
+  
+  <!-- Documentation checkpoint -->
+  <rect x="630" y="190" width="120" height="130" rx="6" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1"/>
+  <text x="690" y="210" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#2f855a" text-anchor="middle">Key Questions</text>
+  <text x="640" y="228" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Datasheet</text>
+  <text x="640" y="240" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  complete?</text>
+  <text x="640" y="255" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Lineage recorded?</text>
+  <text x="640" y="270" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Limitations</text>
+  <text x="640" y="282" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  disclosed?</text>
+  <text x="640" y="297" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Version controlled?</text>
+  
+  <!-- Training checkpoint -->
+  <rect x="780" y="190" width="120" height="130" rx="6" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1"/>
+  <text x="840" y="210" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#2f855a" text-anchor="middle">Approval Criteria</text>
+  <text x="790" y="228" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• All checkpoints</text>
+  <text x="790" y="240" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  passed</text>
+  <text x="790" y="255" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Documentation</text>
+  <text x="790" y="267" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  complete</text>
+  <text x="790" y="282" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Sign-off</text>
+  <text x="790" y="294" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">  obtained</text>
+  
+  <!-- Dashed lines connecting stages to checkpoints -->
+  <line x1="90" y1="150" x2="90" y2="190" stroke="#9ae6b4" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="240" y1="150" x2="240" y2="190" stroke="#9ae6b4" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="390" y1="150" x2="390" y2="190" stroke="#9ae6b4" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="540" y1="150" x2="540" y2="190" stroke="#9ae6b4" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="690" y1="150" x2="690" y2="190" stroke="#9ae6b4" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="840" y1="150" x2="840" y2="190" stroke="#9ae6b4" stroke-width="1" stroke-dasharray="3,2"/>
+  
+  <!-- Bias Types Box -->
+  <rect x="30" y="340" width="440" height="125" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1"/>
+  <text x="250" y="362" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#c53030" text-anchor="middle">Common Sources of Data Bias</text>
+  
+  <rect x="45" y="375" width="200" height="80" rx="4" fill="white"/>
+  <text x="145" y="393" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#c53030" text-anchor="middle">Historical Bias</text>
+  <text x="55" y="410" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">Data reflects past discriminatory</text>
+  <text x="55" y="422" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">practices or decisions that the</text>
+  <text x="55" y="434" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">model may learn to perpetuate.</text>
+  
+  <rect x="255" y="375" width="200" height="80" rx="4" fill="white"/>
+  <text x="355" y="393" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#c53030" text-anchor="middle">Representation Bias</text>
+  <text x="265" y="410" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">Certain groups underrepresented</text>
+  <text x="265" y="422" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">in training data, leading to worse</text>
+  <text x="265" y="434" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">performance for those groups.</text>
+  
+  <!-- Datasheet Framework Box -->
+  <rect x="490" y="340" width="430" height="125" rx="6" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1"/>
+  <text x="705" y="362" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Datasheets for Datasets (Gebru et al.)</text>
+  
+  <text x="505" y="385" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Motivation: Why was the dataset created?</text>
+  <text x="505" y="400" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Composition: What does the dataset contain?</text>
+  <text x="505" y="415" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Collection: How was the data collected?</text>
+  <text x="505" y="430" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Preprocessing: What cleaning/labeling was done?</text>
+  <text x="710" y="385" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Uses: What tasks is it suitable for?</text>
+  <text x="710" y="400" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Distribution: How is it shared?</text>
+  <text x="710" y="415" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Maintenance: Who maintains it?</text>
+  <text x="710" y="430" font-family="Arial, sans-serif" font-size="8" fill="#4a5568">• Legal/Ethical: Any concerns?</text>
+</svg>

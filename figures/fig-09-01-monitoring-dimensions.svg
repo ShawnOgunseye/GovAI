@@ -1,0 +1,57 @@
+<svg viewBox="0 0 900 546" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Monitoring dimensions and what each detects">
+<!-- FIGURE 9.1 REQUIRED ELEMENTS
+Must appear: all five dimensions (technical, performance, fairness, drift,
+usage), each paired with a specific failure it detects that the other four
+would miss. Entry condition: a system is in production. Exit condition:
+a monitoring program covering all five, not implicitly reduced to
+performance alone. Deliberately excluded: the ground-truth problem (9.2's
+job) and system-class-specific method (9.2's figure). Must work in black
+and white.
+SOURCE: original; the five-dimension structure is this book's own
+synthesis of monitoring practice recommended across NIST AI RMF Measure
+and Manage functions and EU AI Act post-market monitoring provisions.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<title>Monitoring dimensions and what each detects</title>
+<style>
+text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.ttl{font-size:17px;font-weight:700;}
+.cls{font-size:14px;font-weight:700;}
+.bx{font-size:12.5px;font-weight:400;}
+.col{font-size:11px;font-weight:700;letter-spacing:.06em;}
+.sm{font-size:11px;font-weight:400;}
+.em{font-size:11px;font-style:italic;}
+</style>
+<rect x="0" y="0" width="900" height="546" fill="#ffffff"/>
+<text x="20" y="34" class="ttl" fill="#1a2230">Figure 9.1 &#183; Five monitoring dimensions and what each detects</text>
+<text x="30" y="66" class="col" fill="#46536b">DIMENSION</text>
+<text x="230" y="66" class="col" fill="#46536b">DETECTS WHAT THE OTHER FOUR CANNOT</text>
+<line x1="20" y1="76" x2="880" y2="76" stroke="#1a2230" stroke-width="1.6"/>
+<rect x="20" y="76" width="860" height="62" fill="#eef1f5"/>
+<text x="30" y="102" class="bx" font-weight="700" fill="#1a2230">TECHNICAL</text>
+<text x="230" y="100" class="sm" fill="#1a2230">system health: latency, error rate, uptime, integration</text>
+<text x="230" y="115" class="sm" fill="#1a2230">failures</text>
+<line x1="20" y1="138" x2="880" y2="138" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="20" y="152" width="860" height="62" fill="#ffffff"/>
+<text x="30" y="178" class="bx" font-weight="700" fill="#1a2230">PERFORMANCE</text>
+<text x="230" y="176" class="sm" fill="#1a2230">accuracy against available ground truth (9.2's hard</text>
+<text x="230" y="191" class="sm" fill="#1a2230">cases)</text>
+<line x1="20" y1="214" x2="880" y2="214" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="20" y="228" width="860" height="62" fill="#eef1f5"/>
+<text x="30" y="254" class="bx" font-weight="700" fill="#1a2230">FAIRNESS</text>
+<text x="230" y="252" class="sm" fill="#1a2230">disparities emerging in production that pre-deployment</text>
+<text x="230" y="267" class="sm" fill="#1a2230">testing missed</text>
+<line x1="20" y1="290" x2="880" y2="290" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="20" y="304" width="860" height="62" fill="#ffffff"/>
+<text x="30" y="330" class="bx" font-weight="700" fill="#1a2230">DRIFT</text>
+<text x="230" y="328" class="sm" fill="#1a2230">input or concept change, whether or not accuracy has</text>
+<text x="230" y="343" class="sm" fill="#1a2230">visibly dropped yet</text>
+<line x1="20" y1="366" x2="880" y2="366" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="20" y="380" width="860" height="62" fill="#eef1f5"/>
+<text x="30" y="406" class="bx" font-weight="700" fill="#1a2230">USAGE</text>
+<text x="230" y="404" class="sm" fill="#1a2230">who is using the system, for what, and whether it</text>
+<text x="230" y="419" class="sm" fill="#1a2230">matches approved scope</text>
+<line x1="20" y1="442" x2="880" y2="442" stroke="#c9d1dc" stroke-width="1"/>
+<text x="20" y="476" class="sm" fill="#46536b">Five independent watchpoints, not five views of one number. A system healthy on the first four can still have</text>
+<text x="20" y="494" class="sm" fill="#46536b">drifted well outside its approved usage scope, a failure only the fifth dimension is positioned to catch.</text>
+</svg>

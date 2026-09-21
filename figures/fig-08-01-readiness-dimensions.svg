@@ -1,0 +1,70 @@
+<svg viewBox="0 0 900 580" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Readiness across three dimensions">
+<!-- FIGURE 8.1 REQUIRED ELEMENTS
+Must appear: system readiness (technical, performance, compliance) and
+organizational readiness (operational, oversight, monitoring, incident) as
+two distinct groups, not one merged checklist. Must show that passing
+system readiness does not imply organizational readiness is even assessed,
+let alone passed. Entry condition: a system has completed Chapter 7
+testing. Exit condition: both dimensions evaluated, with a named gap where
+one is incomplete. Deliberately excluded: the deployment decision itself
+(8.4's job). Must work in black and white.
+SOURCE: original; the two-dimension split is this book's own structuring,
+motivated by the recurring deployment failure pattern this chapter
+documents.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<title>Readiness across three dimensions</title>
+<style>
+text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.ttl{font-size:17px;font-weight:700;}
+.cls{font-size:14px;font-weight:700;}
+.bx{font-size:12.5px;font-weight:400;}
+.col{font-size:11px;font-weight:700;letter-spacing:.06em;}
+.sm{font-size:11px;font-weight:400;}
+.em{font-size:11px;font-style:italic;}
+</style>
+<rect x="0" y="0" width="900" height="580" fill="#ffffff"/>
+<text x="20" y="34" class="ttl" fill="#1a2230">Figure 8.1 &#183; Readiness across three dimensions</text>
+<rect x="30" y="66" width="400" height="30" fill="#1a2230"/>
+<text x="230" y="87" class="col" fill="#ffffff" text-anchor="middle">SYSTEM READINESS: USUALLY CHECKED</text>
+<rect x="460" y="66" width="410" height="30" fill="#8a3324"/>
+<text x="665" y="87" class="col" fill="#ffffff" text-anchor="middle">ORGANIZATIONAL READINESS: OFTEN SKIPPED</text>
+<rect x="30" y="112" width="400" height="78" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="42" y="134" class="bx" font-weight="700" fill="#1a2230">TECHNICAL</text>
+<text x="42" y="152" class="sm" fill="#1a2230">integration with the</text>
+<text x="42" y="167" class="sm" fill="#1a2230">infrastructure the system will</text>
+<text x="42" y="182" class="sm" fill="#1a2230">actually run inside</text>
+<rect x="30" y="204" width="400" height="78" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="42" y="226" class="bx" font-weight="700" fill="#1a2230">PERFORMANCE</text>
+<text x="42" y="244" class="sm" fill="#1a2230">Ch. 7 results: accuracy, fairness</text>
+<text x="42" y="259" class="sm" fill="#1a2230">decision, robustness, sentinel</text>
+<text x="42" y="274" class="sm" fill="#1a2230">results</text>
+<rect x="30" y="296" width="400" height="78" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="42" y="318" class="bx" font-weight="700" fill="#1a2230">COMPLIANCE</text>
+<text x="42" y="336" class="sm" fill="#1a2230">documentation, approvals,</text>
+<text x="42" y="351" class="sm" fill="#1a2230">disclosures actually complete, not</text>
+<text x="42" y="366" class="sm" fill="#1a2230">assumed</text>
+<rect x="460" y="112" width="410" height="78" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
+<text x="472" y="134" class="bx" font-weight="700" fill="#1a2230">OPERATIONAL</text>
+<text x="472" y="152" class="sm" fill="#1a2230">staff trained on what the system</text>
+<text x="472" y="167" class="sm" fill="#1a2230">does, does not do, and when to</text>
+<text x="472" y="182" class="sm" fill="#1a2230">override</text>
+<rect x="460" y="204" width="410" height="78" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
+<text x="472" y="226" class="bx" font-weight="700" fill="#1a2230">OVERSIGHT</text>
+<text x="472" y="244" class="sm" fill="#1a2230">a reviewer with the time,</text>
+<text x="472" y="259" class="sm" fill="#1a2230">authority, and information to</text>
+<text x="472" y="274" class="sm" fill="#1a2230">catch a wrong output</text>
+<rect x="460" y="296" width="410" height="78" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
+<text x="472" y="318" class="bx" font-weight="700" fill="#1a2230">MONITORING</text>
+<text x="472" y="336" class="sm" fill="#1a2230">someone watching, with a defined</text>
+<text x="472" y="351" class="sm" fill="#1a2230">dimension and threshold (Ch. 9)</text>
+<rect x="460" y="388" width="410" height="78" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
+<text x="472" y="410" class="bx" font-weight="700" fill="#1a2230">INCIDENT</text>
+<text x="472" y="428" class="sm" fill="#1a2230">a response plan built before an</text>
+<text x="472" y="443" class="sm" fill="#1a2230">incident, not improvised during</text>
+<text x="472" y="458" class="sm" fill="#1a2230">one</text>
+<line x1="20" y1="500" x2="880" y2="500" stroke="#c9d1dc" stroke-width="1"/>
+<text x="20" y="524" class="sm" fill="#1a2230">Clearing the left column produces clean numbers and gets checked well. Clearing the right column produces no</text>
+<text x="20" y="542" class="sm" fill="#1a2230">comparably clean number, which is exactly why it gets skipped. A review clearing only the left column has not</text>
+<text x="20" y="560" class="sm" fill="#1a2230">cleared deployment readiness, only the half of it that happens to be easy to measure.</text>
+</svg>

@@ -1,0 +1,82 @@
+<svg viewBox="0 0 900 456" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Generative risk categories with control mapping">
+<!-- FIGURE 11.1 REQUIRED ELEMENTS
+Must appear: the chapter's risk categories (fabrication, prompt injection,
+intellectual property, provenance/marking) each mapped to its controls,
+with each control marked as reducing the risk or only detecting it,
+distinguishing this from a flat checklist. Entry condition: a generative
+system is being governed. Exit condition: every named risk has at least
+one mapped control, with the reduce/detect distinction visible.
+Deliberately excluded: prompt and retrieval governance (11.6 and 11.7 are
+process controls, not risk-category controls, and get their own figure).
+Must work in black and white.
+SOURCE: original; the four risk categories follow this chapter's own
+section structure; the reduce/detect distinction is this book's own
+framing, developed from section 11.2's fabrication controls and applied
+consistently across the chapter's other categories.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<title>Generative risk categories with control mapping</title>
+<style>
+text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.ttl{font-size:17px;font-weight:700;}
+.cls{font-size:14px;font-weight:700;}
+.bx{font-size:12.5px;font-weight:400;}
+.col{font-size:11px;font-weight:700;letter-spacing:.06em;}
+.sm{font-size:11px;font-weight:400;}
+.em{font-size:11px;font-style:italic;}
+</style>
+<rect x="0" y="0" width="900" height="456" fill="#ffffff"/>
+<text x="20" y="34" class="ttl" fill="#1a2230">Figure 11.1 &#183; Generative risk categories with control mapping</text>
+<text x="30" y="62" class="col" fill="#46536b">RISK CATEGORY</text>
+<text x="220" y="62" class="col" fill="#46536b">CONTROL</text>
+<text x="560" y="62" class="col" fill="#46536b">EFFECT</text>
+<text x="700" y="62" class="col" fill="#46536b">SECTION</text>
+<line x1="20" y1="76" x2="880" y2="76" stroke="#1a2230" stroke-width="1.6"/>
+<rect x="20" y="90" width="860" height="104" fill="#eef1f5"/>
+<text x="30" y="108" class="bx" font-weight="700" fill="#1a2230">FABRICATION</text>
+<text x="220" y="108" class="sm" fill="#1a2230">retrieval grounding</text>
+<text x="560" y="108" class="sm" font-weight="700" fill="#1a2230">REDUCES</text>
+<text x="700" y="108" class="sm" fill="#46536b">11.2</text>
+<text x="220" y="134" class="sm" fill="#1a2230">abstention design</text>
+<text x="560" y="134" class="sm" font-weight="700" fill="#1a2230">REDUCES</text>
+<text x="700" y="134" class="sm" fill="#46536b">11.2</text>
+<text x="220" y="160" class="sm" fill="#1a2230">citation requirement</text>
+<text x="560" y="160" class="sm" font-weight="700" fill="#46536b">ENABLES CHECKING</text>
+<text x="700" y="160" class="sm" fill="#46536b">11.2</text>
+<text x="220" y="186" class="sm" fill="#1a2230">claim-level verification</text>
+<text x="560" y="186" class="sm" font-weight="700" fill="#8a3324">DETECTS</text>
+<text x="700" y="186" class="sm" fill="#46536b">11.2</text>
+<line x1="20" y1="194" x2="880" y2="194" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="20" y="200" width="860" height="78" fill="#ffffff"/>
+<text x="30" y="218" class="bx" font-weight="700" fill="#1a2230">PROMPT INJECTION</text>
+<text x="220" y="218" class="sm" fill="#1a2230">privilege separation</text>
+<text x="560" y="218" class="sm" font-weight="700" fill="#1a2230">REDUCES</text>
+<text x="700" y="218" class="sm" fill="#46536b">11.3</text>
+<text x="220" y="244" class="sm" fill="#1a2230">output constraints</text>
+<text x="560" y="244" class="sm" font-weight="700" fill="#1a2230">REDUCES</text>
+<text x="700" y="244" class="sm" fill="#46536b">11.3</text>
+<text x="220" y="270" class="sm" fill="#1a2230">treat retrieved content as untrusted</text>
+<text x="560" y="270" class="sm" font-weight="700" fill="#1a2230">REDUCES</text>
+<text x="700" y="270" class="sm" fill="#46536b">11.3</text>
+<line x1="20" y1="278" x2="880" y2="278" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="20" y="284" width="860" height="52" fill="#eef1f5"/>
+<text x="30" y="302" class="bx" font-weight="700" fill="#1a2230">INTELLECTUAL PROPERTY</text>
+<text x="220" y="302" class="sm" fill="#1a2230">indemnification (read the clause)</text>
+<text x="560" y="302" class="sm" font-weight="700" fill="#46536b">TRANSFERS SOME RISK</text>
+<text x="700" y="302" class="sm" fill="#46536b">11.4</text>
+<text x="220" y="328" class="sm" fill="#1a2230">usage policy on generated output</text>
+<text x="560" y="328" class="sm" font-weight="700" fill="#1a2230">REDUCES</text>
+<text x="700" y="328" class="sm" fill="#46536b">11.4</text>
+<line x1="20" y1="336" x2="880" y2="336" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="20" y="342" width="860" height="52" fill="#ffffff"/>
+<text x="30" y="360" class="bx" font-weight="700" fill="#1a2230">PROVENANCE / MARKING</text>
+<text x="220" y="360" class="sm" fill="#1a2230">machine-readable marking</text>
+<text x="560" y="360" class="sm" font-weight="700" fill="#46536b">DISCLOSES</text>
+<text x="700" y="360" class="sm" fill="#46536b">11.5</text>
+<text x="220" y="386" class="sm" fill="#1a2230">watermarking</text>
+<text x="560" y="386" class="sm" font-weight="700" fill="#8a3324">DETECTS (not accuracy)</text>
+<text x="700" y="386" class="sm" fill="#46536b">11.5</text>
+<line x1="20" y1="394" x2="880" y2="394" stroke="#c9d1dc" stroke-width="1"/>
+<text x="20" y="422" class="sm" fill="#46536b">A control that only enables checking or only detects is not a substitute for one that reduces the risk;</text>
+<text x="20" y="440" class="sm" fill="#46536b">a review confirming a control exists has not confirmed which column it actually occupies.</text>
+</svg>

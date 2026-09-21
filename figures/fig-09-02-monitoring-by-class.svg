@@ -1,0 +1,65 @@
+<svg viewBox="0 0 900 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Monitoring approach by system class">
+<!-- FIGURE 9.2 REQUIRED ELEMENTS
+Must appear: three columns (predictive, generative, agentic), each naming
+its ground-truth situation, its distinct monitoring method, and its
+distinct failure signal. Must show these require different operational
+methods, not one dashboard reused three times. Entry condition: a system
+is in production and has cleared 9.1's five dimensions in principle. Exit
+condition: the monitoring method matching the system's class has actually
+been implemented. Deliberately excluded: drift detection (9.6 owns that
+content). Must work in black and white.
+SOURCE: original; structure follows sections 9.2, 9.3, and 9.4 of this
+chapter.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<title>Monitoring approach by system class</title>
+<style>
+text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.ttl{font-size:17px;font-weight:700;}
+.cls{font-size:14px;font-weight:700;}
+.bx{font-size:12.5px;font-weight:400;}
+.col{font-size:11px;font-weight:700;letter-spacing:.06em;}
+.sm{font-size:11px;font-weight:400;}
+.em{font-size:11px;font-style:italic;}
+</style>
+<rect x="0" y="0" width="900" height="500" fill="#ffffff"/>
+<text x="20" y="34" class="ttl" fill="#1a2230">Figure 9.2 &#183; Monitoring approach by system class</text>
+<rect x="30" y="72" width="260" height="40" rx="4" fill="#1a2230"/>
+<text x="160.0" y="97" class="cls" fill="#ffffff" text-anchor="middle">PREDICTIVE</text>
+<text x="30" y="132" class="col" fill="#46536b">GROUND TRUTH</text>
+<text x="30" y="150" class="sm" fill="#1a2230">delayed, ambiguous, or absent</text>
+<text x="30" y="165" class="sm" fill="#1a2230">(9.2)</text>
+<text x="30" y="198" class="col" fill="#46536b">METHOD</text>
+<text x="30" y="216" class="sm" fill="#1a2230">sampling with adjudication, proxy</text>
+<text x="30" y="231" class="sm" fill="#1a2230">metrics, delayed evaluation</text>
+<text x="30" y="264" class="col" fill="#46536b">SIGNAL</text>
+<text x="30" y="282" class="sm" fill="#1a2230">gap between prediction and</text>
+<text x="30" y="297" class="sm" fill="#1a2230">eventually-known outcome</text>
+<line x1="305.0" y1="72" x2="305.0" y2="440" stroke="#c9d1dc" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="320" y="72" width="260" height="40" rx="4" fill="#1a2230"/>
+<text x="450.0" y="97" class="cls" fill="#ffffff" text-anchor="middle">GENERATIVE</text>
+<text x="320" y="132" class="col" fill="#46536b">GROUND TRUTH</text>
+<text x="320" y="150" class="sm" fill="#1a2230">none available at all</text>
+<text x="320" y="183" class="col" fill="#46536b">METHOD</text>
+<text x="320" y="201" class="sm" fill="#1a2230">rubric-based sampling,</text>
+<text x="320" y="216" class="sm" fill="#1a2230">groundedness checks, refusal-rate</text>
+<text x="320" y="231" class="sm" fill="#1a2230">tracking</text>
+<text x="320" y="264" class="col" fill="#46536b">SIGNAL</text>
+<text x="320" y="282" class="sm" fill="#1a2230">rare, severe failures aggregate</text>
+<text x="320" y="297" class="sm" fill="#1a2230">quality scores conceal</text>
+<line x1="595.0" y1="72" x2="595.0" y2="440" stroke="#c9d1dc" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="610" y="72" width="260" height="40" rx="4" fill="#1a2230"/>
+<text x="740.0" y="97" class="cls" fill="#ffffff" text-anchor="middle">AGENTIC</text>
+<text x="610" y="132" class="col" fill="#46536b">GROUND TRUTH</text>
+<text x="610" y="150" class="sm" fill="#1a2230">not the relevant question; the</text>
+<text x="610" y="165" class="sm" fill="#1a2230">action is</text>
+<text x="610" y="198" class="col" fill="#46536b">METHOD</text>
+<text x="610" y="216" class="sm" fill="#1a2230">scope-violation, unexpected-tool-</text>
+<text x="610" y="231" class="sm" fill="#1a2230">use, and volume-anomaly detection</text>
+<text x="610" y="264" class="col" fill="#46536b">SIGNAL</text>
+<text x="610" y="282" class="sm" fill="#1a2230">an action pattern wrong even when</text>
+<text x="610" y="297" class="sm" fill="#1a2230">each action looks fine alone</text>
+<line x1="20" y1="440" x2="880" y2="440" stroke="#c9d1dc" stroke-width="1"/>
+<text x="20" y="460" class="sm" fill="#46536b">Three operationally distinct practices, not one dashboard reused three times. A system that generates and</text>
+<text x="20" y="478" class="sm" fill="#46536b">also acts needs both the middle and right columns running together.</text>
+</svg>

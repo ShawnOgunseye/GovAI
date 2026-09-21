@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>13. Organizing the Governance Function – How to Govern AI</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/14-risk-assessment-and-management.html" rel="next">
+<link href="../chapters/12-governing-agentic-systems.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-176b1e44b272a30ec08500e73512b2cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2ac2194f70e1841eb0bfd2f3ea7731ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/13-organizing-the-governance-function.html">Part IV: The Governance Function</a></li><li class="breadcrumb-item"><a href="../chapters/13-organizing-the-governance-function.html"><span class="chapter-title">13. Organizing the Governance Function</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">How to Govern AI</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/shawnogunseye/GovAI" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations and Practical Guide to AI Governance</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part I: Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-what-ai-governance-is.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. What AI Governance Is</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-regulatory-landscape.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2. The Regulatory Landscape</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-scoping-inventory-classification.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3. Scoping, Inventory, and Risk Classification</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part II: The AI System Lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-defining-the-problem.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. Defining the Problem and Use Case</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-data-governance-for-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. Data Governance for AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-model-selection-and-development.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Model Selection and Development</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-testing-evaluation-and-red-teaming.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Testing, Evaluation, and Red Teaming</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-deployment-and-release.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Deployment and Release</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-operations-and-monitoring.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Operations and Monitoring</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-incident-response-and-remediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10. Incident Response and Remediation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part III: Governing Content Generation and Autonomous Action</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-governing-generative-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11. Governing Generative Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-governing-agentic-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12. Governing Agentic Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV: The Governance Function</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-organizing-the-governance-function.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">13. Organizing the Governance Function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/14-risk-assessment-and-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Risk Assessment and Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/15-documentation-and-evidence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Documentation and Evidence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/16-third-party-vendor-and-supply-chain-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. Third-Party, Vendor, and Supply Chain Governance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Part V: Building Governance Capability</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/17-implementing-ai-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">17. Implementing AI Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/18-governing-under-uncertainty.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">18. Governing Under Uncertainty</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-a-technique-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix A: Technique Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-b-regulatory-quick-reference.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix B: Regulatory Quick Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-c-templates-and-checklists.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix C: Templates and Checklists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">End Matter</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/90-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/91-index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/99-back-cover.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Back Cover</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#what-you-will-be-able-to-do" id="toc-what-you-will-be-able-to-do" class="nav-link active" data-scroll-target="#what-you-will-be-able-to-do">What you will be able to do</a></li>
+  <li><a href="#operating-models" id="toc-operating-models" class="nav-link" data-scroll-target="#operating-models">13.1 Operating models</a></li>
+  <li><a href="#the-operating-model-as-a-recurring-variable" id="toc-the-operating-model-as-a-recurring-variable" class="nav-link" data-scroll-target="#the-operating-model-as-a-recurring-variable">13.2 The operating model as a recurring variable</a></li>
+  <li><a href="#one-candidate-split-federated-at-the-system-layer-centralized-at-the-model-layer" id="toc-one-candidate-split-federated-at-the-system-layer-centralized-at-the-model-layer" class="nav-link" data-scroll-target="#one-candidate-split-federated-at-the-system-layer-centralized-at-the-model-layer">13.3 One candidate split: federated at the system layer, centralized at the model layer</a></li>
+  <li><a href="#how-federated-governance-fails" id="toc-how-federated-governance-fails" class="nav-link" data-scroll-target="#how-federated-governance-fails">13.4 How federated governance fails</a></li>
+  <li><a href="#roles-and-responsibilities" id="toc-roles-and-responsibilities" class="nav-link" data-scroll-target="#roles-and-responsibilities">13.5 Roles and responsibilities</a></li>
+  <li><a href="#the-three-lines-model" id="toc-the-three-lines-model" class="nav-link" data-scroll-target="#the-three-lines-model">13.6 The three lines model</a></li>
+  <li><a href="#governance-bodies" id="toc-governance-bodies" class="nav-link" data-scroll-target="#governance-bodies">13.7 Governance bodies</a></li>
+  <li><a href="#acceptable-use-and-sanctioned-tooling" id="toc-acceptable-use-and-sanctioned-tooling" class="nav-link" data-scroll-target="#acceptable-use-and-sanctioned-tooling">13.8 Acceptable use and sanctioned tooling</a></li>
+  <li><a href="#conflict-with-incumbent-functions-and-executive-engagement" id="toc-conflict-with-incumbent-functions-and-executive-engagement" class="nav-link" data-scroll-target="#conflict-with-incumbent-functions-and-executive-engagement">13.9 Conflict with incumbent functions and executive engagement</a></li>
+  <li><a href="#case-in-focus-a-mandate-that-had-to-be-negotiated-not-assumed" id="toc-case-in-focus-a-mandate-that-had-to-be-negotiated-not-assumed" class="nav-link" data-scroll-target="#case-in-focus-a-mandate-that-had-to-be-negotiated-not-assumed">Case in focus: a mandate that had to be negotiated, not assumed</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review questions</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/13-organizing-the-governance-function.html">Part IV: The Governance Function</a></li><li class="breadcrumb-item"><a href="../chapters/13-organizing-the-governance-function.html"><span class="chapter-title">13. Organizing the Governance Function</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">13. Organizing the Governance Function</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Consider a constructed scenario, continuing the running <code>FAIRLEND</code> case. Meridian Financial’s AI governance function existed, on paper, from the day its board approved its charter. The charter was a mandate to review AI systems for fairness, transparency, and risk before deployment, reporting to the chief risk officer, with responsibilities spanning every system class from predictive credit models to generative and agentic tools. What the charter did not resolve, and what took the new function eighteen months to work out in practice, was what happened when its mandate intersected a model risk management function that had governed <code>FAIRLEND</code>’s underlying credit models for a decade. That function had its own validation standards, its own reporting line, and its own settled view of what “model governance” already meant before anyone used the words “AI governance” at Meridian at all.</p>
+<p>This chapter is about the structural questions a charter alone does not answer. Those questions include which operating model an organization chooses and how that choice actually plays out across dozens of individual decision points, not just once on an org chart. They also include what roles and lines of defense a governance program needs to actually function instead of merely existing, and what happens, concretely, when a new AI governance function meets an incumbent with real authority already in place. A governance program without this structure has opinions; a governance program with it has authority, and the difference determines whether Meridian’s function could actually stop a deployment or only write a memo about one that proceeded anyway.</p>
+<section id="what-you-will-be-able-to-do" class="level2 unnumbered objectives">
+<h2 class="unnumbered anchored" data-anchor-id="what-you-will-be-able-to-do">What you will be able to do</h2>
+<ul>
+<li>Compare centralized, federated, and hybrid operating models against organizational context and identify where the choice recurs across dozens of decisions instead of only once</li>
+<li>Apply the three lines model to AI governance, naming which functions occupy which line</li>
+<li>Design an acceptable use policy that combines a sanctioned alternative, technical controls, and monitoring instead of relying on a written prohibition alone</li>
+<li>Work through structural conflict with an incumbent function by locating where each function’s mandate actually starts and stops</li>
+</ul>
+</section>
+<section id="operating-models" class="level2">
+<h2 class="anchored" data-anchor-id="operating-models">13.1 Operating models</h2>
+<p>Centralized, federated, and hybrid arrangements are design patterns, not a performance ranking. Their suitability depends on the decision at issue, applicable law, organizational scale, risk concentration, local expertise, independence requirements, and the ability to aggregate evidence. These are factors current U.S. bank supervisory guidance on model risk management names explicitly as varying by organizational risk profile, size, complexity, and use instead of converging on one preferred structure. A centralized model concentrates governance authority in a single function that reviews and approves AI systems across the organization, producing consistency of standards and a single point of aggregate visibility. The cost is a bottleneck for an organization deploying AI faster than one central team can review it, and a central function that lacks the specific business context each deploying unit actually has. A federated model distributes governance authority to the business units deploying AI, each applying governance standards within its own domain, producing responsiveness and context-appropriate judgment, at the cost of the failure modes section 13.4 develops in detail. Those failure modes are standards drifting apart across units and nobody holding the aggregate picture regulators and boards actually need. A hybrid model splits authority by some other dimension entirely; section 13.3 develops one candidate split whose suitability, like the other two models, must be tested against an organization’s own conditions rather than assumed.</p>
+<p>Which model fits depends on organizational scale, how mature existing risk functions already are, and how fast AI deployment is actually happening. A small organization deploying a handful of systems can centralize without becoming a bottleneck, while a large organization with dozens of business units deploying AI independently will choke a central function attempting to review everything itself.</p>
+<p>A hybrid model is not a single fixed arrangement; it names the general strategy of splitting authority along some dimension other than “everything centralized” or “everything local,” and organizations choosing it still have to decide which dimension actually does the splitting. Some split by risk tier, centralizing review of the highest-risk systems while letting local teams self-certify lower-risk ones under a published standard. Some split by system class, holding predictive systems under an established credit-risk governance function while routing generative and agentic systems, newer and less matched to any existing process, through a dedicated review path. Section 13.3 develops one such split in detail, chosen for this chapter’s purposes because it tracks where defects actually originate, not because comparative evidence has established it as superior to every other split an organization might choose for its own conditions.</p>
+</section>
+<section id="the-operating-model-as-a-recurring-variable" class="level2">
+<h2 class="anchored" data-anchor-id="the-operating-model-as-a-recurring-variable">13.2 The operating model as a recurring variable</h2>
+<p>The operating model choice is not a single decision an organization makes once and records on an org chart. It recurs at every governance decision point independently, and an organization that has not noticed this will discover it has made the choice differently in different places without ever deciding to. Does the system inventory live centrally, or does each business unit maintain its own. Does a central function classify a system’s risk tier by one standard, or do local teams apply their own judgment. Does deployment go through a central gate, or local sign-off. Who holds model selection authority, and who owns the vendor relationship a purchased system requires.</p>
+<p>An organization can be, entirely legitimately, federated on some of these and centralized on others, but the pattern needs to be a deliberate design, not an accident of which team happened to build which process first. Meridian’s own arrangement illustrates the accident version. The model risk management function had, over a decade, centralized model validation as a matter of course, while individual business lines had each built their own use-case approval process with no coordination between them, producing an organization centralized on one axis and federated on another. Neither arrangement was chosen on purpose.</p>
+</section>
+<section id="one-candidate-split-federated-at-the-system-layer-centralized-at-the-model-layer" class="level2">
+<h2 class="anchored" data-anchor-id="one-candidate-split-federated-at-the-system-layer-centralized-at-the-model-layer">13.3 One candidate split: federated at the system layer, centralized at the model layer</h2>
+<p>One candidate hybrid split, falling directly out of the two-record inventory Chapter 3 established, divides authority by layer rather than by function or business unit. Local teams own their own deployments. Those deployments are the use case, the affected population, the deployment context, and the day-to-day operation Chapter 8 through Chapter 10 describe. Model selection, developer terms, and provenance are held centrally. Held centrally means the question of which underlying models the organization has vetted, what obligations attach to each supply chain entry point Chapter 6 established, and what a model actually is before any local team decides to build a use case on top of it. Stated this way, the split can look cleaner than it actually is in practice. Several of the decisions it assigns are normally cross-layer processes, not exclusive territory, a point section 13.7’s governance-body discussion returns to concretely.</p>
+<p>This split is worth considering, though it does not settle the allocation on its own. It tracks where a defect actually originates and where it needs to be caught once rather than rediscovered independently, at least for some decisions. A flaw in a purchased model’s training data or a vendor’s undisclosed model update is substantially a model-layer problem that will recur in every local deployment built on that model, and catching it centrally, once, can propagate the fix everywhere at once. A mismatch between a system’s intended use case and its actual deployment population is substantially a system-layer problem specific to one local team’s context, where a central function reviewing every local deployment decision has less comparative advantage than the team that understands its own population. But an inventory record, a risk classification, a deployment approval, and a vendor relationship each still need both local input and central coordination in practice. A central inventory needs local data plus central aggregation, and a vendor’s obligations can attach differently depending on customization, integration, data, and the specific regulatory role a given deployment plays. The layer split is therefore a starting frame for a decision-rights design, not the design itself.</p>
+<p>The binary version of this split, one layer or the other holds each decision exclusively, undersells what the previous paragraph already flagged. Most of these decisions are cross-layer processes with a proposing party, an evidence-providing party, a challenging party, and an approving party, not a single owner. Table 13.1 states this as a decision-rights matrix rather than a two-column allocation, following current bank model-risk-management guidance and the EU AI Act’s provider/deployer role split, both of which describe layered responsibility instead of exclusive territory for each of these decisions.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Decision</th>
+<th>Business or use owner</th>
+<th>Model owner</th>
+<th>Second-line AI risk / legal / compliance</th>
+<th>Third-line assurance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Inventory record</td>
+<td>Provides local use-case data</td>
+<td>Provides model and version data</td>
+<td>Aggregates and reconciles centrally</td>
+<td>Periodically verifies completeness</td>
+</tr>
+<tr class="even">
+<td>Risk classification</td>
+<td>Proposes based on use context</td>
+<td>Provides model-level risk data</td>
+<td>Challenges against consistent criteria; approves</td>
+<td>Reviews classification consistency across units</td>
+</tr>
+<tr class="odd">
+<td>Model selection</td>
+<td>States intended use and constraints</td>
+<td>Proposes from an approved catalog</td>
+<td>Confirms suitability for the stated use</td>
+<td>Covered by periodic program audit only</td>
+</tr>
+<tr class="even">
+<td>Deployment approval</td>
+<td>Accountable for the use decision</td>
+<td>Confirms model is within vetted scope</td>
+<td>Must concur for higher-risk tiers</td>
+<td>Assured after the fact via testing</td>
+</tr>
+<tr class="odd">
+<td>Supplier due diligence</td>
+<td>Flags use-specific supplier exposure</td>
+<td>Owns the vendor relationship and contract terms</td>
+<td>Reviews contract and compliance terms</td>
+<td>Covered by periodic program audit only</td>
+</tr>
+<tr class="even">
+<td>Change approval</td>
+<td>Assesses local impact of a change</td>
+<td>Proposes and documents the change</td>
+<td>Approves or escalates based on risk</td>
+<td>Verifies change record completeness</td>
+</tr>
+<tr class="odd">
+<td>Retirement</td>
+<td>Confirms local use has ended</td>
+<td>Confirms model version retirement</td>
+<td>Approves closure and residual-obligation checklist</td>
+<td>Confirms record retention</td>
+</tr>
+</tbody>
+</table>
+<p>Table 13.1. A decision-rights matrix for the federated-at-system, centralized-at-model split, showing that most decisions involve several parties in different roles, not a single layer holding exclusive authority. Labeled as this book’s own proposed synthesis rather than a validated or universally observed allocation. This column names third-line assurance activity, testing whether the process worked instead of performing it; a model risk management function’s own technical validation, a second-line activity under section 13.6, is a separate check reflected in the second-line column instead.</p>
+</section>
+<section id="how-federated-governance-fails" class="level2">
+<h2 class="anchored" data-anchor-id="how-federated-governance-fails">13.4 How federated governance fails</h2>
+<p>Federated governance fails in predictable ways worth teaching directly, because a program that has not been warned about them tends to discover all three simultaneously. Classification can drift apart across units. Two business units facing comparable systems classify them at different risk tiers, and federated judgment, absent a shared calibration mechanism, can diverge over time rather than converge on its own. The drift itself is not automatically a defect. A hiring screen and a credit screen built on the same underlying model architecture can legitimately land in different risk tiers because their intended uses, affected populations, and consequences of error differ. A governance program that flags every difference as inconsistency would be punishing sound contextual judgment instead of catching a real failure. The failure worth catching is narrower. Two units facing the same use, the same population, and the same stakes can reach different classifications because the reviewers weighed identical evidence differently. Neither reviewer knows the other’s classification exists, and no recorded rationale lets either one compare their reasoning against the other’s. Calibration is what tells the two apart. It means sampling classifications across units, comparing the recorded rationale and not only the tier assigned, and updating shared guidance where the comparison reveals unwarranted variation rather than a defensible contextual difference. Either way, the drift stays invisible until that comparison happens or an audit or incident forces it.</p>
+<p>Local governance is captured by the business it serves. A reviewer embedded in the same business unit whose deployment they are reviewing faces continuous pressure to approve, since they share the unit’s incentives and its relationships. Independence erodes gradually, not through any single compromised decision. The reviewer does not experience this as compromise; they experience it as sound judgment calls made under time pressure by someone who understands the business, which is exactly why capture is hard to detect from inside the arrangement that produces it.</p>
+<p>Nobody holds aggregate visibility. That is a particularly consequential failure, because at least some regulatory reporting obligations attach to the deploying organization or a specific provider or deployer role under it, not to a business unit in isolation. Under the EU AI Act, Article 26 places monitoring, suspension, and notification duties on the deployer and Article 73 places serious-incident reporting duties on the provider, and either duty holder needs a view across whatever business units its own systems span to discharge it. A federated program with no central aggregation point cannot answer that kind of organization-or-role-wide question even when every individual business unit could answer its own piece of it correctly. An organization should be able to answer how many AI systems it operates and how that scope was defined; that is the standard Chapter 3’s inventory obligation sets. Specific sector regulation or supervisory guidance can separately impose that same answer as its own legal recordkeeping duty. An organization has no answer at all if the inventory itself lives in a dozen disconnected spreadsheets rather than a single record, regardless of how well each business unit tracks its own piece of it.</p>
+</section>
+<section id="roles-and-responsibilities" class="level2">
+<h2 class="anchored" data-anchor-id="roles-and-responsibilities">13.5 Roles and responsibilities</h2>
+<p>A governance decision needs an explicit answer to who is responsible for doing the work, who is accountable for the outcome, who must be consulted before the decision is made, and who merely needs to be informed after it is. This is the RACI structure, borrowed from broader risk practice and applied here to AI-specific decisions instead of left as a generic template. A deployment decision under Chapter 8’s readiness dimensions might assign the deploying business unit as responsible for assembling the readiness evidence and accountable for the underlying use decision. It might assign a central AI governance function as holding required concurrence, an approval a deployment cannot proceed without. The model risk function and legal would then be consulted before the decision, and the executive sponsor would be informed once it is made. Required concurrence is a second-line control right, not a claim that AI governance owns the deployment decision itself; section 13.6 develops why keeping that distinction sharp matters for the independence a second-line function needs to actually challenge a first-line decision. Written this specifically, a RACI assignment resolves what a vaguer “governance reviews deployments” leaves open. It states how deployments get reviewed, with what authority to actually block one, and who is left holding responsibility when a deployment goes wrong.</p>
+<p>An incident response RACI, drawn from Chapter 10’s ten-stage lifecycle, follows the same logic with different names filling the roles, but it needs one correction the deployment-decision RACI does not. Legal and privacy review cannot sit as a sequential gate before notification the way “consulted before the decision” works for a deployment. Chapter 10’s regulatory clocks, Article 73’s provider outer limits and Article 26’s deployer duties, are not yet in force for most systems. Annex III’s high-risk obligations take effect 2 December 2027, checked against the consolidated EU AI Act as of 2026-09-12, and only then do both clocks start running from the moment of awareness rather than from the moment an internal consultation finishes. Different incidents also route to different legal actors and jurisdictions depending on the organization’s role and the incident type. The team operating the system is responsible for the containment step, since they are the ones positioned to halt it or, for an agentic system, to trigger the circuit breaker Chapter 12 described. The AI governance function is accountable for confirming the provisional severity classification and signing off on the post-incident review’s owned, dated remediation. Legal and, where personal data is involved, privacy work in parallel with containment and investigation, not ahead of them. They identify the applicable legal role and jurisdiction and prepare whatever notification the clock requires, including an initial report that is incomplete where the rules allow it, rather than waiting for a complete investigation to finish first. The executive sponsor and, for the most severe tier, the board are informed once containment is underway instead of waiting for the investigation to close. The same four-role structure applies to a deployment decision and to an incident response. But an organization applying it needs to recognize where the incident-response version’s timing constraints differ from the deployment version’s, precisely because RACI states who does what and does not, by itself, state when.</p>
+</section>
+<section id="the-three-lines-model" class="level2">
+<h2 class="anchored" data-anchor-id="the-three-lines-model">13.6 The three lines model</h2>
+<p>The three lines model, familiar from risk management generally, needs full explanation in AI-specific terms. This section follows the IIA’s current statement of the model, updated 8 July 2026 and checked against that update on 2026-09-12, which describes roles rather than department names. The IIA is explicit that “lines” name complementary roles and relationships operating concurrently, not a rank order, an org chart, or a sequence of checkpoints one decision passes through in turn. The rest of this section keeps that framing even where a specific example, like the deployment sequence in section 13.5, describes roles acting at different points in time. The first line owns and manages risk directly. It is the teams building, selecting, and deploying AI systems, who make the day-to-day decisions this book’s earlier chapters describe and who bear primary accountability for those decisions being sound. The second line provides oversight, standards, and challenge without taking over the first line’s underlying decision. An AI governance function occupies this line, setting standards, reviewing deployments against them, holding a required-concurrence right where section 13.5 assigned one, and maintaining the aggregate visibility section 13.4 showed a federated program can otherwise lose. It often does this alongside a model risk management function handling the technical validation piece specifically. Holding a concurrence right that can stop a deployment is a second-line control, not evidence that the function has moved to the first line. The two remain distinguishable by who owns the underlying business decision versus who can block it on risk grounds. A governance program that treats “has veto power” as a signal of first-line ownership has lost the independence the second line’s challenge role depends on. The third line provides independent assurance to the board and senior leadership that the first two lines are actually functioning as designed. That assurance comes from internal audit, testing the governance program itself rather than any individual AI system, on a mandate independent of both the teams deploying systems and the function governing them. A model risk management function and an AI governance function sitting side by side are not automatically “the two lines” in the sense this section describes. Whether they occupy the same line or different lines depends on each one’s actual role in a given decision, which needs stating explicitly instead of being assumed from their names.</p>
+<p>Agentic systems increase the frequency, speed, and scope of the pressure this allocation of lines is already under, instead of inventing that pressure from nothing. Predictive systems already require the ongoing first-line monitoring and outcomes analysis current model risk management guidance calls for, since drift, misuse, and process overrides can all surface after deployment and none of them wait for a scheduled review. What changes with an agentic system is that Chapter 12’s permission scope and runtime intervention have to be designed before the agent acts rather than reviewed after a single output. A first line that owns day-to-day operation of an agent is, functionally, exercising a risk decision every time the agent takes an action within its granted scope, at a frequency a predictive system’s periodic monitoring cycle does not approach. The second line’s job shifts correspondingly, from periodic deployment review toward standards for what permission scopes are acceptable and audit of the action logs Chapter 12 required. A governance program that has not adjusted its second-line practice for this shift will find itself reviewing agentic deployments with the same pre-deployment checklist built for systems that only ever produced a discrete output to review.</p>
+<p>Chapters 11, 12, and this chapter name controls along different axes, and the difference matters for tracing a specific control back to a specific owner rather than losing the connection between a technical safeguard and the role accountable for it. Chapter 11 classifies a control by its effect, reducing likelihood, detecting, containing before release, correcting, or transferring residual risk. Chapter 12 classifies a control by where it sits in the pipeline, inline enforcement, near-real-time detection, aggregate monitoring, or retrospective audit. An inline enforcement point, for instance, can carry a preventive effect, a detective one, or both, depending on what it is configured to do. What stays constant across both axes, and across this chapter’s own vocabulary of prevent, detect, contain, intervene, recover, verify, and learn, is the underlying obligation regardless of which axis names the control. Each one still needs a first-line owner who runs it, a second-line function that sets its standard and challenges it, and, where the control failed and the failure was material, a third-line assurance check that the standard itself is working. A registry record, a permission scope, or a claim-verification step described in Chapters 11 and 12 without naming a role is, concretely, one of the decisions this chapter’s RACI and three-lines structure has to assign. Leaving it unassigned is not a gap this chapter’s structure tolerates. It is exactly the gap this chapter exists to close.</p>
+<p>Table 13.2 returns to the operating-model choice section 13.1 opened, now that the roles and lines this section developed give that choice concrete stakes. Which model an organization picks determines who ends up in which line for a given decision, not only how authority is drawn on an org chart.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operating model</th>
+<th>What it does well</th>
+<th>Risk to control</th>
+<th>Better suited when</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Centralized</td>
+<td>Consistent standards; a single point of aggregate visibility</td>
+<td>Becomes a bottleneck once deployment volume outpaces one team’s review capacity; can lack the local business context each deploying unit has</td>
+<td>Deployment volume is modest relative to the central team, and standards consistency matters more than local responsiveness</td>
+</tr>
+<tr class="even">
+<td>Federated</td>
+<td>Responsive to local context; judgment suited to each business unit’s own conditions</td>
+<td>Classification drift across units, capture by the business a reviewer serves, and lost aggregate visibility (section 13.4)</td>
+<td>Business units differ substantially in context, and deployment volume exceeds what a central team could review itself</td>
+</tr>
+<tr class="odd">
+<td>Hybrid</td>
+<td>Combines central coordination on one dimension with local judgment on another, tracking where a defect actually originates</td>
+<td>Requires a deliberate, explicit split (sections 13.2 and 13.3), not an accidental one, and most individual decisions the split touches remain cross-layer rather than exclusive</td>
+<td>An organization can name a specific dimension, layer, risk tier, or system class, along which authority should split, and is willing to design and maintain that split on purpose</td>
+</tr>
+</tbody>
+</table>
+<p>Table 13.2. Three operating models compared by what each does well and the risk it puts on the organization to control, not a ranked or validated comparison but this book’s own synthesis of the tradeoffs sections 13.1 through 13.6 developed. The contingency principle behind it, that no single structure fits every organization, follows the Federal Reserve/OCC/FDIC’s SR 26-2 supervisory guidance on model risk management (issued 17 April 2026, superseding SR 11-7, checked 2026-09-12) and NIST AI RMF 1.0’s GOVERN function (checked 2026-09-12). Neither source validates this specific three-model taxonomy or ranks the models against each other. Read the “risk to control” column across all three rows before choosing any one model, instead of reading any row as a fixed or guaranteed outcome. Every operating model carries a predictable risk, and the choice is which risk an organization is best positioned to control given its own scale and deployment speed, not a search for a model with no risk at all.</p>
+</section>
+<section id="governance-bodies" class="level2">
+<h2 class="anchored" data-anchor-id="governance-bodies">13.7 Governance bodies</h2>
+<p>A governance body is a committee convened to review or approve AI systems. Composition, mandate, and decision rights are the necessary starting point, but a body needs more than those three stated to actually function as a governance mechanism instead of a discussion group. Composition names who sits on it and why, ensuring the perspectives a decision actually requires, technical, legal, business, and affected-party representation where relevant, are present rather than assembled from whoever was available. Mandate states what the body is actually empowered to decide, distinct from what it is merely invited to discuss. Decision rights specify whether the body’s judgment is binding, advisory, or escalates to someone else entirely. A committee that spends an hour debating a deployment and then watches the business unit proceed regardless has decision rights of zero, regardless of how substantive its discussion was.</p>
+<p>Naming these three does not yet make a body operable on an ordinary Tuesday morning. A working governance body also needs intake criteria for what reaches it and what is handled below it, a quorum requirement, a conflict-of-interest check for members with a stake in the specific decision, and an evidence pack a submitter must assemble before the meeting. It needs a stated decision standard, minutes that record dissent as well as the outcome, a conditional-approval option with a stated exception duration, and an escalation path when the body cannot reach a decision. It also needs an appeal route for a submitter who disagrees with the outcome, action tracking for anything the approval was conditioned on, and a re-review trigger for a material change to the approved system. Finally, it needs an emergency route for a decision that cannot wait for the body’s normal cadence, and periodic review of whether the body’s own decisions are holding up in practice. A committee with a charter naming its composition, mandate, and decision rights but none of this operating detail still functions ceremonially, approving whatever evidence happens to be presented to it instead of actually governing the decision.</p>
+<p>A documented illustration of a governance body being stood up at close to this level of structural specificity, though not to every element listed above, comes from outside banking entirely. The White House Office of Management and Budget’s Memorandum M-25-21, issued 3 April 2025 and rescinding the prior administration’s M-24-10, requires the head of each U.S. federal agency to retain or designate a Chief AI Officer within sixty days. It separately requires each CFO Act agency, not every federal agency, to convene an AI Governance Board within ninety days, while permitting an existing governance body to serve that function, and it specifies the board’s chair, vice-chair, and required functional representation. Alongside these, a cross-agency Chief AI Officer Council, convened by OMB itself, coordinates AI governance across the federal government as a whole (checked 2026-09-12). The memorandum states a requirement; it does not prove every covered agency met it. The U.S. International Trade Commission’s own AI page reports that it re-designated its Chief AI Officer and retained its AI Governance Board, naming the board’s thirteen member positions, which is direct evidence of the requirement actually implemented rather than only imposed (checked 2026-09-13). Neither source specifies the quorum, evidence-pack, or dissent-recording detail this section argues a body needs to actually function, which is precisely the gap between naming a governance body and operating one that this section is making.</p>
+</section>
+<section id="acceptable-use-and-sanctioned-tooling" class="level2">
+<h2 class="anchored" data-anchor-id="acceptable-use-and-sanctioned-tooling">13.8 Acceptable use and sanctioned tooling</h2>
+<p>Unapproved AI use is employees using AI tools the organization has not reviewed or approved, often because a sanctioned alternative is slower or less capable where one exists at all. It is the practical problem an acceptable use policy exists to address. Current government guidance on this exact pattern, published 7 September 2026, recommends understanding what need drove the unapproved use, building a positive security culture, offering an approved alternative, and reducing risk directly, instead of treating a written prohibition as sufficient on its own. A prohibition may be genuinely necessary for particular data, tools, or uses, and this section does not claim every prohibition backfires. What it does claim, consistent with that guidance, is that policy text alone rarely creates the visibility or the safe alternative an organization needs, so a prohibition unaccompanied by anything else risks losing visibility into use it cannot detect rather than eliminating the use itself. A fuller acceptable use policy combines clear use rules with an approved tool that meets legitimate needs where one can be provided, proportionate access and data-loss controls, and procurement and security review of new tools before they spread informally. It also combines awareness training and a reporting channel for tools employees want but do not have, monitoring consistent with law and internal policy, and a defined response path for discovered unapproved use that does not default to discipline alone. Finally, it combines periodic measurement of how much unapproved use remains, so the policy’s effect can actually be assessed instead of assumed.</p>
+<p>Combining all of this into a policy still leaves an individual employee needing one place that states these things concretely. That place should state which tools and accounts are approved; which tasks and data are permitted, restricted, or prohibited by classification; where human review of AI output is required before anyone relies on it; and how output accuracy gets verified. It should also state how intellectual property, confidentiality, and privacy obligations apply to AI-assisted work; what security requirements attach to an approved tool; what records the employee must keep; and what disclosure the organization owes a counterparty or regulator about AI-assisted output. And it should state how to report an incident or a tool the policy does not cover; how an exception gets requested and granted; what happens when the policy is violated; and how often the policy gets checked against the tools employees are asking for.</p>
+</section>
+<section id="conflict-with-incumbent-functions-and-executive-engagement" class="level2">
+<h2 class="anchored" data-anchor-id="conflict-with-incumbent-functions-and-executive-engagement">13.9 Conflict with incumbent functions and executive engagement</h2>
+<p>Where a model risk management function already exists with real authority, as it did at Meridian for a decade before <code>FAIRLEND</code>’s AI governance function was chartered, a new AI governance function arrives as a structural competitor, not a blank slate. Pretending otherwise produces exactly the kind of unresolved friction the case in focus below works through. But the boundary a new function should draw is not the one an assumption of empty incumbent territory would suggest. Current U.S. federal banking supervisory guidance on model risk management, issued April 2026 and superseding the prior 2011 guidance, directly addresses model purpose, intended and actual use, limitations, misuse, validation, monitoring, aggregate exposure, and third-party models. So an incumbent function governed by that guidance already has a real, if partial, mandate over questions of use appropriateness, not only technical accuracy. A new AI governance function that assumes otherwise is working from an outdated picture of what model risk management is actually built to check. This specific conflict, and the supervisory guidance resolving its boundaries, is banking-specific. A nonfinancial organization facing the same structural pattern, a new AI governance function meeting an established data governance board or cybersecurity risk committee with its own reporting line and its own settled scope, runs the identical joint-responsibility analysis this section develops. It does this without a comparable federal supervisory framework already dictating what the incumbent function’s mandate covers. This is exactly why the analysis itself, not the specific banking citations, is the part that transfers. That guidance does not cover fundamental-rights and disclosure obligations, contestability, affected-party requirements broader than model performance, and governance of the system classes outside the guidance’s stated coverage. It leaves those gaps because it addresses model risk specifically rather than every AI-specific legal or social-impact question, and because it explicitly excludes generative and agentic models from its own scope. The correct starting point is therefore a joint-responsibility analysis. It maps what the incumbent mandate already covers, identifies the AI-specific duties it does not, and assigns the decisions that fall in both territories explicitly. This is different from a new function asserting or conceding a three-question territory that neither the incumbent’s actual mandate nor its actual gaps line up with.</p>
+<p>Executive and board engagement closes the loop this chapter has built. A board needs regular reporting on the aggregate picture section 13.4 showed federated governance can lose, the specific questions to ask of any significant deployment, and whether the readiness dimensions Chapter 8 requires were actually evaluated. It also needs to know whether an incident this year exposed a systemic gap rather than an isolated failure. What a board’s oversight duty actually requires depends on the entity’s jurisdiction and legal form. But reporting built to answer these questions is what lets a board exercise whatever oversight duty applies to it, rather than receiving reassurance dressed as reporting regardless of which duty governs.</p>
+<p>The cadence matters as much as the content, though no single cadence is the correct one for every board. A board relying on annual reporting alone, with no operational monitoring or event-driven escalation underneath it, can learn about a systemic gap long after it opened rather than while it is still forming. That lag is too slow for a function whose own inventory Chapter 3 requires to be current continuously. Paired with the continuous monitoring and escalation triggers described below, an annual reporting cycle does not carry the same lag. So the problem this chapter warns against is the missing pairing, not the annual cadence by itself. Quarterly reporting is one example of a cadence some boards already use for other risk reporting. Adopting a similar rhythm for AI governance can let a function surface a drifting classification pattern, a rising rate of near-miss incidents, or a business unit consistently pushing deployment decisions past the readiness bar. It can do this while the pattern is still a trend, not an already-realized failure. Whatever the routine cadence, it needs to be paired with event-driven escalation for defined triggers, a serious incident, a threshold breach, a material change, that reach the board or the relevant committee immediately rather than waiting for the next scheduled report. A board relying on a fixed cadence alone learns about an urgent problem only as fast as its calendar allows. The report itself should name what changed since the last one instead of restating the program’s structure every cycle, because a board that reads the same description of the operating model repeatedly has learned nothing new about whether the model is actually working.</p>
+</section>
+<section id="case-in-focus-a-mandate-that-had-to-be-negotiated-not-assumed" class="level2 unnumbered case">
+<h2 class="unnumbered anchored" data-anchor-id="case-in-focus-a-mandate-that-had-to-be-negotiated-not-assumed">Case in focus: a mandate that had to be negotiated, not assumed</h2>
+<p><code>FAIRLEND</code> · Hypothetical, following the running cases</p>
+<p>This continuing fictional scenario illustrates the conflict pattern section 13.9 describes; it does not report an event that actually occurred at any specific organization. Meridian’s board chartered its AI governance function with a mandate spanning fairness, transparency, and risk review across every AI system in the organization, a document that read, on its face, as complete. The model risk management function, governing <code>FAIRLEND</code>’s credit models under a supervisory framework it had operated under for years, read the same charter as an encroachment on territory it had held without dispute since before “AI governance” was a phrase anyone at Meridian used. The first several deployment reviews under the new charter produced the conflict pattern section 13.9 describes. Both functions showed up to review the same model, each unclear on which one’s judgment actually controlled the outcome, and each carrying a different picture of what the other’s mandate actually already covered.</p>
+<p>The resolution followed a joint-responsibility analysis, not either function conceding or asserting exclusive territory. Meridian first mapped what its model risk management function’s existing mandate, governed by current supervisory guidance, already covered for <code>FAIRLEND</code>. That mandate covered not only technical validation but model purpose, intended use, and monitoring for misuse, a broader mandate than the AI governance function had initially assumed. AI governance then identified the specific gaps that mandate did not close. Those gaps were whether the population a proposed lending-product extension would newly reach matched the population <code>FAIRLEND</code>‘s fairness testing had actually covered, and whether Meridian could satisfy the adverse-action explanation duties Chapter 2 introduces and produce the decision-level evidence Chapter 15 develops. Chapter 8 makes both matters conditions of deployment readiness, not the source of the underlying legal duty. Both questions required AI-specific and legal expertise the model-risk mandate did not claim to provide. Instead of assigning these as separate, walled-off territories, Meridian required both functions’ sign-off on any deployment touching either question, with model risk management’s validation evidence feeding directly into the readiness record AI governance’s concurrence decision required.</p>
+<p>Working out which of the model risk management function and the AI governance function occupied which line of the three lines model, rather than assuming the two were automatically “the two lines” simply because two functions existed, was itself part of the resolution. Both turned out to sit in the second line for <code>FAIRLEND</code>’s deployment decisions, one providing technical challenge and one providing AI-specific and fairness challenge, with the deploying business unit remaining the first-line owner of the underlying decision in both cases.</p>
+<p>The stalled product launch that forced this mapping into being carried a cost the board tracked directly. That cost included a delayed launch, a business unit sponsor who had learned to route around both functions on the next deployment rather than repeat the experience, and a boundary that existed on paper because a deployment had already stalled to force it into being. The lesson Meridian drew, and the one this chapter draws from it, is that the joint-responsibility mapping should happen before the first contested deployment, not during it. A boundary drawn under the pressure of a stalled launch is drawn worse than one drawn in advance, with more resentment on both sides and less attention paid to whether the mapping actually tracks what each function’s mandate does and does not already cover.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Centralized, federated, and hybrid operating models are design patterns rather than a performance ranking. The right choice depends on organizational scale, existing risk maturity, deployment velocity, risk concentration, and independence requirements, tested against an organization’s own conditions, not assumed from any one pattern’s general reputation. The operating model choice recurs at every governance decision point instead of being made once on an org chart, and an organization that has not noticed this is often centralized on one axis and federated on another by accident, not by design. One candidate split divides authority by layer, federated at the system layer where local context matters most, centralized at the model layer where a defect needs to be caught once, not rediscovered independently. Most individual decisions this split touches, though, are cross-layer processes needing a decision-rights matrix instead of a two-column allocation.</p>
+<p>Federated governance fails through classification drift, capture by the business a reviewer serves, and lost aggregate visibility. This is a particularly consequential failure because at least some regulatory reporting obligations attach to the organization or a specific provider or deployer role rather than to a single business unit. RACI applied to governance decisions makes responsibility, accountability, consultation, and information explicit instead of assumed, though an incident-response RACI needs its consultation step run in parallel with containment and investigation, not as a sequential gate ahead of a regulatory notification clock. The three lines model, fully mapped onto AI-specific functions per the IIA’s current statement, separates first-line ownership, second-line oversight and challenge, including a required-concurrence right that does not by itself make the second line an owner, and third-line independent assurance. A governance body needs composition, mandate, and decision rights stated explicitly, plus the operating detail, intake criteria, quorum, evidence pack, dissent record, escalation, and re-review triggers, that actually makes it function instead of merely existing. An acceptable use policy addresses unapproved AI use only by combining a sanctioned alternative where one can be offered with access controls, monitoring, training, and measurement, not a written prohibition alone.</p>
+<p>Conflict with an incumbent function like model risk management is structural rather than avoidable, and resolving it requires a joint-responsibility analysis, not an assumed empty territory. An incumbent function governed by current supervisory guidance may already have real authority over use appropriateness and not only technical validation. The productive first step, then, is mapping what its mandate already covers, identifying the AI-specific duties it does not, and assigning the overlap explicitly instead of either function conceding or asserting exclusive ground.</p>
+</section>
+<section id="review-questions" class="level2">
+<h2 class="anchored" data-anchor-id="review-questions">Review questions</h2>
+<p><code>COMPREHENSION</code></p>
+<ol type="1">
+<li><p>Explain why the operating model choice is not a single decision made once on an org chart, and give two specific governance decisions where an organization might reasonably choose different models.</p></li>
+<li><p>State the federated-at-system, centralized-at-model pattern, explain why it follows from the two-record inventory Chapter 3 established, and name one organizational condition under which a different split would fit better.</p></li>
+</ol>
+<p><code>APPLIED</code></p>
+<ol start="3" type="1">
+<li><p>Design a RACI assignment for a deployment decision under Chapter 8’s readiness dimensions, naming who is responsible, accountable, consulted, and informed.</p></li>
+<li><p>An organization discovers extensive unapproved AI use despite a clear written prohibition. Diagnose what a prohibition alone cannot provide, and specify at least three additional controls a fuller acceptable use policy would add.</p></li>
+</ol>
+<p><code>SPOT THE RISK</code></p>
+<ol start="5" type="1">
+<li>A federated governance program reports that every business unit’s own AI review process is functioning well. Identify the failure mode this chapter warns is invisible from that vantage point, and what evidence would actually reveal it.</li>
+</ol>
+<p><code>COMPARE AND DECIDE</code></p>
+<ol start="6" type="1">
+<li>State the case for centralizing AI governance authority versus federating it, for an organization with twelve business units each deploying AI at a different pace and level of maturity.</li>
+</ol>
+<p><code>RUNNING CASE</code></p>
+<ol start="7" type="1">
+<li><code>FAIRLEND</code> Using the case in focus, explain why Meridian’s resolution started by mapping what the model risk management function’s existing mandate already covered, rather than assuming a boundary and negotiating from it, and name the specific gap AI governance identified once that mapping was done.</li>
+</ol>
+<hr>
+<p>Structure alone does not decide what a governance function actually does with its authority once organized. The next chapter turns to the substance of that work, beginning with the assessment process a governance function runs on every system it reviews, including the stakeholders standard assessment methods cannot reach at all.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Reader feedback widget. Injected on every chapter page via _quarto.yml's
+     include-after-body. Self-configures per page (reads the chapter's own H1),
+     posts anonymously to a Google Form, and can be removed by deleting the
+     include-after-body line in _quarto.yml plus this file. -->
+<div id="reader-feedback" style="margin-top:3.5rem;padding:1.5rem 1.5rem 1.75rem;border-top:1px solid #dfe3e8;">
+  <div id="rf-form-state">
+    <h3 style="font-size:1.05rem;margin:0 0 .35rem;color:#1F4E79;">Was this chapter useful?</h3>
+    <p style="font-size:.9rem;color:#5b6570;margin:0 0 1rem;">
+      Quick, anonymous feedback on this chapter. No account needed, and you can send more than once.
+    </p>
+
+    <div id="rf-rating" style="display:flex;gap:.4rem;margin-bottom:1rem;" role="radiogroup" aria-label="Rating">
+      <!-- five buttons injected by JS -->
+    </div>
+
+    <textarea id="rf-comment" placeholder="What was unclear, wrong, or worth changing? (optional)" style="width:100%;min-height:5.5rem;padding:.6rem .7rem;border:1px solid #cdd4db;border-radius:6px;
+      font:inherit;font-size:.92rem;resize:vertical;box-sizing:border-box;"></textarea>
+
+    <div style="margin-top:.85rem;display:flex;align-items:center;gap:.75rem;">
+      <button id="rf-submit" type="button" style="background:#1F4E79;color:#fff;border:none;border-radius:6px;padding:.55rem 1.1rem;
+        font:inherit;font-size:.92rem;cursor:pointer;">
+        Send feedback
+      </button>
+      <span id="rf-hint" style="font-size:.82rem;color:#8a929b;"></span>
+    </div>
+  </div>
+
+  <div id="rf-thanks" style="display:none;font-size:.95rem;color:#1F4E79;">
+    Thanks — that's recorded. <a href="#" id="rf-again" style="color:#1F4E79;">Send more feedback on this chapter</a>.
+  </div>
+</div>
+
+<!-- Hidden iframe used as the form's POST target so the page never navigates away. -->
+<iframe name="rf-target" style="display:none;" title="feedback submission target"></iframe>
+
+<script>
+(function () {
+  var FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSd9_CLKYge5lybG71ff2xAJKTUC0H76P7SSF8X0esvVgOQTTQ/formResponse";
+  var ENTRY_CHAPTER = "entry.339002275";
+  var ENTRY_RATING  = "entry.39522218";
+  var ENTRY_COMMENT = "entry.995180468";
+
+  function chapterLabel() {
+    var h1 = document.querySelector("main h1, #title-block-header h1, h1");
+    var text = h1 ? h1.textContent.trim() : document.title.trim();
+    return text.replace(/\s+/g, " ");
+  }
+
+  function buildStars(container) {
+    var selected = null;
+    for (var i = 1; i <= 5; i++) {
+      (function (n) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.textContent = n;
+        b.setAttribute("aria-label", n + " out of 5");
+        b.dataset.value = n;
+        b.style.cssText = "width:2.1rem;height:2.1rem;border-radius:6px;border:1px solid #cdd4db;" +
+          "background:#fff;color:#3c4650;font:inherit;font-size:.92rem;cursor:pointer;";
+        b.addEventListener("click", function () {
+          selected = n;
+          Array.prototype.forEach.call(container.children, function (el) {
+            var on = Number(el.dataset.value) <= n;
+            el.style.background = on ? "#1F4E79" : "#fff";
+            el.style.color = on ? "#fff" : "#3c4650";
+            el.style.borderColor = on ? "#1F4E79" : "#cdd4db";
+          });
+        });
+        container.appendChild(b);
+      })(i);
+    }
+    return function () { return selected; };
+  }
+
+  function ready(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+
+  ready(function () {
+    var root = document.getElementById("reader-feedback");
+    if (!root) return;
+    // Not a teaching page — front/back cover, etc. Those set data-no-feedback
+    // on the body via a tiny inline script in the page's own front matter.
+    if (document.body.hasAttribute("data-no-feedback")) {
+      root.style.display = "none";
+      return;
+    }
+
+    var ratingWrap = document.getElementById("rf-rating");
+    var getRating = buildStars(ratingWrap);
+    var commentEl = document.getElementById("rf-comment");
+    var submitBtn = document.getElementById("rf-submit");
+    var hint = document.getElementById("rf-hint");
+    var formState = document.getElementById("rf-form-state");
+    var thanks = document.getElementById("rf-thanks");
+    var again = document.getElementById("rf-again");
+
+    submitBtn.addEventListener("click", function () {
+      var rating = getRating();
+      var comment = commentEl.value.trim();
+      if (!rating && !comment) {
+        hint.textContent = "Pick a rating or add a comment first.";
+        return;
+      }
+
+      var form = document.createElement("form");
+      form.action = FORM_ACTION;
+      form.method = "POST";
+      form.target = "rf-target";
+      form.style.display = "none";
+
+      function field(name, value) {
+        var inp = document.createElement("input");
+        inp.type = "hidden";
+        inp.name = name;
+        inp.value = value;
+        form.appendChild(inp);
+      }
+
+      field(ENTRY_CHAPTER, chapterLabel());
+      if (rating) field(ENTRY_RATING, String(rating));
+      if (comment) field(ENTRY_COMMENT, comment);
+
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+
+      formState.style.display = "none";
+      thanks.style.display = "block";
+    });
+
+    again.addEventListener("click", function (e) {
+      e.preventDefault();
+      commentEl.value = "";
+      Array.prototype.forEach.call(ratingWrap.children, function (el) {
+        el.style.background = "#fff";
+        el.style.color = "#3c4650";
+        el.style.borderColor = "#cdd4db";
+      });
+      hint.textContent = "";
+      thanks.style.display = "none";
+      formState.style.display = "block";
+    });
+  });
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/aigov\.ogunseye\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/12-governing-agentic-systems.html" class="pagination-link" aria-label="12. Governing Agentic Systems">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">12. Governing Agentic Systems</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/14-risk-assessment-and-management.html" class="pagination-link" aria-label="14. Risk Assessment and Management">
+        <span class="nav-page-text"><span class="chapter-title">14. Risk Assessment and Management</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>How to Govern AI · Foundations and Practical Guide to AI Governance</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Last updated 21 September 2026</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>CC BY-NC 4.0</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

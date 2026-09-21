@@ -1,0 +1,75 @@
+<svg viewBox="0 0 900 432" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Risk scoring with prioritization">
+<!-- FIGURE 14.2 REQUIRED ELEMENTS
+Must appear: a likelihood-by-severity grid with several named risks
+plotted on it, plus an explicit ranked priority order derived from the
+grid, showing that placement on the grid and the resulting rank are two
+different outputs of the same exercise. Entry condition: risks have been
+identified under 14.1's second component. Exit condition: risks carry
+both a plotted position and an explicit rank. Deliberately excluded: the
+mitigation and control-selection step (14.4's job). Must work in black
+and white.
+SOURCE: original; the grid is a standard risk-management device applied
+to this chapter's own argument about avoiding false precision.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<title>Risk scoring with prioritization</title>
+<style>
+text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.ttl{font-size:17px;font-weight:700;}
+.cls{font-size:14px;font-weight:700;}
+.bx{font-size:12.5px;font-weight:400;}
+.col{font-size:11px;font-weight:700;letter-spacing:.06em;}
+.sm{font-size:11px;font-weight:400;}
+.em{font-size:11px;font-style:italic;}
+</style>
+<rect x="0" y="0" width="900" height="432" fill="#ffffff"/>
+<text x="20" y="34" class="ttl" fill="#1a2230">Figure 14.2 &#183; Risk scoring with prioritization</text>
+<text x="40" y="64" class="col" fill="#46536b">SEVERITY &#8593;   LIKELIHOOD &#8594;</text>
+<line x1="40" y1="78" x2="40" y2="348" stroke="#c9d1dc" stroke-width="1"/>
+<line x1="40" y1="78" x2="310" y2="78" stroke="#c9d1dc" stroke-width="1"/>
+<line x1="130" y1="78" x2="130" y2="348" stroke="#c9d1dc" stroke-width="1"/>
+<line x1="40" y1="168" x2="310" y2="168" stroke="#c9d1dc" stroke-width="1"/>
+<line x1="220" y1="78" x2="220" y2="348" stroke="#c9d1dc" stroke-width="1"/>
+<line x1="40" y1="258" x2="310" y2="258" stroke="#c9d1dc" stroke-width="1"/>
+<line x1="310" y1="78" x2="310" y2="348" stroke="#c9d1dc" stroke-width="1"/>
+<line x1="40" y1="348" x2="310" y2="348" stroke="#c9d1dc" stroke-width="1"/>
+<rect x="40" y="78" width="270" height="270" fill="none" stroke="#1a2230" stroke-width="1.6"/>
+<text x="85.0" y="366" class="sm" fill="#46536b" text-anchor="middle">LOW</text>
+<text x="32" y="307.0" class="sm" fill="#46536b" text-anchor="end">LOW</text>
+<text x="175.0" y="366" class="sm" fill="#46536b" text-anchor="middle">MED</text>
+<text x="32" y="217.0" class="sm" fill="#46536b" text-anchor="end">MED</text>
+<text x="265.0" y="366" class="sm" fill="#46536b" text-anchor="middle">HIGH</text>
+<text x="32" y="127.0" class="sm" fill="#46536b" text-anchor="end">HIGH</text>
+<circle cx="265.0" cy="123.0" r="14" fill="#8a3324"/>
+<text x="265.0" y="128.0" class="sm" font-weight="700" fill="#ffffff" text-anchor="middle">A</text>
+<circle cx="175.0" cy="123.0" r="14" fill="#1a2230"/>
+<text x="175.0" y="128.0" class="sm" font-weight="700" fill="#ffffff" text-anchor="middle">B</text>
+<circle cx="265.0" cy="303.0" r="14" fill="#46536b"/>
+<text x="265.0" y="308.0" class="sm" font-weight="700" fill="#ffffff" text-anchor="middle">C</text>
+<circle cx="85.0" cy="213.0" r="14" fill="#8794a8"/>
+<text x="85.0" y="218.0" class="sm" font-weight="700" fill="#ffffff" text-anchor="middle">D</text>
+<text x="470" y="64" class="col" fill="#46536b">RANKED PRIORITY</text>
+<rect x="470" y="78" width="410" height="58" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<circle cx="492" cy="98" r="12" fill="#8a3324"/>
+<text x="492" y="102" class="sm" font-weight="700" fill="#ffffff" text-anchor="middle">A</text>
+<text x="514" y="102" class="bx" font-weight="700" fill="#1a2230">highest likelihood, highest severity</text>
+<text x="514" y="120" class="sm" fill="#46536b">address first (14.3)</text>
+<rect x="470" y="146" width="410" height="58" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<circle cx="492" cy="166" r="12" fill="#1a2230"/>
+<text x="492" y="170" class="sm" font-weight="700" fill="#ffffff" text-anchor="middle">B</text>
+<text x="514" y="170" class="bx" font-weight="700" fill="#1a2230">high severity, moderate likelihood</text>
+<text x="514" y="188" class="sm" fill="#46536b">address second, argued tiebreak vs. A</text>
+<rect x="470" y="214" width="410" height="58" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<circle cx="492" cy="234" r="12" fill="#46536b"/>
+<text x="492" y="238" class="sm" font-weight="700" fill="#ffffff" text-anchor="middle">C</text>
+<text x="514" y="238" class="bx" font-weight="700" fill="#1a2230">high likelihood, low severity</text>
+<text x="514" y="256" class="sm" fill="#46536b">monitor; low-cost mitigation acceptable</text>
+<rect x="470" y="282" width="410" height="58" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<circle cx="492" cy="302" r="12" fill="#8794a8"/>
+<text x="492" y="306" class="sm" font-weight="700" fill="#ffffff" text-anchor="middle">D</text>
+<text x="514" y="306" class="bx" font-weight="700" fill="#1a2230">low likelihood, moderate severity</text>
+<text x="514" y="324" class="sm" fill="#46536b">lowest priority absent new evidence</text>
+<line x1="20" y1="382" x2="880" y2="382" stroke="#c9d1dc" stroke-width="1"/>
+<text x="20" y="398" class="sm" fill="#46536b">Grid position and rank are two different outputs of the same exercise: B and A share the same severity row but</text>
+<text x="20" y="416" class="sm" fill="#46536b">different likelihood columns, and the rank between them still needed the explicit tiebreak section 14.3 describes.</text>
+</svg>

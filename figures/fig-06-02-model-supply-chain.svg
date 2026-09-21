@@ -1,0 +1,210 @@
+<svg viewBox="0 0 1000 994" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig0602t fig0602d" aria-label="Model supply chain roles and where obligation attaches">
+<title id="fig0602t">Model supply chain roles and where obligation attaches</title>
+<desc id="fig0602d">A role-and-duty map, not a single liability chain: ten roles a system can pass through, model or GPAI provider, fine-tuner, data supplier, tool or component provider, importer or distributor, system integrator, API host, deployer, a day-to-day operations role, and affected person, each carrying its own attached duties. Dashed arrows show a role shifting to provider, for a high-risk system, under specified conditions: rebranding, substantial modification, or a changed intended purpose. A side rail carries change notice downward from the provider and contract, incident, logging, and feedback signals upward from every later role.</desc>
+<!-- FIGURE 6.2 REQUIRED ELEMENTS, REBUILT per CH036.
+CH036 finding: a single chain with universal upstream liability
+misdescribes how legal roles actually distribute; EU law assigns distinct
+duties to providers, general-purpose-model providers, importers,
+distributors, product manufacturers, deployers, and other parties, and a
+deployer becomes a provider only in specified circumstances (rebranding,
+substantial modification, changed intended purpose).
+Must appear: a role-and-duty map, not a single chain: model or GPAI
+provider, fine-tuner, API host, system integrator, data supplier,
+tool/component provider, importer or distributor (where relevant),
+deployer, operator, and affected person, each with its own attached
+duties. Conditional dashed arrows show when a role shifts to provider
+(rebranding, substantial modification, changed intended purpose).
+Contract/change-notice/incident/logging/feedback links shown as a side
+rail connecting every role. Deliberately excluded: specific contract
+terms (Chapter 16 job). Must work in black and white.
+SOURCE: original; no published framework maps obligation attachment to
+this specific build/fine-tune/select entry-point structure. Role list
+follows the EU AI Act's provider/deployer/importer/distributor
+vocabulary without reproducing any single source figure.
+AUDIT: pass 1 [x] against list, pass 2 blind [x], rendered and viewed
+[x]. Rebuilt to close CH036: replaces the four-box single chain with a
+ten-role duty map, conditional role-shift arrows, and a change-notice/
+contract/incident/logging/feedback rail. Checked 13 Sep 2026.
+
+CH036/CH445 (Pass 56), partial correction 13 Sep 2026: three rendered
+em dashes removed (side-rail labels and the bottom legend). The
+provider-role-shift conditions (rebranding, substantial modification,
+changed intended purpose) now state they apply "for a high-risk
+system," per EU AI Act Article 25(1)'s own scope ("shall be considered
+to be a provider of a high-risk AI system"), confirmed against
+https://artificialintelligenceact.eu/article/25/. The row labelled
+OPERATOR is renamed DAY-TO-DAY OPERATIONS: Article 3(8) defines
+"operator" as a collective term for provider, product manufacturer,
+deployer, authorised representative, importer, or distributor, not a
+distinct sequential role after deployer, confirmed against
+https://artificialintelligenceact.eu/article/3/.
+CH036/CH445's larger structural finding is NOT resolved by this pass:
+the figure still renders ten roles as one mandatory vertical chain with
+solid connecting arrows, still gives functional, nonstatutory roles
+(fine-tuner, data supplier, tool/component provider, system integrator,
+API host) the same box style and "duties" framing as the statutory
+roles (provider, deployer, importer/distributor), and does not branch,
+mark roles optional/combinable, or separate legal-role determination
+from function the way CH's corrected specification requires. That
+redesign remains OPEN pending an author/illustrator decision; see
+rules/badw-book-log.md, Pass 56.
+
+CH's Pass 56 corrected Figure 6.2 specification, carried here so it
+travels with the figure until the redraw happens: center the AI system
+or model; surround it with functional actors present in this deployment
+only (developer/provider, data supplier, component/tool supplier, host,
+integrator, distributor/importer, deployer, operator/user, affected
+person, oversight authority), each marked optional, combined, or
+separate; add a legal-role determination panel that derives each
+actor's statutory role from jurisdiction, activity, market action,
+system classification, name/trademark use, intended-purpose change, and
+substantial modification, rather than reading the role off the function
+label; show Article 25 as a scoped decision branch for high-risk
+systems only, not a universal rule; use separate edge types for
+product/service flow, data flow, contract, documentation, change
+notice, incident report, complaint/appeal, regulator access, and
+corrective action, drawn only where evidence supports that relationship
+for the stated context; add supplier-failure, evidence-unavailable,
+escalation, suspension/recall/withdrawal, correction, and
+verified-closure paths; label the organizational process as a
+recommended synthesis unless direct evidence documents a named
+organization's practice.
+-->
+<style>
+text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.ttl{font-size:17px;font-weight:700;}
+.sub{font-size:11.5px;font-weight:400;}
+.rn{font-size:11.3px;font-weight:700;}
+.dt{font-size:9.4px;font-weight:400;}
+.num{font-size:9px;font-weight:700;}
+.col{font-size:10.5px;font-weight:700;letter-spacing:.06em;}
+.em{font-size:9.5px;font-style:italic;}
+.lg{font-size:11px;font-weight:400;}
+.sm{font-size:10.3px;font-weight:400;}
+</style>
+<rect x="0" y="0" width="1000" height="994" fill="#ffffff"/>
+<text x="20" y="34" class="ttl" fill="#1a2230">Figure 6.2 &#183; Model supply chain roles and where obligation attaches</text>
+<text x="20" y="55" class="sub" fill="#46536b">A role-and-duty map, not a single chain of escalating blame. Each role carries the duties attached to it.</text>
+<text x="20" y="74" class="em" fill="#46536b">Dashed: for a high-risk system, a role shifts to provider (0) only if rebranding, substantial modification, or a changed intended purpose occurs.</text>
+<rect x="100" y="100" width="225" height="60" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.3"/>
+<circle cx="118" cy="115" r="9" fill="#1a2230"/>
+<text x="118" y="118.2" class="num" fill="#ffffff" text-anchor="middle">0</text>
+<text x="220.5" y="127" class="rn" fill="#1a2230" text-anchor="middle">MODEL /</text>
+<text x="220.5" y="142" class="rn" fill="#1a2230" text-anchor="middle">GPAI PROVIDER</text>
+<rect x="335" y="100" width="455" height="60" rx="4" fill="#ffffff" stroke="#1a2230" stroke-width="1.2"/>
+<text x="351" y="127.0" class="dt" fill="#1a2230">Trains and releases the base model; sets usage policy, safety</text>
+<text x="351" y="141.0" class="dt" fill="#1a2230">training, and system-card or GPAI documentation duties.</text>
+<line x1="790" y1="130.0" x2="800" y2="130.0" stroke="#8794a8" stroke-width="1" stroke-dasharray="2 2"/>
+<line x1="118" y1="160" x2="118" y2="168" stroke="#1a2230" stroke-width="1.6"/>
+<polygon points="118,176 114,168 122,168" fill="#1a2230"/>
+<rect x="100" y="176" width="225" height="60" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.3"/>
+<circle cx="118" cy="191" r="9" fill="#1a2230"/>
+<text x="118" y="194.2" class="num" fill="#ffffff" text-anchor="middle">1</text>
+<text x="220.5" y="210" class="rn" fill="#1a2230" text-anchor="middle">FINE-TUNER</text>
+<rect x="335" y="176" width="455" height="60" rx="4" fill="#ffffff" stroke="#1a2230" stroke-width="1.2"/>
+<text x="351" y="203.0" class="dt" fill="#1a2230">Adapts model behavior on a smaller dataset; adds its own duties on</text>
+<text x="351" y="217.0" class="dt" fill="#1a2230">top of the base provider's, without replacing them.</text>
+<line x1="790" y1="206.0" x2="800" y2="206.0" stroke="#8794a8" stroke-width="1" stroke-dasharray="2 2"/>
+<line x1="118" y1="236" x2="118" y2="244" stroke="#1a2230" stroke-width="1.6"/>
+<polygon points="118,252 114,244 122,244" fill="#1a2230"/>
+<rect x="100" y="252" width="225" height="60" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.3"/>
+<circle cx="118" cy="267" r="9" fill="#1a2230"/>
+<text x="118" y="270.2" class="num" fill="#ffffff" text-anchor="middle">2</text>
+<text x="220.5" y="286" class="rn" fill="#1a2230" text-anchor="middle">DATA SUPPLIER</text>
+<rect x="335" y="252" width="455" height="60" rx="4" fill="#ffffff" stroke="#1a2230" stroke-width="1.2"/>
+<text x="351" y="279.0" class="dt" fill="#1a2230">Supplies training, fine-tuning, or retrieval data; owns provenance,</text>
+<text x="351" y="293.0" class="dt" fill="#1a2230">licensing, and disclosure duties for what it supplies.</text>
+<line x1="790" y1="282.0" x2="800" y2="282.0" stroke="#8794a8" stroke-width="1" stroke-dasharray="2 2"/>
+<line x1="118" y1="312" x2="118" y2="320" stroke="#1a2230" stroke-width="1.6"/>
+<polygon points="118,328 114,320 122,320" fill="#1a2230"/>
+<rect x="100" y="328" width="225" height="60" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.3"/>
+<circle cx="118" cy="343" r="9" fill="#1a2230"/>
+<text x="118" y="346.2" class="num" fill="#ffffff" text-anchor="middle">3</text>
+<text x="220.5" y="355" class="rn" fill="#1a2230" text-anchor="middle">TOOL /</text>
+<text x="220.5" y="370" class="rn" fill="#1a2230" text-anchor="middle">COMPONENT PROVIDER</text>
+<rect x="335" y="328" width="455" height="60" rx="4" fill="#ffffff" stroke="#1a2230" stroke-width="1.2"/>
+<text x="351" y="355.0" class="dt" fill="#1a2230">Supplies a plug-in, connector, or component the system calls; owns</text>
+<text x="351" y="369.0" class="dt" fill="#1a2230">duties for that component's own behavior and stated limits.</text>
+<line x1="790" y1="358.0" x2="800" y2="358.0" stroke="#8794a8" stroke-width="1" stroke-dasharray="2 2"/>
+<line x1="118" y1="388" x2="118" y2="396" stroke="#1a2230" stroke-width="1.6"/>
+<polygon points="118,404 114,396 122,396" fill="#1a2230"/>
+<rect x="100" y="404" width="225" height="60" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.3"/>
+<circle cx="118" cy="419" r="9" fill="#1a2230"/>
+<text x="118" y="422.2" class="num" fill="#ffffff" text-anchor="middle">4</text>
+<text x="220.5" y="431" class="rn" fill="#1a2230" text-anchor="middle">IMPORTER /</text>
+<text x="220.5" y="446" class="rn" fill="#1a2230" text-anchor="middle">DISTRIBUTOR</text>
+<rect x="335" y="404" width="455" height="60" rx="4" fill="#ffffff" stroke="#1a2230" stroke-width="1.2"/>
+<text x="351" y="431.0" class="dt" fill="#1a2230">Places a model on a market on a provider's behalf; owns conformity-</text>
+<text x="351" y="445.0" class="dt" fill="#1a2230">check and traceability duties. Not every deployment has this role.</text>
+<line x1="790" y1="434.0" x2="800" y2="434.0" stroke="#8794a8" stroke-width="1" stroke-dasharray="2 2"/>
+<line x1="118" y1="464" x2="118" y2="472" stroke="#1a2230" stroke-width="1.6"/>
+<polygon points="118,480 114,472 122,472" fill="#1a2230"/>
+<rect x="100" y="480" width="225" height="60" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.3"/>
+<circle cx="118" cy="495" r="9" fill="#1a2230"/>
+<text x="118" y="498.2" class="num" fill="#ffffff" text-anchor="middle">5</text>
+<text x="220.5" y="514" class="rn" fill="#1a2230" text-anchor="middle">SYSTEM INTEGRATOR</text>
+<rect x="335" y="480" width="455" height="60" rx="4" fill="#ffffff" stroke="#1a2230" stroke-width="1.2"/>
+<text x="351" y="507.0" class="dt" fill="#1a2230">Assembles model, data, and tools into one working system; owns</text>
+<text x="351" y="521.0" class="dt" fill="#1a2230">integration-testing and interface duties across the assembly.</text>
+<line x1="790" y1="510.0" x2="800" y2="510.0" stroke="#8794a8" stroke-width="1" stroke-dasharray="2 2"/>
+<line x1="118" y1="540" x2="118" y2="548" stroke="#1a2230" stroke-width="1.6"/>
+<polygon points="118,556 114,548 122,548" fill="#1a2230"/>
+<rect x="100" y="556" width="225" height="60" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.3"/>
+<circle cx="118" cy="571" r="9" fill="#1a2230"/>
+<text x="118" y="574.2" class="num" fill="#ffffff" text-anchor="middle">6</text>
+<text x="220.5" y="590" class="rn" fill="#1a2230" text-anchor="middle">API HOST</text>
+<rect x="335" y="556" width="455" height="60" rx="4" fill="#ffffff" stroke="#1a2230" stroke-width="1.2"/>
+<text x="351" y="583.0" class="dt" fill="#1a2230">Serves inference at runtime; owns uptime, access-control, and</text>
+<text x="351" y="597.0" class="dt" fill="#1a2230">request-logging duties for the serving layer.</text>
+<line x1="790" y1="586.0" x2="800" y2="586.0" stroke="#8794a8" stroke-width="1" stroke-dasharray="2 2"/>
+<line x1="118" y1="616" x2="118" y2="624" stroke="#1a2230" stroke-width="1.6"/>
+<polygon points="118,632 114,624 122,624" fill="#1a2230"/>
+<rect x="100" y="632" width="225" height="60" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.3"/>
+<circle cx="118" cy="647" r="9" fill="#1a2230"/>
+<text x="118" y="650.2" class="num" fill="#ffffff" text-anchor="middle">7</text>
+<text x="220.5" y="666" class="rn" fill="#1a2230" text-anchor="middle">DEPLOYER</text>
+<rect x="335" y="632" width="455" height="60" rx="4" fill="#ffffff" stroke="#1a2230" stroke-width="1.2"/>
+<text x="351" y="659.0" class="dt" fill="#1a2230">Puts the system into use in a specific context; owns use-case</text>
+<text x="351" y="673.0" class="dt" fill="#1a2230">suitability, human oversight, and monitoring duties (Chapter 3).</text>
+<line x1="790" y1="662.0" x2="800" y2="662.0" stroke="#8794a8" stroke-width="1" stroke-dasharray="2 2"/>
+<line x1="118" y1="692" x2="118" y2="700" stroke="#1a2230" stroke-width="1.6"/>
+<polygon points="118,708 114,700 122,700" fill="#1a2230"/>
+<rect x="100" y="708" width="225" height="60" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.3"/>
+<circle cx="118" cy="723" r="9" fill="#1a2230"/>
+<text x="118" y="726.2" class="num" fill="#ffffff" text-anchor="middle">8</text>
+<text x="220.5" y="742" class="rn" fill="#1a2230" text-anchor="middle">DAY-TO-DAY OPERATIONS</text>
+<rect x="335" y="708" width="455" height="60" rx="4" fill="#ffffff" stroke="#1a2230" stroke-width="1.2"/>
+<text x="351" y="735.0" class="dt" fill="#1a2230">Runs the system day to day; owns operational compliance,</text>
+<text x="351" y="749.0" class="dt" fill="#1a2230">escalation, and record-keeping duties for its own use.</text>
+<line x1="790" y1="738.0" x2="800" y2="738.0" stroke="#8794a8" stroke-width="1" stroke-dasharray="2 2"/>
+<line x1="118" y1="768" x2="118" y2="776" stroke="#1a2230" stroke-width="1.6"/>
+<polygon points="118,784 114,776 122,776" fill="#1a2230"/>
+<rect x="100" y="784" width="225" height="60" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.3"/>
+<circle cx="118" cy="799" r="9" fill="#1a2230"/>
+<text x="118" y="802.2" class="num" fill="#ffffff" text-anchor="middle">9</text>
+<text x="220.5" y="818" class="rn" fill="#1a2230" text-anchor="middle">AFFECTED PERSON</text>
+<rect x="335" y="784" width="455" height="60" rx="4" fill="#ffffff" stroke="#1a2230" stroke-width="1.2"/>
+<text x="351" y="811.0" class="dt" fill="#1a2230">Receives the system's output or action; holds notice, explanation,</text>
+<text x="351" y="825.0" class="dt" fill="#1a2230">and challenge rights, not duties, under applicable law.</text>
+<line x1="790" y1="814.0" x2="800" y2="814.0" stroke="#8794a8" stroke-width="1" stroke-dasharray="2 2"/>
+<line x1="100" y1="206.0" x2="75" y2="206.0" stroke="#46536b" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="75" y1="206.0" x2="75" y2="168" stroke="#46536b" stroke-width="1.3" stroke-dasharray="4 3"/>
+<polygon points="75,160 71,168 79,168" fill="#46536b"/>
+<line x1="100" y1="510.0" x2="60" y2="510.0" stroke="#46536b" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="60" y1="510.0" x2="60" y2="168" stroke="#46536b" stroke-width="1.3" stroke-dasharray="4 3"/>
+<polygon points="60,160 56,168 64,168" fill="#46536b"/>
+<line x1="100" y1="662.0" x2="45" y2="662.0" stroke="#46536b" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="45" y1="662.0" x2="45" y2="168" stroke="#46536b" stroke-width="1.3" stroke-dasharray="4 3"/>
+<polygon points="45,160 41,168 49,168" fill="#46536b"/>
+<line x1="850" y1="100" x2="850" y2="834" stroke="#1a2230" stroke-width="1.5"/>
+<polygon points="850,844 845,834 855,834" fill="#1a2230"/>
+<line x1="935" y1="844" x2="935" y2="110" stroke="#8794a8" stroke-width="1.5"/>
+<polygon points="935,100 930,110 940,110" fill="#8794a8"/>
+<text x="866" y="472.0" class="col" fill="#1a2230" text-anchor="middle" transform="rotate(-90 866 472.0)">CHANGE NOTICE, DOWN FROM PROVIDER (0)</text>
+<text x="951" y="472.0" class="col" fill="#46536b" text-anchor="middle" transform="rotate(-90 951 472.0)">CONTRACT &#183; INCIDENT &#183; LOG &#183; FEEDBACK, UP TO PROVIDER (0)</text>
+<line x1="20" y1="868" x2="980" y2="868" stroke="#c9d1dc" stroke-width="1"/>
+<text x="20" y="892" class="lg" fill="#1a2230">A build-path organization holds the provider role itself. A fine-tuning organization adds its own duties on top of</text>
+<text x="20" y="910" class="lg" fill="#1a2230">the base provider's. A purchasing organization typically holds the deployer role and does not absorb every</text>
+<text x="20" y="928" class="lg" fill="#1a2230">upstream duty merely by deploying. For a high-risk system, its own role can still shift under the three named conditions.</text>
+<text x="20" y="950" class="sm" fill="#46536b">Entering the chain later changes which duties attach, not whether the deploying organization answers for its own use.</text>
+</svg>
