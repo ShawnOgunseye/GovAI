@@ -1,8 +1,8 @@
 # Appendix C: Templates and Checklists
 
-These twelve templates are offered under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) for readers to copy, adapt, and use directly in their own organizations. Reuse under that license has to satisfy its actual conditions, not a looser summary of them. The license requires attribution and a notice of changes made. Its NonCommercial term is defined by whether the use is primarily intended for or directed toward commercial advantage or monetary compensation, a broader test than resale alone. This paragraph is a summary for convenience, not a substitute for the license text itself, which a reader relying on these templates commercially or without attribution should read directly. Within those conditions, fill in the fields, cut what your organization does not need, add what it does, and use the result as a working document instead of treating this appendix as an illustration to reference from a distance. Each field below is cross-referenced to the chapter section that establishes it, so a filled-in template can be traced back to the specific requirement it satisfies.
+These fifteen templates are offered under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) for readers to copy, adapt, and use directly in their own organizations. Reuse under that license has to satisfy its actual conditions, not a looser summary of them. The license requires attribution and a notice of changes made. Its NonCommercial term is defined by whether the use is primarily intended for or directed toward commercial advantage or monetary compensation, a broader test than resale alone. This paragraph is a summary for convenience, not a substitute for the license text itself, which a reader relying on these templates commercially or without attribution should read directly. Within those conditions, fill in the fields, cut what your organization does not need, add what it does, and use the result as a working document instead of treating this appendix as an illustration to reference from a distance. Each field below is cross-referenced to the chapter section that establishes it, so a filled-in template can be traced back to the specific requirement it satisfies.
 
-Each template below is scoped to hold one record for one system, model, agent, or event; an organization with many systems keeps many filled instances of the same template instead of trying to make a single instance cover a portfolio. Fields marked as cross-references exist so the twelve templates link into one connected set of records, rather than twelve disconnected documents. That is what lets a later reviewer trace a specific system's history across inventory, assessment, and incident records without reconstructing the connections from memory. Because a specific chapter's model can itself be revised in a later edition, each template also carries the same minimal record-control header. That header records a template ID and version, the book edition and chapter section it was built from, and the date it was last checked against that section's current text. That lets a later reviewer tell which version of a chapter's model a specific filled instance was built against. Every filled instance should also carry its own status, author, reviewer, approver, effective date, and change history in addition to its substantive fields, following Chapter 15's evidence-record discipline generally, not restating it individually in each template below.
+Each template below is scoped to hold one record for one system, model, agent, or event; an organization with many systems keeps many filled instances of the same template instead of trying to make a single instance cover a portfolio. Fields marked as cross-references exist so the fifteen templates link into one connected set of records, rather than fifteen disconnected documents. That is what lets a later reviewer trace a specific system's history across inventory, assessment, and incident records without reconstructing the connections from memory. Because a specific chapter's model can itself be revised in a later edition, each template also carries the same minimal record-control header. That header records a template ID and version, the book edition and chapter section it was built from, and the date it was last checked against that section's current text. That lets a later reviewer tell which version of a chapter's model a specific filled instance was built against. Every filled instance should also carry its own status, author, reviewer, approver, effective date, and change history in addition to its substantive fields, following Chapter 15's evidence-record discipline generally, not restating it individually in each template below.
 
 ## 1. AI Use Case Documentation {#tpl-1}
 
@@ -16,12 +16,12 @@ Complete before any development or procurement work begins, per Chapter 4's argu
 - Proposed path: build, fine-tune, or buy (Chapter 6)
 - System class: predictive, generative, or agentic, or a mix (Chapter 3, section 3.1)
 - Affected population, naming who experiences this system's outputs or actions
-- Decision type: recommendation to a human, or autonomous action (Chapter 3, section 3.6)
+- Decision type: recommendation to a human, or autonomous action (Chapter 3, section 3.7)
 - Date submitted and date entered into the system inventory below
 
 ## 2. System Inventory Record {#tpl-2}
 
-One record per system, maintained per Chapter 3, section 3.3, as a living artifact with an owner and a review date, not a one-time exercise. A system discovered through the shadow AI discovery process in Chapter 3, section 3.4, uses this same record; note the discovery method in the last field rather than treating a discovered system as a different kind of record.
+One record per system, maintained per Chapter 3, section 3.4, as a living artifact with an owner and a review date, not a one-time exercise. A system discovered through the shadow AI discovery process in Chapter 3, section 3.5, uses this same record; note the discovery method in the last field rather than treating a discovered system as a different kind of record.
 
 - System name and internal identifier
 - Business owner and technical owner (may differ)
@@ -31,7 +31,7 @@ One record per system, maintained per Chapter 3, section 3.3, as a living artifa
 - Model or models used (cross-reference to Model Inventory Record entries)
 - Data sources and categories of personal data processed, if any
 - Risk classification and the date it was assigned (cross-reference to Impact Assessment)
-- Applicable regulatory mappings (Chapter 3, section 3.7; Chapter 18, section 18.3)
+- Applicable regulatory mappings (Chapter 3, section 3.8; Chapter 18, section 18.3)
 - Date of last review and scheduled next review date
 - Record owner, last update date, and, if applicable, discovery method if this system was not originally self-reported
 
@@ -77,7 +77,7 @@ Follow Chapter 14's five-component structure as it stands in this book's current
 - Duration and frequency of the processing or use, as required of a deployer under Article 27 of the AI Act and distinct from the deployment status recorded on the System Inventory Record (Chapter 4, section 4.8)
 - The specific authority who accepts residual risk, named as a person and role with the scope of what that person is empowered to accept, which the documented decision field above assumes but does not itself establish (Chapter 4, section 4.8)
 - What remains unaddressed, stated explicitly rather than left implied by the absence of an entry. An assessment listing only mitigated risks is describing an aspiration (Chapter 4, section 4.8)
-- Mapping from each field above to the specific provision it is meant to satisfy, per regulation. Legal sufficiency for a given instrument cannot be inferred from having completed an internal template (Chapter 4, section 4.8; Chapter 3, section 3.7)
+- Mapping from each field above to the specific provision it is meant to satisfy, per regulation. Legal sufficiency for a given instrument cannot be inferred from having completed an internal template (Chapter 4, section 4.8; Chapter 3, section 3.8)
 
 ## 6. Vendor Assessment {#tpl-6}
 
@@ -145,13 +145,13 @@ Per Chapter 17. Use this to conduct a current-state assessment, not to describe 
 
 ## 10. Scope Decision Record {#tpl-10}
 
-One record per scoping exercise, per Chapter 3, section 3.2. The boundary is a property of the deployment rather than of the software, and it moves without anyone changing the code when a step that acts on the output is added. A boundary drawn once and left unrecorded cannot be defended later or revisited when the deployment changes, which is why the judgment needs its own record rather than a field on the system record it produces.
+One record per scoping exercise, per Chapter 3, section 3.2. The boundary is a property of the deployment rather than of the software, and it moves without anyone changing the code when a step that acts on the output is added. A boundary drawn once and left unrecorded cannot be defended later or revisited when the deployment changes, which is why the decision needs its own record rather than a field on the system record it produces.
 
 - Scope decision identifier, and the system or candidate system it concerns
 - Date of the decision, and the person accountable for it by name and role
 - What triggered this scoping exercise: intake, procurement, a discovery sweep, a change to an existing deployment, or a periodic review
 - Description of the deployment as it actually runs, distinguished from the vendor's description of the product
-- The AI component or components, which are in scope intensively and are not the subject of the judgment below
+- The AI component or components, which are in scope intensively and are not at issue below
 - For each dependency considered, its name, and the decision recorded as in scope, out of scope, or in scope at limited depth
 - For each dependency, the one-sentence justification, naming which of the eight materiality grounds applies: purpose, authority, data, behaviour, exposure, evidence, ability to be intervened upon, or remedy available afterward
 - Dependencies explicitly considered and excluded, with the reason each cannot materially affect any of the eight grounds. An exclusion with no recorded reason is an omission rather than a decision
@@ -162,7 +162,7 @@ One record per scoping exercise, per Chapter 3, section 3.2. The boundary is a p
 
 ## 11. Risk Classification and Regulatory Applicability Record {#tpl-11}
 
-One record per system, per Chapter 3, sections 3.6 and 3.7. The two parts below answer two independent questions and must be completed in order, without the first informing the second. The internal tier is an operating decision about how much governance attention a system receives. Legal applicability is decided by each regulation's own trigger tested against the system's own facts. A high internal tier is not evidence that any regulation applies, and a regulation applying does not set the internal tier. The most common failure this record exists to prevent is answering the second question by restating the first.
+One record per system, per Chapter 3, sections 3.7 and 3.7. The two parts below answer two independent questions and must be completed in order, without the first informing the second. The internal tier is an operating decision about how much governance attention a system receives. Legal applicability is decided by each regulation's own trigger tested against the system's own facts. A high internal tier is not evidence that any regulation applies, and a regulation applying does not set the internal tier. The most common failure this record exists to prevent is answering the second question by restating the first.
 
 **Part A. Internal classification.**
 
@@ -172,7 +172,7 @@ One record per system, per Chapter 3, sections 3.6 and 3.7. The two parts below 
 - Autonomy, stating whether the system recommends to a human or acts, and what the human can actually change in the time available
 - Population, naming who is affected and how many, including those affected without interacting with the system
 - Reversibility, stating whether an incorrect outcome can be undone, by whom, within what period, and at whose cost
-- How the four factors weigh for this system class specifically, per section 3.6, since the same factors do not carry the same weight across predictive, generative, and agentic systems
+- How the four factors weigh for this system class specifically, per section 3.7, since the same factors do not carry the same weight across predictive, generative, and agentic systems
 - Internal tier assigned, and the one-sentence defence of it
 - Person accountable for the classification by name and role, and the date assigned
 
@@ -195,16 +195,74 @@ Complete one block per regulation considered. Do not carry any value from Part A
 
 ## 12. Discovery Sweep Record {#tpl-12}
 
-One record per sweep, per Chapter 3, section 3.4. What an inventory does not contain is not a random sample. Formally procured systems are visible, and what escapes correlates with small budgets, individual initiative, and the absence of the review that would have caught a problem. The method is therefore the governed object. Without a record of which channels were searched and which were not, a completed sweep cannot be distinguished from an incomplete one, and coverage cannot be shown to improve between sweeps.
+One record per sweep, per Chapter 3, section 3.5. What an inventory does not contain is not a random sample. Formally procured systems are visible, and what escapes correlates with small budgets, individual initiative, and the absence of the review that would have caught a problem. The method is therefore the governed object. Without a record of which channels were searched and which were not, a completed sweep cannot be distinguished from an incomplete one, and coverage cannot be shown to improve between sweeps.
 
 - Sweep identifier, start and end dates, and the person accountable for it by name and role
 - Scope of the sweep, naming which business units, regions, and system types were in and out
 - Channels searched, with the method used for each and the date searched. Channels to consider include procurement and expense records, software asset and licence inventories, low-code and automation platforms, API gateway and egress logs, browser or SaaS discovery tooling, existing vendor contracts for AI features added after signature, code repositories, and structured interviews with named roles
 - Channels not searched, each with the reason, whether cost, access, tooling, or a decision to defer. This field carries the sweep's residual blind spot and is the reason the record exists
-- Why self-reporting alone was not relied on, per section 3.4's finding that the people running undisclosed systems do not describe themselves as deploying AI
+- Why self-reporting alone was not relied on, per section 3.5's finding that the people running undisclosed systems do not describe themselves as deploying AI
 - Systems found, with a count and a cross-reference to the System Inventory Record created for each. Record the discovery method per system in that record's discovery field rather than here
 - Findings that changed an existing record rather than creating one, such as a system already inventoried that proved to contain a second component
 - Items examined and determined not to be in scope, with the ground, so the next sweep does not re-examine them without cause
-- Estimated residual exposure, stated as a reasoned judgment from the unsearched channels rather than as a percentage of what was found. A percentage of known systems cannot measure what the sweep did not reach
+- Estimated residual exposure, reasoned from the unsearched channels rather than as a percentage of what was found. A percentage of known systems cannot measure what the sweep did not reach
 - What would change before the next sweep, naming channels to add and access to obtain
 - Date of the next scheduled sweep, and the trigger conditions that would require one sooner
+
+## 13. Dataset Datasheet {#tpl-13}
+
+One record per dataset, per Chapter 5, section 5.10. The structure follows the datasheet format proposed by Timnit Gebru and colleagues in 2018, built for the case where a dataset's later users are removed from its creators and would otherwise have no way to answer basic questions about what they are working with. The fields that make it worth keeping are the ones recording what is unknown or unresolved. A datasheet listing only what is settled describes a dataset nobody has interrogated.
+
+- Dataset identifier and version, and the models or corpora built from this version
+- Named owner, and the date the datasheet was last checked against the dataset itself rather than against a previous datasheet
+- **Motivation.** Why the dataset was created, by whom, and who funded it. Whether it was created for this use or repurposed from another
+- **Composition.** What each instance represents, how many there are, and what the instances do not include. Whether the dataset is a sample of a larger set, and if so how the sample was drawn, since this is where selection bias enters
+- Whether the data relates to people, and if so which populations, in what proportions, and measured how. Composition stated as measured rather than assumed, per section 5.6
+- **Collection.** How the data was acquired, over what period, by whom, and under what authority. Whether the subjects consented, to what, and whether that consent covers model training, per the purpose-limitation question in section 5.4
+- **Preprocessing.** Cleaning, labelling, and transformation steps, in enough detail that a later question about any field can be answered from the record instead of reconstructed. Whether the raw data was retained
+- **Uses.** What the dataset has been used for, what it should not be used for, and what about its composition makes those uses inappropriate
+- **Distribution and maintenance.** Who may receive it, under what terms, who maintains it, and how a correction or deletion propagates to everything built from it
+- **What is unknown.** Every question above that could not be answered, with the reason. A blank field is indistinguishable from an unasked question; a field reading "requested from vendor, refused, escalated" is evidence of diligence and a live item
+- Representativeness assessment: the deployment population this data was compared against, the dimensions compared, the result, and the decision taken on an unfavourable result, per section 5.5. Where the organization is on the buy path and cannot answer, record that as the finding
+- Cross-reference to the Model Inventory Records built on this dataset, and to the system records those models serve
+
+## 14. Model Bill of Materials {#tpl-14}
+
+One record per model in use, per Chapter 6, section 6.8. This extends the Model Inventory Record rather than replacing it: Template 3 establishes what the model is and which systems it serves, and this record establishes what it is made of, in enough detail that the record rather than anyone's memory answers a later question. An organization that cannot produce one cannot investigate its own system, because an investigation that cannot establish which artifact produced an output has nothing to investigate.
+
+Mark every field with how it is known: directly verified by this organization, attested by a supplier without independent verification, or unavailable. That marking is the point of the record. A field that looks complete but rests entirely on supplier attestation describes what someone said, not what is running.
+
+**Starting minimum.** A record carrying less than this cannot support an investigation.
+
+- Base model and version
+- The specific weights in use, identified so that the artifact running can be confirmed rather than assumed
+- Training or fine-tuning data, cross-referenced to its Dataset Datasheet where one exists
+- Adapters or fine-tuning layers, the method used, and who added them. Where the method adjusted the base weights rather than adding separable parameters, record that the two cannot be separated
+- Software dependencies required to run the model
+
+**Fuller record.**
+
+- Artifact hashes and identifiers confirming which weights are actually running. On the selection path, where the weights are not in the organization's possession, a hash is not obtainable; record instead the provider's version identifier as returned at inference, the endpoint and region, the contracted service tier, and the date and content of the provider's last change notice
+- Dataset versions and their provenance
+- Licensing terms of every component, and what each permits
+- Intended and prohibited uses, as the developer states them
+- Evaluation evidence behind every performance claim, and the claims made with no evidence behind them
+- Runtime environment and configuration
+- Upstream suppliers and service dependencies
+- Known limitations, and known vulnerabilities recorded separately from them
+- Change history producing the current version
+- Deployment configuration in force
+
+## 15. Intake Decision Record {#tpl-15}
+
+One record per proposal, per Chapter 4, sections 4.2 and 4.7. A proposal that proceeds becomes a system with a system record. A proposal that stops, or proceeds with conditions, produces no system and therefore has no home in the inventory, which is why the hardest outcome to reach is the one the book's records were least equipped to hold. A stop that is not recorded will be relitigated from nothing when the same proposal returns.
+
+- Proposal identifier, title, date received, and the requester by name and role
+- Outcome, recorded as one of: proceed, proceed with conditions, return for more information, defer with a stated review date, refer elsewhere, or stop
+- The person holding authority for this outcome, named, with the scope of what they were empowered to decide
+- **For a stop:** the reasoning, in enough detail that the same proposal arriving in eighteen months is assessed against what was decided rather than argued again from the beginning. Which of section 4.7's four grounds it failed, and whether it crossed a prohibition or safety floor, in which case the analysis stopped before any benefit comparison
+- **For conditions:** each condition, its named owner, its due date, and the stated consequence of the due date passing with the condition unmet. A condition with no consequence is a note
+- Scrutiny level applied, and what determined it
+- The appropriateness assessment: data sufficiency, objective specifiability, benefit proportionality, and value alignment, each with its conclusion and the reasoning behind it
+- Dissent recorded rather than resolved silently, naming who held which position
+- Cross-references to the System Inventory Record and Impact Assessment where the proposal proceeded, and to the Scope Decision Record that bounded it

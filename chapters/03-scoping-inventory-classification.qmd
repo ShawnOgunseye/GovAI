@@ -41,21 +41,21 @@ In a small organization the three layers may be owned by the same two people, an
 
 Chapter 1 defined AI governance as how an organization decides what its AI systems may do, establishes that they do it, and makes clear who answers when they do not. Every one of those three depends on knowing which systems are in question, which is what this chapter supplies. It also gave a test for whether something is artificial intelligence, turning on whether the system infers how to produce an output rather than following rules someone specified. That test is necessary and it does not settle the question you will face.
 
-The question you will face is that a largely conventional system has an AI component somewhere inside it, and you need to know how much of the system is in scope. This is a boundary decision, not a binary classification, and treating it as binary produces two failure modes. Scope only the component and you govern a model while ignoring the process that decides what happens to its output. Scope the whole system and your inventory fills with software that has no AI governance issue, which exhausts the function's credibility long before it exhausts its budget.
+The question you will face is that a largely conventional system has an AI component somewhere inside it, and you need to know how much of the system is in scope. Two questions are in play and they are answered in order. What belongs inside the boundary of this deployment, and how much governance should each part receive? The boundary comes first; risk classification, in sections 3.6 through 3.8, sets the intensity afterwards. Answering them together is what produces a boundary drawn to match a conclusion somebody already held. This is a boundary decision, not a binary classification, and treating it as binary produces two failure modes. Scope only the component and you govern a model while ignoring the process that decides what happens to its output. Scope the whole system and your inventory fills with software that has no AI governance issue, which exhausts the function's credibility long before it exhausts its budget.
 
 ::: {.definition}
-**Draw the boundary around whatever can materially affect the system's purpose, authority, data, behaviour, exposure, evidence, ability to be intervened upon, or the remedy available afterward, not only around what technically shapes the AI component's inputs or is shaped by its outputs. The AI component is in scope intensively. A dependency is not excluded from scope merely because it does not transform the component's input or output.**
+**The AI model or component is part of the software. The governed AI system is broader: the software, the data, the people, the processes, the permissions, the interfaces, and the controls that together produce an organizational outcome. Draw the boundary around whatever can materially affect that system's purpose, authority, data, behaviour, exposure, evidence, ability to be intervened upon, or the remedy available afterward, not only around what technically shapes the AI component's inputs or is shaped by its outputs. A dependency is not excluded merely because it does not transform the component's input or output.**
 :::
 
 The rule follows from the socio-technical account in Chapter 1. If a system's behaviour is produced jointly by the model and by the people and processes around it, then a boundary drawn around the model alone cannot capture what produces the behaviour. The rule works because it tracks causation broadly, not one narrow technical relationship. A retrieval step that determines what the model sees is shaping its inputs, so it is in. A dashboard that displays the model's output to someone who acts on it is shaped by its outputs, so it is in. The authentication service both of them run on touches neither input nor output directly. But if a failure or compromise in it could let the wrong person reach the system, change what it does, or erase the trail a reviewer would need afterward, it can still create governable risk. It belongs in scope at whatever depth that risk warrants. Something is safely excluded only once it cannot materially affect purpose, authority, data, behaviour, exposure, evidence, intervention, or remedy, not merely because it sits outside the input-output path.
 
 The decision needs its own record, because a boundary that was never written down cannot be defended when it is questioned or revisited when the deployment changes. [Template 10, the Scope Decision Record](appendix-c-templates-and-checklists.qmd#tpl-10), has fields for the grounds applied to each dependency, for what was excluded and why, and for the changes that would require the boundary to be drawn again.
 
-The boundary test produces the unit the inventory has to record. It does not make every dependency inside the boundary a separate AI system. It determines what one system record must describe, which model records it must link to, and which human and technical dependencies have to stay visible in it. Calloway's record above is one system with five dependencies named in it, not six records. The inventory in section 3.3 is where that decision becomes durable, and a boundary that never reaches a record is a conversation, not a control.
+The boundary test produces the unit the inventory has to record. It does not make every dependency inside the boundary a separate AI system. It determines what one system record must describe, which model records it must link to, and which human and technical dependencies have to stay visible in it. Calloway's record above is one system with five dependencies named in it, not six records. The inventory in section 3.4 is where that decision becomes durable, and a boundary that never reaches a record is a conversation, not a control.
 
 Two consequences follow that are worth stating before the disputes. The boundary is a property of the deployment, not of the software, so the same product can be in scope at one organization and out at another depending on what surrounds it. And the boundary can move without anyone changing the code, because adding a step that acts on the output brings that step inside.
 
-Before the disputes, one boundary worked through in full, because the eight grounds are easier to state than to apply.
+Before the disputes, one boundary worked through in full, because the eight grounds are easier to state than to apply. Take the list of dependencies as given here; section 3.3 sets out how to generate it.
 
 Calloway licensed a resume screening product. Section 3.4 describes what an inventory later found inside it, but take the deployment as it ran at the point someone should have drawn the boundary. A vendor-hosted model scores applicants. A vendor-hosted scheduling component sends messages to candidates. Calloway's applicant tracking system holds the candidate records both of them read. Recruiters see ranked lists in a vendor web interface and decide who to advance. Single sign-on authenticates everyone who touches any of it. The vendor's billing portal records what Calloway is charged. An internal reporting warehouse copies hiring outcomes nightly for workforce analytics.
 
@@ -107,7 +107,39 @@ A workflow calls a general purpose model through an interface. The organization 
 
 An agent takes actions using tools. In scope, and the boundary extends further here than anywhere else. Every tool the agent can invoke and every system it can reach is within the blast radius of a governance failure, which means the boundary is drawn by the agent's permissions, not by the agent's code.
 
-## 3.3 Building an inventory
+## 3.3 Tracing the boundary
+
+Section 3.2 gives a test. It does not give a list to run the test against, and a test with nothing to test is not usable. Holding a component up against the eight grounds only works once someone has named the component, and the failure in practice is not that people apply the test wrongly. It is that they never think of the dependency at all.
+
+Naming them is a tracing problem, and the trace starts with the use rather than the product. Who uses this capability, for what purpose, to make which decision or take which action, and affecting whom? A product has no boundary. A deployment does, because a deployment has a path running through it, from the moment data is created to the moment a person feels a consequence. Follow that path in four passes.
+
+**What enters.** Everything that materially shapes what the AI receives. For a hiring system that means the application data itself, and it also means the transformations applied to it before the model ever sees it: the resume parser that decides what counts as an employment gap, the rule that fills a missing field, the threshold that decides which applications are passed on at all. For a retrieval system it means the documents retrieved and the prompt assembled around them. For any system it means the business rules applied upstream, which are frequently older than the model and frequently unexamined, because nobody thinks of a parsing rule written in 2019 as part of an AI system installed in 2024.
+
+**What produces the result.** The model and its version, the software around it, the vendor services it calls, the guardrails, and the rules applied before or after the model that change what the output becomes. A post-processing rule that suppresses any score below a threshold is doing governance work whether or not anyone has called it that.
+
+**What turns the result into an outcome.** This is the pass most often skipped, and it is where the consequence actually happens. A score has no effect on anybody until something acts on it. Include the dashboard or report the score arrives in, the person who reads it, the review procedure that person is meant to follow, any automated action that fires without a person, the message sent to the affected individual, and the escalation route for the cases that do not fit. A system scoped to the model and stopped there governs a number, not an outcome.
+
+**What governs the whole of it.** Some dependencies never touch the prediction and still decide whether the system can be governed at all. Who can reach the system and who can change it. Who can override a result, and whether anyone actually does. What the logs preserve, and whether the organization could reconstruct a specific decision six months later. Whether the affected person can correct the information held about them, challenge the outcome, and obtain a remedy if the challenge succeeds. These are the grounds of authority, evidence, intervention, and remedy in the section 3.2 test, and they are the reason that test names eight grounds rather than the two an input-output reading would suggest.
+
+Run against the four passes, the material-effect test becomes answerable. For each component, person, process, and dependency the trace surfaced: if this changed, failed, were misused, or disappeared, could it materially change the system's purpose, authority, data, behaviour, affected population, evidence, ability to be intervened upon, or the remedy available afterward? Where the answer is yes, it is inside. Where it is no, it can sit outside, and the reason goes in the record. An undocumented exclusion cannot be defended when it is questioned or revisited when the system changes, which is the difference between a decision and an omission.
+
+Calloway's payroll system is the clean negative case. It holds employee data, it sits in the same infrastructure, and it is outside the hiring boundary, because nothing in it reaches the screening decision. That holds until the day someone proposes using payroll history as a feature, at which point payroll moves inside and the boundary has changed without a line of the screening system's code being touched.
+
+### Stakeholders are not all components
+
+A trace that ends by putting every stakeholder inside one box has produced the over-scoping failure section 3.2 warned about. Being affected by a system and being part of it are different relationships, and the boundary has to show which is which.
+
+A recruiter who reads a score and decides who advances is operating the system. The recruiter is inside it, and the interface, the review procedure, and the override authority are inside with them. A candidate is an affected person, not a component: what the record holds about a candidate is exposure, recourse, and whether either can be exercised. A regulator oversees the system without operating it, and belongs in the record as an obligation and an evidence destination rather than as a part. A vendor sits in both places at once, inside as a technical dependency whose model produces the score and whose service terms constrain what can be done with it, and outside as a separate organization carrying contractual responsibilities that Chapter 16 governs.
+
+Mistaking one of these for another has a predictable cost. Treat the candidate as a component and the record fills with people rather than dependencies. Treat the recruiter as merely affected and the oversight arrangement, which is the control a classification will require, sits outside the boundary and is governed by nobody.
+
+### The boundary belongs to the deployment
+
+This is the principle the rest of the chapter rests on, and it is worth stating on its own. The same software has different boundaries in different deployments. A chatbot answering general product questions has a narrow one. The same chatbot, given the ability to issue a refund, change an account, or send a rejection, has a much wider one, because the third trace now finds automated actions where it previously found only text on a screen. Nothing about the software changed. What changed is what the deployment lets it do, and the boundary follows the deployment.
+
+That is also why a boundary has a review date rather than a completion date, and why the scope record in section 3.2 asks what would move it.
+
+## 3.4 Building an inventory
 
 An inventory is the artifact everything else depends on. It is also the artifact most organizations do not have, and the one that is hardest to build after the fact.
 
@@ -171,11 +203,11 @@ The pair looks like this, filled for the same deployment. Note what the two reco
 
 Four things are visible here that a single merged record could not show. `USED BY SYSTEMS` is a list because one model can serve several, and it is the field that answers "which of our systems are running the version the vendor just disclosed a problem with." `TRAINING DATA` records a refusal rather than sitting empty, which is the difference between a governance function that knows what it does not know and one that has not asked. `LIMITATIONS` names a silence rather than an absence of concern, and that silence is a testing requirement for Chapter 7, not a clean bill. And `BOUNDARY` points back at the scope decision, so a reviewer asking why the reporting warehouse is absent from this record finds the reason instead of guessing.
 
-Both records exist as templates. [Template 2, the System Inventory Record](appendix-c-templates-and-checklists.qmd#tpl-2), and [Template 3, the Model Inventory Record](appendix-c-templates-and-checklists.qmd#tpl-3), carry the fields set out above together with the cross-reference fields that hold the link between them. They are separate templates for the reason this section has just given: the relationship is many-to-many, and one record cannot express it. A system discovered by the sweep in section 3.4 uses the same system record rather than a different kind, with the discovery method noted in it, because a system found late is not a different sort of system from one recorded at intake.
+Both records exist as templates. [Template 2, the System Inventory Record](appendix-c-templates-and-checklists.qmd#tpl-2), and [Template 3, the Model Inventory Record](appendix-c-templates-and-checklists.qmd#tpl-3), carry the fields set out above together with the cross-reference fields that hold the link between them. They are separate templates for the reason this section has just given: the relationship is many-to-many, and one record cannot express it. A system discovered by the sweep in section 3.5 uses the same system record rather than a different kind, with the discovery method noted in it, because a system found late is not a different sort of system from one recorded at intake.
 
 Populate this at intake, not as an annual exercise. Chapter 4 describes the intake process, and the system record begins there. An inventory built as a periodic census will be wrong between censuses, which is most of the time.
 
-## 3.4 Discovering shadow AI
+## 3.5 Discovering shadow AI
 
 An inventory records only what the organization has found. Everything above assumes you know what to write down.
 
@@ -227,7 +259,7 @@ Three governance controls were absent and each absence had the same root. There 
 
 What would have changed the outcome is unglamorous. An intake record at implementation, capturing that the licensed product contained two components, not one, would have created the system record. That record would have prompted the classification. The classification would have identified it as high risk under the employment provisions, which would have required the human oversight arrangement that did not exist. None of that requires sophistication. It requires that someone wrote it down at the point of purchase.
 
-## 3.5 The OECD classification framework
+## 3.6 The OECD classification framework
 
 Before building an internal scheme it is worth knowing the one that already exists, because several regulations borrow from it and because it supplies vocabulary the rest of this chapter uses.
 
@@ -241,7 +273,7 @@ What it does not do is tell you what to do. The framework classifies without pre
 
 That is the argument for an internal scheme layered on top. The OECD dimensions describe the system; an internal classification says what follows from the description. Description and decision are different jobs, and a framework built for the first does not perform the second.
 
-## 3.6 Risk classification
+## 3.7 Risk classification
 
 Not every system deserves the same attention. Classification is how an organization decides where to spend governance effort, and a scheme that classifies everything as high risk is functionally identical to having no scheme at all.
 
@@ -277,11 +309,11 @@ For an agentic system, reversibility is a central factor, not one to fold into a
 
 Separating those two raises a further question. The four factors were built for systems that produce an output somebody then acts on, and an agent collapses that gap, so each factor has to be asked in a more specific form before it means anything about an agent. Six refinements do that work, and they refine the four rather than adding a fifth and sixth to the scheme. Authority and scale sharpen consequence. Authority is the specific actions and resources the agent is permitted to invoke, and scale is how many actions and how many people a single failure reaches before anyone notices. Observability and recoverability sharpen reversibility. Observability is whether the action and its effects are visible to a reviewer at all, and recoverability is whether the organization can restore the prior state even when the affected person cannot be made whole directly. Affected-person recourse sharpens population, asking whether the person acted upon has a way to contest or seek remedy. Propagation cuts across all four, asking whether the action can trigger further automated actions downstream, because an agent whose actions start other actions has a consequence, a population, and a reversibility profile larger than its own step.
 
-## 3.7 Record once, test independently
+## 3.8 Record once, test independently
 
 An organization operating across jurisdictions faces overlapping regulations with different vocabularies for similar ideas. The tempting response is a compliance programme per regulation. This does not scale, and it produces the situation where the same system is assessed three times by three teams reaching three conclusions.
 
-The alternative is to build one fact record and test each applicable regulation's own trigger against it, instead of letting one regulation's conclusion stand in for another's. The internal tier from section 3.6 allocates review effort; it does not decide what a regulation requires. Keeping the two apart is easier when the record itself separates them. [Template 11, the Risk Classification and Regulatory Applicability Record](appendix-c-templates-and-checklists.qmd#tpl-11), puts the internal tier in one part and each regulation's own trigger test in another, and closes with a check that no legal result was read off the tier.
+The alternative is to build one fact record and test each applicable regulation's own trigger against it, instead of letting one regulation's conclusion stand in for another's. The internal tier from section 3.7 allocates review effort; it does not decide what a regulation requires. Keeping the two apart is easier when the record itself separates them. [Template 11, the Risk Classification and Regulatory Applicability Record](appendix-c-templates-and-checklists.qmd#tpl-11), puts the internal tier in one part and each regulation's own trigger test in another, and closes with a check that no legal result was read off the tier.
 
 ![One internal classification mapped to the obligations of several regulations](/figures/fig-03-02-classify-map.svg){#fig-classify-map}
 
@@ -299,7 +331,7 @@ The value is in what happens when something changes, and two different things ca
 
 Maintain the mapping as a real artifact with an owner and a review date, in the same way the inventory has one. A mapping table that was accurate in 2026 and has not been touched since is worse than no table, because people will trust it.
 
-## 3.8 Scoping decisions and their consequences
+## 3.9 Scoping decisions and their consequences
 
 Two failure modes, and it is worth being clear that they fail differently, not that one is safe.
 
@@ -312,9 +344,9 @@ The tension does not resolve into a rule. It resolves into a design. Scope broad
 ::: {.cases-box}
 ## Case in focus: what a full discovery sweep found at Calloway {.unnumbered}
 
-*The following case is hypothetical, continuing the running Calloway example from section 3.4.*
+*The following case is hypothetical, continuing the running Calloway example from section 3.5.*
 
-Calloway Industries returned to inventory work eight months later, still holding the eleven systems section 3.4's exercise had found. This time it ran a nine-week discovery sweep using the four approaches described in that section, instead of relying on procurement records alone the way the earlier pass effectively had. The eleven held up. None of them turned out to be miscounted. What the systematic sweep added was everything a procurement-based list structurally cannot see, and it took the total to forty-three.
+Calloway Industries returned to inventory work eight months later, still holding the eleven systems section 3.5's exercise had found. This time it ran a nine-week discovery sweep using the four approaches described in that section, instead of relying on procurement records alone the way the earlier pass effectively had. The eleven held up. None of them turned out to be miscounted. What the systematic sweep added was everything a procurement-based list structurally cannot see, and it took the total to forty-three.
 
 What the list had missed fell into four patterns, and the patterns matter more than the number.
 

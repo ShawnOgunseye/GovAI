@@ -416,7 +416,7 @@ ul.task-list li input[type="checkbox"] {
 <p><em>What would tell us this worked?</em> If the answer is that the system will be adopted, or that it will be accurate, there are no success criteria and section 4.3 applies. Adoption measures whether people used it. Accuracy measures whether the model matched the data it was trained on, which is not the same as whether it is right about the people it will now be applied to. Neither measures whether the problem was solved.</p>
 <p><em>What data will it use, and where did that data come from?</em> A provisional answer suffices here. What intake needs is enough to know whether the data plausibly exists and whether its provenance is knowable at all, because a proposal resting on data the organization cannot lawfully use is one that should stop now, not after acquisition. Chapter 5 makes this demanding.</p>
 <p><em>Who is accountable for the decision to proceed?</em> A name, not a committee. A committee can approve and cannot be asked afterwards what it was thinking. This record is the beginning of the system record described in Chapter 3, and it is the reason that record can later show who decided what on what basis.</p>
-<p>These seven are a floor, not the complete field set a governance record eventually needs. They are the questions that determine whether a proposal should be classified and scrutinized at all, which is what intake has to decide before anything else. Once a proposal proceeds, the record built from it needs four further fields. A legal jurisdiction and actor-role screen, since consequence and geography together decide which regulations reach the system. An explicit statement of the authority and permissions the system will have. A review date, and an expiry, so the record does not describe a system that has since changed. Appendix C’s Template 1 carries all eleven; the seven questions here are what a requester answers to start it.</p>
+<p>These seven are a floor, not the complete field set a governance record eventually needs. They are the questions that determine whether a proposal should be classified and scrutinized at all, which is what intake has to decide before anything else. Once a proposal proceeds, the record built from it needs four further fields. A legal jurisdiction and actor-role screen, since consequence and geography together decide which regulations reach the system. An explicit statement of the authority and permissions the system will have. A review date, and an expiry, so the record does not describe a system that has since changed. <a href="../chapters/appendix-c-templates-and-checklists.html#tpl-1">Template 1, the AI Use Case Documentation</a>, carries all eleven; the seven questions here are what a requester answers to start it.</p>
 <section id="proportionate-scrutiny" class="level3">
 <h3 class="anchored" data-anchor-id="proportionate-scrutiny">Proportionate scrutiny</h3>
 <p>Applying the same process to every proposal guarantees one of two outcomes. Either the process is light enough for a chatbot that drafts internal announcements, in which case it is too light for a system that screens job applicants. Or it is heavy enough for the screening system, in which case teams will avoid it for everything smaller.</p>
@@ -426,7 +426,59 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="what-intake-decides" class="level3">
 <h3 class="anchored" data-anchor-id="what-intake-decides">What intake decides</h3>
-<p>Intake produces one of three outcomes, and all three have to be genuinely reachable. A proposal may stop, with the reason recorded so that the same proposal arriving in eighteen months is assessed against what was decided, not relitigated from nothing. It may proceed with conditions, which are written down and checked later instead of remembered, each with a named owner, a due date, and a stated consequence for the condition going unmet rather than remaining open indefinitely. Or it may proceed, at which point the build or buy fork determines the work at every stage that follows. These three are the outcomes this book follows through the running cases. A live process also needs the ability to return a proposal for missing information, defer it pending a specific event, or refer it to a specialist reviewer, instead of forcing every incomplete proposal into a premature stop or approval.</p>
+<p>Intake produces one of three outcomes, and all three have to be genuinely reachable. A proposal may stop, with the reason recorded so that the same proposal arriving in eighteen months is assessed against what was decided, not relitigated from nothing. It may proceed with conditions, which are written down and checked later instead of remembered, each with a named owner, a due date, and a stated consequence for the condition going unmet rather than remaining open indefinitely. Or it may proceed, at which point the build or buy fork determines the work at every stage that follows. These three are the outcomes this book follows through the running cases. <a href="../chapters/appendix-c-templates-and-checklists.html#tpl-15">Template 15, the Intake Decision Record</a>, holds all of them, and it exists because two of the three produce no system. A proposal that proceeds becomes a system with a system record. A proposal that stops leaves nothing behind unless the stop is written down, which is why the hardest outcome to reach is also the one most easily lost.</p>
+<p>The clinic case developed in section 4.4 is the clearest instance, and its record reads as follows.</p>
+<div class="record record--filled">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><code>PROPOSAL</code></td>
+<td>INT-2024-083 · Predictive model for appointment non-attendance</td>
+</tr>
+<tr class="even">
+<td><code>RECEIVED</code></td>
+<td>6 February 2024, from Clinical Operations</td>
+</tr>
+<tr class="odd">
+<td><code>OUTCOME</code></td>
+<td>Stop</td>
+</tr>
+<tr class="even">
+<td><code>AUTHORITY</code></td>
+<td>M. Haddad, Head of Clinical Systems. Empowered to stop at intake; a reversal requires the programme board.</td>
+</tr>
+<tr class="odd">
+<td><code>REASONING</code></td>
+<td>Root cause analysis located the mechanism outside the model’s reach. Non-attendance concentrates where the reminder system cannot send messages, because the licence for the messaging module lapsed in 2022. A model predicting who will miss an appointment would predict, accurately, the patients the clinic has stopped contacting, and would rank them for intervention on the basis of a failure the clinic created.</td>
+</tr>
+<tr class="even">
+<td><code>GROUND FAILED</code></td>
+<td>Benefit proportionality. A licence renewal addresses the cause at a lower cost than a model addresses the symptom. Data sufficiency and objective specifiability were not reached; the analysis stopped.</td>
+</tr>
+<tr class="odd">
+<td><code>SAFETY FLOOR</code></td>
+<td>Not crossed. No prohibition applies.</td>
+</tr>
+<tr class="even">
+<td><code>DISSENT</code></td>
+<td>The data science team held that the model was still worth building for the residual non-attendance after the licence is restored. Recorded. Not resolved here; it becomes a fresh proposal if the licence is renewed and non-attendance persists.</td>
+</tr>
+<tr class="odd">
+<td><code>IF THIS RETURNS</code></td>
+<td>Assess against this record. The question is whether the messaging licence has been restored and non-attendance has persisted at a level the clinic considers material. If the licence is still lapsed, the answer has not changed.</td>
+</tr>
+<tr class="even">
+<td><code>CROSS-REF</code></td>
+<td>None. No system was created.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The last two fields are what the record exists for. Eighteen months from now the same proposal will arrive from someone who was not in the room, and without <code>IF THIS RETURNS</code> the organization either rebuilds the analysis or approves what it previously declined. The dissent is recorded rather than settled, because the data science team’s position may well become right once the licence is restored, and a record that erases the disagreement also erases the condition under which the decision should change. A live process also needs the ability to return a proposal for missing information, defer it pending a specific event, or refer it to a specialist reviewer, instead of forcing every incomplete proposal into a premature stop or approval.</p>
 <div id="fig-intake" class="quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-intake-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -562,7 +614,7 @@ Figure&nbsp;5.2: Affected parties by influence and interest
 <li>what remains unaddressed</li>
 </ul>
 <p>The last carries the most information and is the most often omitted. An assessment listing only mitigated risks is describing an aspiration.</p>
-<p>These seven are a common evidence core, not the complete field set a specific regulation requires. Appendix C’s Template 5 carries a fuller version, including the legal role and jurisdiction of each actor, the duration and frequency of the processing, and the named authority empowered to accept residual risk. A live assessment still needs to map each of its own fields to the exact provision it is meant to satisfy, since legal sufficiency for a given regulation cannot be inferred from having filled in an internal template.</p>
+<p>These seven are a common evidence core, not the complete field set a specific regulation requires. <a href="../chapters/appendix-c-templates-and-checklists.html#tpl-5">Template 5, the Impact Assessment</a>, carries a fuller version, including the legal role and jurisdiction of each actor, the duration and frequency of the processing, and the named authority empowered to accept residual risk. A live assessment still needs to map each of its own fields to the exact provision it is meant to satisfy, since legal sufficiency for a given regulation cannot be inferred from having filled in an internal template.</p>
 <p>It should be written before the decision to proceed, not after. An assessment produced to document a decision already taken is a different genre of document, and experienced reviewers can tell.</p>
 <p>The assessment is also where the same exercise serves several regulations at once. The AI Act, data protection law, and an internal risk process each want an overlapping subset of the same material, and Chapter 3’s principle applies. Assess once, then map the assessment to each regulation’s required form. Redoing the analysis in three formats produces three chances to say something inconsistent.</p>
 </section>
