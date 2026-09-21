@@ -348,7 +348,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#what-the-boundary-is-drawn-around" id="toc-what-the-boundary-is-drawn-around" class="nav-link" data-scroll-target="#what-the-boundary-is-drawn-around">3.3 What the boundary is drawn around</a></li>
   <li><a href="#building-an-inventory" id="toc-building-an-inventory" class="nav-link" data-scroll-target="#building-an-inventory">3.4 Building an inventory</a></li>
   <li><a href="#discovering-shadow-ai" id="toc-discovering-shadow-ai" class="nav-link" data-scroll-target="#discovering-shadow-ai">3.5 Discovering shadow AI</a></li>
-  <li><a href="#the-oecd-classification-framework" id="toc-the-oecd-classification-framework" class="nav-link" data-scroll-target="#the-oecd-classification-framework">3.6 The OECD classification framework</a></li>
+  <li><a href="#what-the-existing-frameworks-do-and-what-they-leave-to-you" id="toc-what-the-existing-frameworks-do-and-what-they-leave-to-you" class="nav-link" data-scroll-target="#what-the-existing-frameworks-do-and-what-they-leave-to-you">3.6 What the existing frameworks do, and what they leave to you</a></li>
   <li><a href="#risk-classification" id="toc-risk-classification" class="nav-link" data-scroll-target="#risk-classification">3.7 Risk classification</a></li>
   <li><a href="#record-once-test-independently" id="toc-record-once-test-independently" class="nav-link" data-scroll-target="#record-once-test-independently">3.8 Record once, test independently</a></li>
   <li><a href="#scoping-decisions-and-their-consequences" id="toc-scoping-decisions-and-their-consequences" class="nav-link" data-scroll-target="#scoping-decisions-and-their-consequences">3.9 Scoping decisions and their consequences</a></li>
@@ -700,20 +700,72 @@ Figure&nbsp;4.2: The loop: discovery, boundary, inventory, classification, and t
 <p>What would have changed the outcome is unglamorous. An intake record at implementation, capturing that the licensed product contained two components, not one, would have created the system record. That record would have prompted the classification. The classification would have identified it as high risk under the employment provisions, which would have required the human oversight arrangement that did not exist. None of that requires sophistication. It requires that someone wrote it down at the point of purchase.</p>
 </section>
 </section>
-<section id="the-oecd-classification-framework" class="level2">
-<h2 class="anchored" data-anchor-id="the-oecd-classification-framework">3.6 The OECD classification framework</h2>
-<p>Before building an internal scheme it is worth knowing the one that already exists, because several regulations borrow from it and because it supplies vocabulary the rest of this chapter uses.</p>
-<p>The <strong>OECD framework for the classification of AI systems</strong> describes a system along five dimensions instead of sorting it into a tier. People and planet covers who is affected and how, including whether the affected people operate the system or are only described by it, a distinction Chapter 4 develops. Economic context covers the sector, the business function, and how critical the system is to it. Data and input covers provenance, whether the data is personal, how it was collected, and its structure. AI model covers what kind of model it is, how it was built, and whether it is deterministic. Task and output covers what the system produces and what level of autonomy it exercises.</p>
-<p>The framework begins from a socio-technical conception of an AI system, the same starting point Chapter 1 argued for, which is why its dimensions reach past the model into deployment context and affected people.</p>
-<p>The purpose is comparability. An organization, a regulator, and a researcher describing the same system in these terms will produce descriptions that can be set beside each other, which is what makes the framework useful for policy and for inventory design. Several of the fields in the system and model records above map onto it directly. The framework was also designed to lay a foundation for later risk assessment work, not to constitute it, which is why it describes without ranking.</p>
-<p>What it does not do is tell you what to do. The framework classifies without prescribing, deliberately, because it was built to support policy discussion across countries with different rules, not to determine obligations in any one of them. An organization that adopts it and stops has a well-described inventory and no decisions.</p>
-<p>That is the argument for an internal scheme layered on top. The OECD dimensions describe the system; an internal classification says what follows from the description. Description and decision are different jobs, and a framework built for the first does not perform the second.</p>
+<section id="what-the-existing-frameworks-do-and-what-they-leave-to-you" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-existing-frameworks-do-and-what-they-leave-to-you">3.6 What the existing frameworks do, and what they leave to you</h2>
+<p>Several frameworks address AI risk, and the honest summary is that most of them do not classify. They describe, or they set a process, or they draw a legal line. Knowing which does which is what stops an organization adopting one and discovering it has no decision at the end.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Framework</th>
+<th>What it produces</th>
+<th>Mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>OECD Framework for the Classification of AI Systems</strong> (2022)</td>
+<td>A structured description</td>
+<td>Five dimensions, no rating</td>
+</tr>
+<tr class="even">
+<td><strong>NIST AI Risk Management Framework</strong> (2023)</td>
+<td>A process</td>
+<td>Four functions, no tiers</td>
+</tr>
+<tr class="odd">
+<td><strong>ISO/IEC 23894</strong> (2023)</td>
+<td>Process guidance</td>
+<td>Risk management for AI, no tiers</td>
+</tr>
+<tr class="even">
+<td><strong>EU AI Act</strong></td>
+<td>A legal status</td>
+<td>Membership of a listed category</td>
+</tr>
+<tr class="odd">
+<td><strong>Canada’s Algorithmic Impact Assessment</strong></td>
+<td>A level, I to IV</td>
+<td>Questionnaire, scored, banded</td>
+</tr>
+<tr class="even">
+<td><strong>Bank model risk tiering</strong> (SR 26-2, PRA SS1/23)</td>
+<td>A tier, usually 1 to 3</td>
+<td>Materiality and complexity</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>OECD framework</strong> describes a system along five dimensions instead of sorting it into a tier. People and planet covers who is affected and how, including whether the affected people operate the system or are only described by it. Economic context covers the sector, the business function, and how critical the system is to it. Data and input covers provenance, whether the data is personal, how it was collected, and its structure. AI model covers what kind of model it is, how it was built, and whether it is deterministic. Task and output covers what the system produces and what level of autonomy it exercises. It begins from a socio-technical conception of an AI system, the same starting point Chapter 1 argued for, which is why its dimensions reach past the model into deployment context and affected people. Its value is comparability: an organization, a regulator, and a researcher describing the same system in these terms produce descriptions that can be set beside each other, and several fields in the system and model records above map onto it directly. The OECD describes it as generic and as a foundation for later risk assessment work rather than as one, and notes the need for sector-specific frameworks in areas such as healthcare and finance. Adopt it and stop, and you have a well-described inventory and no decisions.</p>
+<p>The <strong>NIST AI Risk Management Framework</strong> is often assumed to classify risk, and it does not. Chapter 2 sets out its four functions. On prioritisation it is explicit: the framework “can be used to prioritize risk” but “does not prescribe risk tolerance”, which it defines as the organization’s readiness to bear risk in pursuit of its objectives and treats as highly contextual. That is a deliberate design choice rather than an omission, and it means an organization adopting NIST still has to supply the scheme that says which systems get which treatment. <strong>ISO/IEC 23894</strong> sits in the same position: guidance on the risk management process, the AI-specific companion to ISO 31000, with no tiers in it.</p>
+<p>The <strong>EU AI Act</strong> does produce a classification, and it produces it in a way worth understanding because it is not the way the rest of this chapter works. Its four categories are unacceptable risk, high risk, transparency risk, and minimal or no risk. High risk is not assessed; it is a membership question. Annex I covers AI that is a safety component of a regulated product, and Annex III lists stand-alone high-risk use cases. A system is high risk because it appears on a list, not because it scored badly on any factors. Article 6(3) supplies a narrow escape: an Annex III system is not high risk where it does not pose a significant risk of harm to health, safety, or fundamental rights, and where it performs a narrow procedural task, improves the result of a previously completed human activity, detects decision-making patterns without replacing human assessment, or performs a preparatory task. A system that profiles natural persons is high risk regardless. The derogation is reasoned and registrable rather than a quiet internal call, and a provider relying on it should expect to defend it.</p>
+<p><strong>Canada’s Algorithmic Impact Assessment</strong> is the clearest published example of the scoring approach, and it is instructive precisely because it does what this chapter declines to do. It runs to over a hundred questions, converts the answers to a percentage of maximum impact, allows a reduction where mitigation measures are strong, and bands the result into four levels from little-to-no impact through to very high impact. Each level triggers escalating obligations. Its severity definitions are worth borrowing even if the scoring is not: Level I impacts are reversible and brief, Level II likely reversible and short-term, Level III difficult to reverse and ongoing, Level IV irreversible and perpetual. Reversibility and duration are built into the level definitions rather than assessed as separate factors, which is a different architecture from the one this chapter proposes and a defensible one.</p>
+<p><strong>Banking has been classifying model risk for longer than AI governance has existed</strong>, and the omission of that precedent from most AI governance writing is a gap worth closing. The Federal Reserve’s SR 26-2, issued in April 2026 to supersede SR 11-7, frames model risk as inherent risk assessed in the context of materiality, where materiality combines the model’s purpose with its exposure, meaning the significance of its output to business decisions. The UK’s PRA supervisory statement SS1/23 requires firms to operate a consistent, firm-wide model tiering approach rating each model for materiality and complexity. Neither prescribes a number of tiers. Industry practice, surveyed by Kiritz, Ravitz, and Levonian, settles on three or four, numbered rather than named, with Tier 1 highest, and the survey’s own conclusion is that the range of practice is broad and varied. Two things transfer. Tier determines the depth and frequency of validation rather than whether governance happens. And the determinant is organizational exposure as much as harm to people, which is a dimension the four factors in the next section do not capture and which an organization may want to add.</p>
+<p>One fact about SR 26-2 deserves stating on its own. The most mature model risk regime in existence excludes the systems this book is about: generative and agentic models are, in its words, not within the scope of the guidance, on the ground that they are novel and rapidly evolving. An organization with a functioning model risk function cannot assume it already covers its AI estate.</p>
+<p><strong>What none of them gives you</strong> is the decision an organization has to make on Monday about a system that is not on any annex, in a jurisdiction whose law does not yet reach it, where the question is how much scrutiny to spend. The EU AI Act answers it for listed uses in one jurisdiction. Canada’s AIA answers it for Canadian federal departments. NIST and ISO describe how to run the process once the answer exists. The OECD describes the system. The scheme in the next section is this book’s proposal for that gap, and it is a proposal rather than a standard, offered because an organization needs something and the alternative is deciding case by case with no rule at all.</p>
 </section>
 <section id="risk-classification" class="level2">
 <h2 class="anchored" data-anchor-id="risk-classification">3.7 Risk classification</h2>
 <p>Not every system deserves the same attention. Classification is how an organization decides where to spend governance effort, and a scheme that classifies everything as high risk is functionally identical to having no scheme at all.</p>
-<p>A workable internal scheme has three tiers and turns on a small number of factors that can be assessed without specialist knowledge. What follows is this book’s own proposed design, offered as a starting point for an organization to adapt, not a scheme that exists independently of it.</p>
+<p>What follows is this book’s own proposed design, offered as a starting point for an organization to adapt rather than a scheme that exists independently of it. Three tiers is a choice, not a convention. Published practice runs from a single binary category, which is what Microsoft’s sensitive-uses process and the United States federal government’s high-impact designation both use, through the three or four numbered tiers common in bank model risk, to Canada’s four scored levels. Nothing settles the number. Three is chosen here because two collapses the common case where a system deserves more than a record and less than the full apparatus, and five produces boundaries nobody can defend in a meeting.</p>
+<p>The rule that follows, taking the highest tier any single factor supports, matches how real trigger schemes behave: Microsoft’s three sensitive-use criteria fire independently of one another, and the EU AI Act’s serious-incident definition is satisfied by any one of four conditions. No published study evaluates the rule, and this book does not claim one. It is offered as a defensible design with a stated failure mode, which is the tier inflation discussed below.</p>
 <p>The factors are consequence, autonomy, population, and reversibility. Consequence asks what happens to a person if the system is wrong, whether they lose an opportunity, receive worse treatment, or are merely mildly inconvenienced. Autonomy asks whether a human meaningfully reviews the output before anything happens, in the sense Chapter 2 developed, not in the sense of whether a review step exists on paper. Population asks who is affected, how many, and whether any of them are in a position to detect or challenge what happened. Reversibility asks whether the effect can be undone, which is the factor that separates a recommendation from an action and becomes central in Chapter 12.</p>
+<p>Each factor needs a threshold, or the assessment is four opinions. Consequence is severe where a person loses an opportunity they cannot regain, suffers physical or psychological harm, or has a legal or similarly significant effect imposed on them; the EU AI Act’s serious-incident definition is a usable floor, covering death or serious harm to health, serious disruption of critical infrastructure, infringement of fundamental rights obligations, and serious harm to property or the environment. Autonomy is high where no human sees the output before it takes effect, and it is also high where a human nominally reviews but the review has never been measured; an unmeasured review is an assumption, not a control, and Calloway’s one alteration in four hundred is what measuring it looks like. Population is high where the affected people cannot detect that the system ran, cannot contest the outcome, or belong to a group the organization has no route to consult. Reversibility, following Canada’s scale, runs from effects that are reversible and brief, through likely reversible and short-term, to difficult to reverse and ongoing, to irreversible and perpetual; the last two support a high tier on their own.</p>
+<p><strong>Do not score them.</strong> The temptation is to rate each factor one to five, add them up, and band the total, and it should be resisted for a reason the risk literature has documented for twenty years. Cox and colleagues showed that ordered qualitative labels of exactly this kind can assign identical ratings to quantitatively very different risks, can rank a smaller risk above a larger one, and can produce opposite ratings of the same situation from different users. Summing four factors is averaging with extra steps: it yields a number no single factor supports, and it buries the factor that should drive the decision. Practitioners who tier models for a living reach the same conclusion from the other direction, warning against false precision and recommending that the tier assignment rather than any intermediate score be what the record carries. Record the four factors as findings in words, take the tier, and keep the reasoning. A number would be easier to defend in a meeting and harder to defend in an incident.</p>
+<p>Assess the system as it is, before the controls you are about to build. Classification is a statement about inherent risk, which is the risk present absent mitigation, and a tier that already accounts for the controls it is supposed to determine is circular. Residual risk, what remains after the controls are in place, is a separate assessment and belongs in Chapter 14.</p>
 <p>The three tiers, their inclusion rules, and what each one costs the organization:</p>
 <table class="caption-top table">
 <colgroup>
@@ -751,7 +803,44 @@ Figure&nbsp;4.2: The loop: discovery, boundary, inventory, classification, and t
 <p>The factors will sometimes point in different directions, and the rule for that is not to average them. A severe consequence with a genuine human review still in place, or a low consequence that cannot be reversed, is a system where one factor is carrying the classification and the others are not. Take the highest tier any single factor supports, and record which factor drove it and which pointed lower. That record is what makes the classification reviewable later, because the factor that drove it is the one to re-examine when the deployment changes. Averaging produces a middle tier that no factor actually supports and that nobody can defend.</p>
 <p>A maximum rule invites the objection that everything ends up high, and the objection is fair, because almost every system sends a communication somebody cannot unsend. Two things hold it in check. The factor has to support the tier on its own, which means the driving factor must independently meet the high-tier inclusion rule rather than merely point upward; a message a candidate can reply to is not the same as a decision they cannot contest. And the governance a high tier attracts is set by the driving factor, not applied wholesale. A system that is high on reversibility alone needs the controls reversibility calls for, which are a hold before the irreversible step, a route to correct what was sent, and a record of both. It does not automatically need disaggregated testing, which answers a population question the system may not raise. A tier decides how much attention is owed; the factor that drove it decides where the attention goes. An organization that applies the full apparatus to every high-tier system regardless of what made it high will produce the reviewer fatigue this chapter warns about, and will have done it to itself.</p>
 <p>Four rules apply to every tier rather than to any one of them, and they exist because a tier is an assertion about a system that was true when somebody made it. Record an evidence confidence alongside the tier, because an initial classification is only as good as what was known at the time. Treat a low-confidence classification as provisional until an independent reviewer, someone other than whoever proposed it, has confirmed it. Give both the system owner and an affected party a route to appeal the classification itself, not only the decision the system produces. And revalidate on a fixed schedule as well as on trigger, because a classification never checked again is a claim about the system’s current state made once and never tested.</p>
-<p>Those four rules hold whatever the system is. The four factors themselves apply to every kind of system this book governs, but they do not weigh the same way in each. Consequence and population dominate for a predictive system, the use rather than the system carries the classification for a generative one, and reversibility governs for an agent, because an action that cannot be undone converts a moderate consequence into a severe one. The subsection below works each of the three in turn.</p>
+<p>Those four rules hold whatever the system is. The four factors themselves apply to every kind of system this book governs, but they do not weigh the same way in each. Which factor governs follows from what the system does, and it can be read off the system class.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>If the system</th>
+<th>The governing factor is</th>
+<th>Because</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Produces a score a person acts on</td>
+<td><strong>Consequence</strong>, then population</td>
+<td>The harm is in the decision, and the reviewer is the control</td>
+</tr>
+<tr class="even">
+<td>Produces content a person reads</td>
+<td><strong>The use</strong>, not the system</td>
+<td>The same model is trivial in one deployment and serious in another</td>
+</tr>
+<tr class="odd">
+<td>Takes an action itself</td>
+<td><strong>Reversibility</strong>, then autonomy</td>
+<td>An action that cannot be undone turns a moderate consequence severe</td>
+</tr>
+<tr class="even">
+<td>Affects people who cannot know it ran</td>
+<td><strong>Population</strong></td>
+<td>No detection means no complaint, so nothing else will surface the failure</td>
+</tr>
+</tbody>
+</table>
+<p>For a predictive system consequence and population dominate, because the harm sits in the decision the score informs and because a population that cannot detect the system cannot report what it gets wrong. For a generative system the use carries the classification rather than the model, which is why one record per deployment rather than one per capability is the only workable unit. For an agent reversibility governs, since an action that cannot be undone converts a moderate consequence into a severe one, and autonomy follows close behind because there is by construction no reviewer in the path. The subsection below works each of the three in turn.</p>
 <p>Classification must be written down with its reasoning, not just its result. A record stating that a system is medium risk answers nothing. A record stating that it is medium risk because its output is reviewed by a trained underwriter who overrides it in roughly one case in six, and would be high risk otherwise, can be audited, challenged, and revisited when the override rate falls.</p>
 <p>Work the three cases in this book.</p>
 <p><strong>MedAssist</strong>, the deterioration prediction tool at Northfield Health, is high risk. Consequence is severe, since a missed deterioration is a clinical harm. The population is patients, who cannot detect that the system was involved. Autonomy is the interesting factor. A nurse sees every alert, which looks like meaningful review, but a nurse with eleven other patients responding to an alert stream is making a different kind of decision than the classification scheme imagines. The classification takes a minute. The reasoning is where the value is.</p>
