@@ -51,6 +51,8 @@ The rule follows from the socio-technical account in Chapter 1. If a system's be
 
 The decision needs its own record, because a boundary that was never written down cannot be defended when it is questioned or revisited when the deployment changes. Template 10 in Appendix C has fields for the grounds applied to each dependency, for what was excluded and why, and for the changes that would require the boundary to be drawn again.
 
+The boundary test produces the unit the inventory has to record. It does not make every dependency inside the boundary a separate AI system. It determines what one system record must describe, which model records it must link to, and which human and technical dependencies have to stay visible in it. Calloway's record above is one system with five dependencies named in it, not six records. The inventory in section 3.3 is where that decision becomes durable, and a boundary that never reaches a record is a conversation, not a control.
+
 Two consequences follow that are worth stating before the disputes. The boundary is a property of the deployment, not of the software, so the same product can be in scope at one organization and out at another depending on what surrounds it. And the boundary can move without anyone changing the code, because adding a step that acts on the output brings that step inside.
 
 Before the disputes, one boundary worked through in full, because the eight grounds are easier to state than to apply.
@@ -115,7 +117,7 @@ Populate this at intake, not as an annual exercise. Chapter 4 describes the inta
 
 ## 3.4 Discovering shadow AI
 
-Everything above assumes you know what to write down.
+An inventory records only what the organization has found. Everything above assumes you know what to write down.
 
 ::: {.definition}
 **Shadow AI is AI in use inside the organization that the organization has not recorded. It is not a category of technology but a gap between what is running and what governance knows about.**
@@ -123,7 +125,11 @@ Everything above assumes you know what to write down.
 
 The gap is the most common governance problem organizations face, and it has a property that makes it worse than an ordinary inventory shortfall. The systems it hides are not a random sample. Anything procured through a formal channel is visible. What escapes is what arrived some other way, which correlates with small budgets, individual initiative, and an absence of the review that would have caught a problem.
 
-It takes several forms. Employees use external models through personal accounts, sometimes with organizational data in the prompt. Business units licence tools with model components through expense claims, not procurement. Analysts build workflows on low-code platforms that call models through connectors. Teams add generative features to internal tools without recognizing that they have started building AI. None of these people think of themselves as deploying AI, which is why asking them will not find it. So the method becomes the governed object. A sweep has to record which channels it searched and which it did not. Exposure sits in the ones it did not reach. Appendix C template 12 is built around that omission.
+It takes five forms, and they divide into two kinds. Three concern systems that were never recorded at all. Employees use external models through personal accounts, sometimes with organizational data in the prompt. Business units licence tools with model components through expense claims, not procurement. Analysts build workflows on low-code platforms that call models through connectors, and teams add generative features to internal tools without recognizing that they have started building AI. None of these people think of themselves as deploying AI, which is why asking them will not find it.
+
+The other two concern systems that were recorded correctly and then changed, and they are the forms an organization with a good inventory is most exposed to, because the record's existence is mistaken for the record's currency. A capability is added to a system already in the inventory, and the boundary drawn around what that system used to do no longer contains what it now does. Calloway's scheduling component is this form. The screening tool was recorded, and then it began to act. Or a model is substituted underneath a system whose record still names the old one, which happens on the buy path without anyone at the deploying organization being told, and which means the linked model record now describes something that is not running. The first kind is a hole in the inventory. The second is a lie in it, and a confident inventory that has never been tested for the second kind is worse than an incomplete one that knows it is incomplete.
+
+Both kinds end in the same place. Discovery surfaces a candidate; it does not produce a record. Each candidate has to be examined for what it actually is, bounded by the test in section 3.2, entered as a system record with its model records linked, and then classified. A finding written straight into the inventory as an unexplained line has skipped the two steps that make it governable. So the method becomes the governed object. A sweep has to record which channels it searched and which it did not. Exposure sits in the ones it did not reach. Appendix C template 12 is built around that omission.
 
 Four approaches find most of it, and they complement one another instead of substituting for one another.
 
@@ -138,6 +144,10 @@ Self-attestation finds what the other three miss, but only under a specific cond
 Running any of these four approaches is itself an activity that needs governance, not only a technique aimed at governance's target. Network visibility and expense review both examine data about individual employees' activity, which makes the sweep a processing activity in its own right. What follows is a proposed toolkit for an organization to adapt, not a set of steps to run without process of its own.
 
 Settle four things before the exercise begins rather than case by case once something uncomfortable surfaces. **Authority**, meaning who authorizes the sweep and under what mandate, and what notice employees receive, proportionate to what each method collects. **Limits**, meaning that what is collected serves the purpose of finding unrecorded AI systems and is not repurposed for unrelated performance or disciplinary review, that retention is held to what that purpose requires, and that access to findings is controlled. **Clearing**, meaning a defined route by which a false positive, a flagged use that turns out not to be AI or not to be a governance concern, is reviewed and closed instead of left sitting on a list. **Escalation**, meaning where a real finding goes, what exceptions exist, and who can grant them.
+
+![The loop: discovery, boundary, inventory, classification, and the change that returns a recorded system to the boundary test](/figures/fig-03-03-governance-loop.svg){#fig-governance-loop}
+
+This chapter has presented three things in the order they are easiest to learn. Define the thing being governed, record it, then find what has not been recorded. An organization does not experience them in that order. It usually starts here, at discovery, because it does not yet know what it has, and the three are not stages but a loop. Figure 3.3 shows it. Discovery surfaces a candidate, the boundary test defines it, the inventory records it, classification sets how much attention it gets, and any change to the deployment sends it back to the boundary test rather than to discovery, because a recorded system that changed does not need finding again. The loop has no exit, because there is no state in which an organization has finished finding out what it operates. The boundary defines the record. The inventory holds it. Discovery tests whether it is complete.
 
 The cultural point generalizes beyond this chapter. If the sanctioned path is slower than the workaround, people take the workaround, and no amount of policy changes that arithmetic. Chapter 13 addresses the acceptable use policy and sanctioned tooling that make the sanctioned path viable, and Chapter 17 addresses the same problem where it is most acute.
 

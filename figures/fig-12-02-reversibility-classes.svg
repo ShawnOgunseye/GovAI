@@ -1,0 +1,53 @@
+<svg viewBox="0 0 900 474" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Action classification by reversibility">
+<!-- FIGURE 12.2 REQUIRED ELEMENTS
+Must appear: at least three reversibility classes (reversible, costly to
+reverse, irreversible) each with a named example action and the control
+each class requires, showing that autonomy tolerance decreases as
+reversibility decreases. Must include at least one example each of a
+scheduling-type action and a communication or data-affecting action, to
+show the classes cut across action type rather than tracking it. Entry
+condition: an agent's permission scope is being designed (12.3). Exit
+condition: each action a permission scope would grant is assigned a
+reversibility class and its corresponding control. Deliberately excluded:
+runtime intervention mechanics (12.5's job). Must work in black and white.
+SOURCE: original; the reversibility-based classification is this book's
+own framework, developed from this chapter's section 12.4 argument.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<title>Action classification by reversibility</title>
+<style>
+text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.ttl{font-size:17px;font-weight:700;}
+.cls{font-size:14px;font-weight:700;}
+.bx{font-size:12.5px;font-weight:400;}
+.col{font-size:11px;font-weight:700;letter-spacing:.06em;}
+.sm{font-size:11px;font-weight:400;}
+.em{font-size:11px;font-style:italic;}
+</style>
+<rect x="0" y="0" width="900" height="474" fill="#ffffff"/>
+<text x="20" y="34" class="ttl" fill="#1a2230">Figure 12.2 &#183; Action classification by reversibility</text>
+<text x="30" y="62" class="col" fill="#46536b">CLASS</text>
+<text x="220" y="62" class="col" fill="#46536b">EXAMPLE ACTION</text>
+<text x="560" y="62" class="col" fill="#46536b">CONTROL REQUIRED</text>
+<line x1="20" y1="76" x2="880" y2="76" stroke="#1a2230" stroke-width="1.6"/>
+<rect x="20" y="90" width="860" height="96" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="32" y="120" class="bx" font-weight="700" fill="#1a2230">REVERSIBLE</text>
+<text x="220" y="116" class="sm" fill="#1a2230">proposing / rescheduling an</text>
+<text x="220" y="132" class="sm" fill="#1a2230">interview slot (scheduling-type)</text>
+<text x="560" y="116" class="sm" font-weight="700" fill="#1a2230">wide autonomy tolerated;</text>
+<text x="560" y="132" class="sm" font-weight="700" fill="#1a2230">correction is low-cost</text>
+<rect x="20" y="200" width="860" height="96" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="32" y="230" class="bx" font-weight="700" fill="#46536b">COSTLY TO REVERSE</text>
+<text x="220" y="226" class="sm" fill="#1a2230">sending a candidate a status</text>
+<text x="220" y="242" class="sm" fill="#1a2230">update visible to others (comms-type)</text>
+<text x="560" y="226" class="sm" font-weight="700" fill="#46536b">narrower autonomy; monitor</text>
+<text x="560" y="242" class="sm" font-weight="700" fill="#46536b">and allow fast correction</text>
+<rect x="20" y="310" width="860" height="96" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
+<text x="32" y="340" class="bx" font-weight="700" fill="#8a3324">IRREVERSIBLE</text>
+<text x="220" y="336" class="sm" fill="#1a2230">sending a rejection notice;</text>
+<text x="220" y="352" class="sm" fill="#1a2230">an unattended payment or deletion</text>
+<text x="560" y="336" class="sm" font-weight="700" fill="#8a3324">human gate before execution,</text>
+<text x="560" y="352" class="sm" font-weight="700" fill="#8a3324">not merely logged after</text>
+<text x="20" y="426" class="em" fill="#46536b">Autonomy tolerance decreases top to bottom; the two comms-type examples (rows 2 and 3) sit in different</text>
+<text x="20" y="444" class="em" fill="#46536b">classes despite looking similar, because class follows cost-to-undo, not action type.</text>
+</svg>
