@@ -1,0 +1,54 @@
+<svg viewBox="0 0 900 540" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Model card structure annotated with what to interrogate">
+<!-- FIGURE 15.2 REQUIRED ELEMENTS
+Must appear: the model card's standard sections (intended use, training
+data, performance and evaluation, limitations, maintenance) each paired
+with the specific adversarial question a reviewer should ask of that
+section, so the figure functions as an interrogation checklist rather
+than a plain structural diagram. Entry condition: a vendor or internally
+produced model card is under review. Exit condition: each section has a
+stated follow-up question ready to ask regardless of whether the section
+itself looks complete. Deliberately excluded: the traceability matrix
+mechanics (Figure 15.1's job). Must work in black and white.
+SOURCE: original; standard model card structure paired with this
+chapter's own section 15.3 argument about adversarial reading.
+AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+-->
+<title>Model card structure annotated with what to interrogate</title>
+<style>
+text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.ttl{font-size:17px;font-weight:700;}
+.cls{font-size:14px;font-weight:700;}
+.bx{font-size:12.5px;font-weight:400;}
+.col{font-size:11px;font-weight:700;letter-spacing:.06em;}
+.sm{font-size:11px;font-weight:400;}
+.em{font-size:11px;font-style:italic;}
+</style>
+<rect x="0" y="0" width="900" height="540" fill="#ffffff"/>
+<text x="20" y="34" class="ttl" fill="#1a2230">Figure 15.2 &#183; Model card structure annotated with what to interrogate</text>
+<text x="30" y="62" class="col" fill="#46536b">CARD SECTION</text>
+<text x="330" y="62" class="col" fill="#46536b">QUESTION TO ASK REGARDLESS</text>
+<line x1="20" y1="76" x2="880" y2="76" stroke="#1a2230" stroke-width="1.6"/>
+<rect x="20" y="90" width="860" height="66" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="32" y="112" class="bx" font-weight="700" fill="#1a2230">Intended use</text>
+<text x="330" y="112" class="sm" fill="#46536b">what is this validated for, and just as important,</text>
+<text x="330" y="128" class="sm" fill="#46536b">what is explicitly out of scope</text>
+<rect x="20" y="168" width="860" height="66" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="32" y="190" class="bx" font-weight="700" fill="#1a2230">Training data</text>
+<text x="330" y="190" class="sm" fill="#46536b">what population does this data represent, and</text>
+<text x="330" y="206" class="sm" fill="#46536b">how does it compare to our deployment population</text>
+<rect x="20" y="246" width="860" height="66" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="32" y="268" class="bx" font-weight="700" fill="#1a2230">Performance and evaluation</text>
+<text x="330" y="268" class="sm" fill="#46536b">is this an aggregate figure, or is it disaggregated</text>
+<text x="330" y="284" class="sm" fill="#46536b">by the subgroups this deployment will affect</text>
+<rect x="20" y="324" width="860" height="66" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="32" y="346" class="bx" font-weight="700" fill="#1a2230">Limitations</text>
+<text x="330" y="346" class="sm" fill="#46536b">is this section specific and named, or vague; a vague</text>
+<text x="330" y="362" class="sm" fill="#46536b">section aimed at a known concern is a stronger signal than silence</text>
+<rect x="20" y="402" width="860" height="66" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="32" y="424" class="bx" font-weight="700" fill="#1a2230">Maintenance</text>
+<text x="330" y="424" class="sm" fill="#46536b">who owns this card, how is an issue reported, and</text>
+<text x="330" y="440" class="sm" fill="#46536b">when was it actually last updated</text>
+<line x1="20" y1="488" x2="880" y2="488" stroke="#c9d1dc" stroke-width="1"/>
+<text x="20" y="506" class="sm" fill="#46536b">Every section gets its paired question whether or not the section looks complete: a thorough-looking card</text>
+<text x="20" y="524" class="sm" fill="#46536b">still earns adversarial reading, since a missing or vague section is a signal, not an incidental gap.</text>
+</svg>
