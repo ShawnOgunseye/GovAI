@@ -1,0 +1,185 @@
+# Appendix D: Glossary
+
+Every term below is explained more fully where it first appears in the body of this book; this glossary gives a short definition and a chapter pointer for quick lookup, not the full treatment. Where this book prefers one term over a more common alternative, that preference is noted, not left unexplained.
+
+**Acceptable use policy.** A policy restricting AI use that works only when paired with a sanctioned alternative competitive enough with the workaround it restricts to be chosen over it. Chapter 13.
+
+**Acceptance criteria.** The element of a testable requirement stating exactly what evidence would satisfy it. Chapter 15.
+
+**Action sequence.** The path of decisions and tool calls an agent takes to a result, evaluated in full because two agents can reach the same endpoint by paths of very different risk. Chapter 7.
+
+**Adverse action notice.** A notice required in defined credit circumstances, not only outright denial, stating the action taken and the specific principal reasons for it or how to obtain them. When reasons are given they must accurately describe the factors used, with the exact scope and timing set by the governing law and transaction. Chapter 2.
+
+**Agent registration.** The record establishing an agent as an identified actor, including its origin, scope, and owner. Chapter 12.
+
+**AI governance.** How an organization decides what its AI systems may do, establishes that they do it, and makes clear who answers when they do not. Chapter 1.
+
+**AI system lifecycle.** This book's full-form term for the span a system passes through, treated as three nested layers, model, system, and use case, moving at different speeds. The shorter "AI lifecycle" is avoided as misleadingly singular. Chapter 3.
+
+**Algorithmic disgorgement.** Informal shorthand for an enforcement order requiring deletion of a model, algorithm, or other product built from data obtained or retained unlawfully. What the order covers, and how compliance is verified, is set by its specific terms rather than by the shorthand term itself. Chapter 2.
+
+**Anonymization.** Processing intended to make a person no longer identifiable by means reasonably likely to be used, considering the data, context, available auxiliary information, cost, time, and technology. Removing direct identifiers alone is usually pseudonymization or de-identification rather than proof of anonymity, which is why anonymized data has repeatedly been re-identified through combination with other data in practice. Chapter 5.
+
+**Artificial general intelligence.** A hypothetical system matching human capability across arbitrary tasks. It does not currently exist, and no governance program in this book is built on an estimate of when it might. Chapter 1.
+
+**Authority chain.** The record of under whose authority an agent acted and what permission scope was in force at the moment of action. Chapter 15.
+
+**Automation bias.** Excessive trust in an automated recommendation. A near-unity approval rate and a near-zero override rate are indicators consistent with it, not proof of it on their own, since the same pattern can also reflect accurate recommendations, a constrained task, interface design, incentives, or a logging defect; investigate before concluding which. Chapter 9.
+
+**Benefit proportionality.** One of four appropriateness grounds, asking whether a use case's stated benefit justifies the risk it introduces. Chapter 4.
+
+**Blast radius.** The size and consequence of what a failure could affect at a system's current rollout stage. Chapter 8.
+
+**Build, fine-tune, or buy.** The choice between training on an organization's own data, adapting a model someone else trained, or acquiring a complete system, which sets the governance work every later stage requires. Chapters 4 and 6.
+
+**Calibration.** A fairness property requiring that a predicted probability mean the same thing across groups. Under specified conditions, including unequal group base rates and imperfect, nontrivial prediction, calibration and equalized-odds-type error constraints generally cannot both be satisfied; a perfect predictor is a standard exception, and the conditions should be checked before treating the tradeoff as automatic. Chapter 7.
+
+**Circuit breaker.** An automatic mechanism halting an agent's actions in a category once a preset threshold is crossed, without waiting for a person to notice. Chapter 12.
+
+**Conformity assessment.** The process of establishing that a system meets the EU AI Act's applicable requirements, with the route set by Article 6 classification and Article 43. An Annex III point 1 system may use internal control or notified-body assessment, with the choice governed by whether the applicable harmonized standards or common specifications were followed. An Annex III point 2 through 8 system uses internal control only, with no notified-body role. An Annex I system follows the applicable Union product-law procedure, with the Act's own requirements folded in. Chapter 2.
+
+**Containment, agentic.** Halting an agent's future actions, only half complete without a separate step assessing and remediating actions already taken. Chapter 10.
+
+**Context alignment.** The deployment check confirming that a system's use case, population, environment, and risk level still match what it was validated against. Chapter 8.
+
+**Data minimization.** Under the GDPR, the principle that personal data must be adequate, relevant, and limited to what is necessary for the purposes for which it is processed. This duty applies beyond initial collection, and sits in tension with a machine learning model's appetite for more data. Chapter 2.
+
+**Datasheet.** A documentation format recording a dataset's motivation, composition, collection method, and intended uses. Chapter 5.
+
+**Demographic parity.** A fairness metric requiring equal favorable-outcome rates across groups, regardless of any underlying difference in the true outcome rate. Chapter 7.
+
+**Deployer.** Under the EU AI Act, a natural or legal person, public authority, agency, or other body using an AI system under its own authority in a professional capacity (other than personal, non-professional use), carrying oversight and monitoring obligations distinct from a provider's. Chapter 2.
+
+**Deprecation schedule.** A developer's timetable for retiring a model version, which should be budgeted as a revalidation event, not a routine update. Chapter 6.
+
+**Differential privacy.** A family of formal privacy definitions bounding how much a mechanism's output distribution can change when one protected unit is added, removed, or changed under a stated adjacency relation. A usable claim needs the specific mechanism, parameters, composition accounting, protected unit, and threat model stated, and implementation evidence checked, not only a single parameter and an accuracy tradeoff. Chapter 5.
+
+**Disparate impact.** A legal theory holding that a facially neutral practice can be unlawful when it produces a disproportionate effect on a protected group, subject to the elements, defenses, and remedy the governing statute and jurisdiction set. A measured disparity is evidence to analyze under that framework, not itself a finding of liability. Chapter 2.
+
+**Distribution shift.** A difference between relevant data distributions across training, evaluation, deployment, populations, locations, or time. Detecting a shift does not by itself establish harm or the correct remedy; deliberately evaluating against data expected to differ from training is one method for finding one, not the shift itself. Chapter 7.
+
+**Drift.** Material change over time in inputs, outputs, performance, behavior, relationships, or operating context relative to a defined baseline. The cause and consequence need investigating before a remedy is chosen, since responses range from restriction to threshold or process change to relabeling, retraining, rollback, or retirement; a vendor or model-version change should be recorded separately even when it also produces drift. Chapter 9.
+
+**Due diligence, vendor.** A structured sequence moving from open to specific to limitation-testing questions when assessing a vendor. Chapter 16.
+
+**Equal opportunity.** A fairness metric requiring an equal true-positive rate across groups, among cases that meet whatever outcome label the analysis is defined against; the metric depends on that label's own validity, not on some independent, observation-free fact about who "would succeed." Chapter 7.
+
+**Equalized odds.** For a specified outcome label and population, a fairness condition under which prediction is conditionally independent of protected group given the outcome; in the binary case this requires equal true-positive and false-positive rates across compared groups. It does not by itself establish individual fairness or the validity of the label, and is incompatible with calibration only under specified conditions (see Fairness incompatibility result). Chapter 7.
+
+**Fabrication.** This book's preferred term, over the more common "hallucination," for confident, false generative output, chosen because it names a structural property of producing fluent continuations rather than checked truths. Chapter 1.
+
+**Fine-tuning data.** The comparatively small dataset used to adapt a pretrained model to a narrower task. It can reshape a model's behavior out of proportion to its size relative to the pretraining data, which is why its own scope and quality need checking, not assumed evidence-free. Chapter 5.
+
+**Fundamental rights impact assessment.** The EU AI Act's Article 27 assessment is required of public-body deployers, and of private deployers of certain high-risk systems, including specified financial-services and insurance uses. It covers the deployment process, affected persons and groups, risks of harm, human-oversight measures, and a mitigation and grievance plan, and is distinct from the risk-management documentation a provider itself must maintain. Chapter 4.
+
+**General-purpose AI model.** Under the EU AI Act, a model trained broadly instead of for one task, capable of competently performing a wide range of distinct tasks, and carrying its own regulatory obligations. An additional systemic-risk tier of duties applies to a model meeting the Act's compute-based threshold, independent of any downstream system built on it. Chapter 1.
+
+**Governance body.** A committee reviewing AI systems, which functions as governance only when its composition, mandate, and decision rights are stated explicitly. Chapter 13.
+
+**Governance boundary.** Scope defined by causal contribution to a decision, to who is exposed, to who controls a step, to what evidence exists, and to what remedy is available, across the full system and use context. It is not only where a surrounding element technically changes an AI component's inputs or outputs. Decision authority, interface design, appeals, downstream use, incentives, procurement, and communications can all create governable risk without touching the model's inputs or outputs directly. The intensity of review still follows risk, not a rule that only the AI component itself qualifies for it. Chapter 3.
+
+**Groundedness.** Whether a generated claim is supported by retrieved source material, checked because a system can fabricate a plausible elaboration beyond what its sources establish. Chapter 9.
+
+**Harmonized standard.** An EU technical standard that, once cited in the Official Journal, gives a conforming provider a presumption of conformity with the requirement it addresses. Chapter 2.
+
+**Historical bias.** A bias mechanism in which data accurately records a world that was itself unjust, so a model trained on it learns and perpetuates past treatment. Chapter 5.
+
+**Horizon scanning.** The operating discipline of tracking regulatory change through defined sources, a cadence set by each source's own risk and volatility rather than one fixed interval, a multi-state triage step, and translation into a tracked, dated internal change request carried through implementation and closure. Chapter 18.
+
+**Impact assessment.** The documented artifact recording a system's description, identified risks, mitigations, residual risk, and an accountable decision to proceed. Chapter 14.
+
+**Impossibility result, fairness.** Under specified assumptions, including unequal group base rates and imperfect, nontrivial prediction, the mathematical result is that group calibration and equalized-odds-type error constraints generally cannot both be satisfied. This makes metric choice a values decision once those assumptions and their exceptions, such as a perfect predictor, are stated, not assumed universal. Chapter 7.
+
+**Instruction hierarchy.** Whether a system's own governing instructions reliably outrank instructions introduced later by a user or by content it processes, a property of the model together with the surrounding system architecture and tooling that enforces it, not of the model alone. Chapter 6.
+
+**Intake.** The process by which a proposed AI system enters governance review before it is built or bought. Chapter 4.
+
+**Least privilege.** The security principle of granting a person, process, or agent only the access its assigned function requires, for only as long as that function needs it. Chapter 12.
+
+**Lineage.** A traceable record of the steps data took from its source to its use, recorded with whatever coverage and confidence the tracking achieves, not assumed complete, making other data-quality claims auditable against that record instead of resting on assertion alone. Chapter 5.
+
+**Measurement bias.** A bias mechanism in which a recorded variable means something different across groups than the target it is meant to stand in for. Chapter 5.
+
+**Model bill of materials.** A record of what a model is made of, its base model, version, fine-tuning data, and dependencies, needed to investigate a system after the fact. Chapter 6.
+
+**Model card.** A developer's account of a model's intended use, training approach, evaluated capabilities, and limitations, meant to be read for what it omits as much as for what it states. Chapter 6.
+
+**NIST AI Risk Management Framework.** A voluntary framework organized around four functions, Govern, Map, Measure, and Manage, with no conformity assessment or certificate attached. Chapter 2.
+
+**Operating model.** How AI governance authority is distributed across an organization, centralized, federated, or hybrid, each carrying predictable strengths and predictable failure modes. Chapter 13.
+
+**Organizational readiness.** The deployment-readiness dimension asking whether the receiving organization, not the system itself, can operate, oversee, monitor, and respond. Chapter 8.
+
+**Post-hoc explanation.** A technique approximating why a model produced a given output, which can be plausible without being faithful to the model's actual computation. Chapter 6.
+
+**Post-market monitoring plan.** A documented artifact naming a system's monitored dimensions, methods, schedule, and accountable party, distinct from monitoring described only as an activity. Chapter 9.
+
+**Predictive, generative, and agentic lenses.** This book's three overlapping lenses for analyzing what an AI system does, not a set of mutually exclusive technical classes. Predictive functions estimate labels, scores, or outcomes; generative functions produce new content or representations; agentic functions select and execute actions toward goals through tools or an environment. One system can combine all three, and this book's governance analysis follows the functions used rather than assigning the whole system to a single category. Chapter 1.
+
+**Preemption.** The displacement of state law by federal law, unsettled in US AI regulation as of this book's writing. Chapter 2.
+
+**Privilege separation.** Keeping a system's actual governing instructions in a channel treated as authoritative, separate from content the system merely processes, to blunt prompt injection. Chapter 11.
+
+**Problem statement.** A structure naming a current state, a desired state, a constraint, and what must not degrade, that converts a proposed AI solution into something a reviewer can concretely reject or approve, not only discuss. Chapter 4.
+
+**Progressive rollout.** Deliberately expanding a system's exposure in stages against preset halt criteria, not full exposure from the first day. Chapter 8.
+
+**Prompt injection.** Instructions embedded in content a system processes that the system cannot reliably distinguish from its own governing instructions. Chapter 11.
+
+**Provenance.** The documented source, collection circumstances, and permissions behind a piece of data, determining what it can be assumed to mean. Chapter 5.
+
+**Provider.** Under the EU AI Act, a natural or legal person, public authority, agency, or other body that develops an AI system, or has one developed on its behalf. It places that system on the market, or puts it into service under its own name or trademark, whether for payment or free of charge. This role carries design and conformity obligations. Chapter 2.
+
+**Proximate cause.** This book's term for the immediate explanation for a failure, distinguished from the systemic factors a deeper root cause analysis reaches. Legal proximate cause is a distinct doctrine limiting causal responsibility under the rules of the governing jurisdiction and claim, and is not used here in that sense. Chapter 10.
+
+**Proxy.** A measurable quantity substituted for the outcome an organization wants, typically diverging from that outcome in some respect governance should locate and accept explicitly rather than assume away. Chapter 4.
+
+**RACI.** A structure naming who is Responsible, Accountable, Consulted, and Informed for a governance decision such as deployment approval or incident response. Chapter 13.
+
+**Reassessment trigger.** A predefined condition, a model change, a new population, a regulatory change, an incident, or elapsed time alone, that forces an existing assessment to be redone. Chapter 14.
+
+**Regulation.** This book's term for any single body of law or standard capable of reaching an AI system on its own terms, such as the GDPR, an anti-discrimination statute, or the EU AI Act. A system is tested against each applicable regulation independently; one regulation's conclusion is not treated as another regulation's input. Chapter 2.
+
+**Regulation-agnostic design.** Recording a system's stable, regulation-neutral factual attributes once, and maintaining a separate, versioned mapping card evaluating each applicable regulation's own dated trigger against those facts. As a result, a regulatory change touches one regulation's mapping card, not the shared fact record, and no regulation's own conclusion (such as a "high risk" label) is treated as another regulation's input. Chapter 18.
+
+**Representativeness.** Whether a model's training population resembles the population it will be deployed against depends on the specific population, sampling frame, time period, setting, missingness pattern, subgroup coverage, and label process being compared. It also depends on what inference the comparison is meant to support, not on resemblance stated without those terms. Chapter 5.
+
+**Residual risk.** What remains of an identified risk after a control is applied. This book's own recommended control for handling it, rather than a fact the term itself asserts, is that it be explicitly accepted by a named, accountable person instead of left implied by silence. Chapter 14.
+
+**Residual, verification.** What a decomposed testing proxy does not cover, documented explicitly because verification over an open-ended input space can never reach zero. Chapter 7.
+
+**Reversibility.** Whether an action's effect can be undone, and at what cost, a central factor in classifying an agentic system's risk alongside its scope of authority and the population it affects, not the single factor that decides classification on its own. Chapter 12.
+
+**Rollback.** The tested ability to return a system to a prior version, which for an agent must also remediate actions already taken rather than only halt further ones. Chapter 8.
+
+**Root cause analysis.** A proportionate, system-based examination of what happened, how conditions interacted, and which changes are likely to reduce recurrence or harm, distinguishing causes from conditions. It commonly finds several interacting contributory factors rather than one linear cause, so treating repeated "why" questions as converging on a single root cause understates what the examination usually finds. Chapter 4.
+
+**Runtime intervention.** The ability to stop an agent mid-task through a circuit breaker or manual halt, counted as a control only once tested against a live running system. Chapter 12.
+
+**Scope creep.** The mechanism by which a system validated for one use case, population, or environment is extended to an adjacent one nobody separately reevaluated. Chapter 8.
+
+**Selection bias.** Systematic distortion from how cases enter, remain in, or are excluded from the observed, sampled, labeled, retained, or analyzed data relative to the population or inference the analysis intends. An absent population is one mechanism, not the only one. Chapter 5.
+
+**Sentinel evaluation.** A fixed, rotating, partly held-out set of unanswerable questions checking a generative system's propensity to fabricate, not verifying any single output. Chapter 7.
+
+**Severity classification.** A documented judgment sorting an incident into a tier using stated criteria and the evidence available, connected to a defined response and level of authority. The initial tier is assigned at triage and revised as scope, harm, or evidence changes. Chapter 10.
+
+**Shadow AI.** AI in use inside an organization that the organization has not recorded, a gap between what is running and what governance knows about, not a category of technology. Chapter 3.
+
+**Socio-technical system.** An AI system whose behavior is produced jointly by the technology and the people, processes, and incentives around it, and cannot be predicted from the technology alone. Chapter 1.
+
+**Solely automated decision.** Under GDPR Article 22, a decision based solely on automated processing that produces a legal effect or similarly significantly affects a person, with no meaningful human involvement. Whether that condition holds is determined by evidence such as override rates and actual reviewer discretion, not a person's nominal presence in the process. Chapter 2.
+
+**Supply chain, AI.** The layered path from a base model through fine-tuning, adapters, and integration to deployment, along which visibility drops off well before legal and reputational obligation does. Chapter 16.
+
+**System readiness.** The deployment-readiness dimension checking whether a system itself works technically, on performance, and on compliance, distinct from organizational readiness. Chapter 8.
+
+**Target operating model.** The governance program design appropriate to a specific organization's scale, sector exposure, and system portfolio, with no universal answer supplied. Chapter 17.
+
+**Theater, governance.** Activity that occurs and produces artifacts without materially affecting any decision, assessed against effectiveness criteria such as issue detection, evidence quality, conditions imposed, escalations, and risk reduction, not decision-effect alone. A process with no visible change in a given period can also be a legitimate no-change outcome rather than theater, and the two need distinguishing by evidence, not assumed from the pattern alone. Chapter 17.
+
+**Three Lines Model.** The IIA's principles-based model distinguishing a governing body's accountability to stakeholders, management's first- and second-line roles for achieving objectives and managing risk, and an internal audit function independent from management that provides assurance and advice to the governing body. Exact structures and role assignments vary by organization instead of following one fixed three-tier assignment. Chapter 13.
+
+**Traceability matrix.** A record connecting each requirement to the control addressing it and the evidence that the control was verified to work, by whom and as of when, rather than only that a control exists. Chapter 15.
+
+**Two-speed problem.** The structural mismatch between fast system-development cycles and slow governance program cycles, the main driver of the process bypass this book describes. Chapter 17.

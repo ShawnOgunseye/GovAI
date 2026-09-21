@@ -1,0 +1,31 @@
+---
+title: "Back Cover"
+title-block-style: none
+toc: false
+---
+
+```{=html}
+<!-- The book's closing page. Same treatment as index.qmd's front cover, so the
+     two read as a matched jacket, but this one only ever appears last, after
+     the appendices, the way a real back cover sits opposite the front. -->
+<style>#title-block-header { display: none; }</style>
+<script>document.body.setAttribute("data-no-feedback", "");</script>
+```
+
+::: {.back-cover}
+::: {.back-cover-label}
+How to Govern AI · Second Edition
+:::
+
+Every organization running AI is already governing it, badly, informally, or by accident. This book is about doing it on purpose.
+
+It moves from what AI governance actually is, through the full lifecycle of a model from scoping to retirement, into the harder territory of generative and agentic systems, and out to the org design, risk practice, and evidence trail that make a governance function real rather than a slide deck.
+
+::: {.back-cover-contents}
+**PART I**&nbsp;&nbsp;Foundations\
+**PART II**&nbsp;&nbsp;The AI System Lifecycle\
+**PART III**&nbsp;&nbsp;Generative and Agentic Systems\
+**PART IV**&nbsp;&nbsp;The Governance Function\
+**PART V**&nbsp;&nbsp;Building and Sustaining the Program
+:::
+:::

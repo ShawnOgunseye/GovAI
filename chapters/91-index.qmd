@@ -1,0 +1,307 @@
+# Index {.unnumbered}
+
+Locators are chapter numbers. A dagger marks a term that also carries a short definition in Appendix D.
+
+
+## A
+
+Acceptable use policy †. [3](03-scoping-inventory-classification.qmd), [13](13-organizing-the-governance-function.qmd)
+
+Acceptance criteria †. [15](15-documentation-and-evidence.qmd), [18](18-governing-under-uncertainty.qmd)
+
+Action sequence †. [7](07-testing-evaluation-and-red-teaming.qmd), [15](15-documentation-and-evidence.qmd)
+
+Adverse action notice †. [15](15-documentation-and-evidence.qmd)
+
+Agent registration †. [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+AI governance †. [1](01-what-ai-governance-is.qmd), [2](02-regulatory-landscape.qmd), [3](03-scoping-inventory-classification.qmd), [12](12-governing-agentic-systems.qmd), [13](13-organizing-the-governance-function.qmd), [17](17-implementing-ai-governance.qmd), [18](18-governing-under-uncertainty.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+AI literacy. [2](02-regulatory-landscape.qmd), [17](17-implementing-ai-governance.qmd)
+
+AI system lifecycle †. [10](10-incident-response-and-remediation.qmd)
+
+Algorithmic disgorgement †. [2](02-regulatory-landscape.qmd)
+
+Annex III. [2](02-regulatory-landscape.qmd), [3](03-scoping-inventory-classification.qmd), [10](10-incident-response-and-remediation.qmd), [12](12-governing-agentic-systems.qmd), [13](13-organizing-the-governance-function.qmd), [15](15-documentation-and-evidence.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+Anonymization †. [5](05-data-governance-for-ai.qmd)
+
+Article 22. [2](02-regulatory-landscape.qmd), [3](03-scoping-inventory-classification.qmd)
+
+Artificial general intelligence †. [1](01-what-ai-governance-is.qmd)
+
+Audit trail. [15](15-documentation-and-evidence.qmd)
+
+Authority chain †. [12](12-governing-agentic-systems.qmd), [15](15-documentation-and-evidence.qmd)
+
+Automation bias †. [6](06-model-selection-and-development.qmd), [8](08-deployment-and-release.qmd), [9](09-operations-and-monitoring.qmd), [12](12-governing-agentic-systems.qmd)
+
+
+## B
+
+Base rate. [7](07-testing-evaluation-and-red-teaming.qmd)
+
+Benchmark contamination. [7](07-testing-evaluation-and-red-teaming.qmd)
+
+Benefit proportionality †. [4](04-defining-the-problem.qmd)
+
+Bias audit. [2](02-regulatory-landscape.qmd), [3](03-scoping-inventory-classification.qmd), [12](12-governing-agentic-systems.qmd), [14](14-risk-assessment-and-management.qmd), [15](15-documentation-and-evidence.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+Blast radius †. [3](03-scoping-inventory-classification.qmd), [8](08-deployment-and-release.qmd), [12](12-governing-agentic-systems.qmd)
+
+Build, fine-tune, or buy †. [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+
+## C
+
+Calibration †. [6](06-model-selection-and-development.qmd), [7](07-testing-evaluation-and-red-teaming.qmd), [11](11-governing-generative-systems.qmd), [13](13-organizing-the-governance-function.qmd), [15](15-documentation-and-evidence.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd)
+
+Circuit breaker †. [12](12-governing-agentic-systems.qmd), [13](13-organizing-the-governance-function.qmd)
+
+Conformity assessment †. [2](02-regulatory-landscape.qmd), [17](17-implementing-ai-governance.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+Context alignment †. [8](08-deployment-and-release.qmd), [9](09-operations-and-monitoring.qmd)
+
+
+## D
+
+Data minimization †. [2](02-regulatory-landscape.qmd), [5](05-data-governance-for-ai.qmd)
+
+Datasheet †. [5](05-data-governance-for-ai.qmd)
+
+Demographic parity †. [7](07-testing-evaluation-and-red-teaming.qmd)
+
+Deployer †. [2](02-regulatory-landscape.qmd), [4](04-defining-the-problem.qmd), [6](06-model-selection-and-development.qmd), [9](09-operations-and-monitoring.qmd), [10](10-incident-response-and-remediation.qmd), [11](11-governing-generative-systems.qmd), [13](13-organizing-the-governance-function.qmd), [15](15-documentation-and-evidence.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd), [17](17-implementing-ai-governance.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+Deprecation schedule †. [6](06-model-selection-and-development.qmd)
+
+Differential privacy †. [5](05-data-governance-for-ai.qmd)
+
+Disparate impact †. [2](02-regulatory-landscape.qmd), [7](07-testing-evaluation-and-red-teaming.qmd), [14](14-risk-assessment-and-management.qmd), [18](18-governing-under-uncertainty.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+Distribution shift †. [7](07-testing-evaluation-and-red-teaming.qmd)
+
+Drift †. [5](05-data-governance-for-ai.qmd), [6](06-model-selection-and-development.qmd), [7](07-testing-evaluation-and-red-teaming.qmd), [9](09-operations-and-monitoring.qmd), [11](11-governing-generative-systems.qmd), [13](13-organizing-the-governance-function.qmd), [14](14-risk-assessment-and-management.qmd), [17](17-implementing-ai-governance.qmd), [18](18-governing-under-uncertainty.qmd), [Appendix A](appendix-a-technique-reference.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+Due diligence. [3](03-scoping-inventory-classification.qmd), [5](05-data-governance-for-ai.qmd), [12](12-governing-agentic-systems.qmd), [13](13-organizing-the-governance-function.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd)
+
+
+## E
+
+EEOC. [1](01-what-ai-governance-is.qmd), [2](02-regulatory-landscape.qmd), [14](14-risk-assessment-and-management.qmd)
+
+Equal opportunity †. [7](07-testing-evaluation-and-red-teaming.qmd)
+
+Equalized odds †. [7](07-testing-evaluation-and-red-teaming.qmd)
+
+EU AI Act. [1](01-what-ai-governance-is.qmd), [2](02-regulatory-landscape.qmd), [3](03-scoping-inventory-classification.qmd), [6](06-model-selection-and-development.qmd), [9](09-operations-and-monitoring.qmd), [10](10-incident-response-and-remediation.qmd), [12](12-governing-agentic-systems.qmd), [13](13-organizing-the-governance-function.qmd), [14](14-risk-assessment-and-management.qmd), [15](15-documentation-and-evidence.qmd), [17](17-implementing-ai-governance.qmd), [18](18-governing-under-uncertainty.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd), [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+
+## F
+
+Fabrication †. [1](01-what-ai-governance-is.qmd), [11](11-governing-generative-systems.qmd)
+
+Federated governance. [13](13-organizing-the-governance-function.qmd)
+
+Fine-tuning data †. [5](05-data-governance-for-ai.qmd), [14](14-risk-assessment-and-management.qmd)
+
+FTC. [2](02-regulatory-landscape.qmd)
+
+Fundamental rights impact assessment †. [4](04-defining-the-problem.qmd)
+
+
+## G
+
+GDPR. [2](02-regulatory-landscape.qmd), [5](05-data-governance-for-ai.qmd), [14](14-risk-assessment-and-management.qmd), [15](15-documentation-and-evidence.qmd)
+
+Gender Shades. [5](05-data-governance-for-ai.qmd)
+
+General-purpose AI model †. [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+Governance body †. [13](13-organizing-the-governance-function.qmd), [14](14-risk-assessment-and-management.qmd), [17](17-implementing-ai-governance.qmd)
+
+Governance boundary †. [1](01-what-ai-governance-is.qmd), [3](03-scoping-inventory-classification.qmd)
+
+Groundedness †. [9](09-operations-and-monitoring.qmd)
+
+
+## H
+
+Harmonized standard †. [2](02-regulatory-landscape.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+HB 3773. [2](02-regulatory-landscape.qmd)
+
+Historical bias †. [5](05-data-governance-for-ai.qmd)
+
+Horizon scanning †. [18](18-governing-under-uncertainty.qmd)
+
+Human oversight. [1](01-what-ai-governance-is.qmd), [2](02-regulatory-landscape.qmd), [3](03-scoping-inventory-classification.qmd), [4](04-defining-the-problem.qmd), [9](09-operations-and-monitoring.qmd), [12](12-governing-agentic-systems.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+
+## I
+
+IMDA. [12](12-governing-agentic-systems.qmd)
+
+Impact assessment †. [2](02-regulatory-landscape.qmd), [3](03-scoping-inventory-classification.qmd), [4](04-defining-the-problem.qmd), [14](14-risk-assessment-and-management.qmd), [17](17-implementing-ai-governance.qmd), [18](18-governing-under-uncertainty.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd), [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+Incident response. [1](01-what-ai-governance-is.qmd), [4](04-defining-the-problem.qmd), [8](08-deployment-and-release.qmd), [9](09-operations-and-monitoring.qmd), [10](10-incident-response-and-remediation.qmd), [11](11-governing-generative-systems.qmd), [12](12-governing-agentic-systems.qmd), [13](13-organizing-the-governance-function.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd), [17](17-implementing-ai-governance.qmd), [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+Instruction hierarchy †. [6](06-model-selection-and-development.qmd), [11](11-governing-generative-systems.qmd)
+
+Intake †. [3](03-scoping-inventory-classification.qmd), [4](04-defining-the-problem.qmd), [5](05-data-governance-for-ai.qmd), [10](10-incident-response-and-remediation.qmd), [13](13-organizing-the-governance-function.qmd)
+
+ISO/IEC 23894. [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+ISO/IEC 38507. [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+ISO/IEC 42001. [2](02-regulatory-landscape.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+ISO/IEC 42005. [2](02-regulatory-landscape.qmd), [14](14-risk-assessment-and-management.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+ISO/IEC 42006. [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+ITutorGroup. [1](01-what-ai-governance-is.qmd)
+
+
+## L
+
+Least privilege †. [11](11-governing-generative-systems.qmd), [12](12-governing-agentic-systems.qmd)
+
+Lineage †. [5](05-data-governance-for-ai.qmd)
+
+Local Law 144. [3](03-scoping-inventory-classification.qmd), [14](14-risk-assessment-and-management.qmd), [15](15-documentation-and-evidence.qmd), [18](18-governing-under-uncertainty.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+
+## M
+
+Measurement bias †. [5](05-data-governance-for-ai.qmd)
+
+Model as judge. [7](07-testing-evaluation-and-red-teaming.qmd)
+
+Model bill of materials †. [6](06-model-selection-and-development.qmd)
+
+Model card †. [6](06-model-selection-and-development.qmd), [15](15-documentation-and-evidence.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd), [17](17-implementing-ai-governance.qmd), [Appendix A](appendix-a-technique-reference.qmd), [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+
+## N
+
+NIST AI Risk Management Framework †. [2](02-regulatory-landscape.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+NIST AI RMF. [2](02-regulatory-landscape.qmd), [9](09-operations-and-monitoring.qmd), [10](10-incident-response-and-remediation.qmd), [13](13-organizing-the-governance-function.qmd), [14](14-risk-assessment-and-management.qmd)
+
+
+## O
+
+OECD. [3](03-scoping-inventory-classification.qmd)
+
+Open-weight model. [4](04-defining-the-problem.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd)
+
+Operating model †. [13](13-organizing-the-governance-function.qmd), [17](17-implementing-ai-governance.qmd), [18](18-governing-under-uncertainty.qmd), [Appendix A](appendix-a-technique-reference.qmd)
+
+Organizational readiness †. [8](08-deployment-and-release.qmd), [9](09-operations-and-monitoring.qmd)
+
+
+## P
+
+Post-hoc explanation †. [6](06-model-selection-and-development.qmd)
+
+Post-market monitoring. [9](09-operations-and-monitoring.qmd)
+
+Post-market monitoring plan †. [9](09-operations-and-monitoring.qmd)
+
+Preemption †. [2](02-regulatory-landscape.qmd), [18](18-governing-under-uncertainty.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+Privilege separation †. [11](11-governing-generative-systems.qmd), [12](12-governing-agentic-systems.qmd)
+
+Problem statement †. [2](02-regulatory-landscape.qmd), [4](04-defining-the-problem.qmd), [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+Procurement. [1](01-what-ai-governance-is.qmd), [2](02-regulatory-landscape.qmd), [3](03-scoping-inventory-classification.qmd), [4](04-defining-the-problem.qmd), [6](06-model-selection-and-development.qmd), [8](08-deployment-and-release.qmd), [11](11-governing-generative-systems.qmd), [12](12-governing-agentic-systems.qmd), [13](13-organizing-the-governance-function.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd), [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+Progressive rollout †. [8](08-deployment-and-release.qmd)
+
+Prompt injection †. [5](05-data-governance-for-ai.qmd), [6](06-model-selection-and-development.qmd), [9](09-operations-and-monitoring.qmd), [11](11-governing-generative-systems.qmd), [12](12-governing-agentic-systems.qmd)
+
+Provenance †. [1](01-what-ai-governance-is.qmd), [2](02-regulatory-landscape.qmd), [3](03-scoping-inventory-classification.qmd), [4](04-defining-the-problem.qmd), [5](05-data-governance-for-ai.qmd), [6](06-model-selection-and-development.qmd), [7](07-testing-evaluation-and-red-teaming.qmd), [11](11-governing-generative-systems.qmd), [13](13-organizing-the-governance-function.qmd), [15](15-documentation-and-evidence.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd)
+
+Provider †. [2](02-regulatory-landscape.qmd), [6](06-model-selection-and-development.qmd), [9](09-operations-and-monitoring.qmd), [10](10-incident-response-and-remediation.qmd), [11](11-governing-generative-systems.qmd), [12](12-governing-agentic-systems.qmd), [13](13-organizing-the-governance-function.qmd), [15](15-documentation-and-evidence.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd), [17](17-implementing-ai-governance.qmd), [18](18-governing-under-uncertainty.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd), [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+Proximate cause †. [9](09-operations-and-monitoring.qmd), [10](10-incident-response-and-remediation.qmd)
+
+Proxy †. [1](01-what-ai-governance-is.qmd), [4](04-defining-the-problem.qmd), [5](05-data-governance-for-ai.qmd), [7](07-testing-evaluation-and-red-teaming.qmd), [9](09-operations-and-monitoring.qmd), [14](14-risk-assessment-and-management.qmd), [15](15-documentation-and-evidence.qmd), [17](17-implementing-ai-governance.qmd)
+
+
+## R
+
+RACI †. [13](13-organizing-the-governance-function.qmd), [Appendix A](appendix-a-technique-reference.qmd)
+
+RAISE Act. [1](01-what-ai-governance-is.qmd), [2](02-regulatory-landscape.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+Reassessment trigger †. [14](14-risk-assessment-and-management.qmd), [15](15-documentation-and-evidence.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd), [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+Red teaming. [7](07-testing-evaluation-and-red-teaming.qmd)
+
+Regulation-agnostic design †. [18](18-governing-under-uncertainty.qmd)
+
+Representativeness †. [1](01-what-ai-governance-is.qmd), [2](02-regulatory-landscape.qmd), [4](04-defining-the-problem.qmd), [5](05-data-governance-for-ai.qmd), [7](07-testing-evaluation-and-red-teaming.qmd), [8](08-deployment-and-release.qmd), [9](09-operations-and-monitoring.qmd), [10](10-incident-response-and-remediation.qmd)
+
+Residual risk †. [4](04-defining-the-problem.qmd), [5](05-data-governance-for-ai.qmd), [7](07-testing-evaluation-and-red-teaming.qmd), [8](08-deployment-and-release.qmd), [9](09-operations-and-monitoring.qmd), [11](11-governing-generative-systems.qmd), [13](13-organizing-the-governance-function.qmd), [14](14-risk-assessment-and-management.qmd), [15](15-documentation-and-evidence.qmd), [17](17-implementing-ai-governance.qmd), [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+Reversibility †. [3](03-scoping-inventory-classification.qmd), [10](10-incident-response-and-remediation.qmd), [12](12-governing-agentic-systems.qmd), [14](14-risk-assessment-and-management.qmd), [17](17-implementing-ai-governance.qmd), [18](18-governing-under-uncertainty.qmd)
+
+Risk tier. [2](02-regulatory-landscape.qmd), [3](03-scoping-inventory-classification.qmd), [11](11-governing-generative-systems.qmd), [13](13-organizing-the-governance-function.qmd), [14](14-risk-assessment-and-management.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd), [17](17-implementing-ai-governance.qmd), [18](18-governing-under-uncertainty.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd), [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+Rite Aid. [2](02-regulatory-landscape.qmd)
+
+Rollback †. [6](06-model-selection-and-development.qmd), [7](07-testing-evaluation-and-red-teaming.qmd), [8](08-deployment-and-release.qmd), [9](09-operations-and-monitoring.qmd), [10](10-incident-response-and-remediation.qmd), [11](11-governing-generative-systems.qmd), [12](12-governing-agentic-systems.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd), [17](17-implementing-ai-governance.qmd), [18](18-governing-under-uncertainty.qmd), [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+Root cause analysis †. [4](04-defining-the-problem.qmd), [9](09-operations-and-monitoring.qmd), [10](10-incident-response-and-remediation.qmd), [Appendix A](appendix-a-technique-reference.qmd)
+
+Runtime intervention †. [12](12-governing-agentic-systems.qmd), [13](13-organizing-the-governance-function.qmd), [15](15-documentation-and-evidence.qmd)
+
+
+## S
+
+SB 26-189. [2](02-regulatory-landscape.qmd)
+
+SB 53. [1](01-what-ai-governance-is.qmd), [2](02-regulatory-landscape.qmd)
+
+Scope creep †. [8](08-deployment-and-release.qmd), [9](09-operations-and-monitoring.qmd)
+
+Selection bias †. [5](05-data-governance-for-ai.qmd)
+
+Sentinel evaluation †. [7](07-testing-evaluation-and-red-teaming.qmd)
+
+Severity classification †. [10](10-incident-response-and-remediation.qmd), [13](13-organizing-the-governance-function.qmd), [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+Shadow AI †. [3](03-scoping-inventory-classification.qmd), [18](18-governing-under-uncertainty.qmd), [Appendix A](appendix-a-technique-reference.qmd), [Appendix C](appendix-c-templates-and-checklists.qmd)
+
+Socio-technical system †. [1](01-what-ai-governance-is.qmd)
+
+Solely automated decision †. [2](02-regulatory-landscape.qmd), [3](03-scoping-inventory-classification.qmd)
+
+Supply chain. [3](03-scoping-inventory-classification.qmd), [6](06-model-selection-and-development.qmd), [13](13-organizing-the-governance-function.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+System card. [6](06-model-selection-and-development.qmd), [7](07-testing-evaluation-and-red-teaming.qmd), [15](15-documentation-and-evidence.qmd)
+
+System readiness †. [8](08-deployment-and-release.qmd)
+
+
+## T
+
+Target operating model †. [17](17-implementing-ai-governance.qmd), [18](18-governing-under-uncertainty.qmd), [Appendix A](appendix-a-technique-reference.qmd)
+
+Technical documentation. [2](02-regulatory-landscape.qmd), [9](09-operations-and-monitoring.qmd), [15](15-documentation-and-evidence.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+Three Lines Model †. [13](13-organizing-the-governance-function.qmd)
+
+Title VII. [2](02-regulatory-landscape.qmd), [4](04-defining-the-problem.qmd), [14](14-risk-assessment-and-management.qmd), [16](16-third-party-vendor-and-supply-chain-governance.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+Traceability. [2](02-regulatory-landscape.qmd), [5](05-data-governance-for-ai.qmd), [7](07-testing-evaluation-and-red-teaming.qmd), [14](14-risk-assessment-and-management.qmd), [15](15-documentation-and-evidence.qmd), [Appendix A](appendix-a-technique-reference.qmd)
+
+Traceability matrix †. [14](14-risk-assessment-and-management.qmd), [15](15-documentation-and-evidence.qmd), [Appendix A](appendix-a-technique-reference.qmd)
+
+TRAIGA. [2](02-regulatory-landscape.qmd), [Appendix B](appendix-b-regulatory-quick-reference.qmd)
+
+Two-speed problem †. [17](17-implementing-ai-governance.qmd)
+

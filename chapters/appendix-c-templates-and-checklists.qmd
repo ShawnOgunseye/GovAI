@@ -1,0 +1,210 @@
+# Appendix C: Templates and Checklists
+
+These twelve templates are offered under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) for readers to copy, adapt, and use directly in their own organizations. Reuse under that license has to satisfy its actual conditions, not a looser summary of them. The license requires attribution and a notice of changes made. Its NonCommercial term is defined by whether the use is primarily intended for or directed toward commercial advantage or monetary compensation, a broader test than resale alone. This paragraph is a summary for convenience, not a substitute for the license text itself, which a reader relying on these templates commercially or without attribution should read directly. Within those conditions, fill in the fields, cut what your organization does not need, add what it does, and use the result as a working document instead of treating this appendix as an illustration to reference from a distance. Each field below is cross-referenced to the chapter section that establishes it, so a filled-in template can be traced back to the specific requirement it satisfies.
+
+Each template below is scoped to hold one record for one system, model, agent, or event; an organization with many systems keeps many filled instances of the same template instead of trying to make a single instance cover a portfolio. Fields marked as cross-references exist so the nine templates link into one connected set of records, rather than nine disconnected documents. That is what lets a later reviewer trace a specific system's history across inventory, assessment, and incident records without reconstructing the connections from memory. Because a specific chapter's model can itself be revised in a later edition, each template also carries the same minimal record-control header. That header records a template ID and version, the book edition and chapter section it was built from, and the date it was last checked against that section's current text. That lets a later reviewer tell which version of a chapter's model a specific filled instance was built against. Every filled instance should also carry its own status, author, reviewer, approver, effective date, and change history in addition to its substantive fields, following Chapter 15's evidence-record discipline generally, not restating it individually in each template below.
+
+## 1. AI Use Case Documentation
+
+Complete before any development or procurement work begins, per Chapter 4's argument that governance starting after a system exists is inspection rather than governance.
+
+- Use case name and one-sentence description
+- Business owner, naming a specific person and role, not a department alone, with the effective date this person took the role so the record stays traceable when the person changes
+- Problem statement, naming what decision or task this system addresses and for whom
+- Why an AI approach specifically, as distinct from a rules-based or manual alternative
+- Expected benefit, and what happens if this use case is not pursued at all
+- Proposed path: build, fine-tune, or buy (Chapter 6)
+- System class: predictive, generative, or agentic, or a mix (Chapter 3, section 3.1)
+- Affected population, naming who experiences this system's outputs or actions
+- Decision type: recommendation to a human, or autonomous action (Chapter 3, section 3.6)
+- Date submitted and date entered into the system inventory below
+
+## 2. System Inventory Record
+
+One record per system, maintained per Chapter 3, section 3.3, as a living artifact with an owner and a review date, not a one-time exercise. A system discovered through the shadow AI discovery process in Chapter 3, section 3.4, uses this same record; note the discovery method in the last field rather than treating a discovered system as a different kind of record.
+
+- System name and internal identifier
+- Business owner and technical owner (may differ)
+- Business unit and physical or organizational location of use
+- System class: predictive, generative, or agentic
+- Deployment status: in development, piloting, in production, retired
+- Model or models used (cross-reference to Model Inventory Record entries)
+- Data sources and categories of personal data processed, if any
+- Risk classification and the date it was assigned (cross-reference to Impact Assessment)
+- Applicable regulatory mappings (Chapter 3, section 3.7; Chapter 18, section 18.3)
+- Date of last review and scheduled next review date
+- Record owner, last update date, and, if applicable, discovery method if this system was not originally self-reported
+
+## 3. Model Inventory Record
+
+One record per model, distinct from the System Inventory Record above because one model can serve several systems and one system can call several models, per Chapter 3's system-versus-model distinction.
+
+- Model name and version identifier
+- Developer or source (internal build, fine-tune of a named base model, or purchased)
+- Path: build, fine-tune, adapter, or licensed third-party (Chapter 16, section 16.6)
+- Training data summary, or "not visible to this organization" where the path is buy (Chapter 5)
+- Intended use and explicitly out-of-scope uses
+- Known limitations and failure modes as currently understood
+- Systems this model serves (cross-reference to System Inventory Record entries)
+- Date last validated and validation method used
+- Reassessment triggers that would require re-validation (Chapter 14, section 14.5)
+
+## 4. Model Card
+
+For a model an organization builds or fine-tunes itself. For a purchased model, use this same structure to record what the vendor has and has not disclosed, per Chapter 15's adversarial reading approach, marking undisclosed fields explicitly instead of leaving them blank.
+
+- Model name, version, and date
+- Intended use and explicitly out-of-scope uses
+- Training data description, covering sources, time period, and known composition, or the vendor's disclosed description quoted directly if this organization cannot see the underlying data
+- Performance metrics, the population and methodology they were measured against, and the date measured
+- Fairness testing summary, covering metrics used, populations compared, and findings (Chapter 7)
+- Known limitations and documented failure modes
+- Safety and refusal behavior notes, where applicable (Chapter 11)
+- Retraining or update history and how a user of this card is notified of changes
+- Contact point for questions this card does not answer
+
+## 5. Impact Assessment
+
+Follow Chapter 14's five-component structure as it stands in this book's current text. That structure is itself the subject of ongoing refinement across this book's own chapters, so record which edition and check date this template instance was built against rather than assuming the structure is fixed for all time. Complete before deployment, and again whenever a reassessment trigger fires. Where a stakeholder who would normally be consulted cannot be reached, record which of Chapter 14's consultation substitutes was used instead and what it cannot recover compared to direct consultation.
+
+- System description, covering what it does, who it affects, and at what scale
+- Risk identification, listing each identified risk, its likelihood and severity (Chapter 14, section 14.3), and its source
+- Mitigation, naming the specific control addressing each risk and whether it reduces the risk's occurrence or only detects it after the fact (Chapter 14, section 14.4)
+- Residual risk, stating what remains after mitigation explicitly instead of leaving it implied by silence
+- Documented decision, naming the accountable approver, the date, and the specific reasoning accepting the residual risk or requiring further mitigation before proceeding
+- Reassessment trigger conditions and next scheduled review date
+- Legal role and jurisdiction of each actor involved, naming who is provider, deployer, or importer under each instrument that reaches this system, since the same organization can hold different roles under different instruments (Chapter 4, section 4.8)
+- Duration and frequency of the processing or use, as required of a deployer under Article 27 of the AI Act and distinct from the deployment status recorded on the System Inventory Record (Chapter 4, section 4.8)
+- The specific authority who accepts residual risk, named as a person and role with the scope of what that person is empowered to accept, which the documented decision field above assumes but does not itself establish (Chapter 4, section 4.8)
+- What remains unaddressed, stated explicitly rather than left implied by the absence of an entry. An assessment listing only mitigated risks is describing an aspiration (Chapter 4, section 4.8)
+- Mapping from each field above to the specific provision it is meant to satisfy, per regulation. Legal sufficiency for a given instrument cannot be inferred from having completed an internal template (Chapter 4, section 4.8; Chapter 3, section 3.7)
+
+## 6. Vendor Assessment
+
+Structured across Chapter 16's four assessment dimensions, built against this book's current chapter text and, like template 5, worth re-checking against a later edition rather than assumed fixed. Log every question the vendor declined to answer in the final field; a declined question is itself evidence.
+
+- Provider dimension, covering company stability, support commitments, and track record
+- System dimension, covering what the model actually does, its documented limitations, and disaggregated performance data if obtainable
+- Documentation dimension, covering model card completeness, per template 4 above, and what is missing
+- Compliance dimension, covering applicable certifications, audit rights offered, and regulatory mappings the vendor supports
+- Contract provisions confirmed present, covering information rights, audit rights, change notification, incident cooperation, liability allocation, and exit terms (Chapter 16, section 16.5)
+- Questions the vendor declined to answer, and whether each decline is disqualifying (Chapter 16, section 16.3)
+- Overall recommendation and named approver
+
+## 7. Agent Registration and Permission Scope
+
+One record per agentic system or agent role, per Chapter 12's argument that an agent's authority must be recorded before it acts, not reconstructed afterward.
+
+- Agent name and the system it belongs to (cross-reference to System Inventory Record)
+- Issuing authority, naming who approved this agent's credential and on what basis
+- Subject and audience, naming the actor the credential is issued to and the resource or party it is valid against
+- Scope of authority, naming the specific actions, resources, and purposes this agent is permitted to invoke without further human approval, and what is explicitly out of scope
+- Tools and systems this agent can access, and the permissions granted to each
+- Credential form and validity, describing how the scope is technically enforced (a scoped, time-bound credential per Chapter 15, section 15.5), its validity window, and its current revocation state
+- Policy decision point, naming what evaluates a given action against this scope at runtime and what happens on a policy denial
+- Escalation conditions, naming what triggers a required human-in-the-loop step and the approval and result recorded when one fires
+- Logging requirements, naming what is captured at each action, including the scope in force at the time of the action, a correlation ID linking related actions, and a tamper-evident integrity mark on the record (Chapter 15, section 15.5)
+- Monitoring, naming what ongoing check confirms this agent is not exceeding its recorded scope in practice and how an exception surfaces
+- Delegation chain, if this agent can invoke or supervise other agents, including each hop's own scope and whether it can be narrower or wider than the delegating agent's own
+- Review cadence and the date of last permission-scope review
+- Deregistration or scope-revocation process, who is authorized to invoke it, and what recovery or rollback applies to actions already taken under a credential later found to have been wrongly scoped
+
+## 8. Incident Response
+
+Structured per Chapter 10's response sequence. Open a record at the moment an incident is identified, not after it is resolved.
+
+- Incident identifier, date and time first identified, and detection source (monitoring, user report, audit, vendor notice, or other)
+- Accountable owner for the response, named at the point the record is opened
+- Severity classification and the criteria that produced it
+- Systems and populations affected
+- Evidence preservation, naming what was captured before any remediation altered the system's state and where it is retained
+- Containment actions taken, and the date and time each was taken
+- Assessment, stating what is currently known about scope and cause, updated as it changes, including root cause and any contributory factors distinct from it (Chapter 10's investigation approach)
+- Communication log, naming who was notified, when, and with what content, kept current through resolution instead of written once at closure
+- Regulatory reporting determination, stating whether a notification obligation applies, under which specific regulation, in what role (for example, an EU AI Act operator's serious-incident duty under Article 73), the applicable deadline measured from awareness, and the status of any required interim and final reports
+- Affected-party remedy, naming what correction, compensation, or other remedy was offered or provided, to whom, and when
+- Rollback or recovery, naming what was reverted or restored and confirming that the reversion actually took effect
+- Documentation of decisions made during the response, each with a timestamp and the name of who made it
+- Corrective action and its verification, naming the specific process or control change the incident produced and how its effectiveness was confirmed instead of only implemented
+- Closure criteria met, post-incident review date, and the lesson fed back into the relevant control, template, or training material
+- For a system with delayed or absent ground truth (Chapter 9), the method used to establish how many cases were actually affected, since a prevented or undetected outcome leaves no confirmed case to count directly
+
+## 9. Governance Readiness
+
+Per Chapter 17. Use this to conduct a current-state assessment, not to describe an aspirational future state.
+
+- Inventory assurance, meaning the percentage of known systems with a current inventory record, plus a separate estimate of unknown-system exposure from the date and method of the last discovery sweep (Chapter 3's shadow AI discovery). A percentage of known systems alone cannot measure what the inventory has not yet found
+- Classification coverage, giving the percentage of inventoried systems with a current risk classification
+- Process versus practice, stating for each governance process that exists on paper whether it is actually used, for what proportion of applicable systems, and evidence supporting that answer (Chapter 17, section 17.2)
+- Requirements gathered, giving the date of last consultation with developers, business owners, and reviewers on where the process obstructs their work
+- Control proportionality, stating whether review depth is tied to risk tier or applied uniformly regardless of it
+- Cost model, stating whether each control's cost has been estimated at production volume rather than pilot volume
+- Training completion, giving the percentage of each role trained and the date of last training update
+- Outcome metrics, covering issues found before deployment versus after, classification accuracy on independent review, and bypass rate by system and by team
+- Named owner of this readiness assessment and date completed
+
+## 10. Scope Decision Record
+
+One record per scoping exercise, per Chapter 3, section 3.2. The boundary is a property of the deployment rather than of the software, and it moves without anyone changing the code when a step that acts on the output is added. A boundary drawn once and left unrecorded cannot be defended later or revisited when the deployment changes, which is why the judgment needs its own record rather than a field on the system record it produces.
+
+- Scope decision identifier, and the system or candidate system it concerns
+- Date of the decision, and the person accountable for it by name and role
+- What triggered this scoping exercise: intake, procurement, a discovery sweep, a change to an existing deployment, or a periodic review
+- Description of the deployment as it actually runs, distinguished from the vendor's description of the product
+- The AI component or components, which are in scope intensively and are not the subject of the judgment below
+- For each dependency considered, its name, and the decision recorded as in scope, out of scope, or in scope at limited depth
+- For each dependency, the one-sentence justification, naming which of the eight materiality grounds applies: purpose, authority, data, behaviour, exposure, evidence, ability to be intervened upon, or remedy available afterward
+- Dependencies explicitly considered and excluded, with the reason each cannot materially affect any of the eight grounds. An exclusion with no recorded reason is an omission rather than a decision
+- Disagreements among those consulted, recorded rather than resolved silently, with who held which position
+- What would move this boundary, naming the specific changes that would require the decision to be revisited, such as a step added that acts on the output or a new population becoming affected
+- Cross-reference to the System Inventory Record or Records this decision produced
+- Record owner, last update date, and scheduled date for the next boundary review
+
+## 11. Risk Classification and Regulatory Applicability Record
+
+One record per system, per Chapter 3, sections 3.6 and 3.7. The two parts below answer two independent questions and must be completed in order, without the first informing the second. The internal tier is an operating decision about how much governance attention a system receives. Legal applicability is decided by each regulation's own trigger tested against the system's own facts. A high internal tier is not evidence that any regulation applies, and a regulation applying does not set the internal tier. The most common failure this record exists to prevent is answering the second question by restating the first.
+
+**Part A. Internal classification.**
+
+- System identifier and cross-reference to its System Inventory Record
+- System class: predictive, generative, or agentic, or a stated mix
+- Consequence, stating what happens to an affected person when the system is wrong
+- Autonomy, stating whether the system recommends to a human or acts, and what the human can actually change in the time available
+- Population, naming who is affected and how many, including those affected without interacting with the system
+- Reversibility, stating whether an incorrect outcome can be undone, by whom, within what period, and at whose cost
+- How the four factors weigh for this system class specifically, per section 3.6, since the same factors do not carry the same weight across predictive, generative, and agentic systems
+- Internal tier assigned, and the one-sentence defence of it
+- Person accountable for the classification by name and role, and the date assigned
+
+**Part B. Regulatory applicability, tested independently.**
+
+Complete one block per regulation considered. Do not carry any value from Part A into these blocks.
+
+- Regulation, cited by instrument and the article or section containing the trigger
+- The trigger test as that instrument states it
+- The system's own facts relevant to that test, drawn from the system record rather than from Part A
+- Result: the trigger fires, does not fire, or cannot be determined with what is currently known
+- If it cannot be determined, the specific question outstanding and who will answer it by when
+- Obligations that follow if it fires, and where the evidence of meeting each will live
+- Date tested, and the date this test is next due, since a trigger that does not fire today may fire when the instrument or the deployment changes
+
+**Part C. Separation check.**
+
+- Confirmation that no Part B result was inferred from the Part A tier, recorded by the person who completed Part B
+- Any place where the two answers diverge, such as a low internal tier with a regulation that fires or a high tier with none that do. A divergence is an expected outcome of testing independently, not an error to reconcile
+
+## 12. Discovery Sweep Record
+
+One record per sweep, per Chapter 3, section 3.4. What an inventory does not contain is not a random sample: formally procured systems are visible, and what escapes correlates with small budgets, individual initiative, and the absence of the review that would have caught a problem. The method is therefore the governed object. Without a record of which channels were searched and which were not, a completed sweep cannot be distinguished from an incomplete one, and coverage cannot be shown to improve between sweeps.
+
+- Sweep identifier, start and end dates, and the person accountable for it by name and role
+- Scope of the sweep, naming which business units, regions, and system types were in and out
+- Channels searched, with the method used for each and the date searched. Channels to consider include procurement and expense records, software asset and licence inventories, low-code and automation platforms, API gateway and egress logs, browser or SaaS discovery tooling, existing vendor contracts for AI features added after signature, code repositories, and structured interviews with named roles
+- Channels not searched, each with the reason, whether cost, access, tooling, or a decision to defer. This field carries the sweep's residual blind spot and is the reason the record exists
+- Why self-reporting alone was not relied on, per section 3.4's finding that the people running undisclosed systems do not describe themselves as deploying AI
+- Systems found, with a count and a cross-reference to the System Inventory Record created for each. Record the discovery method per system in that record's discovery field rather than here
+- Findings that changed an existing record rather than creating one, such as a system already inventoried that proved to contain a second component
+- Items examined and determined not to be in scope, with the ground, so the next sweep does not re-examine them without cause
+- Estimated residual exposure, stated as a reasoned judgment from the unsearched channels rather than as a percentage of what was found. A percentage of known systems cannot measure what the sweep did not reach
+- What would change before the next sweep, naming channels to add and access to obtain
+- Date of the next scheduled sweep, and the trigger conditions that would require one sooner

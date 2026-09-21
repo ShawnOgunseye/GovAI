@@ -1,0 +1,104 @@
+# Appendix B: Regulatory Quick Reference
+
+**This appendix is a snapshot, not a living document.** Every entry below was checked against the primary source named against it, current as of **12 September 2026**. Regulatory dates move, as Chapter 18 spent an entire chapter demonstrating. A reader consulting this appendix more than a few months after publication should treat every date here as a starting point for a horizon scan rather than as a current fact, per the discipline Chapter 18, section 18.2 describes. Where a date or status could not be confirmed against a primary source, this appendix says so instead of printing an unverified figure.
+
+## The EU AI Act: tiers and obligations
+
+The Act regulates by risk tier and allocates duties by role, established fully in Chapter 2. It sets out four tiers, presented below in descending order of obligation.
+
+**Unacceptable risk (Article 5).** Prohibited outright are social scoring of natural persons, certain forms of biometric categorization and untargeted facial recognition database scraping, emotion inference in workplaces and schools, and exploitation of vulnerabilities. The 2026 Digital Omnibus added two more to the list, AI systems generating non-consensual sexually explicit deepfakes of identifiable people and AI-generated child sexual abuse material. The social-scoring prohibition reaches any deployer, public or private, not public authorities alone.
+
+**High risk (Article 6, Annexes I and III).** The Act's most detailed obligation set applies here, requiring a risk management system, data governance, technical documentation, record-keeping, transparency to deployers, human oversight, and accuracy, robustness, and cybersecurity. These obligations fall primarily on providers, with a narrower set on deployers. Annex III lists standalone high-risk use cases directly, including employment, creditworthiness, and law enforcement contexts this book's running cases inhabit. Annex I covers high-risk AI embedded in products already regulated under EU product safety law.
+
+**Limited risk (Article 50).** Article 50 attaches transparency duties to specific systems and actors, not to a residual bucket covering everything outside the other tiers. Providers and deployers must disclose that a person is interacting with an AI system, label synthetic content, and disclose deepfakes and AI-generated text published to inform the public on matters of public interest.
+
+**Minimal risk.** Everything else, unregulated by the Act's risk tiers, though general-purpose AI model obligations under Chapter V apply regardless of the risk tier of any downstream system built on such a model.
+
+## EU AI Act timeline, as amended by the 2026 Digital Omnibus
+
+Regulation (EU) 2026/1744, dated 8 July 2026 and in force 27 July 2026, deferred the high-risk regulation substantially. The following obligations were in application as of this appendix's check date.
+
+| Date | Obligation |
+|---|---|
+| 2 Feb 2025 | Definitions, Article 5 prohibitions as originally enacted |
+| 2 Aug 2025 | General-purpose AI model obligations (Articles 53, 55), governance chapter, most penalty provisions |
+| 2 Aug 2026 | General application date; Article 50 transparency obligations; enforcement begins, including Commission fining power over general-purpose AI providers |
+
+The following obligations were pending as of the check date.
+
+| Date | Obligation |
+|---|---|
+| 2 Dec 2026 | New Article 5 prohibitions (the two added by the omnibus) take effect |
+| 2 Aug 2027 | Member State regulatory sandboxes operational |
+| **2 Dec 2027** | **High-risk regulation for standalone Annex III systems.** Deferred from the originally enacted 2 Aug 2026 |
+| **2 Aug 2028** | **High-risk regulation for Annex I systems** embedded in regulated products. Deferred from the originally enacted 2 Aug 2027 |
+| 2 Aug 2030 / 31 Dec 2030 | Legacy system transition provisions under Article 111, for systems already on the market before the relevant obligations applied |
+
+The deferral exists because the harmonized standards that would let a provider demonstrate compliance cheaply were not ready. As of this appendix's check date, no CEN-CENELEC standard developed for AI Act purposes has been cited in the Official Journal, so the presumption of conformity Article 40 offers is not yet available to any provider on any standard. One standard, covering the quality management system obligation, cleared CEN-CENELEC's own internal approval in mid-2026, which is a necessary step toward Official Journal citation but is not the citation itself. Do not treat a standard's internal publication by a standards body as equivalent to its legal effect under the Act; only Official Journal citation confers the presumption.
+
+## EU AI Act conformity assessment routes
+
+A high-risk system reaches the market through one of two routes. Internal control lets a provider self-assess conformity against the Act's requirements and issue its own declaration, available for most Annex III use cases where a harmonized standard has been applied or where the provider can otherwise demonstrate the requirements are met. Third-party conformity assessment, through a notified body, is required for biometric identification systems and for products already subject to third-party assessment under other EU product law, such as medical devices. A provider using internal control still bears full legal responsibility for the system's conformity; the absence of third-party review changes who checks the work, not what work must be done.
+
+## EU AI Act penalties
+
+| Provision | Ceiling |
+|---|---|
+| Prohibited practices (Article 5 violations) | EUR 35,000,000 or 7% of total worldwide annual turnover, whichever is higher |
+| Most other operator and notified body obligations | EUR 15,000,000 or 3%, whichever is higher |
+| Incorrect or misleading information to authorities | EUR 7,500,000 or 1%, whichever is higher |
+| Small and medium enterprises, including start-ups | The lower of the applicable percentage or fixed amount, not the higher |
+| Commission fines on general-purpose AI model providers | EUR 15,000,000 or 3% |
+
+## United States: federal landscape
+
+No single, complete federal AI statute has been enacted as of this appendix's check date. Federal AI policy operates through executive action and agency guidance, not legislation. Executive Order 14365 set federal AI policy direction. Litigation testing its interaction with state law, including a challenge to Colorado's now-superseded statute, produced a stipulated stay of enforcement rather than any ruling on the merits. No US court has ruled on the merits of a challenge to a state AI law as of the check date. A proposed decade-long moratorium on state AI enforcement was removed from a 2025 reconciliation bill by a 99 to 1 Senate vote. That is the clearest evidence available that federal preemption of state AI law is contested on grounds other than party. A discussion draft addressing preemption of state authority over AI model development specifically, without a bill number as of the check date, was released in mid-2026 by members of the House. Whether it has since been introduced as a numbered bill should be checked directly, not assumed either way.
+
+NIST, an agency and not a legislature, has published the closest thing to federal technical guidance. See below.
+
+## United States: state landscape
+
+State AI law is a moving, jurisdiction-by-jurisdiction patchwork, not a single framework. The table below records only the specific instruments this appendix's check date could confirm against a named bill or session law; it is a starting point for a horizon scan, not a claim of complete coverage of every state.
+
+| Jurisdiction | Instrument | Status as of check date | Covered actor / trigger | Core duties | Effective date |
+|---|---|---|---|---|---|
+| Colorado | Senate Bill 26-189 (replacing Senate Bill 24-205 in its entirety) | Enacted; rulemaking open for public comment | Developers and deployers of covered automated decision tools | Developer documentation, deployer record-keeping (at least three years), consumer disclosure at point of interaction, consumer rights to correction and human review; enforced exclusively by the state Attorney General, no private right of action | 1 Jan 2027 |
+| California | Transparency in Frontier Artificial Intelligence Act | Enacted | Developers of frontier models above a stated computing-power threshold | Frontier-model transparency and safety disclosures | 1 Jan 2026 |
+| Texas | Responsible Artificial Intelligence Governance Act (TRAIGA) | Enacted | Government users of AI in covered decisions, and developers/deployers subject to its specific prohibitions; not a frontier-model compute-threshold statute | Disclosure and prohibition duties (including prohibited uses such as manipulative AI and unconsented biometric identification); enforced exclusively by the state Attorney General with a cure period, no private right of action; does not reach private employment and imposes no impact-assessment or due-diligence duty | 1 Jan 2026 |
+| New York | RAISE Act | Enacted, effective date amended from the original chapter law | Developers of frontier models above a stated computing-power threshold | Frontier-model governance obligations | 1 Jan 2027 |
+| Illinois | AI Safety Measures Act | Enacted | Developers of frontier models above a stated computing-power threshold | Initial disclosure, plus an independent third-party audit requirement, the first among these four states' frontier statutes | Disclosure 1 Jan 2027; audit requirement 1 Jan 2028 |
+| New York City | Local Law 144 | In effect, unchanged as of check date | Employers using an automated employment decision tool | Bias audit within one year before use, public posting of results, candidate notice | In effect since 2023 |
+| Illinois | Video interview law and Human Rights Act provisions addressing AI in hiring | Enacted | Employers using AI in video interviews or other covered hiring contexts | Notice and consent requirements specific to the covered method | Varies by provision; confirm current text before relying on a specific date |
+| Connecticut | 2026 employment provisions | Enacted | Employers using automated employment technology | Disclosure that an employee is interacting with the technology, written notice before it influences a hiring decision | 2026; confirm exact date against the enacted text |
+
+Beyond the instruments tabled above, a distinct category of conversational AI and companion chatbot statutes emerged across roughly fourteen states during 2026, addressing AI interaction disclosure, self-harm response protocols, and safeguards for minor users. This appendix has not independently confirmed each state's specific bill number and status. An organization operating a conversational AI product should treat this category as an active horizon-scanning priority, and verify the current instrument in each state where it operates instead of relying on the count above. Sector and public-sector laws also exist in a growing but still scattered set of states, addressing health insurance utilization review automation and public-sector AI use and procurement specifically. These generally sit at a lighter obligation level than the frontier-model and employment statutes tabled above, and are likewise better confirmed against a current state-by-state search than assumed from this snapshot.
+
+## NIST AI Risk Management Framework
+
+The AI RMF (NIST AI 100-1, published January 2023) organizes risk management into four functions, each with named categories. **Govern** cultivates an organizational culture and structure for AI risk management through policies and processes, accountability structures, workforce diversity in AI risk roles, organizational commitment to trustworthy AI characteristics, mechanisms for external stakeholder feedback, and policies addressing third-party and supply chain risk. **Map** establishes the context needed to frame risk correctly by understanding the deployment context, categorizing the AI system, documenting its capabilities and intended benefits and costs, mapping risks and benefits across system components, and mapping impacts to individuals, groups, and society. **Measure** applies quantitative and qualitative methods to analyze and track risk by identifying appropriate methods and metrics, evaluating the system for trustworthy characteristics including validity, safety, and fairness, tracking identified risks over time, and gathering feedback on how well the measurement approach itself is working. **Manage** allocates resources to the risks the first three functions surfaced by prioritizing and acting on risk, applying strategies to maximize benefit and minimize harm, managing third-party risk specifically, and documenting and monitoring risk treatments over time.
+
+A companion Generative AI Profile (NIST AI 600-1, published July 2024) maps these same four functions to risks specific to generative systems, including confabulation, harmful content generation, data privacy leakage through model outputs, and intellectual property concerns among others. Both documents remained the current, unrevised versions as of this appendix's check date. NIST has stated the framework is under revision as part of a federal AI policy initiative, so a reader should check for a newer version before treating either document's exact category list as final.
+
+## ISO/IEC 42001: clause structure
+
+ISO/IEC 42001:2023, the AI management system standard, follows the common high-level structure shared across ISO management system standards, making it straightforward to integrate into an organization already certified to a standard such as ISO 27001 or ISO 9001. Its numbered clauses proceed, in order, through Scope, Normative references, Terms and definitions, Context of the organization, Leadership, Planning, Support, Operation, Performance evaluation, and Improvement. An Annex lists specific AI management controls and objectives, covering policies related to AI, internal organizational roles, resources dedicated to AI systems, impact assessment, and the AI system life cycle. It also covers data governance for AI systems, information provided to interested parties, use of AI systems, and third-party and customer relationships.
+
+The European Commission and its Joint Research Centre have stated that ISO/IEC 42001, while a useful foundation for an AI management system, is not aligned in objective with the specific quality management system the EU AI Act requires. ISO/IEC 42001 requires an AI system impact assessment covering individuals, groups, and societies, but its certification is not designed to satisfy the Act's system-specific technical documentation and quality management provisions. An organization certified to 42001 has not thereby satisfied the Act's quality management obligation, though the certification's processes substantially overlap with what the Act separately requires.
+
+## Other standards worth knowing by name
+
+ISO/IEC 42005:2025 addresses AI system impact assessment specifically, the closest existing standard to Chapter 14's subject. ISO/IEC 42006:2025 addresses requirements for bodies providing audit and certification of AI management systems. ISO/IEC 23894:2023 addresses AI risk management generally, a companion to 42001 rather than a competitor to it. ISO/IEC 38507:2022 addresses the governance implications of AI use for organizational governing bodies specifically, bearing on this book's Chapter 13. Several further standards on human oversight, AI system logging, and quality models for AI systems were in late-stage development as of the check date and had not yet published; treat any reference to them elsewhere as forthcoming, not available.
+
+## Sector-specific requirements
+
+**Healthcare.** In the United States, whether a clinical decision support or diagnostic tool resembling this book's `MEDASSIST` case needs premarket clearance or approval depends on a specific determination, not a general presumption. FDA guidance excludes certain clinical decision support functions from the statutory device definition outright, treats some other functions under enforcement discretion, and regulates the remainder as devices proportionate to risk. The same product can therefore contain both device and non-device functions. The determination has to be made function by function, against the device definition, the statutory exclusions, and current FDA guidance (checked 2026-09-13, per FDA's Clinical Decision Support Software FAQs). Where a function is regulated as a device, ongoing obligations to report adverse events and material changes to its cleared function apply. The FDA has also issued guidance specifically addressing predetermined change control plans for AI-enabled devices whose performance is expected to update after initial clearance, directly relevant to Chapter 6's model versioning and Chapter 9's drift monitoring. Separately, HIPAA's privacy and security requirements apply only where the organization is a covered entity or a business associate handling protected health information, not to health data generally or to every organization that touches it. An organization needs to determine its own HIPAA status independently of any FDA determination, since neither regulation's applicability establishes the other's. A product can be subject to one, both, or neither, depending on what it does and who operates it.
+
+**Financial services.** In the United States, a credit decisioning system such as this book's `FAIRLEND` case operates under the Equal Credit Opportunity Act and its implementing Regulation B. This requires a specific and accurate statement of reasons when an application for credit is denied, the adverse action explanation this book's Chapter 8 and Chapter 15 both address directly. Banking regulators, principally the Federal Reserve and the Office of the Comptroller of the Currency, have issued supervisory guidance on model risk management. This guidance predates the AI-specific frameworks this appendix otherwise covers. It is frequently the source of the model risk management function that Chapter 13 describes as a potential structural competitor to a newer AI governance function. That guidance's scope should not be assumed to reach every AI model automatically. Interagency guidance updated in 2026 (Federal Reserve SR 26-2, effective 17 April 2026, superseding SR 11-7 and SR 21-8) applies its principles to traditional and non-generative, non-agentic AI models while expressly excluding generative and agentic AI models from that specific framework's definition (checked 2026-09-13). An institution within SR 26-2's scope needs to determine first whether a given system meets the guidance's model definition before assuming existing model-risk infrastructure already covers it. A generative or agentic system excluded from that definition still needs governance, just not automatically through the model-risk-management channel. State insurance regulators separately govern algorithmic underwriting and pricing tools through unfair discrimination statutes that apply independently of any AI-specific statute a state might also enact, a survival this appendix's Colorado entry notes directly.
+
+**Employment.** Beyond the state and local statutes already listed above, the US Equal Employment Opportunity Commission has issued guidance applying existing anti-discrimination law, including disparate impact theory under Title VII, to algorithmic hiring tools without requiring new legislation to do so. This means an employment AI system such as this book's `TALENTSCREEN` case carries discrimination-law exposure even in a jurisdiction with no AI-specific statute in effect. An organization operating in this sector should treat the absence of an AI-specific state law as silence on the new label, not an absence of applicable law.
+
+## Using this appendix
+
+Nothing above substitutes for reading the primary source directly before relying on any specific obligation, threshold, or date in a real compliance decision. This appendix exists to orient a reader quickly across a landscape this book has already argued, in Chapter 18, cannot be captured permanently in any single document, including this one.
+
+This appendix deliberately omits a dated comparison of specific model capabilities across providers. Such a comparison would be obsolete within a small number of months of this book's printing, considerably faster than the regulatory dates above move. No comparison this appendix could print would remain a fair or current snapshot for long enough to be worth the space. A reader who needs current capability comparisons should consult a provider's own published evaluation results, dated at the time of consultation, rather than any fixed table a printed book could offer.

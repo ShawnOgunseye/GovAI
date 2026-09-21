@@ -1,0 +1,127 @@
+project:
+  type: book
+  output-dir: docs
+
+  # Everything listed here is copied into docs/ on every render.
+  # This is the mechanism that matters: `quarto render` cleans output-dir, so
+  # anything placed in docs/ by hand is destroyed on the next build. The archived
+  # first edition, the redirect stubs, and the two GitHub Pages control files all
+  # live outside docs/ in source control and are copied back in each time.
+  # v1/ is deliberately NOT listed. The first edition is no longer published on
+  # this site; it remains citable at its Zenodo DOI, which is permanent and
+  # outside this repository. The v1/ directory is kept in source control so the
+  # decision is reversible, but it is not copied into the rendered site.
+  resources:
+    - CNAME
+    - .nojekyll
+    - figures/
+
+  # No post-render hook. place-redirects.py was removed on 2026-09-21: it existed
+  # to place first-edition redirect stubs, the redirects/ directory was never
+  # created, so it exited as a no-op on every render. On Windows it did worse than
+  # nothing, because `python` resolves to the Microsoft Store alias stub and the
+  # hook failed loudly after Quarto had already cleared docs/. A hook that cannot
+  # run on the machine the book is rendered from is a standing hazard, and this one
+  # had no work to do. If redirects are needed later, restore the script from git
+  # history and use `py` on Windows or an absolute interpreter path.
+
+book:
+  title: "How to Govern AI"
+  subtitle: "Foundations and Practical Guide to AI Governance"
+  author: "Shawn Ogunseye"
+  date: "August 2026"
+  site-url: https://aigov.ogunseye.com
+  repo-url: https://github.com/shawnogunseye/GovAI
+  repo-actions: [issue]
+  search: true
+  page-navigation: true
+  sidebar:
+    style: docked
+    collapse-level: 1
+    border: false
+  chapters:
+    - index.qmd
+    - chapters/00-preface.qmd
+    - part: "Part I: Foundations"
+      chapters:
+        - chapters/01-what-ai-governance-is.qmd
+        - chapters/02-regulatory-landscape.qmd
+        - chapters/03-scoping-inventory-classification.qmd
+    - part: "Part II: The AI System Lifecycle"
+      chapters:
+        - chapters/04-defining-the-problem.qmd
+        - chapters/05-data-governance-for-ai.qmd
+        - chapters/06-model-selection-and-development.qmd
+        - chapters/07-testing-evaluation-and-red-teaming.qmd
+        - chapters/08-deployment-and-release.qmd
+        - chapters/09-operations-and-monitoring.qmd
+        - chapters/10-incident-response-and-remediation.qmd
+    - part: "Part III: Governing Content Generation and Autonomous Action"
+      chapters:
+        - chapters/11-governing-generative-systems.qmd
+        - chapters/12-governing-agentic-systems.qmd
+    - part: "Part IV: The Governance Function"
+      chapters:
+        - chapters/13-organizing-the-governance-function.qmd
+        - chapters/14-risk-assessment-and-management.qmd
+        - chapters/15-documentation-and-evidence.qmd
+        - chapters/16-third-party-vendor-and-supply-chain-governance.qmd
+    - part: "Part V: Building Governance Capability"
+      chapters:
+        - chapters/17-implementing-ai-governance.qmd
+        - chapters/18-governing-under-uncertainty.qmd
+    - part: "Appendices"
+      chapters:
+        - chapters/appendix-a-technique-reference.qmd
+        - chapters/appendix-b-regulatory-quick-reference.qmd
+        - chapters/appendix-c-templates-and-checklists.qmd
+        - chapters/appendix-d-glossary.qmd
+    - part: "End Matter"
+      chapters:
+        - chapters/90-references.qmd
+        - chapters/91-index.qmd
+    - chapters/99-back-cover.qmd
+  # The centre slot carries the build date, rewritten by stamp-date.py on every
+  # render. A reader partway through a chapter can see how current the text is
+  # without returning to the landing page, which states the edition date instead.
+  # The first-edition link moved left to free the slot.
+  page-footer:
+    left: "How to Govern AI · Foundations and Practical Guide to AI Governance"
+    center: "Last updated 21 September 2026"
+    right: "CC BY-NC 4.0"
+
+# Chapter and section numbers are written into the headings by hand, because prose
+# cross-references point at them. Turning Quarto numbering on will double them.
+number-sections: false
+
+crossref:
+  chapters: true
+
+format:
+  html:
+    theme:
+      - cosmo
+      - custom.scss
+    toc: true
+    toc-depth: 2
+    toc-title: "On this page"
+    toc-location: right
+    link-external-newwindow: true
+    anchor-sections: true
+    fig-align: left
+    code-copy: false
+    smooth-scroll: true
+    # Reader-feedback widget (anonymous, per-chapter, posts to a Google Form).
+    # Injected at the end of every rendered page. Remove this line and
+    # feedback-widget.html to take it down once the feedback window closes;
+    # nothing else in the book depends on it.
+    include-after-body: feedback-widget.html
+
+  pdf:
+    documentclass: scrbook
+    papersize: a4
+    geometry: [inner=3cm, outer=3.5cm, top=3cm, bottom=3.5cm]
+    colorlinks: true
+    linkcolor: "1F4E79"
+    urlcolor: "1F4E79"
+    fig-pos: "H"
