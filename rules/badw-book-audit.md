@@ -906,6 +906,68 @@ now in section 6, so those runs will catch them.
 
 ---
 
+## A18-019 — Three changes from a student critique, 2026-09-22
+
+**Source.** Mirzad Glavic, CS747 session 3, classified Bentley's own Turnitin deployment
+against Chapter 3's method and submitted a nine-section handout with an appendix. Three
+of his findings required changes to the chapter. All legal claims in his handout were
+independently verified before any edit; none was contradicted.
+
+**1. An ambiguous sentence in section 3.7, found by the student.** The text read that a
+legal classification such as an Annex III entry places a system in the high tier on its
+own, and that no combination of low scores offsets a trigger law sets independently. He
+observed that the AI Act's Article 6(3) lets a provider conclude an Annex III system is
+not high-risk after all, and asked whether the two conflict. His own answer: it depends
+on whether the chapter is describing the law's category or advising on the internal
+tier, and the sentence reads either way. He declined to resolve it and raised it instead.
+
+He was right that it reads both ways. Resolved in the direction his own work implies: he
+built a tier from institutional documents with no legal input and it held, so the
+sentence is about the internal tier. A paragraph now says so, and states that whether the
+law classifies a system is a separate question decided by the law's own test under
+section 3.8. The two rules answer different questions and do not conflict.
+
+**2. The appeal route is unreachable from outside, conceded.** Section 3.7's cross-cutting
+rules give an affected party a route to appeal the classification. He pointed out that the
+route runs to someone inside the organization, so it exists only once the organization has
+classified the system. Bentley had produced no tier, no reasoning, no reviewer and nothing
+to appeal, which left him with no route at all. He was fair about it, noting the chapter is
+written for organizations governing their own systems and he is not one.
+
+The chapter now states the limit rather than leaving a reader to find it. Where nothing was
+classified there is no tier to appeal; what remains is outside the organization, and the
+chapter does not govern it. The closing sentence puts the gap where it belongs: the appeal
+route exists only where the governance did.
+
+**3. The autonomy factor had no measurement procedure.** His six-link decision chain showed
+that Bentley's instructor review produces no threshold and no record, and that the official
+record begins two links later. The chapter already held that an unmeasured review is an
+assumption rather than a control, but never said what would make one measurable, which left
+the factor unusable in exactly the case it was written for.
+
+Three requirements added: a stated threshold, a record of the decision including the cases
+where the reviewer looked and did nothing, and a disagreement rate. Where a deployment
+produces none of the three, the honest entry is unmeasured rather than low, and unmeasured
+supports the high tier because the organization cannot show the control exists.
+
+**Defect I introduced and caught.** My replacement text for item 3 used "exercising
+judgement", a CORE-05A violation in new prose. Found on the post-fix scan and fixed. Third
+time in this project that a fix has introduced a defect, which is the scan earning its place.
+
+**Verified, nothing to change.** Chapter 2's compliance dates and Appendix B's timeline were
+checked against Regulation (EU) 2026/1744 and are correct and current, including the deferral
+of Annex III high-risk obligations to 2 December 2027 and Annex I to 2 August 2028.
+
+**Open, not fixed.** The book uses "in force" to mean both that a text is law and that an
+obligation binds, and never separates them. Articles 6, 8 and 9 and Annex III are in the gap
+right now: law today, binding from December 2027. One paragraph in section 2.6 would fix it.
+Left for the Chapter 2 batch.
+
+**Post-fix gates.** CV 0.61, The/This 21%, nominalisation 5.3%, em dashes 0, judgment 0,
+triple blank lines 0, dangling section references 0.
+
+---
+
 ## Portfolio measurements, 2026-09-21
 
 Recorded so the outstanding audit work is bounded. A measurement is not an audit
