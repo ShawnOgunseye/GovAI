@@ -8,6 +8,8 @@ That legal sequence is documented and verifiable; how any specific organization 
 
 What follows is an accurate account of the obligations in force as of August 2026. Parts of it will be wrong by the time you read it. Memorizing a compliance calendar is not the point; the calendar will move. This chapter calls each applicable body of law a **regulation**. The real work is to work out, for a system in front of you, which regulations reach it and what they demand, and to notice when that answer changes.
 
+Hold section 1.6's distinction while reading this chapter. Everything in it is compliance: what some rule requires, where it applies, and when. That is the narrower of the two categories, and most systems an organization operates fall outside all of it. The chapter is here because the duties are real where they attach and expensive to discover late, not because knowing them is the same as governing.
+
 ::: {.objectives}
 ## What you will be able to do {.unnumbered}
 
