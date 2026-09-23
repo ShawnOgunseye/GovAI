@@ -29,7 +29,8 @@ date-released: 2026-08-01
 doi: 10.5281/zenodo.18407349
 url: "https://aigov.ogunseye.com"
 repository-code: "https://github.com/ShawnOgunseye/GovAI"
-license: CC-BY-NC-4.0
+# No open licence. The book is all rights reserved; CITATION.cff has no
+# free-text rights field, so the statement lives in the README and on the site.
 keywords:
   - AI governance
   - artificial intelligence

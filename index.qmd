@@ -34,7 +34,7 @@ Second Edition
 ::: {.cover-author}
 Shawn Ogunseye
 :::
-CC BY-NC 4.0
+© 2026 · All rights reserved
 :::
 :::
 
@@ -43,17 +43,14 @@ CC BY-NC 4.0
 |---|---|
 | `VERSION` | 2.0 |
 | `DATE` | August 2026 |
-| `LICENSE` | CC BY-NC 4.0 |
-| `DOI` | [10.5281/zenodo.18407349](https://doi.org/10.5281/zenodo.18407349) |
+| `LICENSE` | © 2026 Shawn Ogunseye · All rights reserved |
 | `SUPERSEDES` | Governing AI, v1.5.2 |
 :::
 
 ::: {.notice}
 This is a living draft. All 18 chapters, four appendices, the references, and the index are published and readable now, and they are still being revised as the law changes and as readers report errors. Dated claims about regulation are accurate as at the date in the footer and should be checked against the primary source before you rely on them. An About the Authors page is still to come.
 
-The whole book is also available as a single PDF: [How to Govern AI (PDF)](How-to-Govern-AI.pdf).
-
-Cite this book by its permanent identifier, [doi.org/10.5281/zenodo.18407349](https://doi.org/10.5281/zenodo.18407349), which always resolves to the current version. It supersedes *Governing AI: Leading Responsible Innovation*, whose final version remains separately citable at [doi.org/10.5281/zenodo.18407350](https://doi.org/10.5281/zenodo.18407350).
+This edition supersedes *Governing AI: Leading Responsible Innovation*, which remains citable at [doi.org/10.5281/zenodo.18407350](https://doi.org/10.5281/zenodo.18407350).
 :::
 
 {{< include _signup-widget.qmd >}}

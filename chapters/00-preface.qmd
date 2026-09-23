@@ -14,7 +14,7 @@ The third is that this subject changes underneath you. Between the first draft o
 
 A note on what this book does not do. Where practice has no good answer, it says so. The chapter on risk assessment includes a section on consulting people who cannot be reached, because the people most affected by a hiring algorithm never interact with the organization deploying it and cannot be interviewed. The available substitutes are partial and the book presents them as partial. An acknowledged gap is more useful than a false resolution, particularly to a student who will meet the gap in practice and needs to recognize it.
 
-This book supersedes *Governing AI: Leading Responsible Innovation*, whose final version remains available and citable at DOI 10.5281/zenodo.18407350. This edition is citable at DOI 10.5281/zenodo.18407349, which resolves to whichever version is current. It is substantially longer and restructured. This edition's manuscript was last revised in September 2026. Its account of law and standards generally reflects an August 2026 cutoff, except where a specific passage states a later check date. Any date this book states is meant to carry its own check date rather than borrow the manuscript's.
+This book supersedes *Governing AI: Leading Responsible Innovation*, which remains citable at DOI 10.5281/zenodo.18407350. It is substantially longer and restructured. This edition's manuscript was last revised in September 2026. Its account of law and standards generally reflects an August 2026 cutoff, except where a specific passage states a later check date. Any date this book states is meant to carry its own check date rather than borrow the manuscript's.
 
 ## How to use this book
 

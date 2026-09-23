@@ -20,12 +20,6 @@ project:
     # over the top after every render. It asks AI training crawlers not to
     # collect the text while leaving search engines free to index it.
     - robots.txt
-    # The rendered book. `quarto render --to pdf` writes it into docs/ and then
-    # `quarto render --to html` wipes docs/ again, so the PDF is kept at the
-    # repository root and copied back in on every HTML render, the same way
-    # CNAME and robots.txt are. To refresh it: render to pdf, move
-    # docs/How-to-Govern-AI.pdf back to the root, then render to html.
-    - How-to-Govern-AI.pdf
 
   # No post-render hook. place-redirects.py was removed on 2026-09-21: it existed
   # to place first-edition redirect stubs, the redirects/ directory was never
@@ -99,7 +93,7 @@ book:
   page-footer:
     left: "How to Govern AI · Foundations and Practical Guide to AI Governance"
     center: "Last updated 21 September 2026"
-    right: "CC BY-NC 4.0 · doi.org/10.5281/zenodo.18407349"
+    right: "© 2026 Shawn Ogunseye · All rights reserved"
 
 # Chapter and section numbers are written into the headings by hand, because prose
 # cross-references point at them. Turning Quarto numbering on will double them.

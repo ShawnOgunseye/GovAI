@@ -13,3 +13,6 @@
 .DS_Store
 
 **/*.quarto_ipynb
+
+# Local-only. The book is read on aigov.ogunseye.com; no downloadable copy is published.
+How-to-Govern-AI.pdf
