@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-176b1e44b272a30ec08500e73512b2cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d5f66294030e686e30fde06af87b91b8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e450cd381dfa1e95bf6b2cbb93047490.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -402,6 +402,10 @@ AI
 <td>CC BY-NC 4.0</td>
 </tr>
 <tr class="even">
+<td><code>DOI</code></td>
+<td><a href="https://doi.org/10.5281/zenodo.18407349">10.5281/zenodo.18407349</a></td>
+</tr>
+<tr class="odd">
 <td><code>SUPERSEDES</code></td>
 <td>Governing AI, v1.5.2</td>
 </tr>
@@ -410,8 +414,98 @@ AI
 </div>
 <div class="notice">
 <p>This is a living draft. All 18 chapters, four appendices, the references, and the index are published and readable now, and they are still being revised as the law changes and as readers report errors. Dated claims about regulation are accurate as at the date in the footer and should be checked against the primary source before you rely on them. An About the Authors page is still to come.</p>
-<p>This book supersedes <em>Governing AI: Leading Responsible Innovation</em>, which remains citable at <a href="https://doi.org/10.5281/zenodo.18407349">doi.org/10.5281/zenodo.18407349</a>.</p>
+<p>The whole book is also available as a single PDF: <a href="How-to-Govern-AI.pdf">How to Govern AI (PDF)</a>.</p>
+<p>Cite this book by its permanent identifier, <a href="https://doi.org/10.5281/zenodo.18407349">doi.org/10.5281/zenodo.18407349</a>, which always resolves to the current version. It supersedes <em>Governing AI: Leading Responsible Innovation</em>, whose final version remains separately citable at <a href="https://doi.org/10.5281/zenodo.18407350">doi.org/10.5281/zenodo.18407350</a>.</p>
 </div>
+<!-- Optional reader signup, landing page only. Posts to a Google Form the same
+     way feedback-widget.html does. Fill the four constants below after creating
+     the form (see SIGNUP-SETUP.md). Delete this file and the include in
+     index.qmd to remove it; nothing else depends on it. -->
+<div id="reader-signup" style="margin:2.5rem 0 0;padding:1.5rem 1.6rem 1.7rem;border:1px solid #dfe3e8;border-radius:6px;">
+  <div id="rs-form-state">
+    <h3 style="font-size:1.05rem;margin:0 0 .4rem;color:#1F4E79;" class="anchored">Tell me you are reading</h3>
+    <p style="font-size:.9rem;color:#5b6570;margin:0 0 1rem;line-height:1.55;">
+      Optional, and the book stays open either way. If you would like to hear when
+      chapters change, leave your details. I use them for that and nothing else.
+    </p>
+
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:.7rem;">
+      <input id="rs-name" type="text" placeholder="Name" style="flex:1 1 180px;padding:.55rem .7rem;border:1px solid #cdd4db;border-radius:6px;font:inherit;font-size:.92rem;box-sizing:border-box;">
+      <input id="rs-email" type="email" placeholder="Email" style="flex:1 1 220px;padding:.55rem .7rem;border:1px solid #cdd4db;border-radius:6px;font:inherit;font-size:.92rem;box-sizing:border-box;">
+    </div>
+
+    <input id="rs-role" type="text" placeholder="Role or institution (optional)" style="width:100%;padding:.55rem .7rem;border:1px solid #cdd4db;border-radius:6px;font:inherit;font-size:.92rem;box-sizing:border-box;margin-bottom:.9rem;">
+
+    <label style="display:flex;gap:.55rem;align-items:flex-start;font-size:.85rem;color:#5b6570;line-height:1.5;margin-bottom:1rem;cursor:pointer;">
+      <input id="rs-consent" type="checkbox" style="margin-top:.2rem;flex:0 0 auto;">
+      <span>I am happy to be emailed about changes to this book. I can ask to be removed at any time.</span>
+    </label>
+
+    <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;">
+      <button id="rs-submit" type="button" style="background:#1F4E79;color:#fff;border:none;border-radius:6px;padding:.55rem 1.1rem;font:inherit;font-size:.92rem;cursor:pointer;">
+        Send
+      </button>
+      <span id="rs-hint" style="font-size:.82rem;color:#8a929b;"></span>
+    </div>
+
+    <p style="font-size:.78rem;color:#8a929b;margin:1.1rem 0 0;line-height:1.5;">
+      What is collected: the three fields above, and the date you sent them. What it is used for:
+      telling you when the book changes. It is not shared, sold, or used for anything else, and it is
+      deleted on request or when this edition is superseded. Ask at the address on the About page.
+    </p>
+  </div>
+
+  <div id="rs-thanks" style="display:none;font-size:.95rem;color:#1F4E79;line-height:1.55;">
+    Thank you. You will hear from me when a chapter changes materially, not otherwise.
+  </div>
+</div>
+
+<script>
+(function () {
+  // ---- Fill these four after creating the Google Form. See SIGNUP-SETUP.md ----
+  var FORM_ACTION  = "PASTE_FORM_ACTION_URL_HERE";
+  var ENTRY_NAME   = "entry.PASTE_NAME_ID";
+  var ENTRY_EMAIL  = "entry.PASTE_EMAIL_ID";
+  var ENTRY_ROLE   = "entry.PASTE_ROLE_ID";
+  // ---------------------------------------------------------------------------
+
+  var box = document.getElementById("reader-signup");
+  if (!box) return;
+
+  // Until the form is wired up, hide the widget rather than showing a dead button.
+  if (FORM_ACTION.indexOf("PASTE_") === 0) { box.style.display = "none"; return; }
+
+  var name = document.getElementById("rs-name"),
+      mail = document.getElementById("rs-email"),
+      role = document.getElementById("rs-role"),
+      ok   = document.getElementById("rs-consent"),
+      btn  = document.getElementById("rs-submit"),
+      hint = document.getElementById("rs-hint");
+
+  function valid(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+  btn.addEventListener("click", function () {
+    if (!valid(mail.value.trim())) { hint.textContent = "A valid email, please."; return; }
+    if (!ok.checked) { hint.textContent = "Please tick the box so I know it is wanted."; return; }
+
+    btn.disabled = true;
+    hint.textContent = "Sending...";
+
+    var body = new FormData();
+    body.append(ENTRY_NAME,  name.value.trim());
+    body.append(ENTRY_EMAIL, mail.value.trim());
+    body.append(ENTRY_ROLE,  role.value.trim());
+
+    fetch(FORM_ACTION, { method: "POST", mode: "no-cors", body: body })
+      .then(done).catch(done);
+
+    function done() {
+      document.getElementById("rs-form-state").style.display = "none";
+      document.getElementById("rs-thanks").style.display = "block";
+    }
+  });
+})();
+</script>
 
 
 
@@ -561,6 +655,27 @@ AI
       formState.style.display = "block";
     });
   });
+})();
+</script>
+<!-- Cloudflare Web Analytics. Injected on every page via include-after-body in
+     _quarto.yml. Paste the token from the Cloudflare dashboard into TOKEN below.
+     Until then nothing is loaded and no request leaves the reader's browser.
+
+     No cookies, no cross-site tracking, no personal data, so no consent banner
+     is required. Delete this file and its include-after-body line to remove it. -->
+<script>
+(function () {
+  // ---- Paste the Cloudflare Web Analytics token here. See SITE-SETUP.md ----
+  var TOKEN = "PASTE_CLOUDFLARE_TOKEN_HERE";
+  // -------------------------------------------------------------------------
+
+  if (TOKEN.indexOf("PASTE_") === 0) return;   // not wired up yet, do nothing
+
+  var s = document.createElement("script");
+  s.defer = true;
+  s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  s.setAttribute("data-cf-beacon", JSON.stringify({ token: TOKEN }));
+  document.body.appendChild(s);
 })();
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
@@ -925,7 +1040,7 @@ AI
 <p>Last updated 21 September 2026</p>
 <div class="toc-actions"><ul><li><a href="https://github.com/shawnogunseye/GovAI/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
-<p>CC BY-NC 4.0</p>
+<p>CC BY-NC 4.0 · doi.org/10.5281/zenodo.18407349</p>
 </div>
   </div>
 </footer>
