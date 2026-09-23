@@ -15,6 +15,17 @@ project:
     - CNAME
     - .nojekyll
     - figures/
+    # robots.txt is ours, not Quarto's. Quarto writes a minimal one containing
+    # only the sitemap line; listing it here copies the hand-written version
+    # over the top after every render. It asks AI training crawlers not to
+    # collect the text while leaving search engines free to index it.
+    - robots.txt
+    # The rendered book. `quarto render --to pdf` writes it into docs/ and then
+    # `quarto render --to html` wipes docs/ again, so the PDF is kept at the
+    # repository root and copied back in on every HTML render, the same way
+    # CNAME and robots.txt are. To refresh it: render to pdf, move
+    # docs/How-to-Govern-AI.pdf back to the root, then render to html.
+    - How-to-Govern-AI.pdf
 
   # No post-render hook. place-redirects.py was removed on 2026-09-21: it existed
   # to place first-edition redirect stubs, the redirects/ directory was never
@@ -88,7 +99,7 @@ book:
   page-footer:
     left: "How to Govern AI · Foundations and Practical Guide to AI Governance"
     center: "Last updated 21 September 2026"
-    right: "CC BY-NC 4.0"
+    right: "CC BY-NC 4.0 · doi.org/10.5281/zenodo.18407349"
 
 # Chapter and section numbers are written into the headings by hand, because prose
 # cross-references point at them. Turning Quarto numbering on will double them.
@@ -111,17 +122,28 @@ format:
     fig-align: left
     code-copy: false
     smooth-scroll: true
-    # Reader-feedback widget (anonymous, per-chapter, posts to a Google Form).
-    # Injected at the end of every rendered page. Remove this line and
-    # feedback-widget.html to take it down once the feedback window closes;
-    # nothing else in the book depends on it.
-    include-after-body: feedback-widget.html
+    # Injected at the end of every rendered page, in order. Each is independent
+    # and each can be removed by deleting its line here plus its file; nothing
+    # else in the book depends on either.
+    #   feedback-widget.html  anonymous per-chapter feedback, posts to a Google Form
+    #   analytics.html        Cloudflare Web Analytics beacon, no cookies, no
+    #                         personal data, inert until a token is pasted in
+    include-after-body:
+      - feedback-widget.html
+      - analytics.html
 
   pdf:
     documentclass: scrbook
     papersize: a4
     geometry: [inner=3cm, outer=3.5cm, top=3cm, bottom=3.5cm]
     colorlinks: true
-    linkcolor: "1F4E79"
-    urlcolor: "1F4E79"
+    # xcolor has no colour called 1F4E79, so naming the hex directly here made
+    # every PDF render die at the first coloured link. The colour is defined in
+    # the preamble below and referred to by name instead.
+    linkcolor: govblue
+    urlcolor: govblue
     fig-pos: "H"
+    include-in-header:
+      text: |
+        \usepackage{xcolor}
+        \definecolor{govblue}{HTML}{1F4E79}

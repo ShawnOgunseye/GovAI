@@ -1,0 +1,51 @@
+# Citation metadata for this book.
+#
+# GitHub reads this file and shows a "Cite this repository" button on the
+# repository page. Zenodo also reads it when a release is archived, and its
+# values override whatever the GitHub release integration would otherwise
+# guess, which is what stops a new release from being filed as software again.
+#
+# The DOI below is the CONCEPT DOI. It is minted once and always resolves to
+# the newest version, so it never has to change here. Each individual version
+# also gets its own DOI; those are not recorded in this file.
+cff-version: 1.2.0
+message: "If you use this book, please cite it using the metadata below."
+title: "How to Govern AI: Foundations and Practical Guide to AI Governance"
+abstract: >-
+  A practitioner's guide to governing artificial intelligence across its full
+  lifecycle: scoping and inventory, risk classification, data governance, model
+  selection and development, testing and red-teaming, deployment, monitoring,
+  incident response, and the governance of generative and agentic systems. It
+  reads the EU AI Act, the NIST AI Risk Management Framework, ISO/IEC 42001 and
+  sector regulation against each other, and turns them into the artifacts and
+  decisions an organization actually has to produce.
+type: book
+authors:
+  - family-names: Ogunseye
+    given-names: Shawn
+    orcid: "https://orcid.org/0000-0001-5774-4965"
+version: "2.0"
+date-released: 2026-08-01
+doi: 10.5281/zenodo.18407349
+url: "https://aigov.ogunseye.com"
+repository-code: "https://github.com/ShawnOgunseye/GovAI"
+license: CC-BY-NC-4.0
+keywords:
+  - AI governance
+  - artificial intelligence
+  - EU AI Act
+  - NIST AI Risk Management Framework
+  - ISO/IEC 42001
+  - responsible AI
+  - risk management
+references:
+  - type: book
+    title: "Governing AI: Leading Responsible Innovation"
+    authors:
+      - family-names: Ogunseye
+        given-names: Shawn
+        orcid: "https://orcid.org/0000-0001-5774-4965"
+    version: "1.5.2"
+    year: 2026
+    doi: 10.5281/zenodo.18407350
+    notes: "The first edition, superseded by this one."

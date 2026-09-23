@@ -1,0 +1,59 @@
+---
+title-block-style: none
+toc: false
+---
+
+```{=html}
+<!-- A book's index page always emits Quarto's own title block, which repeats the
+     title, subtitle and author that the .cover block below sets by hand, and adds
+     a normalised date. `title-block-style: none` in the front matter is ignored on
+     a book index, so the block is hidden here. Scoped to this page deliberately:
+     the chapters get their titles from that same block and must keep it. -->
+<style>#title-block-header { display: none; }</style>
+<script>document.body.setAttribute("data-no-feedback", "");</script>
+```
+
+::: {.cover-jacket}
+::: {.cover-kicker}
+Second Edition
+:::
+
+::: {.cover-titleblock}
+```{=html}
+<h1 class="visually-hidden">How to Govern AI</h1>
+```
+
+<div class="cover-how">How to</div>
+<div class="cover-govern-row"><div class="cover-title">Govern</div></div>
+<div class="cover-ai-box">AI</div>
+
+### Foundations and Practical Guide to AI Governance {.cover-sub .unnumbered}
+:::
+
+::: {.cover-foot}
+::: {.cover-author}
+Shawn Ogunseye
+:::
+CC BY-NC 4.0
+:::
+:::
+
+::: {.record}
+| | |
+|---|---|
+| `VERSION` | 2.0 |
+| `DATE` | August 2026 |
+| `LICENSE` | CC BY-NC 4.0 |
+| `DOI` | [10.5281/zenodo.18407349](https://doi.org/10.5281/zenodo.18407349) |
+| `SUPERSEDES` | Governing AI, v1.5.2 |
+:::
+
+::: {.notice}
+This is a living draft. All 18 chapters, four appendices, the references, and the index are published and readable now, and they are still being revised as the law changes and as readers report errors. Dated claims about regulation are accurate as at the date in the footer and should be checked against the primary source before you rely on them. An About the Authors page is still to come.
+
+The whole book is also available as a single PDF: [How to Govern AI (PDF)](How-to-Govern-AI.pdf).
+
+Cite this book by its permanent identifier, [doi.org/10.5281/zenodo.18407349](https://doi.org/10.5281/zenodo.18407349), which always resolves to the current version. It supersedes *Governing AI: Leading Responsible Innovation*, whose final version remains separately citable at [doi.org/10.5281/zenodo.18407350](https://doi.org/10.5281/zenodo.18407350).
+:::
+
+{{< include _signup-widget.qmd >}}

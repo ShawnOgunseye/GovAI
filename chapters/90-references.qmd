@@ -98,4 +98,4 @@ Hill, K. (2020, 24 June). Wrongfully accused by an algorithm. *The New York Time
 
 ## Prior edition
 
-Ogunseye, S. (2026). *Governing AI: Leading Responsible Innovation*, version 1.5.2. Citable at [doi.org/10.5281/zenodo.18407349](https://doi.org/10.5281/zenodo.18407349). Superseded by this edition and no longer published on this site.
+Ogunseye, S. (2026). *Governing AI: Leading Responsible Innovation*, version 1.5.2. Citable at [doi.org/10.5281/zenodo.18407350](https://doi.org/10.5281/zenodo.18407350). Superseded by this edition and no longer published on this site.

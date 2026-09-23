@@ -1,0 +1,39 @@
+{
+  "title": "How to Govern AI: Foundations and Practical Guide to AI Governance",
+  "description": "<p>A practitioner's guide to governing artificial intelligence across its full lifecycle: scoping and inventory, risk classification, data governance, model selection and development, testing and red-teaming, deployment, monitoring, incident response, and the governance of generative and agentic systems. It reads the EU AI Act, the NIST AI Risk Management Framework, ISO/IEC 42001 and sector regulation against each other, and turns them into the artifacts and decisions an organization actually has to produce.</p><p>This edition supersedes <em>Governing AI: Leading Responsible Innovation</em> (v1.5.2), whose final version remains citable at doi.org/10.5281/zenodo.18407350.</p>",
+  "upload_type": "publication",
+  "publication_type": "book",
+  "access_right": "open",
+  "license": "cc-by-nc-4.0",
+  "language": "eng",
+  "version": "2.0",
+  "publisher": "Zenodo",
+  "creators": [
+    {
+      "name": "Ogunseye, Shawn",
+      "orcid": "0000-0001-5774-4965"
+    }
+  ],
+  "keywords": [
+    "AI governance",
+    "artificial intelligence",
+    "EU AI Act",
+    "NIST AI Risk Management Framework",
+    "ISO/IEC 42001",
+    "responsible AI",
+    "risk management"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.18407350",
+      "relation": "isNewVersionOf",
+      "resource_type": "publication-book",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://aigov.ogunseye.com",
+      "relation": "isIdenticalTo",
+      "scheme": "url"
+    }
+  ]
+}

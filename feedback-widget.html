@@ -1,0 +1,149 @@
+<!-- Reader feedback widget. Injected on every chapter page via _quarto.yml's
+     include-after-body. Self-configures per page (reads the chapter's own H1),
+     posts anonymously to a Google Form, and can be removed by deleting the
+     include-after-body line in _quarto.yml plus this file. -->
+<div id="reader-feedback" style="margin-top:3.5rem;padding:1.5rem 1.5rem 1.75rem;border-top:1px solid #dfe3e8;">
+  <div id="rf-form-state">
+    <h3 style="font-size:1.05rem;margin:0 0 .35rem;color:#1F4E79;">Was this chapter useful?</h3>
+    <p style="font-size:.9rem;color:#5b6570;margin:0 0 1rem;">
+      Quick, anonymous feedback on this chapter. No account needed, and you can send more than once.
+    </p>
+
+    <div id="rf-rating" style="display:flex;gap:.4rem;margin-bottom:1rem;" role="radiogroup" aria-label="Rating">
+      <!-- five buttons injected by JS -->
+    </div>
+
+    <textarea id="rf-comment" placeholder="What was unclear, wrong, or worth changing? (optional)"
+      style="width:100%;min-height:5.5rem;padding:.6rem .7rem;border:1px solid #cdd4db;border-radius:6px;
+      font:inherit;font-size:.92rem;resize:vertical;box-sizing:border-box;"></textarea>
+
+    <div style="margin-top:.85rem;display:flex;align-items:center;gap:.75rem;">
+      <button id="rf-submit" type="button"
+        style="background:#1F4E79;color:#fff;border:none;border-radius:6px;padding:.55rem 1.1rem;
+        font:inherit;font-size:.92rem;cursor:pointer;">
+        Send feedback
+      </button>
+      <span id="rf-hint" style="font-size:.82rem;color:#8a929b;"></span>
+    </div>
+  </div>
+
+  <div id="rf-thanks" style="display:none;font-size:.95rem;color:#1F4E79;">
+    Thanks — that's recorded. <a href="#" id="rf-again" style="color:#1F4E79;">Send more feedback on this chapter</a>.
+  </div>
+</div>
+
+<!-- Hidden iframe used as the form's POST target so the page never navigates away. -->
+<iframe name="rf-target" style="display:none;" title="feedback submission target"></iframe>
+
+<script>
+(function () {
+  var FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSd9_CLKYge5lybG71ff2xAJKTUC0H76P7SSF8X0esvVgOQTTQ/formResponse";
+  var ENTRY_CHAPTER = "entry.339002275";
+  var ENTRY_RATING  = "entry.39522218";
+  var ENTRY_COMMENT = "entry.995180468";
+
+  function chapterLabel() {
+    var h1 = document.querySelector("main h1, #title-block-header h1, h1");
+    var text = h1 ? h1.textContent.trim() : document.title.trim();
+    return text.replace(/\s+/g, " ");
+  }
+
+  function buildStars(container) {
+    var selected = null;
+    for (var i = 1; i <= 5; i++) {
+      (function (n) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.textContent = n;
+        b.setAttribute("aria-label", n + " out of 5");
+        b.dataset.value = n;
+        b.style.cssText = "width:2.1rem;height:2.1rem;border-radius:6px;border:1px solid #cdd4db;" +
+          "background:#fff;color:#3c4650;font:inherit;font-size:.92rem;cursor:pointer;";
+        b.addEventListener("click", function () {
+          selected = n;
+          Array.prototype.forEach.call(container.children, function (el) {
+            var on = Number(el.dataset.value) <= n;
+            el.style.background = on ? "#1F4E79" : "#fff";
+            el.style.color = on ? "#fff" : "#3c4650";
+            el.style.borderColor = on ? "#1F4E79" : "#cdd4db";
+          });
+        });
+        container.appendChild(b);
+      })(i);
+    }
+    return function () { return selected; };
+  }
+
+  function ready(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+
+  ready(function () {
+    var root = document.getElementById("reader-feedback");
+    if (!root) return;
+    // Not a teaching page — front/back cover, etc. Those set data-no-feedback
+    // on the body via a tiny inline script in the page's own front matter.
+    if (document.body.hasAttribute("data-no-feedback")) {
+      root.style.display = "none";
+      return;
+    }
+
+    var ratingWrap = document.getElementById("rf-rating");
+    var getRating = buildStars(ratingWrap);
+    var commentEl = document.getElementById("rf-comment");
+    var submitBtn = document.getElementById("rf-submit");
+    var hint = document.getElementById("rf-hint");
+    var formState = document.getElementById("rf-form-state");
+    var thanks = document.getElementById("rf-thanks");
+    var again = document.getElementById("rf-again");
+
+    submitBtn.addEventListener("click", function () {
+      var rating = getRating();
+      var comment = commentEl.value.trim();
+      if (!rating && !comment) {
+        hint.textContent = "Pick a rating or add a comment first.";
+        return;
+      }
+
+      var form = document.createElement("form");
+      form.action = FORM_ACTION;
+      form.method = "POST";
+      form.target = "rf-target";
+      form.style.display = "none";
+
+      function field(name, value) {
+        var inp = document.createElement("input");
+        inp.type = "hidden";
+        inp.name = name;
+        inp.value = value;
+        form.appendChild(inp);
+      }
+
+      field(ENTRY_CHAPTER, chapterLabel());
+      if (rating) field(ENTRY_RATING, String(rating));
+      if (comment) field(ENTRY_COMMENT, comment);
+
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+
+      formState.style.display = "none";
+      thanks.style.display = "block";
+    });
+
+    again.addEventListener("click", function (e) {
+      e.preventDefault();
+      commentEl.value = "";
+      Array.prototype.forEach.call(ratingWrap.children, function (el) {
+        el.style.background = "#fff";
+        el.style.color = "#3c4650";
+        el.style.borderColor = "#cdd4db";
+      });
+      hint.textContent = "";
+      thanks.style.display = "none";
+      formState.style.display = "block";
+    });
+  });
+})();
+</script>

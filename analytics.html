@@ -1,0 +1,21 @@
+<!-- Cloudflare Web Analytics. Injected on every page via include-after-body in
+     _quarto.yml. Paste the token from the Cloudflare dashboard into TOKEN below.
+     Until then nothing is loaded and no request leaves the reader's browser.
+
+     No cookies, no cross-site tracking, no personal data, so no consent banner
+     is required. Delete this file and its include-after-body line to remove it. -->
+<script>
+(function () {
+  // ---- Paste the Cloudflare Web Analytics token here. See SITE-SETUP.md ----
+  var TOKEN = "PASTE_CLOUDFLARE_TOKEN_HERE";
+  // -------------------------------------------------------------------------
+
+  if (TOKEN.indexOf("PASTE_") === 0) return;   // not wired up yet, do nothing
+
+  var s = document.createElement("script");
+  s.defer = true;
+  s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  s.setAttribute("data-cf-beacon", JSON.stringify({ token: TOKEN }));
+  document.body.appendChild(s);
+})();
+</script>
