@@ -1,64 +1,110 @@
-<svg viewBox="0 0 900 372" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Progressive rollout with halt gates">
-<!-- FIGURE 8.2 REQUIRED ELEMENTS
-Must appear as a process canvas: staged expansion over time (stage 1
-narrow blast radius through to full deployment), with a halt gate between
-each stage that must be explicitly passed, not merely not-yet-failed.
-Must show the agentic variant: staging by permission scope rather than
-population size. Entry condition: deployment approved (8.4). Exit
-condition: full rollout, or a halted stage with the halt criterion that
-triggered it named. Deliberately excluded: the deployment decision itself
-(8.4's box). Must work in black and white.
-SOURCE: original; staged rollout and halt-gate structure is standard
-release-engineering practice, adapted here to the population and
-permission-scope dimensions this book's systems require.
-AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+<svg viewBox="0 0 900 566" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTozODdjMmY4NS1iODE0LTQ5N2EtODAxNy05NjVhMjM3NjA4MDkAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaHLW/iglIHn2O4Vej1QmwgYAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpmMWM3ZDRkYS1jOTY2LTQwZTgtOTlkNC01ZDkyMWE1MmZmYjVscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoiZvyYGvqstnmti7wPtqzPgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggwjZ/MApAhXxyr0Zd5MPhGNtlqhd+HAu93STDd4GnCjqkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaLrY/ZjlTpxIk6sXkTObfe0AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCAV38LR8bgRYdJsnnadrlXKg8gIvQV1UllppOArRyMv/2RuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjCZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjM4N2MyZjg1LWI4MTQtNDk3YS04MDE3LTk2NWEyMzc2MDgwOS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjM2ZmZiNTNiLTRiOTItNDRkNS1iMjg4LWM4MGYzODdkOGU4ZHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDCNn8wCkCFfHKvRl3kw+EY22WqF34cC73dJMN3gacKOqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFgg6Skyyhccq8wSBgE3ZqSHTD41etTurOKDgynhoF45c7GiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg6vj9/vvW+WOKCg46cUnCY4Zcua6ttg3b4fRB45T3g550Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQMOr0Jl/i2/bAwCHre3xamUWPt4fUKIM/iBTwrz+Wv4rGb72uCEjPMoAfEXoDdQc2DOBibSmHpe5bYdOVdaujHA=</c2pa:manifest></metadata>
+<!-- FIGURE 8.2 REQUIRED ELEMENTS (revised per CH063)
+Must appear as a two-axis process canvas, not a single track with an
+agentic branch. One axis is exposure (users, sites, transactions,
+populations, or traffic), and the other is capability (data, tools, actions,
+permissions, spend, or rate). Both axes are staged independently for every
+system class, predictive, generative, and agentic alike. Each promotion
+gate must show: a fixed observation window or sample size, success
+criteria, monitoring coverage, incident readiness, a rollback test, owner
+approval, and no unresolved release blocker, and must require an explicit
+pass, not merely the absence of a failure. A halt path routes to
+investigation, rollback, remediation, and retest before any promotion.
+Entry condition: deployment approved (8.4). Exit condition: full rollout on
+both axes, or a halted stage with the halt criterion that triggered it
+named. Deliberately excluded: the deployment decision itself (8.4's box).
+No em dashes in any label. Must work in black and white (numbers, shapes
+and text carry the meaning, not color).
+SOURCE: Google SRE, "Canarying Releases" (https://sre.google/workbook/canarying-releases/);
+staged rollout and halt-gate structure is standard release-engineering
+practice, adapted here to the two independent exposure and capability axes.
+AUDIT: redrawn to match section 8.5 text, rendered and viewed
 -->
-<title>Progressive rollout with halt gates</title>
+<title id="t">Progressive rollout with halt gates</title>
+<desc id="d">A three by three grid. Exposure (how many are reached) runs left to right in three steps. Capability (what the system may do) runs bottom to top in three steps. A staircase path through five numbered cells moves one axis at a time, with a gate before every step. Each gate needs seven checks and an explicit pass. Any check not passed sends the release down a halt path: investigate, roll back, remediate, retest, then back to the gate. Entry is deployment approved (8.4). Exit is full rollout on both axes, or a halted stage with the halt criterion named.</desc>
 <style>
 text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
 .ttl{font-size:17px;font-weight:700;}
-.cls{font-size:14px;font-weight:700;}
 .bx{font-size:12.5px;font-weight:400;}
 .col{font-size:11px;font-weight:700;letter-spacing:.06em;}
 .sm{font-size:11px;font-weight:400;}
 .em{font-size:11px;font-style:italic;}
 </style>
-<rect x="0" y="0" width="900" height="372" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a3324"/></marker>
+<marker id="ai" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1a2230"/></marker>
+</defs>
+<rect x="0" y="0" width="900" height="566" fill="#ffffff"/>
 <text x="20" y="34" class="ttl" fill="#1a2230">Figure 8.2 &#183; Progressive rollout with halt gates</text>
-<text x="30" y="66" class="col" fill="#46536b">BY POPULATION (predictive / generative)</text>
-<rect x="30" y="80" width="190" height="70" rx="4" fill="#1a2230"/>
-<text x="125.0" y="106" class="bx" fill="#ffffff" text-anchor="middle">STAGE 1</text>
-<text x="125.0" y="122" class="bx" fill="#ffffff" text-anchor="middle">small pilot</text>
-<text x="125.0" y="138" class="bx" fill="#ffffff" text-anchor="middle">site</text>
-<rect x="225.0" y="101.0" width="60" height="28" rx="3" fill="#8a3324"/>
-<text x="255.0" y="120.0" class="sm" fill="#ffffff" text-anchor="middle" font-weight="700">HALT GATE</text>
-<rect x="290" y="80" width="190" height="70" rx="4" fill="#1a2230"/>
-<text x="385.0" y="106" class="bx" fill="#ffffff" text-anchor="middle">STAGE 2</text>
-<text x="385.0" y="122" class="bx" fill="#ffffff" text-anchor="middle">expanded</text>
-<text x="385.0" y="138" class="bx" fill="#ffffff" text-anchor="middle">sites</text>
-<rect x="485.0" y="101.0" width="60" height="28" rx="3" fill="#8a3324"/>
-<text x="515.0" y="120.0" class="sm" fill="#ffffff" text-anchor="middle" font-weight="700">HALT GATE</text>
-<rect x="550" y="80" width="190" height="70" rx="4" fill="#1a2230"/>
-<text x="645.0" y="106" class="bx" fill="#ffffff" text-anchor="middle">STAGE 3</text>
-<text x="645.0" y="122" class="bx" fill="#ffffff" text-anchor="middle">full</text>
-<text x="645.0" y="138" class="bx" fill="#ffffff" text-anchor="middle">population</text>
-<text x="30" y="172" class="sm" fill="#8a3324">Each gate requires a positive check against halt criteria fixed before launch, not merely the absence of a failure so far.</text>
-<line x1="20" y1="212" x2="880" y2="212" stroke="#c9d1dc" stroke-width="1"/>
-<text x="30" y="242" class="col" fill="#46536b">BY PERMISSION SCOPE (agentic)</text>
-<rect x="30" y="256" width="190" height="70" rx="4" fill="#8a3324"/>
-<text x="125.0" y="282" class="bx" fill="#ffffff" text-anchor="middle">STAGE 1</text>
-<text x="125.0" y="298" class="bx" fill="#ffffff" text-anchor="middle">propose only,</text>
-<text x="125.0" y="314" class="bx" fill="#ffffff" text-anchor="middle">cannot commit</text>
-<rect x="225.0" y="277.0" width="60" height="28" rx="3" fill="#1a2230"/>
-<text x="255.0" y="296.0" class="sm" fill="#ffffff" text-anchor="middle" font-weight="700">HALT GATE</text>
-<rect x="290" y="256" width="190" height="70" rx="4" fill="#8a3324"/>
-<text x="385.0" y="282" class="bx" fill="#ffffff" text-anchor="middle">STAGE 2</text>
-<text x="385.0" y="298" class="bx" fill="#ffffff" text-anchor="middle">commit within</text>
-<text x="385.0" y="314" class="bx" fill="#ffffff" text-anchor="middle">pre-approved slots</text>
-<rect x="485.0" y="277.0" width="60" height="28" rx="3" fill="#1a2230"/>
-<text x="515.0" y="296.0" class="sm" fill="#ffffff" text-anchor="middle" font-weight="700">HALT GATE</text>
-<rect x="550" y="256" width="190" height="70" rx="4" fill="#8a3324"/>
-<text x="645.0" y="282" class="bx" fill="#ffffff" text-anchor="middle">STAGE 3</text>
-<text x="645.0" y="298" class="bx" fill="#ffffff" text-anchor="middle">full scheduling</text>
-<text x="645.0" y="314" class="bx" fill="#ffffff" text-anchor="middle">autonomy</text>
-<text x="30" y="352" class="sm" fill="#1a2230">Population reached can be 100% from day one; what stages is the scope of what the agent is permitted to do.</text></svg>
+<rect x="150" y="140" width="110" height="70" fill="#ffffff" stroke="#c9d1dc" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="150" y="210" width="110" height="70" fill="#ffffff" stroke="#c9d1dc" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="150" y="280" width="110" height="70" fill="#e3e8ef" stroke="#1a2230" stroke-width="1.5"/>
+<rect x="260" y="140" width="110" height="70" fill="#ffffff" stroke="#c9d1dc" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="260" y="210" width="110" height="70" fill="#e3e8ef" stroke="#1a2230" stroke-width="1.5"/>
+<rect x="260" y="280" width="110" height="70" fill="#e3e8ef" stroke="#1a2230" stroke-width="1.5"/>
+<rect x="370" y="140" width="110" height="70" fill="#e3e8ef" stroke="#1a2230" stroke-width="1.5"/>
+<rect x="370" y="210" width="110" height="70" fill="#e3e8ef" stroke="#1a2230" stroke-width="1.5"/>
+<rect x="370" y="280" width="110" height="70" fill="#ffffff" stroke="#c9d1dc" stroke-width="1.5" stroke-dasharray="4 3"/>
+<circle cx="205" cy="315" r="14" fill="#1a2230"/><text x="205" y="320" class="bx" style="font-weight:700" fill="#ffffff" text-anchor="middle">1</text>
+<circle cx="315" cy="315" r="14" fill="#1a2230"/><text x="315" y="320" class="bx" style="font-weight:700" fill="#ffffff" text-anchor="middle">2</text>
+<circle cx="315" cy="245" r="14" fill="#1a2230"/><text x="315" y="250" class="bx" style="font-weight:700" fill="#ffffff" text-anchor="middle">3</text>
+<circle cx="425" cy="245" r="14" fill="#1a2230"/><text x="425" y="250" class="bx" style="font-weight:700" fill="#ffffff" text-anchor="middle">4</text>
+<circle cx="425" cy="175" r="14" fill="#1a2230"/><text x="425" y="180" class="bx" style="font-weight:700" fill="#ffffff" text-anchor="middle">5</text>
+<rect x="234" y="305" width="52" height="20" rx="3" fill="#8a3324" stroke="#ffffff" stroke-width="1.5"/><text x="260" y="319" class="sm" style="font-weight:700" fill="#ffffff" text-anchor="middle">GATE 1</text>
+<rect x="289" y="270" width="52" height="20" rx="3" fill="#8a3324" stroke="#ffffff" stroke-width="1.5"/><text x="315" y="284" class="sm" style="font-weight:700" fill="#ffffff" text-anchor="middle">GATE 2</text>
+<rect x="344" y="235" width="52" height="20" rx="3" fill="#8a3324" stroke="#ffffff" stroke-width="1.5"/><text x="370" y="249" class="sm" style="font-weight:700" fill="#ffffff" text-anchor="middle">GATE 3</text>
+<rect x="399" y="200" width="52" height="20" rx="3" fill="#8a3324" stroke="#ffffff" stroke-width="1.5"/><text x="425" y="214" class="sm" style="font-weight:700" fill="#ffffff" text-anchor="middle">GATE 4</text>
+<line x1="220" y1="315" x2="232" y2="315" stroke="#8a3324" stroke-width="2.5" marker-end="url(#ah)"/>
+<line x1="288" y1="315" x2="298" y2="315" stroke="#8a3324" stroke-width="2.5" marker-end="url(#ah)"/>
+<line x1="315" y1="301" x2="315" y2="293" stroke="#8a3324" stroke-width="2.5" marker-end="url(#ah)"/>
+<line x1="315" y1="267" x2="315" y2="260" stroke="#8a3324" stroke-width="2.5" marker-end="url(#ah)"/>
+<line x1="330" y1="245" x2="342" y2="245" stroke="#8a3324" stroke-width="2.5" marker-end="url(#ah)"/>
+<line x1="398" y1="245" x2="408" y2="245" stroke="#8a3324" stroke-width="2.5" marker-end="url(#ah)"/>
+<line x1="425" y1="231" x2="425" y2="223" stroke="#8a3324" stroke-width="2.5" marker-end="url(#ah)"/>
+<line x1="425" y1="197" x2="425" y2="190" stroke="#8a3324" stroke-width="2.5" marker-end="url(#ah)"/>
+<text x="205" y="368" class="bx" style="font-weight:700" fill="#1a2230" text-anchor="middle">Step 1</text><text x="205" y="383" class="bx" fill="#1a2230" text-anchor="middle">pilot site</text>
+<text x="315" y="368" class="bx" style="font-weight:700" fill="#1a2230" text-anchor="middle">Step 2</text><text x="315" y="383" class="bx" fill="#1a2230" text-anchor="middle">more sites</text>
+<text x="425" y="368" class="bx" style="font-weight:700" fill="#1a2230" text-anchor="middle">Step 3</text><text x="425" y="383" class="bx" fill="#1a2230" text-anchor="middle">everyone</text>
+<text x="315" y="406" class="col" fill="#8a3324" text-anchor="middle">EXPOSURE: HOW MANY ARE REACHED</text>
+<text x="140" y="172" class="bx" style="font-weight:700" fill="#1a2230" text-anchor="end">Step 3</text><text x="140" y="187" class="bx" fill="#1a2230" text-anchor="end">full actions</text>
+<text x="140" y="242" class="bx" style="font-weight:700" fill="#1a2230" text-anchor="end">Step 2</text><text x="140" y="257" class="bx" fill="#1a2230" text-anchor="end">more actions</text>
+<text x="140" y="296" class="bx" style="font-weight:700" fill="#1a2230" text-anchor="end">Step 1</text><text x="140" y="311" class="bx" fill="#1a2230" text-anchor="end">few actions</text>
+<text x="20" y="104" class="col" fill="#8a3324">CAPABILITY: WHAT IT MAY DO</text>
+<text x="20" y="121" class="sm" fill="#46536b">data, tools, actions, permissions, spend, rate</text>
+<text x="315" y="418" class="sm" fill="#46536b" text-anchor="middle">users, sites, transactions, populations, traffic</text>
+<rect x="8" y="328" width="128" height="38" rx="4" fill="#ffffff" stroke="#1a2230" stroke-width="1.5"/><text x="72" y="344" class="sm" style="font-weight:700" fill="#1a2230" text-anchor="middle">ENTRY: deployment</text><text x="72" y="358" class="sm" style="font-weight:700" fill="#1a2230" text-anchor="middle">approved (8.4)</text>
+<line x1="136" y1="347" x2="148" y2="347" stroke="#1a2230" stroke-width="2" marker-end="url(#ai)"/>
+<rect x="315" y="98" width="220" height="28" rx="14" fill="#ffffff" stroke="#1a2230" stroke-width="1.5"/><text x="425" y="117" class="sm" style="font-weight:700" fill="#1a2230" text-anchor="middle">EXIT: full rollout on both axes</text>
+<line x1="425" y1="126" x2="425" y2="158" stroke="#1a2230" stroke-width="2" marker-end="url(#ai)"/>
+<rect x="555" y="96" width="325" height="226" rx="4" fill="#ffffff" stroke="#8a3324" stroke-width="2"/>
+<text x="571" y="119" class="bx" style="font-weight:700" fill="#8a3324">EVERY GATE NEEDS ALL SEVEN,</text><text x="571" y="136" class="bx" style="font-weight:700" fill="#8a3324">AND AN EXPLICIT PASS</text>
+<rect x="571" y="151" width="13" height="13" fill="#ffffff" stroke="#1a2230" stroke-width="1.5"/><text x="592" y="162" class="bx" fill="#1a2230">1. Fixed watch time or sample size</text>
+<rect x="571" y="172" width="13" height="13" fill="#ffffff" stroke="#1a2230" stroke-width="1.5"/><text x="592" y="183" class="bx" fill="#1a2230">2. Success criteria</text>
+<rect x="571" y="193" width="13" height="13" fill="#ffffff" stroke="#1a2230" stroke-width="1.5"/><text x="592" y="204" class="bx" fill="#1a2230">3. Monitoring in place</text>
+<rect x="571" y="214" width="13" height="13" fill="#ffffff" stroke="#1a2230" stroke-width="1.5"/><text x="592" y="225" class="bx" fill="#1a2230">4. Incident readiness</text>
+<rect x="571" y="235" width="13" height="13" fill="#ffffff" stroke="#1a2230" stroke-width="1.5"/><text x="592" y="246" class="bx" fill="#1a2230">5. Rollback tested</text>
+<rect x="571" y="256" width="13" height="13" fill="#ffffff" stroke="#1a2230" stroke-width="1.5"/><text x="592" y="267" class="bx" fill="#1a2230">6. Owner approval</text>
+<rect x="571" y="277" width="13" height="13" fill="#ffffff" stroke="#1a2230" stroke-width="1.5"/><text x="592" y="288" class="bx" fill="#1a2230">7. No unresolved release blocker</text>
+<text x="571" y="312" class="em" fill="#8a3324">No bad news is not a pass.</text>
+<text x="555" y="343" class="sm" fill="#46536b">Each step moves one axis by one stage.</text>
+<text x="555" y="359" class="sm" fill="#46536b">Either axis may go first. Numbers show</text>
+<text x="555" y="375" class="sm" fill="#46536b">the order taken in this example.</text>
+<text x="555" y="391" class="sm" fill="#46536b">Same two axes for predictive, generative,</text>
+<text x="555" y="407" class="sm" fill="#46536b">and agentic systems.</text>
+<line x1="860" y1="322" x2="860" y2="448" stroke="#8a3324" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<text x="850" y="426" class="sm" style="font-weight:700" fill="#8a3324" text-anchor="end">any check not passed</text>
+<line x1="20" y1="436" x2="880" y2="436" stroke="#c9d1dc" stroke-width="1"/>
+<text x="20" y="458" class="col" fill="#8a3324">HALT PATH (BEFORE ANY PROMOTION, ON EITHER AXIS)</text>
+<rect x="20" y="472" width="130" height="50" rx="4" fill="#8a3324" stroke="#8a3324" stroke-width="1.5"/><text x="85.0" y="494" class="bx" style="font-weight:700" fill="#ffffff" text-anchor="middle">HALT</text><text x="85.0" y="511" class="sm" fill="#ffffff" text-anchor="middle">name the criterion</text>
+<line x1="151" y1="497" x2="165" y2="497" stroke="#8a3324" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="166" y="472" width="130" height="50" rx="4" fill="#ffffff" stroke="#8a3324" stroke-width="1.5"/><text x="231.0" y="494" class="bx" style="font-weight:700" fill="#1a2230" text-anchor="middle">Investigate</text><text x="231.0" y="511" class="sm" fill="#1a2230" text-anchor="middle">find the cause</text>
+<line x1="297" y1="497" x2="311" y2="497" stroke="#8a3324" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="312" y="472" width="130" height="50" rx="4" fill="#ffffff" stroke="#8a3324" stroke-width="1.5"/><text x="377.0" y="494" class="bx" style="font-weight:700" fill="#1a2230" text-anchor="middle">Roll back</text><text x="377.0" y="511" class="sm" fill="#1a2230" text-anchor="middle">return to safe version</text>
+<line x1="443" y1="497" x2="457" y2="497" stroke="#8a3324" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="458" y="472" width="130" height="50" rx="4" fill="#ffffff" stroke="#8a3324" stroke-width="1.5"/><text x="523.0" y="494" class="bx" style="font-weight:700" fill="#1a2230" text-anchor="middle">Remediate</text><text x="523.0" y="511" class="sm" fill="#1a2230" text-anchor="middle">fix the problem</text>
+<line x1="589" y1="497" x2="603" y2="497" stroke="#8a3324" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="604" y="472" width="130" height="50" rx="4" fill="#ffffff" stroke="#8a3324" stroke-width="1.5"/><text x="669.0" y="494" class="bx" style="font-weight:700" fill="#1a2230" text-anchor="middle">Retest</text><text x="669.0" y="511" class="sm" fill="#1a2230" text-anchor="middle">prove the fix works</text>
+<line x1="735" y1="497" x2="749" y2="497" stroke="#8a3324" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="750" y="472" width="130" height="50" rx="4" fill="#ffffff" stroke="#8a3324" stroke-width="1.5"/><text x="815.0" y="494" class="bx" style="font-weight:700" fill="#1a2230" text-anchor="middle">Back to gate</text><text x="815.0" y="511" class="sm" fill="#1a2230" text-anchor="middle">needs a clear pass</text>
+<text x="20" y="548" class="sm" fill="#1a2230">Exit at a halt: the stage stays stopped, and the halt criterion that fired is written down. No promotion until the retest passes.</text>
+</svg>

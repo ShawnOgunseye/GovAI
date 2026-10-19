@@ -1,70 +1,131 @@
-<svg viewBox="0 0 900 580" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Readiness across three dimensions">
-<!-- FIGURE 8.1 REQUIRED ELEMENTS
-Must appear: system readiness (technical, performance, compliance) and
-organizational readiness (operational, oversight, monitoring, incident) as
-two distinct groups, not one merged checklist. Must show that passing
-system readiness does not imply organizational readiness is even assessed,
-let alone passed. Entry condition: a system has completed Chapter 7
-testing. Exit condition: both dimensions evaluated, with a named gap where
-one is incomplete. Deliberately excluded: the deployment decision itself
-(8.4's job). Must work in black and white.
-SOURCE: original; the two-dimension split is this book's own structuring,
-motivated by the recurring deployment failure pattern this chapter
-documents.
-AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+<svg viewBox="0 0 900 560" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYToxNTliODM4OC0yMDRiLTRkMGQtOWZhOS01ZWQyMjc0NWViYTMAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaCFIfrMHO8+Cvsqazpctt0wAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDowZDkyNmM4NS1jZDk3LTRmNTMtODIzMy05MWQ2ZTBhMjU5MjZscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoH71xl7VBL3GOBvPDDevEIgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggeC8p+HH3EJLz7sPel6bmjuSmdMuWIyAd3ZD5hcPpZZekZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaJbcZjzxG2rNcdOn0ZLVjsAAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCB8exnb/qLsMVcScrbAHhvdmBmGuN/xasDZrMwbKNI3dGRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjCZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjE1OWI4Mzg4LTIwNGItNGQwZC05ZmE5LTVlZDIyNzQ1ZWJhMy9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmFiMGYwZjEwLTYwMTUtNDJiMi04NzJmLTYwNGIwNTEzZjgxN3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCB4Lyn4cfcQkvPuw96XpuaO5KZ0y5YjIB3dkPmFw+lll6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFgglRCmD6AmAbR0wuWmEdbZgJszBGBVpxa+aC0/h875hg6iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggolLM7DJTDJckHxQuB0bG339fye8Puxvl2yvWHh3oH3x0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQBLEKVo/tdeE2hQ9FYG4rvi+5Znfhi1pBZLcnICBH5jhFkHELRvchsTE8bxgvq3pI+nL26sYO1opqPUiynyK9rg=</c2pa:manifest></metadata>
+<!-- FIGURE 8.1 REQUIRED ELEMENTS (revised per CH059)
+Must appear: three distinct gates, not two. These are system readiness
+(technical, performance, compliance), organizational readiness (operational,
+oversight, monitoring, incident, presented as a minimum list per CH060),
+and context alignment (use case, population, environment, risk
+proportionality). These appear as three separate columns or gates, none
+nested inside another. Must show that passing system readiness does not
+imply either of the other two is even assessed, let alone passed, and that
+a release decision requires evidence from all three, not two. No encoded
+em dashes in any header label. Entry condition: a system has completed
+Chapter 7 testing. Exit condition: all three dimensions evaluated, with a
+named gap where any one is incomplete. Deliberately excluded: the
+deployment decision itself (8.4's job). Must work in black and white
+(gates carry numbered labels, not color alone).
+SOURCE: original; the three-dimension split is this book's own
+structuring, motivated by the recurring deployment failure pattern this
+chapter documents.
+AUDIT: redrawn to match sections 8.1-8.3 text, rendered and viewed
 -->
-<title>Readiness across three dimensions</title>
+<title id="t">Figure 8.1. Readiness across three dimensions</title>
+<desc id="d">Three separate gates stand side by side. Gate 1, system readiness, has three checks: technical, performance, and compliance. Gate 2, organizational readiness, has four checks presented as a minimum list: operational, oversight, monitoring, and incident. Gate 3, context alignment, has four checks: use case, population, environment, and risk proportionality. A system enters after completing Chapter 7 testing. Passing Gate 1 says nothing about the other two gates. The review exits only when all three gates are evaluated, with a named gap recorded where any one is incomplete. The deployment decision itself comes later, in section 8.4.</desc>
 <style>
 text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
 .ttl{font-size:17px;font-weight:700;}
-.cls{font-size:14px;font-weight:700;}
-.bx{font-size:12.5px;font-weight:400;}
-.col{font-size:11px;font-weight:700;letter-spacing:.06em;}
+.col{font-size:11px;font-weight:700;letter-spacing:.05em;}
+.gnum{font-size:11px;font-weight:400;letter-spacing:.12em;}
+.hd{font-size:11.5px;font-weight:700;}
 .sm{font-size:11px;font-weight:400;}
 .em{font-size:11px;font-style:italic;}
 </style>
-<rect x="0" y="0" width="900" height="580" fill="#ffffff"/>
-<text x="20" y="34" class="ttl" fill="#1a2230">Figure 8.1 &#183; Readiness across three dimensions</text>
-<rect x="30" y="66" width="400" height="30" fill="#1a2230"/>
-<text x="230" y="87" class="col" fill="#ffffff" text-anchor="middle">SYSTEM READINESS: USUALLY CHECKED</text>
-<rect x="460" y="66" width="410" height="30" fill="#8a3324"/>
-<text x="665" y="87" class="col" fill="#ffffff" text-anchor="middle">ORGANIZATIONAL READINESS: OFTEN SKIPPED</text>
-<rect x="30" y="112" width="400" height="78" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
-<text x="42" y="134" class="bx" font-weight="700" fill="#1a2230">TECHNICAL</text>
-<text x="42" y="152" class="sm" fill="#1a2230">integration with the</text>
-<text x="42" y="167" class="sm" fill="#1a2230">infrastructure the system will</text>
-<text x="42" y="182" class="sm" fill="#1a2230">actually run inside</text>
-<rect x="30" y="204" width="400" height="78" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
-<text x="42" y="226" class="bx" font-weight="700" fill="#1a2230">PERFORMANCE</text>
-<text x="42" y="244" class="sm" fill="#1a2230">Ch. 7 results: accuracy, fairness</text>
-<text x="42" y="259" class="sm" fill="#1a2230">decision, robustness, sentinel</text>
-<text x="42" y="274" class="sm" fill="#1a2230">results</text>
-<rect x="30" y="296" width="400" height="78" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
-<text x="42" y="318" class="bx" font-weight="700" fill="#1a2230">COMPLIANCE</text>
-<text x="42" y="336" class="sm" fill="#1a2230">documentation, approvals,</text>
-<text x="42" y="351" class="sm" fill="#1a2230">disclosures actually complete, not</text>
-<text x="42" y="366" class="sm" fill="#1a2230">assumed</text>
-<rect x="460" y="112" width="410" height="78" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
-<text x="472" y="134" class="bx" font-weight="700" fill="#1a2230">OPERATIONAL</text>
-<text x="472" y="152" class="sm" fill="#1a2230">staff trained on what the system</text>
-<text x="472" y="167" class="sm" fill="#1a2230">does, does not do, and when to</text>
-<text x="472" y="182" class="sm" fill="#1a2230">override</text>
-<rect x="460" y="204" width="410" height="78" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
-<text x="472" y="226" class="bx" font-weight="700" fill="#1a2230">OVERSIGHT</text>
-<text x="472" y="244" class="sm" fill="#1a2230">a reviewer with the time,</text>
-<text x="472" y="259" class="sm" fill="#1a2230">authority, and information to</text>
-<text x="472" y="274" class="sm" fill="#1a2230">catch a wrong output</text>
-<rect x="460" y="296" width="410" height="78" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
-<text x="472" y="318" class="bx" font-weight="700" fill="#1a2230">MONITORING</text>
-<text x="472" y="336" class="sm" fill="#1a2230">someone watching, with a defined</text>
-<text x="472" y="351" class="sm" fill="#1a2230">dimension and threshold (Ch. 9)</text>
-<rect x="460" y="388" width="410" height="78" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
-<text x="472" y="410" class="bx" font-weight="700" fill="#1a2230">INCIDENT</text>
-<text x="472" y="428" class="sm" fill="#1a2230">a response plan built before an</text>
-<text x="472" y="443" class="sm" fill="#1a2230">incident, not improvised during</text>
-<text x="472" y="458" class="sm" fill="#1a2230">one</text>
-<line x1="20" y1="500" x2="880" y2="500" stroke="#c9d1dc" stroke-width="1"/>
-<text x="20" y="524" class="sm" fill="#1a2230">Clearing the left column produces clean numbers and gets checked well. Clearing the right column produces no</text>
-<text x="20" y="542" class="sm" fill="#1a2230">comparably clean number, which is exactly why it gets skipped. A review clearing only the left column has not</text>
-<text x="20" y="560" class="sm" fill="#1a2230">cleared deployment readiness, only the half of it that happens to be easy to measure.</text>
+<rect x="0" y="0" width="900" height="560" fill="#ffffff"/>
+<text x="20" y="32" class="ttl" fill="#1a2230">Figure 8.1 &#183; Readiness across three dimensions</text>
+
+<!-- entry band -->
+<rect x="20" y="50" width="860" height="28" fill="#eef1f5" stroke="#c9d1dc" stroke-width="1"/>
+<text x="450" y="69" class="col" fill="#1a2230" text-anchor="middle">ENTRY: A SYSTEM HAS COMPLETED CHAPTER 7 TESTING</text>
+<line x1="156" y1="78" x2="156" y2="96" stroke="#46536b" stroke-width="1.4"/>
+<polygon points="151,94 161,94 156,102" fill="#46536b"/>
+<line x1="450" y1="78" x2="450" y2="96" stroke="#46536b" stroke-width="1.4"/>
+<polygon points="445,94 455,94 450,102" fill="#46536b"/>
+<line x1="744" y1="78" x2="744" y2="96" stroke="#46536b" stroke-width="1.4"/>
+<polygon points="739,94 749,94 744,102" fill="#46536b"/>
+
+<!-- gate headers -->
+<rect x="20" y="104" width="272" height="42" fill="#1a2230"/>
+<text x="156" y="121" class="gnum" fill="#ffffff" text-anchor="middle">GATE 1</text>
+<text x="156" y="138" class="col" fill="#ffffff" text-anchor="middle">SYSTEM READINESS</text>
+<rect x="314" y="104" width="272" height="42" fill="#8a3324"/>
+<text x="450" y="121" class="gnum" fill="#ffffff" text-anchor="middle">GATE 2</text>
+<text x="450" y="138" class="col" fill="#ffffff" text-anchor="middle">ORGANIZATIONAL READINESS</text>
+<rect x="608" y="104" width="272" height="42" fill="#46536b"/>
+<text x="744" y="121" class="gnum" fill="#ffffff" text-anchor="middle">GATE 3</text>
+<text x="744" y="138" class="col" fill="#ffffff" text-anchor="middle">CONTEXT ALIGNMENT</text>
+
+<!-- gate subcaptions -->
+<text x="156" y="163" class="em" fill="#46536b" text-anchor="middle">Usually checked well. It</text>
+<text x="156" y="177" class="em" fill="#46536b" text-anchor="middle">produces clean numbers.</text>
+<text x="450" y="163" class="em" fill="#46536b" text-anchor="middle">Evidence is records and</text>
+<text x="450" y="177" class="em" fill="#46536b" text-anchor="middle">observation, not one score.</text>
+<text x="744" y="163" class="em" fill="#46536b" text-anchor="middle">Its own gate, not a detail</text>
+<text x="744" y="177" class="em" fill="#46536b" text-anchor="middle">folded into the other two.</text>
+
+<!-- gate 1 boxes -->
+<rect x="20" y="188" width="272" height="56" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="32" y="207" class="hd" fill="#1a2230">TECHNICAL</text>
+<text x="32" y="223" class="sm" fill="#1a2230">works correctly with the systems it</text>
+<text x="32" y="237" class="sm" fill="#1a2230">will run inside</text>
+<rect x="20" y="254" width="272" height="56" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="32" y="273" class="hd" fill="#1a2230">PERFORMANCE</text>
+<text x="32" y="289" class="sm" fill="#1a2230">Chapter 7 results: accuracy, fairness,</text>
+<text x="32" y="303" class="sm" fill="#1a2230">robustness, sentinel checks</text>
+<rect x="20" y="320" width="272" height="56" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
+<text x="32" y="339" class="hd" fill="#1a2230">COMPLIANCE</text>
+<text x="32" y="355" class="sm" fill="#1a2230">paperwork checked as complete:</text>
+<text x="32" y="369" class="sm" fill="#1a2230">documentation, approvals, disclosures</text>
+<text x="32" y="398" class="em" fill="#8a3324">Passing this gate says nothing about</text>
+<text x="32" y="412" class="em" fill="#8a3324">Gates 2 and 3. It does not even show</text>
+<text x="32" y="426" class="em" fill="#8a3324">that they were assessed.</text>
+
+<!-- gate 2 boxes -->
+<rect x="314" y="188" width="272" height="56" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
+<text x="326" y="207" class="hd" fill="#1a2230">OPERATIONAL</text>
+<text x="326" y="223" class="sm" fill="#1a2230">staff trained on what it does, does not</text>
+<text x="326" y="237" class="sm" fill="#1a2230">do, and when to override</text>
+<rect x="314" y="254" width="272" height="56" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
+<text x="326" y="273" class="hd" fill="#1a2230">OVERSIGHT</text>
+<text x="326" y="289" class="sm" fill="#1a2230">a reviewer with the time, authority, and</text>
+<text x="326" y="303" class="sm" fill="#1a2230">information to catch a wrong output</text>
+<rect x="314" y="320" width="272" height="56" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
+<text x="326" y="339" class="hd" fill="#1a2230">MONITORING</text>
+<text x="326" y="355" class="sm" fill="#1a2230">someone watching a defined measure,</text>
+<text x="326" y="369" class="sm" fill="#1a2230">with a threshold that triggers action</text>
+<rect x="314" y="386" width="272" height="56" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
+<text x="326" y="405" class="hd" fill="#1a2230">INCIDENT</text>
+<text x="326" y="421" class="sm" fill="#1a2230">a response plan built before an incident,</text>
+<text x="326" y="435" class="sm" fill="#1a2230">not improvised during one</text>
+<text x="326" y="460" class="em" fill="#8a3324">These four are a minimum, not the</text>
+<text x="326" y="474" class="em" fill="#8a3324">whole list.</text>
+
+<!-- gate 3 boxes -->
+<rect x="608" y="188" width="272" height="56" rx="4" fill="#eef1f5" stroke="#46536b" stroke-width="1.4"/>
+<text x="620" y="207" class="hd" fill="#1a2230">USE CASE</text>
+<text x="620" y="223" class="sm" fill="#1a2230">the same task it was validated on, not a</text>
+<text x="620" y="237" class="sm" fill="#1a2230">plausible extension of it</text>
+<rect x="608" y="254" width="272" height="56" rx="4" fill="#eef1f5" stroke="#46536b" stroke-width="1.4"/>
+<text x="620" y="273" class="hd" fill="#1a2230">POPULATION</text>
+<text x="620" y="289" class="sm" fill="#1a2230">the people it will serve match the</text>
+<text x="620" y="303" class="sm" fill="#1a2230">people it was tested on</text>
+<rect x="608" y="320" width="272" height="56" rx="4" fill="#eef1f5" stroke="#46536b" stroke-width="1.4"/>
+<text x="620" y="339" class="hd" fill="#1a2230">ENVIRONMENT</text>
+<text x="620" y="355" class="sm" fill="#1a2230">equipment, staffing, documentation,</text>
+<text x="620" y="369" class="sm" fill="#1a2230">and IT match what it was tested against</text>
+<rect x="608" y="386" width="272" height="56" rx="4" fill="#eef1f5" stroke="#46536b" stroke-width="1.4"/>
+<text x="620" y="405" class="hd" fill="#1a2230">RISK PROPORTIONALITY</text>
+<text x="620" y="421" class="sm" fill="#1a2230">the stakes of this deployment match the</text>
+<text x="620" y="435" class="sm" fill="#1a2230">scrutiny the system received</text>
+
+<!-- arrows to exit -->
+<line x1="156" y1="434" x2="156" y2="484" stroke="#46536b" stroke-width="1.4"/>
+<polygon points="151,482 161,482 156,490" fill="#46536b"/>
+<line x1="450" y1="480" x2="450" y2="484" stroke="#46536b" stroke-width="1.4"/>
+<polygon points="445,482 455,482 450,490" fill="#46536b"/>
+<line x1="744" y1="450" x2="744" y2="484" stroke="#46536b" stroke-width="1.4"/>
+<polygon points="739,482 749,482 744,490" fill="#46536b"/>
+
+<!-- exit band -->
+<rect x="20" y="492" width="860" height="46" fill="#ffffff" stroke="#1a2230" stroke-width="1.4"/>
+<text x="450" y="511" class="col" fill="#1a2230" text-anchor="middle">EXIT: ALL THREE GATES EVALUATED, WITH A NAMED GAP RECORDED WHERE ANY ONE IS INCOMPLETE</text>
+<text x="450" y="529" class="sm" fill="#46536b" text-anchor="middle">A release decision needs evidence from all three gates, not two. The decision itself comes later, in section 8.4.</text>
 </svg>

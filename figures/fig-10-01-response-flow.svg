@@ -1,79 +1,151 @@
-<svg viewBox="0 0 900 392" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Incident response flow with decision points">
-<!-- FIGURE 10.1 REQUIRED ELEMENTS
-Must appear as a process canvas: the five procedures (notification,
-assessment, containment, communication, documentation) running from
-detection, with an explicit decision point for severity classification
-gating which procedures run on an emergency timeline versus a standard
-one. Must show the agentic-specific branch: containment splits into
-halting future action and a separate assessment-and-remediation step for
-actions already taken. Entry condition: an incident has been detected
-through any channel in 10.1. Exit condition: all five procedures complete
-and the incident handed to root cause analysis. Deliberately excluded:
-the severity criteria themselves (10.2's job) and root cause analysis
-(10.5's figure). Must work in black and white.
-SOURCE: original; the five-procedure structure is this chapter's own
-synthesis of incident response practice from safety-critical and
-security incident management, adapted to the agentic containment
-obligation this book's coverage rule requires.
-AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
+<svg viewBox="0 0 900 1066" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo3YmYxMWFkMC05MTViLTQzZjktYTk1NC0xYWQ4ZWNlNjg3ZWQAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaPzdAXOVnj+k4YBKMix5m5EAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDphYzMyYTAwMS1hMjlhLTQ1ZTQtYTc5ZC1lOWI0MjMxOTFhZWNscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoAUxU4WQSHtsVqNtd9nt4ZgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggJUxcGGFaIGc0XM7cZgzxqXHN3J8n5zEN4pXZjP3DI1ikZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaIhibpXtc/8FIPbmLYOYrk0AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCAkN8dqD7bHBDcq1+TUxid31TRxpURcru46yuS5tPXY92RuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjDZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjdiZjExYWQwLTkxNWItNDNmOS1hOTU0LTFhZDhlY2U2ODdlZC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjUyNGYzYmFlLTI0NTUtNDg5ZS04OTM1LWYyNjI1MzAzNTMyM3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAlTFwYYVogZzRcztxmDPGpcc3cnyfnMQ3ildmM/cMjWKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggHbLYN41/gPm3edzoo4J3+lfEs+qudvoaZqg7jrlF2vGiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggwFVWsRTx4YGwQayKgce/fYIBY3H3o2ZxCZ+5Ap8VaW10Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQDuQgzpBgQT3fMowjtmh9JwxnFkTbe9f9E7HgFupVHkOcBlFxqavsnDNu7Mb5q4bCNm462DTfjTMShr6Dx9CrnA=</c2pa:manifest></metadata>
+<!-- FIGURE 10.1 REQUIRED ELEMENTS (revised per CH080 and CH473, applied to SVG)
+Must redraw as the full ten-stage lifecycle, not five procedures. The
+stages run receive and acknowledge (preserve evidence); triage, declare,
+assign command, set provisional severity; protect people and stop active
+harm, then contain system/data/access/supplier path; and assess scope,
+active cause, affected population, legal duties, communication needs.
+The stages continue with notify on each party's own clock with a running
+decision log; correct or eradicate the cause and remedy prior effects for
+every system class; and recover via validated system, restricted service,
+or manual fallback. The stages close with verify recovery and monitor
+recurrence, updating severity/scope as evidence changes; conduct root
+cause analysis and post-incident review (10.5, 10.6) while
+communication/documentation continue; and close only with evidence and
+owners across technical, human, legal, and process actions. Must show BOTH a
+standard-timeline branch and an emergency/critical-timeline branch from
+the severity decision point, not only the emergency branch. Must show the
+universal lookback-and-remedy step applying to predictive, generative,
+AND agentic incidents, with the agentic-specific additional checks (tool
+actions, transactions, commitments, messages, state changes, downstream
+automations) as an annotation on that step rather than a separate branch
+implying only agentic incidents need it. Must show feedback loops from
+new evidence back to severity, scope, containment, communication, and
+legal assessment. Entry condition: an incident has been detected through
+any channel in 10.1. Exit condition: closure with evidence and owners
+across technical, human, legal, and process actions. Deliberately excluded: the severity
+criteria themselves (10.2's job) and root cause analysis's own internal
+structure (10.5's figure). Must work in black and white.
+SOURCE: Google SRE Incident Response
+(https://sre.google/workbook/incident-response/) and Postmortem Culture;
+NIST SP 800-61 Rev. 3; EU AI Act Article 73; the ten-stage structure is
+this chapter's own synthesis adapted to the AI system lifecycle stages
+this book has already developed.
+AUDIT: redrawn to match section 10.3 text, rendered and viewed
 -->
-<title>Incident response flow with decision points</title>
+<title id="t">Figure 10.1 &#183; Incident response flow with decision points</title>
+<desc id="d">A ten-stage incident lifecycle running top to bottom. After an incident is detected, it is received, then triaged with a provisional severity. A severity decision point splits into a standard timeline and an emergency or critical timeline, which rejoin at stage 3. Stages 3 to 10 are protect and contain, assess, notify, correct and remedy, recover, verify and monitor, root cause analysis and review, and closure. The correct and remedy stage applies to predictive, generative and agentic incidents, with extra agentic checks noted on it. A dashed feedback loop sends new evidence back to severity, containment, scope and legal assessment, and communication.</desc>
 <style>
 text{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
 .ttl{font-size:17px;font-weight:700;}
-.cls{font-size:14px;font-weight:700;}
 .bx{font-size:12.5px;font-weight:400;}
 .col{font-size:11px;font-weight:700;letter-spacing:.06em;}
 .sm{font-size:11px;font-weight:400;}
 .em{font-size:11px;font-style:italic;}
 </style>
-<rect x="0" y="0" width="900" height="392" fill="#ffffff"/>
+<rect x="0" y="0" width="900" height="1066" fill="#ffffff"/>
 <text x="20" y="34" class="ttl" fill="#1a2230">Figure 10.1 &#183; Incident response flow with decision points</text>
-<rect x="30" y="58" width="200" height="50" rx="4" fill="#1a2230"/>
-<text x="130.0" y="80" class="bx" fill="#ffffff" text-anchor="middle">DETECTION</text>
-<text x="130.0" y="97" class="sm" fill="#ffffff" text-anchor="middle">(4 channels, 10.1)</text>
-<line x1="230.0" y1="83.0" x2="282.0" y2="83.0" stroke="#1a2230" stroke-width="1.8"/><polygon points="290.0,83.0 282.0,87.0 282.0,79.0" fill="#1a2230"/>
-<polygon points="340,53.0 390.0,83 340,113.0 290.0,83" fill="#eef1f5" stroke="#1a2230" stroke-width="1.4"/>
-<text x="340" y="79" class="sm" fill="#1a2230" text-anchor="middle" font-weight="700">SEVERITY</text>
-<text x="340" y="94" class="sm" fill="#1a2230" text-anchor="middle" font-weight="700">CLASSIFIED</text>
-<line x1="390.0" y1="83.0" x2="422.0" y2="83.0" stroke="#1a2230" stroke-width="1.8"/><polygon points="430.0,83.0 422.0,87.0 422.0,79.0" fill="#1a2230"/>
-<text x="440" y="60" class="em" fill="#46536b">emergency tier</text>
-<text x="440" y="74" class="em" fill="#46536b">(10.2): immediate,</text>
-<text x="440" y="88" class="em" fill="#46536b">named authority</text>
-<text x="30" y="150" class="col" fill="#46536b">FIVE PROCEDURES, RUN IN PARALLEL WHERE SEVERITY REQUIRES</text>
-<rect x="30" y="164" width="165" height="62" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
-<text x="40" y="186" class="bx" font-weight="700" fill="#1a2230">NOTIFICATION</text>
-<text x="40" y="202" class="sm" fill="#1a2230">alert people the severity</text>
-<text x="40" y="216" class="sm" fill="#1a2230">tier specifies</text>
-<rect x="203" y="164" width="165" height="62" rx="4" fill="#ffffff" stroke="#1a2230" stroke-width="1.2"/>
-<text x="213" y="186" class="bx" font-weight="700" fill="#1a2230">ASSESSMENT</text>
-<text x="213" y="202" class="sm" fill="#1a2230">establish scope: how many,</text>
-<text x="213" y="216" class="sm" fill="#1a2230">still active or not</text>
-<rect x="376" y="164" width="165" height="62" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
-<text x="386" y="186" class="bx" font-weight="700" fill="#1a2230">CONTAINMENT</text>
-<text x="386" y="202" class="sm" fill="#1a2230">stop harm continuing;</text>
-<text x="386" y="216" class="sm" fill="#1a2230">see agentic branch below</text>
-<rect x="549" y="164" width="165" height="62" rx="4" fill="#ffffff" stroke="#1a2230" stroke-width="1.2"/>
-<text x="559" y="186" class="bx" font-weight="700" fill="#1a2230">COMMUNICATION</text>
-<text x="559" y="202" class="sm" fill="#1a2230">inform stakeholders at a</text>
-<text x="559" y="216" class="sm" fill="#1a2230">proportional cadence</text>
-<rect x="722" y="164" width="165" height="62" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
-<text x="732" y="186" class="bx" font-weight="700" fill="#1a2230">DOCUMENTATION</text>
-<text x="732" y="202" class="sm" fill="#1a2230">record decisions in real</text>
-<text x="732" y="216" class="sm" fill="#1a2230">time, not reconstructed</text>
-<line x1="340.0" y1="113.0" x2="340.0" y2="128.0" stroke="#1a2230" stroke-width="1.8"/><polygon points="340.0,136.0 336.0,128.0 344.0,128.0" fill="#1a2230"/>
-<text x="30" y="244" class="col" fill="#8a3324">AGENTIC CONTAINMENT SPLITS IN TWO</text>
-<rect x="30" y="252" width="250" height="66" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
-<text x="40" y="274" class="bx" font-weight="700" fill="#1a2230">HALT THE AGENT</text>
-<text x="40" y="292" class="sm" fill="#1a2230">stops future actions</text>
-<text x="40" y="307" class="sm" fill="#1a2230">immediately</text>
-<rect x="320" y="252" width="250" height="66" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="1.4"/>
-<text x="330" y="274" class="bx" font-weight="700" fill="#1a2230">ASSESS AND REMEDIATE</text>
-<text x="330" y="292" class="sm" fill="#1a2230">actions already taken;</text>
-<text x="330" y="307" class="sm" fill="#1a2230">reverse what can be undone</text>
-<line x1="280.0" y1="285.0" x2="312.0" y2="285.0" stroke="#8a3324" stroke-width="1.8"/><polygon points="320.0,285.0 312.0,289.0 312.0,281.0" fill="#8a3324"/>
-<line x1="458.5" y1="226.0" x2="458.5" y2="238.0" stroke="#8a3324" stroke-width="1.8"/><polygon points="458.5,246.0 454.5,238.0 462.5,238.0" fill="#8a3324"/>
-<line x1="20" y1="334" x2="880" y2="334" stroke="#c9d1dc" stroke-width="1"/>
-<text x="20" y="352" class="sm" fill="#46536b">Containment is not complete for an agentic incident until the second box is done, not merely the first.</text>
-<text x="20" y="370" class="sm" fill="#46536b">All five procedures feed root cause analysis (Figure 10.2) once the immediate situation is stable.</text>
+<rect x="60" y="54" width="520" height="40" rx="4" fill="#1a2230"/>
+<text x="320" y="72" class="bx" fill="#fff" text-anchor="middle" style="font-weight:700">START: INCIDENT DETECTED</text><text x="320" y="87" class="sm" fill="#fff" text-anchor="middle">through any channel in section 10.1</text>
+<line x1="320" y1="94" x2="320.0" y2="100.0" stroke="#1a2230" stroke-width="1.8"/>
+<polygon points="320,108 316.0,100.0 324.0,100.0" fill="#1a2230"/>
+<rect x="60" y="108" width="520" height="46" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<circle cx="82" cy="130" r="13" fill="#1a2230"/><text x="82" y="135" class="bx" fill="#fff" text-anchor="middle" style="font-weight:700">1</text>
+<text x="108" y="132" class="bx" style="font-weight:700" fill="#1a2230">Receive and acknowledge</text>
+<text x="108" y="149" class="sm" fill="#1a2230">Preserve the evidence before anything changes it</text>
+<line x1="320" y1="154" x2="320.0" y2="158.0" stroke="#1a2230" stroke-width="1.8"/>
+<polygon points="320,166 316.0,158.0 324.0,158.0" fill="#1a2230"/>
+<rect x="60" y="166" width="520" height="46" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<circle cx="82" cy="188" r="13" fill="#1a2230"/><text x="82" y="193" class="bx" fill="#fff" text-anchor="middle" style="font-weight:700">2</text>
+<text x="108" y="190" class="bx" style="font-weight:700" fill="#1a2230">Triage, declare, assign command</text>
+<text x="108" y="207" class="sm" fill="#1a2230">Name an incident commander and set a provisional severity</text>
+<line x1="320" y1="212" x2="320.0" y2="216.0" stroke="#1a2230" stroke-width="1.8"/>
+<polygon points="320,224 316.0,216.0 324.0,216.0" fill="#1a2230"/>
+<polygon points="320,224 450,264 320,304 190,264" fill="#fff" stroke="#1a2230" stroke-width="1.6"/>
+<text x="320" y="260" class="sm" fill="#1a2230" text-anchor="middle" style="font-weight:700">SEVERITY TIER?</text><text x="320" y="275" class="sm" fill="#1a2230" text-anchor="middle">(criteria in 10.2)</text>
+<line x1="190" y1="264" x2="130" y2="264" stroke="#1a2230" stroke-width="1.8"/>
+<line x1="130" y1="264" x2="130.0" y2="322.0" stroke="#1a2230" stroke-width="1.8"/>
+<polygon points="130,330 126.0,322.0 134.0,322.0" fill="#1a2230"/>
+<line x1="450" y1="264" x2="510" y2="264" stroke="#1a2230" stroke-width="1.8"/>
+<line x1="510" y1="264" x2="510.0" y2="322.0" stroke="#8a3324" stroke-width="1.8"/>
+<polygon points="510,330 506.0,322.0 514.0,322.0" fill="#8a3324"/>
+<text x="138" y="318" class="em" fill="#46536b">lower tiers</text><text x="502" y="318" class="em" fill="#46536b" text-anchor="end">highest tiers</text>
+<rect x="60" y="330" width="250" height="66" rx="4" fill="#fff" stroke="#46536b" stroke-width="1.4"/>
+<text x="72" y="350" class="bx" style="font-weight:700" fill="#1a2230">STANDARD TIMELINE</text><text x="72" y="367" class="sm" fill="#1a2230">Tier response time and update rhythm.</text><text x="72" y="382" class="sm" fill="#1a2230">Stages run mostly in order.</text>
+<rect x="330" y="330" width="250" height="66" rx="4" fill="#eef1f5" stroke="#8a3324" stroke-width="2.4"/>
+<text x="342" y="350" class="bx" style="font-weight:700" fill="#1a2230">EMERGENCY / CRITICAL TIMELINE</text><text x="342" y="367" class="sm" fill="#1a2230">Act at once under a named authority.</text><text x="342" y="382" class="sm" fill="#1a2230">Stages 3 to 5 run in parallel.</text>
+<line x1="185" y1="396" x2="185" y2="410" stroke="#1a2230" stroke-width="1.8"/><line x1="455" y1="396" x2="455" y2="410" stroke="#1a2230" stroke-width="1.8"/><line x1="185" y1="410" x2="455" y2="410" stroke="#1a2230" stroke-width="1.8"/>
+<line x1="320" y1="410" x2="320.0" y2="416.0" stroke="#1a2230" stroke-width="1.8"/>
+<polygon points="320,424 316.0,416.0 324.0,416.0" fill="#1a2230"/>
+<rect x="60" y="424" width="520" height="50" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<circle cx="82" cy="446" r="13" fill="#1a2230"/><text x="82" y="451" class="bx" fill="#fff" text-anchor="middle" style="font-weight:700">3</text>
+<text x="108" y="448" class="bx" style="font-weight:700" fill="#1a2230">Protect people and stop active harm</text>
+<text x="108" y="465" class="sm" fill="#1a2230">Then contain the system, data, access and supplier path</text>
+<line x1="320" y1="474" x2="320.0" y2="478.0" stroke="#1a2230" stroke-width="1.8"/>
+<polygon points="320,486 316.0,478.0 324.0,478.0" fill="#1a2230"/>
+<rect x="60" y="486" width="520" height="50" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<circle cx="82" cy="508" r="13" fill="#1a2230"/><text x="82" y="513" class="bx" fill="#fff" text-anchor="middle" style="font-weight:700">4</text>
+<text x="108" y="510" class="bx" style="font-weight:700" fill="#1a2230">Assess the situation</text>
+<text x="108" y="527" class="sm" fill="#1a2230">Scope, active cause, who is affected, legal duties, communication needs</text>
+<line x1="320" y1="536" x2="320.0" y2="540.0" stroke="#1a2230" stroke-width="1.8"/>
+<polygon points="320,548 316.0,540.0 324.0,540.0" fill="#1a2230"/>
+<rect x="60" y="548" width="520" height="50" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<circle cx="82" cy="570" r="13" fill="#1a2230"/><text x="82" y="575" class="bx" fill="#fff" text-anchor="middle" style="font-weight:700">5</text>
+<text x="108" y="572" class="bx" style="font-weight:700" fill="#1a2230">Notify, each party on its own clock</text>
+<text x="108" y="589" class="sm" fill="#1a2230">Keep a running decision log</text>
+<line x1="320" y1="598" x2="320.0" y2="602.0" stroke="#1a2230" stroke-width="1.8"/>
+<polygon points="320,610 316.0,602.0 324.0,602.0" fill="#1a2230"/>
+<rect x="60" y="610" width="520" height="126" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.6"/>
+<circle cx="82" cy="632" r="13" fill="#1a2230"/><text x="82" y="637" class="bx" fill="#fff" text-anchor="middle" style="font-weight:700">6</text>
+<text x="108" y="634" class="bx" style="font-weight:700" fill="#1a2230">Correct or eradicate the cause; remedy prior effects</text>
+<text x="108" y="651" class="sm" fill="#1a2230">Lookback and remedy applies to every system class:</text>
+<rect x="108" y="656" width="104" height="22" rx="11" fill="#fff" stroke="#1a2230" stroke-width="1.2"/><text x="160" y="671" class="sm" fill="#1a2230" text-anchor="middle" style="font-weight:700">Predictive</text>
+<rect x="222" y="656" width="104" height="22" rx="11" fill="#fff" stroke="#1a2230" stroke-width="1.2"/><text x="274" y="671" class="sm" fill="#1a2230" text-anchor="middle" style="font-weight:700">Generative</text>
+<rect x="336" y="656" width="104" height="22" rx="11" fill="#fff" stroke="#1a2230" stroke-width="1.2"/><text x="388" y="671" class="sm" fill="#1a2230" text-anchor="middle" style="font-weight:700">Agentic</text>
+<rect x="76" y="686" width="488" height="40" rx="3" fill="#fff" stroke="#8a3324" stroke-width="1.4" stroke-dasharray="5 3"/>
+<text x="86" y="702" class="sm" fill="#1a2230"><tspan style="font-weight:700" fill="#8a3324">Agentic extra checks: </tspan>tool actions, transactions, commitments,</text><text x="86" y="717" class="sm" fill="#1a2230">messages, state changes and downstream automations</text>
+<line x1="320" y1="736" x2="320.0" y2="740.0" stroke="#1a2230" stroke-width="1.8"/>
+<polygon points="320,748 316.0,740.0 324.0,740.0" fill="#1a2230"/>
+<rect x="60" y="748" width="520" height="50" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<circle cx="82" cy="770" r="13" fill="#1a2230"/><text x="82" y="775" class="bx" fill="#fff" text-anchor="middle" style="font-weight:700">7</text>
+<text x="108" y="772" class="bx" style="font-weight:700" fill="#1a2230">Recover</text>
+<text x="108" y="789" class="sm" fill="#1a2230">Validated system, restricted service, or manual fallback</text>
+<line x1="320" y1="798" x2="320.0" y2="802.0" stroke="#1a2230" stroke-width="1.8"/>
+<polygon points="320,810 316.0,802.0 324.0,802.0" fill="#1a2230"/>
+<rect x="60" y="810" width="520" height="50" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<circle cx="82" cy="832" r="13" fill="#1a2230"/><text x="82" y="837" class="bx" fill="#fff" text-anchor="middle" style="font-weight:700">8</text>
+<text x="108" y="834" class="bx" style="font-weight:700" fill="#1a2230">Verify recovery and watch for recurrence</text>
+<text x="108" y="851" class="sm" fill="#1a2230">Update severity and scope as the evidence changes</text>
+<line x1="320" y1="860" x2="320.0" y2="864.0" stroke="#1a2230" stroke-width="1.8"/>
+<polygon points="320,872 316.0,864.0 324.0,864.0" fill="#1a2230"/>
+<rect x="60" y="872" width="520" height="50" rx="4" fill="#eef1f5" stroke="#1a2230" stroke-width="1.2"/>
+<circle cx="82" cy="894" r="13" fill="#1a2230"/><text x="82" y="899" class="bx" fill="#fff" text-anchor="middle" style="font-weight:700">9</text>
+<text x="108" y="896" class="bx" style="font-weight:700" fill="#1a2230">Root cause analysis and post-incident review</text>
+<text x="108" y="913" class="sm" fill="#1a2230">Sections 10.5 and 10.6; communication and documentation continue</text>
+<line x1="320" y1="922" x2="320.0" y2="926.0" stroke="#1a2230" stroke-width="1.8"/>
+<polygon points="320,934 316.0,926.0 324.0,926.0" fill="#1a2230"/>
+<rect x="60" y="934" width="520" height="50" rx="4" fill="#fff" stroke="#8a3324" stroke-width="2.4"/>
+<circle cx="82" cy="956" r="13" fill="#1a2230"/><text x="82" y="961" class="bx" fill="#fff" text-anchor="middle" style="font-weight:700">10</text>
+<text x="108" y="958" class="bx" style="font-weight:700" fill="#1a2230">Close only with evidence and owners</text>
+<text x="108" y="975" class="sm" fill="#1a2230">Technical, human, legal and process actions each covered</text>
+<rect x="60" y="996" width="520" height="30" rx="4" fill="#1a2230"/><text x="320" y="1016" class="bx" fill="#fff" text-anchor="middle" style="font-weight:700">END: INCIDENT CLOSED</text>
+<line x1="320" y1="984" x2="320.0" y2="988.0" stroke="#1a2230" stroke-width="1.8"/>
+<polygon points="320,996 316.0,988.0 324.0,988.0" fill="#1a2230"/>
+<text x="632" y="170" class="col" fill="#8a3324">FEEDBACK LOOPS</text><text x="632" y="186" class="em" fill="#46536b">new evidence loops back,</text><text x="632" y="200" class="em" fill="#46536b">it does not only flow forward</text>
+<line x1="620" y1="835" x2="620" y2="244" stroke="#8a3324" stroke-width="1.8" stroke-dasharray="5 4"/>
+<line x1="620" y1="244" x2="393.0" y2="244.0" stroke="#8a3324" stroke-width="1.8" stroke-dasharray="5 4"/>
+<polygon points="385,244 393.0,240.0 393.0,248.0" fill="#8a3324"/>
+<text x="632" y="248" class="sm" fill="#1a2230">update severity</text>
+<line x1="620" y1="449" x2="588.0" y2="449.0" stroke="#8a3324" stroke-width="1.8" stroke-dasharray="5 4"/>
+<polygon points="580,449 588.0,445.0 588.0,453.0" fill="#8a3324"/>
+<text x="632" y="453" class="sm" fill="#1a2230">update containment</text>
+<line x1="620" y1="511" x2="588.0" y2="511.0" stroke="#8a3324" stroke-width="1.8" stroke-dasharray="5 4"/>
+<polygon points="580,511 588.0,507.0 588.0,515.0" fill="#8a3324"/>
+<text x="632" y="515" class="sm" fill="#1a2230">update scope and legal assessment</text>
+<line x1="620" y1="573" x2="588.0" y2="573.0" stroke="#8a3324" stroke-width="1.8" stroke-dasharray="5 4"/>
+<polygon points="580,573 588.0,569.0 588.0,577.0" fill="#8a3324"/>
+<text x="632" y="577" class="sm" fill="#1a2230">update communication</text>
+<rect x="640" y="810" width="240" height="50" rx="4" fill="#fff" stroke="#8a3324" stroke-width="1.6"/><text x="652" y="831" class="bx" style="font-weight:700" fill="#1a2230">NEW EVIDENCE</text><text x="652" y="848" class="sm" fill="#1a2230">can arrive at any stage</text>
+<line x1="640" y1="835" x2="620" y2="835" stroke="#8a3324" stroke-width="1.8" stroke-dasharray="5 4"/>
+<line x1="20" y1="1042" x2="880" y2="1042" stroke="#c9d1dc" stroke-width="1"/><text x="20" y="1058" class="sm" fill="#46536b">Heavy outline: emergency branch and closure. Dashed lines: feedback. Stopping harm is not the same as remedying harm already done.</text>
 </svg>
