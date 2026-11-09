@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -399,11 +404,44 @@ ul.task-list li input[type="checkbox"] {
 <p>Some actions are low-consequence and bounded, and scheduling is one of them. A governance program can reasonably let such an action run without a review of each instance. Reviewing every scheduling confirmation the way <code>FAIRLEND</code>’s scores were reviewed would recreate the pointless checkbox review that Chapter 7 warned against.</p>
 <p>Other action classes, types of action such as sending a rejection notice, can get a gate. An organization can use a technically enforced approval point. It can use a step-up authorization, which is an extra approval for a riskier step. Or it can use a human-in-the-loop gate, where a person must approve before the action goes ahead. The gate can sit at a tool boundary, the point where the agent calls outside software such as a calendar or an email program. The gate can also sit at a transaction boundary, the point where a complete transaction such as a booking or a payment is about to go through. Or it can sit at a plan checkpoint, a set point in the agent’s plan of steps where it pauses. An organization can place a gate for any action class that it decides needs one.</p>
 <p>An agent that takes irreversible or high-consequence actions is therefore not ungovernable by review. It is differently governed. The review moment moves from after each output to the point where that specific action would execute. The organization decides before deployment which action classes need a gate at all. Sections 12.3 through 12.5 describe three controls. They are permission scope, reversibility classification, and runtime intervention. A program builds them once it has decided, action class by action class, where a gate belongs and where bounded autonomy, freedom to act within set limits, is acceptable.</p>
-<p>Control over an agent’s actions operates at four points, not one. A governance program needs to know which point a given control occupies. It should not treat “monitoring” as a single catch-all.</p>
-<p>Inline enforcement is a policy check that a proposed action passes through before it runs. The check can allow the action, deny it, modify it, or hold it for approval. Section 12.3’s permission scope and section 12.5’s intervention capability occupy this point for a gated action class.</p>
-<p>Near-real-time detection means catching a problem almost as soon as it happens. It catches an unusual action shortly after the action runs. The specific action has already happened. The catch comes in time to limit the damage that follows.</p>
-<p>Aggregate monitoring watches for a pattern across many actions. Chapter 9 developed this practice. It caught <code>TALENTSCREEN</code>’s volume anomaly, which was an unusual spike in the number of actions. By the time an aggregate signal fires, the individual actions that make up the pattern have already taken effect.</p>
-<p>Retrospective audit reconstructs what happened after the fact, for accountability and learning. It works whether or not any earlier point caught the problem in time.</p>
+<p>Control over an agent’s actions operates at four points, not one. A governance program needs to know which point a given control occupies. It should not treat “monitoring” as a single catch-all. Table 12.2 sets the four points side by side.</p>
+<table class="caption-top table">
+<caption>Table 12.2. The four control points over an agent’s actions, from the check before an action runs to reconstruction after the fact.</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Control point</th>
+<th>When it acts</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Inline enforcement</strong></td>
+<td>Before the action runs</td>
+<td>A policy check that a proposed action passes through. The check can allow the action, deny it, modify it, or hold it for approval. Section 12.3’s permission scope and section 12.5’s intervention capability occupy this point for a gated action class.</td>
+</tr>
+<tr class="even">
+<td><strong>Near-real-time detection</strong></td>
+<td>Shortly after the action runs</td>
+<td>Catches an unusual action almost as soon as the problem happens. The specific action has already happened, but the catch comes in time to limit the damage that follows.</td>
+</tr>
+<tr class="odd">
+<td><strong>Aggregate monitoring</strong></td>
+<td>By the time the signal fires, the individual actions that make up the pattern have already taken effect</td>
+<td>Watches for a pattern across many actions. Chapter 9 developed this practice. It caught <code>TALENTSCREEN</code>’s volume anomaly, an unusual spike in the number of actions.</td>
+</tr>
+<tr class="even">
+<td><strong>Retrospective audit</strong></td>
+<td>After the fact</td>
+<td>Reconstructs what happened, for accountability and learning. It works whether or not any earlier point caught the problem in time.</td>
+</tr>
+</tbody>
+</table>
 <p>A governance program might rely on aggregate monitoring or retrospective audit alone for an action class that should have had inline enforcement. That is a substitution error. The organization’s own decision about that action class, made before deployment, called for the earliest control point, the check before the action runs. The program has replaced it with a later one.</p>
 <div id="fig-recommender-vs-agent" class="quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -478,13 +516,54 @@ AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [ ]
 <section id="agent-identity-and-registration" class="level2">
 <h2 class="anchored" data-anchor-id="agent-identity-and-registration">12.2 Agent identity and registration</h2>
 <p>Start with classification. A capability added the way Calloway’s scheduling tool was added falls into one of three categories. It is a new AI system. Or it is a new capability inside a system that is already registered. Or it is a material change to the boundary of a registered system. Calloway’s scheduling capability was never classified as any of the three. That is why no registration decision was ever made.</p>
-<p>Once the classification is settled, an agent that acts with credentials is an actor. Credentials are the digital proofs of identity that a system uses to log in. They may be the agent’s own, or they may be granted on an organization’s behalf. To hold such an actor accountable, a governance program must keep six elements apart. A program can otherwise blur them into one.</p>
-<p><strong>The registry record</strong> is what the organization declares the agent to be. It records the agent’s purpose, its origin, and the scope it was approved for.</p>
-<p><strong>The runtime principal</strong> is the identity that the running agent authenticates as when it calls a tool or a service. To authenticate is to prove who you are. A downstream system, meaning a system that receives the call, checks this identity. It does not check the registry entry.</p>
-<p><strong>The credential</strong> is what the runtime principal presents to prove that identity. It is time-limited where practical.</p>
-<p><strong>The deployment attestation</strong> identifies the specific code, model version, tool set, and configuration that are running at a given moment. This is the piece that changes when a vendor pushes an update, which means sends out a new version of its software. The registry record does not automatically reflect such an update.</p>
-<p><strong>The delegated user context</strong> records which human or role, if any, the agent is acting on behalf of for a given action. It is distinct from the agent’s own principal.</p>
-<p><strong>The accountable owner</strong> is the person or role within the organization who answers for the agent’s behavior. This designation does not change just because the underlying model or configuration does.</p>
+<p>Once the classification is settled, an agent that acts with credentials is an actor. Credentials are the digital proofs of identity that a system uses to log in. They may be the agent’s own, or they may be granted on an organization’s behalf. To hold such an actor accountable, a governance program must keep six elements apart. A program can otherwise blur them into one. Table 12.3 names each element and what sets it apart.</p>
+<table class="caption-top table">
+<caption>Table 12.3. The six elements a governance program must keep apart to hold an agent accountable.</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>What it is</th>
+<th>Distinguishing point</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Registry record</strong></td>
+<td>What the organization declares the agent to be</td>
+<td>It records the agent’s purpose, its origin, and the scope it was approved for.</td>
+</tr>
+<tr class="even">
+<td><strong>Runtime principal</strong></td>
+<td>The identity that the running agent authenticates as when it calls a tool or a service. To authenticate is to prove who you are.</td>
+<td>A downstream system, meaning a system that receives the call, checks this identity. It does not check the registry entry.</td>
+</tr>
+<tr class="odd">
+<td><strong>Credential</strong></td>
+<td>What the runtime principal presents to prove that identity</td>
+<td>It is time-limited where practical.</td>
+</tr>
+<tr class="even">
+<td><strong>Deployment attestation</strong></td>
+<td>Identifies the specific code, model version, tool set, and configuration that are running at a given moment</td>
+<td>This is the piece that changes when a vendor pushes an update, which means sends out a new version of its software. The registry record does not automatically reflect such an update.</td>
+</tr>
+<tr class="odd">
+<td><strong>Delegated user context</strong></td>
+<td>Records which human or role, if any, the agent is acting on behalf of for a given action</td>
+<td>It is distinct from the agent’s own principal.</td>
+</tr>
+<tr class="even">
+<td><strong>Accountable owner</strong></td>
+<td>The person or role within the organization who answers for the agent’s behavior</td>
+<td>This designation does not change just because the underlying model or configuration does.</td>
+</tr>
+</tbody>
+</table>
 <p>All six elements must be verifiable at the moment of action. Calloway’s scheduling capability violated this requirement because it did not exist as a registered entity at all. Recording the six elements once at registration is not enough, because nothing guarantees they still hold later. A registry record written when a capability launches is a historical document, not a control, if no one checks it against what is running months later.</p>
 <p>A material change, one big enough to matter, should trigger a new check. Such a change can be to the deployment attestation, the model, the permissions, or the vendor configuration. The check asks whether the registry record still describes what is running. It should not assume that a new identity now exists. It should not assume that nothing has changed either.</p>
 <p>A governance program also ties every action’s log entry, the written record of one action, back to all six elements. The entry points to the current registry and policy versions by reference, and it does not copy their text. It never includes the credential’s secret value. Each entry also carries a correlation ID, a code that links the action to its full context. With these, a review can answer five questions. Who does the agent claim to be? Who did it authenticate as? Under what attestation did it run? On whose behalf did it act? Who answers for the result?</p>
@@ -643,9 +722,9 @@ AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [ ]
 </ol>
 <p>Chapter 10 introduced the scheduling agent through its containment failure. The case in focus below examines the same agent from the design side.</p>
 <p>A registration record built at deployment would have made the capability’s new authority visible. An independently enforced permission scope that excluded write access to the applicant tracking system’s status field could have blocked the rejection outright. Together, these two controls would have avoided most of the incident that Chapter 10 had to respond to. Instead, the governance program discovered, in the middle of the crisis, that no one could say what the agent had been authorized to do in the first place.</p>
-<p>These controls build on earlier chapters. Section 12.3’s structural enforcement rests on Chapter 11’s point that untrusted text reaching a model can change what the model concludes it should do. It is why a permission boundary for an agent has to sit outside the model and not inside a prompt.</p>
+<p>Section 12.3’s structural enforcement rests on Chapter 11’s point that untrusted text reaching a model can change what the model concludes it should do. It is why a permission boundary for an agent has to sit outside the model and not inside a prompt.</p>
 <p>Section 12.5’s stop-and-recover process applies Chapter 10’s incident lifecycle, the sequence of stages for handling an incident, at the moment of action. The process does not replace it. Interruption is one step inside the lifecycle. Containment, evidence preservation, remedy, and post-incident review remain required.</p>
-<p>One more dependency remains. The registration, authorization-policy, testing, monitoring, incident-authority, and retirement decisions described above belong to an unnamed “governance program.” Each of those decisions is somebody’s job. Chapter 13 takes up whose job it is.</p>
+<p>The registration, authorization-policy, testing, monitoring, incident-authority, and retirement decisions described above belong to an unnamed “governance program.” Each of those decisions is somebody’s job. Chapter 13 takes up whose job it is.</p>
 </section>
 <section id="case-in-focus-a-rejection-nobody-authorized" class="level2 unnumbered case">
 <h2 class="unnumbered anchored" data-anchor-id="case-in-focus-a-rejection-nobody-authorized">Case in focus: a rejection nobody authorized</h2>

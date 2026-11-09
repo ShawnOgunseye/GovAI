@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -407,11 +412,40 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="assessment-dimensions" class="level2">
 <h2 class="anchored" data-anchor-id="assessment-dimensions">16.2 Assessment dimensions</h2>
-<p>Due diligence assesses at least four dimensions. A weak or unclear answer on any one is itself a finding. It is not automatically a signal of what the vendor is hiding.</p>
-<p>The provider dimension asks who the vendor is and how long it has operated. It also asks what the vendor’s financial stability suggests about long-term support. An unclear answer is a real gap in the evidence for a support and continuity decision.</p>
-<p>The system dimension asks what the system does, what data it was built on, and how it performs across the populations it will encounter. Sometimes the answer stays in marketing terms instead of technical specifics. That leaves the question open. It does not tell you which explanation accounts for the vagueness. The cause could be an unflattering technical answer, an incomplete internal understanding, or an unpracticed sales process.</p>
-<p>The documentation dimension asks whether a model card, a technical specification, or an equivalent document exists at all. A model card is a short document that describes what a model is for, how it was built, and how it performs. If no such document exists, its absence is itself the finding. It is not a gap to route around.</p>
-<p>The compliance dimension asks what regulatory obligations the vendor has already assessed against the deployment’s jurisdiction and sector.</p>
+<p>Due diligence assesses at least four dimensions, and Table 16.3 states what each one asks. A weak or unclear answer on any one is itself a finding. It is not automatically a signal of what the vendor is hiding.</p>
+<p>Table 16.3. The four core assessment dimensions</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>What it asks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Provider</td>
+<td>Who the vendor is, how long it has operated, and what its financial stability suggests about long-term support</td>
+</tr>
+<tr class="even">
+<td>System</td>
+<td>What the system does, what data it was built on, and how it performs across the populations it will encounter</td>
+</tr>
+<tr class="odd">
+<td>Documentation</td>
+<td>Whether a model card, a technical specification, or an equivalent document exists at all</td>
+</tr>
+<tr class="even">
+<td>Compliance</td>
+<td>What regulatory obligations the vendor has already assessed against the deployment’s jurisdiction and sector</td>
+</tr>
+</tbody>
+</table>
+<p>A model card is a short document that describes what a model is for, how it was built, and how it performs.</p>
+<p>On the provider dimension, an unclear answer is a real gap in the evidence for a support and continuity decision. On the system dimension, the answer sometimes stays in marketing terms instead of technical specifics. That leaves the question open. It does not tell you which explanation accounts for the vagueness. The cause could be an unflattering technical answer, an incomplete internal understanding, or an unpracticed sales process. On the documentation dimension, if no model card or equivalent document exists, its absence is itself the finding. It is not a gap to route around.</p>
 <p>A fuller review is proportionate to the system’s risk tier. It also covers data provenance, which is where the data came from. It takes in security and resilience, privacy, safety and accessibility, and the design of human oversight. It covers subprocessors, which are companies the vendor hires to handle data for it, and other dependencies. It extends to incident history, intellectual property and licensing terms, and business continuity, which is the vendor’s ability to keep operating after a disruption. It also covers exit and portability, which is the ability to leave and take your data with you.</p>
 <p>A review limited to the four core dimensions should say so explicitly. Otherwise it implies a completeness it does not have.</p>
 </section>

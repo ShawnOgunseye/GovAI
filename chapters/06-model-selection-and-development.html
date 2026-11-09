@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -444,7 +449,39 @@ AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x],
 CH035 correction NOT YET APPLIED TO SVG
 -->
 <p>Figure 6.1 is a lookup table, not a ranking. No axis is more important than another in the abstract. Which axes matter most depends on what the system will do. A system that never takes an action can deprioritize tool-call scoping in favor of confidence calibration.</p>
-<p>Deriving that priority from a use case takes three steps. First, name what the system will do, in the terms section 3.3 uses for the third trace: does it produce text a person reads, a score a person acts on, or an action it takes itself? That answer makes some axes binding and leaves the rest as preferences. An agentic system makes tool scoping and instruction hierarchy binding, because a model that cannot emit a bounded tool call cannot be made to later. A system producing a decision a person must explain makes confidence and abstention binding, because a score with no calibrated uncertainty gives the reviewer nothing to review. A system handling regulated content makes deployment option binding, because where the model runs decides what leaves the organization.</p>
+<p>Deriving that priority from a use case takes three steps. First, name what the system will do, in the terms section 3.3 uses for the third trace. Does it produce text a person reads, a score a person acts on, or an action it takes itself? That answer makes some axes binding and leaves the rest as preferences, and Table 6.1 shows how.</p>
+<p>Table 6.1. Binding axes by what the system does</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>System</th>
+<th>Binding axes</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Takes an action itself (agentic)</td>
+<td>Tool scoping and instruction hierarchy</td>
+<td>A model that cannot emit a bounded tool call cannot be made to later</td>
+</tr>
+<tr class="even">
+<td>Produces a decision a person must explain</td>
+<td>Confidence and abstention</td>
+<td>A score with no calibrated uncertainty gives the reviewer nothing to review</td>
+</tr>
+<tr class="odd">
+<td>Handles regulated content</td>
+<td>Deployment option</td>
+<td>Where the model runs decides what leaves the organization</td>
+</tr>
+</tbody>
+</table>
 <p>Second, score the candidates on the binding axes only, recording for each what is known, what the vendor asserts, and what is untested, which is the same three-way marking the bill of materials in section 6.8 uses. Third, compare accuracy among the candidates that cleared the binding axes. Taking accuracy first is what produces a shortlist of one, because the most accurate model is usually the one whose affordances nobody examined. Without these steps, a procurement decision is made on accuracy and price alone, and the control questions arise only after the contract is signed.</p>
 </section>
 <section id="what-you-inherit-from-the-developer" class="level2">
@@ -490,7 +527,45 @@ terms without reproducing any single source's figure.
 AUDIT: pass 1 [x] against list, pass 2 blind [x], rendered and viewed [x].
 CH036 correction APPLIED. Checked 13 Sep 2026.
 -->
-<p>Figure 6.2 shows roles with distinct duties, not a single chain of escalating blame. A build-path organization holds the model-provider role and carries its duties. A fine-tuning organization adds the fine-tuner’s own duties on top of whatever the base model’s provider already owes. It takes on the provider’s duties as well where one of the Article 25(1) conditions is met. The three conditions are putting its own name or trademark on a high-risk system already on the market, making a substantial modification to a high-risk system that the initial conformity assessment did not foresee, and changing the intended purpose of a system that was not classified as high-risk so that it becomes one. The third matters most to a fine-tuner, because it is designed to catch the organization working on a system that is not high-risk today. A purchasing organization that uses a system under its own authority holds the deployer role. One that supplies it onward holds the distributor or importer role. The deployer governs its own use and integration and does not absorb every upstream duty by deploying, though its role can shift to provider under the same Article 25(1) conditions. Each actor is responsible for the duties attached to its role. Entering the chain later changes which duties attach, but the deploying organization can still be held to account for its own use.</p>
+<p>Figure 6.2 shows roles with distinct duties, not a single chain of escalating blame. Table 6.2 maps each entry point to the role it carries and the duties attached to that role.</p>
+<p>Table 6.2. Entry point, role, and attached duties</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Entry point</th>
+<th>Role</th>
+<th>Duties</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Build</td>
+<td>Model provider</td>
+<td>Carries the provider’s duties</td>
+</tr>
+<tr class="even">
+<td>Fine-tune</td>
+<td>Fine-tuner</td>
+<td>Adds the fine-tuner’s own duties on top of whatever the base model’s provider already owes. Takes on the provider’s duties as well where one of the Article 25(1) conditions is met</td>
+</tr>
+<tr class="odd">
+<td>Purchase and use under its own authority</td>
+<td>Deployer</td>
+<td>Governs its own use and integration. Does not absorb every upstream duty by deploying. Shifts to provider under the same Article 25(1) conditions</td>
+</tr>
+<tr class="even">
+<td>Purchase and supply onward</td>
+<td>Distributor or importer</td>
+<td>Carries the duties attached to that role</td>
+</tr>
+</tbody>
+</table>
+<p>The three Article 25(1) conditions are putting its own name or trademark on a high-risk system already on the market, making a substantial modification to a high-risk system that the initial conformity assessment did not foresee, and changing the intended purpose of a system that was not classified as high-risk so that it becomes one. The third matters most to a fine-tuner, because it is designed to catch the organization working on a system that is not high-risk today. Each actor is responsible for the duties attached to its role. Entering the chain later changes which duties attach, but the deploying organization can still be held to account for its own use.</p>
 <p>None of the six items above is boilerplate to accept at signature and never revisit. Each is a governance input, assessed with the rigor Chapter 16 applies to contracts generally, reassessed at each material change, and documented in the record Chapter 3 requires for every system the organization operates, on the buy path as much as the build path.</p>
 </section>
 <section id="reading-a-system-card-adversarially" class="level2">
@@ -603,7 +678,6 @@ CH036 correction APPLIED. Checked 13 Sep 2026.
 <p>The model layer moves faster and is governed less visibly than the system layer built around it. Most organizations will select a model instead of building one, so most of the weight falls on what selection inherits. Build, fine-tune, and select carry different visibility and different attachment of obligation. An organization needs to know which path it is on before it can know what it is accountable for.</p>
 <p>The affordance axes, structured output, tool scoping, instruction hierarchy, context handling, confidence and abstention, modality, latency and cost, and deployment option, determine what controls a system built on a given model can support. Selecting a model an organization did not train means inheriting usage policies, safety training decisions, deprecation schedules, data terms, safety frameworks, and a system card, none of it boilerplate and all of it requiring the same governance rigor Chapter 16 applies to contracts generally. Reading a system card adversarially, for what it does not evaluate and what a vague section signals, turns the card into a testing agenda, not a closed question.</p>
 <p>Whether architecture trades accuracy against interpretability is a question to test in the specific case, with the burden of justification on the more complex choice. Post-hoc explanation techniques like SHAP and LIME approximate a model’s reasoning without guaranteeing the approximation is faithful to what the model computed, and a plausible explanation is not automatically a true one. A model that cannot be reproduced cannot be investigated. A model bill of materials lets a later reviewer answer what a system is made of, on the buy path as much as the build path, even where the honest answer is that the vendor has not disclosed it.</p>
-<p><strong>Evidence carried forward.</strong> The model bill of materials, the system card read adversarially with its gaps named, the architecture and interpretability tradeoff chosen and why, and the service terms and dependencies a buy-path selection inherits are the model, supplier, and architecture evidence passed to the rest of the book. Chapter 7 tests against this evidence instead of re-deriving it. A claim the evidence does not support is a gap that testing should find, not assume closed.</p>
 </section>
 <section id="review-questions" class="level2">
 <h2 class="anchored" data-anchor-id="review-questions">Review questions</h2>

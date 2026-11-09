@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -525,8 +530,79 @@ ul.task-list li input[type="checkbox"] {
 <section id="audit-trails-and-logging" class="level2">
 <h2 class="anchored" data-anchor-id="audit-trails-and-logging">15.4 Audit trails and logging</h2>
 <p>A decision may need to be reconstructed months later. An affected individual may challenge it. A regulator or an internal review may ask about it. So the organization must capture information at the time of the decision that nobody expects to need until they suddenly do.</p>
-<p>At minimum, the log needs five items. The first is the input the system received. The second is the model and configuration version that processed it. The configuration is the set of settings the model ran with. The third is the output produced. The fourth is any human override and the reason given for it. An override is a person changing what the system decided. The fifth is a timestamp that establishes when each of these occurred.</p>
-<p>Depending on the system and the regulation it operates under, reconstruction may need more. It may need the policy or tool version in force at the time. It may need to know who reviewed or approved the decision. It may need an error or exception record where the system failed to complete normally. It may need a correlation identifier, a shared label that ties together the related entries of a request spanning multiple systems or a multi-step agentic action. It may need the authorization decision behind an action (section 15.5 develops this for agentic systems specifically). It may need an integrity record showing that the log itself has not been altered after the fact.</p>
+<p>Table 15.3 lists the five items a log needs at minimum, and the further items that reconstruction may need depending on the system and the regulation it operates under. Section 15.5 develops the authorization decision for agentic systems specifically.</p>
+<p>Table 15.3. Audit log items, minimum and conditional</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>What it records</th>
+<th>When needed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Input</td>
+<td>The input the system received</td>
+<td>Minimum</td>
+</tr>
+<tr class="even">
+<td>Model and configuration version</td>
+<td>Which model version processed the input, and the configuration, the set of settings the model ran with</td>
+<td>Minimum</td>
+</tr>
+<tr class="odd">
+<td>Output</td>
+<td>The output produced</td>
+<td>Minimum</td>
+</tr>
+<tr class="even">
+<td>Human override</td>
+<td>Any override, meaning a person changing what the system decided, and the reason given for it</td>
+<td>Minimum</td>
+</tr>
+<tr class="odd">
+<td>Timestamp</td>
+<td>When each of the other items occurred</td>
+<td>Minimum</td>
+</tr>
+<tr class="even">
+<td>Policy or tool version</td>
+<td>The policy or tool version in force at the time</td>
+<td>Where reconstruction needs it</td>
+</tr>
+<tr class="odd">
+<td>Reviewer or approver</td>
+<td>Who reviewed or approved the decision</td>
+<td>Where reconstruction needs it</td>
+</tr>
+<tr class="even">
+<td>Error or exception record</td>
+<td>Where the system failed to complete normally</td>
+<td>Where reconstruction needs it</td>
+</tr>
+<tr class="odd">
+<td>Correlation identifier</td>
+<td>A shared label that ties together the related entries of a request spanning multiple systems or a multi-step agentic action</td>
+<td>Where reconstruction needs it</td>
+</tr>
+<tr class="even">
+<td>Authorization decision</td>
+<td>The authorization decision behind an action</td>
+<td>Where reconstruction needs it</td>
+</tr>
+<tr class="odd">
+<td>Integrity record</td>
+<td>That the log itself has not been altered after the fact</td>
+<td>Where reconstruction needs it</td>
+</tr>
+</tbody>
+</table>
 <p>A log missing the model version cannot show which version’s known limitations applied to a specific decision. That matters when a limitation is discovered after the fact. The organization then needs to know which past decisions the limitation might have affected.</p>
 <p>Capturing “the input” does not mean storing it in full regardless of what it contains. Some inputs carry personal, privileged (legally protected from disclosure), or otherwise sensitive material. For such inputs, the logging design should record a masked, hashed, or reference form that is enough to support reconstruction. A masked form hides the sensitive parts, a hashed form is a short code that stands for the original without revealing it, and a reference form points to where the original is kept. The design should not default to full-content capture as the only way to meet the requirement. Access to any unmasked original should itself be controlled and separately logged.</p>
 <p>Retention, meaning how long the logs are kept, is in real tension with privacy obligations. The same records that let an organization reconstruct a decision months later often contain personal data. Privacy regulation pushes organizations to minimize and delete that data promptly. The tension does not resolve to a single rule of thumb. It resolves to a retention schedule. The schedule comes from the specific law a system falls under and from the specific purpose each category of record serves.</p>
@@ -538,7 +614,46 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="reconstructing-agentic-action-sequence-and-authority">15.5 Reconstructing agentic action: sequence and authority</h2>
 <p>Agentic systems make the reconstruction problem harder, because two things must be reconstructed and they are different things.</p>
 <p>The first is the action sequence. It records the observable state available to the agent at the time, meaning everything the agent could see when it acted. That state includes its inputs, its retrieved context (information it looked up), and its prior tool results. The sequence also records the action the agent selected and what it invoked, meaning which tool or service it called. This is the same kind of information that a decision log captures for a predictive or generative system. For an agentic system, that information extends to a chain of actions instead of a single output.</p>
-<p>The second is the authority chain. A sequence log does not automatically capture it. The authority chain records what authorization the agent acted under. That authorization is a decision more than a single fact. Reconstructing it means recording the elements the decision depended on. The first elements are which principal requested the task and what policy governed the decision to grant or deny it. A principal is the party that asks the agent to act. It can be a person or a software service. The next elements are what scoped credential was issued, and to which registered agent identity. A scoped credential is a digital pass that allows only a defined set of actions, and its scope is that set of actions. A registered agent identity is the name under which the organization recorded the agent. The agent identity was established under Chapter 12’s registration requirement. The credential’s constraints and validity window (the period during which it works) also belong in the record. The last element is whether a supervising agent delegated the task to a subordinate one under a narrower scope than the one it held itself.</p>
+<p>The second is the authority chain. A sequence log does not automatically capture it. The authority chain records what authorization the agent acted under. That authorization is a decision more than a single fact. Reconstructing it means recording the elements the decision depended on, and Table 15.4 lists them.</p>
+<p>Table 15.4. Elements of the authority chain</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>What it records</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Principal</td>
+<td>Which principal requested the task. A principal is the party that asks the agent to act, and it can be a person or a software service</td>
+</tr>
+<tr class="even">
+<td>Policy</td>
+<td>What policy governed the decision to grant or deny the task</td>
+</tr>
+<tr class="odd">
+<td>Scoped credential</td>
+<td>What credential was issued. A scoped credential is a digital pass that allows only a defined set of actions, and its scope is that set of actions</td>
+</tr>
+<tr class="even">
+<td>Registered agent identity</td>
+<td>Which identity the credential was issued to. A registered agent identity is the name under which the organization recorded the agent, and it was established under Chapter 12’s registration requirement</td>
+</tr>
+<tr class="odd">
+<td>Constraints and validity window</td>
+<td>The credential’s constraints and its validity window, the period during which it works</td>
+</tr>
+<tr class="even">
+<td>Delegation</td>
+<td>Whether a supervising agent delegated the task to a subordinate one under a narrower scope than the one it held itself</td>
+</tr>
+</tbody>
+</table>
 <p>How that credential evidence is represented depends on the architecture. A policy-enforcement system checks each request against the organization’s rules. It can record the decision itself at the point where enforcement happens. The record holds who asked (the subject), what they asked to reach (the resource), and what they asked to do with it (the action). It also holds the surrounding circumstances (the context), which version of the rules applied (the policy version), and what was allowed or refused (the outcome). It can hold all of that with no separate credential object at all. A system built on OAuth-style token exchange, a standard way of passing permissions between systems, instead records an issued token, its scope, and its validity. A token is a kind of digital credential. A hop is one step in a chain of delegation, where one party passes a task to the next. A fresh credential at a given hop is required only where the architecture’s own policy calls for one. It is not a general rule.</p>
 <p>The chain must record the scope in force at the moment of the action, not at the moment the agent was registered. Scope can be narrowed, widened, or suspended after registration (Chapter 12). A log that checks only the registration-time scope will misstate what the agent was authorized to do when it acted.</p>
 <p>A sequence log with a complete authority chain answers one question. It shows who was authorized to act and under what scope. It does not by itself answer who is accountable for the outcome. Authorization (whether the action was permitted), causal contribution (how much a given party brought the outcome about), and legal or organizational accountability (who has to answer for it) are different questions. An agent’s registered identity answers the authorization question in technical terms. It is not a person or a legal entity capable of answering for the outcome.</p>

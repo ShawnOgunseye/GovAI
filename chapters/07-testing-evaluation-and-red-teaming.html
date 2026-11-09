@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -403,8 +408,42 @@ ul.task-list li input[type="checkbox"] {
 <p>Other kinds of task need other choices. Regression tasks predict a number, such as a price. They need a choice between two kinds of metric. One kind penalizes large errors heavily, so one big miss costs far more than many small ones. The other treats every unit of error the same. Ranking tasks put items in order, such as a list of search results. They need a decision about which position in the ranked list drives the outcome a user experiences.</p>
 <p>Held-out data, data kept away from training and used only for testing, underlies every number in this section. A model evaluated on data it trained on reports its ability to memorize, not its ability to generalize, meaning to work well on new cases. The gap is invisible unless the evaluation set was kept separate from training from the start. Sampling the set afterward does not achieve this, because the data may already have influenced the model through earlier iterations of the same pipeline, the chain of steps that builds and updates it. Section 7.5 covers a harder case. There the held-out set leaks into training through a channel the organization does not control.</p>
 <p>A known correct answer is not always available when testing needs it, or in the form testing needs. Five things can get in the way.</p>
-<p>The outcome can be delayed. A loan’s repayment, for example, is unknown until the loan matures years later. The outcome can be selectively observed. A hiring model, for example, is checked only against people the organization hired, so declined applicants are never checked. The outcome can be contested. Clinicians reviewing the same case may disagree about whether it was high risk. The outcome can be affected by the intervention being tested. A fraud model’s flag changes what happens to a transaction, and so changes what outcome is recorded.</p>
-<p>Finally, the recorded outcome can be a proxy, a stand-in for the thing meant. This is the label problem that Chapter 5 raised for data, where a label is the recorded answer attached to a case. Testing inherits any flaw in that label directly.</p>
+<p>Table 7.1. Five conditions that put a known correct answer out of reach</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>How it shows up</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Delayed</strong></td>
+<td>A loan’s repayment is unknown until the loan matures years later</td>
+</tr>
+<tr class="even">
+<td><strong>Selectively observed</strong></td>
+<td>A hiring model is checked only against people the organization hired, so declined applicants are never checked</td>
+</tr>
+<tr class="odd">
+<td><strong>Contested</strong></td>
+<td>Clinicians reviewing the same case may disagree about whether it was high risk</td>
+</tr>
+<tr class="even">
+<td><strong>Affected by the intervention being tested</strong></td>
+<td>A fraud model’s flag changes what happens to a transaction, and so changes what outcome is recorded</td>
+</tr>
+<tr class="odd">
+<td><strong>A proxy</strong></td>
+<td>The recorded outcome is a stand-in for the thing meant</td>
+</tr>
+</tbody>
+</table>
+<p>The proxy condition is the label problem that Chapter 5 raised for data, where a label is the recorded answer attached to a case. Testing inherits any flaw in that label directly.</p>
 <p>Performance testing remains meaningful. The evaluation unit, meaning what each test item is checked against, is a labeled or otherwise justified reference outcome, where available. It is not a known correct answer. A test report has to state which of the five conditions applies to its outcome variable, the thing being predicted. The report must not present the comparison as though the reference were known.</p>
 </section>
 <section id="fairness-testing" class="level2">
@@ -476,7 +515,38 @@ and equal opportunity are not shown as conflicting. Checked 13 Sep 2026.
 <p>Evaluation design, often shortened to eval design, starts by decomposing a broad quality claim into specific, checkable tasks. Take the claim that a documentation assistant “writes good clinical summaries.” That claim cannot be tested as stated. Break it into parts. Does the assistant correctly extract the admitting diagnosis? Does it flag missing information instead of fabricating it? Does it use terminology consistent with the hospital’s documentation standards? Each part becomes a task that a specific evaluation item can check. Section 7.9 applies the same decomposition, task by task, to properties that resist specification even after decomposition.</p>
 <p>Rubric construction turns each task into a graded standard, a written scoring guide, so that no pass or fail call is left to whoever is reading. The rubric for the missing-information task states what counts as correctly flagging an absence. It states what counts as fabricating a value absent from the source. It also states how to resolve ambiguous cases, so the rubric decides them and not the private opinion of a grader, the person or model scoring the output. Two graders applying an underspecified rubric to the same output will disagree. The defect lies in the rubric, not in either grader.</p>
 <p>Inter-rater reliability is the degree to which different graders agree when rating the same outputs. It measures that disagreement instead of assuming it away. It depends on a workflow as much as on the final statistic. The rubric and its worked examples must be frozen before the scored sample is graded. Each grader produces an independent first rating before seeing any other grader’s rating or discussing the item. Only then does the settling of disagreements begin. The order matters. A grader who sees another’s rating first tends to anchor toward it, which manufactures agreement.</p>
-<p>The statistic has to match the design. Each statistic named here is a statistical measure of agreement between graders. Cohen’s kappa suits two graders scoring categorical ratings, ratings that sort an output into classes such as pass or fail. Weighted kappa suits two graders scoring ordered categories, such as a one-to-five scale. An intraclass correlation suits continuous ratings, ratings on a numeric scale, where its statistical assumptions are met. Krippendorff’s alpha suits cases that need its added flexibility, such as more than two graders or a mix of rating types.</p>
+<p>The statistic has to match the design. Each statistic named here is a statistical measure of agreement between graders.</p>
+<p>Table 7.2. Agreement statistics and the designs they suit</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th>Design it suits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Cohen’s kappa</strong></td>
+<td>Two graders scoring categorical ratings, ratings that sort an output into classes such as pass or fail</td>
+</tr>
+<tr class="even">
+<td><strong>Weighted kappa</strong></td>
+<td>Two graders scoring ordered categories, such as a one-to-five scale</td>
+</tr>
+<tr class="odd">
+<td><strong>Intraclass correlation</strong></td>
+<td>Continuous ratings, ratings on a numeric scale, where its statistical assumptions are met</td>
+</tr>
+<tr class="even">
+<td><strong>Krippendorff’s alpha</strong></td>
+<td>Cases that need its added flexibility, such as more than two graders or a mix of rating types</td>
+</tr>
+</tbody>
+</table>
 <p>A low agreement score is not automatically a personnel problem to fix by training graders harder. It often shows that the rubric has not resolved an ambiguity that different graders resolve differently. Low agreement can have other causes. The training may have been inconsistent. The thing being rated may be subjective, a matter of opinion with no one right answer. The mix of items may skew toward easy or hard ones. The evidence may vary in quality across the sample. Separate these causes before rewriting anything. Where the rubric is at fault, rewrite it and log what changed and why. Then retest agreement on a fresh sample before trusting the results.</p>
 </section>
 <section id="benchmark-contamination" class="level2">
@@ -484,17 +554,122 @@ and equal opportunity are not shown as conflicting. Checked 13 Sep 2026.
 <p>A public benchmark, a standard test used to compare models, is useful only if the model being evaluated did not see its answers during training. Keeping the answers unseen is increasingly hard to guarantee. A model trained on a broad scrape of public text, a large automatic copy of web pages, has probably met the benchmark somewhere in it. The model may also have met discussion of the benchmark, worked solutions, or both. This problem is called contamination. Contamination inflates apparent performance on the benchmark without improving the capability it claims to measure. The score cannot reveal this, because a contaminated model and a capable model produce the same high number.</p>
 <p>The holdout discipline that survives contamination is a standing practice, not a one-time fix. The organization builds an evaluation set and keeps it private, shared only with a small group that needs it. A training process the organization does not control cannot contaminate such a set. This is why the sentinel check that section 7.9 proposes is a private, rotating set and not drawn from a public source.</p>
 <p>Sometimes a public benchmark must be used. Then one warning signal is whether a model can complete a benchmark item word for word from part of the prompt, the text given to the model. Completion would be possible only if the model had memorized the item. So completion is evidence of exposure. Failure to complete does not show the benchmark was unseen. A model can be contaminated on a paraphrased or lightly modified copy that a word-for-word test misses. This test is one signal and not a contamination audit.</p>
-<p>A more defensible check combines several signals. First, use private and rotating held-out sets alongside the public benchmark. Second, plant canary items to detect scraping. A canary item is a made-up marker hidden in the benchmark text. If a model can reproduce the marker, that is a sign the benchmark text was copied into its training data. Third, keep a timestamp and version record showing when the benchmark was published relative to the model’s training cutoff. The training cutoff is the date after which the model saw no new data. Fourth, get a training-data provenance statement where the developer has published one. Provenance means a record of where the data came from. Fifth, run lexical and semantic overlap checks between the benchmark and known training sources. Lexical overlap means shared words. Semantic overlap means shared meaning. Sixth, repeat the evaluation on reworded versions of the same items. Finally, state the uncertainty explicitly where the training data cannot be inspected. Do not silently assume there is no contamination.</p>
+<p>A more defensible check combines several signals.</p>
+<p>Table 7.3. Signals a defensible contamination check combines</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Signal</th>
+<th>What it involves</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Private held-out sets</strong></td>
+<td>Use private and rotating held-out sets alongside the public benchmark</td>
+</tr>
+<tr class="even">
+<td><strong>Canary items</strong></td>
+<td>Plant made-up markers hidden in the benchmark text to detect scraping. If a model can reproduce the marker, that is a sign the benchmark text was copied into its training data</td>
+</tr>
+<tr class="odd">
+<td><strong>Timestamp and version record</strong></td>
+<td>Keep a record showing when the benchmark was published relative to the model’s training cutoff, the date after which the model saw no new data</td>
+</tr>
+<tr class="even">
+<td><strong>Provenance statement</strong></td>
+<td>Get a training-data provenance statement, a record of where the data came from, where the developer has published one</td>
+</tr>
+<tr class="odd">
+<td><strong>Overlap checks</strong></td>
+<td>Run lexical and semantic overlap checks between the benchmark and known training sources. Lexical overlap means shared words, and semantic overlap means shared meaning</td>
+</tr>
+<tr class="even">
+<td><strong>Reworded items</strong></td>
+<td>Repeat the evaluation on reworded versions of the same items</td>
+</tr>
+</tbody>
+</table>
+<p>Finally, state the uncertainty explicitly where the training data cannot be inspected. Do not silently assume there is no contamination.</p>
 </section>
 <section id="model-as-judge" class="level2">
 <h2 class="anchored" data-anchor-id="model-as-judge">7.6 Model as judge</h2>
 <p>Using one model to grade another model’s output instead of a human is called model-as-judge. The model doing the grading is called the grading model, or the judge model. It has become common because it scales in a way human grading does not. It is also widely misunderstood. Its failure modes, when unchecked, produce confident, wrong conclusions.</p>
-<p>Three biases are documented. Position bias is the tendency of a grading model to favor one position, first or second, regardless of content. It shows up when the model compares two candidate outputs in a fixed order. The effect is strong enough that swapping the order of the same two outputs can flip the verdict.</p>
-<p>Self-preference is the tendency to rate an output more favorably when it resembles the grader’s own style or comes from a model in its own family. So using a model to grade outputs, including outputs from its own family, is a checkable source of distortion, not a theoretical concern.</p>
-<p>Verbosity bias is the tendency to rate a longer answer more favorably, whether or not the extra length adds correct or useful content. It rewards padding over precision unless the rubric corrects for it.</p>
+<p>Three biases are documented, each a tendency of the grading model.</p>
+<p>Table 7.4. Documented biases of a grading model</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bias</th>
+<th>Tendency</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Position bias</strong></td>
+<td>Favoring one position, first or second, regardless of content, when the model compares two candidate outputs in a fixed order</td>
+<td>The effect is strong enough that swapping the order of the same two outputs can flip the verdict</td>
+</tr>
+<tr class="even">
+<td><strong>Self-preference</strong></td>
+<td>Rating an output more favorably when it resembles the grader’s own style or comes from a model in its own family</td>
+<td>Using a model to grade outputs, including outputs from its own family, is a checkable source of distortion, not a theoretical concern</td>
+</tr>
+<tr class="odd">
+<td><strong>Verbosity bias</strong></td>
+<td>Rating a longer answer more favorably, whether or not the extra length adds correct or useful content</td>
+<td>It rewards padding over precision unless the rubric corrects for it</td>
+</tr>
+</tbody>
+</table>
 <p>The model-as-judge literature reports a pattern. It is not a universal law to assume for every task and grading model. Correlation with human ratings, meaning how closely the model’s ratings track them, tends to degrade most on the cases where human graders themselves disagree most. So a grading model can be least trustworthy on the hard, contested cases where its verdict matters most. It can be most trustworthy on easy cases that a cheaper check would have settled. Whether the pattern holds for a given grading model and task is something to check.</p>
-<p>That is why using a grading model needs a validation process and not only awareness of the three biases above. First, swap the order in which the two candidate outputs are shown and check whether the verdict flips. This tests position bias. Second, control for length, either by instructing the grader to disregard it or by adjusting scores to remove its effect. This tests verbosity bias. Third, blind the grader to which system produced which output, particularly where its own family is among the systems compared. This tests self-preference. Fourth, run more than one grading model, from different families where feasible, and check whether they agree. One model cannot catch its own particular bias.</p>
-<p>Fifth, compare a sample of verdicts against human ratings on the same items, concentrated on the contested cases flagged above. That check also covers prompt sensitivity, which is how much the wording of the grading instructions changes the verdict. It covers score calibration, disagreement between graders, and sensitivity to the reference answer used. Sixth, route a contested case that the process cannot resolve with confidence to human review.</p>
+<p>That is why using a grading model needs a validation process and not only awareness of the three biases above.</p>
+<p>Table 7.5. Validation checks for a grading model and what each one tests</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Check</th>
+<th>What it tests</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Swap the order</strong> in which the two candidate outputs are shown and check whether the verdict flips</td>
+<td>Position bias</td>
+</tr>
+<tr class="even">
+<td><strong>Control for length</strong>, either by instructing the grader to disregard it or by adjusting scores to remove its effect</td>
+<td>Verbosity bias</td>
+</tr>
+<tr class="odd">
+<td><strong>Blind the grader</strong> to which system produced which output, particularly where its own family is among the systems compared</td>
+<td>Self-preference</td>
+</tr>
+<tr class="even">
+<td><strong>Run more than one grading model</strong>, from different families where feasible, and check whether they agree</td>
+<td>A model’s own particular bias, which no one model can catch in itself</td>
+</tr>
+<tr class="odd">
+<td><strong>Compare a sample of verdicts against human ratings</strong> on the same items, concentrated on the contested cases flagged above</td>
+<td>Prompt sensitivity, meaning how much the wording of the grading instructions changes the verdict, along with score calibration, disagreement between graders, and sensitivity to the reference answer used</td>
+</tr>
+</tbody>
+</table>
+<p>Finally, route a contested case that the process cannot resolve with confidence to human review.</p>
 <p>None of this rules out using a grading model to scale evaluation. Skipping validation is a specification error, an error in how the test itself was set up, and the findings above make it predictable. Trusting a verdict on a contested case as much as one on an easy case is the same kind of error.</p>
 </section>
 <section id="testing-agentic-systems" class="level2">
@@ -640,7 +815,7 @@ title/desc plus aria-labelledby convention used from fig-18-01 forward.
 <p>Robustness and adversarial testing probe distribution shift, boundary behavior, and deliberately constructed failure inputs. These include the instruction-override inputs specific to generative and agentic systems. Evaluating generative systems requires eval design, task decomposition, rubric construction, and inter-rater reliability. That is a discipline distinct from classifier testing.</p>
 <p>Benchmark contamination degrades public evaluation silently. Private, rotating, partly held-out evaluation sets survive it. Model-as-judge grading has documented biases in position, self-preference, and verbosity. It degrades most on the contested cases where its verdict would need to be most trustworthy. Testing agentic systems means a realistic, reversible sandbox. It means grading action sequences and not only endpoints. It means probing what a system does when its goal and constraints conflict. Red teaming finds what standard evaluation was not designed to look for. It produces governance value only when scope, team composition, and finding disposition are documented.</p>
 <p>Specifying the unspecifiable decomposes a property that resists direct verification into a proxy, a threshold, a verification method, and a documented residual. The proposed sentinel evaluation illustrates it in full. It checks a general propensity and not any single output’s truth. Open-ended inputs, probabilistic behavior, and properties that resist complete specification make residual uncertainty prominent for AI systems. Conventional software can face the same limits when its environment or specification is not fully bounded. Verification for AI reaches a characterized, accepted residual instead of a verified state. This does not hold AI to a lower bar. It is the honest description of what the available property, model, assumptions, and coverage have established.</p>
-<p><strong>Evidence carried forward.</strong> The output of testing is evaluation evidence. It consists of the coverage map of which methods were run against which claim, every finding with its disposition, and every documented residual. It also includes a release recommendation. That recommendation is grounded in the coverage and not in the absence of a failed test. Chapter 8 binds this evidence, together with Chapter 5’s and Chapter 6’s, into a deployment decision.</p>
+<p>The output of testing is evaluation evidence. It consists of the coverage map of which methods were run against which claim, every finding with its disposition, and every documented residual. It also includes a release recommendation. That recommendation is grounded in the coverage and not in the absence of a failed test. Chapter 8 binds this evidence, together with Chapter 5’s and Chapter 6’s, into a deployment decision.</p>
 </section>
 <section id="review-questions" class="level2">
 <h2 class="anchored" data-anchor-id="review-questions">Review questions</h2>

@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -410,7 +415,45 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="article-22-in-depth">2.2 Article 22 in depth</h2>
 <p>GDPR Article 22 gives a person the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning them or similarly significantly affects them. Three elements determine whether it applies.</p>
 <p>The first is whether the decision is <strong>solely automated</strong>. If a person is meaningfully involved, the article does not engage. Everything depends on what meaningfully means, and regulators have been clear that involvement which is nominal does not count. A reviewer who approves whatever the system produces has not removed the decision from the article’s scope.</p>
-<p>The Article itself does not name a test. The European Data Protection Board’s guidance, and the Court of Justice’s 2023 SCHUFA judgment, establish two things as law. Token involvement does not remove a decision from Article 22, and a score can itself be a decision within the Article even when a person formally signs off afterward, if that score effectively determines the outcome. What counts as genuine involvement in a given case is then a matter of evidence, not a fixed formula. In practice, auditors look for whether the reviewer has authority to reach a different conclusion, access to information beyond the system’s output, time proportionate to the decision, and a nonzero override rate. They also look for the opposite signature, where approval rates approach unity, review times are too short for the information to have been read, nothing beyond the system’s output is available, and performance measures reward agreeing with the system. None of these indicators is a settled legal threshold, and their weight depends on the context.</p>
+<p>The Article itself does not name a test. The European Data Protection Board’s guidance, and the Court of Justice’s 2023 SCHUFA judgment, establish two things as law. Token involvement does not remove a decision from Article 22, and a score can itself be a decision within the Article even when a person formally signs off afterward, if that score effectively determines the outcome. What counts as genuine involvement in a given case is then a matter of evidence, not a fixed formula. In practice, auditors look at a few dimensions of the review from both directions, for the marks of genuine involvement and for the opposite signature.</p>
+<p>Table 2.1. Indicators of genuine and nominal human involvement</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Genuine involvement</th>
+<th>Opposite signature</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Authority</strong></td>
+<td>The reviewer has authority to reach a different conclusion</td>
+<td>Performance measures reward agreeing with the system</td>
+</tr>
+<tr class="even">
+<td><strong>Information</strong></td>
+<td>The reviewer has access to information beyond the system’s output</td>
+<td>Nothing beyond the system’s output is available</td>
+</tr>
+<tr class="odd">
+<td><strong>Time</strong></td>
+<td>Review time is proportionate to the decision</td>
+<td>Review times are too short for the information to have been read</td>
+</tr>
+<tr class="even">
+<td><strong>Overrides</strong></td>
+<td>The override rate is nonzero</td>
+<td>Approval rates approach unity</td>
+</tr>
+</tbody>
+</table>
+<p>None of these indicators is a settled legal threshold, and their weight depends on the context.</p>
 <p>The second is whether the effect is <strong>legal or similarly significant</strong>. Legal effects are those that change someone’s legal position, such as a contract terminated, a benefit refused, or a licence withdrawn. Similarly significant effects are those with comparable practical weight, which includes credit, employment, insurance, and access to education or essential services. Online advertising generally does not reach the threshold. Content moderation is contested, and the answer probably depends on what the platform is to the person affected.</p>
 <p>The third is the set of exceptions. Solely automated decisions with significant effects are permitted where necessary for a contract, authorized by law, or based on explicit consent. Even then, safeguards are mandatory, including the right to obtain human intervention, to express a point of view, and to contest the decision. An exception permits the automation; it does not remove the recourse.</p>
 <p>For <code>FAIRLEND</code>, Meridian’s model scores applications and a loan officer approves or declines. On paper this is not solely automated. Now check the signature. If officers agree with the model in 97 percent of cases, if the average review takes forty seconds, if the officer sees the score before the application, and if departing from the model requires a memo that a supervisor reviews, those are the facts. They are the indicators regulators and courts look to, not a self-executing test. They trigger the investigation and may support a conclusion that Meridian is making solely automated decisions with a person present. What that investigation cannot skip is the missing legal element, whether the safeguards Article 22 requires exist at all, and it should proceed under qualified legal review instead of resting on the pattern-match alone. Nothing about running that investigation required examining the model.</p>
@@ -467,8 +510,55 @@ Figure&nbsp;3.1: Which regulations reach this system
 <p>That last date did not hold, and the reason matters more than the fact.</p>
 <p>By late 2025 the implementation machinery was visibly behind. Member states had not all designated national competent authorities. More consequentially, the harmonized technical standards being developed by the European standardization bodies were not finished. Those standards are the practical route to demonstrating compliance, and without them organizations faced obligations stated in general terms with no agreed benchmark for meeting them.</p>
 <p>The Commission proposed targeted amendments in November 2025. Negotiations were difficult, with an initial trilogue in April 2026 ending without agreement. Provisional agreement came in May, the Parliament endorsed the text in June, the Council approved at the end of that month, and the amending regulation was published on 24 July 2026 and entered into force on 27 July.</p>
-<p>The deferrals are substantial. Standalone high-risk systems under Annex III now have until 2 December 2027. High-risk AI embedded in regulated products under Annex I has until 2 August 2028.</p>
-<p>Reading only that summary produces a serious error, because several things did not move. The Article 50 transparency obligations applied from 2 August 2026 as originally scheduled, with a narrow transitional provision giving generative systems already on the market until 2 December 2026 to meet the machine-readable marking requirement. Systems entering the market after August had no such grace. The prohibitions have been in force since February 2025 and were extended, not relaxed. General purpose model obligations have been in force since August 2025. And the supervisory powers of the EU AI Office were broadened.</p>
+<p>The deferrals are substantial, but reading only the deferrals produces a serious error, because several things did not move.</p>
+<p>Table 2.2. What the amending regulation moved and what it left in force</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Obligation</th>
+<th>Status after the amendment</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>High-risk conformity, standalone systems under Annex III</strong></td>
+<td>Deferred</td>
+<td>Now due 2 December 2027</td>
+</tr>
+<tr class="even">
+<td><strong>High-risk conformity, AI embedded in regulated products under Annex I</strong></td>
+<td>Deferred</td>
+<td>Now due 2 August 2028</td>
+</tr>
+<tr class="odd">
+<td><strong>Article 50 transparency obligations</strong></td>
+<td>Applied as originally scheduled</td>
+<td>2 August 2026</td>
+</tr>
+<tr class="even">
+<td><strong>Prohibitions</strong></td>
+<td>In force and extended, not relaxed</td>
+<td>Since February 2025</td>
+</tr>
+<tr class="odd">
+<td><strong>General purpose model obligations</strong></td>
+<td>In force</td>
+<td>Since August 2025</td>
+</tr>
+<tr class="even">
+<td><strong>Supervisory powers of the EU AI Office</strong></td>
+<td>Broadened</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>One narrow transitional provision gave generative systems already on the market until 2 December 2026 to meet the machine-readable marking requirement. Systems entering the market after August had no such grace.</p>
 <p>The lesson for practice is broader than a moved deadline. The amendment changed substance as well as timing. The extended prohibitions and broadened supervisory powers noted above are two examples; a third is the AI literacy duty, which softened from a requirement to ensure literacy into a requirement to support its development. A programme that tracks only the date misses changes like this one. An organization that stopped work on reading the proposal has lost sixteen months it will need, and it needs to check what changed as well as when it takes effect.</p>
 <div id="fig-ai-act-timeline" class="quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -485,7 +575,35 @@ Figure&nbsp;3.2: EU AI Act obligations and when each applies, as amended
 <section id="standards-and-conformity-routes" class="level2">
 <h2 class="anchored" data-anchor-id="standards-and-conformity-routes">2.7 Standards and conformity routes</h2>
 <p>Legislation of this kind states requirements in general terms because it must apply across every sector and outlast the technology it regulates. The AI Act says training data must be sufficiently representative and that systems must achieve appropriate accuracy. It does not say how representativeness is measured or what level of accuracy counts as appropriate. Something has to supply that specificity before anyone can comply, and what supplies it turns out to matter as much as the legislation itself.</p>
-<p><strong>Conformity assessment</strong> is the process of establishing that a system meets the requirements. For most standalone high-risk systems, those listed in Annex III points 2 through 8, the provider always assesses internally, evaluating its own system against the requirements and documenting the result. For the biometric systems listed in Annex III point 1, internal assessment is available only when the provider has applied a harmonized standard or a common specification covering the requirement; otherwise a notified body must be involved. High-risk AI embedded in a product already subject to third-party assessment under other EU product law follows that product law’s own procedure instead. <strong>Notified bodies</strong> are independent organizations designated by member states to perform this function.</p>
+<p><strong>Conformity assessment</strong> is the process of establishing that a system meets the requirements, and the route a provider follows depends on the system’s category.</p>
+<p>Table 2.3. Conformity assessment routes by system category</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>System category</th>
+<th>Conformity route</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Annex III points 2 through 8</strong>, most standalone high-risk systems</td>
+<td>The provider always assesses internally, evaluating its own system against the requirements and documenting the result</td>
+</tr>
+<tr class="even">
+<td><strong>Annex III point 1</strong>, biometric systems</td>
+<td>Internal assessment is available only when the provider has applied a harmonized standard or a common specification covering the requirement. Otherwise a notified body must be involved</td>
+</tr>
+<tr class="odd">
+<td><strong>Annex I</strong>, high-risk AI embedded in a product already subject to third-party assessment under other EU product law</td>
+<td>That product law’s own procedure, followed instead of a route of the Act’s own</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notified bodies</strong> are independent organizations designated by member states to perform this function.</p>
 <p><strong>Harmonized standards</strong> are the bridge. Developed by the European standardization organizations at the Commission’s request and cited in the Official Journal, they translate the Act’s general requirements into specific technical practice.</p>
 <div class="definition">
 <p><strong>Conformity with a harmonized standard creates a presumption of conformity only for the requirements and obligations the cited parts cover.</strong> Record the standard, version, Official Journal citation, covered requirement, system category, and Article 43 route. The presumption does not convert the standard into a complete certificate for the system or prevent a competent authority from examining conformity.</p>

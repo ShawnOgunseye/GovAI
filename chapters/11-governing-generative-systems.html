@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -429,11 +434,54 @@ ul.task-list li input[type="checkbox"] {
 <p>No foolproof defense against prompt injection is currently known. A governance program should say so plainly. It should not promise a fix that filtering or architecture alone can deliver.</p>
 <p>Input filtering, the screening of incoming content for suspicious phrases before it reaches the system, does not solve the problem. The mechanism is not about specific phrases. An attacker who knows a filter blocks “ignore prior instructions” can phrase the same injection differently. A filter that caught every rephrasing would need to understand intent well. If such a filter existed, injection would no longer be a distinct problem at all.</p>
 <p>Instruction hierarchy and role labeling mark which text is the operator’s instructions and which is content the system is processing. The model is trained to give the operator’s instructions more weight than that content. This can reduce how often an embedded instruction succeeds. But current models do not implement it as a dependable security boundary. A governance program must not treat it as the control that makes injection safe.</p>
-<p>The controls that enforce a boundary sit outside the model. Authorization means checking whether a user or a system is allowed to do or see something. It is checked in code and not assumed from the model’s own behavior. Tool and action allowlists limit what the system can invoke, whatever it was told. An allowlist names the only tools and actions the system may use. Output validation checks the output against a defined schema or constraint before any downstream use, meaning any later step that uses the output. A schema is a defined format. Sandboxed execution runs the system’s actions in an isolated space. Rate and transaction limits cap how much the system can do. Human approval gates stop consequential actions until a person approves. Monitoring and logging catch what the other layers miss.</p>
+<p>The controls that enforce a boundary sit outside the model.</p>
+<p>Table 11.2. Boundary-enforcing controls outside the model.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Control</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Authorization</strong></td>
+<td>Checks whether a user or a system is allowed to do or see something. The check runs in code and is not assumed from the model’s own behavior.</td>
+</tr>
+<tr class="even">
+<td><strong>Tool and action allowlists</strong></td>
+<td>Limit what the system can invoke, whatever it was told. An allowlist names the only tools and actions the system may use.</td>
+</tr>
+<tr class="odd">
+<td><strong>Output validation</strong></td>
+<td>Checks the output against a defined schema or constraint before any downstream use, meaning any later step that uses the output. A schema is a defined format.</td>
+</tr>
+<tr class="even">
+<td><strong>Sandboxed execution</strong></td>
+<td>Runs the system’s actions in an isolated space.</td>
+</tr>
+<tr class="odd">
+<td><strong>Rate and transaction limits</strong></td>
+<td>Cap how much the system can do.</td>
+</tr>
+<tr class="even">
+<td><strong>Human approval gates</strong></td>
+<td>Stop consequential actions until a person approves.</td>
+</tr>
+<tr class="odd">
+<td><strong>Monitoring and logging</strong></td>
+<td>Catch what the other layers miss.</td>
+</tr>
+</tbody>
+</table>
 <p>Treating all retrieved content as untrusted by default still matters as a design stance. This applies to content from inside the organization as well as content from external sources. But a design stance is a starting assumption that the designers build around. It does not itself block an attack. The blocking has to come from the part of the system that acts on that assumption, such as the controls just listed.</p>
 <p>The risk grows once a system does more than generate text. Injected content that changes a summary’s wording is a content-integrity problem, because the content is no longer what it should be. Injected content can also reach a system with tool access, the ability to take actions. It can then direct that access. A text-generation failure becomes an action taken under false instructions. Chapter 12 develops this concern in full for agentic systems, those that take actions with consequences of their own.</p>
 <p>A generative system with no tool access still carries the injection surface described above. Tool access changes what an attacker can accomplish through it.</p>
-<p>A customer-support system shows the mechanism concretely. This generative system reads each incoming customer email and drafts a reply. On every interaction, it reads content it did not write. The customer’s own message is the untrusted content described above, so no external attacker is required. A message might end with text telling the system to disregard its refund policy and approve any request. That is an injection attempt placed in the ordinary channel the system exists to process.</p>
+<p>A customer-support system shows the mechanism. This generative system reads each incoming customer email and drafts a reply. On every interaction, it reads content it did not write. The customer’s own message is the untrusted content described above, so no external attacker is required. A message might end with text telling the system to disregard its refund policy and approve any request. That is an injection attempt placed in the ordinary channel the system exists to process.</p>
 <p>Privilege separation means keeping a system’s trusted configuration apart from untrusted content. Without it, the system has no structural reason to treat the support policy it was configured with and the email it is summarizing differently. This is true even when the phrasing looks unlikely to a human skimming the same message.</p>
 </section>
 <section id="intellectual-property" class="level2">
@@ -465,10 +513,50 @@ ul.task-list li input[type="checkbox"] {
 <section id="provenance-marking-and-disclosure" class="level2">
 <h2 class="anchored" data-anchor-id="provenance-marking-and-disclosure">11.5 Provenance, marking, and disclosure</h2>
 <p>Provenance is the record of where content came from. Marking means labeling content as AI-made. In the European Union, Article 50 of the AI Act, checked against the consolidated text dated 27 July 2026, separates two distinct obligations. A governance program must not collapse them into one vague marking rule. In this law, a provider builds or offers an AI system, and a deployer uses it.</p>
-<p>Article 50(2) is the provider obligation. It requires providers of systems that generate synthetic audio, image, video, or text to make those outputs machine-readable and detectable as artificially generated or manipulated. The duty applies as far as is technically feasible, and it is subject to the article’s stated exceptions. It aims at automated downstream detection. It is distinct from anything a human reader would notice directly.</p>
-<p>Article 50(4) is a separate deployer disclosure duty. It applies specifically to deepfakes and to AI-generated or manipulated text published to inform the public on a matter of public interest. This duty is again subject to stated exceptions. It falls on whoever deploys the system, not on the provider who built it.</p>
-<p>Article 50(5) requires that whichever disclosure applies be clear, distinguishable, and accessible. It must reach the affected person no later than the time of first interaction or exposure. A disclosure buried in a terms-of-service document a user never reads does not satisfy that timing and clarity requirement. This is true even if the document technically contains the required words.</p>
-<p>Article 111(4) gives systems already placed on the market before 2 August 2026 a transition period until 2 December 2026. It applies to the Article 50(2) marking obligation specifically.</p>
+<p>Table 11.3. Article 50 obligations and the Article 111(4) transition.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Provision</th>
+<th>Scope</th>
+<th>Requirement</th>
+<th>Conditions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Article 50(2)</strong></td>
+<td>The provider obligation. It covers providers of systems that generate synthetic audio, image, video, or text.</td>
+<td>Make those outputs machine-readable and detectable as artificially generated or manipulated. The duty aims at automated downstream detection and is distinct from anything a human reader would notice directly.</td>
+<td>Applies as far as is technically feasible and is subject to the article’s stated exceptions.</td>
+</tr>
+<tr class="even">
+<td><strong>Article 50(4)</strong></td>
+<td>A separate deployer disclosure duty. It falls on whoever deploys the system, not on the provider who built it.</td>
+<td>Disclose, specifically for deepfakes and for AI-generated or manipulated text published to inform the public on a matter of public interest.</td>
+<td>Again subject to stated exceptions.</td>
+</tr>
+<tr class="odd">
+<td><strong>Article 50(5)</strong></td>
+<td>Whichever disclosure applies.</td>
+<td>Make the disclosure clear, distinguishable, and accessible, reaching the affected person no later than the time of first interaction or exposure.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Article 111(4)</strong></td>
+<td>Systems already placed on the market before 2 August 2026.</td>
+<td>A transition period until 2 December 2026.</td>
+<td>Applies to the Article 50(2) marking obligation specifically.</td>
+</tr>
+</tbody>
+</table>
+<p>A disclosure buried in a terms-of-service document a user never reads does not satisfy Article 50(5)’s timing and clarity requirement. This is true even if the document technically contains the required words.</p>
 <p>A governance program applying Article 50 needs to settle four questions for its own system. Which role does it occupy for the content in question, provider or deployer? Which content category applies? Does an exception apply? Is the transition period still running? Article 50 answers a role-specific and content-specific question. It is not a single yes-or-no marking rule.</p>
 <p>Watermarking, provenance recording, and detection are three distinct technical mechanisms. The legal requirement in Article 50 does not by itself specify them, and a governance program should not treat them as interchangeable. A tamper-evident provenance record shows if someone has altered it. An embedded watermark is a hidden signal placed in the content. A detector reads either one. Each carries its own robustness, interoperability, and error-rate properties. Robustness is how well the mechanism survives changes.</p>
 <p>Error rates include a false-positive rate and a false-negative rate. A false positive flags content as AI-made when it is not. A false negative misses content that is AI-made. These rates must be measured, not assumed away. A watermark can also be removed or degraded by re-editing the content it was embedded in.</p>
@@ -495,7 +583,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="retrieval-and-context-governance">11.7 Retrieval and context governance</h2>
 <p>A retrieval-augmented system is a generative system extended with retrieval, the lookup of documents while it runs. It builds its context, the text the model will read, from whatever the lookup returns. Governing that assembly means answering three questions. What enters the context? Under what authorization? Does that authorization match the requesting user’s own entitlements, meaning what that user is allowed to access? These questions differ from the corpus governance that Chapter 5 developed, which covers what material exists in the underlying store at all.</p>
 <p>The retrieval pipeline is the chain of steps that finds and fetches documents. It sits downstream of that corpus, meaning after it in the flow of work. It sits upstream, meaning before, of the monitoring that Chapter 9 requires and the incident response that Chapter 10 requires. A retrieval failure caught here keeps those later stages from having to catch it instead.</p>
-<p>A control-to-risk mapping compares controls side by side. It is not a sequence with an entry and an exit condition, so a table fits it better than a diagram. The table has room for the full set of controls each risk category needs. Section 11.2 and sections 11.3 through 11.5 already named several of them.</p>
+<p>A control-to-risk mapping compares controls side by side. Section 11.2 and sections 11.3 through 11.5 already named several of them.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
@@ -674,7 +762,7 @@ AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [ ]
 -->
 <p>Figure 11.2 shows where authorization has to sit. It belongs at or before the retrieval stage itself. It is evaluated against subject, object, action, and context together. It does not belong at a later stage that filters what was already fetched.</p>
 <p>The injection surface has at least three distinct points. The first is direct injection in the user’s own input. The second is poisoned content entering the corpus before it is ever retrieved. The third is indirect injection in retrieved content, at the moment it enters the same context as system instructions. This is the architectural seam that section 11.3 showed cannot rely on model-level separation alone.</p>
-<p>The operations lane covers logging, monitoring, feedback, and fixes. It closes the loop that the earlier sections leave open. The figure’s monitoring and feedback arrows catch retrieval or generation failures. Those failures then feed Chapter 9’s monitoring practice and Chapter 10’s incident response. They do not disappear once a single request completes.</p>
+<p>The operations lane covers logging, monitoring, feedback, and fixes. The figure’s monitoring and feedback arrows catch retrieval or generation failures. Those failures then feed Chapter 9’s monitoring practice and Chapter 10’s incident response. They do not disappear once a single request completes.</p>
 </section>
 <section id="case-in-focus-a-fabricated-allergy-that-never-happened" class="level2 unnumbered case">
 <h2 class="unnumbered anchored" data-anchor-id="case-in-focus-a-fabricated-allergy-that-never-happened">Case in focus: a fabricated allergy that never happened</h2>

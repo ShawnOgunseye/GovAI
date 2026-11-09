@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -379,7 +384,7 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Consider a constructed scenario that continues the running <code>TALENTSCREEN</code> case. Calloway Industries ran an impact assessment on <code>TalentScreen</code> when it first licensed the tool for hiring on its manufacturing floor. An impact assessment is a written review of how a system could harm the people it affects. On its own terms, Calloway’s assessment was competent. It named a risk called disparate impact. Under Title VII, the US law against workplace discrimination, a hiring practice such as screening applicants with this tool can cause disparate impact. That means the practice hurts one group more than another without a job-related reason. The assessment assigned a control, which is a safeguard meant to reduce a risk. It also documented who accepted the risk that remained. But no one on the assessment team thought to consult a single applicant the tool would screen.</p>
 <p>Eighteen months later, Calloway extended the same tool to its logistics job family, a set of related jobs treated as one group. It did not redo any of that work. The logistics applicants were a different population. The assessment that would have caught this difference was never run. The first assessment had not failed. The second one never happened.</p>
-<p>An impact assessment has to be more than a form filled out once and filed. The sections below cover the five components every assessment needs. They give real methods for hearing from affected people when those people cannot be reached at all. They set out how to score risk without pretending a number is more precise than the thinking behind it, and how an assessment turns into a real control rather than a paragraph that describes one. They name who must answer for the risk the control does not remove, and so explain and stand behind the decision. And they end with what has to happen before an organization can claim an assessment still describes the system it was written for.</p>
+<p>An impact assessment has to be more than a form filled out once and filed.</p>
 <section id="what-you-will-be-able-to-do" class="level2 unnumbered objectives">
 <h2 class="unnumbered anchored" data-anchor-id="what-you-will-be-able-to-do">What you will be able to do</h2>
 <ul>
@@ -398,9 +403,46 @@ ul.task-list li input[type="checkbox"] {
 <p>System description comes first. It states what the system does, who it affects, and in what context. It must be specific enough that a reader unfamiliar with the deployment could still evaluate the risk analysis that follows.</p>
 <p>Risk identification names the risks. It uses categories set out earlier, not a third scheme made up here. The first set is the harms taxonomy from Chapter 1, which is the book’s list of kinds of harm. The second set is the classification factors from Chapter 3. Those factors were used to place the system in a risk tier, a level of risk a system is sorted into, in the first place.</p>
 <p>Mitigation, meaning the steps taken to reduce a risk, states the control assigned to each significant risk. Residual risk names what remains once the control is applied. A control rarely removes a risk completely. A documented decision, with named accountability, closes the assessment. Someone specific accepted the residual risk that remained, on a specific basis. That acceptance is recorded, not assumed.</p>
-<p>Every class of AI system carries the full set of harms in the Chapter 1 taxonomy. These include privacy, security, safety, accessibility, intellectual property, and the rest. No class is exempt from any of them. Systems fall into three classes. Predictive systems estimate or score something, such as how likely an outcome is. Generative systems produce new content, such as text or images. Agentic systems take actions, such as using tools or software on their own.</p>
-<p>The three classes differ in which risk category needs the sharpest extra attention in the risk identification component. That attention comes on top of the shared core. Predictive assessment emphasizes error and disparity, an uneven result across groups of people. It tracks false positive and false negative rates. A false positive is a case the system wrongly flags. A false negative is a case the system wrongly misses. The assessment also checks whether either rate falls unevenly across groups of people.</p>
-<p>Generative assessment places that emphasis on content and misuse. It asks what a system might produce, make up, or be directed to produce outside its intended use. Agentic assessment places it on action and scope. It asks what the system can do, not only what it might say. It also asks how far the system’s granted permissions reach.</p>
+<p>Every class of AI system carries the full set of harms in the Chapter 1 taxonomy. These include privacy, security, safety, accessibility, intellectual property, and the rest. No class is exempt from any of them. Systems fall into three classes.</p>
+<p>The three classes differ in which risk category needs the sharpest extra attention in the risk identification component. That attention comes on top of the shared core. Table 14.2 names each class and the emphasis its assessment adds.</p>
+<p>Table 14.2. Assessment emphasis by system class</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>System class</th>
+<th>What the system does</th>
+<th>Assessment emphasis</th>
+<th>What the assessment asks or tracks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Predictive</strong></td>
+<td>Estimates or scores something, such as how likely an outcome is</td>
+<td>Error and disparity, an uneven result across groups of people</td>
+<td>Tracks false positive and false negative rates and checks whether either rate falls unevenly across groups of people</td>
+</tr>
+<tr class="even">
+<td><strong>Generative</strong></td>
+<td>Produces new content, such as text or images</td>
+<td>Content and misuse</td>
+<td>Asks what the system might produce, make up, or be directed to produce outside its intended use</td>
+</tr>
+<tr class="odd">
+<td><strong>Agentic</strong></td>
+<td>Takes actions, such as using tools or software on its own</td>
+<td>Action and scope</td>
+<td>Asks what the system can do, not only what it might say, and how far its granted permissions reach</td>
+</tr>
+</tbody>
+</table>
+<p>A false positive is a case the system wrongly flags. A false negative is a case the system wrongly misses.</p>
 <p>Suppose a team builds an assessment template for one class’s emphasis and applies it unchanged to another class. The template will underweight the other class’s sharpest risk in the risk identification component. This holds however well the other four components are carried out. The difference between the system classes is one of degree and of design timing. Design timing here means when and how often risk decisions come up as the system runs. It is not a difference of kind. Chapter 12 explains that a business or use owner operating an agent makes risk decisions at a pace that a predictive system’s periodic monitoring cycle does not match. For this reason, a template built for periodic review needs an agentic-specific overlay, which is an added layer of checks.</p>
 </section>
 <section id="engaging-stakeholders-whom-standard-methods-cannot-reach" class="level2">
@@ -411,9 +453,57 @@ ul.task-list li input[type="checkbox"] {
 <p><code>TalentScreen</code>’s applicants are a group for which this analysis can come back negative. They never interact with Calloway in a way that would let anyone interview them. Most do not know that a resume-screening tool evaluated them rather than a hiring manager. Calloway had no worker-representative or advisory channel through which applicants could be heard, and it used none. Where the analysis does come back negative, the honest response is a different method entirely. A more diligent version of the same method will not work. The recorded analysis is what separates a truly unreachable group from one the assessment team did not try hard enough to reach.</p>
 <p>Direct and representative engagement comes first wherever the reachability analysis allows it. Worker representatives, unions, advisory panels, civil-society organizations, ombuds services, accessible public notices, and purposive recruitment can all bring an affected voice into the process. Sometimes they bring a trusted representative of that voice instead.</p>
 <p>Where none of that is feasible, several further approaches exist. Each one stands in for engagement in a specific and limited way. None of them is engagement itself.</p>
-<p>Proxy consultation works through an advocacy organization, a group whose job is to speak up for others’ interests. The organization speaks for the interests of the affected group, even without access to the specific people a given deployment touches. A worker advocacy group that knows hiring discrimination patterns can raise concerns that a screened applicant would raise. It can do this without ever locating that applicant.</p>
-<p>Structured adversarial review gives one person the explicit job of arguing the affected party’s interest inside the assessment. That interest then has a voice inside the assessment even when the affected person is not there to speak. What it has is an assigned advocate’s best argument, not the affected party’s own voice. A properly run <code>TalentScreen</code> assessment would have used this approach. Calloway’s did not.</p>
-<p>Three further sources are evidence, not engagement. They should be named that way. Published research on comparable systems and groups brings in what other organizations and researchers have already documented about how similar tools affect similar people. It substitutes general findings for this deployment’s specific population. Evidence from complaint and appeal records draws on what people said when a comparable system’s outcome affected them enough to prompt a formal objection. It captures real grievance, but only from the people who took the harder step of filing one. Outcome analysis after deployment looks at who was rejected, hired, or advanced once the system is running. It is evidence of a different kind again. It arrives only after the decision it might have informed has been made.</p>
+<p>Table 14.3 sets out the five approaches by what each one draws on and what each cannot recover. The first two stand in for engagement. The last three are evidence, not engagement, and should be named that way.</p>
+<p>Table 14.3. Approaches where direct engagement is not feasible</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Approach</th>
+<th>Kind</th>
+<th>What it draws on</th>
+<th>Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Proxy consultation</strong></td>
+<td>Engagement substitute</td>
+<td>An advocacy organization, a group whose job is to speak up for others’ interests, speaks for the interests of the affected group</td>
+<td>Works without access to the specific people a given deployment touches</td>
+</tr>
+<tr class="even">
+<td><strong>Structured adversarial review</strong></td>
+<td>Engagement substitute</td>
+<td>One person is given the explicit job of arguing the affected party’s interest inside the assessment, so that interest has a voice even when the affected person is not there to speak</td>
+<td>What it has is an assigned advocate’s best argument, not the affected party’s own voice</td>
+</tr>
+<tr class="odd">
+<td><strong>Published research on comparable systems and groups</strong></td>
+<td>Evidence source</td>
+<td>What other organizations and researchers have already documented about how similar tools affect similar people</td>
+<td>Substitutes general findings for this deployment’s specific population</td>
+</tr>
+<tr class="even">
+<td><strong>Complaint and appeal records</strong></td>
+<td>Evidence source</td>
+<td>What people said when a comparable system’s outcome affected them enough to prompt a formal objection</td>
+<td>Captures real grievance, but only from the people who took the harder step of filing one</td>
+</tr>
+<tr class="odd">
+<td><strong>Outcome analysis after deployment</strong></td>
+<td>Evidence source</td>
+<td>Who was rejected, hired, or advanced once the system is running</td>
+<td>Evidence of a different kind again, arriving only after the decision it might have informed has been made</td>
+</tr>
+</tbody>
+</table>
+<p>A worker advocacy group that knows hiring discrimination patterns can raise concerns that a screened applicant would raise. It can do this without ever locating that applicant. A properly run <code>TalentScreen</code> assessment would have used structured adversarial review. Calloway’s did not.</p>
 <p>No method in this group solves the underlying problem, and none should be presented as if it did. That holds for the engagement substitutes and the evidence sources alike.</p>
 <p>An assessment that uses every one of these methods still has not consulted the people it assesses risk to. To suggest otherwise would be false. What the methods do is put a documented, defensible effort in place of the silence that an unreachable group would otherwise leave in the assessment. The honest record of an assessment names three things. It names the reachability analysis performed. It names which methods were used as a result. And it names what each one could not recover. It does not present a substitute as equivalent to the engagement it stands in for.</p>
 <!-- FIGURE 14.1 REQUIRED ELEMENTS
@@ -515,7 +605,47 @@ Figure&nbsp;15.2: Figure 14.2. Risk scoring with prioritization
 <p>Mitigation is where an assessment becomes action. Without it, the assessment remains a description of risk that nothing addresses. Mitigation is the step most often skipped in practice. Identifying and scoring risk feels like the substantive work. Assigning and verifying a control feels like an afterthought.</p>
 <p>The first mitigation decision is which treatment to pursue, before any control is chosen. A team has several treatments to choose from. It can avoid the use entirely. It can redesign the system or narrow its scope. It can reduce the risk with a control. It can share or transfer part of the exposure, which means passing part of the risk to another party. It can accept the risk, that is, decide to carry it knowingly, within delegated authority, which is authority formally handed to the person deciding. For a system already deployed, it can retire the system. Adding a control to an otherwise unchanged design is one option among these. It is not the default. The mitigation component should record which option was chosen and why before it describes the control.</p>
 <p>For each significant risk addressed by a control, the mitigation component then states what the control does. It states whether the control is technical and built into the system, procedural and followed by people, or contractual and written into an agreement. The component also states who owns operating the control. And it states how the control’s effectiveness will be verified. Effectiveness should not be assumed just because the control was assigned.</p>
-<p>Organizations routinely collapse an important distinction. They use one word for everything a control does. A control should be named for what it does. A control can prevent an event from happening at all. It can deter the event by raising its cost. It can detect the event after it has occurred. It can contain the event before it spreads further. It can correct or recover from the event once it is detected. Or it can compensate for harm that the control could not prevent. One control can do more than one of these, depending on how it is implemented.</p>
+<p>Organizations routinely collapse an important distinction. They use one word for everything a control does. A control should be named for what it does, and Table 14.4 names the choices.</p>
+<p>Table 14.4. Control mechanisms</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mechanism</th>
+<th>What the control does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Prevent</strong></td>
+<td>Prevents the event from happening at all</td>
+</tr>
+<tr class="even">
+<td><strong>Deter</strong></td>
+<td>Deters the event by raising its cost</td>
+</tr>
+<tr class="odd">
+<td><strong>Detect</strong></td>
+<td>Detects the event after it has occurred</td>
+</tr>
+<tr class="even">
+<td><strong>Contain</strong></td>
+<td>Contains the event before it spreads further</td>
+</tr>
+<tr class="odd">
+<td><strong>Correct or recover</strong></td>
+<td>Corrects or recovers from the event once it is detected</td>
+</tr>
+<tr class="even">
+<td><strong>Compensate</strong></td>
+<td>Compensates for harm that the control could not prevent</td>
+</tr>
+</tbody>
+</table>
+<p>One control can do more than one of these, depending on how it is implemented.</p>
 <p>Chapters 11 and 12 name the same set of effects (reduce likelihood, detect, contain, intervene, correct, recover, verify) for generative and agentic risk specifically. The same vocabulary of named effects applies here, in place of a bare reduce-or-detect label invented for this one topic.</p>
 <p>Consider a monitoring dashboard that flags disparate outcomes. It detects a disparity that has already occurred, which is valuable. But detection alone does not make the disparity any less likely to happen. That changes only if the dashboard is connected to a containment or correction step that acts on what it finds. A claim that a control reduces a risk, and does more than detect or contain it, needs evidence before it is recorded that way.</p>
 <p>Retraining a model on a more representative population, one that better matches the people the system affects, may reduce a disparity risk. The risk goes down only if evaluation, meaning testing, against the affected population shows the improvement. Labels, objectives, sampling, features, thresholds, and the deployment context can all preserve or worsen a disparity despite a more representative training set.</p>
@@ -617,7 +747,7 @@ Figure&nbsp;15.2: Figure 14.2. Risk scoring with prioritization
 <h2 class="unnumbered anchored" data-anchor-id="case-in-focus-the-assessment-that-was-never-run-twice">Case in focus: the assessment that was never run twice</h2>
 <p><code>TALENTSCREEN</code> · Hypothetical, following the running cases</p>
 <p>This continuing fictional scenario illustrates the reassessment-trigger failure that section 14.6 describes. It does not report an event that happened at any real organization. Every fact below is invented for teaching purposes, including the contract term, the audit cadence, and the complaint. The audit cadence is how often audits happen.</p>
-<p>Calloway’s first impact assessment for <code>TalentScreen</code> was written when the tool was licensed for manufacturing floor hiring. It followed the five-component structure described above. Measured against its own scope, it was competent work. It named the disparate-impact risk squarely. It assigned a bias-audit control, which this hypothetical’s vendor contract specified on an annual cadence. A bias audit is an independent check of whether a tool’s results differ unfairly across groups. The assessment also documented residual risk acceptance from the head of talent acquisition. The head of talent acquisition accepted the risk that the annual cadence left a gap between audits, during which drift could go undetected.</p>
+<p>Calloway’s first impact assessment for <code>TalentScreen</code> was written when the tool was licensed for manufacturing floor hiring. It followed the five-component structure described above. Measured against its own scope, it was competent work. It named the disparate-impact risk. It assigned a bias-audit control, which this hypothetical’s vendor contract specified on an annual cadence. A bias audit is an independent check of whether a tool’s results differ unfairly across groups. The assessment also documented residual risk acceptance from the head of talent acquisition. The head of talent acquisition accepted the risk that the annual cadence left a gap between audits, during which drift could go undetected.</p>
 <p>The consultation methods described in section 14.2 were not part of Calloway’s assessment practice at the time. As a result, the assessment made no structured attempt to hear from the applicants the tool screened. It did not even include a documented analysis of whether a channel to them was possible. There was no proxy consultation with an advocacy organization. No one was assigned the job of arguing an applicant’s interest in a structured adversarial review. The assessment reasoned entirely from the vendor’s own audit data and Calloway’s internal hiring statistics. No channel existed through which an affected applicant’s perspective could enter the process, even in the limited, substitute form described above.</p>
 <p>Eighteen months after the manufacturing floor deployment, Calloway’s logistics division adopted <code>TalentScreen</code> for its own hiring. No new assessment was opened. The reasoning, reconstructed after the fact, was that the tool itself had not changed. That reasoning missed the use-and-population trigger that section 14.6 names. An extension to a new population is a reassessment trigger whether or not the underlying model changed at all. The reason is that the fairness testing in the original assessment characterized the manufacturing applicant population, not the logistics one. A stable model does not guarantee stable performance across a population that the original testing never included.</p>
 <p>The gap surfaced only when a complaint under the logistics deployment prompted an internal review. A complaint is one of the evidence sources section 14.2 names, and here it arrived after deployment, not before. The review found a disparity in the logistics population. The manufacturing-floor bias audit had never been positioned to catch it, because that audit covered a different population entirely.</p>

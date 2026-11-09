@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -422,8 +427,40 @@ ul.task-list li input[type="checkbox"] {
 <li>The risks and dependencies that a prioritized gap list, which ranks the gaps by importance, needs to reflect.</li>
 </ul>
 <p>An honest assessment uses several sources of evidence. This is called triangulating, which means checking a finding against more than one kind of source. The assessment should not trust or discount any source because of its category.</p>
-<p>Interviews with the governance body about how well its own review works give one useful data point. Interviews with the developers and business owners the process falls on give another. Each group carries a bias. Reviewers lean toward defending a process they run. Developers lean toward resisting a process that constrains their work. Neither position is automatically the more diagnostic one, which means the one that reveals more.</p>
-<p>The records give a third kind of evidence. They include deployment records and time stamps from the ticketing system, where work requests are tracked. They also include the systems inventory, which is the organization’s list of its AI systems. This evidence is harder to shade, because a system either has a matching assessment record on file or it does not. An honest assessment combines all three kinds of evidence. They are interviews from both sides plus the documentary record.</p>
+<p>Each group carries a bias. Table 17.1 states the three kinds of evidence, what each gives, and the bias or shading each carries.</p>
+<p>Table 17.1. Evidence sources for a current state assessment</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Evidence it gives</th>
+<th>Bias or shading</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Governance body interviews</strong></td>
+<td>How well the body’s own review works, one useful data point.</td>
+<td>Reviewers lean toward defending a process they run.</td>
+</tr>
+<tr class="even">
+<td><strong>Developer and business owner interviews</strong></td>
+<td>Another data point, from the people the process falls on.</td>
+<td>Developers lean toward resisting a process that constrains their work.</td>
+</tr>
+<tr class="odd">
+<td><strong>Records</strong></td>
+<td>Deployment records and time stamps from the ticketing system, where work requests are tracked, plus the systems inventory, which is the organization’s list of its AI systems.</td>
+<td>Harder to shade, because a system either has a matching assessment record on file or it does not.</td>
+</tr>
+</tbody>
+</table>
+<p>Neither interview position is automatically the more diagnostic one, which means the one that reveals more. An honest assessment combines all three kinds of evidence. They are interviews from both sides plus the documentary record.</p>
 </section>
 <section id="target-operating-model" class="level2">
 <h2 class="anchored" data-anchor-id="target-operating-model">17.3 Target operating model</h2>
@@ -530,10 +567,39 @@ AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
 <p>Article 4 requires providers and deployers to take measures to ensure, to their best extent, a sufficient level of AI literacy. The phrase to their best extent asks them for their best effort. The measures cover staff and others who deal with AI systems on their behalf. The literacy level must account for these people’s technical knowledge, experience, education, and training. It must also account for the context in which the system will be used.</p>
 <p>Current European Commission guidance says that Article 4 does not itself require a specific level of individual competence. It does not require a formal knowledge test either. The deploying organization designs measures that fit its own context (checked 2026-09-13). For high-risk AI systems, human-oversight training carries its own separate and more specific duties. Those duties sit under other requirements written into the same regulation. High-risk is one of the Act’s named categories of AI system.</p>
 <p>Effective training differs by role rather than being uniform. That holds whatever the letter of the obligation requires. A developer needs different content than a business owner who approves a deployment. That owner needs different content again than a governance body reviewer. A single generic training module for everyone misses what each role needs in order to do its part correctly.</p>
-<p>The three roles show what role-differentiated content means in practice.</p>
-<p>A developer needs to know how the classification system sets a system’s tier. A developer also needs to know what triggers a reassessment. Those are the decisions that the developer’s own work affects.</p>
-<p>A business owner who approves a deployment needs to understand what the impact assessment checks. The owner also needs to understand that a rejection is a finding about a specific risk. It is not a bureaucratic obstacle. That is the decision on the owner’s desk.</p>
-<p>A governance body reviewer needs the deepest content of the three. The reviewer must learn to read a vendor’s model card adversarially, as Chapter 15 describes. That means reading it skeptically and looking for gaps and weak claims. The reviewer must also learn to recognize the theater pattern named in section 17.2. The reviewer needs this depth because the reviewer is the last check before a deployment proceeds.</p>
+<p>The three roles show what role-differentiated content means in practice, and the governance body reviewer needs the deepest content of the three. Table 17.2 states what each role needs to learn and why.</p>
+<p>Table 17.2. Training content by role</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Role</th>
+<th>Content</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Developer</strong></td>
+<td>How the classification system sets a system’s tier, and what triggers a reassessment.</td>
+<td>Those are the decisions that the developer’s own work affects.</td>
+</tr>
+<tr class="even">
+<td><strong>Business owner who approves a deployment</strong></td>
+<td>What the impact assessment checks, and that a rejection is a finding about a specific risk, not a bureaucratic obstacle.</td>
+<td>That is the decision on the owner’s desk.</td>
+</tr>
+<tr class="odd">
+<td><strong>Governance body reviewer</strong></td>
+<td>Reading a vendor’s model card adversarially, as Chapter 15 describes, which means skeptically and looking for gaps and weak claims. Recognizing the theater pattern named in section 17.2.</td>
+<td>The reviewer is the last check before a deployment proceeds.</td>
+</tr>
+</tbody>
+</table>
 <p>Giving all three roles the same content wastes the developer’s time on material aimed at the reviewer. It also leaves the reviewer under-prepared for the hard decisions that a generic module never covers.</p>
 <p>Role-based training also needs a check on whether it worked. Completion records show who was trained, on what content, and when. They are evidence that training was delivered. They are not, by themselves, evidence that the training worked. A program that stops at completion records still needs a measure of role-relevant competence. Observed behavior, error rates, or the quality of escalation could serve. Without such a measure, the program cannot know whether the training changed what people do.</p>
 </section>

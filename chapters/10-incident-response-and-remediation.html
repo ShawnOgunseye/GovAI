@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -394,10 +399,60 @@ ul.task-list li input[type="checkbox"] {
 <section id="detection-channels" class="level2">
 <h2 class="anchored" data-anchor-id="detection-channels">10.1 Detection channels</h2>
 <p>An organization learns about an incident, an event in which an AI system fails or causes harm, through one of several channels. The channel that surfaces a given incident is rarely the one the governance program was built to rely on.</p>
-<p>Detection channels are broader than the handful a governance program tends to build first. Grouping them keeps the list usable instead of a sprawl of examples. Automated internal signals come from monitoring, the subject of Chapter 9. Monitoring is the routine tracking of how a system performs. Its dimensions are the specific aspects of behavior it tracks. Monitoring catches what those dimensions are built to watch, and no more.</p>
-<p>Human internal reports come from people inside the organization. One example is a frontline employee’s direct observation. In the <code>MEDASSIST</code> case, nurses noticed that alert timing felt wrong well before any combined number confirmed it. This group also covers internal audit, security operations (the team that watches for attacks on the organization’s systems), and safety surveillance (the routine watch for safety problems). It covers an employee escalation or whistleblower report as well. A whistleblower is a person who reports wrongdoing or danger inside their own organization. The report goes through a channel built for that purpose.</p>
-<p>Affected-person and customer channels come from the people a system’s decisions land on, not the staff operating it. These people surface an incident through a complaint, a request for explanation, or litigation (a lawsuit). This often happens long after the organization’s own channels should have caught the same pattern. Supplier and partner notifications cover two cases. A vendor, an outside company that supplies a product or service, may disclose a problem in a purchased component. Or an upstream service incident, a failure in an outside service that the system relies on, may spread into the organization’s own system.</p>
-<p>Assurance activity means scheduled checks, such as a test, an audit, or an evaluation. A scheduled check can turn up a problem outside its original purpose. Those findings are a detection channel too. Regulators and legal processes surface an incident through an inquiry or a legal claim. The organization did not report it first. Public external discovery happens when a journalist or academic examines a system from outside. That person has no obligation to notify the organization before publishing. The result can turn a contained internal matter into a public one, on a schedule the organization does not control.</p>
+<p>Detection channels are broader than the handful a governance program tends to build first. Table 10.1 sets out seven channels, where each signal comes from, and what each can surface.</p>
+<p>Table 10.1. Detection channels</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Channel</th>
+<th>Where the signal comes from</th>
+<th>What it can surface</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Automated internal signals</strong></td>
+<td>Monitoring, the routine tracking of how a system performs and the subject of Chapter 9</td>
+<td>What monitoring’s dimensions, the specific aspects of behavior it tracks, are built to watch, and no more</td>
+</tr>
+<tr class="even">
+<td><strong>Human internal reports</strong></td>
+<td>People inside the organization, from a frontline employee’s direct observation to internal audit, security operations (the team that watches for attacks on the organization’s systems), safety surveillance (the routine watch for safety problems), and an employee escalation or whistleblower report made through a channel built for that purpose</td>
+<td>A problem staff observe directly. In the <code>MEDASSIST</code> case, nurses noticed that alert timing felt wrong well before any combined number confirmed it</td>
+</tr>
+<tr class="odd">
+<td><strong>Affected-person and customer channels</strong></td>
+<td>The people a system’s decisions land on, not the staff operating it</td>
+<td>A complaint, a request for explanation, or litigation (a lawsuit), often long after the organization’s own channels should have caught the same pattern</td>
+</tr>
+<tr class="even">
+<td><strong>Supplier and partner notifications</strong></td>
+<td>A vendor, an outside company that supplies a product or service, or an outside service the system relies on</td>
+<td>A disclosed problem in a purchased component, or an upstream service incident, a failure in an outside service, that spreads into the organization’s own system</td>
+</tr>
+<tr class="odd">
+<td><strong>Assurance activity</strong></td>
+<td>Scheduled checks, such as a test, an audit, or an evaluation</td>
+<td>A problem outside the check’s original purpose. Those findings are a detection channel too</td>
+</tr>
+<tr class="even">
+<td><strong>Regulators and legal processes</strong></td>
+<td>A regulator’s inquiry or a legal claim</td>
+<td>An incident the organization did not report first</td>
+</tr>
+<tr class="odd">
+<td><strong>Public external discovery</strong></td>
+<td>A journalist or academic who examines the system from outside, with no obligation to notify the organization before publishing</td>
+<td>A contained internal matter turned into a public one, on a schedule the organization does not control</td>
+</tr>
+</tbody>
+</table>
+<p>A whistleblower is a person who reports wrongdoing or danger inside their own organization.</p>
 <p>Every channel needs the same support to work. It needs accessible intake, meaning a way in that a person can find and use without specialized knowledge. It needs a named triage owner who reviews what comes in and sorts it by urgency. It needs correlation across channels, meaning someone connects related reports, so that a pattern several channels hint at separately gets recognized as one thing. It also needs acknowledgment to whoever raised the concern, and protection against retaliation, which is punishment for raising the concern. Where appropriate, it needs feedback on what happened as a result.</p>
 <p>Some might claim that the channel an organization did not build is the one most likely to find the next incident. That claim has no evidence behind it. Channels an organization did not build can reveal failures that designed monitoring did not anticipate. This is a reason to build several channels and to treat none of them, including monitoring, as enough on its own.</p>
 <p>Consider a governance program that is confident in its monitoring dashboard. It may provide no accessible channel for a nurse’s informal observation or an applicant’s complaint. That program has optimized detection for the failures it already expected. Every other way of failing is left to whichever of these other channels happens to notice first, or to none of them.</p>
@@ -407,7 +462,58 @@ ul.task-list li input[type="checkbox"] {
 <p>A severity scheme sorts an incident into a tier, a level of seriousness, the moment it is identified. The tier determines who responds, how fast, and with what authority. Without a scheme, those decisions would be negotiated fresh under the time pressure each incident brings.</p>
 <p>A workable scheme needs criteria specific enough that two different reviewers classify the same incident the same way. That rules out a scheme built only on adjectives, such as labels that call an incident “serious” or “minor” without saying what makes it so. The scheme must also avoid the opposite failure. A rule can be too blunt in two ways. It can treat any health, safety, or fundamental-rights outcome as automatically critical, whatever the scale. Fundamental rights are the basic rights that law protects. Or it can treat an anomaly with no confirmed harm as automatically low tier, however fast it is accumulating. An anomaly is an unusual pattern.</p>
 <p>Either version creates the same two failures. It will overclassify a minor, reversible event, which means rating it too high. A reversible event is one whose effects can be undone. It will also underclassify other events, which means rating them too low. These include a serious near miss, which is an event that almost caused harm. They include an active security compromise and a large but not yet confirmed exposure. They also include a risk accumulating so fast that waiting for confirmation would be its own mistake.</p>
-<p>The classification a severity scheme produces at the moment of detection is provisional, meaning open to change, because the facts available at that moment are incomplete. The scheme has to be built around that fact. It should assess actual and credible potential harm, and which affected right or domain (area of life, such as health or hiring) is involved. It should assess the scale and vulnerability of the population involved, meaning how many people are affected and how easily they can be hurt. It should assess the reversibility and duration of the harm. It should also assess how far the harm has spread, geographically or across systems. It should assess whether exposure is ongoing and how detectable the problem is. It should weigh whether a legal threshold is involved, meaning a point at which a legal duty begins. It should weigh whether data has been compromised, and how operationally critical the affected function is, meaning how much the organization’s daily work depends on it. It should weigh how much uncertainty remains in the assessment itself.</p>
+<p>The classification a severity scheme produces at the moment of detection is provisional, meaning open to change, because the facts available at that moment are incomplete. The scheme has to be built around that fact. Table 10.2 lists the factors the scheme should assess and weigh.</p>
+<p>Table 10.2. Factors a severity scheme assesses</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Factor</th>
+<th>What the scheme asks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Harm</strong></td>
+<td>The actual and credible potential harm, and which affected right or domain (area of life, such as health or hiring) is involved</td>
+</tr>
+<tr class="even">
+<td><strong>Population</strong></td>
+<td>The scale and vulnerability of the population involved, meaning how many people are affected and how easily they can be hurt</td>
+</tr>
+<tr class="odd">
+<td><strong>Reversibility and duration</strong></td>
+<td>How reversible the harm is and how long it lasts</td>
+</tr>
+<tr class="even">
+<td><strong>Spread</strong></td>
+<td>How far the harm has spread, geographically or across systems</td>
+</tr>
+<tr class="odd">
+<td><strong>Exposure and detectability</strong></td>
+<td>Whether exposure is ongoing and how detectable the problem is</td>
+</tr>
+<tr class="even">
+<td><strong>Legal threshold</strong></td>
+<td>Whether a legal threshold is involved, meaning a point at which a legal duty begins</td>
+</tr>
+<tr class="odd">
+<td><strong>Data compromise</strong></td>
+<td>Whether data has been compromised</td>
+</tr>
+<tr class="even">
+<td><strong>Operational criticality</strong></td>
+<td>How operationally critical the affected function is, meaning how much the organization’s daily work depends on it</td>
+</tr>
+<tr class="odd">
+<td><strong>Uncertainty</strong></td>
+<td>How much uncertainty remains in the assessment itself</td>
+</tr>
+</tbody>
+</table>
 <p>Uncertainty is a reason to escalate immediately and not wait for it to resolve. A provisional severity assigned under uncertainty is expected to be reclassified, upward or downward, as better evidence arrives. It is not a one-time decision locked in at detection.</p>
 <p>Once assigned, each severity level maps to a fixed set of commitments. These are a response time, an authority empowered to act, and containment options. They also include a communication obligation, a legal assessment requirement, and a review cadence. Containment means stopping harm from continuing or spreading. A review cadence is how often the incident is reviewed.</p>
 <p>Classifying an incident is therefore, immediately, an instruction. It is not the start of a debate about what to do next. A scheme that sorts incidents into tiers without committing each tier to this full set has built only a taxonomy, a sorting list. A sorting list says what kind of incident something is, but it does not make anyone respond. The scheme has not built an incident response capability.</p>
@@ -427,7 +533,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Take a purchased system. The deploying organization, the one that uses the system, may not control the vendor’s infrastructure. Even so, its containment is not limited to a contractual disable right. The deployer can typically still revoke local access and rotate its own credentials. It can disable its own integration and stop sending data to the system. It can also restrict which of its own users can reach the system. An organization should confirm which of these options exist, and on what timeline, before an incident makes the question urgent. That confirmation is part of building the containment capability. It is not an afterthought for when the vendor relationship becomes the bottleneck.</p>
 <p>For every system class, containing future harm is a different question from remedying harm already done. To remedy is to set right. A response that stops at containment has not finished the job. A predictive decision that wrongly denied an applicant leaves effects after the system is contained. So does a generative output that disclosed sensitive data or published false content. So does an agentic action. Each needs its own lookback, notification, correction, recourse, or remedy for whoever was affected while the system was misbehaving. A lookback is a review of past outputs and actions to find who was affected. Recourse is a way for an affected person to seek a fix.</p>
 <p>An agentic incident carries additional checks specific to its own record. These are the tool actions taken, transactions initiated, commitments made, and messages sent. They also include state changes recorded (changes to stored data) and any downstream automation the agent’s actions triggered. Each of these needs its own assessment of whether it can be reversed. Where it cannot be reversed, it needs a compensating action, a new action that offsets the harm. The underlying discipline is that stopping future behavior is not the same task as addressing past effects.</p>
-<p><code>TALENTSCREEN</code> is a hiring system used by a company called Calloway. Its scheduling agent is an AI agent that schedules job interviews. In Chapter 9’s case in focus, the agent was caught by an action volume anomaly, an unusual jump in the number of actions it was taking. The episode illustrates the point directly. Halting the agent the moment the anomaly was confirmed stopped it from scheduling further interviews through the broader calendar access it should never have had. But halting left open the separate question of what to do about every interview already scheduled through that access. Some of those interviews needed to be reviewed, and in a few cases unwound, meaning undone, before the response could be considered complete.</p>
+<p><code>TALENTSCREEN</code> is a hiring system used by a company called Calloway. Its scheduling agent is an AI agent that schedules job interviews. In Chapter 9’s case in focus, the agent was caught by an action volume anomaly, an unusual jump in the number of actions it was taking. Halting the agent the moment the anomaly was confirmed stopped it from scheduling further interviews through the broader calendar access it should never have had. But halting left open the separate question of what to do about every interview already scheduled through that access. Some of those interviews needed to be reviewed, and in a few cases unwound, meaning undone, before the response could be considered complete.</p>
 <p>Communication keeps affected parties informed. They may be internal stakeholders (people inside the organization with a stake in the outcome), regulators, or the people harmed. The cadence and level of detail are proportional to the severity tier. Communication is distinct from any regulatory notification, which has its own legal form and timeline.</p>
 <p>Documentation records what was known, when, and what was decided. It does this in real time and not in a reconstruction made afterward. A reconstruction written after the fact tends to describe the response the organization wishes it had run, rather than the one it ran.</p>
 <p>Decision authority under time pressure is the procedural detail most incident plans get wrong by omission. A plan may name a response but not a specific person or role empowered to invoke it at three in the morning. Such a plan has not built a response capability. It has only described one, and that description depends on improvised authority when improvisation is least reliable. The severity scheme from section 10.2 should already have answered the authority question before any specific incident makes it urgent.</p>
@@ -490,7 +596,35 @@ Figure&nbsp;11.1: Figure 10.1. Incident response flow with decision points
 <p>Once that date arrives, a serious incident is a defined legal event and more than a bad outcome. Article 3(49) defines it as an incident or malfunction that leads, directly or indirectly, to death or serious harm to a person’s health. The definition also covers serious and irreversible disruption to critical infrastructure, meaning the systems society depends on. It covers infringement (breach) of Union law protecting fundamental rights. Union law is the law of the European Union. It covers serious harm to property or the environment.</p>
 <p>Severity, from section 10.2, and this legal test are separate decisions. An incident can demand the organization’s most urgent internal response without meeting Article 3(49). One that meets it still needs the response that section 10.3 describes.</p>
 <p>For high-risk AI systems placed on the Union market, meaning offered for sale or use in the European Union, Article 73 places the serious-incident reporting duty primarily on providers, not on deployers generally. A provider builds a system, or has it built, and offers it for use. A deployer uses the system. Article 26 places a separate set of notification and suspension duties on deployers. The recipient of a report is the market surveillance authority in the state where the incident occurred. That authority is the government body that checks that products on the market follow the rules.</p>
-<p>The general outer limit for initial notification is fifteen days after the provider becomes aware of the incident, that is, after the provider learns the incident happened. The duty follows the Article’s own wording on the causal link, the cause-and-effect connection between the incident and the system. The outer limit shortens to two days for a widespread infringement or the specified serious disruption of critical infrastructure. The limit is ten days where the incident involves a death. A report is due as soon as the link is established, and never later than whichever of these limits applies. It is not held until the investigation ends. An initial report that is incomplete can be supplemented, meaning added to, as the investigation progresses. Supplementing is allowed, and it is expected. The report should not be held back until it is complete.</p>
+<p>A report is due as soon as the causal link, the cause-and-effect connection between the incident and the system, is established, and never later than the outer limit that applies. It is not held until the investigation ends. The duty follows the Article’s own wording on that link. Each outer limit for initial notification runs from the time the provider becomes aware of the incident, that is, after the provider learns the incident happened, and the limits differ by consequence. Table 10.3 sets them out.</p>
+<p>Table 10.3. Outer limits for initial notification</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Circumstance</th>
+<th>Outer limit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>General case</strong></td>
+<td>Fifteen days</td>
+</tr>
+<tr class="even">
+<td><strong>Widespread infringement or the specified serious disruption of critical infrastructure</strong></td>
+<td>Two days</td>
+</tr>
+<tr class="odd">
+<td><strong>Incident involving a death</strong></td>
+<td>Ten days</td>
+</tr>
+</tbody>
+</table>
+<p>An initial report that is incomplete can be supplemented, meaning added to, as the investigation progresses. Supplementing is allowed, and it is expected. The report should not be held back until it is complete.</p>
 <p>Article 73 also sets a rule on changes to the system. A provider should not alter the system in a way that could affect a later evaluation of the incident’s cause before informing the competent authorities. Competent authorities are the officials with legal power to handle the matter. The market surveillance authority named above is one of them. Containment and correction, both discussed above, therefore have to be sequenced with this reporting duty in mind. They cannot run as though the two were independent. The organization’s own classification, its role for the specific system, and any implementing rule issued since 2026-09-12 still need verification for each real event. An implementing rule is a detailed rule issued to carry out the law. These points should not be assumed from this general statement.</p>
 <p>Reporting early and supplementing later reverses a common instinct. A first-time incident responder often wants to finish investigating before saying anything. That instinct is backward when the duty is to notify promptly and then supplement the notification as the investigation progresses. An organization that waits for a complete picture before making its first report has typically already missed the deadline for that report.</p>
 <p>A compliance program is not ready to meet this clock without advance preparation. It must already have identified which of its systems could trigger this obligation. It must also know which role it holds for each one. It needs a working internal escalation path to the person authorized to file the notification. The organization does not control the clock, so no time remains to build that path after the fact.</p>

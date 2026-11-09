@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -528,7 +533,44 @@ Figure&nbsp;4.1: Three nested lifecycle layers, with the cadence and owner of ea
 <section id="stakeholders-are-not-all-components" class="level3">
 <h3 class="anchored" data-anchor-id="stakeholders-are-not-all-components">Stakeholders are not all components</h3>
 <p>A trace that ends by putting every stakeholder inside one box has produced the over-scoping failure section 3.2 warned about. Being affected by a system and being part of it are different relationships, and the boundary has to show which is which.</p>
-<p>A recruiter who reads a score and decides who advances is operating the system. The recruiter is inside it, and the interface, the review procedure, and the override authority are inside with them. A candidate is an affected person, not a component: what the record holds about a candidate is exposure, recourse, and whether either can be exercised. A regulator oversees the system without operating it, and belongs in the record as an obligation and an evidence destination rather than as a part. A vendor sits in both places at once, inside as a technical dependency whose model produces the score and whose service terms constrain what can be done with it, and outside as a separate organization carrying contractual responsibilities that Chapter 16 governs.</p>
+<p>Table 3.1 sets out four stakeholders of a hiring deployment, the relationship each has to the system, and what the record holds about each.</p>
+<p>Table 3.1. Stakeholder relationships to a hiring deployment</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stakeholder</th>
+<th>Relationship</th>
+<th>What the boundary and record hold</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Recruiter</strong></td>
+<td>Reads a score and decides who advances, so operates the system and is inside it</td>
+<td>The interface, the review procedure, and the override authority, inside with them</td>
+</tr>
+<tr class="even">
+<td><strong>Candidate</strong></td>
+<td>An affected person, not a component</td>
+<td>Exposure, recourse, and whether either can be exercised</td>
+</tr>
+<tr class="odd">
+<td><strong>Regulator</strong></td>
+<td>Oversees the system without operating it</td>
+<td>An obligation and an evidence destination rather than a part</td>
+</tr>
+<tr class="even">
+<td><strong>Vendor</strong></td>
+<td>Sits in both places at once, inside as a technical dependency and outside as a separate organization</td>
+<td>Inside, the model that produces the score and the service terms that constrain what can be done with it. Outside, the contractual responsibilities that Chapter 16 governs</td>
+</tr>
+</tbody>
+</table>
 <p>Mistaking one of these for another has a predictable cost. Treat the candidate as a component and the record fills with people rather than dependencies. Treat the recruiter as merely affected and the oversight arrangement, which is the control a classification will require, sits outside the boundary and is governed by nobody.</p>
 </section>
 <section id="the-boundary-belongs-to-the-deployment" class="level3">
@@ -553,7 +595,42 @@ Figure&nbsp;4.1: Three nested lifecycle layers, with the cadence and owner of ea
 <p>On the buy path, most of this record will be incomplete, and the discipline is to record the gap instead of leaving the field blank. A blank field is indistinguishable from an unasked question. A field reading “requested from vendor, refused, escalated to procurement” is evidence of diligence and a live item, and it is the difference between a governance function that knows what it does not know and one that has not looked.</p>
 <p>The link between the two is the part that matters, and the part organizations leave out. It is a many-to-many relationship, which is why it cannot be collapsed into a single record. One model may sit inside four systems, and one system may call three models for different steps.</p>
 <p>Without the link, a defect found in a model cannot be propagated to every system deploying it, which is the situation the model layer exists to prevent. The propagation runs in both directions and both are needed. From model to systems, so that a disclosed weakness reaches everyone affected by it. From system to models, so that an incident in one system can be traced to whichever component produced the behaviour, which Chapter 10 depends on entirely. When a developer discloses that a model version underperforms for a particular population, the question that follows is which of your systems are running it. An inventory that cannot answer in minutes is an inventory that will answer in weeks, after someone has gone through systems one at a time.</p>
-<p>Each field earns its place by naming what fails without it. Without a named owner, escalation has no destination and the system is governed by whoever happens to notice a problem. Without recorded populations affected, disaggregated testing has no groups to disaggregate by. Without deployment context, nobody can tell whether the system is still being used where it was validated. Without a next review date, the record ages silently and describes a system that has since changed. Without evidence location, every regulatory inquiry becomes an excavation.</p>
+<p>Each field earns its place by naming what fails without it.</p>
+<p>Table 3.2. Inventory fields and what fails without each</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>What fails without it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Named owner</strong></td>
+<td>Escalation has no destination, and the system is governed by whoever happens to notice a problem</td>
+</tr>
+<tr class="even">
+<td><strong>Populations affected</strong></td>
+<td>Disaggregated testing has no groups to disaggregate by</td>
+</tr>
+<tr class="odd">
+<td><strong>Deployment context</strong></td>
+<td>Nobody can tell whether the system is still being used where it was validated</td>
+</tr>
+<tr class="even">
+<td><strong>Next review date</strong></td>
+<td>The record ages silently and describes a system that has since changed</td>
+</tr>
+<tr class="odd">
+<td><strong>Evidence location</strong></td>
+<td>Every regulatory inquiry becomes an excavation</td>
+</tr>
+</tbody>
+</table>
 <p>The pair looks like this, filled for the same deployment. Note what the two records share and what only one of them can hold.</p>
 <div class="record record--filled">
 <table class="caption-top table">
@@ -670,13 +747,78 @@ Figure&nbsp;4.1: Three nested lifecycle layers, with the cadence and owner of ea
 <p>The other two concern systems that were recorded correctly and then changed, and they are the forms an organization with a good inventory is most exposed to, because the record’s existence is mistaken for the record’s currency. A capability is added to a system already in the inventory, and the boundary drawn around what that system used to do no longer contains what it now does. Calloway’s scheduling component is this form. The screening tool was recorded, and then it began to act. Or a model is substituted underneath a system whose record still names the old one, which happens on the buy path without anyone at the deploying organization being told, and which means the linked model record now describes something that is not running. The first kind is a hole in the inventory. The second is a lie in it, and a confident inventory that has never been tested for the second kind is worse than an incomplete one that knows it is incomplete.</p>
 <p>Both kinds end in the same place. Discovery finds a candidate; it does not produce a record. Each candidate has to be examined for what it actually is, bounded by the test in section 3.2, entered as a system record with its model records linked, and then classified. A finding written straight into the inventory as an unexplained line has skipped the two steps that make it governable. So the method becomes the governed object. A sweep has to record which channels it searched and which it did not. Exposure sits in the ones it did not reach. <a href="../chapters/appendix-c-templates-and-checklists.html#tpl-12">Template 12, the Discovery Sweep Record</a>, is built around that omission.</p>
 <p>Four approaches find most of it, and they complement one another instead of substituting for one another.</p>
-<p>Network and endpoint visibility identifies traffic to known model interfaces. This finds direct API use and browser-based tools. It does not find models embedded inside software that also does other things.</p>
-<p>Expense and procurement review finds licensed tools. Search for the vendors, and also for the pattern of small recurring charges that indicate a team has been paying for something out of a departmental budget.</p>
-<p>Platform telemetry finds what has been built on internal low-code and automation platforms. Ask the platform owners what connectors are in use instead of asking the builders what they have built.</p>
-<p>Self-attestation finds what the other three miss, but only under a specific condition. It must come with amnesty. Discovery designed as enforcement produces concealment immediately, and an organization that punishes the first person to disclose has bought silence for the price of one disciplinary action. Run the amnesty period with a stated end, register what is disclosed, and apply governance from that point forward, not retroactively.</p>
+<p>Table 3.3. Four approaches to discovering shadow AI</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Approach</th>
+<th>What it finds</th>
+<th>Limit or practice</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Network and endpoint visibility</strong></td>
+<td>Traffic to known model interfaces, which covers direct API use and browser-based tools</td>
+<td>Does not find models embedded inside software that also does other things</td>
+</tr>
+<tr class="even">
+<td><strong>Expense and procurement review</strong></td>
+<td>Licensed tools</td>
+<td>Search for the vendors, and also for the pattern of small recurring charges that indicate a team has been paying for something out of a departmental budget</td>
+</tr>
+<tr class="odd">
+<td><strong>Platform telemetry</strong></td>
+<td>What has been built on internal low-code and automation platforms</td>
+<td>Ask the platform owners what connectors are in use instead of asking the builders what they have built</td>
+</tr>
+<tr class="even">
+<td><strong>Self-attestation</strong></td>
+<td>What the other three miss</td>
+<td>Works only under a specific condition, which is amnesty</td>
+</tr>
+</tbody>
+</table>
+<p>Discovery designed as enforcement produces concealment immediately, and an organization that punishes the first person to disclose has bought silence for the price of one disciplinary action. Run the amnesty period with a stated end, register what is disclosed, and apply governance from that point forward, not retroactively.</p>
 <p>State its limit in the same breath, because an amnesty the organization cannot honour is worse than none. What an employer can waive is its own response: no disciplinary consequence, no performance note, no recovery of costs. What it cannot waive is an obligation running to someone else. An employee who put customer records into a personal-account model may have created a notifiable breach and a contractual violation with that customer, and the duty to notify belongs to the regulator and the counterparty, not to the employer’s discretion. An amnesty that promises more than the employer owns will be overruled by counsel the first time it is tested, and the reversal will cost more trust than the amnesty ever bought. Say what is covered and what is not, before the period opens.</p>
 <p>Running any of these four approaches is itself an activity that needs governance, not only a technique aimed at governance’s target. Network visibility and expense review both examine data about individual employees’ activity, which makes the sweep a processing activity in its own right. What follows is a proposed toolkit for an organization to adapt, not a set of steps to run without process of its own.</p>
-<p>Settle four things before the exercise begins rather than case by case once something uncomfortable comes up. <strong>Authority</strong>, meaning who authorizes the sweep and under what mandate, and what notice employees receive, proportionate to what each method collects. <strong>Limits</strong>, meaning that what is collected serves the purpose of finding unrecorded AI systems and is not repurposed for unrelated performance or disciplinary review, that retention is held to what that purpose requires, and that access to findings is controlled. <strong>Clearing</strong>, meaning a defined route by which a false positive, a flagged use that turns out not to be AI or not to be a governance concern, is reviewed and closed instead of left sitting on a list. <strong>Escalation</strong>, meaning where a real finding goes, what exceptions exist, and who can grant them.</p>
+<p>Settle four things before the exercise begins rather than case by case once something uncomfortable comes up.</p>
+<p>Table 3.4. Decisions to settle before a discovery sweep</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Decision</th>
+<th>What it settles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Authority</strong></td>
+<td>Who authorizes the sweep and under what mandate, and what notice employees receive, proportionate to what each method collects</td>
+</tr>
+<tr class="even">
+<td><strong>Limits</strong></td>
+<td>What is collected serves the purpose of finding unrecorded AI systems and is not repurposed for unrelated performance or disciplinary review. Retention is held to what that purpose requires. Access to findings is controlled</td>
+</tr>
+<tr class="odd">
+<td><strong>Clearing</strong></td>
+<td>A defined route by which a false positive, a flagged use that turns out not to be AI or not to be a governance concern, is reviewed and closed instead of left sitting on a list</td>
+</tr>
+<tr class="even">
+<td><strong>Escalation</strong></td>
+<td>Where a real finding goes, what exceptions exist, and who can grant them</td>
+</tr>
+</tbody>
+</table>
 <div id="fig-governance-loop" class="quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-governance-loop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -857,7 +999,55 @@ Figure&nbsp;4.2: The loop: discovery, boundary, inventory, classification, and t
 <p>For a predictive system, consequence is the effect of a wrong call on the person it concerns, and reversibility is usually a question of whether a human decision sits between the output and the action. <code>FAIRLEND</code> scores an application, a person declines the loan, and the applicant can appeal to that person. The output is contestable because it is still only an input.</p>
 <p>For a generative system, consequence is harder to locate. The output is content rather than a decision, and the harm frequently occurs downstream of anyone the organization can see. A drafted summary that misstates a clinical detail is not itself an incident; it becomes one when a clinician relies on it. Classification therefore depends on what the content is used for, not on what it says, which means the same generative capability warrants different classifications in different deployments, and the inventory has to hold one record per deployment, not one per capability.</p>
 <p>For an agentic system, reversibility is a central factor, not one to fold into autonomy. An agent that can send a message, issue a refund, or delete a record has already acted by the time a reviewer sees anything, so what matters includes whether the act can be undone and at what cost, not only whether the output was right. Assess autonomy and reversibility separately instead of collapsing them together. Autonomy is how much latitude the agent has to decide and act without a human step in between, while reversibility is a property of the action’s own consequences once taken. A highly autonomous agent confined to fully reversible actions is therefore a different risk from a lightly supervised agent that can take an irreversible one.</p>
-<p>Separating those two raises a further question. The four factors were built for systems that produce an output somebody then acts on, and an agent collapses that gap, so each factor has to be asked in a more specific form before it means anything about an agent. Six refinements do that work, and they refine the four rather than adding a fifth and sixth to the scheme. Authority and scale sharpen consequence. Authority is the specific actions and resources the agent is permitted to invoke, and scale is how many actions and how many people a single failure reaches before anyone notices. Observability and recoverability sharpen reversibility. Observability is whether the action and its effects are visible to a reviewer at all, and recoverability is whether the organization can restore the prior state even when the affected person cannot be made whole directly. Affected-person recourse sharpens population, asking whether the person acted upon has a way to contest or seek remedy. Propagation cuts across all four, asking whether the action can trigger further automated actions downstream, because an agent whose actions start other actions has a consequence, a population, and a reversibility profile larger than its own step.</p>
+<p>Separating those two raises a further question. The four factors were built for systems that produce an output somebody then acts on, and an agent collapses that gap, so each factor has to be asked in a more specific form before it means anything about an agent. Six refinements do that work, and they refine the four rather than adding a fifth and sixth to the scheme.</p>
+<p>Table 3.5. Six refinements of the four factors for agentic systems</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Refinement</th>
+<th>Sharpens</th>
+<th>What it asks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Authority</strong></td>
+<td>Consequence</td>
+<td>The specific actions and resources the agent is permitted to invoke</td>
+</tr>
+<tr class="even">
+<td><strong>Scale</strong></td>
+<td>Consequence</td>
+<td>How many actions and how many people a single failure reaches before anyone notices</td>
+</tr>
+<tr class="odd">
+<td><strong>Observability</strong></td>
+<td>Reversibility</td>
+<td>Whether the action and its effects are visible to a reviewer at all</td>
+</tr>
+<tr class="even">
+<td><strong>Recoverability</strong></td>
+<td>Reversibility</td>
+<td>Whether the organization can restore the prior state even when the affected person cannot be made whole directly</td>
+</tr>
+<tr class="odd">
+<td><strong>Affected-person recourse</strong></td>
+<td>Population</td>
+<td>Whether the person acted upon has a way to contest or seek remedy</td>
+</tr>
+<tr class="even">
+<td><strong>Propagation</strong></td>
+<td>All four</td>
+<td>Whether the action can trigger further automated actions downstream</td>
+</tr>
+</tbody>
+</table>
+<p>Propagation cuts across the scheme because an agent whose actions start other actions has a consequence, a population, and a reversibility profile larger than its own step.</p>
 </section>
 </section>
 <section id="record-once-test-independently" class="level2">

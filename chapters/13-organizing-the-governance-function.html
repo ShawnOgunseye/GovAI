@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -518,8 +523,44 @@ ul.task-list li input[type="checkbox"] {
 <p>An incident response RACI follows the same logic as the deployment RACI, with different names filling the roles. It is drawn from Chapter 10’s ten-stage lifecycle. It needs one correction that the deployment-decision RACI does not need.</p>
 <p>Legal and privacy review cannot sit ahead of notification as a sequential gate, a step that must finish before the next one can start. For a deployment, “consulted before the decision” works as such a gate. For an incident it does not. Chapter 10 names two regulatory clocks, the deadlines for reporting to a regulator. They are Article 73’s provider outer limits, the longest a provider may take to report, and Article 26’s deployer duties. These clocks are not yet in force for most systems. The obligations tied to the high-risk uses listed in the Act’s Annex III take effect 2 December 2027, checked against the consolidated EU AI Act as of 2026-09-12. Only from that date do both clocks run. They run from the moment of awareness, the moment the organization learns of the incident. They do not start when an internal consultation finishes.</p>
 <p>Different incidents also route to different legal actors and jurisdictions. The route depends on the organization’s role and the incident type.</p>
-<p>The roles then divide as follows. The team operating the system is responsible for the containment step, the step that stops the harm from spreading. They are the ones positioned to halt the system. For an agentic system, they can trigger the circuit breaker that Chapter 12 described, the control that stops the agent. The AI governance function is accountable for two things. It confirms the provisional severity classification, the first rough rating of how bad the incident is. It also signs off on the owned, dated remediation from the post-incident review, the review done after the incident is over. Each fix in that remediation carries a named owner and a due date.</p>
-<p>Legal teams and, where personal data is involved, privacy teams work in parallel with containment and investigation. They do not work ahead of them. They identify the applicable legal role and jurisdiction. They prepare whatever notification the clock requires. That includes an initial report that is incomplete, a first report filed before all the facts are in, where the rules allow it. They do not wait for a complete investigation to finish first. The executive sponsor is informed once containment is underway. For the most severe tier, the board is informed at the same point. Neither waits for the investigation to close.</p>
+<p>Table 13.3 states how the four roles then divide for an incident.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RACI role</th>
+<th>Who</th>
+<th>What they do</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Responsible</td>
+<td>The team operating the system</td>
+<td>Runs the containment step, the step that stops the harm from spreading. They are the ones positioned to halt the system. For an agentic system, they can trigger the circuit breaker that Chapter 12 described, the control that stops the agent.</td>
+</tr>
+<tr class="even">
+<td>Accountable</td>
+<td>The AI governance function</td>
+<td>Confirms the provisional severity classification, the first rough rating of how bad the incident is. Signs off on the owned, dated remediation from the post-incident review, the review done after the incident is over. Each fix in that remediation carries a named owner and a due date.</td>
+</tr>
+<tr class="odd">
+<td>Consulted</td>
+<td>Legal teams and, where personal data is involved, privacy teams</td>
+<td>Work in parallel with containment and investigation, not ahead of them. Identify the applicable legal role and jurisdiction. Prepare whatever notification the clock requires. That includes an initial report that is incomplete, a first report filed before all the facts are in, where the rules allow it. They do not wait for a complete investigation to finish first.</td>
+</tr>
+<tr class="even">
+<td>Informed</td>
+<td>The executive sponsor and, for the most severe tier, the board</td>
+<td>Informed once containment is underway, both at the same point. Neither waits for the investigation to close.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 13.3. The incident-response RACI. Consultation and notification run beside containment, not ahead of it.</p>
 <p>The same four-role structure applies to a deployment decision and to an incident response. The timing differs. RACI states who does what. It does not, by itself, state when. An organization applying it needs to recognize where the incident-response version’s timing constraints differ from the deployment version’s.</p>
 </section>
 <section id="the-three-lines-model" class="level2">
@@ -536,7 +577,40 @@ ul.task-list li input[type="checkbox"] {
 <p>What changes with an agentic system is the timing of design. Chapter 12’s permission scope, the set of actions the agent may take, and its runtime intervention, the ability to step in while the agent runs, have to be designed before the agent acts. They cannot be reviewed after a single output. A first line that owns day-to-day operation of an agent is, in effect, exercising a risk decision every time the agent takes an action within its granted scope. That happens at a frequency a predictive system’s periodic monitoring cycle does not approach.</p>
 <p>The second line’s job shifts correspondingly. It moves from periodic deployment review toward two tasks. One is setting standards for which permission scopes are acceptable. The other is auditing the action logs that Chapter 12 required, the records of each action an agent took. A governance program that has not adjusted its second-line practice for this shift will review agentic deployments with the same pre-deployment checklist. That checklist was built for systems that only ever produced a discrete output to review.</p>
 <p>Chapter 11 and Chapter 12 name controls along different axes. The difference matters for tracing a specific control back to a specific owner. Without that tracing, the connection between a technical safeguard and the role accountable for it gets lost.</p>
-<p>Chapter 11 classifies a control by its effect. The effects are reducing likelihood, detecting, containing before release, correcting, and transferring residual risk. Chapter 12 classifies a control by where it sits in the pipeline, the chain of steps a system’s work passes through. The positions are inline enforcement, near-real-time detection, aggregate monitoring, and retrospective audit. An inline enforcement point, for instance, can carry a preventive effect, stopping a problem, a detective one, finding a problem, or both. It depends on what it is configured to do. A third vocabulary names controls as prevent, detect, contain, intervene, recover, verify, and learn.</p>
+<p>Table 13.4 sets the three classification vocabularies side by side.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Vocabulary</th>
+<th>Basis</th>
+<th>Categories</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chapter 11</td>
+<td>Classifies a control by its effect</td>
+<td>Reducing likelihood, detecting, containing before release, correcting, and transferring residual risk</td>
+</tr>
+<tr class="even">
+<td>Chapter 12</td>
+<td>Classifies a control by where it sits in the pipeline, the chain of steps a system’s work passes through</td>
+<td>Inline enforcement, near-real-time detection, aggregate monitoring, and retrospective audit</td>
+</tr>
+<tr class="odd">
+<td>A third vocabulary</td>
+<td>Names controls</td>
+<td>Prevent, detect, contain, intervene, recover, verify, and learn</td>
+</tr>
+</tbody>
+</table>
+<p>Table 13.4. Three vocabularies that classify the same controls.</p>
+<p>An inline enforcement point, for instance, can carry a preventive effect, stopping a problem, a detective one, finding a problem, or both. It depends on what it is configured to do.</p>
 <p>The underlying obligation is the same, whichever axis names the control. Each control still needs a first-line owner who runs it. It needs a second-line function that sets its standard and challenges it. Where the control failed and the failure was material, it needs a third-line assurance check that the standard itself is working.</p>
 <p>Chapters 11 and 12 describe controls such as a registry record, a permission scope, and a claim-verification step. Any of these left without a named role is one of the decisions that the RACI and three lines structure has to assign. That structure does not tolerate leaving it unassigned. The gap is the one the structure exists to close.</p>
 <p>Which operating model an organization picks determines who ends up in which line for a given decision. It does not only shape how authority is drawn on an org chart. Table 13.2 returns to the operating-model choice that section 13.1 opened. The roles and lines now give that choice concrete stakes.</p>
@@ -583,11 +657,91 @@ ul.task-list li input[type="checkbox"] {
 <p>A governance body is a committee convened to review or approve AI systems. Composition, mandate, and decision rights are the necessary starting point. A body needs more than these three stated, however, if it is to function as a governance mechanism and not as a discussion group.</p>
 <p>Composition names who sits on the body and why. It ensures that the perspectives a decision requires are present. These are technical, legal, and business perspectives, and, where relevant, representation for the people a system affects. These perspectives should not be assembled from whoever was available. Mandate states what the body is empowered to decide. This is distinct from what it is only invited to discuss. Decision rights specify whether the body’s decision is binding, advisory, or escalates to someone else.</p>
 <p>Consider a committee that spends an hour debating a deployment. Then it watches the business unit proceed regardless. That committee has decision rights of zero, however substantive its discussion was.</p>
-<p>Naming these three does not yet make a body able to operate on an ordinary working day. A working governance body first needs rules for what comes in. It needs intake criteria, which say what reaches the body and what is handled below it. It needs a quorum requirement, which sets how many members must be present to decide. It needs a conflict-of-interest check for members with a stake in the specific decision. It needs an evidence pack, which a submitter, the person bringing the proposal, must assemble before the meeting.</p>
-<p>It also needs rules for how it decides. It needs a stated decision standard. Its minutes, the written record of the meeting, must record dissent as well as the outcome. It needs a conditional-approval option, which approves a system on stated conditions, with a stated exception duration, meaning how long the exception lasts. It needs an escalation path, a route that sends the matter to a higher authority, for when the body cannot reach a decision.</p>
-<p>It needs rules for what happens after a decision. It needs an appeal route for a submitter who disagrees with the outcome. It needs action tracking for anything the approval was conditioned on. It needs a re-review trigger for a material change to the approved system. It needs an emergency route for a decision that cannot wait for the body’s normal cadence, its regular meeting rhythm. Finally, it needs periodic review of whether the body’s own decisions are holding up in practice.</p>
+<p>Naming these three does not yet make a body able to operate on an ordinary working day. A working governance body needs rules for what comes in, rules for how it decides, and rules for what happens after a decision. Table 13.5 lists that operating detail, grouped by stage.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stage</th>
+<th>Element</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>What comes in</td>
+<td>Intake criteria</td>
+<td>Say what reaches the body and what is handled below it</td>
+</tr>
+<tr class="even">
+<td>What comes in</td>
+<td>Quorum requirement</td>
+<td>Sets how many members must be present to decide</td>
+</tr>
+<tr class="odd">
+<td>What comes in</td>
+<td>Conflict-of-interest check</td>
+<td>Covers members with a stake in the specific decision</td>
+</tr>
+<tr class="even">
+<td>What comes in</td>
+<td>Evidence pack</td>
+<td>Assembled by a submitter, the person bringing the proposal, before the meeting</td>
+</tr>
+<tr class="odd">
+<td>How it decides</td>
+<td>Decision standard</td>
+<td>Must be stated</td>
+</tr>
+<tr class="even">
+<td>How it decides</td>
+<td>Minutes</td>
+<td>The written record of the meeting. Must record dissent as well as the outcome</td>
+</tr>
+<tr class="odd">
+<td>How it decides</td>
+<td>Conditional-approval option</td>
+<td>Approves a system on stated conditions, with a stated exception duration, meaning how long the exception lasts</td>
+</tr>
+<tr class="even">
+<td>How it decides</td>
+<td>Escalation path</td>
+<td>A route that sends the matter to a higher authority, for when the body cannot reach a decision</td>
+</tr>
+<tr class="odd">
+<td>After a decision</td>
+<td>Appeal route</td>
+<td>For a submitter who disagrees with the outcome</td>
+</tr>
+<tr class="even">
+<td>After a decision</td>
+<td>Action tracking</td>
+<td>For anything the approval was conditioned on</td>
+</tr>
+<tr class="odd">
+<td>After a decision</td>
+<td>Re-review trigger</td>
+<td>For a material change to the approved system</td>
+</tr>
+<tr class="even">
+<td>After a decision</td>
+<td>Emergency route</td>
+<td>For a decision that cannot wait for the body’s normal cadence, its regular meeting rhythm</td>
+</tr>
+<tr class="odd">
+<td>After a decision</td>
+<td>Periodic review</td>
+<td>Of whether the body’s own decisions are holding up in practice</td>
+</tr>
+</tbody>
+</table>
+<p>Table 13.5. The operating detail a working governance body needs beyond composition, mandate, and decision rights.</p>
 <p>A committee may have a charter that names its composition, mandate, and decision rights. Without this operating detail, it still functions ceremonially, meaning for show. It approves whatever evidence happens to be presented to it. It does not govern the decision.</p>
-<p>One documented illustration shows a governance body being stood up at close to this level of structural specificity. It does not reach every element listed above. It comes from outside banking entirely. The White House Office of Management and Budget issued Memorandum M-25-21 on 3 April 2025. It rescinded, meaning withdrew, the prior administration’s earlier memorandum, M-24-10. The memorandum requires the head of each U.S. federal agency to retain or designate a Chief AI Officer within sixty days. A Chief AI Officer is the official in charge of an agency’s AI work.</p>
+<p>One documented illustration shows a governance body being stood up at close to this level of structural specificity. It does not reach every element listed above. It comes from outside banking. The White House Office of Management and Budget issued Memorandum M-25-21 on 3 April 2025. It rescinded, meaning withdrew, the prior administration’s earlier memorandum, M-24-10. The memorandum requires the head of each U.S. federal agency to retain or designate a Chief AI Officer within sixty days. A Chief AI Officer is the official in charge of an agency’s AI work.</p>
 <p>The memorandum separately requires each agency covered by the Chief Financial Officers Act to convene an AI Governance Board within ninety days. The requirement does not cover every federal agency. An existing governance body may serve that function. The memorandum specifies the board’s chair, vice-chair, and required functional representation. Alongside these, a cross-agency Chief AI Officer Council coordinates AI governance across the federal government as a whole. OMB itself convenes the council (checked 2026-09-12).</p>
 <p>The memorandum states a requirement. It does not prove that every covered agency met it. The U.S. International Trade Commission’s own AI page reports that it re-designated its Chief AI Officer and retained its AI Governance Board. The page names the board’s thirteen member positions. This is direct evidence that the requirement was implemented and not only imposed (checked 2026-09-13). Neither source specifies the quorum, evidence-pack, or dissent-recording detail that a body needs in order to function. That is the gap between naming a governance body and operating one.</p>
 </section>
@@ -623,7 +777,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="conflict-with-incumbent-functions-and-executive-engagement" class="level2">
 <h2 class="anchored" data-anchor-id="conflict-with-incumbent-functions-and-executive-engagement">13.9 Conflict with incumbent functions and executive engagement</h2>
-<p>Where a model risk management function already exists with real authority, a new AI governance function arrives as a structural competitor and not a blank slate. This was the situation at Meridian. Its model risk management function had real authority for a decade before <code>FAIRLEND</code>’s AI governance function was chartered. Pretending otherwise produces unresolved friction. The case in focus below works through that friction.</p>
+<p>Where a model risk management function already exists with real authority, a new AI governance function arrives as a structural competitor and not a blank slate. This was the situation at Meridian. Its model risk management function had real authority for a decade before <code>FAIRLEND</code>’s AI governance function was chartered. Pretending otherwise produces unresolved friction.</p>
 <p>The boundary a new function should draw is not the one an assumption of empty incumbent territory would suggest. Current U.S. federal banking supervisory guidance on model risk management was issued April 2026 and supersedes the prior 2011 guidance. It directly addresses model purpose, intended and actual use, limitations, misuse, validation, and monitoring. It also addresses aggregate exposure, meaning risk viewed across models together rather than one at a time, and third-party models, those built by outside vendors. So an incumbent function governed by that guidance already has a real, if partial, mandate over questions of use appropriateness, meaning whether a model is appropriate for a given use. Its mandate is not limited to technical accuracy. A new AI governance function that assumes otherwise is working from an outdated picture of what model risk management is built to check.</p>
 <p>That guidance leaves four gaps. It does not cover these:</p>
 <ul>

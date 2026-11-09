@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -399,11 +404,50 @@ ul.task-list li input[type="checkbox"] {
 <section id="five-monitoring-dimensions" class="level2">
 <h2 class="anchored" data-anchor-id="five-monitoring-dimensions">9.1 Five monitoring dimensions</h2>
 <p>A monitoring program built around a single number will miss most of what goes wrong in production. That number is typically accuracy or its nearest proxy, a stand-in measure. Different failure modes surface through different signals. A dimension nobody is watching is a failure mode nobody will catch until it has already caused harm.</p>
-<p>Technical monitoring watches whether the system itself is functioning. It tracks latency, error rates, uptime, and integration failures with the systems around it. Latency is how long the system takes to respond. Uptime is the share of time the system is available. Most operations teams already do this well. It resembles conventional software monitoring, and it produces alerts through tools that predate AI systems.</p>
-<p>Performance monitoring watches whether the system’s predictions, generations, or actions remain accurate against whatever ground truth is available. Section 9.2 shows that this is harder than it sounds.</p>
-<p>Fairness monitoring watches whether disparities, meaning gaps in how groups are treated or served, emerge across groups in production that pre-deployment testing did not reveal. Such gaps can emerge because the population in production shifts away from the population tested. That shift can happen well before the aggregate accuracy, the average over all cases, visibly degrades.</p>
-<p>Drift monitoring watches whether the statistical relationship between inputs and outputs is changing. In plain terms, this dimension watches whether the pattern linking the two still holds. It does so whether or not the change has yet produced a measurable accuracy drop.</p>
-<p>Usage monitoring watches how the system is being used, by whom, and for what. It checks whether that use matches the scope the system was deployed and approved for. It catches scope creep, the slow widening of use beyond the approved purpose. Chapter 8 named scope creep as the central risk of context alignment, the fit between a system and the context it was approved for. Usage monitoring catches it after release, in production, instead of only before deployment.</p>
+<p>Each of the five dimensions watches a different signal, and Table 9.1 states what each one watches and what to know about watching it.</p>
+<p>Table 9.1. Five monitoring dimensions</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Technical</strong></td>
+<td>Whether the system itself is functioning. It tracks latency (how long the system takes to respond), error rates, uptime (the share of time the system is available), and integration failures with the systems around it</td>
+<td>Most operations teams already do this well. It resembles conventional software monitoring, and it produces alerts through tools that predate AI systems</td>
+</tr>
+<tr class="even">
+<td><strong>Performance</strong></td>
+<td>Whether the system’s predictions, generations, or actions remain accurate against whatever ground truth is available</td>
+<td>Section 9.2 shows that this is harder than it sounds</td>
+</tr>
+<tr class="odd">
+<td><strong>Fairness</strong></td>
+<td>Whether disparities (gaps in how groups are treated or served) emerge across groups in production that pre-deployment testing did not reveal</td>
+<td>Such gaps can emerge because the population in production shifts away from the population tested, well before the aggregate accuracy (the average over all cases) visibly degrades</td>
+</tr>
+<tr class="even">
+<td><strong>Drift</strong></td>
+<td>Whether the statistical relationship between inputs and outputs is changing, that is, whether the pattern linking the two still holds</td>
+<td>Watched whether or not the change has yet produced a measurable accuracy drop</td>
+</tr>
+<tr class="odd">
+<td><strong>Usage</strong></td>
+<td>How the system is being used, by whom, and for what, and whether that use matches the scope the system was deployed and approved for</td>
+<td>Catches scope creep (the slow widening of use beyond the approved purpose) after release, in production, instead of only before deployment</td>
+</tr>
+</tbody>
+</table>
+<p>Chapter 8 named scope creep as the central risk of context alignment, the fit between a system and the context it was approved for.</p>
 <p>These five are a minimum view. They are the dimensions most monitoring programs should start with. They are not an exhaustive list, and they overlap instead of sitting in separate lanes. A security incident can show up first as an action-volume anomaly, an unusual jump in how many actions a system takes. A supplier’s silent model change, meaning an update an outside vendor makes without announcing it, is covered in section 9.6. It touches both drift and technical monitoring at once.</p>
 <p>A fuller program adds more targets. One is human workflow and oversight, meaning how the people around the system work with it and check it. Section 9.8 develops this as its own monitoring target. It is not one of the five headline dimensions. A second is security and privacy monitoring specific to what the system newly exposes, the new ways it could be attacked or could leak personal data. A third is change and supply-chain monitoring, which tracks model, configuration, and vendor changes as their own signal. A fourth is impact or complaint signals from the people affected by the system’s decisions.</p>
 <p>If a program gives one of these no dimension of its own, the plan should say which of the five covers it. The plan should not leave it uncovered by omission.</p>
@@ -458,21 +502,88 @@ AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
 <p>The untreated counterfactual is what would have happened to this patient without early treatment. A retrospective chart review cannot look it up, because that outcome never happened. No record of it exists anywhere.</p>
 <p>A usable signal can still be recovered, by several routes. One is trial design, meaning a planned experiment, where it is ethical and feasible. Another is phased or randomized implementation, which means rolling the system out in stages or by random assignment, so that a comparison group exists. Another is causal-inference methods, statistical tools for working out cause and effect, which model the counterfactual under stated assumptions. Two more are matched comparisons and careful process measures. A matched comparison pairs each treated patient with a similar patient who did not receive the intervention. Process measures evaluate whether the intervention was warranted and well executed. They do not try to score its outcome directly.</p>
 <p>Every one of these methods carries its own assumptions. None of them reconstructs the individual counterfactual outcome for a specific treated patient with certainty. They estimate a population-level effect, meaning an average effect across many patients, or they evaluate the process. A monitoring program has to say which of those two it is doing. It should not present either as a direct confirmation of the original prediction.</p>
-<p>Four approaches recur across these problems. Each has its own limitation.</p>
-<p>Sampling with human adjudication draws a manageable subset of cases for expert review, where a reviewer decides what the right answer is. A slower, more expensive, but more reliable human decision replaces the ground truth that is not otherwise available. The cost is covering only a sample instead of the full population. In the intervention-affected case, the reviewers adjudicate the process and the available evidence. They cannot adjudicate a counterfactual nobody can observe.</p>
-<p>Proxy metrics substitute an earlier or more available signal for the true outcome. They are useful because they are available sooner. The proxy’s known limitations must be stated alongside every number it produces. The proxy should not be treated as equivalent to the outcome it stands in for.</p>
-<p>Delayed evaluation waits for ground truth to mature before drawing a conclusion. It gives up timeliness for reliability. It is appropriate where a wrong early signal would cost more than a late correct one.</p>
-<p>The fourth approach is causal and comparison-based methods. It is specific to the intervention-affected case. It includes matched comparisons, phased or randomized rollouts, and causal-inference techniques. These answer a population-level question about whether the intervention helps on average. They do not answer a patient-level question about what would have happened to any one person.</p>
+<p>Four approaches recur across these problems, and Table 9.2 pairs each with its own limitation.</p>
+<p>Table 9.2. Four approaches to missing or imperfect ground truth</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Approach</th>
+<th>Method</th>
+<th>Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Sampling with human adjudication</strong></td>
+<td>Draws a manageable subset of cases for expert review, where a reviewer decides what the right answer is. A slower, more expensive, but more reliable human decision replaces the ground truth that is not otherwise available</td>
+<td>Covers only a sample instead of the full population. In the intervention-affected case, the reviewers adjudicate the process and the available evidence, not a counterfactual nobody can observe</td>
+</tr>
+<tr class="even">
+<td><strong>Proxy metrics</strong></td>
+<td>Substitute an earlier or more available signal for the true outcome, useful because the proxy is available sooner</td>
+<td>The proxy’s known limitations must be stated alongside every number it produces, and the proxy should not be treated as equivalent to the outcome it stands in for</td>
+</tr>
+<tr class="odd">
+<td><strong>Delayed evaluation</strong></td>
+<td>Waits for ground truth to mature before drawing a conclusion</td>
+<td>Gives up timeliness for reliability. Appropriate where a wrong early signal would cost more than a late correct one</td>
+</tr>
+<tr class="even">
+<td><strong>Causal and comparison-based methods</strong></td>
+<td>Matched comparisons, phased or randomized rollouts, and causal-inference techniques, specific to the intervention-affected case</td>
+<td>Answer a population-level question about whether the intervention helps on average, not a patient-level question about what would have happened to any one person</td>
+</tr>
+</tbody>
+</table>
 <p><code>MEDASSIST</code>’s community hospital gap was, in the end, confirmed as a performance problem only through a version of the first approach. That version was a retrospective chart review, which adjudicated a sample of cases by hand against the available process evidence. No proxy metric and no wait for later data could substitute for examining what happened to specific patients whose deterioration the model should have caught.</p>
 </section>
 <section id="monitoring-generative-output" class="level2">
 <h2 class="anchored" data-anchor-id="monitoring-generative-output">9.3 Monitoring generative output</h2>
 <p>A generative system, one that creates new text, images, or code, makes the ground truth problem worse instead of escaping it. It is not accurate to say a generative system has no ground truth at all. A generation can still be checked against the source documents it was supposed to be grounded in, that is, to draw its facts from. It can be checked against a citation it claims supports a fact. It can be checked against an executable test, which is a test a computer can run. It can also be checked against a task outcome that a user or a downstream process can confirm.</p>
 <p>What is true is narrower. A single, universally correct output to match against is rarely available, as it is for a classifier, a model that sorts items into categories. Monitoring therefore has to shift. It moves from comparison against one correct answer to a family of narrower, partial, and task-dependent checks. In combination they cover more of the output than any one of them alone.</p>
-<p>Rubric-based sampling extends Chapter 7’s evaluation discipline into production. The team draws a periodic sample of real outputs and grades them against the same kind of scoring guide, or rubric, that a pre-deployment evaluation used. This catches drift in quality that a static pre-launch evaluation cannot see, because production inputs are not the test cases chosen before launch.</p>
-<p>Groundedness checking is specific to a retrieval-augmented system, which is a system that looks up source material and uses it to write its answers. The check verifies whether a generated claim is supported by the retrieved source material it was meant to be grounded in. It catches a specific failure. The system fabricates a plausible-sounding elaboration beyond what its own sources support.</p>
-<p>Refusal and over-refusal rates track a different kind of failure, one about when the system declines requests, and they track it in both directions. A rising refusal rate can signal the system declining to help with legitimate requests it should be handling. A falling refusal rate on requests that should be declined signals the opposite failure. Watching only one direction misses the other.</p>
-<p>User-reported failures are an imperfect signal on their own. They still catch categories of failure that no automated check was designed to look for. The reporting channel has to be easy enough to use that a frustrated user uses it instead of giving up.</p>
+<p>Table 9.3 sets out four such checks and the failure each one catches.</p>
+<p>Table 9.3. Four checks for generative output</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Check</th>
+<th>Method</th>
+<th>Failure caught</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Rubric-based sampling</strong></td>
+<td>Extends Chapter 7’s evaluation discipline into production. The team draws a periodic sample of real outputs and grades them against the same kind of scoring guide, or rubric, that a pre-deployment evaluation used</td>
+<td>Drift in quality that a static pre-launch evaluation cannot see, because production inputs are not the test cases chosen before launch</td>
+</tr>
+<tr class="even">
+<td><strong>Groundedness checking</strong></td>
+<td>Verifies whether a generated claim is supported by the retrieved source material it was meant to be grounded in. Specific to a retrieval-augmented system, a system that looks up source material and uses it to write its answers</td>
+<td>The system fabricating a plausible-sounding elaboration beyond what its own sources support</td>
+</tr>
+<tr class="odd">
+<td><strong>Refusal and over-refusal rates</strong></td>
+<td>Track when the system declines requests, in both directions. Watching only one direction misses the other</td>
+<td>A rising refusal rate can signal the system declining to help with legitimate requests it should be handling. A falling refusal rate on requests that should be declined signals the opposite failure</td>
+</tr>
+<tr class="even">
+<td><strong>User-reported failures</strong></td>
+<td>Rely on a reporting channel easy enough to use that a frustrated user uses it instead of giving up. An imperfect signal on its own</td>
+<td>Categories of failure that no automated check was designed to look for</td>
+</tr>
+</tbody>
+</table>
 <p>This list is a starting set, not the full range a production generative system needs watched. A fuller monitoring coverage map adds several checks. It adds factuality checks against whatever sources are available, citation validity, and privacy leakage in generated output. It adds harmful content, and prompt injection attempts (attempts to trick the system with instructions hidden in its input) and whether they succeeded. It also adds retrieval poisoning, which is tampering with the collection of documents a system draws from. It adds latency and cost, rates of users correcting or appealing an output, and task success where a downstream outcome can be observed at all.</p>
 <p>Building the map starts from each system capability and risk. From each one, the team works to a specific signal. Each signal needs a data source, a sampling plan, a threshold, a named owner, and a defined response. The map should also state the blind spot that the signal does not cover. The team should not add checks piecemeal until the list feels long enough.</p>
 <p>An aggregate check, one that averages over all outputs, can miss the failures that matter most. The sampling plan should deliberately oversample the categories most likely to contain one. A uniform random sample, one that gives every output an equal chance of being picked, dilutes them below the level an average can detect.</p>
@@ -556,7 +667,42 @@ AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
 <h2 class="anchored" data-anchor-id="drift">9.6 Drift</h2>
 <p>Drift is change in the statistical relationship a model was trained to capture. In plain terms, the pattern the model learned no longer matches the world that is sending it data. Telling input drift from concept drift is a useful starting diagnosis. It does not dictate a single response, such as a data fix for one and a retrain for the other. Retraining means training the model again on newer data. Treating the diagnosis as if it dictated one response oversimplifies a decision that needs its own process.</p>
 <p>Input drift is a change in the distribution of the data a model receives, meaning how its values are spread. The underlying relationship between that data and the correct outcome does not change. Suppose a lending model starts receiving applications with a different income distribution than its training data. If the relationship between income and repayment has not changed, the model is experiencing input drift.</p>
-<p>Not every input distribution change deserves the same response. It can be harmless, if the model’s learned relationship holds across the new distribution too. It can be harmful, if it does not. It can be temporary and correct itself without intervention. It can be a symptom of a pipeline fault upstream of the model, a break in the systems feeding it data, not a real change in the population. Or it can be a genuine, lasting signal that the population being served has changed.</p>
+<p>Not every input distribution change deserves the same response, and Table 9.4 lists what the change can turn out to be.</p>
+<p>Table 9.4. What an input distribution change can be</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Possibility</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Harmless</strong></td>
+<td>The model’s learned relationship holds across the new distribution too</td>
+</tr>
+<tr class="even">
+<td><strong>Harmful</strong></td>
+<td>The model’s learned relationship does not hold across the new distribution</td>
+</tr>
+<tr class="odd">
+<td><strong>Temporary</strong></td>
+<td>The change corrects itself without intervention</td>
+</tr>
+<tr class="even">
+<td><strong>Pipeline fault</strong></td>
+<td>A symptom of a fault upstream of the model, a break in the systems feeding it data, not a real change in the population</td>
+</tr>
+<tr class="odd">
+<td><strong>Population change</strong></td>
+<td>A genuine, lasting signal that the population being served has changed</td>
+</tr>
+</tbody>
+</table>
 <p>A representativeness fix, one that makes the data representative again, is often the right response. But retraining on a distribution that turns out to be a temporary pipeline artifact can lock a problem in instead of solving it. Telling these cases apart is part of the work. It is not a detail to skip past on the way to a fix.</p>
 <p>Concept drift is a change in the underlying relationship itself. The same input now predicts a different outcome than it used to. No amount of representative sampling will fix this, because the thing the model learned is no longer true.</p>
 <p>Fraud is an example. Fraud techniques evolve past whatever pattern the model learned to recognize. In that case, retraining on data reflecting the new relationship is usually necessary. But even here retraining is one option among several. A real concept change can call for recalibrating the existing model, which means adjusting its scores rather than training it again. It can call for adding a new feature, an input that captures what changed. It can call for adjusting a decision threshold or rule. It can also call for restricting the system’s use while the relationship is investigated, rolling back to a prior version, or retiring the system. The choice depends on what changed and how much.</p>

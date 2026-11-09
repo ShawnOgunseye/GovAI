@@ -302,6 +302,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../chapters/appendix-d-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix D: Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-e-cases-for-discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix E: Cases for Discussion</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -412,11 +417,45 @@ ul.task-list li input[type="checkbox"] {
 <section id="organizational-readiness" class="level2">
 <h2 class="anchored" data-anchor-id="organizational-readiness">8.2 Organizational readiness</h2>
 <p>Organizational readiness is a harder question than system readiness. A deployment review can skip it without anyone deciding to skip it. The reason is that it asks about the receiving organization, not about the system. A review convened to approve a system tends to stay focused on the system.</p>
-<p>Organizational readiness has four parts.</p>
-<p>Operational readiness asks whether the staff who will work alongside the system have been trained. They need to know what it does and what it does not do. They also need to know what to do when it disagrees with their own assessment.</p>
-<p>Oversight readiness asks whether a human who reviews the system’s output can catch a wrong output. That person needs the time, the authority, and the right information to do it. Chapter 9 develops this question at length after it introduces automation bias, the habit of trusting a machine’s output too much.</p>
-<p>Monitoring readiness asks whether anyone is watching the system’s behavior in production at all. Someone must watch a defined measure. A defined threshold must trigger a response.</p>
-<p>Incident readiness asks whether a response plan exists before a failure or harmful event involving the system occurs. Chapter 10 shows that an organization that improvises its first response during an incident makes worse decisions than one that follows a plan built in advance.</p>
+<p>Organizational readiness has four parts. Table 8.1 states the question each part asks and what answering it requires, so that a review can check them one by one instead of holding all four in mind.</p>
+<p>Table 8.1. The four parts of organizational readiness</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Question</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Operational readiness</strong></td>
+<td>Have the staff who will work alongside the system been trained?</td>
+<td>Staff know what the system does and what it does not do, and what to do when it disagrees with their own assessment.</td>
+</tr>
+<tr class="even">
+<td><strong>Oversight readiness</strong></td>
+<td>Can a human who reviews the system’s output catch a wrong output?</td>
+<td>That person has the time, the authority, and the right information to do it.</td>
+</tr>
+<tr class="odd">
+<td><strong>Monitoring readiness</strong></td>
+<td>Is anyone watching the system’s behavior in production at all?</td>
+<td>Someone watches a defined measure, and a defined threshold triggers a response.</td>
+</tr>
+<tr class="even">
+<td><strong>Incident readiness</strong></td>
+<td>Does a response plan exist before a failure or harmful event involving the system occurs?</td>
+<td>A response plan built in advance, not improvised on the day.</td>
+</tr>
+</tbody>
+</table>
+<p>Chapter 9 develops the oversight question at length after it introduces automation bias, the habit of trusting a machine’s output too much. Chapter 10 shows that an organization that improvises its first response during an incident makes worse decisions than one that follows a plan built in advance.</p>
 <p>These four parts are a minimum. A review that stops at them has covered ground but not the whole of it. A fuller readiness check also names the following:</p>
 <ul>
 <li>Capacity and staffing. Enough trained people must exist to do the operational and oversight work, not just one person who happens to be available today.</li>
@@ -470,11 +509,39 @@ AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
 <h2 class="anchored" data-anchor-id="context-alignment">8.3 Context alignment</h2>
 <p>A system validated in one context does not carry that validation automatically into a different one. Organizations usually discover this the hard way, and the mechanism is almost always the same. It is scope creep. In scope creep, a system approved for a specific use case, a specific population, and a specific environment is extended to something adjacent. The new use looked similar enough that nobody ordered a fresh review.</p>
 <p><code>MEDASSIST</code>’s deployment to Northfield’s community hospitals followed this pattern. Nobody framed it as extending the system’s scope. It was a rollout that treated “the same hospital system” as the thing that had to match, the unit of similarity. The right things to match were the same patient population, the same equipment, and the same documentation practice. These decide whether a model’s learned pattern transfers, meaning whether what the model picked up from its training data still works in the new setting. Chapter 5 already established that those three things are the deciding factors.</p>
-<p>Context alignment has four checkpoints.</p>
-<p>Use case alignment asks whether the task the system is now being asked to do matches the task it was validated on. A plausible extension of that task is not enough.</p>
-<p>Population alignment asks the representativeness question that Chapter 5 raised, whether the people in the test data look like the people the system will serve. Here the question becomes a deployment gate. It is no longer only a general concern about data governance, which means the rules for handling data.</p>
-<p>Environment alignment asks whether the operational conditions match what the system was tested against. These conditions include equipment, staffing, documentation practice, and IT infrastructure.</p>
-<p>Risk proportionality asks whether the stakes of the deployment match the level of scrutiny the system received. Suppose a system was validated for a low-stakes pilot, which is a small trial. If it is then deployed at full production scale without a fresh review, its risk profile, the level of risk it carries, has changed. Its evidence base, the testing evidence behind it, has not.</p>
+<p>Context alignment has four checkpoints. Table 8.2 states what each checkpoint asks, and a review has to clear each one on its own rather than infer it from the others.</p>
+<p>Table 8.2. The four checkpoints of context alignment</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Checkpoint</th>
+<th>What it asks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Use case alignment</strong></td>
+<td>Whether the task the system is now being asked to do matches the task it was validated on. A plausible extension of that task is not enough.</td>
+</tr>
+<tr class="even">
+<td><strong>Population alignment</strong></td>
+<td>Whether the people in the test data look like the people the system will serve. This is the representativeness question that Chapter 5 raised. Here it becomes a deployment gate, no longer only a general concern about data governance, which means the rules for handling data.</td>
+</tr>
+<tr class="odd">
+<td><strong>Environment alignment</strong></td>
+<td>Whether the operational conditions match what the system was tested against. These conditions include equipment, staffing, documentation practice, and IT infrastructure.</td>
+</tr>
+<tr class="even">
+<td><strong>Risk proportionality</strong></td>
+<td>Whether the stakes of the deployment match the level of scrutiny the system received.</td>
+</tr>
+</tbody>
+</table>
+<p>Suppose a system was validated for a low-stakes pilot, which is a small trial. If it is then deployed at full production scale without a fresh review, its risk profile, the level of risk it carries, has changed. Its evidence base, the testing evidence behind it, has not.</p>
 <p>Some deployment reviews check system readiness and organizational readiness, and then treat context alignment as implied by the first two. Such a review misses the specific failure that put <code>MEDASSIST</code> into a community hospital nobody had separately evaluated it against.</p>
 <p>Naming the four checkpoints does not give a team a way to act on what they find. A context comparison record fills that gap. It turns the comparison into a decision.</p>
 <p>The record names the validated context and the proposed context side by side. It compares them across task, population, input process, equipment, workflow, incentives, human roles, stakes, law, and physical or operational environment. Input process means how the data enters the system. The record then rates how material each difference is, meaning whether it is large enough to matter for the decision. The record also states the evidence behind each rating.</p>
@@ -616,7 +683,7 @@ AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
 <p>Context alignment catches scope creep. In scope creep, a system validated for one use case, population, and environment gets extended to an adjacent one that nobody separately evaluated. The review checks use case, population, environment, and risk proportionality. The review does this through a context comparison record with a named disposition.</p>
 <p>The deployment decision itself should resolve into one of four documented, accountable outcomes. The outcomes are approved, approved with conditions, denied, and deferred. Conditions must be specific, and they must be tracked, or they are not real conditions. A denial names the gap. A deferral specifies the missing evidence. The record states the evidence version, the authority, and the dissent behind the outcome.</p>
 <p>Progressive rollout stages exposure and capability as two independent axes for every system, agentic systems included. The rollout is checked against halt criteria fixed before launch. Recovery needs a tested technical mechanism across every affected layer. It needs a clear authority to trigger it. For an agentic system specifically, it needs a compensating-action step that addresses actions already taken, not only halting further ones.</p>
-<p><strong>Evidence carried forward.</strong> The deployment decision produces a release record for the rest of the book. The record includes:</p>
+<p>The deployment decision produces a release record. The record includes:</p>
 <ul>
 <li>the exact versions and evidence bound into the decision</li>
 <li>the conditions and their tracking status</li>
@@ -651,7 +718,7 @@ AUDIT: pass 1 [x] against list, pass 2 blind [ ], rendered and viewed [x]
 <li><code>MEDASSIST</code> Using the case in focus, identify the specific readiness question that was never asked. Name who should have been responsible for asking it. Explain what a properly designed progressive rollout would have looked like for the community hospital extension.</li>
 </ol>
 <hr>
-<p>A system that is deployed is now generating the evidence that Chapter 9 needs to watch. The next chapter turns to operations and monitoring. The case in focus has already previewed an uncomfortable fact about that work. The failure <code>MEDASSIST</code> produced at the community hospitals was invisible to every readiness check described above. It became visible only once someone was watching the system in production. Monitoring is a different discipline, with its own methods and its own blind spots. It also has its own hard problem. Some systems prevent harm, and when prevention works the harm leaves no trace.</p>
+<p>A system that is deployed is now generating the evidence that Chapter 9 needs to watch. The next chapter turns to operations and monitoring. The failure <code>MEDASSIST</code> produced at the community hospitals was invisible to every readiness check described above. It became visible only once someone was watching the system in production. Monitoring is a different discipline, with its own methods and its own blind spots. It also has its own hard problem. Some systems prevent harm, and when prevention works the harm leaves no trace.</p>
 
 
 </section>
